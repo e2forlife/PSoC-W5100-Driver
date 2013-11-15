@@ -1,0 +1,34 @@
+# PSoCPioneer+ArduinoShield_SPIM_Example
+# 2013-11-13 16:32:09Z
+
+# IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 2
+# IO_3@[IOP=(3)][IoId=(3)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 3
+set_io "BLUE(0)" iocell 0 3
+set_location "ClockBlock" m0s8clockblockcell -1 -1 0
+set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
+set_io "ETH_CSN_1(0)" iocell 3 4
+set_io "ETH_MISO_1(0)" iocell 3 1
+set_io "ETH_MOSI_1(0)" iocell 3 0
+set_io "ETH_SCLK_1(0)" iocell 0 6
+set_io "GREEN(0)" iocell 0 2
+set_location "Net_1" 0 1 0 0
+set_location "Net_23" 0 0 1 0
+set_location "Net_25" 1 0 0 0
+set_io "RED(0)" iocell 1 6
+set_io "SDCS(0)" iocell 0 0
+set_location "\SPI0:BSPIM:BitCounter\" 0 1 7
+set_location "\SPI0:BSPIM:RxStsReg\" 1 0 4
+set_location "\SPI0:BSPIM:TxStsReg\" 0 0 4
+set_location "\SPI0:BSPIM:cnt_enable\" 1 0 0 1
+set_location "\SPI0:BSPIM:ld_ident\" 0 1 1 2
+set_location "\SPI0:BSPIM:load_cond\" 0 0 0 0
+set_location "\SPI0:BSPIM:load_rx_data\" 0 1 0 1
+set_location "\SPI0:BSPIM:rx_status_6\" 0 1 0 3
+set_location "\SPI0:BSPIM:sR8:Dp:u0\" 0 1 2
+set_location "\SPI0:BSPIM:state_0\" 1 1 1 1
+set_location "\SPI0:BSPIM:state_1\" 0 1 1 1
+set_location "\SPI0:BSPIM:state_2\" 0 1 1 0
+set_location "\SPI0:BSPIM:tx_status_0\" 0 1 0 2
+set_location "\SPI0:BSPIM:tx_status_4\" 0 0 0 2

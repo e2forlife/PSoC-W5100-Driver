@@ -1,0 +1,1045 @@
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFDDrPY.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"cymetadata.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	cy_meta_configecc
+  19              		.section	.cyconfigecc,"a",%progbits
+  20              		.align	2
+  21              		.type	cy_meta_configecc, %object
+  22              		.size	cy_meta_configecc, 520
+  23              	cy_meta_configecc:
+  24 0000 01       		.byte	1
+  25 0001 52       		.byte	82
+  26 0002 00       		.byte	0
+  27 0003 40       		.byte	64
+  28 0004 01       		.byte	1
+  29 0005 65       		.byte	101
+  30 0006 00       		.byte	0
+  31 0007 40       		.byte	64
+  32 0008 03       		.byte	3
+  33 0009 14       		.byte	20
+  34 000a 01       		.byte	1
+  35 000b 40       		.byte	64
+  36 000c 3D       		.byte	61
+  37 000d 15       		.byte	21
+  38 000e 01       		.byte	1
+  39 000f 40       		.byte	64
+  40 0010 2E       		.byte	46
+  41 0011 16       		.byte	22
+  42 0012 01       		.byte	1
+  43 0013 40       		.byte	64
+  44 0014 1F       		.byte	31
+  45 0015 17       		.byte	23
+  46 0016 01       		.byte	1
+  47 0017 40       		.byte	64
+  48 0018 02       		.byte	2
+  49 0019 41       		.byte	65
+  50 001a 01       		.byte	1
+  51 001b 40       		.byte	64
+  52 001c 01       		.byte	1
+  53 001d 42       		.byte	66
+  54 001e 01       		.byte	1
+  55 001f 40       		.byte	64
+  56 0020 01       		.byte	1
+  57 0021 43       		.byte	67
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFDDrPY.s 			page 2
+
+
+  58 0022 01       		.byte	1
+  59 0023 40       		.byte	64
+  60 0024 01       		.byte	1
+  61 0025 48       		.byte	72
+  62 0026 01       		.byte	1
+  63 0027 40       		.byte	64
+  64 0028 0E       		.byte	14
+  65 0029 49       		.byte	73
+  66 002a 01       		.byte	1
+  67 002b 40       		.byte	64
+  68 002c 02       		.byte	2
+  69 002d 50       		.byte	80
+  70 002e 01       		.byte	1
+  71 002f 40       		.byte	64
+  72 0030 18       		.byte	24
+  73 0031 11       		.byte	17
+  74 0032 85       		.byte	-123
+  75 0033 0F       		.byte	15
+  76 0034 54       		.byte	84
+  77 0035 09       		.byte	9
+  78 0036 5B       		.byte	91
+  79 0037 04       		.byte	4
+  80 0038 5F       		.byte	95
+  81 0039 01       		.byte	1
+  82 003a 05       		.byte	5
+  83 003b 06       		.byte	6
+  84 003c 06       		.byte	6
+  85 003d 02       		.byte	2
+  86 003e 07       		.byte	7
+  87 003f 08       		.byte	8
+  88 0040 0C       		.byte	12
+  89 0041 02       		.byte	2
+  90 0042 0E       		.byte	14
+  91 0043 2E       		.byte	46
+  92 0044 17       		.byte	23
+  93 0045 16       		.byte	22
+  94 0046 1C       		.byte	28
+  95 0047 01       		.byte	1
+  96 0048 1D       		.byte	29
+  97 0049 20       		.byte	32
+  98 004a 1E       		.byte	30
+  99 004b 60       		.byte	96
+ 100 004c 26       		.byte	38
+ 101 004d 2C       		.byte	44
+ 102 004e 27       		.byte	39
+ 103 004f 0A       		.byte	10
+ 104 0050 2C       		.byte	44
+ 105 0051 02       		.byte	2
+ 106 0052 2D       		.byte	45
+ 107 0053 20       		.byte	32
+ 108 0054 2E       		.byte	46
+ 109 0055 06       		.byte	6
+ 110 0056 2F       		.byte	47
+ 111 0057 08       		.byte	8
+ 112 0058 35       		.byte	53
+ 113 0059 04       		.byte	4
+ 114 005a 36       		.byte	54
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFDDrPY.s 			page 3
+
+
+ 115 005b 20       		.byte	32
+ 116 005c 37       		.byte	55
+ 117 005d 02       		.byte	2
+ 118 005e 3D       		.byte	61
+ 119 005f 0A       		.byte	10
+ 120 0060 3E       		.byte	62
+ 121 0061 10       		.byte	16
+ 122 0062 44       		.byte	68
+ 123 0063 40       		.byte	64
+ 124 0064 45       		.byte	69
+ 125 0065 20       		.byte	32
+ 126 0066 47       		.byte	71
+ 127 0067 08       		.byte	8
+ 128 0068 4D       		.byte	77
+ 129 0069 8A       		.byte	-118
+ 130 006a 4E       		.byte	78
+ 131 006b 08       		.byte	8
+ 132 006c 56       		.byte	86
+ 133 006d 28       		.byte	40
+ 134 006e 57       		.byte	87
+ 135 006f 48       		.byte	72
+ 136 0070 59       		.byte	89
+ 137 0071 29       		.byte	41
+ 138 0072 5A       		.byte	90
+ 139 0073 40       		.byte	64
+ 140 0074 60       		.byte	96
+ 141 0075 01       		.byte	1
+ 142 0076 67       		.byte	103
+ 143 0077 01       		.byte	1
+ 144 0078 6C       		.byte	108
+ 145 0079 16       		.byte	22
+ 146 007a 6D       		.byte	109
+ 147 007b 0A       		.byte	10
+ 148 007c 6E       		.byte	110
+ 149 007d 12       		.byte	18
+ 150 007e 6F       		.byte	111
+ 151 007f 15       		.byte	21
+ 152 0080 76       		.byte	118
+ 153 0081 02       		.byte	2
+ 154 0082 86       		.byte	-122
+ 155 0083 10       		.byte	16
+ 156 0084 88       		.byte	-120
+ 157 0085 40       		.byte	64
+ 158 0086 8D       		.byte	-115
+ 159 0087 21       		.byte	33
+ 160 0088 93       		.byte	-109
+ 161 0089 01       		.byte	1
+ 162 008a 94       		.byte	-108
+ 163 008b 28       		.byte	40
+ 164 008c 99       		.byte	-103
+ 165 008d 84       		.byte	-124
+ 166 008e 9E       		.byte	-98
+ 167 008f 2A       		.byte	42
+ 168 0090 9F       		.byte	-97
+ 169 0091 09       		.byte	9
+ 170 0092 A6       		.byte	-90
+ 171 0093 2D       		.byte	45
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFDDrPY.s 			page 4
+
+
+ 172 0094 A7       		.byte	-89
+ 173 0095 40       		.byte	64
+ 174 0096 A9       		.byte	-87
+ 175 0097 10       		.byte	16
+ 176 0098 AB       		.byte	-85
+ 177 0099 04       		.byte	4
+ 178 009a AC       		.byte	-84
+ 179 009b 10       		.byte	16
+ 180 009c AD       		.byte	-83
+ 181 009d 80       		.byte	-128
+ 182 009e C0       		.byte	-64
+ 183 009f F0       		.byte	-16
+ 184 00a0 C2       		.byte	-62
+ 185 00a1 F0       		.byte	-16
+ 186 00a2 C4       		.byte	-60
+ 187 00a3 70       		.byte	112
+ 188 00a4 CA       		.byte	-54
+ 189 00a5 F0       		.byte	-16
+ 190 00a6 CC       		.byte	-52
+ 191 00a7 E0       		.byte	-32
+ 192 00a8 CE       		.byte	-50
+ 193 00a9 E0       		.byte	-32
+ 194 00aa D0       		.byte	-48
+ 195 00ab E0       		.byte	-32
+ 196 00ac D2       		.byte	-46
+ 197 00ad 30       		.byte	48
+ 198 00ae D6       		.byte	-42
+ 199 00af 0F       		.byte	15
+ 200 00b0 D8       		.byte	-40
+ 201 00b1 18       		.byte	24
+ 202 00b2 E0       		.byte	-32
+ 203 00b3 80       		.byte	-128
+ 204 00b4 00       		.byte	0
+ 205 00b5 02       		.byte	2
+ 206 00b6 02       		.byte	2
+ 207 00b7 0D       		.byte	13
+ 208 00b8 04       		.byte	4
+ 209 00b9 8D       		.byte	-115
+ 210 00ba 08       		.byte	8
+ 211 00bb 8D       		.byte	-115
+ 212 00bc 09       		.byte	9
+ 213 00bd E0       		.byte	-32
+ 214 00be 0D       		.byte	13
+ 215 00bf 02       		.byte	2
+ 216 00c0 0F       		.byte	15
+ 217 00c1 0D       		.byte	13
+ 218 00c2 12       		.byte	18
+ 219 00c3 80       		.byte	-128
+ 220 00c4 14       		.byte	20
+ 221 00c5 42       		.byte	66
+ 222 00c6 15       		.byte	21
+ 223 00c7 33       		.byte	51
+ 224 00c8 16       		.byte	22
+ 225 00c9 08       		.byte	8
+ 226 00ca 17       		.byte	23
+ 227 00cb 4C       		.byte	76
+ 228 00cc 18       		.byte	24
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFDDrPY.s 			page 5
+
+
+ 229 00cd 11       		.byte	17
+ 230 00ce 19       		.byte	25
+ 231 00cf 55       		.byte	85
+ 232 00d0 1A       		.byte	26
+ 233 00d1 22       		.byte	34
+ 234 00d2 1B       		.byte	27
+ 235 00d3 AA       		.byte	-86
+ 236 00d4 1C       		.byte	28
+ 237 00d5 8D       		.byte	-115
+ 238 00d6 20       		.byte	32
+ 239 00d7 0D       		.byte	13
+ 240 00d8 22       		.byte	34
+ 241 00d9 80       		.byte	-128
+ 242 00da 24       		.byte	36
+ 243 00db 62       		.byte	98
+ 244 00dc 26       		.byte	38
+ 245 00dd 14       		.byte	20
+ 246 00de 28       		.byte	40
+ 247 00df 40       		.byte	64
+ 248 00e0 29       		.byte	41
+ 249 00e1 49       		.byte	73
+ 250 00e2 2B       		.byte	43
+ 251 00e3 96       		.byte	-106
+ 252 00e4 2C       		.byte	44
+ 253 00e5 8D       		.byte	-115
+ 254 00e6 32       		.byte	50
+ 255 00e7 70       		.byte	112
+ 256 00e8 34       		.byte	52
+ 257 00e9 80       		.byte	-128
+ 258 00ea 35       		.byte	53
+ 259 00eb F0       		.byte	-16
+ 260 00ec 36       		.byte	54
+ 261 00ed 0F       		.byte	15
+ 262 00ee 37       		.byte	55
+ 263 00ef 0F       		.byte	15
+ 264 00f0 39       		.byte	57
+ 265 00f1 20       		.byte	32
+ 266 00f2 3A       		.byte	58
+ 267 00f3 88       		.byte	-120
+ 268 00f4 3B       		.byte	59
+ 269 00f5 80       		.byte	-128
+ 270 00f6 3E       		.byte	62
+ 271 00f7 10       		.byte	16
+ 272 00f8 54       		.byte	84
+ 273 00f9 40       		.byte	64
+ 274 00fa 58       		.byte	88
+ 275 00fb 04       		.byte	4
+ 276 00fc 59       		.byte	89
+ 277 00fd 04       		.byte	4
+ 278 00fe 5B       		.byte	91
+ 279 00ff 04       		.byte	4
+ 280 0100 5F       		.byte	95
+ 281 0101 01       		.byte	1
+ 282 0102 8A       		.byte	-118
+ 283 0103 01       		.byte	1
+ 284 0104 96       		.byte	-106
+ 285 0105 03       		.byte	3
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFDDrPY.s 			page 6
+
+
+ 286 0106 A6       		.byte	-90
+ 287 0107 03       		.byte	3
+ 288 0108 A8       		.byte	-88
+ 289 0109 02       		.byte	2
+ 290 010a B2       		.byte	-78
+ 291 010b 03       		.byte	3
+ 292 010c D8       		.byte	-40
+ 293 010d 04       		.byte	4
+ 294 010e DF       		.byte	-33
+ 295 010f 01       		.byte	1
+ 296 0110 00       		.byte	0
+ 297 0111 10       		.byte	16
+ 298 0112 04       		.byte	4
+ 299 0113 29       		.byte	41
+ 300 0114 0A       		.byte	10
+ 301 0115 10       		.byte	16
+ 302 0116 0C       		.byte	12
+ 303 0117 01       		.byte	1
+ 304 0118 0E       		.byte	14
+ 305 0119 2A       		.byte	42
+ 306 011a 0F       		.byte	15
+ 307 011b 80       		.byte	-128
+ 308 011c 12       		.byte	18
+ 309 011d A8       		.byte	-88
+ 310 011e 13       		.byte	19
+ 311 011f 01       		.byte	1
+ 312 0120 16       		.byte	22
+ 313 0121 0A       		.byte	10
+ 314 0122 17       		.byte	23
+ 315 0123 09       		.byte	9
+ 316 0124 18       		.byte	24
+ 317 0125 10       		.byte	16
+ 318 0126 1B       		.byte	27
+ 319 0127 04       		.byte	4
+ 320 0128 1C       		.byte	28
+ 321 0129 21       		.byte	33
+ 322 012a 1D       		.byte	29
+ 323 012b 04       		.byte	4
+ 324 012c 1E       		.byte	30
+ 325 012d 30       		.byte	48
+ 326 012e 1F       		.byte	31
+ 327 012f 18       		.byte	24
+ 328 0130 25       		.byte	37
+ 329 0131 50       		.byte	80
+ 330 0132 26       		.byte	38
+ 331 0133 80       		.byte	-128
+ 332 0134 2F       		.byte	47
+ 333 0135 08       		.byte	8
+ 334 0136 36       		.byte	54
+ 335 0137 28       		.byte	40
+ 336 0138 3D       		.byte	61
+ 337 0139 A0       		.byte	-96
+ 338 013a 64       		.byte	100
+ 339 013b 01       		.byte	1
+ 340 013c 66       		.byte	102
+ 341 013d 20       		.byte	32
+ 342 013e 67       		.byte	103
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFDDrPY.s 			page 7
+
+
+ 343 013f 20       		.byte	32
+ 344 0140 C0       		.byte	-64
+ 345 0141 72       		.byte	114
+ 346 0142 C2       		.byte	-62
+ 347 0143 F4       		.byte	-12
+ 348 0144 C4       		.byte	-60
+ 349 0145 F6       		.byte	-10
+ 350 0146 CA       		.byte	-54
+ 351 0147 20       		.byte	32
+ 352 0148 CC       		.byte	-52
+ 353 0149 60       		.byte	96
+ 354 014a CE       		.byte	-50
+ 355 014b 30       		.byte	48
+ 356 014c D8       		.byte	-40
+ 357 014d 70       		.byte	112
+ 358 014e 62       		.byte	98
+ 359 014f 80       		.byte	-128
+ 360 0150 D6       		.byte	-42
+ 361 0151 40       		.byte	64
+ 362 0152 A6       		.byte	-90
+ 363 0153 80       		.byte	-128
+ 364 0154 A6       		.byte	-90
+ 365 0155 80       		.byte	-128
+ 366 0156 A6       		.byte	-90
+ 367 0157 80       		.byte	-128
+ 368 0158 05       		.byte	5
+ 369 0159 08       		.byte	8
+ 370 015a 57       		.byte	87
+ 371 015b 20       		.byte	32
+ 372 015c 5C       		.byte	92
+ 373 015d 01       		.byte	1
+ 374 015e 87       		.byte	-121
+ 375 015f 20       		.byte	32
+ 376 0160 89       		.byte	-119
+ 377 0161 08       		.byte	8
+ 378 0162 90       		.byte	-112
+ 379 0163 01       		.byte	1
+ 380 0164 A8       		.byte	-88
+ 381 0165 01       		.byte	1
+ 382 0166 AA       		.byte	-86
+ 383 0167 80       		.byte	-128
+ 384 0168 C0       		.byte	-64
+ 385 0169 20       		.byte	32
+ 386 016a D4       		.byte	-44
+ 387 016b 40       		.byte	64
+ 388 016c D6       		.byte	-42
+ 389 016d 80       		.byte	-128
+ 390 016e E6       		.byte	-26
+ 391 016f 10       		.byte	16
+ 392 0170 EA       		.byte	-22
+ 393 0171 80       		.byte	-128
+ 394 0172 EE       		.byte	-18
+ 395 0173 20       		.byte	32
+ 396 0174 10       		.byte	16
+ 397 0175 01       		.byte	1
+ 398 0176 1A       		.byte	26
+ 399 0177 01       		.byte	1
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFDDrPY.s 			page 8
+
+
+ 400 0178 60       		.byte	96
+ 401 0179 96       		.byte	-106
+ 402 017a 00       		.byte	0
+ 403 017b 00       		.byte	0
+ 404 017c 56       		.byte	86
+ 405 017d 92       		.byte	-110
+ 406 017e 09       		.byte	9
+ 407 017f 04       		.byte	4
+ 408 0180 0A       		.byte	10
+ 409 0181 04       		.byte	4
+ 410 0182 10       		.byte	16
+ 411 0183 92       		.byte	-110
+ 412 0184 84       		.byte	-124
+ 413 0185 00       		.byte	0
+ 414 0186 00       		.byte	0
+ 415 0187 00       		.byte	0
+ 416 0188 04       		.byte	4
+ 417 0189 32       		.byte	50
+ 418 018a 80       		.byte	-128
+ 419 018b C0       		.byte	-64
+ 420 018c 01       		.byte	1
+ 421 018d FA       		.byte	-6
+ 422 018e 00       		.byte	0
+ 423 018f 05       		.byte	5
+ 424 0190 07       		.byte	7
+ 425 0191 21       		.byte	33
+ 426 0192 38       		.byte	56
+ 427 0193 D2       		.byte	-46
+ 428 0194 84       		.byte	-124
+ 429 0195 00       		.byte	0
+ 430 0196 00       		.byte	0
+ 431 0197 00       		.byte	0
+ 432 0198 04       		.byte	4
+ 433 0199 96       		.byte	-106
+ 434 019a 00       		.byte	0
+ 435 019b 00       		.byte	0
+ 436 019c 80       		.byte	-128
+ 437 019d 07       		.byte	7
+ 438 019e 04       		.byte	4
+ 439 019f 68       		.byte	104
+ 440 01a0 84       		.byte	-124
+ 441 01a1 04       		.byte	4
+ 442 01a2 00       		.byte	0
+ 443 01a3 00       		.byte	0
+ 444 01a4 00       		.byte	0
+ 445 01a5 92       		.byte	-110
+ 446 01a6 00       		.byte	0
+ 447 01a7 04       		.byte	4
+ 448 01a8 08       		.byte	8
+ 449 01a9 00       		.byte	0
+ 450 01aa 7F       		.byte	127
+ 451 01ab 07       		.byte	7
+ 452 01ac 80       		.byte	-128
+ 453 01ad 1D       		.byte	29
+ 454 01ae 02       		.byte	2
+ 455 01af E0       		.byte	-32
+ 456 01b0 08       		.byte	8
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFDDrPY.s 			page 9
+
+
+ 457 01b1 00       		.byte	0
+ 458 01b2 00       		.byte	0
+ 459 01b3 A0       		.byte	-96
+ 460 01b4 00       		.byte	0
+ 461 01b5 00       		.byte	0
+ 462 01b6 51       		.byte	81
+ 463 01b7 00       		.byte	0
+ 464 01b8 35       		.byte	53
+ 465 01b9 06       		.byte	6
+ 466 01ba 20       		.byte	32
+ 467 01bb 00       		.byte	0
+ 468 01bc 04       		.byte	4
+ 469 01bd BE       		.byte	-66
+ 470 01be FD       		.byte	-3
+ 471 01bf 0C       		.byte	12
+ 472 01c0 1F       		.byte	31
+ 473 01c1 FF       		.byte	-1
+ 474 01c2 FF       		.byte	-1
+ 475 01c3 FF       		.byte	-1
+ 476 01c4 22       		.byte	34
+ 477 01c5 00       		.byte	0
+ 478 01c6 F0       		.byte	-16
+ 479 01c7 08       		.byte	8
+ 480 01c8 04       		.byte	4
+ 481 01c9 00       		.byte	0
+ 482 01ca 00       		.byte	0
+ 483 01cb 00       		.byte	0
+ 484 01cc 00       		.byte	0
+ 485 01cd 00       		.byte	0
+ 486 01ce 02       		.byte	2
+ 487 01cf 20       		.byte	32
+ 488 01d0 04       		.byte	4
+ 489 01d1 04       		.byte	4
+ 490 01d2 04       		.byte	4
+ 491 01d3 04       		.byte	4
+ 492 01d4 00       		.byte	0
+ 493 01d5 00       		.byte	0
+ 494 01d6 00       		.byte	0
+ 495 01d7 01       		.byte	1
+ 496 01d8 00       		.byte	0
+ 497 01d9 00       		.byte	0
+ 498 01da C0       		.byte	-64
+ 499 01db 00       		.byte	0
+ 500 01dc 40       		.byte	64
+ 501 01dd 01       		.byte	1
+ 502 01de 10       		.byte	16
+ 503 01df 11       		.byte	17
+ 504 01e0 C0       		.byte	-64
+ 505 01e1 01       		.byte	1
+ 506 01e2 00       		.byte	0
+ 507 01e3 11       		.byte	17
+ 508 01e4 40       		.byte	64
+ 509 01e5 01       		.byte	1
+ 510 01e6 40       		.byte	64
+ 511 01e7 01       		.byte	1
+ 512 01e8 00       		.byte	0
+ 513 01e9 00       		.byte	0
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFDDrPY.s 			page 10
+
+
+ 514 01ea 00       		.byte	0
+ 515 01eb 00       		.byte	0
+ 516 01ec 00       		.byte	0
+ 517 01ed 00       		.byte	0
+ 518 01ee 00       		.byte	0
+ 519 01ef 00       		.byte	0
+ 520 01f0 00       		.byte	0
+ 521 01f1 00       		.byte	0
+ 522 01f2 00       		.byte	0
+ 523 01f3 00       		.byte	0
+ 524 01f4 00       		.byte	0
+ 525 01f5 00       		.byte	0
+ 526 01f6 00       		.byte	0
+ 527 01f7 00       		.byte	0
+ 528 01f8 00       		.byte	0
+ 529 01f9 40       		.byte	64
+ 530 01fa 40       		.byte	64
+ 531 01fb 00       		.byte	0
+ 532 01fc 40       		.byte	64
+ 533 01fd 00       		.byte	0
+ 534 01fe 00       		.byte	0
+ 535 01ff 00       		.byte	0
+ 536 0200 02       		.byte	2
+ 537 0201 11       		.byte	17
+ 538 0202 11       		.byte	17
+ 539 0203 00       		.byte	0
+ 540 0204 11       		.byte	17
+ 541 0205 00       		.byte	0
+ 542 0206 00       		.byte	0
+ 543 0207 00       		.byte	0
+ 544              		.global	cy_meta_custnvl
+ 545              		.section	.cycustnvl,"a",%progbits
+ 546              		.align	2
+ 547              		.type	cy_meta_custnvl, %object
+ 548              		.size	cy_meta_custnvl, 4
+ 549              	cy_meta_custnvl:
+ 550 0000 00       		.byte	0
+ 551 0001 00       		.byte	0
+ 552 0002 40       		.byte	64
+ 553 0003 05       		.byte	5
+ 554              		.global	cy_meta_wonvl
+ 555              		.section	.cywolatch,"a",%progbits
+ 556              		.align	2
+ 557              		.type	cy_meta_wonvl, %object
+ 558              		.size	cy_meta_wonvl, 4
+ 559              	cy_meta_wonvl:
+ 560 0000 BC       		.byte	-68
+ 561 0001 90       		.byte	-112
+ 562 0002 AC       		.byte	-84
+ 563 0003 AF       		.byte	-81
+ 564              		.global	cy_meta_flashprotect
+ 565              		.section	.cyflashprotect,"a",%progbits
+ 566              		.align	2
+ 567              		.type	cy_meta_flashprotect, %object
+ 568              		.size	cy_meta_flashprotect, 256
+ 569              	cy_meta_flashprotect:
+ 570 0000 00000000 		.space	256
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFDDrPY.s 			page 11
+
+
+ 570      00000000 
+ 570      00000000 
+ 570      00000000 
+ 570      00000000 
+ 571              		.global	cy_metadata
+ 572              		.section	.cymeta,"a",%progbits
+ 573              		.align	2
+ 574              		.type	cy_metadata, %object
+ 575              		.size	cy_metadata, 12
+ 576              	cy_metadata:
+ 577 0000 00       		.byte	0
+ 578 0001 01       		.byte	1
+ 579 0002 2E       		.byte	46
+ 580 0003 12       		.byte	18
+ 581 0004 30       		.byte	48
+ 582 0005 69       		.byte	105
+ 583 0006 00       		.byte	0
+ 584 0007 01       		.byte	1
+ 585 0008 00       		.byte	0
+ 586 0009 00       		.byte	0
+ 587 000a 00       		.byte	0
+ 588 000b 00       		.byte	0
+ 589              		.text
+ 590              	.Letext0:
+ 591              		.file 1 ".\\Generated_Source\\PSoC5\\cymetadata.c"
+ 592              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 593              		.section	.debug_info,"",%progbits
+ 594              	.Ldebug_info0:
+ 595 0000 3B010000 		.4byte	0x13b
+ 596 0004 0200     		.2byte	0x2
+ 597 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 598 000a 04       		.byte	0x4
+ 599 000b 01       		.uleb128 0x1
+ 600 000c 6A010000 		.4byte	.LASF18
+ 601 0010 01       		.byte	0x1
+ 602 0011 00000000 		.4byte	.LASF19
+ 603 0015 01010000 		.4byte	.LASF20
+ 604 0019 00000000 		.4byte	.Ldebug_line0
+ 605 001d 02       		.uleb128 0x2
+ 606 001e 01       		.byte	0x1
+ 607 001f 06       		.byte	0x6
+ 608 0020 BC010000 		.4byte	.LASF0
+ 609 0024 02       		.uleb128 0x2
+ 610 0025 01       		.byte	0x1
+ 611 0026 08       		.byte	0x8
+ 612 0027 38000000 		.4byte	.LASF1
+ 613 002b 02       		.uleb128 0x2
+ 614 002c 02       		.byte	0x2
+ 615 002d 05       		.byte	0x5
+ 616 002e F7000000 		.4byte	.LASF2
+ 617 0032 02       		.uleb128 0x2
+ 618 0033 02       		.byte	0x2
+ 619 0034 07       		.byte	0x7
+ 620 0035 58000000 		.4byte	.LASF3
+ 621 0039 02       		.uleb128 0x2
+ 622 003a 04       		.byte	0x4
+ 623 003b 05       		.byte	0x5
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFDDrPY.s 			page 12
+
+
+ 624 003c B3010000 		.4byte	.LASF4
+ 625 0040 02       		.uleb128 0x2
+ 626 0041 04       		.byte	0x4
+ 627 0042 07       		.byte	0x7
+ 628 0043 46000000 		.4byte	.LASF5
+ 629 0047 02       		.uleb128 0x2
+ 630 0048 08       		.byte	0x8
+ 631 0049 05       		.byte	0x5
+ 632 004a E4000000 		.4byte	.LASF6
+ 633 004e 02       		.uleb128 0x2
+ 634 004f 08       		.byte	0x8
+ 635 0050 07       		.byte	0x7
+ 636 0051 A1000000 		.4byte	.LASF7
+ 637 0055 03       		.uleb128 0x3
+ 638 0056 04       		.byte	0x4
+ 639 0057 05       		.byte	0x5
+ 640 0058 696E7400 		.ascii	"int\000"
+ 641 005c 02       		.uleb128 0x2
+ 642 005d 04       		.byte	0x4
+ 643 005e 07       		.byte	0x7
+ 644 005f 94000000 		.4byte	.LASF8
+ 645 0063 04       		.uleb128 0x4
+ 646 0064 64010000 		.4byte	.LASF21
+ 647 0068 02       		.byte	0x2
+ 648 0069 5B       		.byte	0x5b
+ 649 006a 24000000 		.4byte	0x24
+ 650 006e 02       		.uleb128 0x2
+ 651 006f 04       		.byte	0x4
+ 652 0070 04       		.byte	0x4
+ 653 0071 32000000 		.4byte	.LASF9
+ 654 0075 02       		.uleb128 0x2
+ 655 0076 08       		.byte	0x8
+ 656 0077 04       		.byte	0x4
+ 657 0078 6B000000 		.4byte	.LASF10
+ 658 007c 02       		.uleb128 0x2
+ 659 007d 01       		.byte	0x1
+ 660 007e 08       		.byte	0x8
+ 661 007f F2000000 		.4byte	.LASF11
+ 662 0083 05       		.uleb128 0x5
+ 663 0084 63000000 		.4byte	0x63
+ 664 0088 94000000 		.4byte	0x94
+ 665 008c 06       		.uleb128 0x6
+ 666 008d 94000000 		.4byte	0x94
+ 667 0091 0702     		.2byte	0x207
+ 668 0093 00       		.byte	0
+ 669 0094 02       		.uleb128 0x2
+ 670 0095 04       		.byte	0x4
+ 671 0096 07       		.byte	0x7
+ 672 0097 DB000000 		.4byte	.LASF12
+ 673 009b 07       		.uleb128 0x7
+ 674 009c 82000000 		.4byte	.LASF13
+ 675 00a0 01       		.byte	0x1
+ 676 00a1 1C       		.byte	0x1c
+ 677 00a2 AD000000 		.4byte	0xad
+ 678 00a6 01       		.byte	0x1
+ 679 00a7 05       		.byte	0x5
+ 680 00a8 03       		.byte	0x3
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFDDrPY.s 			page 13
+
+
+ 681 00a9 00000000 		.4byte	cy_meta_configecc
+ 682 00ad 08       		.uleb128 0x8
+ 683 00ae 83000000 		.4byte	0x83
+ 684 00b2 05       		.uleb128 0x5
+ 685 00b3 63000000 		.4byte	0x63
+ 686 00b7 C2000000 		.4byte	0xc2
+ 687 00bb 09       		.uleb128 0x9
+ 688 00bc 94000000 		.4byte	0x94
+ 689 00c0 03       		.byte	0x3
+ 690 00c1 00       		.byte	0
+ 691 00c2 07       		.uleb128 0x7
+ 692 00c3 72000000 		.4byte	.LASF14
+ 693 00c7 01       		.byte	0x1
+ 694 00c8 67       		.byte	0x67
+ 695 00c9 D4000000 		.4byte	0xd4
+ 696 00cd 01       		.byte	0x1
+ 697 00ce 05       		.byte	0x5
+ 698 00cf 03       		.byte	0x3
+ 699 00d0 00000000 		.4byte	cy_meta_custnvl
+ 700 00d4 08       		.uleb128 0x8
+ 701 00d5 B2000000 		.4byte	0xb2
+ 702 00d9 07       		.uleb128 0x7
+ 703 00da CD000000 		.4byte	.LASF15
+ 704 00de 01       		.byte	0x1
+ 705 00df 72       		.byte	0x72
+ 706 00e0 EB000000 		.4byte	0xeb
+ 707 00e4 01       		.byte	0x1
+ 708 00e5 05       		.byte	0x5
+ 709 00e6 03       		.byte	0x3
+ 710 00e7 00000000 		.4byte	cy_meta_wonvl
+ 711 00eb 08       		.uleb128 0x8
+ 712 00ec B2000000 		.4byte	0xb2
+ 713 00f0 05       		.uleb128 0x5
+ 714 00f1 63000000 		.4byte	0x63
+ 715 00f5 00010000 		.4byte	0x100
+ 716 00f9 09       		.uleb128 0x9
+ 717 00fa 94000000 		.4byte	0x94
+ 718 00fe FF       		.byte	0xff
+ 719 00ff 00       		.byte	0
+ 720 0100 07       		.uleb128 0x7
+ 721 0101 B8000000 		.4byte	.LASF16
+ 722 0105 01       		.byte	0x1
+ 723 0106 7D       		.byte	0x7d
+ 724 0107 12010000 		.4byte	0x112
+ 725 010b 01       		.byte	0x1
+ 726 010c 05       		.byte	0x5
+ 727 010d 03       		.byte	0x3
+ 728 010e 00000000 		.4byte	cy_meta_flashprotect
+ 729 0112 08       		.uleb128 0x8
+ 730 0113 F0000000 		.4byte	0xf0
+ 731 0117 05       		.uleb128 0x5
+ 732 0118 63000000 		.4byte	0x63
+ 733 011c 27010000 		.4byte	0x127
+ 734 0120 09       		.uleb128 0x9
+ 735 0121 94000000 		.4byte	0x94
+ 736 0125 0B       		.byte	0xb
+ 737 0126 00       		.byte	0
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFDDrPY.s 			page 14
+
+
+ 738 0127 07       		.uleb128 0x7
+ 739 0128 26000000 		.4byte	.LASF17
+ 740 012c 01       		.byte	0x1
+ 741 012d A7       		.byte	0xa7
+ 742 012e 39010000 		.4byte	0x139
+ 743 0132 01       		.byte	0x1
+ 744 0133 05       		.byte	0x5
+ 745 0134 03       		.byte	0x3
+ 746 0135 00000000 		.4byte	cy_metadata
+ 747 0139 08       		.uleb128 0x8
+ 748 013a 17010000 		.4byte	0x117
+ 749 013e 00       		.byte	0
+ 750              		.section	.debug_abbrev,"",%progbits
+ 751              	.Ldebug_abbrev0:
+ 752 0000 01       		.uleb128 0x1
+ 753 0001 11       		.uleb128 0x11
+ 754 0002 01       		.byte	0x1
+ 755 0003 25       		.uleb128 0x25
+ 756 0004 0E       		.uleb128 0xe
+ 757 0005 13       		.uleb128 0x13
+ 758 0006 0B       		.uleb128 0xb
+ 759 0007 03       		.uleb128 0x3
+ 760 0008 0E       		.uleb128 0xe
+ 761 0009 1B       		.uleb128 0x1b
+ 762 000a 0E       		.uleb128 0xe
+ 763 000b 10       		.uleb128 0x10
+ 764 000c 06       		.uleb128 0x6
+ 765 000d 00       		.byte	0
+ 766 000e 00       		.byte	0
+ 767 000f 02       		.uleb128 0x2
+ 768 0010 24       		.uleb128 0x24
+ 769 0011 00       		.byte	0
+ 770 0012 0B       		.uleb128 0xb
+ 771 0013 0B       		.uleb128 0xb
+ 772 0014 3E       		.uleb128 0x3e
+ 773 0015 0B       		.uleb128 0xb
+ 774 0016 03       		.uleb128 0x3
+ 775 0017 0E       		.uleb128 0xe
+ 776 0018 00       		.byte	0
+ 777 0019 00       		.byte	0
+ 778 001a 03       		.uleb128 0x3
+ 779 001b 24       		.uleb128 0x24
+ 780 001c 00       		.byte	0
+ 781 001d 0B       		.uleb128 0xb
+ 782 001e 0B       		.uleb128 0xb
+ 783 001f 3E       		.uleb128 0x3e
+ 784 0020 0B       		.uleb128 0xb
+ 785 0021 03       		.uleb128 0x3
+ 786 0022 08       		.uleb128 0x8
+ 787 0023 00       		.byte	0
+ 788 0024 00       		.byte	0
+ 789 0025 04       		.uleb128 0x4
+ 790 0026 16       		.uleb128 0x16
+ 791 0027 00       		.byte	0
+ 792 0028 03       		.uleb128 0x3
+ 793 0029 0E       		.uleb128 0xe
+ 794 002a 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFDDrPY.s 			page 15
+
+
+ 795 002b 0B       		.uleb128 0xb
+ 796 002c 3B       		.uleb128 0x3b
+ 797 002d 0B       		.uleb128 0xb
+ 798 002e 49       		.uleb128 0x49
+ 799 002f 13       		.uleb128 0x13
+ 800 0030 00       		.byte	0
+ 801 0031 00       		.byte	0
+ 802 0032 05       		.uleb128 0x5
+ 803 0033 01       		.uleb128 0x1
+ 804 0034 01       		.byte	0x1
+ 805 0035 49       		.uleb128 0x49
+ 806 0036 13       		.uleb128 0x13
+ 807 0037 01       		.uleb128 0x1
+ 808 0038 13       		.uleb128 0x13
+ 809 0039 00       		.byte	0
+ 810 003a 00       		.byte	0
+ 811 003b 06       		.uleb128 0x6
+ 812 003c 21       		.uleb128 0x21
+ 813 003d 00       		.byte	0
+ 814 003e 49       		.uleb128 0x49
+ 815 003f 13       		.uleb128 0x13
+ 816 0040 2F       		.uleb128 0x2f
+ 817 0041 05       		.uleb128 0x5
+ 818 0042 00       		.byte	0
+ 819 0043 00       		.byte	0
+ 820 0044 07       		.uleb128 0x7
+ 821 0045 34       		.uleb128 0x34
+ 822 0046 00       		.byte	0
+ 823 0047 03       		.uleb128 0x3
+ 824 0048 0E       		.uleb128 0xe
+ 825 0049 3A       		.uleb128 0x3a
+ 826 004a 0B       		.uleb128 0xb
+ 827 004b 3B       		.uleb128 0x3b
+ 828 004c 0B       		.uleb128 0xb
+ 829 004d 49       		.uleb128 0x49
+ 830 004e 13       		.uleb128 0x13
+ 831 004f 3F       		.uleb128 0x3f
+ 832 0050 0C       		.uleb128 0xc
+ 833 0051 02       		.uleb128 0x2
+ 834 0052 0A       		.uleb128 0xa
+ 835 0053 00       		.byte	0
+ 836 0054 00       		.byte	0
+ 837 0055 08       		.uleb128 0x8
+ 838 0056 26       		.uleb128 0x26
+ 839 0057 00       		.byte	0
+ 840 0058 49       		.uleb128 0x49
+ 841 0059 13       		.uleb128 0x13
+ 842 005a 00       		.byte	0
+ 843 005b 00       		.byte	0
+ 844 005c 09       		.uleb128 0x9
+ 845 005d 21       		.uleb128 0x21
+ 846 005e 00       		.byte	0
+ 847 005f 49       		.uleb128 0x49
+ 848 0060 13       		.uleb128 0x13
+ 849 0061 2F       		.uleb128 0x2f
+ 850 0062 0B       		.uleb128 0xb
+ 851 0063 00       		.byte	0
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFDDrPY.s 			page 16
+
+
+ 852 0064 00       		.byte	0
+ 853 0065 00       		.byte	0
+ 854              		.section	.debug_aranges,"",%progbits
+ 855 0000 14000000 		.4byte	0x14
+ 856 0004 0200     		.2byte	0x2
+ 857 0006 00000000 		.4byte	.Ldebug_info0
+ 858 000a 04       		.byte	0x4
+ 859 000b 00       		.byte	0
+ 860 000c 0000     		.2byte	0
+ 861 000e 0000     		.2byte	0
+ 862 0010 00000000 		.4byte	0
+ 863 0014 00000000 		.4byte	0
+ 864              		.section	.debug_line,"",%progbits
+ 865              	.Ldebug_line0:
+ 866 0000 4F000000 		.section	.debug_str,"MS",%progbits,1
+ 866      02004900 
+ 866      00000201 
+ 866      FB0E0D00 
+ 866      01010101 
+ 867              	.LASF19:
+ 868 0000 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\cymetadata.c\000"
+ 868      6E657261 
+ 868      7465645F 
+ 868      536F7572 
+ 868      63655C50 
+ 869              	.LASF17:
+ 870 0026 63795F6D 		.ascii	"cy_metadata\000"
+ 870      65746164 
+ 870      61746100 
+ 871              	.LASF9:
+ 872 0032 666C6F61 		.ascii	"float\000"
+ 872      7400
+ 873              	.LASF1:
+ 874 0038 756E7369 		.ascii	"unsigned char\000"
+ 874      676E6564 
+ 874      20636861 
+ 874      7200
+ 875              	.LASF5:
+ 876 0046 6C6F6E67 		.ascii	"long unsigned int\000"
+ 876      20756E73 
+ 876      69676E65 
+ 876      6420696E 
+ 876      7400
+ 877              	.LASF3:
+ 878 0058 73686F72 		.ascii	"short unsigned int\000"
+ 878      7420756E 
+ 878      7369676E 
+ 878      65642069 
+ 878      6E7400
+ 879              	.LASF10:
+ 880 006b 646F7562 		.ascii	"double\000"
+ 880      6C6500
+ 881              	.LASF14:
+ 882 0072 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 882      6574615F 
+ 882      63757374 
+ 882      6E766C00 
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFDDrPY.s 			page 17
+
+
+ 883              	.LASF13:
+ 884 0082 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 884      6574615F 
+ 884      636F6E66 
+ 884      69676563 
+ 884      6300
+ 885              	.LASF8:
+ 886 0094 756E7369 		.ascii	"unsigned int\000"
+ 886      676E6564 
+ 886      20696E74 
+ 886      00
+ 887              	.LASF7:
+ 888 00a1 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 888      206C6F6E 
+ 888      6720756E 
+ 888      7369676E 
+ 888      65642069 
+ 889              	.LASF16:
+ 890 00b8 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 890      6574615F 
+ 890      666C6173 
+ 890      6870726F 
+ 890      74656374 
+ 891              	.LASF15:
+ 892 00cd 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 892      6574615F 
+ 892      776F6E76 
+ 892      6C00
+ 893              	.LASF12:
+ 894 00db 73697A65 		.ascii	"sizetype\000"
+ 894      74797065 
+ 894      00
+ 895              	.LASF6:
+ 896 00e4 6C6F6E67 		.ascii	"long long int\000"
+ 896      206C6F6E 
+ 896      6720696E 
+ 896      7400
+ 897              	.LASF11:
+ 898 00f2 63686172 		.ascii	"char\000"
+ 898      00
+ 899              	.LASF2:
+ 900 00f7 73686F72 		.ascii	"short int\000"
+ 900      7420696E 
+ 900      7400
+ 901              	.LASF20:
+ 902 0101 433A5C55 		.ascii	"C:\\Users\\chuck.erhardt\\Documents\\PSoC Creator\\"
+ 902      73657273 
+ 902      5C636875 
+ 902      636B2E65 
+ 902      72686172 
+ 903 012f 4532466F 		.ascii	"E2ForLife\\freeSoCExplorer+ArduinoSheld_Example.cyd"
+ 903      724C6966 
+ 903      655C6672 
+ 903      6565536F 
+ 903      43457870 
+ 904 0161 736E00   		.ascii	"sn\000"
+ 905              	.LASF21:
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFDDrPY.s 			page 18
+
+
+ 906 0164 75696E74 		.ascii	"uint8\000"
+ 906      3800
+ 907              	.LASF18:
+ 908 016a 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 908      4320342E 
+ 908      372E3320 
+ 908      32303133 
+ 908      30333132 
+ 909 019d 616E6368 		.ascii	"anch revision 196615]\000"
+ 909      20726576 
+ 909      6973696F 
+ 909      6E203139 
+ 909      36363135 
+ 910              	.LASF4:
+ 911 01b3 6C6F6E67 		.ascii	"long int\000"
+ 911      20696E74 
+ 911      00
+ 912              	.LASF0:
+ 913 01bc 7369676E 		.ascii	"signed char\000"
+ 913      65642063 
+ 913      68617200 
+ 914              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

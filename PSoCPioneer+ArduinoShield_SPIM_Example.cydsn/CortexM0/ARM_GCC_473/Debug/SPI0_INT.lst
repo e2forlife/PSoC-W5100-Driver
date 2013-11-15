@@ -1,0 +1,614 @@
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccvVUxlP.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"SPI0_INT.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.SPI0_TX_ISR,"ax",%progbits
+  18              		.align	2
+  19              		.global	SPI0_TX_ISR
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	SPI0_TX_ISR, %function
+  23              	SPI0_TX_ISR:
+  24              	.LFB0:
+  25              		.file 1 ".\\Generated_Source\\PSoC4\\SPI0_INT.c"
+   1:.\Generated_Source\PSoC4/SPI0_INT.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC4/SPI0_INT.c **** * File Name: SPI0_INT.c
+   3:.\Generated_Source\PSoC4/SPI0_INT.c **** * Version 2.40
+   4:.\Generated_Source\PSoC4/SPI0_INT.c **** *
+   5:.\Generated_Source\PSoC4/SPI0_INT.c **** * Description:
+   6:.\Generated_Source\PSoC4/SPI0_INT.c **** *  This file provides all Interrupt Service Routine (ISR) for the SPI Master
+   7:.\Generated_Source\PSoC4/SPI0_INT.c **** *  component.
+   8:.\Generated_Source\PSoC4/SPI0_INT.c **** *
+   9:.\Generated_Source\PSoC4/SPI0_INT.c **** * Note:
+  10:.\Generated_Source\PSoC4/SPI0_INT.c **** *  None.
+  11:.\Generated_Source\PSoC4/SPI0_INT.c **** *
+  12:.\Generated_Source\PSoC4/SPI0_INT.c **** ********************************************************************************
+  13:.\Generated_Source\PSoC4/SPI0_INT.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  14:.\Generated_Source\PSoC4/SPI0_INT.c **** * You may use this file only in accordance with the license, terms, conditions,
+  15:.\Generated_Source\PSoC4/SPI0_INT.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  16:.\Generated_Source\PSoC4/SPI0_INT.c **** * the software package with which this file was provided.
+  17:.\Generated_Source\PSoC4/SPI0_INT.c **** *******************************************************************************/
+  18:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+  19:.\Generated_Source\PSoC4/SPI0_INT.c **** #include "SPI0_PVT.h"
+  20:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+  21:.\Generated_Source\PSoC4/SPI0_INT.c **** /* User code required at start of ISR */
+  22:.\Generated_Source\PSoC4/SPI0_INT.c **** /* `#START SPI0_ISR_START_DEF` */
+  23:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+  24:.\Generated_Source\PSoC4/SPI0_INT.c **** /* `#END` */
+  25:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+  26:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+  27:.\Generated_Source\PSoC4/SPI0_INT.c **** /*******************************************************************************
+  28:.\Generated_Source\PSoC4/SPI0_INT.c **** * Function Name: SPI0_TX_ISR
+  29:.\Generated_Source\PSoC4/SPI0_INT.c **** ********************************************************************************
+  30:.\Generated_Source\PSoC4/SPI0_INT.c **** *
+  31:.\Generated_Source\PSoC4/SPI0_INT.c **** * Summary:
+  32:.\Generated_Source\PSoC4/SPI0_INT.c **** *  Interrupt Service Routine for TX portion of the SPI Master.
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccvVUxlP.s 			page 2
+
+
+  33:.\Generated_Source\PSoC4/SPI0_INT.c **** *
+  34:.\Generated_Source\PSoC4/SPI0_INT.c **** * Parameters:
+  35:.\Generated_Source\PSoC4/SPI0_INT.c **** *  None.
+  36:.\Generated_Source\PSoC4/SPI0_INT.c **** *
+  37:.\Generated_Source\PSoC4/SPI0_INT.c **** * Return:
+  38:.\Generated_Source\PSoC4/SPI0_INT.c **** *  None.
+  39:.\Generated_Source\PSoC4/SPI0_INT.c **** *
+  40:.\Generated_Source\PSoC4/SPI0_INT.c **** * Global variables:
+  41:.\Generated_Source\PSoC4/SPI0_INT.c **** *  SPI0_txBufferWrite - used for the account of the bytes which
+  42:.\Generated_Source\PSoC4/SPI0_INT.c **** *  have been written down in the TX software buffer.
+  43:.\Generated_Source\PSoC4/SPI0_INT.c **** *  SPI0_txBufferRead - used for the account of the bytes which
+  44:.\Generated_Source\PSoC4/SPI0_INT.c **** *  have been read from the TX software buffer, modified when exist data to
+  45:.\Generated_Source\PSoC4/SPI0_INT.c **** *  sending and FIFO Not Full.
+  46:.\Generated_Source\PSoC4/SPI0_INT.c **** *  SPI0_txBuffer[SPI0_TX_BUFFER_SIZE] - used to store
+  47:.\Generated_Source\PSoC4/SPI0_INT.c **** *  data to sending.
+  48:.\Generated_Source\PSoC4/SPI0_INT.c **** *  All described above Global variables are used when Software Buffer is used.
+  49:.\Generated_Source\PSoC4/SPI0_INT.c **** *
+  50:.\Generated_Source\PSoC4/SPI0_INT.c **** *******************************************************************************/
+  51:.\Generated_Source\PSoC4/SPI0_INT.c **** CY_ISR(SPI0_TX_ISR)
+  52:.\Generated_Source\PSoC4/SPI0_INT.c **** {
+  26              		.loc 1 52 0
+  27              		.cfi_startproc
+  28 0000 80B5     		push	{r7, lr}
+  29              	.LCFI0:
+  30              		.cfi_def_cfa_offset 8
+  31              		.cfi_offset 7, -8
+  32              		.cfi_offset 14, -4
+  33 0002 00AF     		add	r7, sp, #0
+  34              	.LCFI1:
+  35              		.cfi_def_cfa_register 7
+  53:.\Generated_Source\PSoC4/SPI0_INT.c ****     #if(SPI0_TX_SOFTWARE_BUF_ENABLED)
+  54:.\Generated_Source\PSoC4/SPI0_INT.c ****         uint8 tmpStatus;
+  55:.\Generated_Source\PSoC4/SPI0_INT.c ****     #endif /* (SPI0_TX_SOFTWARE_BUF_ENABLED) */
+  56:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+  57:.\Generated_Source\PSoC4/SPI0_INT.c ****     /* User code required at start of ISR */
+  58:.\Generated_Source\PSoC4/SPI0_INT.c ****     /* `#START SPI0_TX_ISR_START` */
+  59:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+  60:.\Generated_Source\PSoC4/SPI0_INT.c ****     /* `#END` */
+  61:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+  62:.\Generated_Source\PSoC4/SPI0_INT.c ****     #if(SPI0_TX_SOFTWARE_BUF_ENABLED)
+  63:.\Generated_Source\PSoC4/SPI0_INT.c ****         /* Check if TX data buffer is not empty and there is space in TX FIFO */
+  64:.\Generated_Source\PSoC4/SPI0_INT.c ****         while(SPI0_txBufferRead != SPI0_txBufferWrite)
+  65:.\Generated_Source\PSoC4/SPI0_INT.c ****         {
+  66:.\Generated_Source\PSoC4/SPI0_INT.c ****             tmpStatus = SPI0_GET_STATUS_TX(SPI0_swStatusTx);
+  67:.\Generated_Source\PSoC4/SPI0_INT.c ****             SPI0_swStatusTx = tmpStatus;
+  68:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+  69:.\Generated_Source\PSoC4/SPI0_INT.c ****             if(0u != (SPI0_swStatusTx & SPI0_STS_TX_FIFO_NOT_FULL))
+  70:.\Generated_Source\PSoC4/SPI0_INT.c ****             {
+  71:.\Generated_Source\PSoC4/SPI0_INT.c ****                 if(0u == SPI0_txBufferFull)
+  72:.\Generated_Source\PSoC4/SPI0_INT.c ****                 {
+  73:.\Generated_Source\PSoC4/SPI0_INT.c ****                    SPI0_txBufferRead++;
+  74:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+  75:.\Generated_Source\PSoC4/SPI0_INT.c ****                     if(SPI0_txBufferRead >= SPI0_TX_BUFFER_SIZE)
+  76:.\Generated_Source\PSoC4/SPI0_INT.c ****                     {
+  77:.\Generated_Source\PSoC4/SPI0_INT.c ****                         SPI0_txBufferRead = 0u;
+  78:.\Generated_Source\PSoC4/SPI0_INT.c ****                     }
+  79:.\Generated_Source\PSoC4/SPI0_INT.c ****                 }
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccvVUxlP.s 			page 3
+
+
+  80:.\Generated_Source\PSoC4/SPI0_INT.c ****                 else
+  81:.\Generated_Source\PSoC4/SPI0_INT.c ****                 {
+  82:.\Generated_Source\PSoC4/SPI0_INT.c ****                     SPI0_txBufferFull = 0u;
+  83:.\Generated_Source\PSoC4/SPI0_INT.c ****                 }
+  84:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+  85:.\Generated_Source\PSoC4/SPI0_INT.c ****                 /* Move data from the Buffer to the FIFO */
+  86:.\Generated_Source\PSoC4/SPI0_INT.c ****                 CY_SET_REG8(SPI0_TXDATA_PTR,
+  87:.\Generated_Source\PSoC4/SPI0_INT.c ****                     SPI0_txBuffer[SPI0_txBufferRead]);
+  88:.\Generated_Source\PSoC4/SPI0_INT.c ****             }
+  89:.\Generated_Source\PSoC4/SPI0_INT.c ****             else
+  90:.\Generated_Source\PSoC4/SPI0_INT.c ****             {
+  91:.\Generated_Source\PSoC4/SPI0_INT.c ****                 break;
+  92:.\Generated_Source\PSoC4/SPI0_INT.c ****             }
+  93:.\Generated_Source\PSoC4/SPI0_INT.c ****         }
+  94:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+  95:.\Generated_Source\PSoC4/SPI0_INT.c ****         if(SPI0_txBufferRead == SPI0_txBufferWrite)
+  96:.\Generated_Source\PSoC4/SPI0_INT.c ****         {
+  97:.\Generated_Source\PSoC4/SPI0_INT.c ****             /* TX Buffer is EMPTY: disable interrupt on TX NOT FULL */
+  98:.\Generated_Source\PSoC4/SPI0_INT.c ****             SPI0_TX_STATUS_MASK_REG &= ((uint8) ~SPI0_STS_TX_FIFO_NOT_FULL);
+  99:.\Generated_Source\PSoC4/SPI0_INT.c ****         }
+ 100:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+ 101:.\Generated_Source\PSoC4/SPI0_INT.c ****     #endif /* (SPI0_TX_SOFTWARE_BUF_ENABLED) */
+ 102:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+ 103:.\Generated_Source\PSoC4/SPI0_INT.c ****     /* User code required at end of ISR (Optional) */
+ 104:.\Generated_Source\PSoC4/SPI0_INT.c ****     /* `#START SPI0_TX_ISR_END` */
+ 105:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+ 106:.\Generated_Source\PSoC4/SPI0_INT.c ****     /* `#END` */
+ 107:.\Generated_Source\PSoC4/SPI0_INT.c **** }
+  36              		.loc 1 107 0
+  37 0004 BD46     		mov	sp, r7
+  38              		@ sp needed for prologue
+  39 0006 80BD     		pop	{r7, pc}
+  40              		.cfi_endproc
+  41              	.LFE0:
+  42              		.size	SPI0_TX_ISR, .-SPI0_TX_ISR
+  43              		.section	.text.SPI0_RX_ISR,"ax",%progbits
+  44              		.align	2
+  45              		.global	SPI0_RX_ISR
+  46              		.code	16
+  47              		.thumb_func
+  48              		.type	SPI0_RX_ISR, %function
+  49              	SPI0_RX_ISR:
+  50              	.LFB1:
+ 108:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+ 109:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+ 110:.\Generated_Source\PSoC4/SPI0_INT.c **** /*******************************************************************************
+ 111:.\Generated_Source\PSoC4/SPI0_INT.c **** * Function Name: SPI0_RX_ISR
+ 112:.\Generated_Source\PSoC4/SPI0_INT.c **** ********************************************************************************
+ 113:.\Generated_Source\PSoC4/SPI0_INT.c **** *
+ 114:.\Generated_Source\PSoC4/SPI0_INT.c **** * Summary:
+ 115:.\Generated_Source\PSoC4/SPI0_INT.c **** *  Interrupt Service Routine for RX portion of the SPI Master.
+ 116:.\Generated_Source\PSoC4/SPI0_INT.c **** *
+ 117:.\Generated_Source\PSoC4/SPI0_INT.c **** * Parameters:
+ 118:.\Generated_Source\PSoC4/SPI0_INT.c **** *  None.
+ 119:.\Generated_Source\PSoC4/SPI0_INT.c **** *
+ 120:.\Generated_Source\PSoC4/SPI0_INT.c **** * Return:
+ 121:.\Generated_Source\PSoC4/SPI0_INT.c **** *  None.
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccvVUxlP.s 			page 4
+
+
+ 122:.\Generated_Source\PSoC4/SPI0_INT.c **** *
+ 123:.\Generated_Source\PSoC4/SPI0_INT.c **** * Global variables:
+ 124:.\Generated_Source\PSoC4/SPI0_INT.c **** *  SPI0_rxBufferWrite - used for the account of the bytes which
+ 125:.\Generated_Source\PSoC4/SPI0_INT.c **** *  have been written down in the RX software buffer modified when FIFO contains
+ 126:.\Generated_Source\PSoC4/SPI0_INT.c **** *  new data.
+ 127:.\Generated_Source\PSoC4/SPI0_INT.c **** *  SPI0_rxBufferRead - used for the account of the bytes which
+ 128:.\Generated_Source\PSoC4/SPI0_INT.c **** *  have been read from the RX software buffer, modified when overflow occurred.
+ 129:.\Generated_Source\PSoC4/SPI0_INT.c **** *  SPI0_rxBuffer[SPI0_RX_BUFFER_SIZE] - used to store
+ 130:.\Generated_Source\PSoC4/SPI0_INT.c **** *  received data, modified when FIFO contains new data.
+ 131:.\Generated_Source\PSoC4/SPI0_INT.c **** *  All described above Global variables are used when Software Buffer is used.
+ 132:.\Generated_Source\PSoC4/SPI0_INT.c **** *
+ 133:.\Generated_Source\PSoC4/SPI0_INT.c **** *******************************************************************************/
+ 134:.\Generated_Source\PSoC4/SPI0_INT.c **** CY_ISR(SPI0_RX_ISR)
+ 135:.\Generated_Source\PSoC4/SPI0_INT.c **** {
+  51              		.loc 1 135 0
+  52              		.cfi_startproc
+  53 0000 80B5     		push	{r7, lr}
+  54              	.LCFI2:
+  55              		.cfi_def_cfa_offset 8
+  56              		.cfi_offset 7, -8
+  57              		.cfi_offset 14, -4
+  58 0002 00AF     		add	r7, sp, #0
+  59              	.LCFI3:
+  60              		.cfi_def_cfa_register 7
+ 136:.\Generated_Source\PSoC4/SPI0_INT.c ****     #if(SPI0_RX_SOFTWARE_BUF_ENABLED)
+ 137:.\Generated_Source\PSoC4/SPI0_INT.c ****         uint8 tmpStatus;
+ 138:.\Generated_Source\PSoC4/SPI0_INT.c ****         uint8 rxData;
+ 139:.\Generated_Source\PSoC4/SPI0_INT.c ****     #endif /* (SPI0_RX_SOFTWARE_BUF_ENABLED) */
+ 140:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+ 141:.\Generated_Source\PSoC4/SPI0_INT.c ****     /* User code required at start of ISR */
+ 142:.\Generated_Source\PSoC4/SPI0_INT.c ****     /* `#START SPI0_RX_ISR_START` */
+ 143:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+ 144:.\Generated_Source\PSoC4/SPI0_INT.c ****     /* `#END` */
+ 145:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+ 146:.\Generated_Source\PSoC4/SPI0_INT.c ****     #if(SPI0_RX_SOFTWARE_BUF_ENABLED)
+ 147:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+ 148:.\Generated_Source\PSoC4/SPI0_INT.c ****         tmpStatus = SPI0_GET_STATUS_RX(SPI0_swStatusRx);
+ 149:.\Generated_Source\PSoC4/SPI0_INT.c ****         SPI0_swStatusRx = tmpStatus;
+ 150:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+ 151:.\Generated_Source\PSoC4/SPI0_INT.c ****         /* Check if RX data FIFO has some data to be moved into the RX Buffer */
+ 152:.\Generated_Source\PSoC4/SPI0_INT.c ****         while(0u != (SPI0_swStatusRx & SPI0_STS_RX_FIFO_NOT_EMPTY))
+ 153:.\Generated_Source\PSoC4/SPI0_INT.c ****         {
+ 154:.\Generated_Source\PSoC4/SPI0_INT.c ****             rxData = CY_GET_REG8(SPI0_RXDATA_PTR);
+ 155:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+ 156:.\Generated_Source\PSoC4/SPI0_INT.c ****             /* Set next pointer. */
+ 157:.\Generated_Source\PSoC4/SPI0_INT.c ****             SPI0_rxBufferWrite++;
+ 158:.\Generated_Source\PSoC4/SPI0_INT.c ****             if(SPI0_rxBufferWrite >= SPI0_RX_BUFFER_SIZE)
+ 159:.\Generated_Source\PSoC4/SPI0_INT.c ****             {
+ 160:.\Generated_Source\PSoC4/SPI0_INT.c ****                 SPI0_rxBufferWrite = 0u;
+ 161:.\Generated_Source\PSoC4/SPI0_INT.c ****             }
+ 162:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+ 163:.\Generated_Source\PSoC4/SPI0_INT.c ****             if(SPI0_rxBufferWrite == SPI0_rxBufferRead)
+ 164:.\Generated_Source\PSoC4/SPI0_INT.c ****             {
+ 165:.\Generated_Source\PSoC4/SPI0_INT.c ****                 SPI0_rxBufferRead++;
+ 166:.\Generated_Source\PSoC4/SPI0_INT.c ****                 if(SPI0_rxBufferRead >= SPI0_RX_BUFFER_SIZE)
+ 167:.\Generated_Source\PSoC4/SPI0_INT.c ****                 {
+ 168:.\Generated_Source\PSoC4/SPI0_INT.c ****                     SPI0_rxBufferRead = 0u;
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccvVUxlP.s 			page 5
+
+
+ 169:.\Generated_Source\PSoC4/SPI0_INT.c ****                 }
+ 170:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+ 171:.\Generated_Source\PSoC4/SPI0_INT.c ****                 SPI0_rxBufferFull = 1u;
+ 172:.\Generated_Source\PSoC4/SPI0_INT.c ****             }
+ 173:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+ 174:.\Generated_Source\PSoC4/SPI0_INT.c ****             /* Move data from the FIFO to the Buffer */
+ 175:.\Generated_Source\PSoC4/SPI0_INT.c ****             SPI0_rxBuffer[SPI0_rxBufferWrite] = rxData;
+ 176:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+ 177:.\Generated_Source\PSoC4/SPI0_INT.c ****             tmpStatus = SPI0_GET_STATUS_RX(SPI0_swStatusRx);
+ 178:.\Generated_Source\PSoC4/SPI0_INT.c ****             SPI0_swStatusRx = tmpStatus;
+ 179:.\Generated_Source\PSoC4/SPI0_INT.c ****         }
+ 180:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+ 181:.\Generated_Source\PSoC4/SPI0_INT.c ****     #endif /* (SPI0_RX_SOFTWARE_BUF_ENABLED) */
+ 182:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+ 183:.\Generated_Source\PSoC4/SPI0_INT.c ****     /* User code required at end of ISR (Optional) */
+ 184:.\Generated_Source\PSoC4/SPI0_INT.c ****     /* `#START SPI0_RX_ISR_END` */
+ 185:.\Generated_Source\PSoC4/SPI0_INT.c **** 
+ 186:.\Generated_Source\PSoC4/SPI0_INT.c ****     /* `#END` */
+ 187:.\Generated_Source\PSoC4/SPI0_INT.c **** }
+  61              		.loc 1 187 0
+  62 0004 BD46     		mov	sp, r7
+  63              		@ sp needed for prologue
+  64 0006 80BD     		pop	{r7, pc}
+  65              		.cfi_endproc
+  66              	.LFE1:
+  67              		.size	SPI0_RX_ISR, .-SPI0_RX_ISR
+  68              		.text
+  69              	.Letext0:
+  70              		.section	.debug_info,"",%progbits
+  71              	.Ldebug_info0:
+  72 0000 B4000000 		.4byte	0xb4
+  73 0004 0200     		.2byte	0x2
+  74 0006 00000000 		.4byte	.Ldebug_abbrev0
+  75 000a 04       		.byte	0x4
+  76 000b 01       		.uleb128 0x1
+  77 000c CD000000 		.4byte	.LASF15
+  78 0010 01       		.byte	0x1
+  79 0011 1B000000 		.4byte	.LASF16
+  80 0015 3F000000 		.4byte	.LASF17
+  81 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  82 001d 00000000 		.4byte	0
+  83 0021 00000000 		.4byte	0
+  84 0025 00000000 		.4byte	.Ldebug_line0
+  85 0029 02       		.uleb128 0x2
+  86 002a 01       		.byte	0x1
+  87 002b 06       		.byte	0x6
+  88 002c 64010000 		.4byte	.LASF0
+  89 0030 02       		.uleb128 0x2
+  90 0031 01       		.byte	0x1
+  91 0032 08       		.byte	0x8
+  92 0033 2E010000 		.4byte	.LASF1
+  93 0037 02       		.uleb128 0x2
+  94 0038 02       		.byte	0x2
+  95 0039 05       		.byte	0x5
+  96 003a 76010000 		.4byte	.LASF2
+  97 003e 02       		.uleb128 0x2
+  98 003f 02       		.byte	0x2
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccvVUxlP.s 			page 6
+
+
+  99 0040 07       		.byte	0x7
+ 100 0041 51010000 		.4byte	.LASF3
+ 101 0045 02       		.uleb128 0x2
+ 102 0046 04       		.byte	0x4
+ 103 0047 05       		.byte	0x5
+ 104 0048 41010000 		.4byte	.LASF4
+ 105 004c 02       		.uleb128 0x2
+ 106 004d 04       		.byte	0x4
+ 107 004e 07       		.byte	0x7
+ 108 004f A4000000 		.4byte	.LASF5
+ 109 0053 02       		.uleb128 0x2
+ 110 0054 08       		.byte	0x8
+ 111 0055 05       		.byte	0x5
+ 112 0056 00000000 		.4byte	.LASF6
+ 113 005a 02       		.uleb128 0x2
+ 114 005b 08       		.byte	0x8
+ 115 005c 07       		.byte	0x7
+ 116 005d B6000000 		.4byte	.LASF7
+ 117 0061 03       		.uleb128 0x3
+ 118 0062 04       		.byte	0x4
+ 119 0063 05       		.byte	0x5
+ 120 0064 696E7400 		.ascii	"int\000"
+ 121 0068 02       		.uleb128 0x2
+ 122 0069 04       		.byte	0x4
+ 123 006a 07       		.byte	0x7
+ 124 006b 0E000000 		.4byte	.LASF8
+ 125 006f 02       		.uleb128 0x2
+ 126 0070 04       		.byte	0x4
+ 127 0071 04       		.byte	0x4
+ 128 0072 70010000 		.4byte	.LASF9
+ 129 0076 02       		.uleb128 0x2
+ 130 0077 08       		.byte	0x8
+ 131 0078 04       		.byte	0x4
+ 132 0079 4A010000 		.4byte	.LASF10
+ 133 007d 02       		.uleb128 0x2
+ 134 007e 01       		.byte	0x1
+ 135 007f 08       		.byte	0x8
+ 136 0080 3C010000 		.4byte	.LASF11
+ 137 0084 02       		.uleb128 0x2
+ 138 0085 04       		.byte	0x4
+ 139 0086 07       		.byte	0x7
+ 140 0087 80010000 		.4byte	.LASF12
+ 141 008b 04       		.uleb128 0x4
+ 142 008c 01       		.byte	0x1
+ 143 008d 22010000 		.4byte	.LASF13
+ 144 0091 01       		.byte	0x1
+ 145 0092 33       		.byte	0x33
+ 146 0093 01       		.byte	0x1
+ 147 0094 00000000 		.4byte	.LFB0
+ 148 0098 08000000 		.4byte	.LFE0
+ 149 009c 00000000 		.4byte	.LLST0
+ 150 00a0 01       		.byte	0x1
+ 151 00a1 04       		.uleb128 0x4
+ 152 00a2 01       		.byte	0x1
+ 153 00a3 16010000 		.4byte	.LASF14
+ 154 00a7 01       		.byte	0x1
+ 155 00a8 86       		.byte	0x86
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccvVUxlP.s 			page 7
+
+
+ 156 00a9 01       		.byte	0x1
+ 157 00aa 00000000 		.4byte	.LFB1
+ 158 00ae 08000000 		.4byte	.LFE1
+ 159 00b2 2C000000 		.4byte	.LLST1
+ 160 00b6 01       		.byte	0x1
+ 161 00b7 00       		.byte	0
+ 162              		.section	.debug_abbrev,"",%progbits
+ 163              	.Ldebug_abbrev0:
+ 164 0000 01       		.uleb128 0x1
+ 165 0001 11       		.uleb128 0x11
+ 166 0002 01       		.byte	0x1
+ 167 0003 25       		.uleb128 0x25
+ 168 0004 0E       		.uleb128 0xe
+ 169 0005 13       		.uleb128 0x13
+ 170 0006 0B       		.uleb128 0xb
+ 171 0007 03       		.uleb128 0x3
+ 172 0008 0E       		.uleb128 0xe
+ 173 0009 1B       		.uleb128 0x1b
+ 174 000a 0E       		.uleb128 0xe
+ 175 000b 55       		.uleb128 0x55
+ 176 000c 06       		.uleb128 0x6
+ 177 000d 11       		.uleb128 0x11
+ 178 000e 01       		.uleb128 0x1
+ 179 000f 52       		.uleb128 0x52
+ 180 0010 01       		.uleb128 0x1
+ 181 0011 10       		.uleb128 0x10
+ 182 0012 06       		.uleb128 0x6
+ 183 0013 00       		.byte	0
+ 184 0014 00       		.byte	0
+ 185 0015 02       		.uleb128 0x2
+ 186 0016 24       		.uleb128 0x24
+ 187 0017 00       		.byte	0
+ 188 0018 0B       		.uleb128 0xb
+ 189 0019 0B       		.uleb128 0xb
+ 190 001a 3E       		.uleb128 0x3e
+ 191 001b 0B       		.uleb128 0xb
+ 192 001c 03       		.uleb128 0x3
+ 193 001d 0E       		.uleb128 0xe
+ 194 001e 00       		.byte	0
+ 195 001f 00       		.byte	0
+ 196 0020 03       		.uleb128 0x3
+ 197 0021 24       		.uleb128 0x24
+ 198 0022 00       		.byte	0
+ 199 0023 0B       		.uleb128 0xb
+ 200 0024 0B       		.uleb128 0xb
+ 201 0025 3E       		.uleb128 0x3e
+ 202 0026 0B       		.uleb128 0xb
+ 203 0027 03       		.uleb128 0x3
+ 204 0028 08       		.uleb128 0x8
+ 205 0029 00       		.byte	0
+ 206 002a 00       		.byte	0
+ 207 002b 04       		.uleb128 0x4
+ 208 002c 2E       		.uleb128 0x2e
+ 209 002d 00       		.byte	0
+ 210 002e 3F       		.uleb128 0x3f
+ 211 002f 0C       		.uleb128 0xc
+ 212 0030 03       		.uleb128 0x3
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccvVUxlP.s 			page 8
+
+
+ 213 0031 0E       		.uleb128 0xe
+ 214 0032 3A       		.uleb128 0x3a
+ 215 0033 0B       		.uleb128 0xb
+ 216 0034 3B       		.uleb128 0x3b
+ 217 0035 0B       		.uleb128 0xb
+ 218 0036 27       		.uleb128 0x27
+ 219 0037 0C       		.uleb128 0xc
+ 220 0038 11       		.uleb128 0x11
+ 221 0039 01       		.uleb128 0x1
+ 222 003a 12       		.uleb128 0x12
+ 223 003b 01       		.uleb128 0x1
+ 224 003c 40       		.uleb128 0x40
+ 225 003d 06       		.uleb128 0x6
+ 226 003e 9742     		.uleb128 0x2117
+ 227 0040 0C       		.uleb128 0xc
+ 228 0041 00       		.byte	0
+ 229 0042 00       		.byte	0
+ 230 0043 00       		.byte	0
+ 231              		.section	.debug_loc,"",%progbits
+ 232              	.Ldebug_loc0:
+ 233              	.LLST0:
+ 234 0000 00000000 		.4byte	.LFB0
+ 235 0004 02000000 		.4byte	.LCFI0
+ 236 0008 0200     		.2byte	0x2
+ 237 000a 7D       		.byte	0x7d
+ 238 000b 00       		.sleb128 0
+ 239 000c 02000000 		.4byte	.LCFI0
+ 240 0010 04000000 		.4byte	.LCFI1
+ 241 0014 0200     		.2byte	0x2
+ 242 0016 7D       		.byte	0x7d
+ 243 0017 08       		.sleb128 8
+ 244 0018 04000000 		.4byte	.LCFI1
+ 245 001c 08000000 		.4byte	.LFE0
+ 246 0020 0200     		.2byte	0x2
+ 247 0022 77       		.byte	0x77
+ 248 0023 08       		.sleb128 8
+ 249 0024 00000000 		.4byte	0
+ 250 0028 00000000 		.4byte	0
+ 251              	.LLST1:
+ 252 002c 00000000 		.4byte	.LFB1
+ 253 0030 02000000 		.4byte	.LCFI2
+ 254 0034 0200     		.2byte	0x2
+ 255 0036 7D       		.byte	0x7d
+ 256 0037 00       		.sleb128 0
+ 257 0038 02000000 		.4byte	.LCFI2
+ 258 003c 04000000 		.4byte	.LCFI3
+ 259 0040 0200     		.2byte	0x2
+ 260 0042 7D       		.byte	0x7d
+ 261 0043 08       		.sleb128 8
+ 262 0044 04000000 		.4byte	.LCFI3
+ 263 0048 08000000 		.4byte	.LFE1
+ 264 004c 0200     		.2byte	0x2
+ 265 004e 77       		.byte	0x77
+ 266 004f 08       		.sleb128 8
+ 267 0050 00000000 		.4byte	0
+ 268 0054 00000000 		.4byte	0
+ 269              		.section	.debug_aranges,"",%progbits
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccvVUxlP.s 			page 9
+
+
+ 270 0000 24000000 		.4byte	0x24
+ 271 0004 0200     		.2byte	0x2
+ 272 0006 00000000 		.4byte	.Ldebug_info0
+ 273 000a 04       		.byte	0x4
+ 274 000b 00       		.byte	0
+ 275 000c 0000     		.2byte	0
+ 276 000e 0000     		.2byte	0
+ 277 0010 00000000 		.4byte	.LFB0
+ 278 0014 08000000 		.4byte	.LFE0-.LFB0
+ 279 0018 00000000 		.4byte	.LFB1
+ 280 001c 08000000 		.4byte	.LFE1-.LFB1
+ 281 0020 00000000 		.4byte	0
+ 282 0024 00000000 		.4byte	0
+ 283              		.section	.debug_ranges,"",%progbits
+ 284              	.Ldebug_ranges0:
+ 285 0000 00000000 		.4byte	.LFB0
+ 286 0004 08000000 		.4byte	.LFE0
+ 287 0008 00000000 		.4byte	.LFB1
+ 288 000c 08000000 		.4byte	.LFE1
+ 289 0010 00000000 		.4byte	0
+ 290 0014 00000000 		.4byte	0
+ 291              		.section	.debug_line,"",%progbits
+ 292              	.Ldebug_line0:
+ 293 0000 65000000 		.section	.debug_str,"MS",%progbits,1
+ 293      02003A00 
+ 293      00000201 
+ 293      FB0E0D00 
+ 293      01010101 
+ 294              	.LASF6:
+ 295 0000 6C6F6E67 		.ascii	"long long int\000"
+ 295      206C6F6E 
+ 295      6720696E 
+ 295      7400
+ 296              	.LASF8:
+ 297 000e 756E7369 		.ascii	"unsigned int\000"
+ 297      676E6564 
+ 297      20696E74 
+ 297      00
+ 298              	.LASF16:
+ 299 001b 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\SPI0_INT.c\000"
+ 299      6E657261 
+ 299      7465645F 
+ 299      536F7572 
+ 299      63655C50 
+ 300              	.LASF17:
+ 301 003f 433A5C55 		.ascii	"C:\\Users\\chuck.erhardt\\Documents\\PSoC Creator\\"
+ 301      73657273 
+ 301      5C636875 
+ 301      636B2E65 
+ 301      72686172 
+ 302 006d 4532466F 		.ascii	"E2ForLife\\PSoCPioneer+ArduinoShield_SPIM_Example.c"
+ 302      724C6966 
+ 302      655C5053 
+ 302      6F435069 
+ 302      6F6E6565 
+ 303 009f 7964736E 		.ascii	"ydsn\000"
+ 303      00
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccvVUxlP.s 			page 10
+
+
+ 304              	.LASF5:
+ 305 00a4 6C6F6E67 		.ascii	"long unsigned int\000"
+ 305      20756E73 
+ 305      69676E65 
+ 305      6420696E 
+ 305      7400
+ 306              	.LASF7:
+ 307 00b6 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 307      206C6F6E 
+ 307      6720756E 
+ 307      7369676E 
+ 307      65642069 
+ 308              	.LASF15:
+ 309 00cd 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 309      4320342E 
+ 309      372E3320 
+ 309      32303133 
+ 309      30333132 
+ 310 0100 616E6368 		.ascii	"anch revision 196615]\000"
+ 310      20726576 
+ 310      6973696F 
+ 310      6E203139 
+ 310      36363135 
+ 311              	.LASF14:
+ 312 0116 53504930 		.ascii	"SPI0_RX_ISR\000"
+ 312      5F52585F 
+ 312      49535200 
+ 313              	.LASF13:
+ 314 0122 53504930 		.ascii	"SPI0_TX_ISR\000"
+ 314      5F54585F 
+ 314      49535200 
+ 315              	.LASF1:
+ 316 012e 756E7369 		.ascii	"unsigned char\000"
+ 316      676E6564 
+ 316      20636861 
+ 316      7200
+ 317              	.LASF11:
+ 318 013c 63686172 		.ascii	"char\000"
+ 318      00
+ 319              	.LASF4:
+ 320 0141 6C6F6E67 		.ascii	"long int\000"
+ 320      20696E74 
+ 320      00
+ 321              	.LASF10:
+ 322 014a 646F7562 		.ascii	"double\000"
+ 322      6C6500
+ 323              	.LASF3:
+ 324 0151 73686F72 		.ascii	"short unsigned int\000"
+ 324      7420756E 
+ 324      7369676E 
+ 324      65642069 
+ 324      6E7400
+ 325              	.LASF0:
+ 326 0164 7369676E 		.ascii	"signed char\000"
+ 326      65642063 
+ 326      68617200 
+ 327              	.LASF9:
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccvVUxlP.s 			page 11
+
+
+ 328 0170 666C6F61 		.ascii	"float\000"
+ 328      7400
+ 329              	.LASF2:
+ 330 0176 73686F72 		.ascii	"short int\000"
+ 330      7420696E 
+ 330      7400
+ 331              	.LASF12:
+ 332 0180 73697A65 		.ascii	"sizetype\000"
+ 332      74797065 
+ 332      00
+ 333              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

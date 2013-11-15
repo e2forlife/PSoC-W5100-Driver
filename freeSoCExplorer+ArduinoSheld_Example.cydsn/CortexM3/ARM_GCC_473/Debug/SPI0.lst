@@ -1,0 +1,4238 @@
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"SPI0.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	SPI0_initVar
+  19              		.bss
+  20              		.type	SPI0_initVar, %object
+  21              		.size	SPI0_initVar, 1
+  22              	SPI0_initVar:
+  23 0000 00       		.space	1
+  24              		.comm	SPI0_swStatusTx,1,1
+  25              		.comm	SPI0_swStatusRx,1,1
+  26              		.section	.text.SPI0_Init,"ax",%progbits
+  27              		.align	2
+  28              		.global	SPI0_Init
+  29              		.thumb
+  30              		.thumb_func
+  31              		.type	SPI0_Init, %function
+  32              	SPI0_Init:
+  33              	.LFB0:
+  34              		.file 1 ".\\Generated_Source\\PSoC5\\SPI0.c"
+   1:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/SPI0.c **** * File Name: SPI0.c
+   3:.\Generated_Source\PSoC5/SPI0.c **** * Version 2.40
+   4:.\Generated_Source\PSoC5/SPI0.c **** *
+   5:.\Generated_Source\PSoC5/SPI0.c **** * Description:
+   6:.\Generated_Source\PSoC5/SPI0.c **** *  This file provides all API functionality of the SPI Master component.
+   7:.\Generated_Source\PSoC5/SPI0.c **** *
+   8:.\Generated_Source\PSoC5/SPI0.c **** * Note:
+   9:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+  10:.\Generated_Source\PSoC5/SPI0.c **** *
+  11:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
+  12:.\Generated_Source\PSoC5/SPI0.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  13:.\Generated_Source\PSoC5/SPI0.c **** * You may use this file only in accordance with the license, terms, conditions,
+  14:.\Generated_Source\PSoC5/SPI0.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  15:.\Generated_Source\PSoC5/SPI0.c **** * the software package with which this file was provided.
+  16:.\Generated_Source\PSoC5/SPI0.c **** *******************************************************************************/
+  17:.\Generated_Source\PSoC5/SPI0.c **** 
+  18:.\Generated_Source\PSoC5/SPI0.c **** #include "SPI0_PVT.h"
+  19:.\Generated_Source\PSoC5/SPI0.c **** 
+  20:.\Generated_Source\PSoC5/SPI0.c **** #if(SPI0_TX_SOFTWARE_BUF_ENABLED)
+  21:.\Generated_Source\PSoC5/SPI0.c ****     volatile uint8 SPI0_txBuffer[SPI0_TX_BUFFER_SIZE] = {0u};
+  22:.\Generated_Source\PSoC5/SPI0.c ****     volatile uint8 SPI0_txBufferFull;
+  23:.\Generated_Source\PSoC5/SPI0.c ****     volatile uint8 SPI0_txBufferRead;
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 2
+
+
+  24:.\Generated_Source\PSoC5/SPI0.c ****     volatile uint8 SPI0_txBufferWrite;
+  25:.\Generated_Source\PSoC5/SPI0.c **** #endif /* (SPI0_TX_SOFTWARE_BUF_ENABLED) */
+  26:.\Generated_Source\PSoC5/SPI0.c **** 
+  27:.\Generated_Source\PSoC5/SPI0.c **** #if(SPI0_RX_SOFTWARE_BUF_ENABLED)
+  28:.\Generated_Source\PSoC5/SPI0.c ****     volatile uint8 SPI0_rxBuffer[SPI0_RX_BUFFER_SIZE] = {0u};
+  29:.\Generated_Source\PSoC5/SPI0.c ****     volatile uint8 SPI0_rxBufferFull;
+  30:.\Generated_Source\PSoC5/SPI0.c ****     volatile uint8 SPI0_rxBufferRead;
+  31:.\Generated_Source\PSoC5/SPI0.c ****     volatile uint8 SPI0_rxBufferWrite;
+  32:.\Generated_Source\PSoC5/SPI0.c **** #endif /* (SPI0_RX_SOFTWARE_BUF_ENABLED) */
+  33:.\Generated_Source\PSoC5/SPI0.c **** 
+  34:.\Generated_Source\PSoC5/SPI0.c **** uint8 SPI0_initVar = 0u;
+  35:.\Generated_Source\PSoC5/SPI0.c **** 
+  36:.\Generated_Source\PSoC5/SPI0.c **** volatile uint8 SPI0_swStatusTx;
+  37:.\Generated_Source\PSoC5/SPI0.c **** volatile uint8 SPI0_swStatusRx;
+  38:.\Generated_Source\PSoC5/SPI0.c **** 
+  39:.\Generated_Source\PSoC5/SPI0.c **** 
+  40:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
+  41:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_Init
+  42:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
+  43:.\Generated_Source\PSoC5/SPI0.c **** *
+  44:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
+  45:.\Generated_Source\PSoC5/SPI0.c **** *  Inits/Restores default SPIM configuration provided with customizer.
+  46:.\Generated_Source\PSoC5/SPI0.c **** *
+  47:.\Generated_Source\PSoC5/SPI0.c **** * Parameters:
+  48:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+  49:.\Generated_Source\PSoC5/SPI0.c **** *
+  50:.\Generated_Source\PSoC5/SPI0.c **** * Return:
+  51:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+  52:.\Generated_Source\PSoC5/SPI0.c **** *
+  53:.\Generated_Source\PSoC5/SPI0.c **** * Side Effects:
+  54:.\Generated_Source\PSoC5/SPI0.c **** *  When this function is called it initializes all of the necessary parameters
+  55:.\Generated_Source\PSoC5/SPI0.c **** *  for execution. i.e. setting the initial interrupt mask, configuring the
+  56:.\Generated_Source\PSoC5/SPI0.c **** *  interrupt service routine, configuring the bit-counter parameters and
+  57:.\Generated_Source\PSoC5/SPI0.c **** *  clearing the FIFO and Status Register.
+  58:.\Generated_Source\PSoC5/SPI0.c **** *
+  59:.\Generated_Source\PSoC5/SPI0.c **** * Reentrant:
+  60:.\Generated_Source\PSoC5/SPI0.c **** *  No.
+  61:.\Generated_Source\PSoC5/SPI0.c **** *
+  62:.\Generated_Source\PSoC5/SPI0.c **** *******************************************************************************/
+  63:.\Generated_Source\PSoC5/SPI0.c **** void SPI0_Init(void) 
+  64:.\Generated_Source\PSoC5/SPI0.c **** {
+  35              		.loc 1 64 0
+  36              		.cfi_startproc
+  37              		@ args = 0, pretend = 0, frame = 0
+  38              		@ frame_needed = 1, uses_anonymous_args = 0
+  39 0000 80B5     		push	{r7, lr}
+  40              	.LCFI0:
+  41              		.cfi_def_cfa_offset 8
+  42              		.cfi_offset 7, -8
+  43              		.cfi_offset 14, -4
+  44 0002 00AF     		add	r7, sp, #0
+  45              	.LCFI1:
+  46              		.cfi_def_cfa_register 7
+  65:.\Generated_Source\PSoC5/SPI0.c ****     /* Initialize the Bit counter */
+  66:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_COUNTER_PERIOD_REG = SPI0_BITCTR_INIT;
+  47              		.loc 1 66 0
+  48 0004 46F28553 		movw	r3, #25989
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 3
+
+
+  49 0008 C4F20003 		movt	r3, 16384
+  50 000c 4FF00F02 		mov	r2, #15
+  51 0010 1A70     		strb	r2, [r3, #0]
+  67:.\Generated_Source\PSoC5/SPI0.c **** 
+  68:.\Generated_Source\PSoC5/SPI0.c ****     /* Init TX ISR  */
+  69:.\Generated_Source\PSoC5/SPI0.c ****     #if(0u != SPI0_INTERNAL_TX_INT_ENABLED)
+  70:.\Generated_Source\PSoC5/SPI0.c ****         CyIntDisable         (SPI0_TX_ISR_NUMBER);
+  71:.\Generated_Source\PSoC5/SPI0.c ****         CyIntSetPriority     (SPI0_TX_ISR_NUMBER,  SPI0_TX_ISR_PRIORITY);
+  72:.\Generated_Source\PSoC5/SPI0.c ****         (void) CyIntSetVector(SPI0_TX_ISR_NUMBER, &SPI0_TX_ISR);
+  73:.\Generated_Source\PSoC5/SPI0.c ****     #endif /* (0u != SPI0_INTERNAL_TX_INT_ENABLED) */
+  74:.\Generated_Source\PSoC5/SPI0.c **** 
+  75:.\Generated_Source\PSoC5/SPI0.c ****     /* Init RX ISR  */
+  76:.\Generated_Source\PSoC5/SPI0.c ****     #if(0u != SPI0_INTERNAL_RX_INT_ENABLED)
+  77:.\Generated_Source\PSoC5/SPI0.c ****         CyIntDisable         (SPI0_RX_ISR_NUMBER);
+  78:.\Generated_Source\PSoC5/SPI0.c ****         CyIntSetPriority     (SPI0_RX_ISR_NUMBER,  SPI0_RX_ISR_PRIORITY);
+  79:.\Generated_Source\PSoC5/SPI0.c ****         (void) CyIntSetVector(SPI0_RX_ISR_NUMBER, &SPI0_RX_ISR);
+  80:.\Generated_Source\PSoC5/SPI0.c ****     #endif /* (0u != SPI0_INTERNAL_RX_INT_ENABLED) */
+  81:.\Generated_Source\PSoC5/SPI0.c **** 
+  82:.\Generated_Source\PSoC5/SPI0.c ****     /* Clear any stray data from the RX and TX FIFO */
+  83:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_ClearFIFO();
+  52              		.loc 1 83 0
+  53 0012 FFF7FEFF 		bl	SPI0_ClearFIFO
+  84:.\Generated_Source\PSoC5/SPI0.c **** 
+  85:.\Generated_Source\PSoC5/SPI0.c ****     #if(SPI0_RX_SOFTWARE_BUF_ENABLED)
+  86:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_rxBufferFull  = 0u;
+  87:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_rxBufferRead  = 0u;
+  88:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_rxBufferWrite = 0u;
+  89:.\Generated_Source\PSoC5/SPI0.c ****     #endif /* (SPI0_RX_SOFTWARE_BUF_ENABLED) */
+  90:.\Generated_Source\PSoC5/SPI0.c **** 
+  91:.\Generated_Source\PSoC5/SPI0.c ****     #if(SPI0_TX_SOFTWARE_BUF_ENABLED)
+  92:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_txBufferFull  = 0u;
+  93:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_txBufferRead  = 0u;
+  94:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_txBufferWrite = 0u;
+  95:.\Generated_Source\PSoC5/SPI0.c ****     #endif /* (SPI0_TX_SOFTWARE_BUF_ENABLED) */
+  96:.\Generated_Source\PSoC5/SPI0.c **** 
+  97:.\Generated_Source\PSoC5/SPI0.c ****     (void) SPI0_ReadTxStatus(); /* Clear Tx status and swStatusTx */
+  54              		.loc 1 97 0
+  55 0016 FFF7FEFF 		bl	SPI0_ReadTxStatus
+  98:.\Generated_Source\PSoC5/SPI0.c ****     (void) SPI0_ReadRxStatus(); /* Clear Rx status and swStatusRx */
+  56              		.loc 1 98 0
+  57 001a FFF7FEFF 		bl	SPI0_ReadRxStatus
+  99:.\Generated_Source\PSoC5/SPI0.c **** 
+ 100:.\Generated_Source\PSoC5/SPI0.c ****     /* Configure TX and RX interrupt mask */
+ 101:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_TX_STATUS_MASK_REG = SPI0_TX_INIT_INTERRUPTS_MASK;
+  58              		.loc 1 101 0
+  59 001e 46F28453 		movw	r3, #25988
+  60 0022 C4F20003 		movt	r3, 16384
+  61 0026 4FF00002 		mov	r2, #0
+  62 002a 1A70     		strb	r2, [r3, #0]
+ 102:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_RX_STATUS_MASK_REG = SPI0_RX_INIT_INTERRUPTS_MASK;
+  63              		.loc 1 102 0
+  64 002c 46F28653 		movw	r3, #25990
+  65 0030 C4F20003 		movt	r3, 16384
+  66 0034 4FF00002 		mov	r2, #0
+  67 0038 1A70     		strb	r2, [r3, #0]
+ 103:.\Generated_Source\PSoC5/SPI0.c **** }
+  68              		.loc 1 103 0
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 4
+
+
+  69 003a 80BD     		pop	{r7, pc}
+  70              		.cfi_endproc
+  71              	.LFE0:
+  72              		.size	SPI0_Init, .-SPI0_Init
+  73              		.section	.text.SPI0_Enable,"ax",%progbits
+  74              		.align	2
+  75              		.global	SPI0_Enable
+  76              		.thumb
+  77              		.thumb_func
+  78              		.type	SPI0_Enable, %function
+  79              	SPI0_Enable:
+  80              	.LFB1:
+ 104:.\Generated_Source\PSoC5/SPI0.c **** 
+ 105:.\Generated_Source\PSoC5/SPI0.c **** 
+ 106:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
+ 107:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_Enable
+ 108:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
+ 109:.\Generated_Source\PSoC5/SPI0.c **** *
+ 110:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
+ 111:.\Generated_Source\PSoC5/SPI0.c **** *  Enable SPIM component.
+ 112:.\Generated_Source\PSoC5/SPI0.c **** *
+ 113:.\Generated_Source\PSoC5/SPI0.c **** * Parameters:
+ 114:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 115:.\Generated_Source\PSoC5/SPI0.c **** *
+ 116:.\Generated_Source\PSoC5/SPI0.c **** * Return:
+ 117:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 118:.\Generated_Source\PSoC5/SPI0.c **** *
+ 119:.\Generated_Source\PSoC5/SPI0.c **** *******************************************************************************/
+ 120:.\Generated_Source\PSoC5/SPI0.c **** void SPI0_Enable(void) 
+ 121:.\Generated_Source\PSoC5/SPI0.c **** {
+  81              		.loc 1 121 0
+  82              		.cfi_startproc
+  83              		@ args = 0, pretend = 0, frame = 8
+  84              		@ frame_needed = 1, uses_anonymous_args = 0
+  85 0000 80B5     		push	{r7, lr}
+  86              	.LCFI2:
+  87              		.cfi_def_cfa_offset 8
+  88              		.cfi_offset 7, -8
+  89              		.cfi_offset 14, -4
+  90 0002 82B0     		sub	sp, sp, #8
+  91              	.LCFI3:
+  92              		.cfi_def_cfa_offset 16
+  93 0004 00AF     		add	r7, sp, #0
+  94              	.LCFI4:
+  95              		.cfi_def_cfa_register 7
+ 122:.\Generated_Source\PSoC5/SPI0.c ****     uint8 enableInterrupts;
+ 123:.\Generated_Source\PSoC5/SPI0.c **** 
+ 124:.\Generated_Source\PSoC5/SPI0.c ****     enableInterrupts = CyEnterCriticalSection();
+  96              		.loc 1 124 0
+  97 0006 FFF7FEFF 		bl	CyEnterCriticalSection
+  98 000a 0346     		mov	r3, r0
+  99 000c FB71     		strb	r3, [r7, #7]
+ 125:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_COUNTER_CONTROL_REG |= SPI0_CNTR_ENABLE;
+ 100              		.loc 1 125 0
+ 101 000e 46F29553 		movw	r3, #26005
+ 102 0012 C4F20003 		movt	r3, 16384
+ 103 0016 46F29552 		movw	r2, #26005
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 5
+
+
+ 104 001a C4F20002 		movt	r2, 16384
+ 105 001e 1278     		ldrb	r2, [r2, #0]
+ 106 0020 D2B2     		uxtb	r2, r2
+ 107 0022 42F02002 		orr	r2, r2, #32
+ 108 0026 D2B2     		uxtb	r2, r2
+ 109 0028 1A70     		strb	r2, [r3, #0]
+ 126:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_TX_STATUS_ACTL_REG  |= SPI0_INT_ENABLE;
+ 110              		.loc 1 126 0
+ 111 002a 46F29453 		movw	r3, #26004
+ 112 002e C4F20003 		movt	r3, 16384
+ 113 0032 46F29452 		movw	r2, #26004
+ 114 0036 C4F20002 		movt	r2, 16384
+ 115 003a 1278     		ldrb	r2, [r2, #0]
+ 116 003c D2B2     		uxtb	r2, r2
+ 117 003e 42F01002 		orr	r2, r2, #16
+ 118 0042 D2B2     		uxtb	r2, r2
+ 119 0044 1A70     		strb	r2, [r3, #0]
+ 127:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_RX_STATUS_ACTL_REG  |= SPI0_INT_ENABLE;
+ 120              		.loc 1 127 0
+ 121 0046 46F29653 		movw	r3, #26006
+ 122 004a C4F20003 		movt	r3, 16384
+ 123 004e 46F29652 		movw	r2, #26006
+ 124 0052 C4F20002 		movt	r2, 16384
+ 125 0056 1278     		ldrb	r2, [r2, #0]
+ 126 0058 D2B2     		uxtb	r2, r2
+ 127 005a 42F01002 		orr	r2, r2, #16
+ 128 005e D2B2     		uxtb	r2, r2
+ 129 0060 1A70     		strb	r2, [r3, #0]
+ 128:.\Generated_Source\PSoC5/SPI0.c ****     CyExitCriticalSection(enableInterrupts);
+ 130              		.loc 1 128 0
+ 131 0062 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 132 0064 1846     		mov	r0, r3
+ 133 0066 FFF7FEFF 		bl	CyExitCriticalSection
+ 129:.\Generated_Source\PSoC5/SPI0.c **** 
+ 130:.\Generated_Source\PSoC5/SPI0.c ****     #if(0u != SPI0_INTERNAL_CLOCK)
+ 131:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_IntClock_Enable();
+ 134              		.loc 1 131 0
+ 135 006a FFF7FEFF 		bl	SPI0_IntClock_Start
+ 132:.\Generated_Source\PSoC5/SPI0.c ****     #endif /* (0u != SPI0_INTERNAL_CLOCK) */
+ 133:.\Generated_Source\PSoC5/SPI0.c **** 
+ 134:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_EnableTxInt();
+ 136              		.loc 1 134 0
+ 137 006e FFF7FEFF 		bl	SPI0_EnableTxInt
+ 135:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_EnableRxInt();
+ 138              		.loc 1 135 0
+ 139 0072 FFF7FEFF 		bl	SPI0_EnableRxInt
+ 136:.\Generated_Source\PSoC5/SPI0.c **** }
+ 140              		.loc 1 136 0
+ 141 0076 07F10807 		add	r7, r7, #8
+ 142 007a BD46     		mov	sp, r7
+ 143 007c 80BD     		pop	{r7, pc}
+ 144              		.cfi_endproc
+ 145              	.LFE1:
+ 146              		.size	SPI0_Enable, .-SPI0_Enable
+ 147 007e 00BF     		.section	.text.SPI0_Start,"ax",%progbits
+ 148              		.align	2
+ 149              		.global	SPI0_Start
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 6
+
+
+ 150              		.thumb
+ 151              		.thumb_func
+ 152              		.type	SPI0_Start, %function
+ 153              	SPI0_Start:
+ 154              	.LFB2:
+ 137:.\Generated_Source\PSoC5/SPI0.c **** 
+ 138:.\Generated_Source\PSoC5/SPI0.c **** 
+ 139:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
+ 140:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_Start
+ 141:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
+ 142:.\Generated_Source\PSoC5/SPI0.c **** *
+ 143:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
+ 144:.\Generated_Source\PSoC5/SPI0.c **** *  Initialize and Enable the SPI Master component.
+ 145:.\Generated_Source\PSoC5/SPI0.c **** *
+ 146:.\Generated_Source\PSoC5/SPI0.c **** * Parameters:
+ 147:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 148:.\Generated_Source\PSoC5/SPI0.c **** *
+ 149:.\Generated_Source\PSoC5/SPI0.c **** * Return:
+ 150:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 151:.\Generated_Source\PSoC5/SPI0.c **** *
+ 152:.\Generated_Source\PSoC5/SPI0.c **** * Global variables:
+ 153:.\Generated_Source\PSoC5/SPI0.c **** *  SPI0_initVar - used to check initial configuration, modified on
+ 154:.\Generated_Source\PSoC5/SPI0.c **** *  first function call.
+ 155:.\Generated_Source\PSoC5/SPI0.c **** *
+ 156:.\Generated_Source\PSoC5/SPI0.c **** * Theory:
+ 157:.\Generated_Source\PSoC5/SPI0.c **** *  Enable the clock input to enable operation.
+ 158:.\Generated_Source\PSoC5/SPI0.c **** *
+ 159:.\Generated_Source\PSoC5/SPI0.c **** * Reentrant:
+ 160:.\Generated_Source\PSoC5/SPI0.c **** *  No.
+ 161:.\Generated_Source\PSoC5/SPI0.c **** *
+ 162:.\Generated_Source\PSoC5/SPI0.c **** *******************************************************************************/
+ 163:.\Generated_Source\PSoC5/SPI0.c **** void SPI0_Start(void) 
+ 164:.\Generated_Source\PSoC5/SPI0.c **** {
+ 155              		.loc 1 164 0
+ 156              		.cfi_startproc
+ 157              		@ args = 0, pretend = 0, frame = 0
+ 158              		@ frame_needed = 1, uses_anonymous_args = 0
+ 159 0000 80B5     		push	{r7, lr}
+ 160              	.LCFI5:
+ 161              		.cfi_def_cfa_offset 8
+ 162              		.cfi_offset 7, -8
+ 163              		.cfi_offset 14, -4
+ 164 0002 00AF     		add	r7, sp, #0
+ 165              	.LCFI6:
+ 166              		.cfi_def_cfa_register 7
+ 165:.\Generated_Source\PSoC5/SPI0.c ****     if(0u == SPI0_initVar)
+ 167              		.loc 1 165 0
+ 168 0004 40F20003 		movw	r3, #:lower16:SPI0_initVar
+ 169 0008 C0F20003 		movt	r3, #:upper16:SPI0_initVar
+ 170 000c 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 171 000e 002B     		cmp	r3, #0
+ 172 0010 08D1     		bne	.L4
+ 166:.\Generated_Source\PSoC5/SPI0.c ****     {
+ 167:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_Init();
+ 173              		.loc 1 167 0
+ 174 0012 FFF7FEFF 		bl	SPI0_Init
+ 168:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_initVar = 1u;
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 7
+
+
+ 175              		.loc 1 168 0
+ 176 0016 40F20003 		movw	r3, #:lower16:SPI0_initVar
+ 177 001a C0F20003 		movt	r3, #:upper16:SPI0_initVar
+ 178 001e 4FF00102 		mov	r2, #1
+ 179 0022 1A70     		strb	r2, [r3, #0]
+ 180              	.L4:
+ 169:.\Generated_Source\PSoC5/SPI0.c ****     }
+ 170:.\Generated_Source\PSoC5/SPI0.c **** 
+ 171:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_Enable();
+ 181              		.loc 1 171 0
+ 182 0024 FFF7FEFF 		bl	SPI0_Enable
+ 172:.\Generated_Source\PSoC5/SPI0.c **** }
+ 183              		.loc 1 172 0
+ 184 0028 80BD     		pop	{r7, pc}
+ 185              		.cfi_endproc
+ 186              	.LFE2:
+ 187              		.size	SPI0_Start, .-SPI0_Start
+ 188 002a 00BF     		.section	.text.SPI0_Stop,"ax",%progbits
+ 189              		.align	2
+ 190              		.global	SPI0_Stop
+ 191              		.thumb
+ 192              		.thumb_func
+ 193              		.type	SPI0_Stop, %function
+ 194              	SPI0_Stop:
+ 195              	.LFB3:
+ 173:.\Generated_Source\PSoC5/SPI0.c **** 
+ 174:.\Generated_Source\PSoC5/SPI0.c **** 
+ 175:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
+ 176:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_Stop
+ 177:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
+ 178:.\Generated_Source\PSoC5/SPI0.c **** *
+ 179:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
+ 180:.\Generated_Source\PSoC5/SPI0.c **** *  Disable the SPI Master component.
+ 181:.\Generated_Source\PSoC5/SPI0.c **** *
+ 182:.\Generated_Source\PSoC5/SPI0.c **** * Parameters:
+ 183:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 184:.\Generated_Source\PSoC5/SPI0.c **** *
+ 185:.\Generated_Source\PSoC5/SPI0.c **** * Return:
+ 186:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 187:.\Generated_Source\PSoC5/SPI0.c **** *
+ 188:.\Generated_Source\PSoC5/SPI0.c **** * Theory:
+ 189:.\Generated_Source\PSoC5/SPI0.c **** *  Disable the clock input to enable operation.
+ 190:.\Generated_Source\PSoC5/SPI0.c **** *
+ 191:.\Generated_Source\PSoC5/SPI0.c **** *******************************************************************************/
+ 192:.\Generated_Source\PSoC5/SPI0.c **** void SPI0_Stop(void) 
+ 193:.\Generated_Source\PSoC5/SPI0.c **** {
+ 196              		.loc 1 193 0
+ 197              		.cfi_startproc
+ 198              		@ args = 0, pretend = 0, frame = 8
+ 199              		@ frame_needed = 1, uses_anonymous_args = 0
+ 200 0000 80B5     		push	{r7, lr}
+ 201              	.LCFI7:
+ 202              		.cfi_def_cfa_offset 8
+ 203              		.cfi_offset 7, -8
+ 204              		.cfi_offset 14, -4
+ 205 0002 82B0     		sub	sp, sp, #8
+ 206              	.LCFI8:
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 8
+
+
+ 207              		.cfi_def_cfa_offset 16
+ 208 0004 00AF     		add	r7, sp, #0
+ 209              	.LCFI9:
+ 210              		.cfi_def_cfa_register 7
+ 194:.\Generated_Source\PSoC5/SPI0.c ****     uint8 enableInterrupts;
+ 195:.\Generated_Source\PSoC5/SPI0.c **** 
+ 196:.\Generated_Source\PSoC5/SPI0.c ****     enableInterrupts = CyEnterCriticalSection();
+ 211              		.loc 1 196 0
+ 212 0006 FFF7FEFF 		bl	CyEnterCriticalSection
+ 213 000a 0346     		mov	r3, r0
+ 214 000c FB71     		strb	r3, [r7, #7]
+ 197:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_TX_STATUS_ACTL_REG &= ((uint8) ~SPI0_INT_ENABLE);
+ 215              		.loc 1 197 0
+ 216 000e 46F29453 		movw	r3, #26004
+ 217 0012 C4F20003 		movt	r3, 16384
+ 218 0016 46F29452 		movw	r2, #26004
+ 219 001a C4F20002 		movt	r2, 16384
+ 220 001e 1278     		ldrb	r2, [r2, #0]
+ 221 0020 D2B2     		uxtb	r2, r2
+ 222 0022 22F01002 		bic	r2, r2, #16
+ 223 0026 D2B2     		uxtb	r2, r2
+ 224 0028 1A70     		strb	r2, [r3, #0]
+ 198:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_RX_STATUS_ACTL_REG &= ((uint8) ~SPI0_INT_ENABLE);
+ 225              		.loc 1 198 0
+ 226 002a 46F29653 		movw	r3, #26006
+ 227 002e C4F20003 		movt	r3, 16384
+ 228 0032 46F29652 		movw	r2, #26006
+ 229 0036 C4F20002 		movt	r2, 16384
+ 230 003a 1278     		ldrb	r2, [r2, #0]
+ 231 003c D2B2     		uxtb	r2, r2
+ 232 003e 22F01002 		bic	r2, r2, #16
+ 233 0042 D2B2     		uxtb	r2, r2
+ 234 0044 1A70     		strb	r2, [r3, #0]
+ 199:.\Generated_Source\PSoC5/SPI0.c ****     CyExitCriticalSection(enableInterrupts);
+ 235              		.loc 1 199 0
+ 236 0046 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 237 0048 1846     		mov	r0, r3
+ 238 004a FFF7FEFF 		bl	CyExitCriticalSection
+ 200:.\Generated_Source\PSoC5/SPI0.c **** 
+ 201:.\Generated_Source\PSoC5/SPI0.c ****     #if(0u != SPI0_INTERNAL_CLOCK)
+ 202:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_IntClock_Disable();
+ 239              		.loc 1 202 0
+ 240 004e FFF7FEFF 		bl	SPI0_IntClock_Stop
+ 203:.\Generated_Source\PSoC5/SPI0.c ****     #endif /* (0u != SPI0_INTERNAL_CLOCK) */
+ 204:.\Generated_Source\PSoC5/SPI0.c **** 
+ 205:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_DisableTxInt();
+ 241              		.loc 1 205 0
+ 242 0052 FFF7FEFF 		bl	SPI0_DisableTxInt
+ 206:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_DisableRxInt();
+ 243              		.loc 1 206 0
+ 244 0056 FFF7FEFF 		bl	SPI0_DisableRxInt
+ 207:.\Generated_Source\PSoC5/SPI0.c **** }
+ 245              		.loc 1 207 0
+ 246 005a 07F10807 		add	r7, r7, #8
+ 247 005e BD46     		mov	sp, r7
+ 248 0060 80BD     		pop	{r7, pc}
+ 249              		.cfi_endproc
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 9
+
+
+ 250              	.LFE3:
+ 251              		.size	SPI0_Stop, .-SPI0_Stop
+ 252 0062 00BF     		.section	.text.SPI0_EnableTxInt,"ax",%progbits
+ 253              		.align	2
+ 254              		.global	SPI0_EnableTxInt
+ 255              		.thumb
+ 256              		.thumb_func
+ 257              		.type	SPI0_EnableTxInt, %function
+ 258              	SPI0_EnableTxInt:
+ 259              	.LFB4:
+ 208:.\Generated_Source\PSoC5/SPI0.c **** 
+ 209:.\Generated_Source\PSoC5/SPI0.c **** 
+ 210:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
+ 211:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_EnableTxInt
+ 212:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
+ 213:.\Generated_Source\PSoC5/SPI0.c **** *
+ 214:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
+ 215:.\Generated_Source\PSoC5/SPI0.c **** *  Enable internal Tx interrupt generation.
+ 216:.\Generated_Source\PSoC5/SPI0.c **** *
+ 217:.\Generated_Source\PSoC5/SPI0.c **** * Parameters:
+ 218:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 219:.\Generated_Source\PSoC5/SPI0.c **** *
+ 220:.\Generated_Source\PSoC5/SPI0.c **** * Return:
+ 221:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 222:.\Generated_Source\PSoC5/SPI0.c **** *
+ 223:.\Generated_Source\PSoC5/SPI0.c **** * Theory:
+ 224:.\Generated_Source\PSoC5/SPI0.c **** *  Enable the internal Tx interrupt output -or- the interrupt component itself.
+ 225:.\Generated_Source\PSoC5/SPI0.c **** *
+ 226:.\Generated_Source\PSoC5/SPI0.c **** *******************************************************************************/
+ 227:.\Generated_Source\PSoC5/SPI0.c **** void SPI0_EnableTxInt(void) 
+ 228:.\Generated_Source\PSoC5/SPI0.c **** {
+ 260              		.loc 1 228 0
+ 261              		.cfi_startproc
+ 262              		@ args = 0, pretend = 0, frame = 0
+ 263              		@ frame_needed = 1, uses_anonymous_args = 0
+ 264              		@ link register save eliminated.
+ 265 0000 80B4     		push	{r7}
+ 266              	.LCFI10:
+ 267              		.cfi_def_cfa_offset 4
+ 268              		.cfi_offset 7, -4
+ 269 0002 00AF     		add	r7, sp, #0
+ 270              	.LCFI11:
+ 271              		.cfi_def_cfa_register 7
+ 229:.\Generated_Source\PSoC5/SPI0.c ****     #if(0u != SPI0_INTERNAL_TX_INT_ENABLED)
+ 230:.\Generated_Source\PSoC5/SPI0.c ****         CyIntEnable(SPI0_TX_ISR_NUMBER);
+ 231:.\Generated_Source\PSoC5/SPI0.c ****     #endif /* (0u != SPI0_INTERNAL_TX_INT_ENABLED) */
+ 232:.\Generated_Source\PSoC5/SPI0.c **** }
+ 272              		.loc 1 232 0
+ 273 0004 BD46     		mov	sp, r7
+ 274 0006 80BC     		pop	{r7}
+ 275 0008 7047     		bx	lr
+ 276              		.cfi_endproc
+ 277              	.LFE4:
+ 278              		.size	SPI0_EnableTxInt, .-SPI0_EnableTxInt
+ 279 000a 00BF     		.section	.text.SPI0_EnableRxInt,"ax",%progbits
+ 280              		.align	2
+ 281              		.global	SPI0_EnableRxInt
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 10
+
+
+ 282              		.thumb
+ 283              		.thumb_func
+ 284              		.type	SPI0_EnableRxInt, %function
+ 285              	SPI0_EnableRxInt:
+ 286              	.LFB5:
+ 233:.\Generated_Source\PSoC5/SPI0.c **** 
+ 234:.\Generated_Source\PSoC5/SPI0.c **** 
+ 235:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
+ 236:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_EnableRxInt
+ 237:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
+ 238:.\Generated_Source\PSoC5/SPI0.c **** *
+ 239:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
+ 240:.\Generated_Source\PSoC5/SPI0.c **** *  Enable internal Rx interrupt generation.
+ 241:.\Generated_Source\PSoC5/SPI0.c **** *
+ 242:.\Generated_Source\PSoC5/SPI0.c **** * Parameters:
+ 243:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 244:.\Generated_Source\PSoC5/SPI0.c **** *
+ 245:.\Generated_Source\PSoC5/SPI0.c **** * Return:
+ 246:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 247:.\Generated_Source\PSoC5/SPI0.c **** *
+ 248:.\Generated_Source\PSoC5/SPI0.c **** * Theory:
+ 249:.\Generated_Source\PSoC5/SPI0.c **** *  Enable the internal Rx interrupt output -or- the interrupt component itself.
+ 250:.\Generated_Source\PSoC5/SPI0.c **** *
+ 251:.\Generated_Source\PSoC5/SPI0.c **** *******************************************************************************/
+ 252:.\Generated_Source\PSoC5/SPI0.c **** void SPI0_EnableRxInt(void) 
+ 253:.\Generated_Source\PSoC5/SPI0.c **** {
+ 287              		.loc 1 253 0
+ 288              		.cfi_startproc
+ 289              		@ args = 0, pretend = 0, frame = 0
+ 290              		@ frame_needed = 1, uses_anonymous_args = 0
+ 291              		@ link register save eliminated.
+ 292 0000 80B4     		push	{r7}
+ 293              	.LCFI12:
+ 294              		.cfi_def_cfa_offset 4
+ 295              		.cfi_offset 7, -4
+ 296 0002 00AF     		add	r7, sp, #0
+ 297              	.LCFI13:
+ 298              		.cfi_def_cfa_register 7
+ 254:.\Generated_Source\PSoC5/SPI0.c ****     #if(0u != SPI0_INTERNAL_RX_INT_ENABLED)
+ 255:.\Generated_Source\PSoC5/SPI0.c ****         CyIntEnable(SPI0_RX_ISR_NUMBER);
+ 256:.\Generated_Source\PSoC5/SPI0.c ****     #endif /* (0u != SPI0_INTERNAL_RX_INT_ENABLED) */
+ 257:.\Generated_Source\PSoC5/SPI0.c **** }
+ 299              		.loc 1 257 0
+ 300 0004 BD46     		mov	sp, r7
+ 301 0006 80BC     		pop	{r7}
+ 302 0008 7047     		bx	lr
+ 303              		.cfi_endproc
+ 304              	.LFE5:
+ 305              		.size	SPI0_EnableRxInt, .-SPI0_EnableRxInt
+ 306 000a 00BF     		.section	.text.SPI0_DisableTxInt,"ax",%progbits
+ 307              		.align	2
+ 308              		.global	SPI0_DisableTxInt
+ 309              		.thumb
+ 310              		.thumb_func
+ 311              		.type	SPI0_DisableTxInt, %function
+ 312              	SPI0_DisableTxInt:
+ 313              	.LFB6:
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 11
+
+
+ 258:.\Generated_Source\PSoC5/SPI0.c **** 
+ 259:.\Generated_Source\PSoC5/SPI0.c **** 
+ 260:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
+ 261:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_DisableTxInt
+ 262:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
+ 263:.\Generated_Source\PSoC5/SPI0.c **** *
+ 264:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
+ 265:.\Generated_Source\PSoC5/SPI0.c **** *  Disable internal Tx interrupt generation.
+ 266:.\Generated_Source\PSoC5/SPI0.c **** *
+ 267:.\Generated_Source\PSoC5/SPI0.c **** * Parameters:
+ 268:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 269:.\Generated_Source\PSoC5/SPI0.c **** *
+ 270:.\Generated_Source\PSoC5/SPI0.c **** * Return:
+ 271:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 272:.\Generated_Source\PSoC5/SPI0.c **** *
+ 273:.\Generated_Source\PSoC5/SPI0.c **** * Theory:
+ 274:.\Generated_Source\PSoC5/SPI0.c **** *  Disable the internal Tx interrupt output -or- the interrupt component itself.
+ 275:.\Generated_Source\PSoC5/SPI0.c **** *
+ 276:.\Generated_Source\PSoC5/SPI0.c **** *******************************************************************************/
+ 277:.\Generated_Source\PSoC5/SPI0.c **** void SPI0_DisableTxInt(void) 
+ 278:.\Generated_Source\PSoC5/SPI0.c **** {
+ 314              		.loc 1 278 0
+ 315              		.cfi_startproc
+ 316              		@ args = 0, pretend = 0, frame = 0
+ 317              		@ frame_needed = 1, uses_anonymous_args = 0
+ 318              		@ link register save eliminated.
+ 319 0000 80B4     		push	{r7}
+ 320              	.LCFI14:
+ 321              		.cfi_def_cfa_offset 4
+ 322              		.cfi_offset 7, -4
+ 323 0002 00AF     		add	r7, sp, #0
+ 324              	.LCFI15:
+ 325              		.cfi_def_cfa_register 7
+ 279:.\Generated_Source\PSoC5/SPI0.c ****     #if(0u != SPI0_INTERNAL_TX_INT_ENABLED)
+ 280:.\Generated_Source\PSoC5/SPI0.c ****         CyIntDisable(SPI0_TX_ISR_NUMBER);
+ 281:.\Generated_Source\PSoC5/SPI0.c ****     #endif /* (0u != SPI0_INTERNAL_TX_INT_ENABLED) */
+ 282:.\Generated_Source\PSoC5/SPI0.c **** }
+ 326              		.loc 1 282 0
+ 327 0004 BD46     		mov	sp, r7
+ 328 0006 80BC     		pop	{r7}
+ 329 0008 7047     		bx	lr
+ 330              		.cfi_endproc
+ 331              	.LFE6:
+ 332              		.size	SPI0_DisableTxInt, .-SPI0_DisableTxInt
+ 333 000a 00BF     		.section	.text.SPI0_DisableRxInt,"ax",%progbits
+ 334              		.align	2
+ 335              		.global	SPI0_DisableRxInt
+ 336              		.thumb
+ 337              		.thumb_func
+ 338              		.type	SPI0_DisableRxInt, %function
+ 339              	SPI0_DisableRxInt:
+ 340              	.LFB7:
+ 283:.\Generated_Source\PSoC5/SPI0.c **** 
+ 284:.\Generated_Source\PSoC5/SPI0.c **** 
+ 285:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
+ 286:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_DisableRxInt
+ 287:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 12
+
+
+ 288:.\Generated_Source\PSoC5/SPI0.c **** *
+ 289:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
+ 290:.\Generated_Source\PSoC5/SPI0.c **** *  Disable internal Rx interrupt generation.
+ 291:.\Generated_Source\PSoC5/SPI0.c **** *
+ 292:.\Generated_Source\PSoC5/SPI0.c **** * Parameters:
+ 293:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 294:.\Generated_Source\PSoC5/SPI0.c **** *
+ 295:.\Generated_Source\PSoC5/SPI0.c **** * Return:
+ 296:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 297:.\Generated_Source\PSoC5/SPI0.c **** *
+ 298:.\Generated_Source\PSoC5/SPI0.c **** * Theory:
+ 299:.\Generated_Source\PSoC5/SPI0.c **** *  Disable the internal Rx interrupt output -or- the interrupt component itself.
+ 300:.\Generated_Source\PSoC5/SPI0.c **** *
+ 301:.\Generated_Source\PSoC5/SPI0.c **** *******************************************************************************/
+ 302:.\Generated_Source\PSoC5/SPI0.c **** void SPI0_DisableRxInt(void) 
+ 303:.\Generated_Source\PSoC5/SPI0.c **** {
+ 341              		.loc 1 303 0
+ 342              		.cfi_startproc
+ 343              		@ args = 0, pretend = 0, frame = 0
+ 344              		@ frame_needed = 1, uses_anonymous_args = 0
+ 345              		@ link register save eliminated.
+ 346 0000 80B4     		push	{r7}
+ 347              	.LCFI16:
+ 348              		.cfi_def_cfa_offset 4
+ 349              		.cfi_offset 7, -4
+ 350 0002 00AF     		add	r7, sp, #0
+ 351              	.LCFI17:
+ 352              		.cfi_def_cfa_register 7
+ 304:.\Generated_Source\PSoC5/SPI0.c ****     #if(0u != SPI0_INTERNAL_RX_INT_ENABLED)
+ 305:.\Generated_Source\PSoC5/SPI0.c ****         CyIntDisable(SPI0_RX_ISR_NUMBER);
+ 306:.\Generated_Source\PSoC5/SPI0.c ****     #endif /* (0u != SPI0_INTERNAL_RX_INT_ENABLED) */
+ 307:.\Generated_Source\PSoC5/SPI0.c **** }
+ 353              		.loc 1 307 0
+ 354 0004 BD46     		mov	sp, r7
+ 355 0006 80BC     		pop	{r7}
+ 356 0008 7047     		bx	lr
+ 357              		.cfi_endproc
+ 358              	.LFE7:
+ 359              		.size	SPI0_DisableRxInt, .-SPI0_DisableRxInt
+ 360 000a 00BF     		.section	.text.SPI0_SetTxInterruptMode,"ax",%progbits
+ 361              		.align	2
+ 362              		.global	SPI0_SetTxInterruptMode
+ 363              		.thumb
+ 364              		.thumb_func
+ 365              		.type	SPI0_SetTxInterruptMode, %function
+ 366              	SPI0_SetTxInterruptMode:
+ 367              	.LFB8:
+ 308:.\Generated_Source\PSoC5/SPI0.c **** 
+ 309:.\Generated_Source\PSoC5/SPI0.c **** 
+ 310:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
+ 311:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_SetTxInterruptMode
+ 312:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
+ 313:.\Generated_Source\PSoC5/SPI0.c **** *
+ 314:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
+ 315:.\Generated_Source\PSoC5/SPI0.c **** *  Configure which status bits trigger an interrupt event.
+ 316:.\Generated_Source\PSoC5/SPI0.c **** *
+ 317:.\Generated_Source\PSoC5/SPI0.c **** * Parameters:
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 13
+
+
+ 318:.\Generated_Source\PSoC5/SPI0.c **** *  intSrc: An or'd combination of the desired status bit masks (defined in the
+ 319:.\Generated_Source\PSoC5/SPI0.c **** *  header file).
+ 320:.\Generated_Source\PSoC5/SPI0.c **** *
+ 321:.\Generated_Source\PSoC5/SPI0.c **** * Return:
+ 322:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 323:.\Generated_Source\PSoC5/SPI0.c **** *
+ 324:.\Generated_Source\PSoC5/SPI0.c **** * Theory:
+ 325:.\Generated_Source\PSoC5/SPI0.c **** *  Enables the output of specific status bits to the interrupt controller.
+ 326:.\Generated_Source\PSoC5/SPI0.c **** *
+ 327:.\Generated_Source\PSoC5/SPI0.c **** *******************************************************************************/
+ 328:.\Generated_Source\PSoC5/SPI0.c **** void SPI0_SetTxInterruptMode(uint8 intSrc) 
+ 329:.\Generated_Source\PSoC5/SPI0.c **** {
+ 368              		.loc 1 329 0
+ 369              		.cfi_startproc
+ 370              		@ args = 0, pretend = 0, frame = 8
+ 371              		@ frame_needed = 1, uses_anonymous_args = 0
+ 372              		@ link register save eliminated.
+ 373 0000 80B4     		push	{r7}
+ 374              	.LCFI18:
+ 375              		.cfi_def_cfa_offset 4
+ 376              		.cfi_offset 7, -4
+ 377 0002 83B0     		sub	sp, sp, #12
+ 378              	.LCFI19:
+ 379              		.cfi_def_cfa_offset 16
+ 380 0004 00AF     		add	r7, sp, #0
+ 381              	.LCFI20:
+ 382              		.cfi_def_cfa_register 7
+ 383 0006 0346     		mov	r3, r0
+ 384 0008 FB71     		strb	r3, [r7, #7]
+ 330:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_TX_STATUS_MASK_REG = intSrc;
+ 385              		.loc 1 330 0
+ 386 000a 46F28453 		movw	r3, #25988
+ 387 000e C4F20003 		movt	r3, 16384
+ 388 0012 FA79     		ldrb	r2, [r7, #7]
+ 389 0014 1A70     		strb	r2, [r3, #0]
+ 331:.\Generated_Source\PSoC5/SPI0.c **** }
+ 390              		.loc 1 331 0
+ 391 0016 07F10C07 		add	r7, r7, #12
+ 392 001a BD46     		mov	sp, r7
+ 393 001c 80BC     		pop	{r7}
+ 394 001e 7047     		bx	lr
+ 395              		.cfi_endproc
+ 396              	.LFE8:
+ 397              		.size	SPI0_SetTxInterruptMode, .-SPI0_SetTxInterruptMode
+ 398              		.section	.text.SPI0_SetRxInterruptMode,"ax",%progbits
+ 399              		.align	2
+ 400              		.global	SPI0_SetRxInterruptMode
+ 401              		.thumb
+ 402              		.thumb_func
+ 403              		.type	SPI0_SetRxInterruptMode, %function
+ 404              	SPI0_SetRxInterruptMode:
+ 405              	.LFB9:
+ 332:.\Generated_Source\PSoC5/SPI0.c **** 
+ 333:.\Generated_Source\PSoC5/SPI0.c **** 
+ 334:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
+ 335:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_SetRxInterruptMode
+ 336:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 14
+
+
+ 337:.\Generated_Source\PSoC5/SPI0.c **** *
+ 338:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
+ 339:.\Generated_Source\PSoC5/SPI0.c **** *  Configure which status bits trigger an interrupt event.
+ 340:.\Generated_Source\PSoC5/SPI0.c **** *
+ 341:.\Generated_Source\PSoC5/SPI0.c **** * Parameters:
+ 342:.\Generated_Source\PSoC5/SPI0.c **** *  intSrc: An or'd combination of the desired status bit masks (defined in the
+ 343:.\Generated_Source\PSoC5/SPI0.c **** *  header file).
+ 344:.\Generated_Source\PSoC5/SPI0.c **** *
+ 345:.\Generated_Source\PSoC5/SPI0.c **** * Return:
+ 346:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 347:.\Generated_Source\PSoC5/SPI0.c **** *
+ 348:.\Generated_Source\PSoC5/SPI0.c **** * Theory:
+ 349:.\Generated_Source\PSoC5/SPI0.c **** *  Enables the output of specific status bits to the interrupt controller.
+ 350:.\Generated_Source\PSoC5/SPI0.c **** *
+ 351:.\Generated_Source\PSoC5/SPI0.c **** *******************************************************************************/
+ 352:.\Generated_Source\PSoC5/SPI0.c **** void SPI0_SetRxInterruptMode(uint8 intSrc) 
+ 353:.\Generated_Source\PSoC5/SPI0.c **** {
+ 406              		.loc 1 353 0
+ 407              		.cfi_startproc
+ 408              		@ args = 0, pretend = 0, frame = 8
+ 409              		@ frame_needed = 1, uses_anonymous_args = 0
+ 410              		@ link register save eliminated.
+ 411 0000 80B4     		push	{r7}
+ 412              	.LCFI21:
+ 413              		.cfi_def_cfa_offset 4
+ 414              		.cfi_offset 7, -4
+ 415 0002 83B0     		sub	sp, sp, #12
+ 416              	.LCFI22:
+ 417              		.cfi_def_cfa_offset 16
+ 418 0004 00AF     		add	r7, sp, #0
+ 419              	.LCFI23:
+ 420              		.cfi_def_cfa_register 7
+ 421 0006 0346     		mov	r3, r0
+ 422 0008 FB71     		strb	r3, [r7, #7]
+ 354:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_RX_STATUS_MASK_REG  = intSrc;
+ 423              		.loc 1 354 0
+ 424 000a 46F28653 		movw	r3, #25990
+ 425 000e C4F20003 		movt	r3, 16384
+ 426 0012 FA79     		ldrb	r2, [r7, #7]
+ 427 0014 1A70     		strb	r2, [r3, #0]
+ 355:.\Generated_Source\PSoC5/SPI0.c **** }
+ 428              		.loc 1 355 0
+ 429 0016 07F10C07 		add	r7, r7, #12
+ 430 001a BD46     		mov	sp, r7
+ 431 001c 80BC     		pop	{r7}
+ 432 001e 7047     		bx	lr
+ 433              		.cfi_endproc
+ 434              	.LFE9:
+ 435              		.size	SPI0_SetRxInterruptMode, .-SPI0_SetRxInterruptMode
+ 436              		.section	.text.SPI0_ReadTxStatus,"ax",%progbits
+ 437              		.align	2
+ 438              		.global	SPI0_ReadTxStatus
+ 439              		.thumb
+ 440              		.thumb_func
+ 441              		.type	SPI0_ReadTxStatus, %function
+ 442              	SPI0_ReadTxStatus:
+ 443              	.LFB10:
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 15
+
+
+ 356:.\Generated_Source\PSoC5/SPI0.c **** 
+ 357:.\Generated_Source\PSoC5/SPI0.c **** 
+ 358:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
+ 359:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_ReadTxStatus
+ 360:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
+ 361:.\Generated_Source\PSoC5/SPI0.c **** *
+ 362:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
+ 363:.\Generated_Source\PSoC5/SPI0.c **** *  Read the Tx status register for the component.
+ 364:.\Generated_Source\PSoC5/SPI0.c **** *
+ 365:.\Generated_Source\PSoC5/SPI0.c **** * Parameters:
+ 366:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 367:.\Generated_Source\PSoC5/SPI0.c **** *
+ 368:.\Generated_Source\PSoC5/SPI0.c **** * Return:
+ 369:.\Generated_Source\PSoC5/SPI0.c **** *  Contents of the Tx status register.
+ 370:.\Generated_Source\PSoC5/SPI0.c **** *
+ 371:.\Generated_Source\PSoC5/SPI0.c **** * Global variables:
+ 372:.\Generated_Source\PSoC5/SPI0.c **** *  SPI0_swStatusTx - used to store in software status register,
+ 373:.\Generated_Source\PSoC5/SPI0.c **** *  modified every function call - resets to zero.
+ 374:.\Generated_Source\PSoC5/SPI0.c **** *
+ 375:.\Generated_Source\PSoC5/SPI0.c **** * Theory:
+ 376:.\Generated_Source\PSoC5/SPI0.c **** *  Allows the user and the API to read the Tx status register for error
+ 377:.\Generated_Source\PSoC5/SPI0.c **** *  detection and flow control.
+ 378:.\Generated_Source\PSoC5/SPI0.c **** *
+ 379:.\Generated_Source\PSoC5/SPI0.c **** * Side Effects:
+ 380:.\Generated_Source\PSoC5/SPI0.c **** *  Clear Tx status register of the component.
+ 381:.\Generated_Source\PSoC5/SPI0.c **** *
+ 382:.\Generated_Source\PSoC5/SPI0.c **** * Reentrant:
+ 383:.\Generated_Source\PSoC5/SPI0.c **** *  No.
+ 384:.\Generated_Source\PSoC5/SPI0.c **** *
+ 385:.\Generated_Source\PSoC5/SPI0.c **** *******************************************************************************/
+ 386:.\Generated_Source\PSoC5/SPI0.c **** uint8 SPI0_ReadTxStatus(void) 
+ 387:.\Generated_Source\PSoC5/SPI0.c **** {
+ 444              		.loc 1 387 0
+ 445              		.cfi_startproc
+ 446              		@ args = 0, pretend = 0, frame = 8
+ 447              		@ frame_needed = 1, uses_anonymous_args = 0
+ 448              		@ link register save eliminated.
+ 449 0000 80B4     		push	{r7}
+ 450              	.LCFI24:
+ 451              		.cfi_def_cfa_offset 4
+ 452              		.cfi_offset 7, -4
+ 453 0002 83B0     		sub	sp, sp, #12
+ 454              	.LCFI25:
+ 455              		.cfi_def_cfa_offset 16
+ 456 0004 00AF     		add	r7, sp, #0
+ 457              	.LCFI26:
+ 458              		.cfi_def_cfa_register 7
+ 388:.\Generated_Source\PSoC5/SPI0.c ****     uint8 tmpStatus;
+ 389:.\Generated_Source\PSoC5/SPI0.c **** 
+ 390:.\Generated_Source\PSoC5/SPI0.c ****     #if(SPI0_TX_SOFTWARE_BUF_ENABLED)
+ 391:.\Generated_Source\PSoC5/SPI0.c ****         /* Disable TX interrupt to protect global veriables */
+ 392:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_DisableTxInt();
+ 393:.\Generated_Source\PSoC5/SPI0.c **** 
+ 394:.\Generated_Source\PSoC5/SPI0.c ****         tmpStatus = SPI0_GET_STATUS_TX(SPI0_swStatusTx);
+ 395:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_swStatusTx = 0u;
+ 396:.\Generated_Source\PSoC5/SPI0.c **** 
+ 397:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_EnableTxInt();
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 16
+
+
+ 398:.\Generated_Source\PSoC5/SPI0.c **** 
+ 399:.\Generated_Source\PSoC5/SPI0.c ****     #else
+ 400:.\Generated_Source\PSoC5/SPI0.c **** 
+ 401:.\Generated_Source\PSoC5/SPI0.c ****         tmpStatus = SPI0_TX_STATUS_REG;
+ 459              		.loc 1 401 0
+ 460 0006 46F26453 		movw	r3, #25956
+ 461 000a C4F20003 		movt	r3, 16384
+ 462 000e 1B78     		ldrb	r3, [r3, #0]
+ 463 0010 FB71     		strb	r3, [r7, #7]
+ 402:.\Generated_Source\PSoC5/SPI0.c **** 
+ 403:.\Generated_Source\PSoC5/SPI0.c ****     #endif /* (SPI0_TX_SOFTWARE_BUF_ENABLED) */
+ 404:.\Generated_Source\PSoC5/SPI0.c **** 
+ 405:.\Generated_Source\PSoC5/SPI0.c ****     return(tmpStatus);
+ 464              		.loc 1 405 0
+ 465 0012 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 406:.\Generated_Source\PSoC5/SPI0.c **** }
+ 466              		.loc 1 406 0
+ 467 0014 1846     		mov	r0, r3
+ 468 0016 07F10C07 		add	r7, r7, #12
+ 469 001a BD46     		mov	sp, r7
+ 470 001c 80BC     		pop	{r7}
+ 471 001e 7047     		bx	lr
+ 472              		.cfi_endproc
+ 473              	.LFE10:
+ 474              		.size	SPI0_ReadTxStatus, .-SPI0_ReadTxStatus
+ 475              		.section	.text.SPI0_ReadRxStatus,"ax",%progbits
+ 476              		.align	2
+ 477              		.global	SPI0_ReadRxStatus
+ 478              		.thumb
+ 479              		.thumb_func
+ 480              		.type	SPI0_ReadRxStatus, %function
+ 481              	SPI0_ReadRxStatus:
+ 482              	.LFB11:
+ 407:.\Generated_Source\PSoC5/SPI0.c **** 
+ 408:.\Generated_Source\PSoC5/SPI0.c **** 
+ 409:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
+ 410:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_ReadRxStatus
+ 411:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
+ 412:.\Generated_Source\PSoC5/SPI0.c **** *
+ 413:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
+ 414:.\Generated_Source\PSoC5/SPI0.c **** *  Read the Rx status register for the component.
+ 415:.\Generated_Source\PSoC5/SPI0.c **** *
+ 416:.\Generated_Source\PSoC5/SPI0.c **** * Parameters:
+ 417:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 418:.\Generated_Source\PSoC5/SPI0.c **** *
+ 419:.\Generated_Source\PSoC5/SPI0.c **** * Return:
+ 420:.\Generated_Source\PSoC5/SPI0.c **** *  Contents of the Rx status register.
+ 421:.\Generated_Source\PSoC5/SPI0.c **** *
+ 422:.\Generated_Source\PSoC5/SPI0.c **** * Global variables:
+ 423:.\Generated_Source\PSoC5/SPI0.c **** *  SPI0_swStatusRx - used to store in software Rx status register,
+ 424:.\Generated_Source\PSoC5/SPI0.c **** *  modified every function call - resets to zero.
+ 425:.\Generated_Source\PSoC5/SPI0.c **** *
+ 426:.\Generated_Source\PSoC5/SPI0.c **** * Theory:
+ 427:.\Generated_Source\PSoC5/SPI0.c **** *  Allows the user and the API to read the Rx status register for error
+ 428:.\Generated_Source\PSoC5/SPI0.c **** *  detection and flow control.
+ 429:.\Generated_Source\PSoC5/SPI0.c **** *
+ 430:.\Generated_Source\PSoC5/SPI0.c **** * Side Effects:
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 17
+
+
+ 431:.\Generated_Source\PSoC5/SPI0.c **** *  Clear Rx status register of the component.
+ 432:.\Generated_Source\PSoC5/SPI0.c **** *
+ 433:.\Generated_Source\PSoC5/SPI0.c **** * Reentrant:
+ 434:.\Generated_Source\PSoC5/SPI0.c **** *  No.
+ 435:.\Generated_Source\PSoC5/SPI0.c **** *
+ 436:.\Generated_Source\PSoC5/SPI0.c **** *******************************************************************************/
+ 437:.\Generated_Source\PSoC5/SPI0.c **** uint8 SPI0_ReadRxStatus(void) 
+ 438:.\Generated_Source\PSoC5/SPI0.c **** {
+ 483              		.loc 1 438 0
+ 484              		.cfi_startproc
+ 485              		@ args = 0, pretend = 0, frame = 8
+ 486              		@ frame_needed = 1, uses_anonymous_args = 0
+ 487              		@ link register save eliminated.
+ 488 0000 80B4     		push	{r7}
+ 489              	.LCFI27:
+ 490              		.cfi_def_cfa_offset 4
+ 491              		.cfi_offset 7, -4
+ 492 0002 83B0     		sub	sp, sp, #12
+ 493              	.LCFI28:
+ 494              		.cfi_def_cfa_offset 16
+ 495 0004 00AF     		add	r7, sp, #0
+ 496              	.LCFI29:
+ 497              		.cfi_def_cfa_register 7
+ 439:.\Generated_Source\PSoC5/SPI0.c ****     uint8 tmpStatus;
+ 440:.\Generated_Source\PSoC5/SPI0.c **** 
+ 441:.\Generated_Source\PSoC5/SPI0.c ****     #if(SPI0_RX_SOFTWARE_BUF_ENABLED)
+ 442:.\Generated_Source\PSoC5/SPI0.c ****         /* Disable RX interrupt to protect global veriables */
+ 443:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_DisableRxInt();
+ 444:.\Generated_Source\PSoC5/SPI0.c **** 
+ 445:.\Generated_Source\PSoC5/SPI0.c ****         tmpStatus = SPI0_GET_STATUS_RX(SPI0_swStatusRx);
+ 446:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_swStatusRx = 0u;
+ 447:.\Generated_Source\PSoC5/SPI0.c **** 
+ 448:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_EnableRxInt();
+ 449:.\Generated_Source\PSoC5/SPI0.c **** 
+ 450:.\Generated_Source\PSoC5/SPI0.c ****     #else
+ 451:.\Generated_Source\PSoC5/SPI0.c **** 
+ 452:.\Generated_Source\PSoC5/SPI0.c ****         tmpStatus = SPI0_RX_STATUS_REG;
+ 498              		.loc 1 452 0
+ 499 0006 46F26653 		movw	r3, #25958
+ 500 000a C4F20003 		movt	r3, 16384
+ 501 000e 1B78     		ldrb	r3, [r3, #0]
+ 502 0010 FB71     		strb	r3, [r7, #7]
+ 453:.\Generated_Source\PSoC5/SPI0.c **** 
+ 454:.\Generated_Source\PSoC5/SPI0.c ****     #endif /* (SPI0_RX_SOFTWARE_BUF_ENABLED) */
+ 455:.\Generated_Source\PSoC5/SPI0.c **** 
+ 456:.\Generated_Source\PSoC5/SPI0.c ****     return(tmpStatus);
+ 503              		.loc 1 456 0
+ 504 0012 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 457:.\Generated_Source\PSoC5/SPI0.c **** }
+ 505              		.loc 1 457 0
+ 506 0014 1846     		mov	r0, r3
+ 507 0016 07F10C07 		add	r7, r7, #12
+ 508 001a BD46     		mov	sp, r7
+ 509 001c 80BC     		pop	{r7}
+ 510 001e 7047     		bx	lr
+ 511              		.cfi_endproc
+ 512              	.LFE11:
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 18
+
+
+ 513              		.size	SPI0_ReadRxStatus, .-SPI0_ReadRxStatus
+ 514              		.section	.text.SPI0_WriteTxData,"ax",%progbits
+ 515              		.align	2
+ 516              		.global	SPI0_WriteTxData
+ 517              		.thumb
+ 518              		.thumb_func
+ 519              		.type	SPI0_WriteTxData, %function
+ 520              	SPI0_WriteTxData:
+ 521              	.LFB12:
+ 458:.\Generated_Source\PSoC5/SPI0.c **** 
+ 459:.\Generated_Source\PSoC5/SPI0.c **** 
+ 460:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
+ 461:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_WriteTxData
+ 462:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
+ 463:.\Generated_Source\PSoC5/SPI0.c **** *
+ 464:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
+ 465:.\Generated_Source\PSoC5/SPI0.c **** *  Write a byte of data to be sent across the SPI.
+ 466:.\Generated_Source\PSoC5/SPI0.c **** *
+ 467:.\Generated_Source\PSoC5/SPI0.c **** * Parameters:
+ 468:.\Generated_Source\PSoC5/SPI0.c **** *  txDataByte: The data value to send across the SPI.
+ 469:.\Generated_Source\PSoC5/SPI0.c **** *
+ 470:.\Generated_Source\PSoC5/SPI0.c **** * Return:
+ 471:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 472:.\Generated_Source\PSoC5/SPI0.c **** *
+ 473:.\Generated_Source\PSoC5/SPI0.c **** * Global variables:
+ 474:.\Generated_Source\PSoC5/SPI0.c **** *  SPI0_txBufferWrite - used for the account of the bytes which
+ 475:.\Generated_Source\PSoC5/SPI0.c **** *  have been written down in the TX software buffer, modified every function
+ 476:.\Generated_Source\PSoC5/SPI0.c **** *  call if TX Software Buffer is used.
+ 477:.\Generated_Source\PSoC5/SPI0.c **** *  SPI0_txBufferRead - used for the account of the bytes which
+ 478:.\Generated_Source\PSoC5/SPI0.c **** *  have been read from the TX software buffer.
+ 479:.\Generated_Source\PSoC5/SPI0.c **** *  SPI0_txBuffer[SPI0_TX_BUFFER_SIZE] - used to store
+ 480:.\Generated_Source\PSoC5/SPI0.c **** *  data to sending, modified every function call if TX Software Buffer is used.
+ 481:.\Generated_Source\PSoC5/SPI0.c **** *
+ 482:.\Generated_Source\PSoC5/SPI0.c **** * Theory:
+ 483:.\Generated_Source\PSoC5/SPI0.c **** *  Allows the user to transmit any byte of data in a single transfer.
+ 484:.\Generated_Source\PSoC5/SPI0.c **** *
+ 485:.\Generated_Source\PSoC5/SPI0.c **** * Side Effects:
+ 486:.\Generated_Source\PSoC5/SPI0.c **** *  If this function is called again before the previous byte is finished then
+ 487:.\Generated_Source\PSoC5/SPI0.c **** *  the next byte will be appended to the transfer with no time between
+ 488:.\Generated_Source\PSoC5/SPI0.c **** *  the byte transfers. Clear Tx status register of the component.
+ 489:.\Generated_Source\PSoC5/SPI0.c **** *
+ 490:.\Generated_Source\PSoC5/SPI0.c **** * Reentrant:
+ 491:.\Generated_Source\PSoC5/SPI0.c **** *  No.
+ 492:.\Generated_Source\PSoC5/SPI0.c **** *
+ 493:.\Generated_Source\PSoC5/SPI0.c **** *******************************************************************************/
+ 494:.\Generated_Source\PSoC5/SPI0.c **** void SPI0_WriteTxData(uint8 txData) 
+ 495:.\Generated_Source\PSoC5/SPI0.c **** {
+ 522              		.loc 1 495 0
+ 523              		.cfi_startproc
+ 524              		@ args = 0, pretend = 0, frame = 8
+ 525              		@ frame_needed = 1, uses_anonymous_args = 0
+ 526              		@ link register save eliminated.
+ 527 0000 80B4     		push	{r7}
+ 528              	.LCFI30:
+ 529              		.cfi_def_cfa_offset 4
+ 530              		.cfi_offset 7, -4
+ 531 0002 83B0     		sub	sp, sp, #12
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 19
+
+
+ 532              	.LCFI31:
+ 533              		.cfi_def_cfa_offset 16
+ 534 0004 00AF     		add	r7, sp, #0
+ 535              	.LCFI32:
+ 536              		.cfi_def_cfa_register 7
+ 537 0006 0346     		mov	r3, r0
+ 538 0008 FB71     		strb	r3, [r7, #7]
+ 496:.\Generated_Source\PSoC5/SPI0.c ****     #if(SPI0_TX_SOFTWARE_BUF_ENABLED)
+ 497:.\Generated_Source\PSoC5/SPI0.c **** 
+ 498:.\Generated_Source\PSoC5/SPI0.c ****         uint8 tempStatus;
+ 499:.\Generated_Source\PSoC5/SPI0.c ****         uint8 tmpTxBufferRead;
+ 500:.\Generated_Source\PSoC5/SPI0.c **** 
+ 501:.\Generated_Source\PSoC5/SPI0.c ****         /* Block if TX buffer is FULL: don't overwrite */
+ 502:.\Generated_Source\PSoC5/SPI0.c ****         do
+ 503:.\Generated_Source\PSoC5/SPI0.c ****         {
+ 504:.\Generated_Source\PSoC5/SPI0.c ****             tmpTxBufferRead = SPI0_txBufferRead;
+ 505:.\Generated_Source\PSoC5/SPI0.c ****             if(0u == tmpTxBufferRead)
+ 506:.\Generated_Source\PSoC5/SPI0.c ****             {
+ 507:.\Generated_Source\PSoC5/SPI0.c ****                 tmpTxBufferRead = (SPI0_TX_BUFFER_SIZE - 1u);
+ 508:.\Generated_Source\PSoC5/SPI0.c ****             }
+ 509:.\Generated_Source\PSoC5/SPI0.c ****             else
+ 510:.\Generated_Source\PSoC5/SPI0.c ****             {
+ 511:.\Generated_Source\PSoC5/SPI0.c ****                 tmpTxBufferRead--;
+ 512:.\Generated_Source\PSoC5/SPI0.c ****             }
+ 513:.\Generated_Source\PSoC5/SPI0.c **** 
+ 514:.\Generated_Source\PSoC5/SPI0.c ****         }while(tmpTxBufferRead == SPI0_txBufferWrite);
+ 515:.\Generated_Source\PSoC5/SPI0.c **** 
+ 516:.\Generated_Source\PSoC5/SPI0.c ****         /* Disable TX interrupt to protect global veriables */
+ 517:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_DisableTxInt();
+ 518:.\Generated_Source\PSoC5/SPI0.c **** 
+ 519:.\Generated_Source\PSoC5/SPI0.c ****         tempStatus = SPI0_GET_STATUS_TX(SPI0_swStatusTx);
+ 520:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_swStatusTx = tempStatus;
+ 521:.\Generated_Source\PSoC5/SPI0.c **** 
+ 522:.\Generated_Source\PSoC5/SPI0.c **** 
+ 523:.\Generated_Source\PSoC5/SPI0.c ****         if((SPI0_txBufferRead == SPI0_txBufferWrite) &&
+ 524:.\Generated_Source\PSoC5/SPI0.c ****            (0u != (SPI0_swStatusTx & SPI0_STS_TX_FIFO_NOT_FULL)))
+ 525:.\Generated_Source\PSoC5/SPI0.c ****         {
+ 526:.\Generated_Source\PSoC5/SPI0.c ****             /* Add directly to the TX FIFO */
+ 527:.\Generated_Source\PSoC5/SPI0.c ****             CY_SET_REG8(SPI0_TXDATA_PTR, txData);
+ 528:.\Generated_Source\PSoC5/SPI0.c ****         }
+ 529:.\Generated_Source\PSoC5/SPI0.c ****         else
+ 530:.\Generated_Source\PSoC5/SPI0.c ****         {
+ 531:.\Generated_Source\PSoC5/SPI0.c ****             /* Add to the TX software buffer */
+ 532:.\Generated_Source\PSoC5/SPI0.c ****             SPI0_txBufferWrite++;
+ 533:.\Generated_Source\PSoC5/SPI0.c ****             if(SPI0_txBufferWrite >= SPI0_TX_BUFFER_SIZE)
+ 534:.\Generated_Source\PSoC5/SPI0.c ****             {
+ 535:.\Generated_Source\PSoC5/SPI0.c ****                 SPI0_txBufferWrite = 0u;
+ 536:.\Generated_Source\PSoC5/SPI0.c ****             }
+ 537:.\Generated_Source\PSoC5/SPI0.c **** 
+ 538:.\Generated_Source\PSoC5/SPI0.c ****             if(SPI0_txBufferWrite == SPI0_txBufferRead)
+ 539:.\Generated_Source\PSoC5/SPI0.c ****             {
+ 540:.\Generated_Source\PSoC5/SPI0.c ****                 SPI0_txBufferRead++;
+ 541:.\Generated_Source\PSoC5/SPI0.c ****                 if(SPI0_txBufferRead >= SPI0_TX_BUFFER_SIZE)
+ 542:.\Generated_Source\PSoC5/SPI0.c ****                 {
+ 543:.\Generated_Source\PSoC5/SPI0.c ****                     SPI0_txBufferRead = 0u;
+ 544:.\Generated_Source\PSoC5/SPI0.c ****                 }
+ 545:.\Generated_Source\PSoC5/SPI0.c ****                 SPI0_txBufferFull = 1u;
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 20
+
+
+ 546:.\Generated_Source\PSoC5/SPI0.c ****             }
+ 547:.\Generated_Source\PSoC5/SPI0.c **** 
+ 548:.\Generated_Source\PSoC5/SPI0.c ****             SPI0_txBuffer[SPI0_txBufferWrite] = txData;
+ 549:.\Generated_Source\PSoC5/SPI0.c **** 
+ 550:.\Generated_Source\PSoC5/SPI0.c ****             SPI0_TX_STATUS_MASK_REG |= SPI0_STS_TX_FIFO_NOT_FULL;
+ 551:.\Generated_Source\PSoC5/SPI0.c ****         }
+ 552:.\Generated_Source\PSoC5/SPI0.c **** 
+ 553:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_EnableTxInt();
+ 554:.\Generated_Source\PSoC5/SPI0.c **** 
+ 555:.\Generated_Source\PSoC5/SPI0.c ****     #else
+ 556:.\Generated_Source\PSoC5/SPI0.c **** 
+ 557:.\Generated_Source\PSoC5/SPI0.c ****         while(0u == (SPI0_TX_STATUS_REG & SPI0_STS_TX_FIFO_NOT_FULL))
+ 539              		.loc 1 557 0
+ 540 000a 00BF     		nop
+ 541              	.L17:
+ 542              		.loc 1 557 0 is_stmt 0 discriminator 1
+ 543 000c 46F26453 		movw	r3, #25956
+ 544 0010 C4F20003 		movt	r3, 16384
+ 545 0014 1B78     		ldrb	r3, [r3, #0]
+ 546 0016 DBB2     		uxtb	r3, r3
+ 547 0018 03F00403 		and	r3, r3, #4
+ 548 001c 002B     		cmp	r3, #0
+ 549 001e F5D0     		beq	.L17
+ 558:.\Generated_Source\PSoC5/SPI0.c ****         {
+ 559:.\Generated_Source\PSoC5/SPI0.c ****             ; /* Wait for room in FIFO */
+ 560:.\Generated_Source\PSoC5/SPI0.c ****         }
+ 561:.\Generated_Source\PSoC5/SPI0.c **** 
+ 562:.\Generated_Source\PSoC5/SPI0.c ****         /* Put byte in TX FIFO */
+ 563:.\Generated_Source\PSoC5/SPI0.c ****         CY_SET_REG8(SPI0_TXDATA_PTR, txData);
+ 550              		.loc 1 563 0 is_stmt 1
+ 551 0020 46F24553 		movw	r3, #25925
+ 552 0024 C4F20003 		movt	r3, 16384
+ 553 0028 FA79     		ldrb	r2, [r7, #7]
+ 554 002a 1A70     		strb	r2, [r3, #0]
+ 564:.\Generated_Source\PSoC5/SPI0.c **** 
+ 565:.\Generated_Source\PSoC5/SPI0.c ****     #endif /* (SPI0_TX_SOFTWARE_BUF_ENABLED) */
+ 566:.\Generated_Source\PSoC5/SPI0.c **** }
+ 555              		.loc 1 566 0
+ 556 002c 07F10C07 		add	r7, r7, #12
+ 557 0030 BD46     		mov	sp, r7
+ 558 0032 80BC     		pop	{r7}
+ 559 0034 7047     		bx	lr
+ 560              		.cfi_endproc
+ 561              	.LFE12:
+ 562              		.size	SPI0_WriteTxData, .-SPI0_WriteTxData
+ 563 0036 00BF     		.section	.text.SPI0_ReadRxData,"ax",%progbits
+ 564              		.align	2
+ 565              		.global	SPI0_ReadRxData
+ 566              		.thumb
+ 567              		.thumb_func
+ 568              		.type	SPI0_ReadRxData, %function
+ 569              	SPI0_ReadRxData:
+ 570              	.LFB13:
+ 567:.\Generated_Source\PSoC5/SPI0.c **** 
+ 568:.\Generated_Source\PSoC5/SPI0.c **** 
+ 569:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
+ 570:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_ReadRxData
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 21
+
+
+ 571:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
+ 572:.\Generated_Source\PSoC5/SPI0.c **** *
+ 573:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
+ 574:.\Generated_Source\PSoC5/SPI0.c **** *  Read the next byte of data received across the SPI.
+ 575:.\Generated_Source\PSoC5/SPI0.c **** *
+ 576:.\Generated_Source\PSoC5/SPI0.c **** * Parameters:
+ 577:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 578:.\Generated_Source\PSoC5/SPI0.c **** *
+ 579:.\Generated_Source\PSoC5/SPI0.c **** * Return:
+ 580:.\Generated_Source\PSoC5/SPI0.c **** *  The next byte of data read from the FIFO.
+ 581:.\Generated_Source\PSoC5/SPI0.c **** *
+ 582:.\Generated_Source\PSoC5/SPI0.c **** * Global variables:
+ 583:.\Generated_Source\PSoC5/SPI0.c **** *  SPI0_rxBufferWrite - used for the account of the bytes which
+ 584:.\Generated_Source\PSoC5/SPI0.c **** *  have been written down in the RX software buffer.
+ 585:.\Generated_Source\PSoC5/SPI0.c **** *  SPI0_rxBufferRead - used for the account of the bytes which
+ 586:.\Generated_Source\PSoC5/SPI0.c **** *  have been read from the RX software buffer, modified every function
+ 587:.\Generated_Source\PSoC5/SPI0.c **** *  call if RX Software Buffer is used.
+ 588:.\Generated_Source\PSoC5/SPI0.c **** *  SPI0_rxBuffer[SPI0_RX_BUFFER_SIZE] - used to store
+ 589:.\Generated_Source\PSoC5/SPI0.c **** *  received data.
+ 590:.\Generated_Source\PSoC5/SPI0.c **** *
+ 591:.\Generated_Source\PSoC5/SPI0.c **** * Theory:
+ 592:.\Generated_Source\PSoC5/SPI0.c **** *  Allows the user to read a byte of data received.
+ 593:.\Generated_Source\PSoC5/SPI0.c **** *
+ 594:.\Generated_Source\PSoC5/SPI0.c **** * Side Effects:
+ 595:.\Generated_Source\PSoC5/SPI0.c **** *  Will return invalid data if the FIFO is empty. The user should Call
+ 596:.\Generated_Source\PSoC5/SPI0.c **** *  GetRxBufferSize() and if it returns a non-zero value then it is safe to call
+ 597:.\Generated_Source\PSoC5/SPI0.c **** *  ReadByte() function.
+ 598:.\Generated_Source\PSoC5/SPI0.c **** *
+ 599:.\Generated_Source\PSoC5/SPI0.c **** * Reentrant:
+ 600:.\Generated_Source\PSoC5/SPI0.c **** *  No.
+ 601:.\Generated_Source\PSoC5/SPI0.c **** *
+ 602:.\Generated_Source\PSoC5/SPI0.c **** *******************************************************************************/
+ 603:.\Generated_Source\PSoC5/SPI0.c **** uint8 SPI0_ReadRxData(void) 
+ 604:.\Generated_Source\PSoC5/SPI0.c **** {
+ 571              		.loc 1 604 0
+ 572              		.cfi_startproc
+ 573              		@ args = 0, pretend = 0, frame = 8
+ 574              		@ frame_needed = 1, uses_anonymous_args = 0
+ 575              		@ link register save eliminated.
+ 576 0000 80B4     		push	{r7}
+ 577              	.LCFI33:
+ 578              		.cfi_def_cfa_offset 4
+ 579              		.cfi_offset 7, -4
+ 580 0002 83B0     		sub	sp, sp, #12
+ 581              	.LCFI34:
+ 582              		.cfi_def_cfa_offset 16
+ 583 0004 00AF     		add	r7, sp, #0
+ 584              	.LCFI35:
+ 585              		.cfi_def_cfa_register 7
+ 605:.\Generated_Source\PSoC5/SPI0.c ****     uint8 rxData;
+ 606:.\Generated_Source\PSoC5/SPI0.c **** 
+ 607:.\Generated_Source\PSoC5/SPI0.c ****     #if(SPI0_RX_SOFTWARE_BUF_ENABLED)
+ 608:.\Generated_Source\PSoC5/SPI0.c **** 
+ 609:.\Generated_Source\PSoC5/SPI0.c ****         /* Disable RX interrupt to protect global veriables */
+ 610:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_DisableRxInt();
+ 611:.\Generated_Source\PSoC5/SPI0.c **** 
+ 612:.\Generated_Source\PSoC5/SPI0.c ****         if(SPI0_rxBufferRead != SPI0_rxBufferWrite)
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 22
+
+
+ 613:.\Generated_Source\PSoC5/SPI0.c ****         {
+ 614:.\Generated_Source\PSoC5/SPI0.c ****             if(0u == SPI0_rxBufferFull)
+ 615:.\Generated_Source\PSoC5/SPI0.c ****             {
+ 616:.\Generated_Source\PSoC5/SPI0.c ****                 SPI0_rxBufferRead++;
+ 617:.\Generated_Source\PSoC5/SPI0.c ****                 if(SPI0_rxBufferRead >= SPI0_RX_BUFFER_SIZE)
+ 618:.\Generated_Source\PSoC5/SPI0.c ****                 {
+ 619:.\Generated_Source\PSoC5/SPI0.c ****                     SPI0_rxBufferRead = 0u;
+ 620:.\Generated_Source\PSoC5/SPI0.c ****                 }
+ 621:.\Generated_Source\PSoC5/SPI0.c ****             }
+ 622:.\Generated_Source\PSoC5/SPI0.c ****             else
+ 623:.\Generated_Source\PSoC5/SPI0.c ****             {
+ 624:.\Generated_Source\PSoC5/SPI0.c ****                 SPI0_rxBufferFull = 0u;
+ 625:.\Generated_Source\PSoC5/SPI0.c ****             }
+ 626:.\Generated_Source\PSoC5/SPI0.c ****         }
+ 627:.\Generated_Source\PSoC5/SPI0.c **** 
+ 628:.\Generated_Source\PSoC5/SPI0.c ****         rxData = SPI0_rxBuffer[SPI0_rxBufferRead];
+ 629:.\Generated_Source\PSoC5/SPI0.c **** 
+ 630:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_EnableRxInt();
+ 631:.\Generated_Source\PSoC5/SPI0.c **** 
+ 632:.\Generated_Source\PSoC5/SPI0.c ****     #else
+ 633:.\Generated_Source\PSoC5/SPI0.c **** 
+ 634:.\Generated_Source\PSoC5/SPI0.c ****         rxData = CY_GET_REG8(SPI0_RXDATA_PTR);
+ 586              		.loc 1 634 0
+ 587 0006 46F25553 		movw	r3, #25941
+ 588 000a C4F20003 		movt	r3, 16384
+ 589 000e 1B78     		ldrb	r3, [r3, #0]
+ 590 0010 FB71     		strb	r3, [r7, #7]
+ 635:.\Generated_Source\PSoC5/SPI0.c **** 
+ 636:.\Generated_Source\PSoC5/SPI0.c ****     #endif /* (SPI0_RX_SOFTWARE_BUF_ENABLED) */
+ 637:.\Generated_Source\PSoC5/SPI0.c **** 
+ 638:.\Generated_Source\PSoC5/SPI0.c ****     return(rxData);
+ 591              		.loc 1 638 0
+ 592 0012 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 639:.\Generated_Source\PSoC5/SPI0.c **** }
+ 593              		.loc 1 639 0
+ 594 0014 1846     		mov	r0, r3
+ 595 0016 07F10C07 		add	r7, r7, #12
+ 596 001a BD46     		mov	sp, r7
+ 597 001c 80BC     		pop	{r7}
+ 598 001e 7047     		bx	lr
+ 599              		.cfi_endproc
+ 600              	.LFE13:
+ 601              		.size	SPI0_ReadRxData, .-SPI0_ReadRxData
+ 602              		.section	.text.SPI0_GetRxBufferSize,"ax",%progbits
+ 603              		.align	2
+ 604              		.global	SPI0_GetRxBufferSize
+ 605              		.thumb
+ 606              		.thumb_func
+ 607              		.type	SPI0_GetRxBufferSize, %function
+ 608              	SPI0_GetRxBufferSize:
+ 609              	.LFB14:
+ 640:.\Generated_Source\PSoC5/SPI0.c **** 
+ 641:.\Generated_Source\PSoC5/SPI0.c **** 
+ 642:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
+ 643:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_GetRxBufferSize
+ 644:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
+ 645:.\Generated_Source\PSoC5/SPI0.c **** *
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 23
+
+
+ 646:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
+ 647:.\Generated_Source\PSoC5/SPI0.c **** *  Returns the number of bytes/words of data currently held in the RX buffer.
+ 648:.\Generated_Source\PSoC5/SPI0.c **** *  If RX Software Buffer not used then function return 0 if FIFO empty or 1 if
+ 649:.\Generated_Source\PSoC5/SPI0.c **** *  FIFO not empty. In another case function return size of RX Software Buffer.
+ 650:.\Generated_Source\PSoC5/SPI0.c **** *
+ 651:.\Generated_Source\PSoC5/SPI0.c **** * Parameters:
+ 652:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 653:.\Generated_Source\PSoC5/SPI0.c **** *
+ 654:.\Generated_Source\PSoC5/SPI0.c **** * Return:
+ 655:.\Generated_Source\PSoC5/SPI0.c **** *  Integer count of the number of bytes/words in the RX buffer.
+ 656:.\Generated_Source\PSoC5/SPI0.c **** *
+ 657:.\Generated_Source\PSoC5/SPI0.c **** * Global variables:
+ 658:.\Generated_Source\PSoC5/SPI0.c **** *  SPI0_rxBufferWrite - used for the account of the bytes which
+ 659:.\Generated_Source\PSoC5/SPI0.c **** *  have been written down in the RX software buffer.
+ 660:.\Generated_Source\PSoC5/SPI0.c **** *  SPI0_rxBufferRead - used for the account of the bytes which
+ 661:.\Generated_Source\PSoC5/SPI0.c **** *  have been read from the RX software buffer.
+ 662:.\Generated_Source\PSoC5/SPI0.c **** *
+ 663:.\Generated_Source\PSoC5/SPI0.c **** * Side Effects:
+ 664:.\Generated_Source\PSoC5/SPI0.c **** *  Clear status register of the component.
+ 665:.\Generated_Source\PSoC5/SPI0.c **** *
+ 666:.\Generated_Source\PSoC5/SPI0.c **** *******************************************************************************/
+ 667:.\Generated_Source\PSoC5/SPI0.c **** uint8 SPI0_GetRxBufferSize(void) 
+ 668:.\Generated_Source\PSoC5/SPI0.c **** {
+ 610              		.loc 1 668 0
+ 611              		.cfi_startproc
+ 612              		@ args = 0, pretend = 0, frame = 8
+ 613              		@ frame_needed = 1, uses_anonymous_args = 0
+ 614              		@ link register save eliminated.
+ 615 0000 80B4     		push	{r7}
+ 616              	.LCFI36:
+ 617              		.cfi_def_cfa_offset 4
+ 618              		.cfi_offset 7, -4
+ 619 0002 83B0     		sub	sp, sp, #12
+ 620              	.LCFI37:
+ 621              		.cfi_def_cfa_offset 16
+ 622 0004 00AF     		add	r7, sp, #0
+ 623              	.LCFI38:
+ 624              		.cfi_def_cfa_register 7
+ 669:.\Generated_Source\PSoC5/SPI0.c ****     uint8 size;
+ 670:.\Generated_Source\PSoC5/SPI0.c **** 
+ 671:.\Generated_Source\PSoC5/SPI0.c ****     #if(SPI0_RX_SOFTWARE_BUF_ENABLED)
+ 672:.\Generated_Source\PSoC5/SPI0.c **** 
+ 673:.\Generated_Source\PSoC5/SPI0.c ****         /* Disable RX interrupt to protect global veriables */
+ 674:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_DisableRxInt();
+ 675:.\Generated_Source\PSoC5/SPI0.c **** 
+ 676:.\Generated_Source\PSoC5/SPI0.c ****         if(SPI0_rxBufferRead == SPI0_rxBufferWrite)
+ 677:.\Generated_Source\PSoC5/SPI0.c ****         {
+ 678:.\Generated_Source\PSoC5/SPI0.c ****             size = 0u;
+ 679:.\Generated_Source\PSoC5/SPI0.c ****         }
+ 680:.\Generated_Source\PSoC5/SPI0.c ****         else if(SPI0_rxBufferRead < SPI0_rxBufferWrite)
+ 681:.\Generated_Source\PSoC5/SPI0.c ****         {
+ 682:.\Generated_Source\PSoC5/SPI0.c ****             size = (SPI0_rxBufferWrite - SPI0_rxBufferRead);
+ 683:.\Generated_Source\PSoC5/SPI0.c ****         }
+ 684:.\Generated_Source\PSoC5/SPI0.c ****         else
+ 685:.\Generated_Source\PSoC5/SPI0.c ****         {
+ 686:.\Generated_Source\PSoC5/SPI0.c ****             size = (SPI0_RX_BUFFER_SIZE - SPI0_rxBufferRead) + SPI0_rxBufferWrite;
+ 687:.\Generated_Source\PSoC5/SPI0.c ****         }
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 24
+
+
+ 688:.\Generated_Source\PSoC5/SPI0.c **** 
+ 689:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_EnableRxInt();
+ 690:.\Generated_Source\PSoC5/SPI0.c **** 
+ 691:.\Generated_Source\PSoC5/SPI0.c ****     #else
+ 692:.\Generated_Source\PSoC5/SPI0.c **** 
+ 693:.\Generated_Source\PSoC5/SPI0.c ****         /* We can only know if there is data in the RX FIFO */
+ 694:.\Generated_Source\PSoC5/SPI0.c ****         size = (0u != (SPI0_RX_STATUS_REG & SPI0_STS_RX_FIFO_NOT_EMPTY)) ? 1u : 0u;
+ 625              		.loc 1 694 0
+ 626 0006 46F26653 		movw	r3, #25958
+ 627 000a C4F20003 		movt	r3, 16384
+ 628 000e 1B78     		ldrb	r3, [r3, #0]
+ 629 0010 DBB2     		uxtb	r3, r3
+ 630 0012 03F02003 		and	r3, r3, #32
+ 631 0016 002B     		cmp	r3, #0
+ 632 0018 02D0     		beq	.L21
+ 633              		.loc 1 694 0 is_stmt 0 discriminator 1
+ 634 001a 4FF00103 		mov	r3, #1
+ 635 001e 01E0     		b	.L22
+ 636              	.L21:
+ 637              		.loc 1 694 0 discriminator 2
+ 638 0020 4FF00003 		mov	r3, #0
+ 639              	.L22:
+ 640              		.loc 1 694 0 discriminator 3
+ 641 0024 FB71     		strb	r3, [r7, #7]
+ 695:.\Generated_Source\PSoC5/SPI0.c **** 
+ 696:.\Generated_Source\PSoC5/SPI0.c ****     #endif /* (SPI0_TX_SOFTWARE_BUF_ENABLED) */
+ 697:.\Generated_Source\PSoC5/SPI0.c **** 
+ 698:.\Generated_Source\PSoC5/SPI0.c ****     return(size);
+ 642              		.loc 1 698 0 is_stmt 1 discriminator 3
+ 643 0026 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 699:.\Generated_Source\PSoC5/SPI0.c **** }
+ 644              		.loc 1 699 0 discriminator 3
+ 645 0028 1846     		mov	r0, r3
+ 646 002a 07F10C07 		add	r7, r7, #12
+ 647 002e BD46     		mov	sp, r7
+ 648 0030 80BC     		pop	{r7}
+ 649 0032 7047     		bx	lr
+ 650              		.cfi_endproc
+ 651              	.LFE14:
+ 652              		.size	SPI0_GetRxBufferSize, .-SPI0_GetRxBufferSize
+ 653              		.section	.text.SPI0_GetTxBufferSize,"ax",%progbits
+ 654              		.align	2
+ 655              		.global	SPI0_GetTxBufferSize
+ 656              		.thumb
+ 657              		.thumb_func
+ 658              		.type	SPI0_GetTxBufferSize, %function
+ 659              	SPI0_GetTxBufferSize:
+ 660              	.LFB15:
+ 700:.\Generated_Source\PSoC5/SPI0.c **** 
+ 701:.\Generated_Source\PSoC5/SPI0.c **** 
+ 702:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
+ 703:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_GetTxBufferSize
+ 704:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
+ 705:.\Generated_Source\PSoC5/SPI0.c **** *
+ 706:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
+ 707:.\Generated_Source\PSoC5/SPI0.c **** *  Returns the number of bytes/words of data currently held in the TX buffer.
+ 708:.\Generated_Source\PSoC5/SPI0.c **** *  If TX Software Buffer not used then function return 0 - if FIFO empty, 1 - if
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 25
+
+
+ 709:.\Generated_Source\PSoC5/SPI0.c **** *  FIFO not full, 4 - if FIFO full. In another case function return size of TX
+ 710:.\Generated_Source\PSoC5/SPI0.c **** *  Software Buffer.
+ 711:.\Generated_Source\PSoC5/SPI0.c **** *
+ 712:.\Generated_Source\PSoC5/SPI0.c **** * Parameters:
+ 713:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 714:.\Generated_Source\PSoC5/SPI0.c **** *
+ 715:.\Generated_Source\PSoC5/SPI0.c **** * Return:
+ 716:.\Generated_Source\PSoC5/SPI0.c **** *  Integer count of the number of bytes/words in the TX buffer.
+ 717:.\Generated_Source\PSoC5/SPI0.c **** *
+ 718:.\Generated_Source\PSoC5/SPI0.c **** * Global variables:
+ 719:.\Generated_Source\PSoC5/SPI0.c **** *  SPI0_txBufferWrite - used for the account of the bytes which
+ 720:.\Generated_Source\PSoC5/SPI0.c **** *  have been written down in the TX software buffer.
+ 721:.\Generated_Source\PSoC5/SPI0.c **** *  SPI0_txBufferRead - used for the account of the bytes which
+ 722:.\Generated_Source\PSoC5/SPI0.c **** *  have been read from the TX software buffer.
+ 723:.\Generated_Source\PSoC5/SPI0.c **** *
+ 724:.\Generated_Source\PSoC5/SPI0.c **** * Side Effects:
+ 725:.\Generated_Source\PSoC5/SPI0.c **** *  Clear status register of the component.
+ 726:.\Generated_Source\PSoC5/SPI0.c **** *
+ 727:.\Generated_Source\PSoC5/SPI0.c **** *******************************************************************************/
+ 728:.\Generated_Source\PSoC5/SPI0.c **** uint8  SPI0_GetTxBufferSize(void) 
+ 729:.\Generated_Source\PSoC5/SPI0.c **** {
+ 661              		.loc 1 729 0
+ 662              		.cfi_startproc
+ 663              		@ args = 0, pretend = 0, frame = 8
+ 664              		@ frame_needed = 1, uses_anonymous_args = 0
+ 665              		@ link register save eliminated.
+ 666 0000 80B4     		push	{r7}
+ 667              	.LCFI39:
+ 668              		.cfi_def_cfa_offset 4
+ 669              		.cfi_offset 7, -4
+ 670 0002 83B0     		sub	sp, sp, #12
+ 671              	.LCFI40:
+ 672              		.cfi_def_cfa_offset 16
+ 673 0004 00AF     		add	r7, sp, #0
+ 674              	.LCFI41:
+ 675              		.cfi_def_cfa_register 7
+ 730:.\Generated_Source\PSoC5/SPI0.c ****     uint8 size;
+ 731:.\Generated_Source\PSoC5/SPI0.c **** 
+ 732:.\Generated_Source\PSoC5/SPI0.c ****     #if(SPI0_TX_SOFTWARE_BUF_ENABLED)
+ 733:.\Generated_Source\PSoC5/SPI0.c ****         /* Disable TX interrupt to protect global veriables */
+ 734:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_DisableTxInt();
+ 735:.\Generated_Source\PSoC5/SPI0.c **** 
+ 736:.\Generated_Source\PSoC5/SPI0.c ****         if(SPI0_txBufferRead == SPI0_txBufferWrite)
+ 737:.\Generated_Source\PSoC5/SPI0.c ****         {
+ 738:.\Generated_Source\PSoC5/SPI0.c ****             size = 0u;
+ 739:.\Generated_Source\PSoC5/SPI0.c ****         }
+ 740:.\Generated_Source\PSoC5/SPI0.c ****         else if(SPI0_txBufferRead < SPI0_txBufferWrite)
+ 741:.\Generated_Source\PSoC5/SPI0.c ****         {
+ 742:.\Generated_Source\PSoC5/SPI0.c ****             size = (SPI0_txBufferWrite - SPI0_txBufferRead);
+ 743:.\Generated_Source\PSoC5/SPI0.c ****         }
+ 744:.\Generated_Source\PSoC5/SPI0.c ****         else
+ 745:.\Generated_Source\PSoC5/SPI0.c ****         {
+ 746:.\Generated_Source\PSoC5/SPI0.c ****             size = (SPI0_TX_BUFFER_SIZE - SPI0_txBufferRead) + SPI0_txBufferWrite;
+ 747:.\Generated_Source\PSoC5/SPI0.c ****         }
+ 748:.\Generated_Source\PSoC5/SPI0.c **** 
+ 749:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_EnableTxInt();
+ 750:.\Generated_Source\PSoC5/SPI0.c **** 
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 26
+
+
+ 751:.\Generated_Source\PSoC5/SPI0.c ****     #else
+ 752:.\Generated_Source\PSoC5/SPI0.c **** 
+ 753:.\Generated_Source\PSoC5/SPI0.c ****         size = SPI0_TX_STATUS_REG;
+ 676              		.loc 1 753 0
+ 677 0006 46F26453 		movw	r3, #25956
+ 678 000a C4F20003 		movt	r3, 16384
+ 679 000e 1B78     		ldrb	r3, [r3, #0]
+ 680 0010 FB71     		strb	r3, [r7, #7]
+ 754:.\Generated_Source\PSoC5/SPI0.c **** 
+ 755:.\Generated_Source\PSoC5/SPI0.c ****         if(0u != (size & SPI0_STS_TX_FIFO_EMPTY))
+ 681              		.loc 1 755 0
+ 682 0012 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 683 0014 03F00203 		and	r3, r3, #2
+ 684 0018 002B     		cmp	r3, #0
+ 685 001a 03D0     		beq	.L25
+ 756:.\Generated_Source\PSoC5/SPI0.c ****         {
+ 757:.\Generated_Source\PSoC5/SPI0.c ****             size = 0u;
+ 686              		.loc 1 757 0
+ 687 001c 4FF00003 		mov	r3, #0
+ 688 0020 FB71     		strb	r3, [r7, #7]
+ 689 0022 0BE0     		b	.L26
+ 690              	.L25:
+ 758:.\Generated_Source\PSoC5/SPI0.c ****         }
+ 759:.\Generated_Source\PSoC5/SPI0.c ****         else if(0u != (size & SPI0_STS_TX_FIFO_NOT_FULL))
+ 691              		.loc 1 759 0
+ 692 0024 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 693 0026 03F00403 		and	r3, r3, #4
+ 694 002a 002B     		cmp	r3, #0
+ 695 002c 03D0     		beq	.L27
+ 760:.\Generated_Source\PSoC5/SPI0.c ****         {
+ 761:.\Generated_Source\PSoC5/SPI0.c ****             size = 1u;
+ 696              		.loc 1 761 0
+ 697 002e 4FF00103 		mov	r3, #1
+ 698 0032 FB71     		strb	r3, [r7, #7]
+ 699 0034 02E0     		b	.L26
+ 700              	.L27:
+ 762:.\Generated_Source\PSoC5/SPI0.c ****         }
+ 763:.\Generated_Source\PSoC5/SPI0.c ****         else
+ 764:.\Generated_Source\PSoC5/SPI0.c ****         {
+ 765:.\Generated_Source\PSoC5/SPI0.c ****             size = SPI0_FIFO_SIZE;
+ 701              		.loc 1 765 0
+ 702 0036 4FF00403 		mov	r3, #4
+ 703 003a FB71     		strb	r3, [r7, #7]
+ 704              	.L26:
+ 766:.\Generated_Source\PSoC5/SPI0.c ****         }
+ 767:.\Generated_Source\PSoC5/SPI0.c **** 
+ 768:.\Generated_Source\PSoC5/SPI0.c ****     #endif /* (SPI0_TX_SOFTWARE_BUF_ENABLED) */
+ 769:.\Generated_Source\PSoC5/SPI0.c **** 
+ 770:.\Generated_Source\PSoC5/SPI0.c ****     return(size);
+ 705              		.loc 1 770 0
+ 706 003c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 771:.\Generated_Source\PSoC5/SPI0.c **** }
+ 707              		.loc 1 771 0
+ 708 003e 1846     		mov	r0, r3
+ 709 0040 07F10C07 		add	r7, r7, #12
+ 710 0044 BD46     		mov	sp, r7
+ 711 0046 80BC     		pop	{r7}
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 27
+
+
+ 712 0048 7047     		bx	lr
+ 713              		.cfi_endproc
+ 714              	.LFE15:
+ 715              		.size	SPI0_GetTxBufferSize, .-SPI0_GetTxBufferSize
+ 716 004a 00BF     		.section	.text.SPI0_ClearRxBuffer,"ax",%progbits
+ 717              		.align	2
+ 718              		.global	SPI0_ClearRxBuffer
+ 719              		.thumb
+ 720              		.thumb_func
+ 721              		.type	SPI0_ClearRxBuffer, %function
+ 722              	SPI0_ClearRxBuffer:
+ 723              	.LFB16:
+ 772:.\Generated_Source\PSoC5/SPI0.c **** 
+ 773:.\Generated_Source\PSoC5/SPI0.c **** 
+ 774:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
+ 775:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_ClearRxBuffer
+ 776:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
+ 777:.\Generated_Source\PSoC5/SPI0.c **** *
+ 778:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
+ 779:.\Generated_Source\PSoC5/SPI0.c **** *  Clear the RX RAM buffer by setting the read and write pointers both to zero.
+ 780:.\Generated_Source\PSoC5/SPI0.c **** *
+ 781:.\Generated_Source\PSoC5/SPI0.c **** * Parameters:
+ 782:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 783:.\Generated_Source\PSoC5/SPI0.c **** *
+ 784:.\Generated_Source\PSoC5/SPI0.c **** * Return:
+ 785:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 786:.\Generated_Source\PSoC5/SPI0.c **** *
+ 787:.\Generated_Source\PSoC5/SPI0.c **** * Global variables:
+ 788:.\Generated_Source\PSoC5/SPI0.c **** *  SPI0_rxBufferWrite - used for the account of the bytes which
+ 789:.\Generated_Source\PSoC5/SPI0.c **** *  have been written down in the RX software buffer, modified every function
+ 790:.\Generated_Source\PSoC5/SPI0.c **** *  call - resets to zero.
+ 791:.\Generated_Source\PSoC5/SPI0.c **** *  SPI0_rxBufferRead - used for the account of the bytes which
+ 792:.\Generated_Source\PSoC5/SPI0.c **** *  have been read from the RX software buffer, modified every function call -
+ 793:.\Generated_Source\PSoC5/SPI0.c **** *  resets to zero.
+ 794:.\Generated_Source\PSoC5/SPI0.c **** *
+ 795:.\Generated_Source\PSoC5/SPI0.c **** * Theory:
+ 796:.\Generated_Source\PSoC5/SPI0.c **** *  Setting the pointers to zero makes the system believe there is no data to
+ 797:.\Generated_Source\PSoC5/SPI0.c **** *  read and writing will resume at address 0 overwriting any data that may have
+ 798:.\Generated_Source\PSoC5/SPI0.c **** *  remained in the RAM.
+ 799:.\Generated_Source\PSoC5/SPI0.c **** *
+ 800:.\Generated_Source\PSoC5/SPI0.c **** * Side Effects:
+ 801:.\Generated_Source\PSoC5/SPI0.c **** *  Any received data not read from the RAM buffer will be lost when overwritten.
+ 802:.\Generated_Source\PSoC5/SPI0.c **** *
+ 803:.\Generated_Source\PSoC5/SPI0.c **** * Reentrant:
+ 804:.\Generated_Source\PSoC5/SPI0.c **** *  No.
+ 805:.\Generated_Source\PSoC5/SPI0.c **** *
+ 806:.\Generated_Source\PSoC5/SPI0.c **** *******************************************************************************/
+ 807:.\Generated_Source\PSoC5/SPI0.c **** void SPI0_ClearRxBuffer(void) 
+ 808:.\Generated_Source\PSoC5/SPI0.c **** {
+ 724              		.loc 1 808 0
+ 725              		.cfi_startproc
+ 726              		@ args = 0, pretend = 0, frame = 0
+ 727              		@ frame_needed = 1, uses_anonymous_args = 0
+ 728              		@ link register save eliminated.
+ 729 0000 80B4     		push	{r7}
+ 730              	.LCFI42:
+ 731              		.cfi_def_cfa_offset 4
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 28
+
+
+ 732              		.cfi_offset 7, -4
+ 733 0002 00AF     		add	r7, sp, #0
+ 734              	.LCFI43:
+ 735              		.cfi_def_cfa_register 7
+ 809:.\Generated_Source\PSoC5/SPI0.c ****     /* Clear Hardware RX FIFO */
+ 810:.\Generated_Source\PSoC5/SPI0.c ****     while(0u !=(SPI0_RX_STATUS_REG & SPI0_STS_RX_FIFO_NOT_EMPTY))
+ 736              		.loc 1 810 0
+ 737 0004 04E0     		b	.L30
+ 738              	.L31:
+ 811:.\Generated_Source\PSoC5/SPI0.c ****     {
+ 812:.\Generated_Source\PSoC5/SPI0.c ****         (void) CY_GET_REG8(SPI0_RXDATA_PTR);
+ 739              		.loc 1 812 0
+ 740 0006 46F25553 		movw	r3, #25941
+ 741 000a C4F20003 		movt	r3, 16384
+ 742 000e 1B78     		ldrb	r3, [r3, #0]
+ 743              	.L30:
+ 810:.\Generated_Source\PSoC5/SPI0.c ****     while(0u !=(SPI0_RX_STATUS_REG & SPI0_STS_RX_FIFO_NOT_EMPTY))
+ 744              		.loc 1 810 0 discriminator 1
+ 745 0010 46F26653 		movw	r3, #25958
+ 746 0014 C4F20003 		movt	r3, 16384
+ 747 0018 1B78     		ldrb	r3, [r3, #0]
+ 748 001a DBB2     		uxtb	r3, r3
+ 749 001c 03F02003 		and	r3, r3, #32
+ 750 0020 002B     		cmp	r3, #0
+ 751 0022 F0D1     		bne	.L31
+ 813:.\Generated_Source\PSoC5/SPI0.c ****     }
+ 814:.\Generated_Source\PSoC5/SPI0.c **** 
+ 815:.\Generated_Source\PSoC5/SPI0.c ****     #if(SPI0_RX_SOFTWARE_BUF_ENABLED)
+ 816:.\Generated_Source\PSoC5/SPI0.c ****         /* Disable RX interrupt to protect global veriables */
+ 817:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_DisableRxInt();
+ 818:.\Generated_Source\PSoC5/SPI0.c **** 
+ 819:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_rxBufferFull  = 0u;
+ 820:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_rxBufferRead  = 0u;
+ 821:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_rxBufferWrite = 0u;
+ 822:.\Generated_Source\PSoC5/SPI0.c **** 
+ 823:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_EnableRxInt();
+ 824:.\Generated_Source\PSoC5/SPI0.c ****     #endif /* (SPI0_RX_SOFTWARE_BUF_ENABLED) */
+ 825:.\Generated_Source\PSoC5/SPI0.c **** }
+ 752              		.loc 1 825 0
+ 753 0024 BD46     		mov	sp, r7
+ 754 0026 80BC     		pop	{r7}
+ 755 0028 7047     		bx	lr
+ 756              		.cfi_endproc
+ 757              	.LFE16:
+ 758              		.size	SPI0_ClearRxBuffer, .-SPI0_ClearRxBuffer
+ 759 002a 00BF     		.section	.text.SPI0_ClearTxBuffer,"ax",%progbits
+ 760              		.align	2
+ 761              		.global	SPI0_ClearTxBuffer
+ 762              		.thumb
+ 763              		.thumb_func
+ 764              		.type	SPI0_ClearTxBuffer, %function
+ 765              	SPI0_ClearTxBuffer:
+ 766              	.LFB17:
+ 826:.\Generated_Source\PSoC5/SPI0.c **** 
+ 827:.\Generated_Source\PSoC5/SPI0.c **** 
+ 828:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
+ 829:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_ClearTxBuffer
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 29
+
+
+ 830:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
+ 831:.\Generated_Source\PSoC5/SPI0.c **** *
+ 832:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
+ 833:.\Generated_Source\PSoC5/SPI0.c **** *  Clear the TX RAM buffer by setting the read and write pointers both to zero.
+ 834:.\Generated_Source\PSoC5/SPI0.c **** *
+ 835:.\Generated_Source\PSoC5/SPI0.c **** * Parameters:
+ 836:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 837:.\Generated_Source\PSoC5/SPI0.c **** *
+ 838:.\Generated_Source\PSoC5/SPI0.c **** * Return:
+ 839:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 840:.\Generated_Source\PSoC5/SPI0.c **** *
+ 841:.\Generated_Source\PSoC5/SPI0.c **** * Global variables:
+ 842:.\Generated_Source\PSoC5/SPI0.c **** *  SPI0_txBufferWrite - used for the account of the bytes which
+ 843:.\Generated_Source\PSoC5/SPI0.c **** *  have been written down in the TX software buffer, modified every function
+ 844:.\Generated_Source\PSoC5/SPI0.c **** *  call - resets to zero.
+ 845:.\Generated_Source\PSoC5/SPI0.c **** *  SPI0_txBufferRead - used for the account of the bytes which
+ 846:.\Generated_Source\PSoC5/SPI0.c **** *  have been read from the TX software buffer, modified every function call -
+ 847:.\Generated_Source\PSoC5/SPI0.c **** *  resets to zero.
+ 848:.\Generated_Source\PSoC5/SPI0.c **** *
+ 849:.\Generated_Source\PSoC5/SPI0.c **** * Theory:
+ 850:.\Generated_Source\PSoC5/SPI0.c **** *  Setting the pointers to zero makes the system believe there is no data to
+ 851:.\Generated_Source\PSoC5/SPI0.c **** *  read and writing will resume at address 0 overwriting any data that may have
+ 852:.\Generated_Source\PSoC5/SPI0.c **** *  remained in the RAM.
+ 853:.\Generated_Source\PSoC5/SPI0.c **** *
+ 854:.\Generated_Source\PSoC5/SPI0.c **** * Side Effects:
+ 855:.\Generated_Source\PSoC5/SPI0.c **** *  Any data not yet transmitted from the RAM buffer will be lost when
+ 856:.\Generated_Source\PSoC5/SPI0.c **** *  overwritten.
+ 857:.\Generated_Source\PSoC5/SPI0.c **** *
+ 858:.\Generated_Source\PSoC5/SPI0.c **** * Reentrant:
+ 859:.\Generated_Source\PSoC5/SPI0.c **** *  No.
+ 860:.\Generated_Source\PSoC5/SPI0.c **** *
+ 861:.\Generated_Source\PSoC5/SPI0.c **** *******************************************************************************/
+ 862:.\Generated_Source\PSoC5/SPI0.c **** void SPI0_ClearTxBuffer(void) 
+ 863:.\Generated_Source\PSoC5/SPI0.c **** {
+ 767              		.loc 1 863 0
+ 768              		.cfi_startproc
+ 769              		@ args = 0, pretend = 0, frame = 8
+ 770              		@ frame_needed = 1, uses_anonymous_args = 0
+ 771 0000 80B5     		push	{r7, lr}
+ 772              	.LCFI44:
+ 773              		.cfi_def_cfa_offset 8
+ 774              		.cfi_offset 7, -8
+ 775              		.cfi_offset 14, -4
+ 776 0002 82B0     		sub	sp, sp, #8
+ 777              	.LCFI45:
+ 778              		.cfi_def_cfa_offset 16
+ 779 0004 00AF     		add	r7, sp, #0
+ 780              	.LCFI46:
+ 781              		.cfi_def_cfa_register 7
+ 864:.\Generated_Source\PSoC5/SPI0.c ****     uint8 enableInterrupts;
+ 865:.\Generated_Source\PSoC5/SPI0.c **** 
+ 866:.\Generated_Source\PSoC5/SPI0.c ****     enableInterrupts = CyEnterCriticalSection();
+ 782              		.loc 1 866 0
+ 783 0006 FFF7FEFF 		bl	CyEnterCriticalSection
+ 784 000a 0346     		mov	r3, r0
+ 785 000c FB71     		strb	r3, [r7, #7]
+ 867:.\Generated_Source\PSoC5/SPI0.c ****     /* Clear TX FIFO */
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 30
+
+
+ 868:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_AUX_CONTROL_DP0_REG |= ((uint8)  SPI0_TX_FIFO_CLR);
+ 786              		.loc 1 868 0
+ 787 000e 46F29553 		movw	r3, #26005
+ 788 0012 C4F20003 		movt	r3, 16384
+ 789 0016 46F29552 		movw	r2, #26005
+ 790 001a C4F20002 		movt	r2, 16384
+ 791 001e 1278     		ldrb	r2, [r2, #0]
+ 792 0020 D2B2     		uxtb	r2, r2
+ 793 0022 42F00102 		orr	r2, r2, #1
+ 794 0026 D2B2     		uxtb	r2, r2
+ 795 0028 1A70     		strb	r2, [r3, #0]
+ 869:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_AUX_CONTROL_DP0_REG &= ((uint8) ~SPI0_TX_FIFO_CLR);
+ 796              		.loc 1 869 0
+ 797 002a 46F29553 		movw	r3, #26005
+ 798 002e C4F20003 		movt	r3, 16384
+ 799 0032 46F29552 		movw	r2, #26005
+ 800 0036 C4F20002 		movt	r2, 16384
+ 801 003a 1278     		ldrb	r2, [r2, #0]
+ 802 003c D2B2     		uxtb	r2, r2
+ 803 003e 22F00102 		bic	r2, r2, #1
+ 804 0042 D2B2     		uxtb	r2, r2
+ 805 0044 1A70     		strb	r2, [r3, #0]
+ 870:.\Generated_Source\PSoC5/SPI0.c **** 
+ 871:.\Generated_Source\PSoC5/SPI0.c ****     #if(SPI0_USE_SECOND_DATAPATH)
+ 872:.\Generated_Source\PSoC5/SPI0.c ****         /* Clear TX FIFO for 2nd Datapath */
+ 873:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_AUX_CONTROL_DP1_REG |= ((uint8)  SPI0_TX_FIFO_CLR);
+ 874:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_AUX_CONTROL_DP1_REG &= ((uint8) ~SPI0_TX_FIFO_CLR);
+ 875:.\Generated_Source\PSoC5/SPI0.c ****     #endif /* (SPI0_USE_SECOND_DATAPATH) */
+ 876:.\Generated_Source\PSoC5/SPI0.c ****     CyExitCriticalSection(enableInterrupts);
+ 806              		.loc 1 876 0
+ 807 0046 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 808 0048 1846     		mov	r0, r3
+ 809 004a FFF7FEFF 		bl	CyExitCriticalSection
+ 877:.\Generated_Source\PSoC5/SPI0.c **** 
+ 878:.\Generated_Source\PSoC5/SPI0.c ****     #if(SPI0_TX_SOFTWARE_BUF_ENABLED)
+ 879:.\Generated_Source\PSoC5/SPI0.c ****         /* Disable TX interrupt to protect global veriables */
+ 880:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_DisableTxInt();
+ 881:.\Generated_Source\PSoC5/SPI0.c **** 
+ 882:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_txBufferFull  = 0u;
+ 883:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_txBufferRead  = 0u;
+ 884:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_txBufferWrite = 0u;
+ 885:.\Generated_Source\PSoC5/SPI0.c **** 
+ 886:.\Generated_Source\PSoC5/SPI0.c ****         /* Buffer is EMPTY: disable TX FIFO NOT FULL interrupt */
+ 887:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_TX_STATUS_MASK_REG &= ((uint8) ~SPI0_STS_TX_FIFO_NOT_FULL);
+ 888:.\Generated_Source\PSoC5/SPI0.c **** 
+ 889:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_EnableTxInt();
+ 890:.\Generated_Source\PSoC5/SPI0.c ****     #endif /* (SPI0_TX_SOFTWARE_BUF_ENABLED) */
+ 891:.\Generated_Source\PSoC5/SPI0.c **** }
+ 810              		.loc 1 891 0
+ 811 004e 07F10807 		add	r7, r7, #8
+ 812 0052 BD46     		mov	sp, r7
+ 813 0054 80BD     		pop	{r7, pc}
+ 814              		.cfi_endproc
+ 815              	.LFE17:
+ 816              		.size	SPI0_ClearTxBuffer, .-SPI0_ClearTxBuffer
+ 817 0056 00BF     		.section	.text.SPI0_PutArray,"ax",%progbits
+ 818              		.align	2
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 31
+
+
+ 819              		.global	SPI0_PutArray
+ 820              		.thumb
+ 821              		.thumb_func
+ 822              		.type	SPI0_PutArray, %function
+ 823              	SPI0_PutArray:
+ 824              	.LFB18:
+ 892:.\Generated_Source\PSoC5/SPI0.c **** 
+ 893:.\Generated_Source\PSoC5/SPI0.c **** 
+ 894:.\Generated_Source\PSoC5/SPI0.c **** #if(0u != SPI0_BIDIRECTIONAL_MODE)
+ 895:.\Generated_Source\PSoC5/SPI0.c ****     /*******************************************************************************
+ 896:.\Generated_Source\PSoC5/SPI0.c ****     * Function Name: SPI0_TxEnable
+ 897:.\Generated_Source\PSoC5/SPI0.c ****     ********************************************************************************
+ 898:.\Generated_Source\PSoC5/SPI0.c ****     *
+ 899:.\Generated_Source\PSoC5/SPI0.c ****     * Summary:
+ 900:.\Generated_Source\PSoC5/SPI0.c ****     *  If the SPI master is configured to use a single bi-directional pin then this
+ 901:.\Generated_Source\PSoC5/SPI0.c ****     *  will set the bi-directional pin to transmit.
+ 902:.\Generated_Source\PSoC5/SPI0.c ****     *
+ 903:.\Generated_Source\PSoC5/SPI0.c ****     * Parameters:
+ 904:.\Generated_Source\PSoC5/SPI0.c ****     *  None.
+ 905:.\Generated_Source\PSoC5/SPI0.c ****     *
+ 906:.\Generated_Source\PSoC5/SPI0.c ****     * Return:
+ 907:.\Generated_Source\PSoC5/SPI0.c ****     *  None.
+ 908:.\Generated_Source\PSoC5/SPI0.c ****     *
+ 909:.\Generated_Source\PSoC5/SPI0.c ****     *******************************************************************************/
+ 910:.\Generated_Source\PSoC5/SPI0.c ****     void SPI0_TxEnable(void) 
+ 911:.\Generated_Source\PSoC5/SPI0.c ****     {
+ 912:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_CONTROL_REG |= SPI0_CTRL_TX_SIGNAL_EN;
+ 913:.\Generated_Source\PSoC5/SPI0.c ****     }
+ 914:.\Generated_Source\PSoC5/SPI0.c **** 
+ 915:.\Generated_Source\PSoC5/SPI0.c **** 
+ 916:.\Generated_Source\PSoC5/SPI0.c ****     /*******************************************************************************
+ 917:.\Generated_Source\PSoC5/SPI0.c ****     * Function Name: SPI0_TxDisable
+ 918:.\Generated_Source\PSoC5/SPI0.c ****     ********************************************************************************
+ 919:.\Generated_Source\PSoC5/SPI0.c ****     *
+ 920:.\Generated_Source\PSoC5/SPI0.c ****     * Summary:
+ 921:.\Generated_Source\PSoC5/SPI0.c ****     *  If the SPI master is configured to use a single bi-directional pin then this
+ 922:.\Generated_Source\PSoC5/SPI0.c ****     *  will set the bi-directional pin to receive.
+ 923:.\Generated_Source\PSoC5/SPI0.c ****     *
+ 924:.\Generated_Source\PSoC5/SPI0.c ****     * Parameters:
+ 925:.\Generated_Source\PSoC5/SPI0.c ****     *  None.
+ 926:.\Generated_Source\PSoC5/SPI0.c ****     *
+ 927:.\Generated_Source\PSoC5/SPI0.c ****     * Return:
+ 928:.\Generated_Source\PSoC5/SPI0.c ****     *  None.
+ 929:.\Generated_Source\PSoC5/SPI0.c ****     *
+ 930:.\Generated_Source\PSoC5/SPI0.c ****     *******************************************************************************/
+ 931:.\Generated_Source\PSoC5/SPI0.c ****     void SPI0_TxDisable(void) 
+ 932:.\Generated_Source\PSoC5/SPI0.c ****     {
+ 933:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_CONTROL_REG &= ((uint8) ~SPI0_CTRL_TX_SIGNAL_EN);
+ 934:.\Generated_Source\PSoC5/SPI0.c ****     }
+ 935:.\Generated_Source\PSoC5/SPI0.c **** 
+ 936:.\Generated_Source\PSoC5/SPI0.c **** #endif /* (0u != SPI0_BIDIRECTIONAL_MODE) */
+ 937:.\Generated_Source\PSoC5/SPI0.c **** 
+ 938:.\Generated_Source\PSoC5/SPI0.c **** 
+ 939:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
+ 940:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_PutArray
+ 941:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
+ 942:.\Generated_Source\PSoC5/SPI0.c **** *
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 32
+
+
+ 943:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
+ 944:.\Generated_Source\PSoC5/SPI0.c **** *  Write available data from ROM/RAM to the TX buffer while space is available
+ 945:.\Generated_Source\PSoC5/SPI0.c **** *  in the TX buffer. Keep trying until all data is passed to the TX buffer.
+ 946:.\Generated_Source\PSoC5/SPI0.c **** *
+ 947:.\Generated_Source\PSoC5/SPI0.c **** * Parameters:
+ 948:.\Generated_Source\PSoC5/SPI0.c **** *  *buffer: Pointer to the location in RAM containing the data to send
+ 949:.\Generated_Source\PSoC5/SPI0.c **** *  byteCount: The number of bytes to move to the transmit buffer.
+ 950:.\Generated_Source\PSoC5/SPI0.c **** *
+ 951:.\Generated_Source\PSoC5/SPI0.c **** * Return:
+ 952:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 953:.\Generated_Source\PSoC5/SPI0.c **** *
+ 954:.\Generated_Source\PSoC5/SPI0.c **** * Side Effects:
+ 955:.\Generated_Source\PSoC5/SPI0.c **** *  Will stay in this routine until all data has been sent.  May get locked in
+ 956:.\Generated_Source\PSoC5/SPI0.c **** *  this loop if data is not being initiated by the master if there is not
+ 957:.\Generated_Source\PSoC5/SPI0.c **** *  enough room in the TX FIFO.
+ 958:.\Generated_Source\PSoC5/SPI0.c **** *
+ 959:.\Generated_Source\PSoC5/SPI0.c **** * Reentrant:
+ 960:.\Generated_Source\PSoC5/SPI0.c **** *  No.
+ 961:.\Generated_Source\PSoC5/SPI0.c **** *
+ 962:.\Generated_Source\PSoC5/SPI0.c **** *******************************************************************************/
+ 963:.\Generated_Source\PSoC5/SPI0.c **** void SPI0_PutArray(const uint8 buffer[], uint8 byteCount)
+ 964:.\Generated_Source\PSoC5/SPI0.c ****                                                                           
+ 965:.\Generated_Source\PSoC5/SPI0.c **** {
+ 825              		.loc 1 965 0
+ 826              		.cfi_startproc
+ 827              		@ args = 0, pretend = 0, frame = 16
+ 828              		@ frame_needed = 1, uses_anonymous_args = 0
+ 829 0000 80B5     		push	{r7, lr}
+ 830              	.LCFI47:
+ 831              		.cfi_def_cfa_offset 8
+ 832              		.cfi_offset 7, -8
+ 833              		.cfi_offset 14, -4
+ 834 0002 84B0     		sub	sp, sp, #16
+ 835              	.LCFI48:
+ 836              		.cfi_def_cfa_offset 24
+ 837 0004 00AF     		add	r7, sp, #0
+ 838              	.LCFI49:
+ 839              		.cfi_def_cfa_register 7
+ 840 0006 7860     		str	r0, [r7, #4]
+ 841 0008 0B46     		mov	r3, r1
+ 842 000a FB70     		strb	r3, [r7, #3]
+ 966:.\Generated_Source\PSoC5/SPI0.c ****     uint8 bufIndex;
+ 967:.\Generated_Source\PSoC5/SPI0.c **** 
+ 968:.\Generated_Source\PSoC5/SPI0.c ****     bufIndex = 0u;
+ 843              		.loc 1 968 0
+ 844 000c 4FF00003 		mov	r3, #0
+ 845 0010 FB73     		strb	r3, [r7, #15]
+ 969:.\Generated_Source\PSoC5/SPI0.c **** 
+ 970:.\Generated_Source\PSoC5/SPI0.c ****     while(byteCount > 0u)
+ 846              		.loc 1 970 0
+ 847 0012 0EE0     		b	.L34
+ 848              	.L35:
+ 971:.\Generated_Source\PSoC5/SPI0.c ****     {
+ 972:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_WriteTxData(buffer[bufIndex]);
+ 849              		.loc 1 972 0
+ 850 0014 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 851 0016 7A68     		ldr	r2, [r7, #4]
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 33
+
+
+ 852 0018 D318     		adds	r3, r2, r3
+ 853 001a 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 854 001c 1846     		mov	r0, r3
+ 855 001e FFF7FEFF 		bl	SPI0_WriteTxData
+ 973:.\Generated_Source\PSoC5/SPI0.c ****         bufIndex++;
+ 856              		.loc 1 973 0
+ 857 0022 FB7B     		ldrb	r3, [r7, #15]
+ 858 0024 03F10103 		add	r3, r3, #1
+ 859 0028 FB73     		strb	r3, [r7, #15]
+ 974:.\Generated_Source\PSoC5/SPI0.c ****         byteCount--;
+ 860              		.loc 1 974 0
+ 861 002a FB78     		ldrb	r3, [r7, #3]
+ 862 002c 03F1FF33 		add	r3, r3, #-1
+ 863 0030 FB70     		strb	r3, [r7, #3]
+ 864              	.L34:
+ 970:.\Generated_Source\PSoC5/SPI0.c ****     while(byteCount > 0u)
+ 865              		.loc 1 970 0 discriminator 1
+ 866 0032 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 867 0034 002B     		cmp	r3, #0
+ 868 0036 EDD1     		bne	.L35
+ 975:.\Generated_Source\PSoC5/SPI0.c ****     }
+ 976:.\Generated_Source\PSoC5/SPI0.c **** }
+ 869              		.loc 1 976 0
+ 870 0038 07F11007 		add	r7, r7, #16
+ 871 003c BD46     		mov	sp, r7
+ 872 003e 80BD     		pop	{r7, pc}
+ 873              		.cfi_endproc
+ 874              	.LFE18:
+ 875              		.size	SPI0_PutArray, .-SPI0_PutArray
+ 876              		.section	.text.SPI0_ClearFIFO,"ax",%progbits
+ 877              		.align	2
+ 878              		.global	SPI0_ClearFIFO
+ 879              		.thumb
+ 880              		.thumb_func
+ 881              		.type	SPI0_ClearFIFO, %function
+ 882              	SPI0_ClearFIFO:
+ 883              	.LFB19:
+ 977:.\Generated_Source\PSoC5/SPI0.c **** 
+ 978:.\Generated_Source\PSoC5/SPI0.c **** 
+ 979:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
+ 980:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_ClearFIFO
+ 981:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
+ 982:.\Generated_Source\PSoC5/SPI0.c **** *
+ 983:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
+ 984:.\Generated_Source\PSoC5/SPI0.c **** *  Clear the RX and TX FIFO's of all data for a fresh start.
+ 985:.\Generated_Source\PSoC5/SPI0.c **** *
+ 986:.\Generated_Source\PSoC5/SPI0.c **** * Parameters:
+ 987:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 988:.\Generated_Source\PSoC5/SPI0.c **** *
+ 989:.\Generated_Source\PSoC5/SPI0.c **** * Return:
+ 990:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+ 991:.\Generated_Source\PSoC5/SPI0.c **** *
+ 992:.\Generated_Source\PSoC5/SPI0.c **** * Side Effects:
+ 993:.\Generated_Source\PSoC5/SPI0.c **** *  Clear status register of the component.
+ 994:.\Generated_Source\PSoC5/SPI0.c **** *
+ 995:.\Generated_Source\PSoC5/SPI0.c **** *******************************************************************************/
+ 996:.\Generated_Source\PSoC5/SPI0.c **** void SPI0_ClearFIFO(void) 
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 34
+
+
+ 997:.\Generated_Source\PSoC5/SPI0.c **** {
+ 884              		.loc 1 997 0
+ 885              		.cfi_startproc
+ 886              		@ args = 0, pretend = 0, frame = 8
+ 887              		@ frame_needed = 1, uses_anonymous_args = 0
+ 888 0000 80B5     		push	{r7, lr}
+ 889              	.LCFI50:
+ 890              		.cfi_def_cfa_offset 8
+ 891              		.cfi_offset 7, -8
+ 892              		.cfi_offset 14, -4
+ 893 0002 82B0     		sub	sp, sp, #8
+ 894              	.LCFI51:
+ 895              		.cfi_def_cfa_offset 16
+ 896 0004 00AF     		add	r7, sp, #0
+ 897              	.LCFI52:
+ 898              		.cfi_def_cfa_register 7
+ 998:.\Generated_Source\PSoC5/SPI0.c ****     uint8 enableInterrupts;
+ 999:.\Generated_Source\PSoC5/SPI0.c **** 
+1000:.\Generated_Source\PSoC5/SPI0.c ****     /* Clear Hardware RX FIFO */
+1001:.\Generated_Source\PSoC5/SPI0.c ****     while(0u !=(SPI0_RX_STATUS_REG & SPI0_STS_RX_FIFO_NOT_EMPTY))
+ 899              		.loc 1 1001 0
+ 900 0006 04E0     		b	.L37
+ 901              	.L38:
+1002:.\Generated_Source\PSoC5/SPI0.c ****     {
+1003:.\Generated_Source\PSoC5/SPI0.c ****         (void) CY_GET_REG8(SPI0_RXDATA_PTR);
+ 902              		.loc 1 1003 0
+ 903 0008 46F25553 		movw	r3, #25941
+ 904 000c C4F20003 		movt	r3, 16384
+ 905 0010 1B78     		ldrb	r3, [r3, #0]
+ 906              	.L37:
+1001:.\Generated_Source\PSoC5/SPI0.c ****     while(0u !=(SPI0_RX_STATUS_REG & SPI0_STS_RX_FIFO_NOT_EMPTY))
+ 907              		.loc 1 1001 0 discriminator 1
+ 908 0012 46F26653 		movw	r3, #25958
+ 909 0016 C4F20003 		movt	r3, 16384
+ 910 001a 1B78     		ldrb	r3, [r3, #0]
+ 911 001c DBB2     		uxtb	r3, r3
+ 912 001e 03F02003 		and	r3, r3, #32
+ 913 0022 002B     		cmp	r3, #0
+ 914 0024 F0D1     		bne	.L38
+1004:.\Generated_Source\PSoC5/SPI0.c ****     }
+1005:.\Generated_Source\PSoC5/SPI0.c **** 
+1006:.\Generated_Source\PSoC5/SPI0.c ****     enableInterrupts = CyEnterCriticalSection();
+ 915              		.loc 1 1006 0
+ 916 0026 FFF7FEFF 		bl	CyEnterCriticalSection
+ 917 002a 0346     		mov	r3, r0
+ 918 002c FB71     		strb	r3, [r7, #7]
+1007:.\Generated_Source\PSoC5/SPI0.c ****     /* Clear TX FIFO */
+1008:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_AUX_CONTROL_DP0_REG |= ((uint8)  SPI0_TX_FIFO_CLR);
+ 919              		.loc 1 1008 0
+ 920 002e 46F29553 		movw	r3, #26005
+ 921 0032 C4F20003 		movt	r3, 16384
+ 922 0036 46F29552 		movw	r2, #26005
+ 923 003a C4F20002 		movt	r2, 16384
+ 924 003e 1278     		ldrb	r2, [r2, #0]
+ 925 0040 D2B2     		uxtb	r2, r2
+ 926 0042 42F00102 		orr	r2, r2, #1
+ 927 0046 D2B2     		uxtb	r2, r2
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 35
+
+
+ 928 0048 1A70     		strb	r2, [r3, #0]
+1009:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_AUX_CONTROL_DP0_REG &= ((uint8) ~SPI0_TX_FIFO_CLR);
+ 929              		.loc 1 1009 0
+ 930 004a 46F29553 		movw	r3, #26005
+ 931 004e C4F20003 		movt	r3, 16384
+ 932 0052 46F29552 		movw	r2, #26005
+ 933 0056 C4F20002 		movt	r2, 16384
+ 934 005a 1278     		ldrb	r2, [r2, #0]
+ 935 005c D2B2     		uxtb	r2, r2
+ 936 005e 22F00102 		bic	r2, r2, #1
+ 937 0062 D2B2     		uxtb	r2, r2
+ 938 0064 1A70     		strb	r2, [r3, #0]
+1010:.\Generated_Source\PSoC5/SPI0.c **** 
+1011:.\Generated_Source\PSoC5/SPI0.c ****     #if(SPI0_USE_SECOND_DATAPATH)
+1012:.\Generated_Source\PSoC5/SPI0.c ****         /* Clear TX FIFO for 2nd Datapath */
+1013:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_AUX_CONTROL_DP1_REG |= ((uint8)  SPI0_TX_FIFO_CLR);
+1014:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_AUX_CONTROL_DP1_REG &= ((uint8) ~SPI0_TX_FIFO_CLR);
+1015:.\Generated_Source\PSoC5/SPI0.c ****     #endif /* (SPI0_USE_SECOND_DATAPATH) */
+1016:.\Generated_Source\PSoC5/SPI0.c ****     CyExitCriticalSection(enableInterrupts);
+ 939              		.loc 1 1016 0
+ 940 0066 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 941 0068 1846     		mov	r0, r3
+ 942 006a FFF7FEFF 		bl	CyExitCriticalSection
+1017:.\Generated_Source\PSoC5/SPI0.c **** }
+ 943              		.loc 1 1017 0
+ 944 006e 07F10807 		add	r7, r7, #8
+ 945 0072 BD46     		mov	sp, r7
+ 946 0074 80BD     		pop	{r7, pc}
+ 947              		.cfi_endproc
+ 948              	.LFE19:
+ 949              		.size	SPI0_ClearFIFO, .-SPI0_ClearFIFO
+ 950 0076 00BF     		.section	.text.SPI0_EnableInt,"ax",%progbits
+ 951              		.align	2
+ 952              		.global	SPI0_EnableInt
+ 953              		.thumb
+ 954              		.thumb_func
+ 955              		.type	SPI0_EnableInt, %function
+ 956              	SPI0_EnableInt:
+ 957              	.LFB20:
+1018:.\Generated_Source\PSoC5/SPI0.c **** 
+1019:.\Generated_Source\PSoC5/SPI0.c **** 
+1020:.\Generated_Source\PSoC5/SPI0.c **** /* Following functions are for version Compatibility, they are obsolete.
+1021:.\Generated_Source\PSoC5/SPI0.c **** *  Please do not use it in new projects.
+1022:.\Generated_Source\PSoC5/SPI0.c **** */
+1023:.\Generated_Source\PSoC5/SPI0.c **** 
+1024:.\Generated_Source\PSoC5/SPI0.c **** 
+1025:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
+1026:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_EnableInt
+1027:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
+1028:.\Generated_Source\PSoC5/SPI0.c **** *
+1029:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
+1030:.\Generated_Source\PSoC5/SPI0.c **** *  Enable internal interrupt generation.
+1031:.\Generated_Source\PSoC5/SPI0.c **** *
+1032:.\Generated_Source\PSoC5/SPI0.c **** * Parameters:
+1033:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+1034:.\Generated_Source\PSoC5/SPI0.c **** *
+1035:.\Generated_Source\PSoC5/SPI0.c **** * Return:
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 36
+
+
+1036:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+1037:.\Generated_Source\PSoC5/SPI0.c **** *
+1038:.\Generated_Source\PSoC5/SPI0.c **** * Theory:
+1039:.\Generated_Source\PSoC5/SPI0.c **** *  Enable the internal interrupt output -or- the interrupt component itself.
+1040:.\Generated_Source\PSoC5/SPI0.c **** *
+1041:.\Generated_Source\PSoC5/SPI0.c **** *******************************************************************************/
+1042:.\Generated_Source\PSoC5/SPI0.c **** void SPI0_EnableInt(void) 
+1043:.\Generated_Source\PSoC5/SPI0.c **** {
+ 958              		.loc 1 1043 0
+ 959              		.cfi_startproc
+ 960              		@ args = 0, pretend = 0, frame = 0
+ 961              		@ frame_needed = 1, uses_anonymous_args = 0
+ 962 0000 80B5     		push	{r7, lr}
+ 963              	.LCFI53:
+ 964              		.cfi_def_cfa_offset 8
+ 965              		.cfi_offset 7, -8
+ 966              		.cfi_offset 14, -4
+ 967 0002 00AF     		add	r7, sp, #0
+ 968              	.LCFI54:
+ 969              		.cfi_def_cfa_register 7
+1044:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_EnableRxInt();
+ 970              		.loc 1 1044 0
+ 971 0004 FFF7FEFF 		bl	SPI0_EnableRxInt
+1045:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_EnableTxInt();
+ 972              		.loc 1 1045 0
+ 973 0008 FFF7FEFF 		bl	SPI0_EnableTxInt
+1046:.\Generated_Source\PSoC5/SPI0.c **** }
+ 974              		.loc 1 1046 0
+ 975 000c 80BD     		pop	{r7, pc}
+ 976              		.cfi_endproc
+ 977              	.LFE20:
+ 978              		.size	SPI0_EnableInt, .-SPI0_EnableInt
+ 979 000e 00BF     		.section	.text.SPI0_DisableInt,"ax",%progbits
+ 980              		.align	2
+ 981              		.global	SPI0_DisableInt
+ 982              		.thumb
+ 983              		.thumb_func
+ 984              		.type	SPI0_DisableInt, %function
+ 985              	SPI0_DisableInt:
+ 986              	.LFB21:
+1047:.\Generated_Source\PSoC5/SPI0.c **** 
+1048:.\Generated_Source\PSoC5/SPI0.c **** 
+1049:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
+1050:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_DisableInt
+1051:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
+1052:.\Generated_Source\PSoC5/SPI0.c **** *
+1053:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
+1054:.\Generated_Source\PSoC5/SPI0.c **** *  Disable internal interrupt generation.
+1055:.\Generated_Source\PSoC5/SPI0.c **** *
+1056:.\Generated_Source\PSoC5/SPI0.c **** * Parameters:
+1057:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+1058:.\Generated_Source\PSoC5/SPI0.c **** *
+1059:.\Generated_Source\PSoC5/SPI0.c **** * Return:
+1060:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+1061:.\Generated_Source\PSoC5/SPI0.c **** *
+1062:.\Generated_Source\PSoC5/SPI0.c **** * Theory:
+1063:.\Generated_Source\PSoC5/SPI0.c **** *  Disable the internal interrupt output -or- the interrupt component itself.
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 37
+
+
+1064:.\Generated_Source\PSoC5/SPI0.c **** *
+1065:.\Generated_Source\PSoC5/SPI0.c **** *******************************************************************************/
+1066:.\Generated_Source\PSoC5/SPI0.c **** void SPI0_DisableInt(void) 
+1067:.\Generated_Source\PSoC5/SPI0.c **** {
+ 987              		.loc 1 1067 0
+ 988              		.cfi_startproc
+ 989              		@ args = 0, pretend = 0, frame = 0
+ 990              		@ frame_needed = 1, uses_anonymous_args = 0
+ 991 0000 80B5     		push	{r7, lr}
+ 992              	.LCFI55:
+ 993              		.cfi_def_cfa_offset 8
+ 994              		.cfi_offset 7, -8
+ 995              		.cfi_offset 14, -4
+ 996 0002 00AF     		add	r7, sp, #0
+ 997              	.LCFI56:
+ 998              		.cfi_def_cfa_register 7
+1068:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_DisableTxInt();
+ 999              		.loc 1 1068 0
+ 1000 0004 FFF7FEFF 		bl	SPI0_DisableTxInt
+1069:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_DisableRxInt();
+ 1001              		.loc 1 1069 0
+ 1002 0008 FFF7FEFF 		bl	SPI0_DisableRxInt
+1070:.\Generated_Source\PSoC5/SPI0.c **** }
+ 1003              		.loc 1 1070 0
+ 1004 000c 80BD     		pop	{r7, pc}
+ 1005              		.cfi_endproc
+ 1006              	.LFE21:
+ 1007              		.size	SPI0_DisableInt, .-SPI0_DisableInt
+ 1008 000e 00BF     		.section	.text.SPI0_SetInterruptMode,"ax",%progbits
+ 1009              		.align	2
+ 1010              		.global	SPI0_SetInterruptMode
+ 1011              		.thumb
+ 1012              		.thumb_func
+ 1013              		.type	SPI0_SetInterruptMode, %function
+ 1014              	SPI0_SetInterruptMode:
+ 1015              	.LFB22:
+1071:.\Generated_Source\PSoC5/SPI0.c **** 
+1072:.\Generated_Source\PSoC5/SPI0.c **** 
+1073:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
+1074:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_SetInterruptMode
+1075:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
+1076:.\Generated_Source\PSoC5/SPI0.c **** *
+1077:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
+1078:.\Generated_Source\PSoC5/SPI0.c **** *  Configure which status bits trigger an interrupt event.
+1079:.\Generated_Source\PSoC5/SPI0.c **** *
+1080:.\Generated_Source\PSoC5/SPI0.c **** * Parameters:
+1081:.\Generated_Source\PSoC5/SPI0.c **** *  intSrc: An or'd combination of the desired status bit masks (defined in the
+1082:.\Generated_Source\PSoC5/SPI0.c **** *  header file).
+1083:.\Generated_Source\PSoC5/SPI0.c **** *
+1084:.\Generated_Source\PSoC5/SPI0.c **** * Return:
+1085:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+1086:.\Generated_Source\PSoC5/SPI0.c **** *
+1087:.\Generated_Source\PSoC5/SPI0.c **** * Theory:
+1088:.\Generated_Source\PSoC5/SPI0.c **** *  Enables the output of specific status bits to the interrupt controller.
+1089:.\Generated_Source\PSoC5/SPI0.c **** *
+1090:.\Generated_Source\PSoC5/SPI0.c **** *******************************************************************************/
+1091:.\Generated_Source\PSoC5/SPI0.c **** void SPI0_SetInterruptMode(uint8 intSrc) 
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 38
+
+
+1092:.\Generated_Source\PSoC5/SPI0.c **** {
+ 1016              		.loc 1 1092 0
+ 1017              		.cfi_startproc
+ 1018              		@ args = 0, pretend = 0, frame = 8
+ 1019              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1020              		@ link register save eliminated.
+ 1021 0000 80B4     		push	{r7}
+ 1022              	.LCFI57:
+ 1023              		.cfi_def_cfa_offset 4
+ 1024              		.cfi_offset 7, -4
+ 1025 0002 83B0     		sub	sp, sp, #12
+ 1026              	.LCFI58:
+ 1027              		.cfi_def_cfa_offset 16
+ 1028 0004 00AF     		add	r7, sp, #0
+ 1029              	.LCFI59:
+ 1030              		.cfi_def_cfa_register 7
+ 1031 0006 0346     		mov	r3, r0
+ 1032 0008 FB71     		strb	r3, [r7, #7]
+1093:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_TX_STATUS_MASK_REG  = (intSrc & ((uint8) ~SPI0_STS_SPI_IDLE));
+ 1033              		.loc 1 1093 0
+ 1034 000a 46F28453 		movw	r3, #25988
+ 1035 000e C4F20003 		movt	r3, 16384
+ 1036 0012 FA79     		ldrb	r2, [r7, #7]
+ 1037 0014 22F01002 		bic	r2, r2, #16
+ 1038 0018 D2B2     		uxtb	r2, r2
+ 1039 001a 1A70     		strb	r2, [r3, #0]
+1094:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_RX_STATUS_MASK_REG  =  intSrc;
+ 1040              		.loc 1 1094 0
+ 1041 001c 46F28653 		movw	r3, #25990
+ 1042 0020 C4F20003 		movt	r3, 16384
+ 1043 0024 FA79     		ldrb	r2, [r7, #7]
+ 1044 0026 1A70     		strb	r2, [r3, #0]
+1095:.\Generated_Source\PSoC5/SPI0.c **** }
+ 1045              		.loc 1 1095 0
+ 1046 0028 07F10C07 		add	r7, r7, #12
+ 1047 002c BD46     		mov	sp, r7
+ 1048 002e 80BC     		pop	{r7}
+ 1049 0030 7047     		bx	lr
+ 1050              		.cfi_endproc
+ 1051              	.LFE22:
+ 1052              		.size	SPI0_SetInterruptMode, .-SPI0_SetInterruptMode
+ 1053 0032 00BF     		.section	.text.SPI0_ReadStatus,"ax",%progbits
+ 1054              		.align	2
+ 1055              		.global	SPI0_ReadStatus
+ 1056              		.thumb
+ 1057              		.thumb_func
+ 1058              		.type	SPI0_ReadStatus, %function
+ 1059              	SPI0_ReadStatus:
+ 1060              	.LFB23:
+1096:.\Generated_Source\PSoC5/SPI0.c **** 
+1097:.\Generated_Source\PSoC5/SPI0.c **** 
+1098:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
+1099:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_ReadStatus
+1100:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
+1101:.\Generated_Source\PSoC5/SPI0.c **** *
+1102:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
+1103:.\Generated_Source\PSoC5/SPI0.c **** *  Read the status register for the component.
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 39
+
+
+1104:.\Generated_Source\PSoC5/SPI0.c **** *
+1105:.\Generated_Source\PSoC5/SPI0.c **** * Parameters:
+1106:.\Generated_Source\PSoC5/SPI0.c **** *  None.
+1107:.\Generated_Source\PSoC5/SPI0.c **** *
+1108:.\Generated_Source\PSoC5/SPI0.c **** * Return:
+1109:.\Generated_Source\PSoC5/SPI0.c **** *  Contents of the status register.
+1110:.\Generated_Source\PSoC5/SPI0.c **** *
+1111:.\Generated_Source\PSoC5/SPI0.c **** * Global variables:
+1112:.\Generated_Source\PSoC5/SPI0.c **** *  SPI0_swStatus - used to store in software status register,
+1113:.\Generated_Source\PSoC5/SPI0.c **** *  modified every function call - resets to zero.
+1114:.\Generated_Source\PSoC5/SPI0.c **** *
+1115:.\Generated_Source\PSoC5/SPI0.c **** * Theory:
+1116:.\Generated_Source\PSoC5/SPI0.c **** *  Allows the user and the API to read the status register for error detection
+1117:.\Generated_Source\PSoC5/SPI0.c **** *  and flow control.
+1118:.\Generated_Source\PSoC5/SPI0.c **** *
+1119:.\Generated_Source\PSoC5/SPI0.c **** * Side Effects:
+1120:.\Generated_Source\PSoC5/SPI0.c **** *  Clear status register of the component.
+1121:.\Generated_Source\PSoC5/SPI0.c **** *
+1122:.\Generated_Source\PSoC5/SPI0.c **** * Reentrant:
+1123:.\Generated_Source\PSoC5/SPI0.c **** *  No.
+1124:.\Generated_Source\PSoC5/SPI0.c **** *
+1125:.\Generated_Source\PSoC5/SPI0.c **** *******************************************************************************/
+1126:.\Generated_Source\PSoC5/SPI0.c **** uint8 SPI0_ReadStatus(void) 
+1127:.\Generated_Source\PSoC5/SPI0.c **** {
+ 1061              		.loc 1 1127 0
+ 1062              		.cfi_startproc
+ 1063              		@ args = 0, pretend = 0, frame = 8
+ 1064              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1065              		@ link register save eliminated.
+ 1066 0000 80B4     		push	{r7}
+ 1067              	.LCFI60:
+ 1068              		.cfi_def_cfa_offset 4
+ 1069              		.cfi_offset 7, -4
+ 1070 0002 83B0     		sub	sp, sp, #12
+ 1071              	.LCFI61:
+ 1072              		.cfi_def_cfa_offset 16
+ 1073 0004 00AF     		add	r7, sp, #0
+ 1074              	.LCFI62:
+ 1075              		.cfi_def_cfa_register 7
+1128:.\Generated_Source\PSoC5/SPI0.c ****     uint8 tmpStatus;
+1129:.\Generated_Source\PSoC5/SPI0.c **** 
+1130:.\Generated_Source\PSoC5/SPI0.c ****     #if(SPI0_TX_SOFTWARE_BUF_ENABLED || SPI0_RX_SOFTWARE_BUF_ENABLED)
+1131:.\Generated_Source\PSoC5/SPI0.c **** 
+1132:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_DisableInt();
+1133:.\Generated_Source\PSoC5/SPI0.c **** 
+1134:.\Generated_Source\PSoC5/SPI0.c ****         tmpStatus  = SPI0_GET_STATUS_RX(SPI0_swStatusRx);
+1135:.\Generated_Source\PSoC5/SPI0.c ****         tmpStatus |= SPI0_GET_STATUS_TX(SPI0_swStatusTx);
+1136:.\Generated_Source\PSoC5/SPI0.c ****         tmpStatus &= ((uint8) ~SPI0_STS_SPI_IDLE);
+1137:.\Generated_Source\PSoC5/SPI0.c **** 
+1138:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_swStatusTx = 0u;
+1139:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_swStatusRx = 0u;
+1140:.\Generated_Source\PSoC5/SPI0.c **** 
+1141:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_EnableInt();
+1142:.\Generated_Source\PSoC5/SPI0.c **** 
+1143:.\Generated_Source\PSoC5/SPI0.c ****     #else
+1144:.\Generated_Source\PSoC5/SPI0.c **** 
+1145:.\Generated_Source\PSoC5/SPI0.c ****         tmpStatus  = SPI0_RX_STATUS_REG;
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 40
+
+
+ 1076              		.loc 1 1145 0
+ 1077 0006 46F26653 		movw	r3, #25958
+ 1078 000a C4F20003 		movt	r3, 16384
+ 1079 000e 1B78     		ldrb	r3, [r3, #0]
+ 1080 0010 FB71     		strb	r3, [r7, #7]
+1146:.\Generated_Source\PSoC5/SPI0.c ****         tmpStatus |= SPI0_TX_STATUS_REG;
+ 1081              		.loc 1 1146 0
+ 1082 0012 46F26453 		movw	r3, #25956
+ 1083 0016 C4F20003 		movt	r3, 16384
+ 1084 001a 1B78     		ldrb	r3, [r3, #0]
+ 1085 001c DAB2     		uxtb	r2, r3
+ 1086 001e FB79     		ldrb	r3, [r7, #7]
+ 1087 0020 1343     		orrs	r3, r3, r2
+ 1088 0022 FB71     		strb	r3, [r7, #7]
+1147:.\Generated_Source\PSoC5/SPI0.c ****         tmpStatus &= ((uint8) ~SPI0_STS_SPI_IDLE);
+ 1089              		.loc 1 1147 0
+ 1090 0024 FB79     		ldrb	r3, [r7, #7]
+ 1091 0026 23F01003 		bic	r3, r3, #16
+ 1092 002a FB71     		strb	r3, [r7, #7]
+1148:.\Generated_Source\PSoC5/SPI0.c **** 
+1149:.\Generated_Source\PSoC5/SPI0.c ****     #endif /* (SPI0_TX_SOFTWARE_BUF_ENABLED || SPI0_RX_SOFTWARE_BUF_ENABLED) */
+1150:.\Generated_Source\PSoC5/SPI0.c **** 
+1151:.\Generated_Source\PSoC5/SPI0.c ****     return(tmpStatus);
+ 1093              		.loc 1 1151 0
+ 1094 002c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+1152:.\Generated_Source\PSoC5/SPI0.c **** }
+ 1095              		.loc 1 1152 0
+ 1096 002e 1846     		mov	r0, r3
+ 1097 0030 07F10C07 		add	r7, r7, #12
+ 1098 0034 BD46     		mov	sp, r7
+ 1099 0036 80BC     		pop	{r7}
+ 1100 0038 7047     		bx	lr
+ 1101              		.cfi_endproc
+ 1102              	.LFE23:
+ 1103              		.size	SPI0_ReadStatus, .-SPI0_ReadStatus
+ 1104 003a 00BF     		.text
+ 1105              	.Letext0:
+ 1106              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 1107              		.section	.debug_info,"",%progbits
+ 1108              	.Ldebug_info0:
+ 1109 0000 66040000 		.4byte	0x466
+ 1110 0004 0200     		.2byte	0x2
+ 1111 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 1112 000a 04       		.byte	0x4
+ 1113 000b 01       		.uleb128 0x1
+ 1114 000c DE020000 		.4byte	.LASF51
+ 1115 0010 01       		.byte	0x1
+ 1116 0011 5A030000 		.4byte	.LASF52
+ 1117 0015 7B020000 		.4byte	.LASF53
+ 1118 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 1119 001d 00000000 		.4byte	0
+ 1120 0021 00000000 		.4byte	0
+ 1121 0025 00000000 		.4byte	.Ldebug_line0
+ 1122 0029 02       		.uleb128 0x2
+ 1123 002a 01       		.byte	0x1
+ 1124 002b 06       		.byte	0x6
+ 1125 002c 44030000 		.4byte	.LASF0
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 41
+
+
+ 1126 0030 02       		.uleb128 0x2
+ 1127 0031 01       		.byte	0x1
+ 1128 0032 08       		.byte	0x8
+ 1129 0033 63010000 		.4byte	.LASF1
+ 1130 0037 02       		.uleb128 0x2
+ 1131 0038 02       		.byte	0x2
+ 1132 0039 05       		.byte	0x5
+ 1133 003a 5F020000 		.4byte	.LASF2
+ 1134 003e 02       		.uleb128 0x2
+ 1135 003f 02       		.byte	0x2
+ 1136 0040 07       		.byte	0x7
+ 1137 0041 5C000000 		.4byte	.LASF3
+ 1138 0045 02       		.uleb128 0x2
+ 1139 0046 04       		.byte	0x4
+ 1140 0047 05       		.byte	0x5
+ 1141 0048 31030000 		.4byte	.LASF4
+ 1142 004c 02       		.uleb128 0x2
+ 1143 004d 04       		.byte	0x4
+ 1144 004e 07       		.byte	0x7
+ 1145 004f F5000000 		.4byte	.LASF5
+ 1146 0053 02       		.uleb128 0x2
+ 1147 0054 08       		.byte	0x8
+ 1148 0055 05       		.byte	0x5
+ 1149 0056 11020000 		.4byte	.LASF6
+ 1150 005a 02       		.uleb128 0x2
+ 1151 005b 08       		.byte	0x8
+ 1152 005c 07       		.byte	0x7
+ 1153 005d A1010000 		.4byte	.LASF7
+ 1154 0061 03       		.uleb128 0x3
+ 1155 0062 04       		.byte	0x4
+ 1156 0063 05       		.byte	0x5
+ 1157 0064 696E7400 		.ascii	"int\000"
+ 1158 0068 02       		.uleb128 0x2
+ 1159 0069 04       		.byte	0x4
+ 1160 006a 07       		.byte	0x7
+ 1161 006b 7F010000 		.4byte	.LASF8
+ 1162 006f 04       		.uleb128 0x4
+ 1163 0070 17010000 		.4byte	.LASF12
+ 1164 0074 02       		.byte	0x2
+ 1165 0075 5B       		.byte	0x5b
+ 1166 0076 30000000 		.4byte	0x30
+ 1167 007a 02       		.uleb128 0x2
+ 1168 007b 04       		.byte	0x4
+ 1169 007c 04       		.byte	0x4
+ 1170 007d D0000000 		.4byte	.LASF9
+ 1171 0081 02       		.uleb128 0x2
+ 1172 0082 08       		.byte	0x8
+ 1173 0083 04       		.byte	0x4
+ 1174 0084 71010000 		.4byte	.LASF10
+ 1175 0088 02       		.uleb128 0x2
+ 1176 0089 01       		.byte	0x1
+ 1177 008a 08       		.byte	0x8
+ 1178 008b 32020000 		.4byte	.LASF11
+ 1179 008f 04       		.uleb128 0x4
+ 1180 0090 F0000000 		.4byte	.LASF13
+ 1181 0094 02       		.byte	0x2
+ 1182 0095 F0       		.byte	0xf0
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 42
+
+
+ 1183 0096 9A000000 		.4byte	0x9a
+ 1184 009a 05       		.uleb128 0x5
+ 1185 009b 6F000000 		.4byte	0x6f
+ 1186 009f 02       		.uleb128 0x2
+ 1187 00a0 04       		.byte	0x4
+ 1188 00a1 07       		.byte	0x7
+ 1189 00a2 F7010000 		.4byte	.LASF14
+ 1190 00a6 06       		.uleb128 0x6
+ 1191 00a7 01       		.byte	0x1
+ 1192 00a8 27030000 		.4byte	.LASF15
+ 1193 00ac 01       		.byte	0x1
+ 1194 00ad 3F       		.byte	0x3f
+ 1195 00ae 01       		.byte	0x1
+ 1196 00af 00000000 		.4byte	.LFB0
+ 1197 00b3 3C000000 		.4byte	.LFE0
+ 1198 00b7 00000000 		.4byte	.LLST0
+ 1199 00bb 01       		.byte	0x1
+ 1200 00bc 07       		.uleb128 0x7
+ 1201 00bd 01       		.byte	0x1
+ 1202 00be 50000000 		.4byte	.LASF17
+ 1203 00c2 01       		.byte	0x1
+ 1204 00c3 78       		.byte	0x78
+ 1205 00c4 01       		.byte	0x1
+ 1206 00c5 00000000 		.4byte	.LFB1
+ 1207 00c9 7E000000 		.4byte	.LFE1
+ 1208 00cd 2C000000 		.4byte	.LLST1
+ 1209 00d1 01       		.byte	0x1
+ 1210 00d2 E5000000 		.4byte	0xe5
+ 1211 00d6 08       		.uleb128 0x8
+ 1212 00d7 00020000 		.4byte	.LASF19
+ 1213 00db 01       		.byte	0x1
+ 1214 00dc 7A       		.byte	0x7a
+ 1215 00dd 6F000000 		.4byte	0x6f
+ 1216 00e1 02       		.byte	0x2
+ 1217 00e2 91       		.byte	0x91
+ 1218 00e3 77       		.sleb128 -9
+ 1219 00e4 00       		.byte	0
+ 1220 00e5 06       		.uleb128 0x6
+ 1221 00e6 01       		.byte	0x1
+ 1222 00e7 00000000 		.4byte	.LASF16
+ 1223 00eb 01       		.byte	0x1
+ 1224 00ec A3       		.byte	0xa3
+ 1225 00ed 01       		.byte	0x1
+ 1226 00ee 00000000 		.4byte	.LFB2
+ 1227 00f2 2A000000 		.4byte	.LFE2
+ 1228 00f6 64000000 		.4byte	.LLST2
+ 1229 00fa 01       		.byte	0x1
+ 1230 00fb 07       		.uleb128 0x7
+ 1231 00fc 01       		.byte	0x1
+ 1232 00fd 50030000 		.4byte	.LASF18
+ 1233 0101 01       		.byte	0x1
+ 1234 0102 C0       		.byte	0xc0
+ 1235 0103 01       		.byte	0x1
+ 1236 0104 00000000 		.4byte	.LFB3
+ 1237 0108 62000000 		.4byte	.LFE3
+ 1238 010c 90000000 		.4byte	.LLST3
+ 1239 0110 01       		.byte	0x1
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 43
+
+
+ 1240 0111 24010000 		.4byte	0x124
+ 1241 0115 08       		.uleb128 0x8
+ 1242 0116 00020000 		.4byte	.LASF19
+ 1243 011a 01       		.byte	0x1
+ 1244 011b C2       		.byte	0xc2
+ 1245 011c 6F000000 		.4byte	0x6f
+ 1246 0120 02       		.byte	0x2
+ 1247 0121 91       		.byte	0x91
+ 1248 0122 77       		.sleb128 -9
+ 1249 0123 00       		.byte	0
+ 1250 0124 09       		.uleb128 0x9
+ 1251 0125 01       		.byte	0x1
+ 1252 0126 0B000000 		.4byte	.LASF20
+ 1253 012a 01       		.byte	0x1
+ 1254 012b E3       		.byte	0xe3
+ 1255 012c 01       		.byte	0x1
+ 1256 012d 00000000 		.4byte	.LFB4
+ 1257 0131 0A000000 		.4byte	.LFE4
+ 1258 0135 C8000000 		.4byte	.LLST4
+ 1259 0139 01       		.byte	0x1
+ 1260 013a 09       		.uleb128 0x9
+ 1261 013b 01       		.byte	0x1
+ 1262 013c 30000000 		.4byte	.LASF21
+ 1263 0140 01       		.byte	0x1
+ 1264 0141 FC       		.byte	0xfc
+ 1265 0142 01       		.byte	0x1
+ 1266 0143 00000000 		.4byte	.LFB5
+ 1267 0147 0A000000 		.4byte	.LFE5
+ 1268 014b F4000000 		.4byte	.LLST5
+ 1269 014f 01       		.byte	0x1
+ 1270 0150 0A       		.uleb128 0xa
+ 1271 0151 01       		.byte	0x1
+ 1272 0152 69020000 		.4byte	.LASF22
+ 1273 0156 01       		.byte	0x1
+ 1274 0157 1501     		.2byte	0x115
+ 1275 0159 01       		.byte	0x1
+ 1276 015a 00000000 		.4byte	.LFB6
+ 1277 015e 0A000000 		.4byte	.LFE6
+ 1278 0162 20010000 		.4byte	.LLST6
+ 1279 0166 01       		.byte	0x1
+ 1280 0167 0A       		.uleb128 0xa
+ 1281 0168 01       		.byte	0x1
+ 1282 0169 1D010000 		.4byte	.LASF23
+ 1283 016d 01       		.byte	0x1
+ 1284 016e 2E01     		.2byte	0x12e
+ 1285 0170 01       		.byte	0x1
+ 1286 0171 00000000 		.4byte	.LFB7
+ 1287 0175 0A000000 		.4byte	.LFE7
+ 1288 0179 4C010000 		.4byte	.LLST7
+ 1289 017d 01       		.byte	0x1
+ 1290 017e 0B       		.uleb128 0xb
+ 1291 017f 01       		.byte	0x1
+ 1292 0180 B8000000 		.4byte	.LASF24
+ 1293 0184 01       		.byte	0x1
+ 1294 0185 4801     		.2byte	0x148
+ 1295 0187 01       		.byte	0x1
+ 1296 0188 00000000 		.4byte	.LFB8
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 44
+
+
+ 1297 018c 20000000 		.4byte	.LFE8
+ 1298 0190 78010000 		.4byte	.LLST8
+ 1299 0194 01       		.byte	0x1
+ 1300 0195 A9010000 		.4byte	0x1a9
+ 1301 0199 0C       		.uleb128 0xc
+ 1302 019a 78010000 		.4byte	.LASF26
+ 1303 019e 01       		.byte	0x1
+ 1304 019f 4801     		.2byte	0x148
+ 1305 01a1 6F000000 		.4byte	0x6f
+ 1306 01a5 02       		.byte	0x2
+ 1307 01a6 91       		.byte	0x91
+ 1308 01a7 77       		.sleb128 -9
+ 1309 01a8 00       		.byte	0
+ 1310 01a9 0B       		.uleb128 0xb
+ 1311 01aa 01       		.byte	0x1
+ 1312 01ab 39010000 		.4byte	.LASF25
+ 1313 01af 01       		.byte	0x1
+ 1314 01b0 6001     		.2byte	0x160
+ 1315 01b2 01       		.byte	0x1
+ 1316 01b3 00000000 		.4byte	.LFB9
+ 1317 01b7 20000000 		.4byte	.LFE9
+ 1318 01bb B0010000 		.4byte	.LLST9
+ 1319 01bf 01       		.byte	0x1
+ 1320 01c0 D4010000 		.4byte	0x1d4
+ 1321 01c4 0C       		.uleb128 0xc
+ 1322 01c5 78010000 		.4byte	.LASF26
+ 1323 01c9 01       		.byte	0x1
+ 1324 01ca 6001     		.2byte	0x160
+ 1325 01cc 6F000000 		.4byte	0x6f
+ 1326 01d0 02       		.byte	0x2
+ 1327 01d1 91       		.byte	0x91
+ 1328 01d2 77       		.sleb128 -9
+ 1329 01d3 00       		.byte	0
+ 1330 01d4 0D       		.uleb128 0xd
+ 1331 01d5 01       		.byte	0x1
+ 1332 01d6 51010000 		.4byte	.LASF28
+ 1333 01da 01       		.byte	0x1
+ 1334 01db 8201     		.2byte	0x182
+ 1335 01dd 01       		.byte	0x1
+ 1336 01de 6F000000 		.4byte	0x6f
+ 1337 01e2 00000000 		.4byte	.LFB10
+ 1338 01e6 20000000 		.4byte	.LFE10
+ 1339 01ea E8010000 		.4byte	.LLST10
+ 1340 01ee 01       		.byte	0x1
+ 1341 01ef 03020000 		.4byte	0x203
+ 1342 01f3 0E       		.uleb128 0xe
+ 1343 01f4 3A030000 		.4byte	.LASF27
+ 1344 01f8 01       		.byte	0x1
+ 1345 01f9 8401     		.2byte	0x184
+ 1346 01fb 6F000000 		.4byte	0x6f
+ 1347 01ff 02       		.byte	0x2
+ 1348 0200 91       		.byte	0x91
+ 1349 0201 77       		.sleb128 -9
+ 1350 0202 00       		.byte	0
+ 1351 0203 0D       		.uleb128 0xd
+ 1352 0204 01       		.byte	0x1
+ 1353 0205 37020000 		.4byte	.LASF29
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 45
+
+
+ 1354 0209 01       		.byte	0x1
+ 1355 020a B501     		.2byte	0x1b5
+ 1356 020c 01       		.byte	0x1
+ 1357 020d 6F000000 		.4byte	0x6f
+ 1358 0211 00000000 		.4byte	.LFB11
+ 1359 0215 20000000 		.4byte	.LFE11
+ 1360 0219 20020000 		.4byte	.LLST11
+ 1361 021d 01       		.byte	0x1
+ 1362 021e 32020000 		.4byte	0x232
+ 1363 0222 0E       		.uleb128 0xe
+ 1364 0223 3A030000 		.4byte	.LASF27
+ 1365 0227 01       		.byte	0x1
+ 1366 0228 B701     		.2byte	0x1b7
+ 1367 022a 6F000000 		.4byte	0x6f
+ 1368 022e 02       		.byte	0x2
+ 1369 022f 91       		.byte	0x91
+ 1370 0230 77       		.sleb128 -9
+ 1371 0231 00       		.byte	0
+ 1372 0232 0B       		.uleb128 0xb
+ 1373 0233 01       		.byte	0x1
+ 1374 0234 92000000 		.4byte	.LASF30
+ 1375 0238 01       		.byte	0x1
+ 1376 0239 EE01     		.2byte	0x1ee
+ 1377 023b 01       		.byte	0x1
+ 1378 023c 00000000 		.4byte	.LFB12
+ 1379 0240 36000000 		.4byte	.LFE12
+ 1380 0244 58020000 		.4byte	.LLST12
+ 1381 0248 01       		.byte	0x1
+ 1382 0249 5D020000 		.4byte	0x25d
+ 1383 024d 0C       		.uleb128 0xc
+ 1384 024e E0010000 		.4byte	.LASF31
+ 1385 0252 01       		.byte	0x1
+ 1386 0253 EE01     		.2byte	0x1ee
+ 1387 0255 6F000000 		.4byte	0x6f
+ 1388 0259 02       		.byte	0x2
+ 1389 025a 91       		.byte	0x91
+ 1390 025b 77       		.sleb128 -9
+ 1391 025c 00       		.byte	0
+ 1392 025d 0D       		.uleb128 0xd
+ 1393 025e 01       		.byte	0x1
+ 1394 025f 7A030000 		.4byte	.LASF32
+ 1395 0263 01       		.byte	0x1
+ 1396 0264 5B02     		.2byte	0x25b
+ 1397 0266 01       		.byte	0x1
+ 1398 0267 6F000000 		.4byte	0x6f
+ 1399 026b 00000000 		.4byte	.LFB13
+ 1400 026f 20000000 		.4byte	.LFE13
+ 1401 0273 90020000 		.4byte	.LLST13
+ 1402 0277 01       		.byte	0x1
+ 1403 0278 8C020000 		.4byte	0x28c
+ 1404 027c 0E       		.uleb128 0xe
+ 1405 027d A3000000 		.4byte	.LASF33
+ 1406 0281 01       		.byte	0x1
+ 1407 0282 5D02     		.2byte	0x25d
+ 1408 0284 6F000000 		.4byte	0x6f
+ 1409 0288 02       		.byte	0x2
+ 1410 0289 91       		.byte	0x91
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 46
+
+
+ 1411 028a 77       		.sleb128 -9
+ 1412 028b 00       		.byte	0
+ 1413 028c 0D       		.uleb128 0xd
+ 1414 028d 01       		.byte	0x1
+ 1415 028e D6000000 		.4byte	.LASF34
+ 1416 0292 01       		.byte	0x1
+ 1417 0293 9B02     		.2byte	0x29b
+ 1418 0295 01       		.byte	0x1
+ 1419 0296 6F000000 		.4byte	0x6f
+ 1420 029a 00000000 		.4byte	.LFB14
+ 1421 029e 34000000 		.4byte	.LFE14
+ 1422 02a2 C8020000 		.4byte	.LLST14
+ 1423 02a6 01       		.byte	0x1
+ 1424 02a7 BB020000 		.4byte	0x2bb
+ 1425 02ab 0E       		.uleb128 0xe
+ 1426 02ac EB000000 		.4byte	.LASF35
+ 1427 02b0 01       		.byte	0x1
+ 1428 02b1 9D02     		.2byte	0x29d
+ 1429 02b3 6F000000 		.4byte	0x6f
+ 1430 02b7 02       		.byte	0x2
+ 1431 02b8 91       		.byte	0x91
+ 1432 02b9 77       		.sleb128 -9
+ 1433 02ba 00       		.byte	0
+ 1434 02bb 0D       		.uleb128 0xd
+ 1435 02bc 01       		.byte	0x1
+ 1436 02bd 8C010000 		.4byte	.LASF36
+ 1437 02c1 01       		.byte	0x1
+ 1438 02c2 D802     		.2byte	0x2d8
+ 1439 02c4 01       		.byte	0x1
+ 1440 02c5 6F000000 		.4byte	0x6f
+ 1441 02c9 00000000 		.4byte	.LFB15
+ 1442 02cd 4A000000 		.4byte	.LFE15
+ 1443 02d1 00030000 		.4byte	.LLST15
+ 1444 02d5 01       		.byte	0x1
+ 1445 02d6 EA020000 		.4byte	0x2ea
+ 1446 02da 0E       		.uleb128 0xe
+ 1447 02db EB000000 		.4byte	.LASF35
+ 1448 02df 01       		.byte	0x1
+ 1449 02e0 DA02     		.2byte	0x2da
+ 1450 02e2 6F000000 		.4byte	0x6f
+ 1451 02e6 02       		.byte	0x2
+ 1452 02e7 91       		.byte	0x91
+ 1453 02e8 77       		.sleb128 -9
+ 1454 02e9 00       		.byte	0
+ 1455 02ea 0A       		.uleb128 0xa
+ 1456 02eb 01       		.byte	0x1
+ 1457 02ec 6F000000 		.4byte	.LASF37
+ 1458 02f0 01       		.byte	0x1
+ 1459 02f1 2703     		.2byte	0x327
+ 1460 02f3 01       		.byte	0x1
+ 1461 02f4 00000000 		.4byte	.LFB16
+ 1462 02f8 2A000000 		.4byte	.LFE16
+ 1463 02fc 38030000 		.4byte	.LLST16
+ 1464 0300 01       		.byte	0x1
+ 1465 0301 0F       		.uleb128 0xf
+ 1466 0302 01       		.byte	0x1
+ 1467 0303 1F020000 		.4byte	.LASF38
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 47
+
+
+ 1468 0307 01       		.byte	0x1
+ 1469 0308 5E03     		.2byte	0x35e
+ 1470 030a 01       		.byte	0x1
+ 1471 030b 00000000 		.4byte	.LFB17
+ 1472 030f 56000000 		.4byte	.LFE17
+ 1473 0313 64030000 		.4byte	.LLST17
+ 1474 0317 01       		.byte	0x1
+ 1475 0318 2C030000 		.4byte	0x32c
+ 1476 031c 0E       		.uleb128 0xe
+ 1477 031d 00020000 		.4byte	.LASF19
+ 1478 0321 01       		.byte	0x1
+ 1479 0322 6003     		.2byte	0x360
+ 1480 0324 6F000000 		.4byte	0x6f
+ 1481 0328 02       		.byte	0x2
+ 1482 0329 91       		.byte	0x91
+ 1483 032a 77       		.sleb128 -9
+ 1484 032b 00       		.byte	0
+ 1485 032c 0F       		.uleb128 0xf
+ 1486 032d 01       		.byte	0x1
+ 1487 032e AA000000 		.4byte	.LASF39
+ 1488 0332 01       		.byte	0x1
+ 1489 0333 C303     		.2byte	0x3c3
+ 1490 0335 01       		.byte	0x1
+ 1491 0336 00000000 		.4byte	.LFB18
+ 1492 033a 40000000 		.4byte	.LFE18
+ 1493 033e 9C030000 		.4byte	.LLST18
+ 1494 0342 01       		.byte	0x1
+ 1495 0343 75030000 		.4byte	0x375
+ 1496 0347 0C       		.uleb128 0xc
+ 1497 0348 29000000 		.4byte	.LASF40
+ 1498 034c 01       		.byte	0x1
+ 1499 034d C303     		.2byte	0x3c3
+ 1500 034f 75030000 		.4byte	0x375
+ 1501 0353 02       		.byte	0x2
+ 1502 0354 91       		.byte	0x91
+ 1503 0355 6C       		.sleb128 -20
+ 1504 0356 0C       		.uleb128 0xc
+ 1505 0357 2F010000 		.4byte	.LASF41
+ 1506 035b 01       		.byte	0x1
+ 1507 035c C303     		.2byte	0x3c3
+ 1508 035e 6F000000 		.4byte	0x6f
+ 1509 0362 02       		.byte	0x2
+ 1510 0363 91       		.byte	0x91
+ 1511 0364 6B       		.sleb128 -21
+ 1512 0365 0E       		.uleb128 0xe
+ 1513 0366 D7010000 		.4byte	.LASF42
+ 1514 036a 01       		.byte	0x1
+ 1515 036b C603     		.2byte	0x3c6
+ 1516 036d 6F000000 		.4byte	0x6f
+ 1517 0371 02       		.byte	0x2
+ 1518 0372 91       		.byte	0x91
+ 1519 0373 77       		.sleb128 -9
+ 1520 0374 00       		.byte	0
+ 1521 0375 10       		.uleb128 0x10
+ 1522 0376 04       		.byte	0x4
+ 1523 0377 7B030000 		.4byte	0x37b
+ 1524 037b 11       		.uleb128 0x11
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 48
+
+
+ 1525 037c 6F000000 		.4byte	0x6f
+ 1526 0380 0F       		.uleb128 0xf
+ 1527 0381 01       		.byte	0x1
+ 1528 0382 C8010000 		.4byte	.LASF43
+ 1529 0386 01       		.byte	0x1
+ 1530 0387 E403     		.2byte	0x3e4
+ 1531 0389 01       		.byte	0x1
+ 1532 038a 00000000 		.4byte	.LFB19
+ 1533 038e 76000000 		.4byte	.LFE19
+ 1534 0392 D4030000 		.4byte	.LLST19
+ 1535 0396 01       		.byte	0x1
+ 1536 0397 AB030000 		.4byte	0x3ab
+ 1537 039b 0E       		.uleb128 0xe
+ 1538 039c 00020000 		.4byte	.LASF19
+ 1539 03a0 01       		.byte	0x1
+ 1540 03a1 E603     		.2byte	0x3e6
+ 1541 03a3 6F000000 		.4byte	0x6f
+ 1542 03a7 02       		.byte	0x2
+ 1543 03a8 91       		.byte	0x91
+ 1544 03a9 77       		.sleb128 -9
+ 1545 03aa 00       		.byte	0
+ 1546 03ab 12       		.uleb128 0x12
+ 1547 03ac 01       		.byte	0x1
+ 1548 03ad 41000000 		.4byte	.LASF44
+ 1549 03b1 01       		.byte	0x1
+ 1550 03b2 1204     		.2byte	0x412
+ 1551 03b4 01       		.byte	0x1
+ 1552 03b5 00000000 		.4byte	.LFB20
+ 1553 03b9 0E000000 		.4byte	.LFE20
+ 1554 03bd 0C040000 		.4byte	.LLST20
+ 1555 03c1 01       		.byte	0x1
+ 1556 03c2 12       		.uleb128 0x12
+ 1557 03c3 01       		.byte	0x1
+ 1558 03c4 82000000 		.4byte	.LASF45
+ 1559 03c8 01       		.byte	0x1
+ 1560 03c9 2A04     		.2byte	0x42a
+ 1561 03cb 01       		.byte	0x1
+ 1562 03cc 00000000 		.4byte	.LFB21
+ 1563 03d0 0E000000 		.4byte	.LFE21
+ 1564 03d4 38040000 		.4byte	.LLST21
+ 1565 03d8 01       		.byte	0x1
+ 1566 03d9 0B       		.uleb128 0xb
+ 1567 03da 01       		.byte	0x1
+ 1568 03db 49020000 		.4byte	.LASF46
+ 1569 03df 01       		.byte	0x1
+ 1570 03e0 4304     		.2byte	0x443
+ 1571 03e2 01       		.byte	0x1
+ 1572 03e3 00000000 		.4byte	.LFB22
+ 1573 03e7 32000000 		.4byte	.LFE22
+ 1574 03eb 64040000 		.4byte	.LLST22
+ 1575 03ef 01       		.byte	0x1
+ 1576 03f0 04040000 		.4byte	0x404
+ 1577 03f4 0C       		.uleb128 0xc
+ 1578 03f5 78010000 		.4byte	.LASF26
+ 1579 03f9 01       		.byte	0x1
+ 1580 03fa 4304     		.2byte	0x443
+ 1581 03fc 6F000000 		.4byte	0x6f
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 49
+
+
+ 1582 0400 02       		.byte	0x2
+ 1583 0401 91       		.byte	0x91
+ 1584 0402 77       		.sleb128 -9
+ 1585 0403 00       		.byte	0
+ 1586 0404 0D       		.uleb128 0xd
+ 1587 0405 01       		.byte	0x1
+ 1588 0406 07010000 		.4byte	.LASF47
+ 1589 040a 01       		.byte	0x1
+ 1590 040b 6604     		.2byte	0x466
+ 1591 040d 01       		.byte	0x1
+ 1592 040e 6F000000 		.4byte	0x6f
+ 1593 0412 00000000 		.4byte	.LFB23
+ 1594 0416 3A000000 		.4byte	.LFE23
+ 1595 041a 9C040000 		.4byte	.LLST23
+ 1596 041e 01       		.byte	0x1
+ 1597 041f 33040000 		.4byte	0x433
+ 1598 0423 0E       		.uleb128 0xe
+ 1599 0424 3A030000 		.4byte	.LASF27
+ 1600 0428 01       		.byte	0x1
+ 1601 0429 6804     		.2byte	0x468
+ 1602 042b 6F000000 		.4byte	0x6f
+ 1603 042f 02       		.byte	0x2
+ 1604 0430 91       		.byte	0x91
+ 1605 0431 77       		.sleb128 -9
+ 1606 0432 00       		.byte	0
+ 1607 0433 13       		.uleb128 0x13
+ 1608 0434 1C000000 		.4byte	.LASF48
+ 1609 0438 01       		.byte	0x1
+ 1610 0439 22       		.byte	0x22
+ 1611 043a 6F000000 		.4byte	0x6f
+ 1612 043e 01       		.byte	0x1
+ 1613 043f 05       		.byte	0x5
+ 1614 0440 03       		.byte	0x3
+ 1615 0441 00000000 		.4byte	SPI0_initVar
+ 1616 0445 13       		.uleb128 0x13
+ 1617 0446 E7010000 		.4byte	.LASF49
+ 1618 044a 01       		.byte	0x1
+ 1619 044b 24       		.byte	0x24
+ 1620 044c 9A000000 		.4byte	0x9a
+ 1621 0450 01       		.byte	0x1
+ 1622 0451 05       		.byte	0x5
+ 1623 0452 03       		.byte	0x3
+ 1624 0453 00000000 		.4byte	SPI0_swStatusTx
+ 1625 0457 13       		.uleb128 0x13
+ 1626 0458 B8010000 		.4byte	.LASF50
+ 1627 045c 01       		.byte	0x1
+ 1628 045d 25       		.byte	0x25
+ 1629 045e 9A000000 		.4byte	0x9a
+ 1630 0462 01       		.byte	0x1
+ 1631 0463 05       		.byte	0x5
+ 1632 0464 03       		.byte	0x3
+ 1633 0465 00000000 		.4byte	SPI0_swStatusRx
+ 1634 0469 00       		.byte	0
+ 1635              		.section	.debug_abbrev,"",%progbits
+ 1636              	.Ldebug_abbrev0:
+ 1637 0000 01       		.uleb128 0x1
+ 1638 0001 11       		.uleb128 0x11
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 50
+
+
+ 1639 0002 01       		.byte	0x1
+ 1640 0003 25       		.uleb128 0x25
+ 1641 0004 0E       		.uleb128 0xe
+ 1642 0005 13       		.uleb128 0x13
+ 1643 0006 0B       		.uleb128 0xb
+ 1644 0007 03       		.uleb128 0x3
+ 1645 0008 0E       		.uleb128 0xe
+ 1646 0009 1B       		.uleb128 0x1b
+ 1647 000a 0E       		.uleb128 0xe
+ 1648 000b 55       		.uleb128 0x55
+ 1649 000c 06       		.uleb128 0x6
+ 1650 000d 11       		.uleb128 0x11
+ 1651 000e 01       		.uleb128 0x1
+ 1652 000f 52       		.uleb128 0x52
+ 1653 0010 01       		.uleb128 0x1
+ 1654 0011 10       		.uleb128 0x10
+ 1655 0012 06       		.uleb128 0x6
+ 1656 0013 00       		.byte	0
+ 1657 0014 00       		.byte	0
+ 1658 0015 02       		.uleb128 0x2
+ 1659 0016 24       		.uleb128 0x24
+ 1660 0017 00       		.byte	0
+ 1661 0018 0B       		.uleb128 0xb
+ 1662 0019 0B       		.uleb128 0xb
+ 1663 001a 3E       		.uleb128 0x3e
+ 1664 001b 0B       		.uleb128 0xb
+ 1665 001c 03       		.uleb128 0x3
+ 1666 001d 0E       		.uleb128 0xe
+ 1667 001e 00       		.byte	0
+ 1668 001f 00       		.byte	0
+ 1669 0020 03       		.uleb128 0x3
+ 1670 0021 24       		.uleb128 0x24
+ 1671 0022 00       		.byte	0
+ 1672 0023 0B       		.uleb128 0xb
+ 1673 0024 0B       		.uleb128 0xb
+ 1674 0025 3E       		.uleb128 0x3e
+ 1675 0026 0B       		.uleb128 0xb
+ 1676 0027 03       		.uleb128 0x3
+ 1677 0028 08       		.uleb128 0x8
+ 1678 0029 00       		.byte	0
+ 1679 002a 00       		.byte	0
+ 1680 002b 04       		.uleb128 0x4
+ 1681 002c 16       		.uleb128 0x16
+ 1682 002d 00       		.byte	0
+ 1683 002e 03       		.uleb128 0x3
+ 1684 002f 0E       		.uleb128 0xe
+ 1685 0030 3A       		.uleb128 0x3a
+ 1686 0031 0B       		.uleb128 0xb
+ 1687 0032 3B       		.uleb128 0x3b
+ 1688 0033 0B       		.uleb128 0xb
+ 1689 0034 49       		.uleb128 0x49
+ 1690 0035 13       		.uleb128 0x13
+ 1691 0036 00       		.byte	0
+ 1692 0037 00       		.byte	0
+ 1693 0038 05       		.uleb128 0x5
+ 1694 0039 35       		.uleb128 0x35
+ 1695 003a 00       		.byte	0
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 51
+
+
+ 1696 003b 49       		.uleb128 0x49
+ 1697 003c 13       		.uleb128 0x13
+ 1698 003d 00       		.byte	0
+ 1699 003e 00       		.byte	0
+ 1700 003f 06       		.uleb128 0x6
+ 1701 0040 2E       		.uleb128 0x2e
+ 1702 0041 00       		.byte	0
+ 1703 0042 3F       		.uleb128 0x3f
+ 1704 0043 0C       		.uleb128 0xc
+ 1705 0044 03       		.uleb128 0x3
+ 1706 0045 0E       		.uleb128 0xe
+ 1707 0046 3A       		.uleb128 0x3a
+ 1708 0047 0B       		.uleb128 0xb
+ 1709 0048 3B       		.uleb128 0x3b
+ 1710 0049 0B       		.uleb128 0xb
+ 1711 004a 27       		.uleb128 0x27
+ 1712 004b 0C       		.uleb128 0xc
+ 1713 004c 11       		.uleb128 0x11
+ 1714 004d 01       		.uleb128 0x1
+ 1715 004e 12       		.uleb128 0x12
+ 1716 004f 01       		.uleb128 0x1
+ 1717 0050 40       		.uleb128 0x40
+ 1718 0051 06       		.uleb128 0x6
+ 1719 0052 9642     		.uleb128 0x2116
+ 1720 0054 0C       		.uleb128 0xc
+ 1721 0055 00       		.byte	0
+ 1722 0056 00       		.byte	0
+ 1723 0057 07       		.uleb128 0x7
+ 1724 0058 2E       		.uleb128 0x2e
+ 1725 0059 01       		.byte	0x1
+ 1726 005a 3F       		.uleb128 0x3f
+ 1727 005b 0C       		.uleb128 0xc
+ 1728 005c 03       		.uleb128 0x3
+ 1729 005d 0E       		.uleb128 0xe
+ 1730 005e 3A       		.uleb128 0x3a
+ 1731 005f 0B       		.uleb128 0xb
+ 1732 0060 3B       		.uleb128 0x3b
+ 1733 0061 0B       		.uleb128 0xb
+ 1734 0062 27       		.uleb128 0x27
+ 1735 0063 0C       		.uleb128 0xc
+ 1736 0064 11       		.uleb128 0x11
+ 1737 0065 01       		.uleb128 0x1
+ 1738 0066 12       		.uleb128 0x12
+ 1739 0067 01       		.uleb128 0x1
+ 1740 0068 40       		.uleb128 0x40
+ 1741 0069 06       		.uleb128 0x6
+ 1742 006a 9642     		.uleb128 0x2116
+ 1743 006c 0C       		.uleb128 0xc
+ 1744 006d 01       		.uleb128 0x1
+ 1745 006e 13       		.uleb128 0x13
+ 1746 006f 00       		.byte	0
+ 1747 0070 00       		.byte	0
+ 1748 0071 08       		.uleb128 0x8
+ 1749 0072 34       		.uleb128 0x34
+ 1750 0073 00       		.byte	0
+ 1751 0074 03       		.uleb128 0x3
+ 1752 0075 0E       		.uleb128 0xe
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 52
+
+
+ 1753 0076 3A       		.uleb128 0x3a
+ 1754 0077 0B       		.uleb128 0xb
+ 1755 0078 3B       		.uleb128 0x3b
+ 1756 0079 0B       		.uleb128 0xb
+ 1757 007a 49       		.uleb128 0x49
+ 1758 007b 13       		.uleb128 0x13
+ 1759 007c 02       		.uleb128 0x2
+ 1760 007d 0A       		.uleb128 0xa
+ 1761 007e 00       		.byte	0
+ 1762 007f 00       		.byte	0
+ 1763 0080 09       		.uleb128 0x9
+ 1764 0081 2E       		.uleb128 0x2e
+ 1765 0082 00       		.byte	0
+ 1766 0083 3F       		.uleb128 0x3f
+ 1767 0084 0C       		.uleb128 0xc
+ 1768 0085 03       		.uleb128 0x3
+ 1769 0086 0E       		.uleb128 0xe
+ 1770 0087 3A       		.uleb128 0x3a
+ 1771 0088 0B       		.uleb128 0xb
+ 1772 0089 3B       		.uleb128 0x3b
+ 1773 008a 0B       		.uleb128 0xb
+ 1774 008b 27       		.uleb128 0x27
+ 1775 008c 0C       		.uleb128 0xc
+ 1776 008d 11       		.uleb128 0x11
+ 1777 008e 01       		.uleb128 0x1
+ 1778 008f 12       		.uleb128 0x12
+ 1779 0090 01       		.uleb128 0x1
+ 1780 0091 40       		.uleb128 0x40
+ 1781 0092 06       		.uleb128 0x6
+ 1782 0093 9742     		.uleb128 0x2117
+ 1783 0095 0C       		.uleb128 0xc
+ 1784 0096 00       		.byte	0
+ 1785 0097 00       		.byte	0
+ 1786 0098 0A       		.uleb128 0xa
+ 1787 0099 2E       		.uleb128 0x2e
+ 1788 009a 00       		.byte	0
+ 1789 009b 3F       		.uleb128 0x3f
+ 1790 009c 0C       		.uleb128 0xc
+ 1791 009d 03       		.uleb128 0x3
+ 1792 009e 0E       		.uleb128 0xe
+ 1793 009f 3A       		.uleb128 0x3a
+ 1794 00a0 0B       		.uleb128 0xb
+ 1795 00a1 3B       		.uleb128 0x3b
+ 1796 00a2 05       		.uleb128 0x5
+ 1797 00a3 27       		.uleb128 0x27
+ 1798 00a4 0C       		.uleb128 0xc
+ 1799 00a5 11       		.uleb128 0x11
+ 1800 00a6 01       		.uleb128 0x1
+ 1801 00a7 12       		.uleb128 0x12
+ 1802 00a8 01       		.uleb128 0x1
+ 1803 00a9 40       		.uleb128 0x40
+ 1804 00aa 06       		.uleb128 0x6
+ 1805 00ab 9742     		.uleb128 0x2117
+ 1806 00ad 0C       		.uleb128 0xc
+ 1807 00ae 00       		.byte	0
+ 1808 00af 00       		.byte	0
+ 1809 00b0 0B       		.uleb128 0xb
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 53
+
+
+ 1810 00b1 2E       		.uleb128 0x2e
+ 1811 00b2 01       		.byte	0x1
+ 1812 00b3 3F       		.uleb128 0x3f
+ 1813 00b4 0C       		.uleb128 0xc
+ 1814 00b5 03       		.uleb128 0x3
+ 1815 00b6 0E       		.uleb128 0xe
+ 1816 00b7 3A       		.uleb128 0x3a
+ 1817 00b8 0B       		.uleb128 0xb
+ 1818 00b9 3B       		.uleb128 0x3b
+ 1819 00ba 05       		.uleb128 0x5
+ 1820 00bb 27       		.uleb128 0x27
+ 1821 00bc 0C       		.uleb128 0xc
+ 1822 00bd 11       		.uleb128 0x11
+ 1823 00be 01       		.uleb128 0x1
+ 1824 00bf 12       		.uleb128 0x12
+ 1825 00c0 01       		.uleb128 0x1
+ 1826 00c1 40       		.uleb128 0x40
+ 1827 00c2 06       		.uleb128 0x6
+ 1828 00c3 9742     		.uleb128 0x2117
+ 1829 00c5 0C       		.uleb128 0xc
+ 1830 00c6 01       		.uleb128 0x1
+ 1831 00c7 13       		.uleb128 0x13
+ 1832 00c8 00       		.byte	0
+ 1833 00c9 00       		.byte	0
+ 1834 00ca 0C       		.uleb128 0xc
+ 1835 00cb 05       		.uleb128 0x5
+ 1836 00cc 00       		.byte	0
+ 1837 00cd 03       		.uleb128 0x3
+ 1838 00ce 0E       		.uleb128 0xe
+ 1839 00cf 3A       		.uleb128 0x3a
+ 1840 00d0 0B       		.uleb128 0xb
+ 1841 00d1 3B       		.uleb128 0x3b
+ 1842 00d2 05       		.uleb128 0x5
+ 1843 00d3 49       		.uleb128 0x49
+ 1844 00d4 13       		.uleb128 0x13
+ 1845 00d5 02       		.uleb128 0x2
+ 1846 00d6 0A       		.uleb128 0xa
+ 1847 00d7 00       		.byte	0
+ 1848 00d8 00       		.byte	0
+ 1849 00d9 0D       		.uleb128 0xd
+ 1850 00da 2E       		.uleb128 0x2e
+ 1851 00db 01       		.byte	0x1
+ 1852 00dc 3F       		.uleb128 0x3f
+ 1853 00dd 0C       		.uleb128 0xc
+ 1854 00de 03       		.uleb128 0x3
+ 1855 00df 0E       		.uleb128 0xe
+ 1856 00e0 3A       		.uleb128 0x3a
+ 1857 00e1 0B       		.uleb128 0xb
+ 1858 00e2 3B       		.uleb128 0x3b
+ 1859 00e3 05       		.uleb128 0x5
+ 1860 00e4 27       		.uleb128 0x27
+ 1861 00e5 0C       		.uleb128 0xc
+ 1862 00e6 49       		.uleb128 0x49
+ 1863 00e7 13       		.uleb128 0x13
+ 1864 00e8 11       		.uleb128 0x11
+ 1865 00e9 01       		.uleb128 0x1
+ 1866 00ea 12       		.uleb128 0x12
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 54
+
+
+ 1867 00eb 01       		.uleb128 0x1
+ 1868 00ec 40       		.uleb128 0x40
+ 1869 00ed 06       		.uleb128 0x6
+ 1870 00ee 9742     		.uleb128 0x2117
+ 1871 00f0 0C       		.uleb128 0xc
+ 1872 00f1 01       		.uleb128 0x1
+ 1873 00f2 13       		.uleb128 0x13
+ 1874 00f3 00       		.byte	0
+ 1875 00f4 00       		.byte	0
+ 1876 00f5 0E       		.uleb128 0xe
+ 1877 00f6 34       		.uleb128 0x34
+ 1878 00f7 00       		.byte	0
+ 1879 00f8 03       		.uleb128 0x3
+ 1880 00f9 0E       		.uleb128 0xe
+ 1881 00fa 3A       		.uleb128 0x3a
+ 1882 00fb 0B       		.uleb128 0xb
+ 1883 00fc 3B       		.uleb128 0x3b
+ 1884 00fd 05       		.uleb128 0x5
+ 1885 00fe 49       		.uleb128 0x49
+ 1886 00ff 13       		.uleb128 0x13
+ 1887 0100 02       		.uleb128 0x2
+ 1888 0101 0A       		.uleb128 0xa
+ 1889 0102 00       		.byte	0
+ 1890 0103 00       		.byte	0
+ 1891 0104 0F       		.uleb128 0xf
+ 1892 0105 2E       		.uleb128 0x2e
+ 1893 0106 01       		.byte	0x1
+ 1894 0107 3F       		.uleb128 0x3f
+ 1895 0108 0C       		.uleb128 0xc
+ 1896 0109 03       		.uleb128 0x3
+ 1897 010a 0E       		.uleb128 0xe
+ 1898 010b 3A       		.uleb128 0x3a
+ 1899 010c 0B       		.uleb128 0xb
+ 1900 010d 3B       		.uleb128 0x3b
+ 1901 010e 05       		.uleb128 0x5
+ 1902 010f 27       		.uleb128 0x27
+ 1903 0110 0C       		.uleb128 0xc
+ 1904 0111 11       		.uleb128 0x11
+ 1905 0112 01       		.uleb128 0x1
+ 1906 0113 12       		.uleb128 0x12
+ 1907 0114 01       		.uleb128 0x1
+ 1908 0115 40       		.uleb128 0x40
+ 1909 0116 06       		.uleb128 0x6
+ 1910 0117 9642     		.uleb128 0x2116
+ 1911 0119 0C       		.uleb128 0xc
+ 1912 011a 01       		.uleb128 0x1
+ 1913 011b 13       		.uleb128 0x13
+ 1914 011c 00       		.byte	0
+ 1915 011d 00       		.byte	0
+ 1916 011e 10       		.uleb128 0x10
+ 1917 011f 0F       		.uleb128 0xf
+ 1918 0120 00       		.byte	0
+ 1919 0121 0B       		.uleb128 0xb
+ 1920 0122 0B       		.uleb128 0xb
+ 1921 0123 49       		.uleb128 0x49
+ 1922 0124 13       		.uleb128 0x13
+ 1923 0125 00       		.byte	0
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 55
+
+
+ 1924 0126 00       		.byte	0
+ 1925 0127 11       		.uleb128 0x11
+ 1926 0128 26       		.uleb128 0x26
+ 1927 0129 00       		.byte	0
+ 1928 012a 49       		.uleb128 0x49
+ 1929 012b 13       		.uleb128 0x13
+ 1930 012c 00       		.byte	0
+ 1931 012d 00       		.byte	0
+ 1932 012e 12       		.uleb128 0x12
+ 1933 012f 2E       		.uleb128 0x2e
+ 1934 0130 00       		.byte	0
+ 1935 0131 3F       		.uleb128 0x3f
+ 1936 0132 0C       		.uleb128 0xc
+ 1937 0133 03       		.uleb128 0x3
+ 1938 0134 0E       		.uleb128 0xe
+ 1939 0135 3A       		.uleb128 0x3a
+ 1940 0136 0B       		.uleb128 0xb
+ 1941 0137 3B       		.uleb128 0x3b
+ 1942 0138 05       		.uleb128 0x5
+ 1943 0139 27       		.uleb128 0x27
+ 1944 013a 0C       		.uleb128 0xc
+ 1945 013b 11       		.uleb128 0x11
+ 1946 013c 01       		.uleb128 0x1
+ 1947 013d 12       		.uleb128 0x12
+ 1948 013e 01       		.uleb128 0x1
+ 1949 013f 40       		.uleb128 0x40
+ 1950 0140 06       		.uleb128 0x6
+ 1951 0141 9642     		.uleb128 0x2116
+ 1952 0143 0C       		.uleb128 0xc
+ 1953 0144 00       		.byte	0
+ 1954 0145 00       		.byte	0
+ 1955 0146 13       		.uleb128 0x13
+ 1956 0147 34       		.uleb128 0x34
+ 1957 0148 00       		.byte	0
+ 1958 0149 03       		.uleb128 0x3
+ 1959 014a 0E       		.uleb128 0xe
+ 1960 014b 3A       		.uleb128 0x3a
+ 1961 014c 0B       		.uleb128 0xb
+ 1962 014d 3B       		.uleb128 0x3b
+ 1963 014e 0B       		.uleb128 0xb
+ 1964 014f 49       		.uleb128 0x49
+ 1965 0150 13       		.uleb128 0x13
+ 1966 0151 3F       		.uleb128 0x3f
+ 1967 0152 0C       		.uleb128 0xc
+ 1968 0153 02       		.uleb128 0x2
+ 1969 0154 0A       		.uleb128 0xa
+ 1970 0155 00       		.byte	0
+ 1971 0156 00       		.byte	0
+ 1972 0157 00       		.byte	0
+ 1973              		.section	.debug_loc,"",%progbits
+ 1974              	.Ldebug_loc0:
+ 1975              	.LLST0:
+ 1976 0000 00000000 		.4byte	.LFB0
+ 1977 0004 02000000 		.4byte	.LCFI0
+ 1978 0008 0200     		.2byte	0x2
+ 1979 000a 7D       		.byte	0x7d
+ 1980 000b 00       		.sleb128 0
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 56
+
+
+ 1981 000c 02000000 		.4byte	.LCFI0
+ 1982 0010 04000000 		.4byte	.LCFI1
+ 1983 0014 0200     		.2byte	0x2
+ 1984 0016 7D       		.byte	0x7d
+ 1985 0017 08       		.sleb128 8
+ 1986 0018 04000000 		.4byte	.LCFI1
+ 1987 001c 3C000000 		.4byte	.LFE0
+ 1988 0020 0200     		.2byte	0x2
+ 1989 0022 77       		.byte	0x77
+ 1990 0023 08       		.sleb128 8
+ 1991 0024 00000000 		.4byte	0
+ 1992 0028 00000000 		.4byte	0
+ 1993              	.LLST1:
+ 1994 002c 00000000 		.4byte	.LFB1
+ 1995 0030 02000000 		.4byte	.LCFI2
+ 1996 0034 0200     		.2byte	0x2
+ 1997 0036 7D       		.byte	0x7d
+ 1998 0037 00       		.sleb128 0
+ 1999 0038 02000000 		.4byte	.LCFI2
+ 2000 003c 04000000 		.4byte	.LCFI3
+ 2001 0040 0200     		.2byte	0x2
+ 2002 0042 7D       		.byte	0x7d
+ 2003 0043 08       		.sleb128 8
+ 2004 0044 04000000 		.4byte	.LCFI3
+ 2005 0048 06000000 		.4byte	.LCFI4
+ 2006 004c 0200     		.2byte	0x2
+ 2007 004e 7D       		.byte	0x7d
+ 2008 004f 10       		.sleb128 16
+ 2009 0050 06000000 		.4byte	.LCFI4
+ 2010 0054 7E000000 		.4byte	.LFE1
+ 2011 0058 0200     		.2byte	0x2
+ 2012 005a 77       		.byte	0x77
+ 2013 005b 10       		.sleb128 16
+ 2014 005c 00000000 		.4byte	0
+ 2015 0060 00000000 		.4byte	0
+ 2016              	.LLST2:
+ 2017 0064 00000000 		.4byte	.LFB2
+ 2018 0068 02000000 		.4byte	.LCFI5
+ 2019 006c 0200     		.2byte	0x2
+ 2020 006e 7D       		.byte	0x7d
+ 2021 006f 00       		.sleb128 0
+ 2022 0070 02000000 		.4byte	.LCFI5
+ 2023 0074 04000000 		.4byte	.LCFI6
+ 2024 0078 0200     		.2byte	0x2
+ 2025 007a 7D       		.byte	0x7d
+ 2026 007b 08       		.sleb128 8
+ 2027 007c 04000000 		.4byte	.LCFI6
+ 2028 0080 2A000000 		.4byte	.LFE2
+ 2029 0084 0200     		.2byte	0x2
+ 2030 0086 77       		.byte	0x77
+ 2031 0087 08       		.sleb128 8
+ 2032 0088 00000000 		.4byte	0
+ 2033 008c 00000000 		.4byte	0
+ 2034              	.LLST3:
+ 2035 0090 00000000 		.4byte	.LFB3
+ 2036 0094 02000000 		.4byte	.LCFI7
+ 2037 0098 0200     		.2byte	0x2
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 57
+
+
+ 2038 009a 7D       		.byte	0x7d
+ 2039 009b 00       		.sleb128 0
+ 2040 009c 02000000 		.4byte	.LCFI7
+ 2041 00a0 04000000 		.4byte	.LCFI8
+ 2042 00a4 0200     		.2byte	0x2
+ 2043 00a6 7D       		.byte	0x7d
+ 2044 00a7 08       		.sleb128 8
+ 2045 00a8 04000000 		.4byte	.LCFI8
+ 2046 00ac 06000000 		.4byte	.LCFI9
+ 2047 00b0 0200     		.2byte	0x2
+ 2048 00b2 7D       		.byte	0x7d
+ 2049 00b3 10       		.sleb128 16
+ 2050 00b4 06000000 		.4byte	.LCFI9
+ 2051 00b8 62000000 		.4byte	.LFE3
+ 2052 00bc 0200     		.2byte	0x2
+ 2053 00be 77       		.byte	0x77
+ 2054 00bf 10       		.sleb128 16
+ 2055 00c0 00000000 		.4byte	0
+ 2056 00c4 00000000 		.4byte	0
+ 2057              	.LLST4:
+ 2058 00c8 00000000 		.4byte	.LFB4
+ 2059 00cc 02000000 		.4byte	.LCFI10
+ 2060 00d0 0200     		.2byte	0x2
+ 2061 00d2 7D       		.byte	0x7d
+ 2062 00d3 00       		.sleb128 0
+ 2063 00d4 02000000 		.4byte	.LCFI10
+ 2064 00d8 04000000 		.4byte	.LCFI11
+ 2065 00dc 0200     		.2byte	0x2
+ 2066 00de 7D       		.byte	0x7d
+ 2067 00df 04       		.sleb128 4
+ 2068 00e0 04000000 		.4byte	.LCFI11
+ 2069 00e4 0A000000 		.4byte	.LFE4
+ 2070 00e8 0200     		.2byte	0x2
+ 2071 00ea 77       		.byte	0x77
+ 2072 00eb 04       		.sleb128 4
+ 2073 00ec 00000000 		.4byte	0
+ 2074 00f0 00000000 		.4byte	0
+ 2075              	.LLST5:
+ 2076 00f4 00000000 		.4byte	.LFB5
+ 2077 00f8 02000000 		.4byte	.LCFI12
+ 2078 00fc 0200     		.2byte	0x2
+ 2079 00fe 7D       		.byte	0x7d
+ 2080 00ff 00       		.sleb128 0
+ 2081 0100 02000000 		.4byte	.LCFI12
+ 2082 0104 04000000 		.4byte	.LCFI13
+ 2083 0108 0200     		.2byte	0x2
+ 2084 010a 7D       		.byte	0x7d
+ 2085 010b 04       		.sleb128 4
+ 2086 010c 04000000 		.4byte	.LCFI13
+ 2087 0110 0A000000 		.4byte	.LFE5
+ 2088 0114 0200     		.2byte	0x2
+ 2089 0116 77       		.byte	0x77
+ 2090 0117 04       		.sleb128 4
+ 2091 0118 00000000 		.4byte	0
+ 2092 011c 00000000 		.4byte	0
+ 2093              	.LLST6:
+ 2094 0120 00000000 		.4byte	.LFB6
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 58
+
+
+ 2095 0124 02000000 		.4byte	.LCFI14
+ 2096 0128 0200     		.2byte	0x2
+ 2097 012a 7D       		.byte	0x7d
+ 2098 012b 00       		.sleb128 0
+ 2099 012c 02000000 		.4byte	.LCFI14
+ 2100 0130 04000000 		.4byte	.LCFI15
+ 2101 0134 0200     		.2byte	0x2
+ 2102 0136 7D       		.byte	0x7d
+ 2103 0137 04       		.sleb128 4
+ 2104 0138 04000000 		.4byte	.LCFI15
+ 2105 013c 0A000000 		.4byte	.LFE6
+ 2106 0140 0200     		.2byte	0x2
+ 2107 0142 77       		.byte	0x77
+ 2108 0143 04       		.sleb128 4
+ 2109 0144 00000000 		.4byte	0
+ 2110 0148 00000000 		.4byte	0
+ 2111              	.LLST7:
+ 2112 014c 00000000 		.4byte	.LFB7
+ 2113 0150 02000000 		.4byte	.LCFI16
+ 2114 0154 0200     		.2byte	0x2
+ 2115 0156 7D       		.byte	0x7d
+ 2116 0157 00       		.sleb128 0
+ 2117 0158 02000000 		.4byte	.LCFI16
+ 2118 015c 04000000 		.4byte	.LCFI17
+ 2119 0160 0200     		.2byte	0x2
+ 2120 0162 7D       		.byte	0x7d
+ 2121 0163 04       		.sleb128 4
+ 2122 0164 04000000 		.4byte	.LCFI17
+ 2123 0168 0A000000 		.4byte	.LFE7
+ 2124 016c 0200     		.2byte	0x2
+ 2125 016e 77       		.byte	0x77
+ 2126 016f 04       		.sleb128 4
+ 2127 0170 00000000 		.4byte	0
+ 2128 0174 00000000 		.4byte	0
+ 2129              	.LLST8:
+ 2130 0178 00000000 		.4byte	.LFB8
+ 2131 017c 02000000 		.4byte	.LCFI18
+ 2132 0180 0200     		.2byte	0x2
+ 2133 0182 7D       		.byte	0x7d
+ 2134 0183 00       		.sleb128 0
+ 2135 0184 02000000 		.4byte	.LCFI18
+ 2136 0188 04000000 		.4byte	.LCFI19
+ 2137 018c 0200     		.2byte	0x2
+ 2138 018e 7D       		.byte	0x7d
+ 2139 018f 04       		.sleb128 4
+ 2140 0190 04000000 		.4byte	.LCFI19
+ 2141 0194 06000000 		.4byte	.LCFI20
+ 2142 0198 0200     		.2byte	0x2
+ 2143 019a 7D       		.byte	0x7d
+ 2144 019b 10       		.sleb128 16
+ 2145 019c 06000000 		.4byte	.LCFI20
+ 2146 01a0 20000000 		.4byte	.LFE8
+ 2147 01a4 0200     		.2byte	0x2
+ 2148 01a6 77       		.byte	0x77
+ 2149 01a7 10       		.sleb128 16
+ 2150 01a8 00000000 		.4byte	0
+ 2151 01ac 00000000 		.4byte	0
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 59
+
+
+ 2152              	.LLST9:
+ 2153 01b0 00000000 		.4byte	.LFB9
+ 2154 01b4 02000000 		.4byte	.LCFI21
+ 2155 01b8 0200     		.2byte	0x2
+ 2156 01ba 7D       		.byte	0x7d
+ 2157 01bb 00       		.sleb128 0
+ 2158 01bc 02000000 		.4byte	.LCFI21
+ 2159 01c0 04000000 		.4byte	.LCFI22
+ 2160 01c4 0200     		.2byte	0x2
+ 2161 01c6 7D       		.byte	0x7d
+ 2162 01c7 04       		.sleb128 4
+ 2163 01c8 04000000 		.4byte	.LCFI22
+ 2164 01cc 06000000 		.4byte	.LCFI23
+ 2165 01d0 0200     		.2byte	0x2
+ 2166 01d2 7D       		.byte	0x7d
+ 2167 01d3 10       		.sleb128 16
+ 2168 01d4 06000000 		.4byte	.LCFI23
+ 2169 01d8 20000000 		.4byte	.LFE9
+ 2170 01dc 0200     		.2byte	0x2
+ 2171 01de 77       		.byte	0x77
+ 2172 01df 10       		.sleb128 16
+ 2173 01e0 00000000 		.4byte	0
+ 2174 01e4 00000000 		.4byte	0
+ 2175              	.LLST10:
+ 2176 01e8 00000000 		.4byte	.LFB10
+ 2177 01ec 02000000 		.4byte	.LCFI24
+ 2178 01f0 0200     		.2byte	0x2
+ 2179 01f2 7D       		.byte	0x7d
+ 2180 01f3 00       		.sleb128 0
+ 2181 01f4 02000000 		.4byte	.LCFI24
+ 2182 01f8 04000000 		.4byte	.LCFI25
+ 2183 01fc 0200     		.2byte	0x2
+ 2184 01fe 7D       		.byte	0x7d
+ 2185 01ff 04       		.sleb128 4
+ 2186 0200 04000000 		.4byte	.LCFI25
+ 2187 0204 06000000 		.4byte	.LCFI26
+ 2188 0208 0200     		.2byte	0x2
+ 2189 020a 7D       		.byte	0x7d
+ 2190 020b 10       		.sleb128 16
+ 2191 020c 06000000 		.4byte	.LCFI26
+ 2192 0210 20000000 		.4byte	.LFE10
+ 2193 0214 0200     		.2byte	0x2
+ 2194 0216 77       		.byte	0x77
+ 2195 0217 10       		.sleb128 16
+ 2196 0218 00000000 		.4byte	0
+ 2197 021c 00000000 		.4byte	0
+ 2198              	.LLST11:
+ 2199 0220 00000000 		.4byte	.LFB11
+ 2200 0224 02000000 		.4byte	.LCFI27
+ 2201 0228 0200     		.2byte	0x2
+ 2202 022a 7D       		.byte	0x7d
+ 2203 022b 00       		.sleb128 0
+ 2204 022c 02000000 		.4byte	.LCFI27
+ 2205 0230 04000000 		.4byte	.LCFI28
+ 2206 0234 0200     		.2byte	0x2
+ 2207 0236 7D       		.byte	0x7d
+ 2208 0237 04       		.sleb128 4
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 60
+
+
+ 2209 0238 04000000 		.4byte	.LCFI28
+ 2210 023c 06000000 		.4byte	.LCFI29
+ 2211 0240 0200     		.2byte	0x2
+ 2212 0242 7D       		.byte	0x7d
+ 2213 0243 10       		.sleb128 16
+ 2214 0244 06000000 		.4byte	.LCFI29
+ 2215 0248 20000000 		.4byte	.LFE11
+ 2216 024c 0200     		.2byte	0x2
+ 2217 024e 77       		.byte	0x77
+ 2218 024f 10       		.sleb128 16
+ 2219 0250 00000000 		.4byte	0
+ 2220 0254 00000000 		.4byte	0
+ 2221              	.LLST12:
+ 2222 0258 00000000 		.4byte	.LFB12
+ 2223 025c 02000000 		.4byte	.LCFI30
+ 2224 0260 0200     		.2byte	0x2
+ 2225 0262 7D       		.byte	0x7d
+ 2226 0263 00       		.sleb128 0
+ 2227 0264 02000000 		.4byte	.LCFI30
+ 2228 0268 04000000 		.4byte	.LCFI31
+ 2229 026c 0200     		.2byte	0x2
+ 2230 026e 7D       		.byte	0x7d
+ 2231 026f 04       		.sleb128 4
+ 2232 0270 04000000 		.4byte	.LCFI31
+ 2233 0274 06000000 		.4byte	.LCFI32
+ 2234 0278 0200     		.2byte	0x2
+ 2235 027a 7D       		.byte	0x7d
+ 2236 027b 10       		.sleb128 16
+ 2237 027c 06000000 		.4byte	.LCFI32
+ 2238 0280 36000000 		.4byte	.LFE12
+ 2239 0284 0200     		.2byte	0x2
+ 2240 0286 77       		.byte	0x77
+ 2241 0287 10       		.sleb128 16
+ 2242 0288 00000000 		.4byte	0
+ 2243 028c 00000000 		.4byte	0
+ 2244              	.LLST13:
+ 2245 0290 00000000 		.4byte	.LFB13
+ 2246 0294 02000000 		.4byte	.LCFI33
+ 2247 0298 0200     		.2byte	0x2
+ 2248 029a 7D       		.byte	0x7d
+ 2249 029b 00       		.sleb128 0
+ 2250 029c 02000000 		.4byte	.LCFI33
+ 2251 02a0 04000000 		.4byte	.LCFI34
+ 2252 02a4 0200     		.2byte	0x2
+ 2253 02a6 7D       		.byte	0x7d
+ 2254 02a7 04       		.sleb128 4
+ 2255 02a8 04000000 		.4byte	.LCFI34
+ 2256 02ac 06000000 		.4byte	.LCFI35
+ 2257 02b0 0200     		.2byte	0x2
+ 2258 02b2 7D       		.byte	0x7d
+ 2259 02b3 10       		.sleb128 16
+ 2260 02b4 06000000 		.4byte	.LCFI35
+ 2261 02b8 20000000 		.4byte	.LFE13
+ 2262 02bc 0200     		.2byte	0x2
+ 2263 02be 77       		.byte	0x77
+ 2264 02bf 10       		.sleb128 16
+ 2265 02c0 00000000 		.4byte	0
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 61
+
+
+ 2266 02c4 00000000 		.4byte	0
+ 2267              	.LLST14:
+ 2268 02c8 00000000 		.4byte	.LFB14
+ 2269 02cc 02000000 		.4byte	.LCFI36
+ 2270 02d0 0200     		.2byte	0x2
+ 2271 02d2 7D       		.byte	0x7d
+ 2272 02d3 00       		.sleb128 0
+ 2273 02d4 02000000 		.4byte	.LCFI36
+ 2274 02d8 04000000 		.4byte	.LCFI37
+ 2275 02dc 0200     		.2byte	0x2
+ 2276 02de 7D       		.byte	0x7d
+ 2277 02df 04       		.sleb128 4
+ 2278 02e0 04000000 		.4byte	.LCFI37
+ 2279 02e4 06000000 		.4byte	.LCFI38
+ 2280 02e8 0200     		.2byte	0x2
+ 2281 02ea 7D       		.byte	0x7d
+ 2282 02eb 10       		.sleb128 16
+ 2283 02ec 06000000 		.4byte	.LCFI38
+ 2284 02f0 34000000 		.4byte	.LFE14
+ 2285 02f4 0200     		.2byte	0x2
+ 2286 02f6 77       		.byte	0x77
+ 2287 02f7 10       		.sleb128 16
+ 2288 02f8 00000000 		.4byte	0
+ 2289 02fc 00000000 		.4byte	0
+ 2290              	.LLST15:
+ 2291 0300 00000000 		.4byte	.LFB15
+ 2292 0304 02000000 		.4byte	.LCFI39
+ 2293 0308 0200     		.2byte	0x2
+ 2294 030a 7D       		.byte	0x7d
+ 2295 030b 00       		.sleb128 0
+ 2296 030c 02000000 		.4byte	.LCFI39
+ 2297 0310 04000000 		.4byte	.LCFI40
+ 2298 0314 0200     		.2byte	0x2
+ 2299 0316 7D       		.byte	0x7d
+ 2300 0317 04       		.sleb128 4
+ 2301 0318 04000000 		.4byte	.LCFI40
+ 2302 031c 06000000 		.4byte	.LCFI41
+ 2303 0320 0200     		.2byte	0x2
+ 2304 0322 7D       		.byte	0x7d
+ 2305 0323 10       		.sleb128 16
+ 2306 0324 06000000 		.4byte	.LCFI41
+ 2307 0328 4A000000 		.4byte	.LFE15
+ 2308 032c 0200     		.2byte	0x2
+ 2309 032e 77       		.byte	0x77
+ 2310 032f 10       		.sleb128 16
+ 2311 0330 00000000 		.4byte	0
+ 2312 0334 00000000 		.4byte	0
+ 2313              	.LLST16:
+ 2314 0338 00000000 		.4byte	.LFB16
+ 2315 033c 02000000 		.4byte	.LCFI42
+ 2316 0340 0200     		.2byte	0x2
+ 2317 0342 7D       		.byte	0x7d
+ 2318 0343 00       		.sleb128 0
+ 2319 0344 02000000 		.4byte	.LCFI42
+ 2320 0348 04000000 		.4byte	.LCFI43
+ 2321 034c 0200     		.2byte	0x2
+ 2322 034e 7D       		.byte	0x7d
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 62
+
+
+ 2323 034f 04       		.sleb128 4
+ 2324 0350 04000000 		.4byte	.LCFI43
+ 2325 0354 2A000000 		.4byte	.LFE16
+ 2326 0358 0200     		.2byte	0x2
+ 2327 035a 77       		.byte	0x77
+ 2328 035b 04       		.sleb128 4
+ 2329 035c 00000000 		.4byte	0
+ 2330 0360 00000000 		.4byte	0
+ 2331              	.LLST17:
+ 2332 0364 00000000 		.4byte	.LFB17
+ 2333 0368 02000000 		.4byte	.LCFI44
+ 2334 036c 0200     		.2byte	0x2
+ 2335 036e 7D       		.byte	0x7d
+ 2336 036f 00       		.sleb128 0
+ 2337 0370 02000000 		.4byte	.LCFI44
+ 2338 0374 04000000 		.4byte	.LCFI45
+ 2339 0378 0200     		.2byte	0x2
+ 2340 037a 7D       		.byte	0x7d
+ 2341 037b 08       		.sleb128 8
+ 2342 037c 04000000 		.4byte	.LCFI45
+ 2343 0380 06000000 		.4byte	.LCFI46
+ 2344 0384 0200     		.2byte	0x2
+ 2345 0386 7D       		.byte	0x7d
+ 2346 0387 10       		.sleb128 16
+ 2347 0388 06000000 		.4byte	.LCFI46
+ 2348 038c 56000000 		.4byte	.LFE17
+ 2349 0390 0200     		.2byte	0x2
+ 2350 0392 77       		.byte	0x77
+ 2351 0393 10       		.sleb128 16
+ 2352 0394 00000000 		.4byte	0
+ 2353 0398 00000000 		.4byte	0
+ 2354              	.LLST18:
+ 2355 039c 00000000 		.4byte	.LFB18
+ 2356 03a0 02000000 		.4byte	.LCFI47
+ 2357 03a4 0200     		.2byte	0x2
+ 2358 03a6 7D       		.byte	0x7d
+ 2359 03a7 00       		.sleb128 0
+ 2360 03a8 02000000 		.4byte	.LCFI47
+ 2361 03ac 04000000 		.4byte	.LCFI48
+ 2362 03b0 0200     		.2byte	0x2
+ 2363 03b2 7D       		.byte	0x7d
+ 2364 03b3 08       		.sleb128 8
+ 2365 03b4 04000000 		.4byte	.LCFI48
+ 2366 03b8 06000000 		.4byte	.LCFI49
+ 2367 03bc 0200     		.2byte	0x2
+ 2368 03be 7D       		.byte	0x7d
+ 2369 03bf 18       		.sleb128 24
+ 2370 03c0 06000000 		.4byte	.LCFI49
+ 2371 03c4 40000000 		.4byte	.LFE18
+ 2372 03c8 0200     		.2byte	0x2
+ 2373 03ca 77       		.byte	0x77
+ 2374 03cb 18       		.sleb128 24
+ 2375 03cc 00000000 		.4byte	0
+ 2376 03d0 00000000 		.4byte	0
+ 2377              	.LLST19:
+ 2378 03d4 00000000 		.4byte	.LFB19
+ 2379 03d8 02000000 		.4byte	.LCFI50
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 63
+
+
+ 2380 03dc 0200     		.2byte	0x2
+ 2381 03de 7D       		.byte	0x7d
+ 2382 03df 00       		.sleb128 0
+ 2383 03e0 02000000 		.4byte	.LCFI50
+ 2384 03e4 04000000 		.4byte	.LCFI51
+ 2385 03e8 0200     		.2byte	0x2
+ 2386 03ea 7D       		.byte	0x7d
+ 2387 03eb 08       		.sleb128 8
+ 2388 03ec 04000000 		.4byte	.LCFI51
+ 2389 03f0 06000000 		.4byte	.LCFI52
+ 2390 03f4 0200     		.2byte	0x2
+ 2391 03f6 7D       		.byte	0x7d
+ 2392 03f7 10       		.sleb128 16
+ 2393 03f8 06000000 		.4byte	.LCFI52
+ 2394 03fc 76000000 		.4byte	.LFE19
+ 2395 0400 0200     		.2byte	0x2
+ 2396 0402 77       		.byte	0x77
+ 2397 0403 10       		.sleb128 16
+ 2398 0404 00000000 		.4byte	0
+ 2399 0408 00000000 		.4byte	0
+ 2400              	.LLST20:
+ 2401 040c 00000000 		.4byte	.LFB20
+ 2402 0410 02000000 		.4byte	.LCFI53
+ 2403 0414 0200     		.2byte	0x2
+ 2404 0416 7D       		.byte	0x7d
+ 2405 0417 00       		.sleb128 0
+ 2406 0418 02000000 		.4byte	.LCFI53
+ 2407 041c 04000000 		.4byte	.LCFI54
+ 2408 0420 0200     		.2byte	0x2
+ 2409 0422 7D       		.byte	0x7d
+ 2410 0423 08       		.sleb128 8
+ 2411 0424 04000000 		.4byte	.LCFI54
+ 2412 0428 0E000000 		.4byte	.LFE20
+ 2413 042c 0200     		.2byte	0x2
+ 2414 042e 77       		.byte	0x77
+ 2415 042f 08       		.sleb128 8
+ 2416 0430 00000000 		.4byte	0
+ 2417 0434 00000000 		.4byte	0
+ 2418              	.LLST21:
+ 2419 0438 00000000 		.4byte	.LFB21
+ 2420 043c 02000000 		.4byte	.LCFI55
+ 2421 0440 0200     		.2byte	0x2
+ 2422 0442 7D       		.byte	0x7d
+ 2423 0443 00       		.sleb128 0
+ 2424 0444 02000000 		.4byte	.LCFI55
+ 2425 0448 04000000 		.4byte	.LCFI56
+ 2426 044c 0200     		.2byte	0x2
+ 2427 044e 7D       		.byte	0x7d
+ 2428 044f 08       		.sleb128 8
+ 2429 0450 04000000 		.4byte	.LCFI56
+ 2430 0454 0E000000 		.4byte	.LFE21
+ 2431 0458 0200     		.2byte	0x2
+ 2432 045a 77       		.byte	0x77
+ 2433 045b 08       		.sleb128 8
+ 2434 045c 00000000 		.4byte	0
+ 2435 0460 00000000 		.4byte	0
+ 2436              	.LLST22:
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 64
+
+
+ 2437 0464 00000000 		.4byte	.LFB22
+ 2438 0468 02000000 		.4byte	.LCFI57
+ 2439 046c 0200     		.2byte	0x2
+ 2440 046e 7D       		.byte	0x7d
+ 2441 046f 00       		.sleb128 0
+ 2442 0470 02000000 		.4byte	.LCFI57
+ 2443 0474 04000000 		.4byte	.LCFI58
+ 2444 0478 0200     		.2byte	0x2
+ 2445 047a 7D       		.byte	0x7d
+ 2446 047b 04       		.sleb128 4
+ 2447 047c 04000000 		.4byte	.LCFI58
+ 2448 0480 06000000 		.4byte	.LCFI59
+ 2449 0484 0200     		.2byte	0x2
+ 2450 0486 7D       		.byte	0x7d
+ 2451 0487 10       		.sleb128 16
+ 2452 0488 06000000 		.4byte	.LCFI59
+ 2453 048c 32000000 		.4byte	.LFE22
+ 2454 0490 0200     		.2byte	0x2
+ 2455 0492 77       		.byte	0x77
+ 2456 0493 10       		.sleb128 16
+ 2457 0494 00000000 		.4byte	0
+ 2458 0498 00000000 		.4byte	0
+ 2459              	.LLST23:
+ 2460 049c 00000000 		.4byte	.LFB23
+ 2461 04a0 02000000 		.4byte	.LCFI60
+ 2462 04a4 0200     		.2byte	0x2
+ 2463 04a6 7D       		.byte	0x7d
+ 2464 04a7 00       		.sleb128 0
+ 2465 04a8 02000000 		.4byte	.LCFI60
+ 2466 04ac 04000000 		.4byte	.LCFI61
+ 2467 04b0 0200     		.2byte	0x2
+ 2468 04b2 7D       		.byte	0x7d
+ 2469 04b3 04       		.sleb128 4
+ 2470 04b4 04000000 		.4byte	.LCFI61
+ 2471 04b8 06000000 		.4byte	.LCFI62
+ 2472 04bc 0200     		.2byte	0x2
+ 2473 04be 7D       		.byte	0x7d
+ 2474 04bf 10       		.sleb128 16
+ 2475 04c0 06000000 		.4byte	.LCFI62
+ 2476 04c4 3A000000 		.4byte	.LFE23
+ 2477 04c8 0200     		.2byte	0x2
+ 2478 04ca 77       		.byte	0x77
+ 2479 04cb 10       		.sleb128 16
+ 2480 04cc 00000000 		.4byte	0
+ 2481 04d0 00000000 		.4byte	0
+ 2482              		.section	.debug_aranges,"",%progbits
+ 2483 0000 D4000000 		.4byte	0xd4
+ 2484 0004 0200     		.2byte	0x2
+ 2485 0006 00000000 		.4byte	.Ldebug_info0
+ 2486 000a 04       		.byte	0x4
+ 2487 000b 00       		.byte	0
+ 2488 000c 0000     		.2byte	0
+ 2489 000e 0000     		.2byte	0
+ 2490 0010 00000000 		.4byte	.LFB0
+ 2491 0014 3C000000 		.4byte	.LFE0-.LFB0
+ 2492 0018 00000000 		.4byte	.LFB1
+ 2493 001c 7E000000 		.4byte	.LFE1-.LFB1
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 65
+
+
+ 2494 0020 00000000 		.4byte	.LFB2
+ 2495 0024 2A000000 		.4byte	.LFE2-.LFB2
+ 2496 0028 00000000 		.4byte	.LFB3
+ 2497 002c 62000000 		.4byte	.LFE3-.LFB3
+ 2498 0030 00000000 		.4byte	.LFB4
+ 2499 0034 0A000000 		.4byte	.LFE4-.LFB4
+ 2500 0038 00000000 		.4byte	.LFB5
+ 2501 003c 0A000000 		.4byte	.LFE5-.LFB5
+ 2502 0040 00000000 		.4byte	.LFB6
+ 2503 0044 0A000000 		.4byte	.LFE6-.LFB6
+ 2504 0048 00000000 		.4byte	.LFB7
+ 2505 004c 0A000000 		.4byte	.LFE7-.LFB7
+ 2506 0050 00000000 		.4byte	.LFB8
+ 2507 0054 20000000 		.4byte	.LFE8-.LFB8
+ 2508 0058 00000000 		.4byte	.LFB9
+ 2509 005c 20000000 		.4byte	.LFE9-.LFB9
+ 2510 0060 00000000 		.4byte	.LFB10
+ 2511 0064 20000000 		.4byte	.LFE10-.LFB10
+ 2512 0068 00000000 		.4byte	.LFB11
+ 2513 006c 20000000 		.4byte	.LFE11-.LFB11
+ 2514 0070 00000000 		.4byte	.LFB12
+ 2515 0074 36000000 		.4byte	.LFE12-.LFB12
+ 2516 0078 00000000 		.4byte	.LFB13
+ 2517 007c 20000000 		.4byte	.LFE13-.LFB13
+ 2518 0080 00000000 		.4byte	.LFB14
+ 2519 0084 34000000 		.4byte	.LFE14-.LFB14
+ 2520 0088 00000000 		.4byte	.LFB15
+ 2521 008c 4A000000 		.4byte	.LFE15-.LFB15
+ 2522 0090 00000000 		.4byte	.LFB16
+ 2523 0094 2A000000 		.4byte	.LFE16-.LFB16
+ 2524 0098 00000000 		.4byte	.LFB17
+ 2525 009c 56000000 		.4byte	.LFE17-.LFB17
+ 2526 00a0 00000000 		.4byte	.LFB18
+ 2527 00a4 40000000 		.4byte	.LFE18-.LFB18
+ 2528 00a8 00000000 		.4byte	.LFB19
+ 2529 00ac 76000000 		.4byte	.LFE19-.LFB19
+ 2530 00b0 00000000 		.4byte	.LFB20
+ 2531 00b4 0E000000 		.4byte	.LFE20-.LFB20
+ 2532 00b8 00000000 		.4byte	.LFB21
+ 2533 00bc 0E000000 		.4byte	.LFE21-.LFB21
+ 2534 00c0 00000000 		.4byte	.LFB22
+ 2535 00c4 32000000 		.4byte	.LFE22-.LFB22
+ 2536 00c8 00000000 		.4byte	.LFB23
+ 2537 00cc 3A000000 		.4byte	.LFE23-.LFB23
+ 2538 00d0 00000000 		.4byte	0
+ 2539 00d4 00000000 		.4byte	0
+ 2540              		.section	.debug_ranges,"",%progbits
+ 2541              	.Ldebug_ranges0:
+ 2542 0000 00000000 		.4byte	.LFB0
+ 2543 0004 3C000000 		.4byte	.LFE0
+ 2544 0008 00000000 		.4byte	.LFB1
+ 2545 000c 7E000000 		.4byte	.LFE1
+ 2546 0010 00000000 		.4byte	.LFB2
+ 2547 0014 2A000000 		.4byte	.LFE2
+ 2548 0018 00000000 		.4byte	.LFB3
+ 2549 001c 62000000 		.4byte	.LFE3
+ 2550 0020 00000000 		.4byte	.LFB4
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 66
+
+
+ 2551 0024 0A000000 		.4byte	.LFE4
+ 2552 0028 00000000 		.4byte	.LFB5
+ 2553 002c 0A000000 		.4byte	.LFE5
+ 2554 0030 00000000 		.4byte	.LFB6
+ 2555 0034 0A000000 		.4byte	.LFE6
+ 2556 0038 00000000 		.4byte	.LFB7
+ 2557 003c 0A000000 		.4byte	.LFE7
+ 2558 0040 00000000 		.4byte	.LFB8
+ 2559 0044 20000000 		.4byte	.LFE8
+ 2560 0048 00000000 		.4byte	.LFB9
+ 2561 004c 20000000 		.4byte	.LFE9
+ 2562 0050 00000000 		.4byte	.LFB10
+ 2563 0054 20000000 		.4byte	.LFE10
+ 2564 0058 00000000 		.4byte	.LFB11
+ 2565 005c 20000000 		.4byte	.LFE11
+ 2566 0060 00000000 		.4byte	.LFB12
+ 2567 0064 36000000 		.4byte	.LFE12
+ 2568 0068 00000000 		.4byte	.LFB13
+ 2569 006c 20000000 		.4byte	.LFE13
+ 2570 0070 00000000 		.4byte	.LFB14
+ 2571 0074 34000000 		.4byte	.LFE14
+ 2572 0078 00000000 		.4byte	.LFB15
+ 2573 007c 4A000000 		.4byte	.LFE15
+ 2574 0080 00000000 		.4byte	.LFB16
+ 2575 0084 2A000000 		.4byte	.LFE16
+ 2576 0088 00000000 		.4byte	.LFB17
+ 2577 008c 56000000 		.4byte	.LFE17
+ 2578 0090 00000000 		.4byte	.LFB18
+ 2579 0094 40000000 		.4byte	.LFE18
+ 2580 0098 00000000 		.4byte	.LFB19
+ 2581 009c 76000000 		.4byte	.LFE19
+ 2582 00a0 00000000 		.4byte	.LFB20
+ 2583 00a4 0E000000 		.4byte	.LFE20
+ 2584 00a8 00000000 		.4byte	.LFB21
+ 2585 00ac 0E000000 		.4byte	.LFE21
+ 2586 00b0 00000000 		.4byte	.LFB22
+ 2587 00b4 32000000 		.4byte	.LFE22
+ 2588 00b8 00000000 		.4byte	.LFB23
+ 2589 00bc 3A000000 		.4byte	.LFE23
+ 2590 00c0 00000000 		.4byte	0
+ 2591 00c4 00000000 		.4byte	0
+ 2592              		.section	.debug_line,"",%progbits
+ 2593              	.Ldebug_line0:
+ 2594 0000 6C020000 		.section	.debug_str,"MS",%progbits,1
+ 2594      02004300 
+ 2594      00000201 
+ 2594      FB0E0D00 
+ 2594      01010101 
+ 2595              	.LASF16:
+ 2596 0000 53504930 		.ascii	"SPI0_Start\000"
+ 2596      5F537461 
+ 2596      727400
+ 2597              	.LASF20:
+ 2598 000b 53504930 		.ascii	"SPI0_EnableTxInt\000"
+ 2598      5F456E61 
+ 2598      626C6554 
+ 2598      78496E74 
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 67
+
+
+ 2598      00
+ 2599              	.LASF48:
+ 2600 001c 53504930 		.ascii	"SPI0_initVar\000"
+ 2600      5F696E69 
+ 2600      74566172 
+ 2600      00
+ 2601              	.LASF40:
+ 2602 0029 62756666 		.ascii	"buffer\000"
+ 2602      657200
+ 2603              	.LASF21:
+ 2604 0030 53504930 		.ascii	"SPI0_EnableRxInt\000"
+ 2604      5F456E61 
+ 2604      626C6552 
+ 2604      78496E74 
+ 2604      00
+ 2605              	.LASF44:
+ 2606 0041 53504930 		.ascii	"SPI0_EnableInt\000"
+ 2606      5F456E61 
+ 2606      626C6549 
+ 2606      6E7400
+ 2607              	.LASF17:
+ 2608 0050 53504930 		.ascii	"SPI0_Enable\000"
+ 2608      5F456E61 
+ 2608      626C6500 
+ 2609              	.LASF3:
+ 2610 005c 73686F72 		.ascii	"short unsigned int\000"
+ 2610      7420756E 
+ 2610      7369676E 
+ 2610      65642069 
+ 2610      6E7400
+ 2611              	.LASF37:
+ 2612 006f 53504930 		.ascii	"SPI0_ClearRxBuffer\000"
+ 2612      5F436C65 
+ 2612      61725278 
+ 2612      42756666 
+ 2612      657200
+ 2613              	.LASF45:
+ 2614 0082 53504930 		.ascii	"SPI0_DisableInt\000"
+ 2614      5F446973 
+ 2614      61626C65 
+ 2614      496E7400 
+ 2615              	.LASF30:
+ 2616 0092 53504930 		.ascii	"SPI0_WriteTxData\000"
+ 2616      5F577269 
+ 2616      74655478 
+ 2616      44617461 
+ 2616      00
+ 2617              	.LASF33:
+ 2618 00a3 72784461 		.ascii	"rxData\000"
+ 2618      746100
+ 2619              	.LASF39:
+ 2620 00aa 53504930 		.ascii	"SPI0_PutArray\000"
+ 2620      5F507574 
+ 2620      41727261 
+ 2620      7900
+ 2621              	.LASF24:
+ 2622 00b8 53504930 		.ascii	"SPI0_SetTxInterruptMode\000"
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 68
+
+
+ 2622      5F536574 
+ 2622      5478496E 
+ 2622      74657272 
+ 2622      7570744D 
+ 2623              	.LASF9:
+ 2624 00d0 666C6F61 		.ascii	"float\000"
+ 2624      7400
+ 2625              	.LASF34:
+ 2626 00d6 53504930 		.ascii	"SPI0_GetRxBufferSize\000"
+ 2626      5F476574 
+ 2626      52784275 
+ 2626      66666572 
+ 2626      53697A65 
+ 2627              	.LASF35:
+ 2628 00eb 73697A65 		.ascii	"size\000"
+ 2628      00
+ 2629              	.LASF13:
+ 2630 00f0 72656738 		.ascii	"reg8\000"
+ 2630      00
+ 2631              	.LASF5:
+ 2632 00f5 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2632      20756E73 
+ 2632      69676E65 
+ 2632      6420696E 
+ 2632      7400
+ 2633              	.LASF47:
+ 2634 0107 53504930 		.ascii	"SPI0_ReadStatus\000"
+ 2634      5F526561 
+ 2634      64537461 
+ 2634      74757300 
+ 2635              	.LASF12:
+ 2636 0117 75696E74 		.ascii	"uint8\000"
+ 2636      3800
+ 2637              	.LASF23:
+ 2638 011d 53504930 		.ascii	"SPI0_DisableRxInt\000"
+ 2638      5F446973 
+ 2638      61626C65 
+ 2638      5278496E 
+ 2638      7400
+ 2639              	.LASF41:
+ 2640 012f 62797465 		.ascii	"byteCount\000"
+ 2640      436F756E 
+ 2640      7400
+ 2641              	.LASF25:
+ 2642 0139 53504930 		.ascii	"SPI0_SetRxInterruptMode\000"
+ 2642      5F536574 
+ 2642      5278496E 
+ 2642      74657272 
+ 2642      7570744D 
+ 2643              	.LASF28:
+ 2644 0151 53504930 		.ascii	"SPI0_ReadTxStatus\000"
+ 2644      5F526561 
+ 2644      64547853 
+ 2644      74617475 
+ 2644      7300
+ 2645              	.LASF1:
+ 2646 0163 756E7369 		.ascii	"unsigned char\000"
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 69
+
+
+ 2646      676E6564 
+ 2646      20636861 
+ 2646      7200
+ 2647              	.LASF10:
+ 2648 0171 646F7562 		.ascii	"double\000"
+ 2648      6C6500
+ 2649              	.LASF26:
+ 2650 0178 696E7453 		.ascii	"intSrc\000"
+ 2650      726300
+ 2651              	.LASF8:
+ 2652 017f 756E7369 		.ascii	"unsigned int\000"
+ 2652      676E6564 
+ 2652      20696E74 
+ 2652      00
+ 2653              	.LASF36:
+ 2654 018c 53504930 		.ascii	"SPI0_GetTxBufferSize\000"
+ 2654      5F476574 
+ 2654      54784275 
+ 2654      66666572 
+ 2654      53697A65 
+ 2655              	.LASF7:
+ 2656 01a1 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2656      206C6F6E 
+ 2656      6720756E 
+ 2656      7369676E 
+ 2656      65642069 
+ 2657              	.LASF50:
+ 2658 01b8 53504930 		.ascii	"SPI0_swStatusRx\000"
+ 2658      5F737753 
+ 2658      74617475 
+ 2658      73527800 
+ 2659              	.LASF43:
+ 2660 01c8 53504930 		.ascii	"SPI0_ClearFIFO\000"
+ 2660      5F436C65 
+ 2660      61724649 
+ 2660      464F00
+ 2661              	.LASF42:
+ 2662 01d7 62756649 		.ascii	"bufIndex\000"
+ 2662      6E646578 
+ 2662      00
+ 2663              	.LASF31:
+ 2664 01e0 74784461 		.ascii	"txData\000"
+ 2664      746100
+ 2665              	.LASF49:
+ 2666 01e7 53504930 		.ascii	"SPI0_swStatusTx\000"
+ 2666      5F737753 
+ 2666      74617475 
+ 2666      73547800 
+ 2667              	.LASF14:
+ 2668 01f7 73697A65 		.ascii	"sizetype\000"
+ 2668      74797065 
+ 2668      00
+ 2669              	.LASF19:
+ 2670 0200 656E6162 		.ascii	"enableInterrupts\000"
+ 2670      6C65496E 
+ 2670      74657272 
+ 2670      75707473 
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 70
+
+
+ 2670      00
+ 2671              	.LASF6:
+ 2672 0211 6C6F6E67 		.ascii	"long long int\000"
+ 2672      206C6F6E 
+ 2672      6720696E 
+ 2672      7400
+ 2673              	.LASF38:
+ 2674 021f 53504930 		.ascii	"SPI0_ClearTxBuffer\000"
+ 2674      5F436C65 
+ 2674      61725478 
+ 2674      42756666 
+ 2674      657200
+ 2675              	.LASF11:
+ 2676 0232 63686172 		.ascii	"char\000"
+ 2676      00
+ 2677              	.LASF29:
+ 2678 0237 53504930 		.ascii	"SPI0_ReadRxStatus\000"
+ 2678      5F526561 
+ 2678      64527853 
+ 2678      74617475 
+ 2678      7300
+ 2679              	.LASF46:
+ 2680 0249 53504930 		.ascii	"SPI0_SetInterruptMode\000"
+ 2680      5F536574 
+ 2680      496E7465 
+ 2680      72727570 
+ 2680      744D6F64 
+ 2681              	.LASF2:
+ 2682 025f 73686F72 		.ascii	"short int\000"
+ 2682      7420696E 
+ 2682      7400
+ 2683              	.LASF22:
+ 2684 0269 53504930 		.ascii	"SPI0_DisableTxInt\000"
+ 2684      5F446973 
+ 2684      61626C65 
+ 2684      5478496E 
+ 2684      7400
+ 2685              	.LASF53:
+ 2686 027b 433A5C55 		.ascii	"C:\\Users\\chuck.erhardt\\Documents\\PSoC Creator\\"
+ 2686      73657273 
+ 2686      5C636875 
+ 2686      636B2E65 
+ 2686      72686172 
+ 2687 02a9 4532466F 		.ascii	"E2ForLife\\freeSoCExplorer+ArduinoSheld_Example.cyd"
+ 2687      724C6966 
+ 2687      655C6672 
+ 2687      6565536F 
+ 2687      43457870 
+ 2688 02db 736E00   		.ascii	"sn\000"
+ 2689              	.LASF51:
+ 2690 02de 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 2690      4320342E 
+ 2690      372E3320 
+ 2690      32303133 
+ 2690      30333132 
+ 2691 0311 616E6368 		.ascii	"anch revision 196615]\000"
+ 2691      20726576 
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 71
+
+
+ 2691      6973696F 
+ 2691      6E203139 
+ 2691      36363135 
+ 2692              	.LASF15:
+ 2693 0327 53504930 		.ascii	"SPI0_Init\000"
+ 2693      5F496E69 
+ 2693      7400
+ 2694              	.LASF4:
+ 2695 0331 6C6F6E67 		.ascii	"long int\000"
+ 2695      20696E74 
+ 2695      00
+ 2696              	.LASF27:
+ 2697 033a 746D7053 		.ascii	"tmpStatus\000"
+ 2697      74617475 
+ 2697      7300
+ 2698              	.LASF0:
+ 2699 0344 7369676E 		.ascii	"signed char\000"
+ 2699      65642063 
+ 2699      68617200 
+ 2700              	.LASF18:
+ 2701 0350 53504930 		.ascii	"SPI0_Stop\000"
+ 2701      5F53746F 
+ 2701      7000
+ 2702              	.LASF52:
+ 2703 035a 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\SPI0.c\000"
+ 2703      6E657261 
+ 2703      7465645F 
+ 2703      536F7572 
+ 2703      63655C50 
+ 2704              	.LASF32:
+ 2705 037a 53504930 		.ascii	"SPI0_ReadRxData\000"
+ 2705      5F526561 
+ 2705      64527844 
+ 2705      61746100 
+ 2706              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

@@ -1,0 +1,8 @@
+--------------- Build Started: 11/13/2013 11:33:20 Project: PSoCPioneer+ArduinoShield_SPIM_Example, Configuration: ARM GCC 4.7.3 Debug ---------------
+The code generation step is up to date.
+The compile step is up to date, no work needs to be done.
+The link step is up to date, no work needs to be done.
+cyelftool.exe -S "C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.elf"
+Flash used: 8440 of 32768 bytes (25.8 %).
+SRAM used: 1684 of 4096 bytes (41.1 %).
+--------------- Build Succeeded: 11/13/2013 11:33:21 ---------------

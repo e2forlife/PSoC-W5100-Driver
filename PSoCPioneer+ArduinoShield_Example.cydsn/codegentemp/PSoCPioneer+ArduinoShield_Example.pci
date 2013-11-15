@@ -1,0 +1,17 @@
+# PSoCPioneer+ArduinoShield_Example
+# 2013-10-31 16:30:52Z
+
+# IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 2
+# IO_3@[IOP=(3)][IoId=(3)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 3
+set_io "BLUE(0)" iocell 0 3
+set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
+set_io "GREEN(0)" iocell 0 2
+set_io "RED(0)" iocell 1 6
+set_io "SDCS(0)" iocell 0 0
+set_io "\SPI0:miso_m(0)\" iocell 3 1
+set_io "\SPI0:mosi_m(0)\" iocell 3 0
+set_io "\SPI0:sclk_m(0)\" iocell 0 6
+set_io "\SPI0:ss0_m(0)\" iocell 0 7
+set_io "\SPI0:ss1_m(0)\" iocell 3 4
