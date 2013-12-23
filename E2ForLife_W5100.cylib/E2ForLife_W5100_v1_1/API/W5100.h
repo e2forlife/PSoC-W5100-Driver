@@ -314,7 +314,7 @@ uint8 `$INSTANCE_NAME`_SocketProcessConnections( uint8 socket );
  * This fucntion will read the socket status and return the state of the
  * socket establishment.
  */
-inline uint8 `$INSTANCE_NAME`_SocketEstablished( uint8 socket );
+uint8 `$INSTANCE_NAME`_SocketEstablished( uint8 socket );
 
 /**
  * \brief Retrieve the length of waiting Receive data
@@ -404,7 +404,7 @@ void `$INSTANCE_NAME`_TcpConnect( uint8 socket, uint32 ip, uint16 port );
  * \sa `$INSTANCE_NAME`_TcpConnect()
  * \sa `$INSTANCE_NAME`_TcpStartServer()
  */
-inline uint8 `$INSTANCE_NAME`_TcpConnected( uint8 socket );
+uint8 `$INSTANCE_NAME`_TcpConnected( uint8 socket );
 
 /**
  * \brief Terminate a connection with a remote client/server
@@ -416,7 +416,7 @@ inline uint8 `$INSTANCE_NAME`_TcpConnected( uint8 socket );
  * \sa `$INSTANCE_NAME`_TcpStartServer()
  * \sa `$INSTANCE_NAME`_TcpStartServerWait()
  */
-inline void `$INSTANCE_NAME`_TcpDisconnect( uint8 socket );
+void `$INSTANCE_NAME`_TcpDisconnect( uint8 socket );
 
 /**
  * \brief Transmit a byte packet using the built-in TCP

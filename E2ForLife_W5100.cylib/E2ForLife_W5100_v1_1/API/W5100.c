@@ -154,7 +154,7 @@ uint8 `$INSTANCE_NAME`_W51_Read(uint16 addr)
  * this fucntion will set the active SS line within the SCB to select and
  * communicate with the W5100 device.
  */
-static inline void `$INSTANCE_NAME`_W51_Select( void )
+static void `$INSTANCE_NAME`_W51_Select( void )
 {
 #if (`$SS_NUM` == 0)
 	`$SPI_INSTANCE`_SpiSetActiveSlaveSelect( `$SPI_INSTANCE`_SPIM_ACTIVE_SS0 );
@@ -371,157 +371,157 @@ static void `$INSTANCE_NAME`_W51_ReadBlock(uint16 addr, uint8* buffer, uint16 le
  * \brief Set teh chip mac address to teh specified address
  * \param *mac pointer to the array holding the MAC address
  */
-static inline void `$INSTANCE_NAME`_SetSourceMAC( uint8* mac ) { `$INSTANCE_NAME`_W51_SetMAC(9,mac); }
+static void `$INSTANCE_NAME`_SetSourceMAC( uint8* mac ) { `$INSTANCE_NAME`_W51_SetMAC(9,mac); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the chip source MAC address from the MAC registers
  * \param *mac pointer to the address of the buffer to hold the read MAC address
  */
-static inline void `$INSTANCE_NAME`_GetSourceMAC( uint8* mac ) { `$INSTANCE_NAME`_W51_GetMAC(9,mac); }
+static void `$INSTANCE_NAME`_GetSourceMAC( uint8* mac ) { `$INSTANCE_NAME`_W51_GetMAC(9,mac); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Set the IPv4 address of the network gateway
  * \param ip IP address of the gateway
  */
-static inline void `$INSTANCE_NAME`_SetGatewayAddress(uint32 ip) { `$INSTANCE_NAME`_W51_SetIP(1,ip); }
+static void `$INSTANCE_NAME`_SetGatewayAddress(uint32 ip) { `$INSTANCE_NAME`_W51_SetIP(1,ip); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the gateway address from the device
  * \returns the IP address of the gateway
  */
-static inline uint32 `$INSTANCE_NAME`_GetGatewayAddress( void ) { return `$INSTANCE_NAME`_W51_GetIP(1); }
+static uint32 `$INSTANCE_NAME`_GetGatewayAddress( void ) { return `$INSTANCE_NAME`_W51_GetIP(1); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief set the subnet mask of the ethernet device
  * \param the subnet mask (IPv4)
  */
-static inline void `$INSTANCE_NAME`_SetSubnetMask( uint32 ip ) { `$INSTANCE_NAME`_W51_SetIP(5, ip); }
+static void `$INSTANCE_NAME`_SetSubnetMask( uint32 ip ) { `$INSTANCE_NAME`_W51_SetIP(5, ip); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the subnet mask from the device
  * \returns the subnet mask that was read from the device.
  */
-static inline uint32 `$INSTANCE_NAME`_GetSubnetMask( void ) { return `$INSTANCE_NAME`_W51_GetIP(5); }
+static uint32 `$INSTANCE_NAME`_GetSubnetMask( void ) { return `$INSTANCE_NAME`_W51_GetIP(5); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write the device source IPv4 address
  * \param ip the ip address to set as the chip IP address
  */
-static inline void `$INSTANCE_NAME`_SetSourceIP( uint32 ip ) { `$INSTANCE_NAME`_W51_SetIP( 0x0F, ip ); }
+static void `$INSTANCE_NAME`_SetSourceIP( uint32 ip ) { `$INSTANCE_NAME`_W51_SetIP( 0x0F, ip ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the device's programmed IP address
  * \returns The IPv4 address to which the device is set.
  */
-static inline uint32 `$INSTANCE_NAME`_GetSourceIP( void ) { return `$INSTANCE_NAME`_W51_GetIP( 0x0F ); }
+static uint32 `$INSTANCE_NAME`_GetSourceIP( void ) { return `$INSTANCE_NAME`_W51_GetIP( 0x0F ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write a value to the device internal MODE register
  * \param mode the value to be written to the mode register.
  */
-static inline void `$INSTANCE_NAME`_SetMode( uint8 mode ) { `$INSTANCE_NAME`_W51_Write(0,mode); }
+static void `$INSTANCE_NAME`_SetMode( uint8 mode ) { `$INSTANCE_NAME`_W51_Write(0,mode); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the present contents of the device internal mode register
  * \returns the value of the mode register
  */
-static inline uint8 `$INSTANCE_NAME`_GetMode( void ) { return `$INSTANCE_NAME`_W51_Read(0); }
+static uint8 `$INSTANCE_NAME`_GetMode( void ) { return `$INSTANCE_NAME`_W51_Read(0); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write the value of the interrupt register
  * \param ir the value to be written to the interrupt register
  */
-static inline void `$INSTANCE_NAME`_SetIR( uint8 ir ) { `$INSTANCE_NAME`_W51_Write(0x0015,ir); }
+static void `$INSTANCE_NAME`_SetIR( uint8 ir ) { `$INSTANCE_NAME`_W51_Write(0x0015,ir); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the contents of the interrupt register
  * \returns the contents read from the interrupt register
  */
-static inline uint8 `$INSTANCE_NAME`_GetIR( void ) { return `$INSTANCE_NAME`_W51_Read(0x0015); }
+static uint8 `$INSTANCE_NAME`_GetIR( void ) { return `$INSTANCE_NAME`_W51_Read(0x0015); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Set the value of the interrupt mask register
  * \param imr the value to be written to the interrupt mask register
  */
-static inline void `$INSTANCE_NAME`_SetIMR( uint8 imr) { `$INSTANCE_NAME`_W51_Write( 0x0016, imr ); }
+static void `$INSTANCE_NAME`_SetIMR( uint8 imr) { `$INSTANCE_NAME`_W51_Write( 0x0016, imr ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the interrupt mask register
  * \returns the contents of the interrupt mask register
  */
-static inline uint8 `$INSTANCE_NAME`_GetIMR( void ) { return `$INSTANCE_NAME`_W51_Read( 0x0016 ); }
+static uint8 `$INSTANCE_NAME`_GetIMR( void ) { return `$INSTANCE_NAME`_W51_Read( 0x0016 ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write the retry time register
  * \param time the value to be written to the regster
  */
-static inline void `$INSTANCE_NAME`_SetRetryTime( uint16 time) { `$INSTANCE_NAME`_W51_Write16( 0x0017, time ); }
+static void `$INSTANCE_NAME`_SetRetryTime( uint16 time) { `$INSTANCE_NAME`_W51_Write16( 0x0017, time ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the retry tie register
  * \returns the value read from the register
  */
-static inline uint16 `$INSTANCE_NAME`_GetRetryTime( void ) { return `$INSTANCE_NAME`_W51_Read16( 0x0017 ); }
+static uint16 `$INSTANCE_NAME`_GetRetryTime( void ) { return `$INSTANCE_NAME`_W51_Read16( 0x0017 ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \breif write a value to the retry count register
  * \param count the value to be written to the register
  */
-static inline void `$INSTANCE_NAME`_SetRetryCount( uint8 count ) { `$INSTANCE_NAME`_W51_Write( 0x0019, count); }
+static void `$INSTANCE_NAME`_SetRetryCount( uint8 count ) { `$INSTANCE_NAME`_W51_Write( 0x0019, count); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the contents of the retry count register
  * \returns the value read from teh register
  */
-static inline uint8 `$INSTANCE_NAME`_GetRetryCount( void ) { return `$INSTANCE_NAME`_W51_Read( 0x0019 ); }
+static uint8 `$INSTANCE_NAME`_GetRetryCount( void ) { return `$INSTANCE_NAME`_W51_Read( 0x0019 ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief write a value to the Rx mem size register
  * \param size the value to be written to the register
  */
-static inline void `$INSTANCE_NAME`_SetRxMemSize( uint8 size ) { `$INSTANCE_NAME`_W51_Write( 0x1A, size ); }
+static void `$INSTANCE_NAME`_SetRxMemSize( uint8 size ) { `$INSTANCE_NAME`_W51_Write( 0x1A, size ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the contents of hte rx mem size register
  * \returns the value read from teh register
  */
-static inline uint8 `$INSTANCE_NAME`_GetRxMemSize( void ) { return `$INSTANCE_NAME`_W51_Read(0x1A); }
+static uint8 `$INSTANCE_NAME`_GetRxMemSize( void ) { return `$INSTANCE_NAME`_W51_Read(0x1A); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief write a value to the tx mem size register
  * \param size The value to be written to the register
  */
-static inline void `$INSTANCE_NAME`_SetTxMemSize( uint8 size ) { `$INSTANCE_NAME`_W51_Write( 0x1B, size); }
+static void `$INSTANCE_NAME`_SetTxMemSize( uint8 size ) { `$INSTANCE_NAME`_W51_Write( 0x1B, size); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief read the contents of the tx mem size register
  * \returns the value read from the register
  */
-static inline uint8 `$INSTANCE_NAME`_GetTxMemSize( void ) { return `$INSTANCE_NAME`_W51_Read( 0x1B);}
+static uint8 `$INSTANCE_NAME`_GetTxMemSize( void ) { return `$INSTANCE_NAME`_W51_Read( 0x1B);}
 /* ------------------------------------------------------------------------ */
 /**
  * \brief write a value to the unreachable IP register
  * \param ip the value to be written to the register
  */
-static inline void `$INSTANCE_NAME`_SetUnreachableIP( uint32 ip) { `$INSTANCE_NAME`_W51_SetIP( 0x2A, ip); }
+static void `$INSTANCE_NAME`_SetUnreachableIP( uint32 ip) { `$INSTANCE_NAME`_W51_SetIP( 0x2A, ip); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief read the contents of the unreachable IP register
  * \returns the value read from teh register
  */
-static inline uint32 `$INSTANCE_NAME`_GetUnreachableIP( void ) { return `$INSTANCE_NAME`_W51_GetIP( 0x2A ); }
+static uint32 `$INSTANCE_NAME`_GetUnreachableIP( void ) { return `$INSTANCE_NAME`_W51_GetIP( 0x2A ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief write a value to the unreachable port register
  * \param port the value to be written to the register
  */
-static inline void `$INSTANCE_NAME`_SetUnreachablePort( uint16 port) { `$INSTANCE_NAME`_W51_Write16(0x2E, port); }
+static void `$INSTANCE_NAME`_SetUnreachablePort( uint16 port) { `$INSTANCE_NAME`_W51_Write16(0x2E, port); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief read the contents of the unreachable port register
  * \returns the value read from the register
  */
-static inline uint16 `$INSTANCE_NAME`_GetUnreachablePort( void ) { return `$INSTANCE_NAME`_W51_Read16(0x2E); }
+static uint16 `$INSTANCE_NAME`_GetUnreachablePort( void ) { return `$INSTANCE_NAME`_W51_Read16(0x2E); }
 /* ======================================================================== */
 /* End Section */
 #endif
@@ -539,7 +539,7 @@ static inline uint16 `$INSTANCE_NAME`_GetUnreachablePort( void ) { return `$INST
  * \param socket the socket number for the addressed register
  * \param mode the value to be written to the register
  */
-static inline void `$INSTANCE_NAME`_SetSocketMode(uint8 socket, uint8 mode)
+static void `$INSTANCE_NAME`_SetSocketMode(uint8 socket, uint8 mode)
 { `$INSTANCE_NAME`_W51_Write(`$INSTANCE_NAME`_SOCKET_BASE(socket), mode); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -547,7 +547,7 @@ static inline void `$INSTANCE_NAME`_SetSocketMode(uint8 socket, uint8 mode)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint8 `$INSTANCE_NAME`_GetSocketMode(uint8 socket)
+static uint8 `$INSTANCE_NAME`_GetSocketMode(uint8 socket)
 { return `$INSTANCE_NAME`_W51_Read(`$INSTANCE_NAME`_SOCKET_BASE(socket)); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -555,7 +555,7 @@ static inline uint8 `$INSTANCE_NAME`_GetSocketMode(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param cmd the value to be written to the register
  */
-static inline void `$INSTANCE_NAME`_SetSocketCommand(uint8 socket, uint8 cmd)
+static void `$INSTANCE_NAME`_SetSocketCommand(uint8 socket, uint8 cmd)
 { `$INSTANCE_NAME`_W51_Write(`$INSTANCE_NAME`_SOCKET_BASE(socket)+1, cmd); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -563,7 +563,7 @@ static inline void `$INSTANCE_NAME`_SetSocketCommand(uint8 socket, uint8 cmd)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint8 `$INSTANCE_NAME`_GetSocketCommand(uint8 socket)
+static uint8 `$INSTANCE_NAME`_GetSocketCommand(uint8 socket)
 { return `$INSTANCE_NAME`_W51_Read(`$INSTANCE_NAME`_SOCKET_BASE(socket)+1); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -571,7 +571,7 @@ static inline uint8 `$INSTANCE_NAME`_GetSocketCommand(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param ir the value to be written to the register
  */
-static inline void `$INSTANCE_NAME`_SetSocketIR(uint8 socket, uint8 ir)
+static void `$INSTANCE_NAME`_SetSocketIR(uint8 socket, uint8 ir)
 { `$INSTANCE_NAME`_W51_Write(`$INSTANCE_NAME`_SOCKET_BASE(socket)+2,ir); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -579,7 +579,7 @@ static inline void `$INSTANCE_NAME`_SetSocketIR(uint8 socket, uint8 ir)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint8 `$INSTANCE_NAME`_GetSocketIR(uint8 socket)
+static uint8 `$INSTANCE_NAME`_GetSocketIR(uint8 socket)
 { return `$INSTANCE_NAME`_W51_Read(`$INSTANCE_NAME`_SOCKET_BASE(socket)+2); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -587,7 +587,7 @@ static inline uint8 `$INSTANCE_NAME`_GetSocketIR(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param status the value to be written to the register
  */
-static inline void `$INSTANCE_NAME`_SetSocketStatus(uint8 socket, uint8 status)
+static void `$INSTANCE_NAME`_SetSocketStatus(uint8 socket, uint8 status)
 { `$INSTANCE_NAME`_W51_Write(`$INSTANCE_NAME`_SOCKET_BASE(socket)+3,status); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -595,7 +595,7 @@ static inline void `$INSTANCE_NAME`_SetSocketStatus(uint8 socket, uint8 status)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint8 `$INSTANCE_NAME`_GetSocketStatus(uint8 socket)
+static uint8 `$INSTANCE_NAME`_GetSocketStatus(uint8 socket)
 { return `$INSTANCE_NAME`_W51_Read(`$INSTANCE_NAME`_SOCKET_BASE(socket)+3); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -603,7 +603,7 @@ static inline uint8 `$INSTANCE_NAME`_GetSocketStatus(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param port the value to be written to the register
  */
-static inline void `$INSTANCE_NAME`_SetSocketSourcePort(uint8 socket, uint16 port)
+static void `$INSTANCE_NAME`_SetSocketSourcePort(uint8 socket, uint16 port)
 { `$INSTANCE_NAME`_W51_Write16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+4,port); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -611,7 +611,7 @@ static inline void `$INSTANCE_NAME`_SetSocketSourcePort(uint8 socket, uint16 por
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint16 `$INSTANCE_NAME`_GetSocketSourcePort(uint8 socket)
+static uint16 `$INSTANCE_NAME`_GetSocketSourcePort(uint8 socket)
 { return `$INSTANCE_NAME`_W51_Read16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+4); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -619,7 +619,7 @@ static inline uint16 `$INSTANCE_NAME`_GetSocketSourcePort(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param *mac poitner to the array holding the values to be written to the register
  */
-static inline void `$INSTANCE_NAME`_SetSocketDestMAC(uint8 socket, uint8* mac)
+static void `$INSTANCE_NAME`_SetSocketDestMAC(uint8 socket, uint8* mac)
 { `$INSTANCE_NAME`_W51_SetMAC( `$INSTANCE_NAME`_SOCKET_BASE(socket)+6, mac); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -627,7 +627,7 @@ static inline void `$INSTANCE_NAME`_SetSocketDestMAC(uint8 socket, uint8* mac)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline void `$INSTANCE_NAME`_GetSocketDestMAC(uint8 socket, uint8* mac)
+static void `$INSTANCE_NAME`_GetSocketDestMAC(uint8 socket, uint8* mac)
 { `$INSTANCE_NAME`_W51_GetMAC( `$INSTANCE_NAME`_SOCKET_BASE(socket)+6,mac); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -635,7 +635,7 @@ static inline void `$INSTANCE_NAME`_GetSocketDestMAC(uint8 socket, uint8* mac)
  * \param socket the socket number for the addressed register
  * \param ip the value to be written to the register
  */
-static inline void `$INSTANCE_NAME`_SetSocketDestIP(uint8 socket, uint32 ip)
+static void `$INSTANCE_NAME`_SetSocketDestIP(uint8 socket, uint32 ip)
 { `$INSTANCE_NAME`_W51_SetIP(`$INSTANCE_NAME`_SOCKET_BASE(socket)+12,ip); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -643,7 +643,7 @@ static inline void `$INSTANCE_NAME`_SetSocketDestIP(uint8 socket, uint32 ip)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint32 `$INSTANCE_NAME`_GetSocketDestIP(uint8 socket )
+static uint32 `$INSTANCE_NAME`_GetSocketDestIP(uint8 socket )
 { return `$INSTANCE_NAME`_W51_GetIP(`$INSTANCE_NAME`_SOCKET_BASE(socket)+12); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -651,7 +651,7 @@ static inline uint32 `$INSTANCE_NAME`_GetSocketDestIP(uint8 socket )
  * \param socket the socket number for the addressed register
  * \param port the value to be written to the register
  */
-static inline void `$INSTANCE_NAME`_SetSocketDestPort(uint8 socket, uint16 port)
+static void `$INSTANCE_NAME`_SetSocketDestPort(uint8 socket, uint16 port)
 { `$INSTANCE_NAME`_W51_Write16( `$INSTANCE_NAME`_SOCKET_BASE(socket)+16, port); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -659,7 +659,7 @@ static inline void `$INSTANCE_NAME`_SetSocketDestPort(uint8 socket, uint16 port)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint16 `$INSTANCE_NAME`_GetSocketDestPort(uint8 socket)
+static uint16 `$INSTANCE_NAME`_GetSocketDestPort(uint8 socket)
 { return `$INSTANCE_NAME`_W51_Read16( `$INSTANCE_NAME`_SOCKET_BASE(socket)+16 ); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -667,7 +667,7 @@ static inline uint16 `$INSTANCE_NAME`_GetSocketDestPort(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param size the value to be written to the register
  */
-static inline void `$INSTANCE_NAME`_SetSocketMaxSegSize(uint8 socket, uint16 size)
+static void `$INSTANCE_NAME`_SetSocketMaxSegSize(uint8 socket, uint16 size)
 { `$INSTANCE_NAME`_W51_Write16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+18,size); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -675,7 +675,7 @@ static inline void `$INSTANCE_NAME`_SetSocketMaxSegSize(uint8 socket, uint16 siz
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint16 `$INSTANCE_NAME`_GetSocketMaxSegSize(uint8 socket)
+static uint16 `$INSTANCE_NAME`_GetSocketMaxSegSize(uint8 socket)
 { return `$INSTANCE_NAME`_W51_Read16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+18); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -683,7 +683,7 @@ static inline uint16 `$INSTANCE_NAME`_GetSocketMaxSegSize(uint8 socket)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint16  `$INSTANCE_NAME`_GetSocketProto(uint8 socket)
+static uint16  `$INSTANCE_NAME`_GetSocketProto(uint8 socket)
 { return `$INSTANCE_NAME`_W51_Read(`$INSTANCE_NAME`_SOCKET_BASE(socket)+20); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -691,7 +691,7 @@ static inline uint16  `$INSTANCE_NAME`_GetSocketProto(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param tos the value to be written to the register
  */
-static inline void `$INSTANCE_NAME`_SetSocketTOS(uint8 socket, uint8 tos)
+static void `$INSTANCE_NAME`_SetSocketTOS(uint8 socket, uint8 tos)
 { `$INSTANCE_NAME`_W51_Write(`$INSTANCE_NAME`_SOCKET_BASE(socket)+21, tos); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -699,7 +699,7 @@ static inline void `$INSTANCE_NAME`_SetSocketTOS(uint8 socket, uint8 tos)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint8 `$INSTANCE_NAME`_GetSocketTOS(uint8 socket)
+static uint8 `$INSTANCE_NAME`_GetSocketTOS(uint8 socket)
 { return `$INSTANCE_NAME`_W51_Read(`$INSTANCE_NAME`_SOCKET_BASE(socket)+21); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -707,7 +707,7 @@ static inline uint8 `$INSTANCE_NAME`_GetSocketTOS(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param ttl the value to be written to the register
  */
-static inline void `$INSTANCE_NAME`_SetSocketTTL(uint8 socket, uint8 ttl)
+static void `$INSTANCE_NAME`_SetSocketTTL(uint8 socket, uint8 ttl)
 { `$INSTANCE_NAME`_W51_Write(`$INSTANCE_NAME`_SOCKET_BASE(socket)+22,ttl); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -715,7 +715,7 @@ static inline void `$INSTANCE_NAME`_SetSocketTTL(uint8 socket, uint8 ttl)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint8 `$INSTANCE_NAME`_GetSocketTTL(uint8 socket)
+static uint8 `$INSTANCE_NAME`_GetSocketTTL(uint8 socket)
 { return `$INSTANCE_NAME`_W51_Read(`$INSTANCE_NAME`_SOCKET_BASE(socket)+22); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -723,7 +723,7 @@ static inline uint8 `$INSTANCE_NAME`_GetSocketTTL(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param size the value to be written to the register
  */
-static inline void `$INSTANCE_NAME`_SetSocketTxFree( uint8 socket, uint16 size)
+static void `$INSTANCE_NAME`_SetSocketTxFree( uint8 socket, uint16 size)
 { `$INSTANCE_NAME`_W51_Write16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+0x20,size); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -731,7 +731,7 @@ static inline void `$INSTANCE_NAME`_SetSocketTxFree( uint8 socket, uint16 size)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint16 `$INSTANCE_NAME`_GetSocketTxFree(uint8 socket)
+static uint16 `$INSTANCE_NAME`_GetSocketTxFree(uint8 socket)
 { return `$INSTANCE_NAME`_W51_Read16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+0x20); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -739,7 +739,7 @@ static inline uint16 `$INSTANCE_NAME`_GetSocketTxFree(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param ptr the value to be written to the register
  */
-static inline void `$INSTANCE_NAME`_SetSocketTxReadPtr(uint8 socket, uint16 ptr)
+static void `$INSTANCE_NAME`_SetSocketTxReadPtr(uint8 socket, uint16 ptr)
 { `$INSTANCE_NAME`_W51_Write16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+0x22,ptr); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -747,7 +747,7 @@ static inline void `$INSTANCE_NAME`_SetSocketTxReadPtr(uint8 socket, uint16 ptr)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint16 `$INSTANCE_NAME`_GetSocketTxReadPtr(uint8 socket)
+static uint16 `$INSTANCE_NAME`_GetSocketTxReadPtr(uint8 socket)
 { return `$INSTANCE_NAME`_W51_Read16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+0x22); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -755,7 +755,7 @@ static inline uint16 `$INSTANCE_NAME`_GetSocketTxReadPtr(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param ptr the value to be written to the register
  */
-static inline void `$INSTANCE_NAME`_SetSocketTxWritePtr(uint8 socket, uint16 ptr)
+static void `$INSTANCE_NAME`_SetSocketTxWritePtr(uint8 socket, uint16 ptr)
 { `$INSTANCE_NAME`_W51_Write16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+0x24,ptr); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -763,7 +763,7 @@ static inline void `$INSTANCE_NAME`_SetSocketTxWritePtr(uint8 socket, uint16 ptr
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint16 `$INSTANCE_NAME`_GetSocketTxWritePtr(uint8 socket)
+static uint16 `$INSTANCE_NAME`_GetSocketTxWritePtr(uint8 socket)
 { return `$INSTANCE_NAME`_W51_Read16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+0x24); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -771,7 +771,7 @@ static inline uint16 `$INSTANCE_NAME`_GetSocketTxWritePtr(uint8 socket)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint16 `$INSTANCE_NAME`_GetSocketRxSize(uint8 socket)
+static uint16 `$INSTANCE_NAME`_GetSocketRxSize(uint8 socket)
 { return `$INSTANCE_NAME`_W51_Read16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+0x26); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -779,7 +779,7 @@ static inline uint16 `$INSTANCE_NAME`_GetSocketRxSize(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param ptr the value to be written to the register
  */
-static inline void `$INSTANCE_NAME`_SetSocketRxReadPtr(uint8 socket, uint16 ptr)
+static void `$INSTANCE_NAME`_SetSocketRxReadPtr(uint8 socket, uint16 ptr)
 { `$INSTANCE_NAME`_W51_Write16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+0x28,ptr); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -787,7 +787,7 @@ static inline void `$INSTANCE_NAME`_SetSocketRxReadPtr(uint8 socket, uint16 ptr)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint16 `$INSTANCE_NAME`_GetSocketRxReadPtr(uint8 socket)
+static uint16 `$INSTANCE_NAME`_GetSocketRxReadPtr(uint8 socket)
 { return `$INSTANCE_NAME`_W51_Read16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+0x28); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -1197,7 +1197,7 @@ uint8
 	return (`$INSTANCE_NAME`_GetSocketStatus(socket) == 0x00);
 }
 /* ------------------------------------------------------------------------ */
-inline uint8
+uint8
 `$INSTANCE_NAME`_SocketEstablished( uint8 socket )
 {
 	return (`$INSTANCE_NAME`_GetSocketStatus( socket ) == 0x17);
@@ -1207,7 +1207,7 @@ inline uint8
  * \brief Transmit a SEND operation over a socket
  * \param socket the socket to which the send command will be sent
  */
-static inline void
+static void
 `$INSTANCE_NAME`_SocketSend(uint8 socket )
 {
 	uint8 ir;
@@ -1234,7 +1234,7 @@ static inline void
  * \brief Execute a SEND without an ARP.
  * \param socket the socket to which the SEND will be executed.
  */
-static inline void
+static void
 `$INSTANCE_NAME`_SocketSendMac(uint8 socket )
 {
 	uint8 ir;
@@ -1323,11 +1323,11 @@ void
 	}
 }
 /* ------------------------------------------------------------------------ */
-inline uint8
+uint8
 `$INSTANCE_NAME`_TcpConnected( uint8 socket )
 { return `$INSTANCE_NAME`_SocketEstablished(socket); }
 /* ------------------------------------------------------------------------ */
-inline void
+void
 `$INSTANCE_NAME`_TcpDisconnect( uint8 socket )
 {
 	`$INSTANCE_NAME`_ExecuteSocketCommand(socket, 0x08);
