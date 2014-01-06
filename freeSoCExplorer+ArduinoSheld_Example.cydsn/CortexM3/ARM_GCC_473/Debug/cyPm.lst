@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
    2:.\Generated_Source\PSoC5/cyPm.c **** * File Name: cyPm.c
    3:.\Generated_Source\PSoC5/cyPm.c **** * Version 4.0
    4:.\Generated_Source\PSoC5/cyPm.c **** *
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 2
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 2
 
 
    5:.\Generated_Source\PSoC5/cyPm.c **** * Description:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
   59:.\Generated_Source\PSoC5/cyPm.c **** *  Switches the master clock over to the IMO and shuts down the PLL and MHz
   60:.\Generated_Source\PSoC5/cyPm.c **** *  Crystal. The IMO frequency is set to either 12 MHz or 48 MHz to match the
   61:.\Generated_Source\PSoC5/cyPm.c **** *  Design-Wide Resources System Editor "Enable Fast IMO During Startup" setting.
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 3
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 3
 
 
   62:.\Generated_Source\PSoC5/cyPm.c **** *  The ILO and 32 KHz oscillators are not impacted. The current Flash wait state
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
   76              		.loc 1 85 0
   77 0036 44F2A133 		movw	r3, #17313
   78 003a C4F20003 		movt	r3, 16384
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 4
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 4
 
 
   79 003e 44F2A132 		movw	r2, #17313
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  124 00bc 40F20003 		movw	r3, #:lower16:cyPmClockBackup
  125 00c0 C0F20003 		movt	r3, #:upper16:cyPmClockBackup
  126 00c4 1A71     		strb	r2, [r3, #4]
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 5
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 5
 
 
   95:.\Generated_Source\PSoC5/cyPm.c **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  160              		.loc 1 115 0
  161 0116 40F20003 		movw	r3, #:lower16:cyPmClockBackup
  162 011a C0F20003 		movt	r3, #:upper16:cyPmClockBackup
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 6
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 6
 
 
  163 011e 4FF00102 		mov	r2, #1
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  198              	.L8:
  130:.\Generated_Source\PSoC5/cyPm.c ****         cyPmClockBackup.imoClkSrc =
  199              		.loc 1 130 0 discriminator 3
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 7
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 7
 
 
  200 016a 40F20003 		movw	r3, #:lower16:cyPmClockBackup
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  236 01c4 1A70     		strb	r2, [r3, #0]
  237              	.L10:
  150:.\Generated_Source\PSoC5/cyPm.c ****                                 CY_PM_CLKDIST_IMO_OUT_IMO;
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 8
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 8
 
 
  151:.\Generated_Source\PSoC5/cyPm.c ****     }    /* Need to change nothing if IMOCLK is source clk_imo */
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  275 0220 C0F20003 		movt	r3, #:upper16:cyPmClockBackup
  276 0224 9A70     		strb	r2, [r3, #2]
  168:.\Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 9
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 9
 
 
  169:.\Generated_Source\PSoC5/cyPm.c ****     /* Master clock source - set it to IMO if not yet. */
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  319              	.L14:
  181:.\Generated_Source\PSoC5/cyPm.c ****     }    /* Do nothing if saved and actual values are equal */
  182:.\Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 10
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 10
 
 
  183:.\Generated_Source\PSoC5/cyPm.c ****     /* Set number of wait cycles for the flash according CPU frequency in MHz */
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  356 02ec C4F20003 		movt	r3, 16384
  357 02f0 1B78     		ldrb	r3, [r3, #0]
  358 02f2 DBB2     		uxtb	r3, r3
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 11
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 11
 
 
  359 02f4 03F00103 		and	r3, r3, #1
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  222:.\Generated_Source\PSoC5/cyPm.c ****     else
  223:.\Generated_Source\PSoC5/cyPm.c ****     {
  224:.\Generated_Source\PSoC5/cyPm.c ****         cyPmClockBackup.clkDistDelay = CY_PM_DISABLED;
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 12
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 12
 
 
  392              		.loc 1 224 0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  250:.\Generated_Source\PSoC5/cyPm.c **** *  None
  251:.\Generated_Source\PSoC5/cyPm.c **** *
  252:.\Generated_Source\PSoC5/cyPm.c **** * Return:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 13
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 13
 
 
  253:.\Generated_Source\PSoC5/cyPm.c **** *  None
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  273:.\Generated_Source\PSoC5/cyPm.c ****                         CY_PM_GET_CPU_FREQ_MHZ);
  455              		.loc 1 273 0
  456 0032 4FF48443 		mov	r3, #16896
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 14
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 14
 
 
  457 0036 C4F20003 		movt	r3, 16384
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  291:.\Generated_Source\PSoC5/cyPm.c ****         /* Read XERR bit to clear it */
  292:.\Generated_Source\PSoC5/cyPm.c ****         (void) CY_PM_FASTCLK_XMHZ_CSR_REG;
  493              		.loc 1 292 0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 15
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 15
 
 
  494 0094 44F21023 		movw	r3, #16912
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  295:.\Generated_Source\PSoC5/cyPm.c ****         for(i = CY_PM_MHZ_XTAL_WAIT_NUM_OF_200_US; i > 0u; i--)
  535              		.loc 1 295 0 is_stmt 0 discriminator 1
  536 00f2 FB8A     		ldrh	r3, [r7, #22]
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 16
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 16
 
 
  537 00f4 002B     		cmp	r3, #0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  565 0132 9A42     		cmp	r2, r3
  566 0134 07D0     		beq	.L30
  330:.\Generated_Source\PSoC5/cyPm.c ****         {
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 17
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 17
 
 
  331:.\Generated_Source\PSoC5/cyPm.c ****             /* Restore Master clock divider */
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  348:.\Generated_Source\PSoC5/cyPm.c ****         /* Restore IMO frequency */
  349:.\Generated_Source\PSoC5/cyPm.c ****         CyIMO_SetFreq(cyPmImoFreqMhz2Reg[cyPmClockBackup.imoFreq]);
  603              		.loc 1 349 0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 18
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 18
 
 
  604 018a 40F20003 		movw	r3, #:lower16:cyPmClockBackup
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  645 01f8 9B79     		ldrb	r3, [r3, #6]	@ zero_extendqisi2
  646 01fa 012B     		cmp	r3, #1
  647 01fc 0ED1     		bne	.L34
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 19
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 19
 
 
  363:.\Generated_Source\PSoC5/cyPm.c ****        (0u == (CY_PM_ACT_CFG0_IMO & CY_PM_ACT_CFG0_REG)))
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  685 024e 1846     		mov	r0, r3
  686 0250 FFF7FEFF 		bl	CyIMO_SetSource
  378:.\Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 20
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 20
 
 
  379:.\Generated_Source\PSoC5/cyPm.c ****     /* Restore IMO doubler enable state (turned off by CyPmSaveClocks()) */
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  393:.\Generated_Source\PSoC5/cyPm.c ****     if(CY_PM_ENABLED == cyPmClockBackup.pllEnableState)
  726              		.loc 1 393 0
  727 02aa 40F20003 		movw	r3, #:lower16:cyPmClockBackup
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 21
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 21
 
 
  728 02ae C0F20003 		movt	r3, #:upper16:cyPmClockBackup
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  762              	.L39:
  413:.\Generated_Source\PSoC5/cyPm.c ****     {
  414:.\Generated_Source\PSoC5/cyPm.c ****         /* Restore Master clock divider */
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 22
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 22
 
 
  415:.\Generated_Source\PSoC5/cyPm.c ****         if(CY_PM_CLKDIST_MSTR0_REG != cyPmClockBackup.clkSyncDiv)
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  804 0364 40F20003 		movw	r3, #:lower16:cyPmClockBackup
  805 0368 C0F20003 		movt	r3, #:upper16:cyPmClockBackup
  806 036c 9B89     		ldrh	r3, [r3, #12]
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 23
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 23
 
 
  807 036e FA89     		ldrh	r2, [r7, #14]
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  849 03d8 5278     		ldrb	r2, [r2, #1]	@ zero_extendqisi2
  850 03da 1A70     		strb	r2, [r3, #0]
  439:.\Generated_Source\PSoC5/cyPm.c **** }
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 24
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 24
 
 
  851              		.loc 1 439 0
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  479:.\Generated_Source\PSoC5/cyPm.c **** *  PSoC 5LP:
  480:.\Generated_Source\PSoC5/cyPm.c **** *  This function is used to both enter the Alternate Active mode and halt the
  481:.\Generated_Source\PSoC5/cyPm.c **** *  processor.  For PSoC 3 these two actions must be paired together.  With PSoC
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 25
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 25
 
 
  482:.\Generated_Source\PSoC5/cyPm.c **** *  5LP the processor can be halted independently with the __WFI() function from
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  536:.\Generated_Source\PSoC5/cyPm.c **** *  wakeUpSource:    Specifies a bitwise mask of wakeup sources. In addition, if
  537:.\Generated_Source\PSoC5/cyPm.c **** *                   a wakeupTime has been specified the associated timer will be
  538:.\Generated_Source\PSoC5/cyPm.c **** *                   included as a wakeup source.
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 26
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 26
 
 
  539:.\Generated_Source\PSoC5/cyPm.c **** *
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  874              		.cfi_offset 14, -4
  875 0002 82B0     		sub	sp, sp, #8
  876              	.LCFI6:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 27
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 27
 
 
  877              		.cfi_def_cfa_offset 16
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  623:.\Generated_Source\PSoC5/cyPm.c ****             CyPmOppsSet();
  624:.\Generated_Source\PSoC5/cyPm.c **** 
  625:.\Generated_Source\PSoC5/cyPm.c ****             /* Include associated timer to the wakeupSource */
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 28
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 28
 
 
  626:.\Generated_Source\PSoC5/cyPm.c ****             wakeupSource |= PM_ALT_ACT_SRC_ONE_PPS;
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  929 007a DAB2     		uxtb	r2, r3
  930 007c 40F20003 		movw	r3, #:lower16:cyPmBackup
  931 0080 C0F20003 		movt	r3, #:upper16:cyPmBackup
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 29
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 29
 
 
  932 0084 9A71     		strb	r2, [r3, #6]
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  971 00d0 30BF     		WFI 
  972              	
  973              	@ 0 "" 2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 30
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 30
 
 
  659:.\Generated_Source\PSoC5/cyPm.c **** 
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  676:.\Generated_Source\PSoC5/cyPm.c **** *  Note Before calling this function, you must manually configure the power
  677:.\Generated_Source\PSoC5/cyPm.c **** *  mode of the source clocks for the timer that is used as wakeup timer.
  678:.\Generated_Source\PSoC5/cyPm.c **** *
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 31
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 31
 
 
  679:.\Generated_Source\PSoC5/cyPm.c **** *  Note Before calling this function, you must prepare clock tree configuration
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  733:.\Generated_Source\PSoC5/cyPm.c **** *                   included as a wakeup source.
  734:.\Generated_Source\PSoC5/cyPm.c **** *
  735:.\Generated_Source\PSoC5/cyPm.c **** *           Define                      Source
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 32
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 32
 
 
  736:.\Generated_Source\PSoC5/cyPm.c **** *  PM_SLEEP_SRC_NONE                None
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  1012              		.cfi_startproc
  1013              		@ args = 0, pretend = 0, frame = 16
  1014              		@ frame_needed = 1, uses_anonymous_args = 0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 33
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 33
 
 
  1015 0000 80B5     		push	{r7, lr}
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  806:.\Generated_Source\PSoC5/cyPm.c ****     else
  807:.\Generated_Source\PSoC5/cyPm.c ****     {
  808:.\Generated_Source\PSoC5/cyPm.c ****         /* Abort, device is not ready for low power mode entry */
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 34
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 34
 
 
  809:.\Generated_Source\PSoC5/cyPm.c **** 
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  863:.\Generated_Source\PSoC5/cyPm.c ****     * For ARM-based devices, an interrupt is required for the CPU to wake up. The
  864:.\Generated_Source\PSoC5/cyPm.c ****     * Power Management implementation assumes that wakeup time is configured with a
  865:.\Generated_Source\PSoC5/cyPm.c ****     * separate component (component-based wakeup time configuration) for an
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 35
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 35
 
 
  866:.\Generated_Source\PSoC5/cyPm.c ****     * interrupt to be issued on terminal count. For more information, refer to the
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  899:.\Generated_Source\PSoC5/cyPm.c ****         {
  900:.\Generated_Source\PSoC5/cyPm.c ****             /* Save current and set new configuration of the 1PPS */
  901:.\Generated_Source\PSoC5/cyPm.c ****             CyPmOppsSet();
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 36
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 36
 
 
  902:.\Generated_Source\PSoC5/cyPm.c **** 
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  1105 00bc C4F20003 		movt	r3, 16384
  1106 00c0 1B78     		ldrb	r3, [r3, #0]
  1107 00c2 DAB2     		uxtb	r2, r3
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 37
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 37
 
 
  1108 00c4 40F20003 		movw	r3, #:lower16:cyPmBackup
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  1140 011a 83F82D20 		strb	r2, [r3, #45]
  944:.\Generated_Source\PSoC5/cyPm.c **** 
  945:.\Generated_Source\PSoC5/cyPm.c ****         /* Save IMO frequency */
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 38
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 38
 
 
  946:.\Generated_Source\PSoC5/cyPm.c ****         cyPmBackup.imoActFreq = CY_PM_FASTCLK_IMO_CR_REG & CY_PM_FASTCLK_IMO_CR_FREQ_MASK;
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  1181              	
  1182              	@ 0 "" 2
  960:.\Generated_Source\PSoC5/cyPm.c ****     CY_NOP;
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 39
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 39
 
 
  1183              		.loc 1 960 0
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  976:.\Generated_Source\PSoC5/cyPm.c ****     * Do not use merge region below unless any component datasheet
  977:.\Generated_Source\PSoC5/cyPm.c ****     * suggest to do so.
  978:.\Generated_Source\PSoC5/cyPm.c ****     *******************************************************************/
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 40
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 40
 
 
  979:.\Generated_Source\PSoC5/cyPm.c ****     /* `#START CY_PM_JUST_AFTER_WAKEUP_FROM_SLEEP` */
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
 1010:.\Generated_Source\PSoC5/cyPm.c **** 
 1011:.\Generated_Source\PSoC5/cyPm.c ****     /* Restore global interrupt enable state */
 1012:.\Generated_Source\PSoC5/cyPm.c ****     CyExitCriticalSection(interruptState);
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 41
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 41
 
 
  1244              		.loc 1 1012 0
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
 1047:.\Generated_Source\PSoC5/cyPm.c **** *  this requirement is met. The specified delay should be done on ISR entry.
 1048:.\Generated_Source\PSoC5/cyPm.c **** *
 1049:.\Generated_Source\PSoC5/cyPm.c **** *  After wakeup PICU interrupt occurs, the Pin_ClearInterrupt() (where Pin is
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 42
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 42
 
 
 1050:.\Generated_Source\PSoC5/cyPm.c **** *  instance name of the Pins component) function must be called to clear the
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  1292 0022 44F28363 		movw	r3, #18051
  1293 0026 C4F20003 		movt	r3, 16384
  1294 002a 44F28362 		movw	r2, #18051
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 43
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 43
 
 
  1295 002e C4F20002 		movt	r2, 16384
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
 1096:.\Generated_Source\PSoC5/cyPm.c **** 
 1097:.\Generated_Source\PSoC5/cyPm.c ****     cyPmBackup.wakeupCfg2 = CY_PM_WAKEUP_CFG2_REG;
  1329              		.loc 1 1097 0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 44
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 44
 
 
  1330 008a 44F29A33 		movw	r3, #17306
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  1369 00e8 4FF00002 		mov	r2, #0
  1370 00ec 83F82D20 		strb	r2, [r3, #45]
 1111:.\Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 45
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 45
 
 
 1112:.\Generated_Source\PSoC5/cyPm.c ****         /* Save IMO frequency */
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  1409              	@ 1127 ".\Generated_Source\PSoC5\cyPm.c" 1
  1410 0156 00BF     		NOP
  1411              	
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 46
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 46
 
 
  1412              	@ 0 "" 2
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
 1142:.\Generated_Source\PSoC5/cyPm.c ****     }
 1143:.\Generated_Source\PSoC5/cyPm.c **** 
 1144:.\Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 47
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 47
 
 
 1145:.\Generated_Source\PSoC5/cyPm.c ****     /* Restore device for proper Hibernate mode exit*/
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
 1156:.\Generated_Source\PSoC5/cyPm.c **** 
 1157:.\Generated_Source\PSoC5/cyPm.c **** 
 1158:.\Generated_Source\PSoC5/cyPm.c **** /*******************************************************************************
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 48
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 48
 
 
 1159:.\Generated_Source\PSoC5/cyPm.c **** * Function Name: CyPmReadStatus
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  1512 000a FFF7FEFF 		bl	CyEnterCriticalSection
  1513 000e 0346     		mov	r3, r0
  1514 0010 FB73     		strb	r3, [r7, #15]
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 49
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 49
 
 
 1195:.\Generated_Source\PSoC5/cyPm.c **** 
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  1558              		.size	CyPmReadStatus, .-CyPmReadStatus
  1559 0076 00BF     		.section	.text.CyPmHibSaveSet,"ax",%progbits
  1560              		.align	2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 50
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 50
 
 
  1561              		.thumb
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
 1235:.\Generated_Source\PSoC5/cyPm.c ****     {
 1236:.\Generated_Source\PSoC5/cyPm.c ****         /***********************************************************************
 1237:.\Generated_Source\PSoC5/cyPm.c ****         * If I2C backup regulator is enabled, all the fixed-function registers
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 51
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 51
 
 
 1238:.\Generated_Source\PSoC5/cyPm.c ****         * store their values while device is in low power mode, otherwise their
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  1619 0066 40F20003 		movw	r3, #:lower16:cyPmBackup
  1620 006a C0F20003 		movt	r3, #:upper16:cyPmBackup
  1621 006e 5A70     		strb	r2, [r3, #1]
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 52
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 52
 
 
 1258:.\Generated_Source\PSoC5/cyPm.c **** 
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  1663              	.L65:
 1270:.\Generated_Source\PSoC5/cyPm.c ****     }
 1271:.\Generated_Source\PSoC5/cyPm.c ****     else
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 53
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 53
 
 
 1272:.\Generated_Source\PSoC5/cyPm.c ****     {
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  1692 011c C4F20003 		movt	r3, 16384
  1693 0120 4FF0FF02 		mov	r2, #255
  1694 0124 1A70     		strb	r2, [r3, #0]
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 54
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 54
 
 
 1298:.\Generated_Source\PSoC5/cyPm.c ****     CY_PM_PWRSYS_WAKE_TR1_REG = CY_PM_PWRSYS_WAKE_TR1;
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
 1323:.\Generated_Source\PSoC5/cyPm.c ****     /* Restore LVI/HVI configuration */
 1324:.\Generated_Source\PSoC5/cyPm.c ****     CyPmHviLviRestore();
  1724              		.loc 1 1324 0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 55
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 55
 
 
  1725 0004 FFF7FEFF 		bl	CyPmHviLviRestore
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  1756 004a 002B     		cmp	r3, #0
  1757 004c 0DD1     		bne	.L70
 1348:.\Generated_Source\PSoC5/cyPm.c ****     {
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 56
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 56
 
 
 1349:.\Generated_Source\PSoC5/cyPm.c ****         /* Enable the sleep regulator */
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
 1365:.\Generated_Source\PSoC5/cyPm.c **** *
 1366:.\Generated_Source\PSoC5/cyPm.c **** * Summary:
 1367:.\Generated_Source\PSoC5/cyPm.c **** *  Performs CTW configuration:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 57
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 57
 
 
 1368:.\Generated_Source\PSoC5/cyPm.c **** *  - Disables CTW interrupt
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  1826 002a 44F28233 		movw	r3, #17282
  1827 002e C4F20003 		movt	r3, 16384
  1828 0032 1B78     		ldrb	r3, [r3, #0]
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 58
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 58
 
 
  1829 0034 DBB2     		uxtb	r3, r3
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  1869 0096 44F28133 		movw	r3, #17281
  1870 009a C4F20003 		movt	r3, 16384
  1871 009e 1B78     		ldrb	r3, [r3, #0]
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 59
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 59
 
 
  1872 00a0 DBB2     		uxtb	r3, r3
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
 1424:.\Generated_Source\PSoC5/cyPm.c **** *  - Disables 1PPS interupts
 1425:.\Generated_Source\PSoC5/cyPm.c **** *  - Enables 1PPS
 1426:.\Generated_Source\PSoC5/cyPm.c **** *
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 60
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 60
 
 
 1427:.\Generated_Source\PSoC5/cyPm.c **** * Parameters:
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  1941              		.loc 1 1447 0
  1942 0038 44F28233 		movw	r3, #17282
  1943 003c C4F20003 		movt	r3, 16384
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 61
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 61
 
 
  1944 0040 44F28232 		movw	r2, #17282
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  1973 0002 82B0     		sub	sp, sp, #8
  1974              	.LCFI27:
  1975              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 62
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 62
 
 
  1976 0004 00AF     		add	r7, sp, #0
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  2016 0064 22F00102 		bic	r2, r2, #1
  2017 0068 D2B2     		uxtb	r2, r2
  2018 006a 1A70     		strb	r2, [r3, #0]
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 63
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 63
 
 
 1487:.\Generated_Source\PSoC5/cyPm.c ****             CY_PM_TW_CFG0_REG = ftwInterval;
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  2058 00cc D2B2     		uxtb	r2, r2
  2059 00ce 1A70     		strb	r2, [r3, #0]
  2060              	.L77:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 64
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 64
 
 
 1502:.\Generated_Source\PSoC5/cyPm.c ****     }
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
 1530:.\Generated_Source\PSoC5/cyPm.c ****     /* Save SC/CT routing registers */
 1531:.\Generated_Source\PSoC5/cyPm.c ****     cyPmBackup.scctData[0u]   = CY_GET_REG8(CYREG_SC0_SW0 );
  2087              		.loc 1 1531 0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 65
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 65
 
 
  2088 0004 4FF4B443 		mov	r3, #23040
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  2136 0088 45F60A23 		movw	r3, #23050
  2137 008c C4F20003 		movt	r3, 16384
  2138 0090 1B78     		ldrb	r3, [r3, #0]
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 66
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 66
 
 
  2139 0092 DAB2     		uxtb	r2, r3
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  2186 0114 1B78     		ldrb	r3, [r3, #0]
  2187 0116 DAB2     		uxtb	r2, r3
  2188 0118 40F20003 		movw	r3, #:lower16:cyPmBackup
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 67
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 67
 
 
  2189 011c C0F20003 		movt	r3, #:upper16:cyPmBackup
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  2236 019c 40F20003 		movw	r3, #:lower16:cyPmBackup
  2237 01a0 C0F20003 		movt	r3, #:upper16:cyPmBackup
  2238 01a4 DA76     		strb	r2, [r3, #27]
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 68
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 68
 
 
 1552:.\Generated_Source\PSoC5/cyPm.c ****     cyPmBackup.scctData[19u]  = CY_GET_REG8(CYREG_SC2_SW8 );
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  2286 022a 83F82120 		strb	r2, [r3, #33]
 1559:.\Generated_Source\PSoC5/cyPm.c ****     cyPmBackup.scctData[25u]  = CY_GET_REG8(CYREG_SC3_SW6 );
  2287              		.loc 1 1559 0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 69
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 69
 
 
  2288 022e 45F63623 		movw	r3, #23094
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  2334 02b6 4FF00002 		mov	r2, #0
  2335 02ba 1A70     		strb	r2, [r3, #0]
 1568:.\Generated_Source\PSoC5/cyPm.c ****     CY_SET_REG8(CYREG_SC0_SW8 , 0u);
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 70
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 70
 
 
  2336              		.loc 1 1568 0
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
 1578:.\Generated_Source\PSoC5/cyPm.c **** 
 1579:.\Generated_Source\PSoC5/cyPm.c ****     CY_SET_REG8(CYREG_SC2_SW0 , 0u);
  2381              		.loc 1 1579 0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 71
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 71
 
 
  2382 033a 45F62023 		movw	r3, #23072
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  2426              		.loc 1 1589 0
  2427 03b8 45F63323 		movw	r3, #23091
  2428 03bc C4F20003 		movt	r3, 16384
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 72
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 72
 
 
  2429 03c0 4FF00002 		mov	r2, #0
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
 1622:.\Generated_Source\PSoC5/cyPm.c ****     #endif  /* (CY_PSOC3) */
 1623:.\Generated_Source\PSoC5/cyPm.c **** 
 1624:.\Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 73
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 73
 
 
 1625:.\Generated_Source\PSoC5/cyPm.c ****     /***************************************************************************
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  2491              		.thumb
  2492              		.thumb_func
  2493              		.type	CyPmHibSlpRestore, %function
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 74
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 74
 
 
  2494              	CyPmHibSlpRestore:
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  2522              		.loc 1 1664 0
  2523 002c 45F60323 		movw	r3, #23043
  2524 0030 C4F20003 		movt	r3, 16384
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 75
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 75
 
 
  2525 0034 40F20002 		movw	r2, #:lower16:cyPmBackup
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  2571              		.loc 1 1672 0
  2572 00b8 45F61323 		movw	r3, #23059
  2573 00bc C4F20003 		movt	r3, 16384
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 76
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 76
 
 
  2574 00c0 40F20002 		movw	r2, #:lower16:cyPmBackup
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  2620              		.loc 1 1680 0
  2621 0144 45F62323 		movw	r3, #23075
  2622 0148 C4F20003 		movt	r3, 16384
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 77
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 77
 
 
  2623 014c 40F20002 		movw	r2, #:lower16:cyPmBackup
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  2669              		.loc 1 1688 0
  2670 01d0 45F63323 		movw	r3, #23091
  2671 01d4 C4F20003 		movt	r3, 16384
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 78
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 78
 
 
  2672 01d8 40F20002 		movw	r2, #:lower16:cyPmBackup
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
 1711:.\Generated_Source\PSoC5/cyPm.c ****     /* Restore boost reference */
 1712:.\Generated_Source\PSoC5/cyPm.c ****     if(CY_PM_ENABLED == cyPmBackup.boostRefExt)
  2704              		.loc 1 1712 0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 79
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 79
 
 
  2705 023e 40F20003 		movw	r3, #:lower16:cyPmBackup
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
 1737:.\Generated_Source\PSoC5/cyPm.c **** {
  2735              		.loc 1 1737 0
  2736              		.cfi_startproc
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 80
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 80
 
 
  2737              		@ args = 0, pretend = 0, frame = 0
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
 1744:.\Generated_Source\PSoC5/cyPm.c ****         cyPmBackup.lvidRst = (0u == (CY_VD_PRES_CONTROL_REG & CY_VD_PRESD_EN)) ? \
  2783              		.loc 1 1744 0
  2784 0062 40F20003 		movw	r3, #:lower16:cyPmBackup
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 81
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 81
 
 
  2785 0066 C0F20003 		movt	r3, #:upper16:cyPmBackup
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  2824 00d0 DBB2     		uxtb	r3, r3
  2825 00d2 DBB2     		uxtb	r3, r3
 1761:.\Generated_Source\PSoC5/cyPm.c ****                              CY_PM_DISABLED : CY_PM_ENABLED;
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 82
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 82
 
 
  2826              		.loc 1 1761 0
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  2863 012c C0F20003 		movt	r3, #:upper16:cyPmBackup
  2864 0130 4FF00002 		mov	r2, #0
  2865 0134 83F82920 		strb	r2, [r3, #41]
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 83
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 83
 
 
  2866              	.L86:
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  2895 0010 012B     		cmp	r3, #1
  2896 0012 0FD1     		bne	.L94
 1803:.\Generated_Source\PSoC5/cyPm.c ****     {
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 84
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 84
 
 
 1804:.\Generated_Source\PSoC5/cyPm.c ****         CyVdLvDigitEnable(cyPmBackup.lvidRst, cyPmBackup.lvidTrip);
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  2938              		.size	CyPmHviLviRestore, .-CyPmHviLviRestore
  2939 007a 00BF     		.bss
  2940              	interruptStatus.4769:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 85
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 85
 
 
  2941 0042 00       		.space	1
@@ -5053,10 +5053,10 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  2950 0006 00000000 		.4byte	.Ldebug_abbrev0
  2951 000a 04       		.byte	0x4
  2952 000b 01       		.uleb128 0x1
- 2953 000c 54030000 		.4byte	.LASF85
+ 2953 000c F1020000 		.4byte	.LASF85
  2954 0010 01       		.byte	0x1
  2955 0011 41010000 		.4byte	.LASF86
- 2956 0015 B7020000 		.4byte	.LASF87
+ 2956 0015 68040000 		.4byte	.LASF87
  2957 0019 00000000 		.4byte	.Ldebug_ranges0+0
  2958 001d 00000000 		.4byte	0
  2959 0021 00000000 		.4byte	0
@@ -5068,11 +5068,11 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  2965 0030 02       		.uleb128 0x2
  2966 0031 01       		.byte	0x1
  2967 0032 08       		.byte	0x8
- 2968 0033 AE030000 		.4byte	.LASF1
+ 2968 0033 4B030000 		.4byte	.LASF1
  2969 0037 02       		.uleb128 0x2
  2970 0038 02       		.byte	0x2
  2971 0039 05       		.byte	0x5
- 2972 003a E7030000 		.4byte	.LASF2
+ 2972 003a 84030000 		.4byte	.LASF2
  2973 003e 02       		.uleb128 0x2
  2974 003f 02       		.byte	0x2
  2975 0040 07       		.byte	0x7
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  2995 0063 05       		.byte	0x5
  2996 0064 696E7400 		.ascii	"int\000"
  2997 0068 02       		.uleb128 0x2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 86
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 86
 
 
  2998 0069 04       		.byte	0x4
@@ -5122,7 +5122,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3016 0090 02       		.uleb128 0x2
  3017 0091 04       		.byte	0x4
  3018 0092 04       		.byte	0x4
- 3019 0093 31030000 		.4byte	.LASF12
+ 3019 0093 CE020000 		.4byte	.LASF12
  3020 0097 02       		.uleb128 0x2
  3021 0098 08       		.byte	0x8
  3022 0099 04       		.byte	0x4
@@ -5130,14 +5130,14 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3024 009e 02       		.uleb128 0x2
  3025 009f 01       		.byte	0x1
  3026 00a0 08       		.byte	0x8
- 3027 00a1 11040000 		.4byte	.LASF14
+ 3027 00a1 AE030000 		.4byte	.LASF14
  3028 00a5 04       		.uleb128 0x4
- 3029 00a6 AA040000 		.4byte	.LASF15
+ 3029 00a6 4F040000 		.4byte	.LASF15
  3030 00aa 02       		.byte	0x2
  3031 00ab E8       		.byte	0xe8
  3032 00ac 4C000000 		.4byte	0x4c
  3033 00b0 04       		.uleb128 0x4
- 3034 00b1 9D030000 		.4byte	.LASF16
+ 3034 00b1 3A030000 		.4byte	.LASF16
  3035 00b5 02       		.byte	0x2
  3036 00b6 F0       		.byte	0xf0
  3037 00b7 BB000000 		.4byte	0xbb
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3052 00d8 03       		.byte	0x3
  3053 00d9 F4       		.byte	0xf4
  3054 00da 6F000000 		.4byte	0x6f
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 87
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 87
 
 
  3055 00de 02       		.byte	0x2
@@ -5197,7 +5197,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3088 0117 23       		.byte	0x23
  3089 0118 04       		.uleb128 0x4
  3090 0119 07       		.uleb128 0x7
- 3091 011a B3040000 		.4byte	.LASF23
+ 3091 011a 58040000 		.4byte	.LASF23
  3092 011e 03       		.byte	0x3
  3093 011f F9       		.byte	0xf9
  3094 0120 6F000000 		.4byte	0x6f
@@ -5205,7 +5205,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3096 0125 23       		.byte	0x23
  3097 0126 05       		.uleb128 0x5
  3098 0127 07       		.uleb128 0x7
- 3099 0128 DF040000 		.4byte	.LASF24
+ 3099 0128 E1040000 		.4byte	.LASF24
  3100 012c 03       		.byte	0x3
  3101 012d FA       		.byte	0xfa
  3102 012e 6F000000 		.4byte	0x6f
@@ -5213,12 +5213,12 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3104 0133 23       		.byte	0x23
  3105 0134 06       		.uleb128 0x6
  3106 0135 07       		.uleb128 0x7
- 3107 0136 27030000 		.4byte	.LASF25
+ 3107 0136 C4020000 		.4byte	.LASF25
  3108 013a 03       		.byte	0x3
  3109 013b FB       		.byte	0xfb
  3110 013c 6F000000 		.4byte	0x6f
  3111 0140 02       		.byte	0x2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 88
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 88
 
 
  3112 0141 23       		.byte	0x23
@@ -5256,7 +5256,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3144 0179 23       		.byte	0x23
  3145 017a 0C       		.uleb128 0xc
  3146 017b 08       		.uleb128 0x8
- 3147 017c CC030000 		.4byte	.LASF30
+ 3147 017c 69030000 		.4byte	.LASF30
  3148 0180 03       		.byte	0x3
  3149 0181 0001     		.2byte	0x100
  3150 0183 6F000000 		.4byte	0x6f
@@ -5272,13 +5272,13 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3160 0197 23       		.byte	0x23
  3161 0198 0F       		.uleb128 0xf
  3162 0199 08       		.uleb128 0x8
- 3163 019a 62040000 		.4byte	.LASF32
+ 3163 019a 07040000 		.4byte	.LASF32
  3164 019e 03       		.byte	0x3
  3165 019f 0201     		.2byte	0x102
  3166 01a1 6F000000 		.4byte	0x6f
  3167 01a5 02       		.byte	0x2
  3168 01a6 23       		.byte	0x23
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 89
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 89
 
 
  3169 01a7 10       		.uleb128 0x10
@@ -5303,7 +5303,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3188 01cf 23       		.byte	0x23
  3189 01d0 00       		.uleb128 0
  3190 01d1 08       		.uleb128 0x8
- 3191 01d2 DB030000 		.4byte	.LASF37
+ 3191 01d2 78030000 		.4byte	.LASF37
  3192 01d6 03       		.byte	0x3
  3193 01d7 0A01     		.2byte	0x10a
  3194 01d9 6F000000 		.4byte	0x6f
@@ -5311,7 +5311,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3196 01de 23       		.byte	0x23
  3197 01df 01       		.uleb128 0x1
  3198 01e0 08       		.uleb128 0x8
- 3199 01e1 03040000 		.4byte	.LASF38
+ 3199 01e1 A0030000 		.4byte	.LASF38
  3200 01e5 03       		.byte	0x3
  3201 01e6 0B01     		.2byte	0x10b
  3202 01e8 6F000000 		.4byte	0x6f
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3223 020e 39020000 		.4byte	.LASF41
  3224 0212 03       		.byte	0x3
  3225 0213 1801     		.2byte	0x118
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 90
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 90
 
 
  3226 0215 6F000000 		.4byte	0x6f
@@ -5386,7 +5386,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3268 0265 23       		.byte	0x23
  3269 0266 25       		.uleb128 0x25
  3270 0267 08       		.uleb128 0x8
- 3271 0268 D6040000 		.4byte	.LASF47
+ 3271 0268 D8040000 		.4byte	.LASF47
  3272 026c 03       		.byte	0x3
  3273 026d 2201     		.2byte	0x122
  3274 026f 6F000000 		.4byte	0x6f
@@ -5394,11 +5394,11 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3276 0274 23       		.byte	0x23
  3277 0275 26       		.uleb128 0x26
  3278 0276 08       		.uleb128 0x8
- 3279 0277 89040000 		.4byte	.LASF48
+ 3279 0277 2E040000 		.4byte	.LASF48
  3280 027b 03       		.byte	0x3
  3281 027c 2301     		.2byte	0x123
  3282 027e 6F000000 		.4byte	0x6f
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 91
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 91
 
 
  3283 0282 02       		.byte	0x2
@@ -5421,7 +5421,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3300 02a1 23       		.byte	0x23
  3301 02a2 29       		.uleb128 0x29
  3302 02a3 08       		.uleb128 0x8
- 3303 02a4 41030000 		.4byte	.LASF51
+ 3303 02a4 DE020000 		.4byte	.LASF51
  3304 02a8 03       		.byte	0x3
  3305 02a9 2601     		.2byte	0x126
  3306 02ab 6F000000 		.4byte	0x6f
@@ -5429,7 +5429,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3308 02b0 23       		.byte	0x23
  3309 02b1 2A       		.uleb128 0x2a
  3310 02b2 08       		.uleb128 0x8
- 3311 02b3 C3040000 		.4byte	.LASF52
+ 3311 02b3 C3030000 		.4byte	.LASF52
  3312 02b7 03       		.byte	0x3
  3313 02b8 2701     		.2byte	0x127
  3314 02ba 6F000000 		.4byte	0x6f
@@ -5445,7 +5445,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3324 02ce 23       		.byte	0x23
  3325 02cf 2C       		.uleb128 0x2c
  3326 02d0 08       		.uleb128 0x8
- 3327 02d1 16040000 		.4byte	.LASF54
+ 3327 02d1 B3030000 		.4byte	.LASF54
  3328 02d5 03       		.byte	0x3
  3329 02d6 2A01     		.2byte	0x12a
  3330 02d8 6F000000 		.4byte	0x6f
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3337 02e5 2C01     		.2byte	0x12c
  3338 02e7 6F000000 		.4byte	0x6f
  3339 02eb 02       		.byte	0x2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 92
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 92
 
 
  3340 02ec 23       		.byte	0x23
@@ -5498,7 +5498,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3374 0337 01       		.byte	0x1
  3375 0338 77030000 		.4byte	0x377
  3376 033c 0F       		.uleb128 0xf
- 3377 033d 82040000 		.4byte	.LASF57
+ 3377 033d 27040000 		.4byte	.LASF57
  3378 0341 01       		.byte	0x1
  3379 0342 0201     		.2byte	0x102
  3380 0344 A5000000 		.4byte	0xa5
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3394 035d 01       		.byte	0x1
  3395 035e 0401     		.2byte	0x104
  3396 0360 7A000000 		.4byte	0x7a
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 93
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 93
 
 
  3397 0364 02       		.byte	0x2
@@ -5544,7 +5544,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3417 0388 77030000 		.4byte	0x377
  3418 038c 0E       		.uleb128 0xe
  3419 038d 01       		.byte	0x1
- 3420 038e 49030000 		.4byte	.LASF61
+ 3420 038e E6020000 		.4byte	.LASF61
  3421 0392 01       		.byte	0x1
  3422 0393 4702     		.2byte	0x247
  3423 0395 01       		.byte	0x1
@@ -5554,7 +5554,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3427 03a2 01       		.byte	0x1
  3428 03a3 C6030000 		.4byte	0x3c6
  3429 03a7 12       		.uleb128 0x12
- 3430 03a8 9F040000 		.4byte	.LASF62
+ 3430 03a8 44040000 		.4byte	.LASF62
  3431 03ac 01       		.byte	0x1
  3432 03ad 4702     		.2byte	0x247
  3433 03af 7A000000 		.4byte	0x7a
@@ -5562,7 +5562,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3435 03b4 91       		.byte	0x91
  3436 03b5 76       		.sleb128 -10
  3437 03b6 12       		.uleb128 0x12
- 3438 03b7 1A030000 		.4byte	.LASF63
+ 3438 03b7 B7020000 		.4byte	.LASF63
  3439 03bb 01       		.byte	0x1
  3440 03bc 4702     		.2byte	0x247
  3441 03be 7A000000 		.4byte	0x7a
@@ -5572,20 +5572,20 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3445 03c5 00       		.byte	0
  3446 03c6 0E       		.uleb128 0xe
  3447 03c7 01       		.byte	0x1
- 3448 03c8 37030000 		.4byte	.LASF64
+ 3448 03c8 D4020000 		.4byte	.LASF64
  3449 03cc 01       		.byte	0x1
  3450 03cd 1303     		.2byte	0x313
  3451 03cf 01       		.byte	0x1
  3452 03d0 00000000 		.4byte	.LFB3
  3453 03d4 1C020000 		.4byte	.LFE3
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 94
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 94
 
 
  3454 03d8 9C000000 		.4byte	.LLST3
  3455 03dc 01       		.byte	0x1
  3456 03dd 0F040000 		.4byte	0x40f
  3457 03e1 12       		.uleb128 0x12
- 3458 03e2 9F040000 		.4byte	.LASF62
+ 3458 03e2 44040000 		.4byte	.LASF62
  3459 03e6 01       		.byte	0x1
  3460 03e7 1303     		.2byte	0x313
  3461 03e9 6F000000 		.4byte	0x6f
@@ -5593,7 +5593,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3463 03ee 91       		.byte	0x91
  3464 03ef 6F       		.sleb128 -17
  3465 03f0 12       		.uleb128 0x12
- 3466 03f1 1A030000 		.4byte	.LASF63
+ 3466 03f1 B7020000 		.4byte	.LASF63
  3467 03f5 01       		.byte	0x1
  3468 03f6 1303     		.2byte	0x313
  3469 03f8 7A000000 		.4byte	0x7a
@@ -5611,7 +5611,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3481 040e 00       		.byte	0
  3482 040f 0E       		.uleb128 0xe
  3483 0410 01       		.byte	0x1
- 3484 0411 26040000 		.4byte	.LASF66
+ 3484 0411 CB030000 		.4byte	.LASF66
  3485 0415 01       		.byte	0x1
  3486 0416 2304     		.2byte	0x423
  3487 0418 01       		.byte	0x1
@@ -5631,14 +5631,14 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3501 0439 00       		.byte	0
  3502 043a 13       		.uleb128 0x13
  3503 043b 01       		.byte	0x1
- 3504 043c 53040000 		.4byte	.LASF88
+ 3504 043c F8030000 		.4byte	.LASF88
  3505 0440 01       		.byte	0x1
  3506 0441 A304     		.2byte	0x4a3
  3507 0443 01       		.byte	0x1
  3508 0444 6F000000 		.4byte	0x6f
  3509 0448 00000000 		.4byte	.LFB5
  3510 044c 76000000 		.4byte	.LFE5
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 95
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 95
 
 
  3511 0450 0C010000 		.4byte	.LLST5
@@ -5653,7 +5653,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3520 0466 91       		.byte	0x91
  3521 0467 6F       		.sleb128 -17
  3522 0468 0F       		.uleb128 0xf
- 3523 0469 E9040000 		.4byte	.LASF68
+ 3523 0469 EB040000 		.4byte	.LASF68
  3524 046d 01       		.byte	0x1
  3525 046e A504     		.2byte	0x4a5
  3526 0470 6F000000 		.4byte	0x6f
@@ -5678,7 +5678,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3545 0497 76       		.sleb128 -10
  3546 0498 00       		.byte	0
  3547 0499 14       		.uleb128 0x14
- 3548 049a 90040000 		.4byte	.LASF70
+ 3548 049a 35040000 		.4byte	.LASF70
  3549 049e 01       		.byte	0x1
  3550 049f CF04     		.2byte	0x4cf
  3551 04a1 01       		.byte	0x1
@@ -5697,8 +5697,8 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3564 04c4 01       		.byte	0x1
  3565 04c5 0E       		.uleb128 0xe
  3566 04c6 01       		.byte	0x1
- 3567 04c7 6F040000 		.4byte	.LASF72
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 96
+ 3567 04c7 14040000 		.4byte	.LASF72
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 96
 
 
  3568 04cb 01       		.byte	0x1
@@ -5720,7 +5720,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3584 04ef 00       		.byte	0
  3585 04f0 15       		.uleb128 0x15
  3586 04f1 01       		.byte	0x1
- 3587 04f2 A2030000 		.4byte	.LASF75
+ 3587 04f2 3F030000 		.4byte	.LASF75
  3588 04f6 01       		.byte	0x1
  3589 04f7 9A05     		.2byte	0x59a
  3590 04f9 01       		.byte	0x1
@@ -5740,7 +5740,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3604 051d 01       		.byte	0x1
  3605 051e 32050000 		.4byte	0x532
  3606 0522 12       		.uleb128 0x12
- 3607 0523 34040000 		.4byte	.LASF77
+ 3607 0523 D9030000 		.4byte	.LASF77
  3608 0527 01       		.byte	0x1
  3609 0528 BF05     		.2byte	0x5bf
  3610 052a 6F000000 		.4byte	0x6f
@@ -5749,7 +5749,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3613 0530 77       		.sleb128 -9
  3614 0531 00       		.byte	0
  3615 0532 16       		.uleb128 0x16
- 3616 0533 F1030000 		.4byte	.LASF78
+ 3616 0533 8E030000 		.4byte	.LASF78
  3617 0537 01       		.byte	0x1
  3618 0538 F805     		.2byte	0x5f8
  3619 053a 01       		.byte	0x1
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3622 0543 38020000 		.4byte	.LLST11
  3623 0547 01       		.byte	0x1
  3624 0548 16       		.uleb128 0x16
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 97
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 97
 
 
  3625 0549 07000000 		.4byte	.LASF79
@@ -5788,7 +5788,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3649 0585 BC020000 		.4byte	.LLST14
  3650 0589 01       		.byte	0x1
  3651 058a 17       		.uleb128 0x17
- 3652 058b CB040000 		.4byte	.LASF82
+ 3652 058b CD040000 		.4byte	.LASF82
  3653 058f 01       		.byte	0x1
  3654 0590 1F       		.byte	0x1f
  3655 0591 FF020000 		.4byte	0x2ff
@@ -5796,7 +5796,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3657 0596 03       		.byte	0x3
  3658 0597 00000000 		.4byte	cyPmBackup
  3659 059b 17       		.uleb128 0x17
- 3660 059c BC030000 		.4byte	.LASF83
+ 3660 059c 59030000 		.4byte	.LASF83
  3661 05a0 01       		.byte	0x1
  3662 05a1 20       		.byte	0x20
  3663 05a2 A9010000 		.4byte	0x1a9
@@ -5804,7 +5804,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3665 05a7 03       		.byte	0x3
  3666 05a8 30000000 		.4byte	cyPmClockBackup
  3667 05ac 17       		.uleb128 0x17
- 3668 05ad 40040000 		.4byte	.LASF84
+ 3668 05ad E5030000 		.4byte	.LASF84
  3669 05b1 01       		.byte	0x1
  3670 05b2 23       		.byte	0x23
  3671 05b3 BD050000 		.4byte	0x5bd
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3679              	.Ldebug_abbrev0:
  3680 0000 01       		.uleb128 0x1
  3681 0001 11       		.uleb128 0x11
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 98
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 98
 
 
  3682 0002 01       		.byte	0x1
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3736 0038 05       		.uleb128 0x5
  3737 0039 35       		.uleb128 0x35
  3738 003a 00       		.byte	0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 99
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 99
 
 
  3739 003b 49       		.uleb128 0x49
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3793 0071 3A       		.uleb128 0x3a
  3794 0072 0B       		.uleb128 0xb
  3795 0073 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 100
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 100
 
 
  3796 0074 05       		.uleb128 0x5
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3850 00aa 01       		.uleb128 0x1
  3851 00ab 40       		.uleb128 0x40
  3852 00ac 06       		.uleb128 0x6
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 101
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 101
 
 
  3853 00ad 9642     		.uleb128 0x2116
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3907 00e5 13       		.uleb128 0x13
  3908 00e6 02       		.uleb128 0x2
  3909 00e7 0A       		.uleb128 0xa
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 102
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 102
 
 
  3910 00e8 00       		.byte	0
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  3964 011f 03       		.uleb128 0x3
  3965 0120 0E       		.uleb128 0xe
  3966 0121 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 103
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 103
 
 
  3967 0122 0B       		.uleb128 0xb
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  4021 015a 06       		.uleb128 0x6
  4022 015b 9742     		.uleb128 0x2117
  4023 015d 0C       		.uleb128 0xc
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 104
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 104
 
 
  4024 015e 00       		.byte	0
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  4078 0050 06000000 		.4byte	.LCFI4
  4079 0054 E4030000 		.4byte	.LFE1
  4080 0058 0200     		.2byte	0x2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 105
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 105
 
 
  4081 005a 77       		.byte	0x77
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  4135 00de 7D       		.byte	0x7d
  4136 00df 00       		.sleb128 0
  4137 00e0 02000000 		.4byte	.LCFI11
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 106
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 106
 
 
  4138 00e4 04000000 		.4byte	.LCFI12
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  4192 0167 08       		.sleb128 8
  4193 0168 00000000 		.4byte	0
  4194 016c 00000000 		.4byte	0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 107
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 107
 
 
  4195              	.LLST7:
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  4249 01f4 0200     		.2byte	0x2
  4250 01f6 77       		.byte	0x77
  4251 01f7 08       		.sleb128 8
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 108
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 108
 
 
  4252 01f8 00000000 		.4byte	0
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  4306 027c 04000000 		.4byte	.LCFI32
  4307 0280 70020000 		.4byte	.LFE12
  4308 0284 0200     		.2byte	0x2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 109
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 109
 
 
  4309 0286 77       		.byte	0x77
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  4363 0028 00000000 		.4byte	.LFB3
  4364 002c 1C020000 		.4byte	.LFE3-.LFB3
  4365 0030 00000000 		.4byte	.LFB4
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 110
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 110
 
 
  4366 0034 EE010000 		.4byte	.LFE4-.LFB4
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  4420 0074 7A000000 		.4byte	.LFE14
  4421 0078 00000000 		.4byte	0
  4422 007c 00000000 		.4byte	0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 111
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 111
 
 
  4423              		.section	.debug_line,"",%progbits
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  4445      76695361 
  4445      76654469 
  4445      7361626C 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 112
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 112
 
 
  4446              	.LASF69:
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  4471      76695265 
  4471      73746F72 
  4471      6500
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 113
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 113
 
 
  4472              	.LASF9:
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  4499 01ce 6379506D 		.ascii	"cyPmClockBackupStruct\000"
  4499      436C6F63 
  4499      6B426163 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 114
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 114
 
 
  4499      6B757053 
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  4522              	.LASF39:
  4523 0281 736C7054 		.ascii	"slpTrBypass\000"
  4523      72427970 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 115
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 115
 
 
  4523      61737300 
@@ -6858,182 +6858,183 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 1
  4530              	.LASF19:
  4531 02b0 656E436C 		.ascii	"enClkD\000"
  4531      6B4400
- 4532              	.LASF87:
- 4533 02b7 433A5C55 		.ascii	"C:\\Users\\chuck.erhardt\\Documents\\PSoC Creator\\"
- 4533      73657273 
- 4533      5C636875 
- 4533      636B2E65 
- 4533      72686172 
- 4534 02e5 4532466F 		.ascii	"E2ForLife\\freeSoCExplorer+ArduinoSheld_Example.cyd"
- 4534      724C6966 
- 4534      655C6672 
- 4534      6565536F 
- 4534      43457870 
- 4535 0317 736E00   		.ascii	"sn\000"
- 4536              	.LASF63:
- 4537 031a 77616B65 		.ascii	"wakeupSource\000"
- 4537      7570536F 
- 4537      75726365 
- 4537      00
- 4538              	.LASF25:
- 4539 0327 696D6F43 		.ascii	"imoClkSrc\000"
- 4539      6C6B5372 
- 4539      6300
- 4540              	.LASF12:
- 4541 0331 666C6F61 		.ascii	"float\000"
- 4541      7400
- 4542              	.LASF64:
- 4543 0337 4379506D 		.ascii	"CyPmSleep\000"
- 4543      536C6565 
- 4543      7000
- 4544              	.LASF51:
- 4545 0341 6C766964 		.ascii	"lvidRst\000"
- 4545      52737400 
- 4546              	.LASF61:
- 4547 0349 4379506D 		.ascii	"CyPmAltAct\000"
- 4547      416C7441 
- 4547      637400
- 4548              	.LASF85:
- 4549 0354 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
- 4549      4320342E 
- 4549      372E3320 
- 4549      32303133 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 116
+ 4532              	.LASF63:
+ 4533 02b7 77616B65 		.ascii	"wakeupSource\000"
+ 4533      7570536F 
+ 4533      75726365 
+ 4533      00
+ 4534              	.LASF25:
+ 4535 02c4 696D6F43 		.ascii	"imoClkSrc\000"
+ 4535      6C6B5372 
+ 4535      6300
+ 4536              	.LASF12:
+ 4537 02ce 666C6F61 		.ascii	"float\000"
+ 4537      7400
+ 4538              	.LASF64:
+ 4539 02d4 4379506D 		.ascii	"CyPmSleep\000"
+ 4539      536C6565 
+ 4539      7000
+ 4540              	.LASF51:
+ 4541 02de 6C766964 		.ascii	"lvidRst\000"
+ 4541      52737400 
+ 4542              	.LASF61:
+ 4543 02e6 4379506D 		.ascii	"CyPmAltAct\000"
+ 4543      416C7441 
+ 4543      637400
+ 4544              	.LASF85:
+ 4545 02f1 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 4545      4320342E 
+ 4545      372E3320 
+ 4545      32303133 
+ 4545      30333132 
+ 4546 0324 616E6368 		.ascii	"anch revision 196615]\000"
+ 4546      20726576 
+ 4546      6973696F 
+ 4546      6E203139 
+ 4546      36363135 
+ 4547              	.LASF16:
+ 4548 033a 72656738 		.ascii	"reg8\000"
+ 4548      00
+ 4549              	.LASF75:
+ 4550 033f 4379506D 		.ascii	"CyPmOppsSet\000"
+ 4550      4F707073 
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 116
 
 
- 4549      30333132 
- 4550 0387 616E6368 		.ascii	"anch revision 196615]\000"
- 4550      20726576 
- 4550      6973696F 
- 4550      6E203139 
- 4550      36363135 
- 4551              	.LASF16:
- 4552 039d 72656738 		.ascii	"reg8\000"
- 4552      00
- 4553              	.LASF75:
- 4554 03a2 4379506D 		.ascii	"CyPmOppsSet\000"
- 4554      4F707073 
- 4554      53657400 
- 4555              	.LASF1:
- 4556 03ae 756E7369 		.ascii	"unsigned char\000"
- 4556      676E6564 
- 4556      20636861 
- 4556      7200
- 4557              	.LASF83:
- 4558 03bc 6379506D 		.ascii	"cyPmClockBackup\000"
- 4558      436C6F63 
- 4558      6B426163 
- 4558      6B757000 
- 4559              	.LASF30:
- 4560 03cc 706C6C45 		.ascii	"pllEnableState\000"
- 4560      6E61626C 
- 4560      65537461 
- 4560      746500
- 4561              	.LASF37:
- 4562 03db 696C6F31 		.ascii	"ilo1kEnable\000"
- 4562      6B456E61 
- 4562      626C6500 
- 4563              	.LASF2:
- 4564 03e7 73686F72 		.ascii	"short int\000"
- 4564      7420696E 
- 4564      7400
- 4565              	.LASF78:
- 4566 03f1 4379506D 		.ascii	"CyPmHibSlpSaveSet\000"
- 4566      48696253 
- 4566      6C705361 
- 4566      76655365 
- 4566      7400
- 4567              	.LASF38:
- 4568 0403 696C6F31 		.ascii	"ilo100kEnable\000"
- 4568      30306B45 
- 4568      6E61626C 
- 4568      6500
- 4569              	.LASF14:
- 4570 0411 63686172 		.ascii	"char\000"
- 4570      00
- 4571              	.LASF54:
- 4572 0416 696D6F41 		.ascii	"imoActFreq12Mhz\000"
- 4572      63744672 
- 4572      65713132 
- 4572      4D687A00 
- 4573              	.LASF66:
- 4574 0426 4379506D 		.ascii	"CyPmHibernate\000"
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 117
+ 4550      53657400 
+ 4551              	.LASF1:
+ 4552 034b 756E7369 		.ascii	"unsigned char\000"
+ 4552      676E6564 
+ 4552      20636861 
+ 4552      7200
+ 4553              	.LASF83:
+ 4554 0359 6379506D 		.ascii	"cyPmClockBackup\000"
+ 4554      436C6F63 
+ 4554      6B426163 
+ 4554      6B757000 
+ 4555              	.LASF30:
+ 4556 0369 706C6C45 		.ascii	"pllEnableState\000"
+ 4556      6E61626C 
+ 4556      65537461 
+ 4556      746500
+ 4557              	.LASF37:
+ 4558 0378 696C6F31 		.ascii	"ilo1kEnable\000"
+ 4558      6B456E61 
+ 4558      626C6500 
+ 4559              	.LASF2:
+ 4560 0384 73686F72 		.ascii	"short int\000"
+ 4560      7420696E 
+ 4560      7400
+ 4561              	.LASF78:
+ 4562 038e 4379506D 		.ascii	"CyPmHibSlpSaveSet\000"
+ 4562      48696253 
+ 4562      6C705361 
+ 4562      76655365 
+ 4562      7400
+ 4563              	.LASF38:
+ 4564 03a0 696C6F31 		.ascii	"ilo100kEnable\000"
+ 4564      30306B45 
+ 4564      6E61626C 
+ 4564      6500
+ 4565              	.LASF14:
+ 4566 03ae 63686172 		.ascii	"char\000"
+ 4566      00
+ 4567              	.LASF54:
+ 4568 03b3 696D6F41 		.ascii	"imoActFreq12Mhz\000"
+ 4568      63744672 
+ 4568      65713132 
+ 4568      4D687A00 
+ 4569              	.LASF52:
+ 4570 03c3 6C766961 		.ascii	"lviaRst\000"
+ 4570      52737400 
+ 4571              	.LASF66:
+ 4572 03cb 4379506D 		.ascii	"CyPmHibernate\000"
+ 4572      48696265 
+ 4572      726E6174 
+ 4572      6500
+ 4573              	.LASF77:
+ 4574 03d9 66747749 		.ascii	"ftwInterval\000"
+ 4574      6E746572 
+ 4574      76616C00 
+ 4575              	.LASF84:
+ 4576 03e5 6379506D 		.ascii	"cyPmImoFreqReg2Mhz\000"
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 117
 
 
- 4574      48696265 
- 4574      726E6174 
- 4574      6500
- 4575              	.LASF77:
- 4576 0434 66747749 		.ascii	"ftwInterval\000"
- 4576      6E746572 
- 4576      76616C00 
- 4577              	.LASF84:
- 4578 0440 6379506D 		.ascii	"cyPmImoFreqReg2Mhz\000"
- 4578      496D6F46 
- 4578      72657152 
- 4578      6567324D 
- 4578      687A00
- 4579              	.LASF88:
- 4580 0453 4379506D 		.ascii	"CyPmReadStatus\000"
- 4580      52656164 
- 4580      53746174 
- 4580      757300
- 4581              	.LASF32:
- 4582 0462 636C6B44 		.ascii	"clkDistDelay\000"
- 4582      69737444 
- 4582      656C6179 
- 4582      00
- 4583              	.LASF72:
- 4584 046f 4379506D 		.ascii	"CyPmCtwSetInterval\000"
- 4584      43747753 
- 4584      6574496E 
- 4584      74657276 
- 4584      616C00
- 4585              	.LASF57:
- 4586 0482 73746174 		.ascii	"status\000"
- 4586      757300
- 4587              	.LASF48:
- 4588 0489 6C766961 		.ascii	"lviaEn\000"
- 4588      456E00
- 4589              	.LASF70:
- 4590 0490 4379506D 		.ascii	"CyPmHibSaveSet\000"
- 4590      48696253 
- 4590      61766553 
- 4590      657400
- 4591              	.LASF62:
- 4592 049f 77616B65 		.ascii	"wakeupTime\000"
- 4592      75705469 
- 4592      6D6500
- 4593              	.LASF15:
- 4594 04aa 63797374 		.ascii	"cystatus\000"
- 4594      61747573 
- 4594      00
- 4595              	.LASF23:
- 4596 04b3 666C6173 		.ascii	"flashWaitCycles\000"
- 4596      68576169 
- 4596      74437963 
- 4596      6C657300 
- 4597              	.LASF52:
- 4598 04c3 6C766961 		.ascii	"lviaRst\000"
- 4598      52737400 
+ 4576      496D6F46 
+ 4576      72657152 
+ 4576      6567324D 
+ 4576      687A00
+ 4577              	.LASF88:
+ 4578 03f8 4379506D 		.ascii	"CyPmReadStatus\000"
+ 4578      52656164 
+ 4578      53746174 
+ 4578      757300
+ 4579              	.LASF32:
+ 4580 0407 636C6B44 		.ascii	"clkDistDelay\000"
+ 4580      69737444 
+ 4580      656C6179 
+ 4580      00
+ 4581              	.LASF72:
+ 4582 0414 4379506D 		.ascii	"CyPmCtwSetInterval\000"
+ 4582      43747753 
+ 4582      6574496E 
+ 4582      74657276 
+ 4582      616C00
+ 4583              	.LASF57:
+ 4584 0427 73746174 		.ascii	"status\000"
+ 4584      757300
+ 4585              	.LASF48:
+ 4586 042e 6C766961 		.ascii	"lviaEn\000"
+ 4586      456E00
+ 4587              	.LASF70:
+ 4588 0435 4379506D 		.ascii	"CyPmHibSaveSet\000"
+ 4588      48696253 
+ 4588      61766553 
+ 4588      657400
+ 4589              	.LASF62:
+ 4590 0444 77616B65 		.ascii	"wakeupTime\000"
+ 4590      75705469 
+ 4590      6D6500
+ 4591              	.LASF15:
+ 4592 044f 63797374 		.ascii	"cystatus\000"
+ 4592      61747573 
+ 4592      00
+ 4593              	.LASF23:
+ 4594 0458 666C6173 		.ascii	"flashWaitCycles\000"
+ 4594      68576169 
+ 4594      74437963 
+ 4594      6C657300 
+ 4595              	.LASF87:
+ 4596 0468 433A5C55 		.ascii	"C:\\Users\\chuck.erhardt\\Documents\\GitHub\\PSoC-W"
+ 4596      73657273 
+ 4596      5C636875 
+ 4596      636B2E65 
+ 4596      72686172 
+ 4597 0496 35313030 		.ascii	"5100-Driver\\freeSoCExplorer+ArduinoSheld_Example.c"
+ 4597      2D447269 
+ 4597      7665725C 
+ 4597      66726565 
+ 4597      536F4345 
+ 4598 04c8 7964736E 		.ascii	"ydsn\000"
+ 4598      00
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchPBsbi.s 			page 118
+
+
  4599              	.LASF82:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceT8Wjf.s 			page 118
-
-
- 4600 04cb 6379506D 		.ascii	"cyPmBackup\000"
+ 4600 04cd 6379506D 		.ascii	"cyPmBackup\000"
  4600      4261636B 
  4600      757000
  4601              	.LASF47:
- 4602 04d6 6C766964 		.ascii	"lvidTrip\000"
+ 4602 04d8 6C766964 		.ascii	"lvidTrip\000"
  4602      54726970 
  4602      00
  4603              	.LASF24:
- 4604 04df 696D6F45 		.ascii	"imoEnable\000"
+ 4604 04e1 696D6F45 		.ascii	"imoEnable\000"
  4604      6E61626C 
  4604      6500
  4605              	.LASF68:
- 4606 04e9 696E7465 		.ascii	"interruptStatus\000"
+ 4606 04eb 696E7465 		.ascii	"interruptStatus\000"
  4606      72727570 
  4606      74537461 
  4606      74757300 

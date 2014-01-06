@@ -278,9 +278,10 @@
 <name_val_pair name=".\Generated_Source\PSoC4\cyPm.c" v="&quot;-I. &quot;&quot;-I./Generated_Source/PSoC4 &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;" />
 <name_val_pair name=".\Generated_Source\PSoC4\cyutils.c" v="&quot;-I. &quot;&quot;-I./Generated_Source/PSoC4 &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;" />
 <name_val_pair name="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.hex" v="&quot;-mthumb &quot;&quot;-march=armv6-m &quot;&quot;-T &quot;&quot;.\Generated_Source\PSoC4\cm0gcc.ld &quot;&quot;-g &quot;&quot;-Wl,-Map,${OutputDir}\${ProjectShortName}.map &quot;&quot;-specs=nano.specs &quot;&quot;-Wl,--gc-sections &quot;" />
+<name_val_pair name="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.hex" v="&quot;-mthumb &quot;&quot;-march=armv6-m &quot;&quot;-T &quot;&quot;.\Generated_Source\PSoC4\cm0gcc.ld &quot;&quot;-g &quot;&quot;-Wl,-Map,${OutputDir}\${ProjectShortName}.map &quot;&quot;-specs=nano.specs &quot;&quot;-Wl,--gc-sections &quot;" />
 </name>
 </genericCmdLineData>
-<codeGenCmdLineTag v="&quot;-.appdatapath&quot; &quot;C:\Users\chuck.erhardt\AppData\Local\Cypress Semiconductor\PSoC Creator\3.0&quot; &quot;-.fdsnotice&quot; &quot;-.fdswarpdepfile=warp_dependencies.txt&quot; &quot;-.fdselabdepfile=elab_dependencies.txt&quot; &quot;-.fdsbldfile=generated_files.txt&quot; &quot;-p&quot; &quot;C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\PSoCPioneer+ArduinoShield_SPIM_Example.cyprj&quot; &quot;-d&quot; &quot;CY8C4245AXI-483&quot; &quot;-s&quot; &quot;C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\Generated_Source\PSoC4&quot; &quot;--&quot; &quot;-yv2&quot; &quot;-v3&quot; &quot;-ygs&quot; &quot;-q10&quot; &quot;-o2&quot; &quot;-.fftcfgtype=LE&quot; " />
+<codeGenCmdLineTag v="&quot;-.appdatapath&quot; &quot;C:\Users\chuck.erhardt\AppData\Local\Cypress Semiconductor\PSoC Creator\3.0&quot; &quot;-.fdsnotice&quot; &quot;-.fdswarpdepfile=warp_dependencies.txt&quot; &quot;-.fdselabdepfile=elab_dependencies.txt&quot; &quot;-.fdsbldfile=generated_files.txt&quot; &quot;-p&quot; &quot;C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\PSoCPioneer+ArduinoShield_SPIM_Example.cyprj&quot; &quot;-d&quot; &quot;CY8C4245AXI-483&quot; &quot;-s&quot; &quot;C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\Generated_Source\PSoC4&quot; &quot;--&quot; &quot;-yv2&quot; &quot;-v3&quot; &quot;-ygs&quot; &quot;-q10&quot; &quot;-o2&quot; &quot;-.fftcfgtype=LE&quot; " />
 </CyGuid_b0374e30-ce3a-47f2-ad85-821643292c68>
 </dataGuid>
 <dataGuid v="597c5b74-0c46-4204-8b7f-96f3570671dc">
@@ -550,10 +551,11 @@
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\pins.c</v>
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\pins.h</v>
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\aliases.h</v>
-<v>..\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_0\E2ForLife_W5100_v1_0.cysym</v>
-<v>..\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_0</v>
-<v>..\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_0\API\W5100.c</v>
-<v>..\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_0\API\W5100.h</v>
+<v>..\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_1\E2ForLife_W5100_v1_1.cysym</v>
+<v>..\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_1\E2ForLife_W5100_v1_1.pdf</v>
+<v>..\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_1</v>
+<v>..\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_1\API\W5100.c</v>
+<v>..\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_1\API\W5100.h</v>
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cyprimitive</v>
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cysym</v>
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.pdf</v>
@@ -796,14 +798,14 @@
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif</v>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif</v>
 </warp_dep>
-<deps_time v="130288339338346349" />
+<deps_time v="130335016267565844" />
 <top_block v="TopDesign" />
 <last_generation v="1" />
 </CyGuid_925cc1e1-309e-4e08-b0a1-09a83c35b157>
 </dataGuid>
 <dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
-<deps_time v="130288339814683978" />
+<deps_time v="130335016335792666" />
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>
 </userData>

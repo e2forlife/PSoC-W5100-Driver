@@ -1,6 +1,6 @@
 // ======================================================================
 // PSoCPioneer+ArduinoShield_SPIM_Example.v generated from TopDesign.cysch
-// 11/13/2013 at 11:32
+// 01/06/2014 at 12:06
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -131,7 +131,7 @@ module SPI_Master_v2_40_0 (
 		  .divisor(0),
 		  .period("83333333.3333333"),
 		  .is_direct(0),
-		  .is_digital(0))
+		  .is_digital(1))
 		IntClock
 		 (.clock_out(Net_239));
 

@@ -19,6 +19,8 @@
 #include <string.h>  /* for STRLEN() */
 #include <stdlib.h>  /* for RAND() */
 
+char randomData[2000];
+
 int main()
 {
 	char buffer[128];
@@ -34,7 +36,13 @@ int main()
 	ETH0_Start();
 	LED0_Start();
 	LED1_Start();
+	SDCS_Write(1);
 	
+	/* Generate some random bytes to transmit to the Ethernet client */
+	for (temp = 0; temp < 2000; ++temp)
+	{
+		randomData[temp] = (rand()&0x17) + 'A';
+	}
 //    CyGlobalIntEnable; /* Uncomment this line to enable global interrupts. */
 	
 	/*
@@ -71,7 +79,7 @@ int main()
 			LED0_WritePulse1( green );
 			LED1_WritePulse0( blue );
 			/* wait for a connection, and delay the flashes */
-			CyDelay(100);
+			CyDelay(250);
 		}
 		/*
 		 * Send the Logon welcom message to the client.
@@ -101,6 +109,15 @@ int main()
 		ETH0_TcpPrint(socket,"\r\nThank You! :-) ");
 		length = ETH0_TcpReceive(socket,(uint8*)&buffer[0],128);
 		ETH0_TcpSend(socket,(uint8*)&buffer[0],length);
+		
+		/* pavloven test: TcpSend() of 2000 bytes */
+		/* set I/O pin low for timing */
+		SDCS_Write(0);
+		/* Transmit 2000 bytes through the driver to the host */
+		ETH0_TcpSend(socket,(uint8*)&randomData[0], 2000);
+		/* Set I/O pin high for measuring time */
+		SDCS_Write(1);
+		/* end test : measured time 30.20275 ms (Effective data rate: 529753 bps) */
 		
 		ETH0_TcpDisconnect( socket );
 		ETH0_SocketClose( socket );

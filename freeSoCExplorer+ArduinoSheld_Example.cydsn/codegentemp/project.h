@@ -22,6 +22,8 @@
 #include <SPI0.h>
 #include <SPI0_PVT.h>
 #include <ETH0.h>
+#include <SDCS_aliases.h>
+#include <SDCS.h>
 #include <SPI0_IntClock.h>
 #include <core_cm3_psoc5.h>
 #include <core_cm3.h>

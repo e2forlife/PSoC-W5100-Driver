@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
   21:.\Generated_Source\PSoC5/SPI0.c ****     volatile uint8 SPI0_txBuffer[SPI0_TX_BUFFER_SIZE] = {0u};
   22:.\Generated_Source\PSoC5/SPI0.c ****     volatile uint8 SPI0_txBufferFull;
   23:.\Generated_Source\PSoC5/SPI0.c ****     volatile uint8 SPI0_txBufferRead;
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 2
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 2
 
 
   24:.\Generated_Source\PSoC5/SPI0.c ****     volatile uint8 SPI0_txBufferWrite;
@@ -117,8 +117,8 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
   65:.\Generated_Source\PSoC5/SPI0.c ****     /* Initialize the Bit counter */
   66:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_COUNTER_PERIOD_REG = SPI0_BITCTR_INIT;
   47              		.loc 1 66 0
-  48 0004 46F28553 		movw	r3, #25989
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 3
+  48 0004 46F28643 		movw	r3, #25734
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 3
 
 
   49 0008 C4F20003 		movt	r3, 16384
@@ -166,7 +166,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  100:.\Generated_Source\PSoC5/SPI0.c ****     /* Configure TX and RX interrupt mask */
  101:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_TX_STATUS_MASK_REG = SPI0_TX_INIT_INTERRUPTS_MASK;
   58              		.loc 1 101 0
-  59 001e 46F28453 		movw	r3, #25988
+  59 001e 46F28553 		movw	r3, #25989
   60 0022 C4F20003 		movt	r3, 16384
   61 0026 4FF00002 		mov	r2, #0
   62 002a 1A70     		strb	r2, [r3, #0]
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
   67 0038 1A70     		strb	r2, [r3, #0]
  103:.\Generated_Source\PSoC5/SPI0.c **** }
   68              		.loc 1 103 0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 4
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 4
 
 
   69 003a 80BD     		pop	{r7, pc}
@@ -235,10 +235,10 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
   99 000c FB71     		strb	r3, [r7, #7]
  125:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_COUNTER_CONTROL_REG |= SPI0_CNTR_ENABLE;
  100              		.loc 1 125 0
- 101 000e 46F29553 		movw	r3, #26005
+ 101 000e 46F29643 		movw	r3, #25750
  102 0012 C4F20003 		movt	r3, 16384
- 103 0016 46F29552 		movw	r2, #26005
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 5
+ 103 0016 46F29642 		movw	r2, #25750
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 5
 
 
  104 001a C4F20002 		movt	r2, 16384
@@ -249,9 +249,9 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  109 0028 1A70     		strb	r2, [r3, #0]
  126:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_TX_STATUS_ACTL_REG  |= SPI0_INT_ENABLE;
  110              		.loc 1 126 0
- 111 002a 46F29453 		movw	r3, #26004
+ 111 002a 46F29553 		movw	r3, #26005
  112 002e C4F20003 		movt	r3, 16384
- 113 0032 46F29452 		movw	r2, #26004
+ 113 0032 46F29552 		movw	r2, #26005
  114 0036 C4F20002 		movt	r2, 16384
  115 003a 1278     		ldrb	r2, [r2, #0]
  116 003c D2B2     		uxtb	r2, r2
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  147 007e 00BF     		.section	.text.SPI0_Start,"ax",%progbits
  148              		.align	2
  149              		.global	SPI0_Start
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 6
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 6
 
 
  150              		.thumb
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  173              		.loc 1 167 0
  174 0012 FFF7FEFF 		bl	SPI0_Init
  168:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_initVar = 1u;
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 7
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 7
 
 
  175              		.loc 1 168 0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  204              		.cfi_offset 14, -4
  205 0002 82B0     		sub	sp, sp, #8
  206              	.LCFI8:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 8
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 8
 
 
  207              		.cfi_def_cfa_offset 16
@@ -434,9 +434,9 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  214 000c FB71     		strb	r3, [r7, #7]
  197:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_TX_STATUS_ACTL_REG &= ((uint8) ~SPI0_INT_ENABLE);
  215              		.loc 1 197 0
- 216 000e 46F29453 		movw	r3, #26004
+ 216 000e 46F29553 		movw	r3, #26005
  217 0012 C4F20003 		movt	r3, 16384
- 218 0016 46F29452 		movw	r2, #26004
+ 218 0016 46F29552 		movw	r2, #26005
  219 001a C4F20002 		movt	r2, 16384
  220 001e 1278     		ldrb	r2, [r2, #0]
  221 0020 D2B2     		uxtb	r2, r2
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  247 005e BD46     		mov	sp, r7
  248 0060 80BD     		pop	{r7, pc}
  249              		.cfi_endproc
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 9
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 9
 
 
  250              	.LFE3:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  279 000a 00BF     		.section	.text.SPI0_EnableRxInt,"ax",%progbits
  280              		.align	2
  281              		.global	SPI0_EnableRxInt
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 10
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 10
 
 
  282              		.thumb
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  311              		.type	SPI0_DisableTxInt, %function
  312              	SPI0_DisableTxInt:
  313              	.LFB6:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 11
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 11
 
 
  258:.\Generated_Source\PSoC5/SPI0.c **** 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  285:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
  286:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_DisableRxInt
  287:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 12
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 12
 
 
  288:.\Generated_Source\PSoC5/SPI0.c **** *
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  315:.\Generated_Source\PSoC5/SPI0.c **** *  Configure which status bits trigger an interrupt event.
  316:.\Generated_Source\PSoC5/SPI0.c **** *
  317:.\Generated_Source\PSoC5/SPI0.c **** * Parameters:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 13
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 13
 
 
  318:.\Generated_Source\PSoC5/SPI0.c **** *  intSrc: An or'd combination of the desired status bit masks (defined in the
@@ -752,7 +752,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  384 0008 FB71     		strb	r3, [r7, #7]
  330:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_TX_STATUS_MASK_REG = intSrc;
  385              		.loc 1 330 0
- 386 000a 46F28453 		movw	r3, #25988
+ 386 000a 46F28553 		movw	r3, #25989
  387 000e C4F20003 		movt	r3, 16384
  388 0012 FA79     		ldrb	r2, [r7, #7]
  389 0014 1A70     		strb	r2, [r3, #0]
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  334:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
  335:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_SetRxInterruptMode
  336:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 14
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 14
 
 
  337:.\Generated_Source\PSoC5/SPI0.c **** *
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  441              		.type	SPI0_ReadTxStatus, %function
  442              	SPI0_ReadTxStatus:
  443              	.LFB10:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 15
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 15
 
 
  356:.\Generated_Source\PSoC5/SPI0.c **** 
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  395:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_swStatusTx = 0u;
  396:.\Generated_Source\PSoC5/SPI0.c **** 
  397:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_EnableTxInt();
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 16
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 16
 
 
  398:.\Generated_Source\PSoC5/SPI0.c **** 
@@ -906,7 +906,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  400:.\Generated_Source\PSoC5/SPI0.c **** 
  401:.\Generated_Source\PSoC5/SPI0.c ****         tmpStatus = SPI0_TX_STATUS_REG;
  459              		.loc 1 401 0
- 460 0006 46F26453 		movw	r3, #25956
+ 460 0006 46F26553 		movw	r3, #25957
  461 000a C4F20003 		movt	r3, 16384
  462 000e 1B78     		ldrb	r3, [r3, #0]
  463 0010 FB71     		strb	r3, [r7, #7]
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  428:.\Generated_Source\PSoC5/SPI0.c **** *  detection and flow control.
  429:.\Generated_Source\PSoC5/SPI0.c **** *
  430:.\Generated_Source\PSoC5/SPI0.c **** * Side Effects:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 17
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 17
 
 
  431:.\Generated_Source\PSoC5/SPI0.c **** *  Clear Rx status register of the component.
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  510 001e 7047     		bx	lr
  511              		.cfi_endproc
  512              	.LFE11:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 18
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 18
 
 
  513              		.size	SPI0_ReadRxStatus, .-SPI0_ReadRxStatus
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  529              		.cfi_def_cfa_offset 4
  530              		.cfi_offset 7, -4
  531 0002 83B0     		sub	sp, sp, #12
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 19
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 19
 
 
  532              	.LCFI31:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  543:.\Generated_Source\PSoC5/SPI0.c ****                     SPI0_txBufferRead = 0u;
  544:.\Generated_Source\PSoC5/SPI0.c ****                 }
  545:.\Generated_Source\PSoC5/SPI0.c ****                 SPI0_txBufferFull = 1u;
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 20
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 20
 
 
  546:.\Generated_Source\PSoC5/SPI0.c ****             }
@@ -1157,7 +1157,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  540 000a 00BF     		nop
  541              	.L17:
  542              		.loc 1 557 0 is_stmt 0 discriminator 1
- 543 000c 46F26453 		movw	r3, #25956
+ 543 000c 46F26553 		movw	r3, #25957
  544 0010 C4F20003 		movt	r3, 16384
  545 0014 1B78     		ldrb	r3, [r3, #0]
  546 0016 DBB2     		uxtb	r3, r3
@@ -1171,7 +1171,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  562:.\Generated_Source\PSoC5/SPI0.c ****         /* Put byte in TX FIFO */
  563:.\Generated_Source\PSoC5/SPI0.c ****         CY_SET_REG8(SPI0_TXDATA_PTR, txData);
  550              		.loc 1 563 0 is_stmt 1
- 551 0020 46F24553 		movw	r3, #25925
+ 551 0020 46F24653 		movw	r3, #25926
  552 0024 C4F20003 		movt	r3, 16384
  553 0028 FA79     		ldrb	r2, [r7, #7]
  554 002a 1A70     		strb	r2, [r3, #0]
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  568:.\Generated_Source\PSoC5/SPI0.c **** 
  569:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
  570:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_ReadRxData
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 21
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 21
 
 
  571:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  610:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_DisableRxInt();
  611:.\Generated_Source\PSoC5/SPI0.c **** 
  612:.\Generated_Source\PSoC5/SPI0.c ****         if(SPI0_rxBufferRead != SPI0_rxBufferWrite)
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 22
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 22
 
 
  613:.\Generated_Source\PSoC5/SPI0.c ****         {
@@ -1284,7 +1284,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  633:.\Generated_Source\PSoC5/SPI0.c **** 
  634:.\Generated_Source\PSoC5/SPI0.c ****         rxData = CY_GET_REG8(SPI0_RXDATA_PTR);
  586              		.loc 1 634 0
- 587 0006 46F25553 		movw	r3, #25941
+ 587 0006 46F25653 		movw	r3, #25942
  588 000a C4F20003 		movt	r3, 16384
  589 000e 1B78     		ldrb	r3, [r3, #0]
  590 0010 FB71     		strb	r3, [r7, #7]
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  643:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_GetRxBufferSize
  644:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
  645:.\Generated_Source\PSoC5/SPI0.c **** *
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 23
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 23
 
 
  646:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  685:.\Generated_Source\PSoC5/SPI0.c ****         {
  686:.\Generated_Source\PSoC5/SPI0.c ****             size = (SPI0_RX_BUFFER_SIZE - SPI0_rxBufferRead) + SPI0_rxBufferWrite;
  687:.\Generated_Source\PSoC5/SPI0.c ****         }
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 24
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 24
 
 
  688:.\Generated_Source\PSoC5/SPI0.c **** 
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  706:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
  707:.\Generated_Source\PSoC5/SPI0.c **** *  Returns the number of bytes/words of data currently held in the TX buffer.
  708:.\Generated_Source\PSoC5/SPI0.c **** *  If TX Software Buffer not used then function return 0 - if FIFO empty, 1 - if
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 25
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 25
 
 
  709:.\Generated_Source\PSoC5/SPI0.c **** *  FIFO not full, 4 - if FIFO full. In another case function return size of TX
@@ -1498,14 +1498,14 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  748:.\Generated_Source\PSoC5/SPI0.c **** 
  749:.\Generated_Source\PSoC5/SPI0.c ****         SPI0_EnableTxInt();
  750:.\Generated_Source\PSoC5/SPI0.c **** 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 26
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 26
 
 
  751:.\Generated_Source\PSoC5/SPI0.c ****     #else
  752:.\Generated_Source\PSoC5/SPI0.c **** 
  753:.\Generated_Source\PSoC5/SPI0.c ****         size = SPI0_TX_STATUS_REG;
  676              		.loc 1 753 0
- 677 0006 46F26453 		movw	r3, #25956
+ 677 0006 46F26553 		movw	r3, #25957
  678 000a C4F20003 		movt	r3, 16384
  679 000e 1B78     		ldrb	r3, [r3, #0]
  680 0010 FB71     		strb	r3, [r7, #7]
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  709 0040 07F10C07 		add	r7, r7, #12
  710 0044 BD46     		mov	sp, r7
  711 0046 80BC     		pop	{r7}
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 27
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 27
 
 
  712 0048 7047     		bx	lr
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  729 0000 80B4     		push	{r7}
  730              	.LCFI42:
  731              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 28
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 28
 
 
  732              		.cfi_offset 7, -4
@@ -1633,7 +1633,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  811:.\Generated_Source\PSoC5/SPI0.c ****     {
  812:.\Generated_Source\PSoC5/SPI0.c ****         (void) CY_GET_REG8(SPI0_RXDATA_PTR);
  739              		.loc 1 812 0
- 740 0006 46F25553 		movw	r3, #25941
+ 740 0006 46F25653 		movw	r3, #25942
  741 000a C4F20003 		movt	r3, 16384
  742 000e 1B78     		ldrb	r3, [r3, #0]
  743              	.L30:
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  827:.\Generated_Source\PSoC5/SPI0.c **** 
  828:.\Generated_Source\PSoC5/SPI0.c **** /*******************************************************************************
  829:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_ClearTxBuffer
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 29
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 29
 
 
  830:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
@@ -1738,14 +1738,14 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  784 000a 0346     		mov	r3, r0
  785 000c FB71     		strb	r3, [r7, #7]
  867:.\Generated_Source\PSoC5/SPI0.c ****     /* Clear TX FIFO */
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 30
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 30
 
 
  868:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_AUX_CONTROL_DP0_REG |= ((uint8)  SPI0_TX_FIFO_CLR);
  786              		.loc 1 868 0
- 787 000e 46F29553 		movw	r3, #26005
+ 787 000e 46F29653 		movw	r3, #26006
  788 0012 C4F20003 		movt	r3, 16384
- 789 0016 46F29552 		movw	r2, #26005
+ 789 0016 46F29652 		movw	r2, #26006
  790 001a C4F20002 		movt	r2, 16384
  791 001e 1278     		ldrb	r2, [r2, #0]
  792 0020 D2B2     		uxtb	r2, r2
@@ -1754,9 +1754,9 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  795 0028 1A70     		strb	r2, [r3, #0]
  869:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_AUX_CONTROL_DP0_REG &= ((uint8) ~SPI0_TX_FIFO_CLR);
  796              		.loc 1 869 0
- 797 002a 46F29553 		movw	r3, #26005
+ 797 002a 46F29653 		movw	r3, #26006
  798 002e C4F20003 		movt	r3, 16384
- 799 0032 46F29552 		movw	r2, #26005
+ 799 0032 46F29652 		movw	r2, #26006
  800 0036 C4F20002 		movt	r2, 16384
  801 003a 1278     		ldrb	r2, [r2, #0]
  802 003c D2B2     		uxtb	r2, r2
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  816              		.size	SPI0_ClearTxBuffer, .-SPI0_ClearTxBuffer
  817 0056 00BF     		.section	.text.SPI0_PutArray,"ax",%progbits
  818              		.align	2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 31
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 31
 
 
  819              		.global	SPI0_PutArray
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  940:.\Generated_Source\PSoC5/SPI0.c **** * Function Name: SPI0_PutArray
  941:.\Generated_Source\PSoC5/SPI0.c **** ********************************************************************************
  942:.\Generated_Source\PSoC5/SPI0.c **** *
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 32
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 32
 
 
  943:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  849              		.loc 1 972 0
  850 0014 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
  851 0016 7A68     		ldr	r2, [r7, #4]
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 33
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 33
 
 
  852 0018 D318     		adds	r3, r2, r3
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  994:.\Generated_Source\PSoC5/SPI0.c **** *
  995:.\Generated_Source\PSoC5/SPI0.c **** *******************************************************************************/
  996:.\Generated_Source\PSoC5/SPI0.c **** void SPI0_ClearFIFO(void) 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 34
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 34
 
 
  997:.\Generated_Source\PSoC5/SPI0.c **** {
@@ -2007,7 +2007,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
 1002:.\Generated_Source\PSoC5/SPI0.c ****     {
 1003:.\Generated_Source\PSoC5/SPI0.c ****         (void) CY_GET_REG8(SPI0_RXDATA_PTR);
  902              		.loc 1 1003 0
- 903 0008 46F25553 		movw	r3, #25941
+ 903 0008 46F25653 		movw	r3, #25942
  904 000c C4F20003 		movt	r3, 16384
  905 0010 1B78     		ldrb	r3, [r3, #0]
  906              	.L37:
@@ -2030,23 +2030,23 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
 1007:.\Generated_Source\PSoC5/SPI0.c ****     /* Clear TX FIFO */
 1008:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_AUX_CONTROL_DP0_REG |= ((uint8)  SPI0_TX_FIFO_CLR);
  919              		.loc 1 1008 0
- 920 002e 46F29553 		movw	r3, #26005
+ 920 002e 46F29653 		movw	r3, #26006
  921 0032 C4F20003 		movt	r3, 16384
- 922 0036 46F29552 		movw	r2, #26005
+ 922 0036 46F29652 		movw	r2, #26006
  923 003a C4F20002 		movt	r2, 16384
  924 003e 1278     		ldrb	r2, [r2, #0]
  925 0040 D2B2     		uxtb	r2, r2
  926 0042 42F00102 		orr	r2, r2, #1
  927 0046 D2B2     		uxtb	r2, r2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 35
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 35
 
 
  928 0048 1A70     		strb	r2, [r3, #0]
 1009:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_AUX_CONTROL_DP0_REG &= ((uint8) ~SPI0_TX_FIFO_CLR);
  929              		.loc 1 1009 0
- 930 004a 46F29553 		movw	r3, #26005
+ 930 004a 46F29653 		movw	r3, #26006
  931 004e C4F20003 		movt	r3, 16384
- 932 0052 46F29552 		movw	r2, #26005
+ 932 0052 46F29652 		movw	r2, #26006
  933 0056 C4F20002 		movt	r2, 16384
  934 005a 1278     		ldrb	r2, [r2, #0]
  935 005c D2B2     		uxtb	r2, r2
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
 1033:.\Generated_Source\PSoC5/SPI0.c **** *  None.
 1034:.\Generated_Source\PSoC5/SPI0.c **** *
 1035:.\Generated_Source\PSoC5/SPI0.c **** * Return:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 36
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 36
 
 
 1036:.\Generated_Source\PSoC5/SPI0.c **** *  None.
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
 1061:.\Generated_Source\PSoC5/SPI0.c **** *
 1062:.\Generated_Source\PSoC5/SPI0.c **** * Theory:
 1063:.\Generated_Source\PSoC5/SPI0.c **** *  Disable the internal interrupt output -or- the interrupt component itself.
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 37
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 37
 
 
 1064:.\Generated_Source\PSoC5/SPI0.c **** *
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
 1089:.\Generated_Source\PSoC5/SPI0.c **** *
 1090:.\Generated_Source\PSoC5/SPI0.c **** *******************************************************************************/
 1091:.\Generated_Source\PSoC5/SPI0.c **** void SPI0_SetInterruptMode(uint8 intSrc) 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 38
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 38
 
 
 1092:.\Generated_Source\PSoC5/SPI0.c **** {
@@ -2241,7 +2241,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1032 0008 FB71     		strb	r3, [r7, #7]
 1093:.\Generated_Source\PSoC5/SPI0.c ****     SPI0_TX_STATUS_MASK_REG  = (intSrc & ((uint8) ~SPI0_STS_SPI_IDLE));
  1033              		.loc 1 1093 0
- 1034 000a 46F28453 		movw	r3, #25988
+ 1034 000a 46F28553 		movw	r3, #25989
  1035 000e C4F20003 		movt	r3, 16384
  1036 0012 FA79     		ldrb	r2, [r7, #7]
  1037 0014 22F01002 		bic	r2, r2, #16
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
 1101:.\Generated_Source\PSoC5/SPI0.c **** *
 1102:.\Generated_Source\PSoC5/SPI0.c **** * Summary:
 1103:.\Generated_Source\PSoC5/SPI0.c **** *  Read the status register for the component.
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 39
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 39
 
 
 1104:.\Generated_Source\PSoC5/SPI0.c **** *
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
 1143:.\Generated_Source\PSoC5/SPI0.c ****     #else
 1144:.\Generated_Source\PSoC5/SPI0.c **** 
 1145:.\Generated_Source\PSoC5/SPI0.c ****         tmpStatus  = SPI0_RX_STATUS_REG;
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 40
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 40
 
 
  1076              		.loc 1 1145 0
@@ -2348,7 +2348,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1080 0010 FB71     		strb	r3, [r7, #7]
 1146:.\Generated_Source\PSoC5/SPI0.c ****         tmpStatus |= SPI0_TX_STATUS_REG;
  1081              		.loc 1 1146 0
- 1082 0012 46F26453 		movw	r3, #25956
+ 1082 0012 46F26553 		movw	r3, #25957
  1083 0016 C4F20003 		movt	r3, 16384
  1084 001a 1B78     		ldrb	r3, [r3, #0]
  1085 001c DAB2     		uxtb	r2, r3
@@ -2386,10 +2386,10 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1111 0006 00000000 		.4byte	.Ldebug_abbrev0
  1112 000a 04       		.byte	0x4
  1113 000b 01       		.uleb128 0x1
- 1114 000c DE020000 		.4byte	.LASF51
+ 1114 000c E0020000 		.4byte	.LASF51
  1115 0010 01       		.byte	0x1
- 1116 0011 5A030000 		.4byte	.LASF52
- 1117 0015 7B020000 		.4byte	.LASF53
+ 1116 0011 5C030000 		.4byte	.LASF52
+ 1117 0015 5E000000 		.4byte	.LASF53
  1118 0019 00000000 		.4byte	.Ldebug_ranges0+0
  1119 001d 00000000 		.4byte	0
  1120 0021 00000000 		.4byte	0
@@ -2397,38 +2397,38 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1122 0029 02       		.uleb128 0x2
  1123 002a 01       		.byte	0x1
  1124 002b 06       		.byte	0x6
- 1125 002c 44030000 		.4byte	.LASF0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 41
+ 1125 002c 46030000 		.4byte	.LASF0
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 41
 
 
  1126 0030 02       		.uleb128 0x2
  1127 0031 01       		.byte	0x1
  1128 0032 08       		.byte	0x8
- 1129 0033 63010000 		.4byte	.LASF1
+ 1129 0033 B7010000 		.4byte	.LASF1
  1130 0037 02       		.uleb128 0x2
  1131 0038 02       		.byte	0x2
  1132 0039 05       		.byte	0x5
- 1133 003a 5F020000 		.4byte	.LASF2
+ 1133 003a B3020000 		.4byte	.LASF2
  1134 003e 02       		.uleb128 0x2
  1135 003f 02       		.byte	0x2
  1136 0040 07       		.byte	0x7
- 1137 0041 5C000000 		.4byte	.LASF3
+ 1137 0041 4B000000 		.4byte	.LASF3
  1138 0045 02       		.uleb128 0x2
  1139 0046 04       		.byte	0x4
  1140 0047 05       		.byte	0x5
- 1141 0048 31030000 		.4byte	.LASF4
+ 1141 0048 33030000 		.4byte	.LASF4
  1142 004c 02       		.uleb128 0x2
  1143 004d 04       		.byte	0x4
  1144 004e 07       		.byte	0x7
- 1145 004f F5000000 		.4byte	.LASF5
+ 1145 004f 49010000 		.4byte	.LASF5
  1146 0053 02       		.uleb128 0x2
  1147 0054 08       		.byte	0x8
  1148 0055 05       		.byte	0x5
- 1149 0056 11020000 		.4byte	.LASF6
+ 1149 0056 65020000 		.4byte	.LASF6
  1150 005a 02       		.uleb128 0x2
  1151 005b 08       		.byte	0x8
  1152 005c 07       		.byte	0x7
- 1153 005d A1010000 		.4byte	.LASF7
+ 1153 005d F5010000 		.4byte	.LASF7
  1154 0061 03       		.uleb128 0x3
  1155 0062 04       		.byte	0x4
  1156 0063 05       		.byte	0x5
@@ -2436,29 +2436,29 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1158 0068 02       		.uleb128 0x2
  1159 0069 04       		.byte	0x4
  1160 006a 07       		.byte	0x7
- 1161 006b 7F010000 		.4byte	.LASF8
+ 1161 006b D3010000 		.4byte	.LASF8
  1162 006f 04       		.uleb128 0x4
- 1163 0070 17010000 		.4byte	.LASF12
+ 1163 0070 6B010000 		.4byte	.LASF12
  1164 0074 02       		.byte	0x2
  1165 0075 5B       		.byte	0x5b
  1166 0076 30000000 		.4byte	0x30
  1167 007a 02       		.uleb128 0x2
  1168 007b 04       		.byte	0x4
  1169 007c 04       		.byte	0x4
- 1170 007d D0000000 		.4byte	.LASF9
+ 1170 007d 24010000 		.4byte	.LASF9
  1171 0081 02       		.uleb128 0x2
  1172 0082 08       		.byte	0x8
  1173 0083 04       		.byte	0x4
- 1174 0084 71010000 		.4byte	.LASF10
+ 1174 0084 C5010000 		.4byte	.LASF10
  1175 0088 02       		.uleb128 0x2
  1176 0089 01       		.byte	0x1
  1177 008a 08       		.byte	0x8
- 1178 008b 32020000 		.4byte	.LASF11
+ 1178 008b 86020000 		.4byte	.LASF11
  1179 008f 04       		.uleb128 0x4
- 1180 0090 F0000000 		.4byte	.LASF13
+ 1180 0090 44010000 		.4byte	.LASF13
  1181 0094 02       		.byte	0x2
  1182 0095 F0       		.byte	0xf0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 42
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 42
 
 
  1183 0096 9A000000 		.4byte	0x9a
@@ -2467,10 +2467,10 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1186 009f 02       		.uleb128 0x2
  1187 00a0 04       		.byte	0x4
  1188 00a1 07       		.byte	0x7
- 1189 00a2 F7010000 		.4byte	.LASF14
+ 1189 00a2 4B020000 		.4byte	.LASF14
  1190 00a6 06       		.uleb128 0x6
  1191 00a7 01       		.byte	0x1
- 1192 00a8 27030000 		.4byte	.LASF15
+ 1192 00a8 29030000 		.4byte	.LASF15
  1193 00ac 01       		.byte	0x1
  1194 00ad 3F       		.byte	0x3f
  1195 00ae 01       		.byte	0x1
@@ -2480,7 +2480,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1199 00bb 01       		.byte	0x1
  1200 00bc 07       		.uleb128 0x7
  1201 00bd 01       		.byte	0x1
- 1202 00be 50000000 		.4byte	.LASF17
+ 1202 00be 3F000000 		.4byte	.LASF17
  1203 00c2 01       		.byte	0x1
  1204 00c3 78       		.byte	0x78
  1205 00c4 01       		.byte	0x1
@@ -2490,7 +2490,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1209 00d1 01       		.byte	0x1
  1210 00d2 E5000000 		.4byte	0xe5
  1211 00d6 08       		.uleb128 0x8
- 1212 00d7 00020000 		.4byte	.LASF19
+ 1212 00d7 54020000 		.4byte	.LASF19
  1213 00db 01       		.byte	0x1
  1214 00dc 7A       		.byte	0x7a
  1215 00dd 6F000000 		.4byte	0x6f
@@ -2510,7 +2510,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1229 00fa 01       		.byte	0x1
  1230 00fb 07       		.uleb128 0x7
  1231 00fc 01       		.byte	0x1
- 1232 00fd 50030000 		.4byte	.LASF18
+ 1232 00fd 52030000 		.4byte	.LASF18
  1233 0101 01       		.byte	0x1
  1234 0102 C0       		.byte	0xc0
  1235 0103 01       		.byte	0x1
@@ -2518,12 +2518,12 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1237 0108 62000000 		.4byte	.LFE3
  1238 010c 90000000 		.4byte	.LLST3
  1239 0110 01       		.byte	0x1
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 43
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 43
 
 
  1240 0111 24010000 		.4byte	0x124
  1241 0115 08       		.uleb128 0x8
- 1242 0116 00020000 		.4byte	.LASF19
+ 1242 0116 54020000 		.4byte	.LASF19
  1243 011a 01       		.byte	0x1
  1244 011b C2       		.byte	0xc2
  1245 011c 6F000000 		.4byte	0x6f
@@ -2533,7 +2533,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1249 0123 00       		.byte	0
  1250 0124 09       		.uleb128 0x9
  1251 0125 01       		.byte	0x1
- 1252 0126 0B000000 		.4byte	.LASF20
+ 1252 0126 CF020000 		.4byte	.LASF20
  1253 012a 01       		.byte	0x1
  1254 012b E3       		.byte	0xe3
  1255 012c 01       		.byte	0x1
@@ -2543,7 +2543,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1259 0139 01       		.byte	0x1
  1260 013a 09       		.uleb128 0x9
  1261 013b 01       		.byte	0x1
- 1262 013c 30000000 		.4byte	.LASF21
+ 1262 013c 1F000000 		.4byte	.LASF21
  1263 0140 01       		.byte	0x1
  1264 0141 FC       		.byte	0xfc
  1265 0142 01       		.byte	0x1
@@ -2553,7 +2553,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1269 014f 01       		.byte	0x1
  1270 0150 0A       		.uleb128 0xa
  1271 0151 01       		.byte	0x1
- 1272 0152 69020000 		.4byte	.LASF22
+ 1272 0152 BD020000 		.4byte	.LASF22
  1273 0156 01       		.byte	0x1
  1274 0157 1501     		.2byte	0x115
  1275 0159 01       		.byte	0x1
@@ -2563,7 +2563,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1279 0166 01       		.byte	0x1
  1280 0167 0A       		.uleb128 0xa
  1281 0168 01       		.byte	0x1
- 1282 0169 1D010000 		.4byte	.LASF23
+ 1282 0169 71010000 		.4byte	.LASF23
  1283 016d 01       		.byte	0x1
  1284 016e 2E01     		.2byte	0x12e
  1285 0170 01       		.byte	0x1
@@ -2573,12 +2573,12 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1289 017d 01       		.byte	0x1
  1290 017e 0B       		.uleb128 0xb
  1291 017f 01       		.byte	0x1
- 1292 0180 B8000000 		.4byte	.LASF24
+ 1292 0180 0C010000 		.4byte	.LASF24
  1293 0184 01       		.byte	0x1
  1294 0185 4801     		.2byte	0x148
  1295 0187 01       		.byte	0x1
  1296 0188 00000000 		.4byte	.LFB8
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 44
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 44
 
 
  1297 018c 20000000 		.4byte	.LFE8
@@ -2586,7 +2586,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1299 0194 01       		.byte	0x1
  1300 0195 A9010000 		.4byte	0x1a9
  1301 0199 0C       		.uleb128 0xc
- 1302 019a 78010000 		.4byte	.LASF26
+ 1302 019a CC010000 		.4byte	.LASF26
  1303 019e 01       		.byte	0x1
  1304 019f 4801     		.2byte	0x148
  1305 01a1 6F000000 		.4byte	0x6f
@@ -2596,7 +2596,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1309 01a8 00       		.byte	0
  1310 01a9 0B       		.uleb128 0xb
  1311 01aa 01       		.byte	0x1
- 1312 01ab 39010000 		.4byte	.LASF25
+ 1312 01ab 8D010000 		.4byte	.LASF25
  1313 01af 01       		.byte	0x1
  1314 01b0 6001     		.2byte	0x160
  1315 01b2 01       		.byte	0x1
@@ -2606,7 +2606,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1319 01bf 01       		.byte	0x1
  1320 01c0 D4010000 		.4byte	0x1d4
  1321 01c4 0C       		.uleb128 0xc
- 1322 01c5 78010000 		.4byte	.LASF26
+ 1322 01c5 CC010000 		.4byte	.LASF26
  1323 01c9 01       		.byte	0x1
  1324 01ca 6001     		.2byte	0x160
  1325 01cc 6F000000 		.4byte	0x6f
@@ -2616,7 +2616,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1329 01d3 00       		.byte	0
  1330 01d4 0D       		.uleb128 0xd
  1331 01d5 01       		.byte	0x1
- 1332 01d6 51010000 		.4byte	.LASF28
+ 1332 01d6 A5010000 		.4byte	.LASF28
  1333 01da 01       		.byte	0x1
  1334 01db 8201     		.2byte	0x182
  1335 01dd 01       		.byte	0x1
@@ -2627,7 +2627,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1340 01ee 01       		.byte	0x1
  1341 01ef 03020000 		.4byte	0x203
  1342 01f3 0E       		.uleb128 0xe
- 1343 01f4 3A030000 		.4byte	.LASF27
+ 1343 01f4 3C030000 		.4byte	.LASF27
  1344 01f8 01       		.byte	0x1
  1345 01f9 8401     		.2byte	0x184
  1346 01fb 6F000000 		.4byte	0x6f
@@ -2637,8 +2637,8 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1350 0202 00       		.byte	0
  1351 0203 0D       		.uleb128 0xd
  1352 0204 01       		.byte	0x1
- 1353 0205 37020000 		.4byte	.LASF29
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 45
+ 1353 0205 8B020000 		.4byte	.LASF29
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 45
 
 
  1354 0209 01       		.byte	0x1
@@ -2651,7 +2651,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1361 021d 01       		.byte	0x1
  1362 021e 32020000 		.4byte	0x232
  1363 0222 0E       		.uleb128 0xe
- 1364 0223 3A030000 		.4byte	.LASF27
+ 1364 0223 3C030000 		.4byte	.LASF27
  1365 0227 01       		.byte	0x1
  1366 0228 B701     		.2byte	0x1b7
  1367 022a 6F000000 		.4byte	0x6f
@@ -2661,7 +2661,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1371 0231 00       		.byte	0
  1372 0232 0B       		.uleb128 0xb
  1373 0233 01       		.byte	0x1
- 1374 0234 92000000 		.4byte	.LASF30
+ 1374 0234 E6000000 		.4byte	.LASF30
  1375 0238 01       		.byte	0x1
  1376 0239 EE01     		.2byte	0x1ee
  1377 023b 01       		.byte	0x1
@@ -2671,7 +2671,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1381 0248 01       		.byte	0x1
  1382 0249 5D020000 		.4byte	0x25d
  1383 024d 0C       		.uleb128 0xc
- 1384 024e E0010000 		.4byte	.LASF31
+ 1384 024e 34020000 		.4byte	.LASF31
  1385 0252 01       		.byte	0x1
  1386 0253 EE01     		.2byte	0x1ee
  1387 0255 6F000000 		.4byte	0x6f
@@ -2681,7 +2681,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1391 025c 00       		.byte	0
  1392 025d 0D       		.uleb128 0xd
  1393 025e 01       		.byte	0x1
- 1394 025f 7A030000 		.4byte	.LASF32
+ 1394 025f 7C030000 		.4byte	.LASF32
  1395 0263 01       		.byte	0x1
  1396 0264 5B02     		.2byte	0x25b
  1397 0266 01       		.byte	0x1
@@ -2692,20 +2692,20 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1402 0277 01       		.byte	0x1
  1403 0278 8C020000 		.4byte	0x28c
  1404 027c 0E       		.uleb128 0xe
- 1405 027d A3000000 		.4byte	.LASF33
+ 1405 027d F7000000 		.4byte	.LASF33
  1406 0281 01       		.byte	0x1
  1407 0282 5D02     		.2byte	0x25d
  1408 0284 6F000000 		.4byte	0x6f
  1409 0288 02       		.byte	0x2
  1410 0289 91       		.byte	0x91
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 46
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 46
 
 
  1411 028a 77       		.sleb128 -9
  1412 028b 00       		.byte	0
  1413 028c 0D       		.uleb128 0xd
  1414 028d 01       		.byte	0x1
- 1415 028e D6000000 		.4byte	.LASF34
+ 1415 028e 2A010000 		.4byte	.LASF34
  1416 0292 01       		.byte	0x1
  1417 0293 9B02     		.2byte	0x29b
  1418 0295 01       		.byte	0x1
@@ -2716,7 +2716,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1423 02a6 01       		.byte	0x1
  1424 02a7 BB020000 		.4byte	0x2bb
  1425 02ab 0E       		.uleb128 0xe
- 1426 02ac EB000000 		.4byte	.LASF35
+ 1426 02ac 3F010000 		.4byte	.LASF35
  1427 02b0 01       		.byte	0x1
  1428 02b1 9D02     		.2byte	0x29d
  1429 02b3 6F000000 		.4byte	0x6f
@@ -2726,7 +2726,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1433 02ba 00       		.byte	0
  1434 02bb 0D       		.uleb128 0xd
  1435 02bc 01       		.byte	0x1
- 1436 02bd 8C010000 		.4byte	.LASF36
+ 1436 02bd E0010000 		.4byte	.LASF36
  1437 02c1 01       		.byte	0x1
  1438 02c2 D802     		.2byte	0x2d8
  1439 02c4 01       		.byte	0x1
@@ -2737,7 +2737,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1444 02d5 01       		.byte	0x1
  1445 02d6 EA020000 		.4byte	0x2ea
  1446 02da 0E       		.uleb128 0xe
- 1447 02db EB000000 		.4byte	.LASF35
+ 1447 02db 3F010000 		.4byte	.LASF35
  1448 02df 01       		.byte	0x1
  1449 02e0 DA02     		.2byte	0x2da
  1450 02e2 6F000000 		.4byte	0x6f
@@ -2747,7 +2747,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1454 02e9 00       		.byte	0
  1455 02ea 0A       		.uleb128 0xa
  1456 02eb 01       		.byte	0x1
- 1457 02ec 6F000000 		.4byte	.LASF37
+ 1457 02ec C3000000 		.4byte	.LASF37
  1458 02f0 01       		.byte	0x1
  1459 02f1 2703     		.2byte	0x327
  1460 02f3 01       		.byte	0x1
@@ -2757,8 +2757,8 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1464 0300 01       		.byte	0x1
  1465 0301 0F       		.uleb128 0xf
  1466 0302 01       		.byte	0x1
- 1467 0303 1F020000 		.4byte	.LASF38
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 47
+ 1467 0303 73020000 		.4byte	.LASF38
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 47
 
 
  1468 0307 01       		.byte	0x1
@@ -2770,7 +2770,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1474 0317 01       		.byte	0x1
  1475 0318 2C030000 		.4byte	0x32c
  1476 031c 0E       		.uleb128 0xe
- 1477 031d 00020000 		.4byte	.LASF19
+ 1477 031d 54020000 		.4byte	.LASF19
  1478 0321 01       		.byte	0x1
  1479 0322 6003     		.2byte	0x360
  1480 0324 6F000000 		.4byte	0x6f
@@ -2780,7 +2780,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1484 032b 00       		.byte	0
  1485 032c 0F       		.uleb128 0xf
  1486 032d 01       		.byte	0x1
- 1487 032e AA000000 		.4byte	.LASF39
+ 1487 032e FE000000 		.4byte	.LASF39
  1488 0332 01       		.byte	0x1
  1489 0333 C303     		.2byte	0x3c3
  1490 0335 01       		.byte	0x1
@@ -2790,7 +2790,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1494 0342 01       		.byte	0x1
  1495 0343 75030000 		.4byte	0x375
  1496 0347 0C       		.uleb128 0xc
- 1497 0348 29000000 		.4byte	.LASF40
+ 1497 0348 18000000 		.4byte	.LASF40
  1498 034c 01       		.byte	0x1
  1499 034d C303     		.2byte	0x3c3
  1500 034f 75030000 		.4byte	0x375
@@ -2798,7 +2798,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1502 0354 91       		.byte	0x91
  1503 0355 6C       		.sleb128 -20
  1504 0356 0C       		.uleb128 0xc
- 1505 0357 2F010000 		.4byte	.LASF41
+ 1505 0357 83010000 		.4byte	.LASF41
  1506 035b 01       		.byte	0x1
  1507 035c C303     		.2byte	0x3c3
  1508 035e 6F000000 		.4byte	0x6f
@@ -2806,7 +2806,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1510 0363 91       		.byte	0x91
  1511 0364 6B       		.sleb128 -21
  1512 0365 0E       		.uleb128 0xe
- 1513 0366 D7010000 		.4byte	.LASF42
+ 1513 0366 2B020000 		.4byte	.LASF42
  1514 036a 01       		.byte	0x1
  1515 036b C603     		.2byte	0x3c6
  1516 036d 6F000000 		.4byte	0x6f
@@ -2818,13 +2818,13 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1522 0376 04       		.byte	0x4
  1523 0377 7B030000 		.4byte	0x37b
  1524 037b 11       		.uleb128 0x11
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 48
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 48
 
 
  1525 037c 6F000000 		.4byte	0x6f
  1526 0380 0F       		.uleb128 0xf
  1527 0381 01       		.byte	0x1
- 1528 0382 C8010000 		.4byte	.LASF43
+ 1528 0382 1C020000 		.4byte	.LASF43
  1529 0386 01       		.byte	0x1
  1530 0387 E403     		.2byte	0x3e4
  1531 0389 01       		.byte	0x1
@@ -2834,7 +2834,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1535 0396 01       		.byte	0x1
  1536 0397 AB030000 		.4byte	0x3ab
  1537 039b 0E       		.uleb128 0xe
- 1538 039c 00020000 		.4byte	.LASF19
+ 1538 039c 54020000 		.4byte	.LASF19
  1539 03a0 01       		.byte	0x1
  1540 03a1 E603     		.2byte	0x3e6
  1541 03a3 6F000000 		.4byte	0x6f
@@ -2844,7 +2844,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1545 03aa 00       		.byte	0
  1546 03ab 12       		.uleb128 0x12
  1547 03ac 01       		.byte	0x1
- 1548 03ad 41000000 		.4byte	.LASF44
+ 1548 03ad 30000000 		.4byte	.LASF44
  1549 03b1 01       		.byte	0x1
  1550 03b2 1204     		.2byte	0x412
  1551 03b4 01       		.byte	0x1
@@ -2854,7 +2854,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1555 03c1 01       		.byte	0x1
  1556 03c2 12       		.uleb128 0x12
  1557 03c3 01       		.byte	0x1
- 1558 03c4 82000000 		.4byte	.LASF45
+ 1558 03c4 D6000000 		.4byte	.LASF45
  1559 03c8 01       		.byte	0x1
  1560 03c9 2A04     		.2byte	0x42a
  1561 03cb 01       		.byte	0x1
@@ -2864,7 +2864,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1565 03d8 01       		.byte	0x1
  1566 03d9 0B       		.uleb128 0xb
  1567 03da 01       		.byte	0x1
- 1568 03db 49020000 		.4byte	.LASF46
+ 1568 03db 9D020000 		.4byte	.LASF46
  1569 03df 01       		.byte	0x1
  1570 03e0 4304     		.2byte	0x443
  1571 03e2 01       		.byte	0x1
@@ -2874,11 +2874,11 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1575 03ef 01       		.byte	0x1
  1576 03f0 04040000 		.4byte	0x404
  1577 03f4 0C       		.uleb128 0xc
- 1578 03f5 78010000 		.4byte	.LASF26
+ 1578 03f5 CC010000 		.4byte	.LASF26
  1579 03f9 01       		.byte	0x1
  1580 03fa 4304     		.2byte	0x443
  1581 03fc 6F000000 		.4byte	0x6f
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 49
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 49
 
 
  1582 0400 02       		.byte	0x2
@@ -2887,7 +2887,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1585 0403 00       		.byte	0
  1586 0404 0D       		.uleb128 0xd
  1587 0405 01       		.byte	0x1
- 1588 0406 07010000 		.4byte	.LASF47
+ 1588 0406 5B010000 		.4byte	.LASF47
  1589 040a 01       		.byte	0x1
  1590 040b 6604     		.2byte	0x466
  1591 040d 01       		.byte	0x1
@@ -2898,7 +2898,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1596 041e 01       		.byte	0x1
  1597 041f 33040000 		.4byte	0x433
  1598 0423 0E       		.uleb128 0xe
- 1599 0424 3A030000 		.4byte	.LASF27
+ 1599 0424 3C030000 		.4byte	.LASF27
  1600 0428 01       		.byte	0x1
  1601 0429 6804     		.2byte	0x468
  1602 042b 6F000000 		.4byte	0x6f
@@ -2907,7 +2907,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1605 0431 77       		.sleb128 -9
  1606 0432 00       		.byte	0
  1607 0433 13       		.uleb128 0x13
- 1608 0434 1C000000 		.4byte	.LASF48
+ 1608 0434 0B000000 		.4byte	.LASF48
  1609 0438 01       		.byte	0x1
  1610 0439 22       		.byte	0x22
  1611 043a 6F000000 		.4byte	0x6f
@@ -2916,7 +2916,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1614 0440 03       		.byte	0x3
  1615 0441 00000000 		.4byte	SPI0_initVar
  1616 0445 13       		.uleb128 0x13
- 1617 0446 E7010000 		.4byte	.LASF49
+ 1617 0446 3B020000 		.4byte	.LASF49
  1618 044a 01       		.byte	0x1
  1619 044b 24       		.byte	0x24
  1620 044c 9A000000 		.4byte	0x9a
@@ -2925,7 +2925,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1623 0452 03       		.byte	0x3
  1624 0453 00000000 		.4byte	SPI0_swStatusTx
  1625 0457 13       		.uleb128 0x13
- 1626 0458 B8010000 		.4byte	.LASF50
+ 1626 0458 0C020000 		.4byte	.LASF50
  1627 045c 01       		.byte	0x1
  1628 045d 25       		.byte	0x25
  1629 045e 9A000000 		.4byte	0x9a
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1636              	.Ldebug_abbrev0:
  1637 0000 01       		.uleb128 0x1
  1638 0001 11       		.uleb128 0x11
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 50
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 50
 
 
  1639 0002 01       		.byte	0x1
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1693 0038 05       		.uleb128 0x5
  1694 0039 35       		.uleb128 0x35
  1695 003a 00       		.byte	0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 51
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 51
 
 
  1696 003b 49       		.uleb128 0x49
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1750 0073 00       		.byte	0
  1751 0074 03       		.uleb128 0x3
  1752 0075 0E       		.uleb128 0xe
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 52
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 52
 
 
  1753 0076 3A       		.uleb128 0x3a
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1807 00ae 00       		.byte	0
  1808 00af 00       		.byte	0
  1809 00b0 0B       		.uleb128 0xb
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 53
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 53
 
 
  1810 00b1 2E       		.uleb128 0x2e
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1864 00e8 11       		.uleb128 0x11
  1865 00e9 01       		.uleb128 0x1
  1866 00ea 12       		.uleb128 0x12
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 54
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 54
 
 
  1867 00eb 01       		.uleb128 0x1
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1921 0123 49       		.uleb128 0x49
  1922 0124 13       		.uleb128 0x13
  1923 0125 00       		.byte	0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 55
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 55
 
 
  1924 0126 00       		.byte	0
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  1978 0008 0200     		.2byte	0x2
  1979 000a 7D       		.byte	0x7d
  1980 000b 00       		.sleb128 0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 56
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 56
 
 
  1981 000c 02000000 		.4byte	.LCFI0
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  2035 0090 00000000 		.4byte	.LFB3
  2036 0094 02000000 		.4byte	.LCFI7
  2037 0098 0200     		.2byte	0x2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 57
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 57
 
 
  2038 009a 7D       		.byte	0x7d
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  2092 011c 00000000 		.4byte	0
  2093              	.LLST6:
  2094 0120 00000000 		.4byte	.LFB6
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 58
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 58
 
 
  2095 0124 02000000 		.4byte	.LCFI14
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  2149 01a7 10       		.sleb128 16
  2150 01a8 00000000 		.4byte	0
  2151 01ac 00000000 		.4byte	0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 59
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 59
 
 
  2152              	.LLST9:
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  2206 0234 0200     		.2byte	0x2
  2207 0236 7D       		.byte	0x7d
  2208 0237 04       		.sleb128 4
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 60
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 60
 
 
  2209 0238 04000000 		.4byte	.LCFI28
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  2263 02be 77       		.byte	0x77
  2264 02bf 10       		.sleb128 16
  2265 02c0 00000000 		.4byte	0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 61
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 61
 
 
  2266 02c4 00000000 		.4byte	0
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  2320 0348 04000000 		.4byte	.LCFI43
  2321 034c 0200     		.2byte	0x2
  2322 034e 7D       		.byte	0x7d
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 62
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 62
 
 
  2323 034f 04       		.sleb128 4
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  2377              	.LLST19:
  2378 03d4 00000000 		.4byte	.LFB19
  2379 03d8 02000000 		.4byte	.LCFI50
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 63
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 63
 
 
  2380 03dc 0200     		.2byte	0x2
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  2434 045c 00000000 		.4byte	0
  2435 0460 00000000 		.4byte	0
  2436              	.LLST22:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 64
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 64
 
 
  2437 0464 00000000 		.4byte	.LFB22
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  2491 0014 3C000000 		.4byte	.LFE0-.LFB0
  2492 0018 00000000 		.4byte	.LFB1
  2493 001c 7E000000 		.4byte	.LFE1-.LFB1
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 65
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 65
 
 
  2494 0020 00000000 		.4byte	.LFB2
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  2548 0018 00000000 		.4byte	.LFB3
  2549 001c 62000000 		.4byte	.LFE3
  2550 0020 00000000 		.4byte	.LFB4
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 66
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 66
 
 
  2551 0024 0A000000 		.4byte	.LFE4
@@ -3953,285 +3953,286 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 1
  2596 0000 53504930 		.ascii	"SPI0_Start\000"
  2596      5F537461 
  2596      727400
- 2597              	.LASF20:
- 2598 000b 53504930 		.ascii	"SPI0_EnableTxInt\000"
- 2598      5F456E61 
- 2598      626C6554 
- 2598      78496E74 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 67
-
-
+ 2597              	.LASF48:
+ 2598 000b 53504930 		.ascii	"SPI0_initVar\000"
+ 2598      5F696E69 
+ 2598      74566172 
  2598      00
- 2599              	.LASF48:
- 2600 001c 53504930 		.ascii	"SPI0_initVar\000"
- 2600      5F696E69 
- 2600      74566172 
- 2600      00
- 2601              	.LASF40:
- 2602 0029 62756666 		.ascii	"buffer\000"
- 2602      657200
- 2603              	.LASF21:
- 2604 0030 53504930 		.ascii	"SPI0_EnableRxInt\000"
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 67
+
+
+ 2599              	.LASF40:
+ 2600 0018 62756666 		.ascii	"buffer\000"
+ 2600      657200
+ 2601              	.LASF21:
+ 2602 001f 53504930 		.ascii	"SPI0_EnableRxInt\000"
+ 2602      5F456E61 
+ 2602      626C6552 
+ 2602      78496E74 
+ 2602      00
+ 2603              	.LASF44:
+ 2604 0030 53504930 		.ascii	"SPI0_EnableInt\000"
  2604      5F456E61 
- 2604      626C6552 
- 2604      78496E74 
- 2604      00
- 2605              	.LASF44:
- 2606 0041 53504930 		.ascii	"SPI0_EnableInt\000"
+ 2604      626C6549 
+ 2604      6E7400
+ 2605              	.LASF17:
+ 2606 003f 53504930 		.ascii	"SPI0_Enable\000"
  2606      5F456E61 
- 2606      626C6549 
- 2606      6E7400
- 2607              	.LASF17:
- 2608 0050 53504930 		.ascii	"SPI0_Enable\000"
- 2608      5F456E61 
- 2608      626C6500 
- 2609              	.LASF3:
- 2610 005c 73686F72 		.ascii	"short unsigned int\000"
- 2610      7420756E 
- 2610      7369676E 
- 2610      65642069 
- 2610      6E7400
- 2611              	.LASF37:
- 2612 006f 53504930 		.ascii	"SPI0_ClearRxBuffer\000"
- 2612      5F436C65 
- 2612      61725278 
- 2612      42756666 
- 2612      657200
- 2613              	.LASF45:
- 2614 0082 53504930 		.ascii	"SPI0_DisableInt\000"
- 2614      5F446973 
- 2614      61626C65 
- 2614      496E7400 
- 2615              	.LASF30:
- 2616 0092 53504930 		.ascii	"SPI0_WriteTxData\000"
- 2616      5F577269 
- 2616      74655478 
- 2616      44617461 
- 2616      00
- 2617              	.LASF33:
- 2618 00a3 72784461 		.ascii	"rxData\000"
- 2618      746100
- 2619              	.LASF39:
- 2620 00aa 53504930 		.ascii	"SPI0_PutArray\000"
- 2620      5F507574 
- 2620      41727261 
- 2620      7900
- 2621              	.LASF24:
- 2622 00b8 53504930 		.ascii	"SPI0_SetTxInterruptMode\000"
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 68
+ 2606      626C6500 
+ 2607              	.LASF3:
+ 2608 004b 73686F72 		.ascii	"short unsigned int\000"
+ 2608      7420756E 
+ 2608      7369676E 
+ 2608      65642069 
+ 2608      6E7400
+ 2609              	.LASF53:
+ 2610 005e 433A5C55 		.ascii	"C:\\Users\\chuck.erhardt\\Documents\\GitHub\\PSoC-W"
+ 2610      73657273 
+ 2610      5C636875 
+ 2610      636B2E65 
+ 2610      72686172 
+ 2611 008c 35313030 		.ascii	"5100-Driver\\freeSoCExplorer+ArduinoSheld_Example.c"
+ 2611      2D447269 
+ 2611      7665725C 
+ 2611      66726565 
+ 2611      536F4345 
+ 2612 00be 7964736E 		.ascii	"ydsn\000"
+ 2612      00
+ 2613              	.LASF37:
+ 2614 00c3 53504930 		.ascii	"SPI0_ClearRxBuffer\000"
+ 2614      5F436C65 
+ 2614      61725278 
+ 2614      42756666 
+ 2614      657200
+ 2615              	.LASF45:
+ 2616 00d6 53504930 		.ascii	"SPI0_DisableInt\000"
+ 2616      5F446973 
+ 2616      61626C65 
+ 2616      496E7400 
+ 2617              	.LASF30:
+ 2618 00e6 53504930 		.ascii	"SPI0_WriteTxData\000"
+ 2618      5F577269 
+ 2618      74655478 
+ 2618      44617461 
+ 2618      00
+ 2619              	.LASF33:
+ 2620 00f7 72784461 		.ascii	"rxData\000"
+ 2620      746100
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 68
 
 
- 2622      5F536574 
- 2622      5478496E 
- 2622      74657272 
- 2622      7570744D 
- 2623              	.LASF9:
- 2624 00d0 666C6F61 		.ascii	"float\000"
- 2624      7400
- 2625              	.LASF34:
- 2626 00d6 53504930 		.ascii	"SPI0_GetRxBufferSize\000"
- 2626      5F476574 
- 2626      52784275 
- 2626      66666572 
- 2626      53697A65 
- 2627              	.LASF35:
- 2628 00eb 73697A65 		.ascii	"size\000"
- 2628      00
- 2629              	.LASF13:
- 2630 00f0 72656738 		.ascii	"reg8\000"
+ 2621              	.LASF39:
+ 2622 00fe 53504930 		.ascii	"SPI0_PutArray\000"
+ 2622      5F507574 
+ 2622      41727261 
+ 2622      7900
+ 2623              	.LASF24:
+ 2624 010c 53504930 		.ascii	"SPI0_SetTxInterruptMode\000"
+ 2624      5F536574 
+ 2624      5478496E 
+ 2624      74657272 
+ 2624      7570744D 
+ 2625              	.LASF9:
+ 2626 0124 666C6F61 		.ascii	"float\000"
+ 2626      7400
+ 2627              	.LASF34:
+ 2628 012a 53504930 		.ascii	"SPI0_GetRxBufferSize\000"
+ 2628      5F476574 
+ 2628      52784275 
+ 2628      66666572 
+ 2628      53697A65 
+ 2629              	.LASF35:
+ 2630 013f 73697A65 		.ascii	"size\000"
  2630      00
- 2631              	.LASF5:
- 2632 00f5 6C6F6E67 		.ascii	"long unsigned int\000"
- 2632      20756E73 
- 2632      69676E65 
- 2632      6420696E 
- 2632      7400
- 2633              	.LASF47:
- 2634 0107 53504930 		.ascii	"SPI0_ReadStatus\000"
- 2634      5F526561 
- 2634      64537461 
- 2634      74757300 
- 2635              	.LASF12:
- 2636 0117 75696E74 		.ascii	"uint8\000"
- 2636      3800
- 2637              	.LASF23:
- 2638 011d 53504930 		.ascii	"SPI0_DisableRxInt\000"
- 2638      5F446973 
- 2638      61626C65 
- 2638      5278496E 
- 2638      7400
- 2639              	.LASF41:
- 2640 012f 62797465 		.ascii	"byteCount\000"
- 2640      436F756E 
+ 2631              	.LASF13:
+ 2632 0144 72656738 		.ascii	"reg8\000"
+ 2632      00
+ 2633              	.LASF5:
+ 2634 0149 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2634      20756E73 
+ 2634      69676E65 
+ 2634      6420696E 
+ 2634      7400
+ 2635              	.LASF47:
+ 2636 015b 53504930 		.ascii	"SPI0_ReadStatus\000"
+ 2636      5F526561 
+ 2636      64537461 
+ 2636      74757300 
+ 2637              	.LASF12:
+ 2638 016b 75696E74 		.ascii	"uint8\000"
+ 2638      3800
+ 2639              	.LASF23:
+ 2640 0171 53504930 		.ascii	"SPI0_DisableRxInt\000"
+ 2640      5F446973 
+ 2640      61626C65 
+ 2640      5278496E 
  2640      7400
- 2641              	.LASF25:
- 2642 0139 53504930 		.ascii	"SPI0_SetRxInterruptMode\000"
- 2642      5F536574 
- 2642      5278496E 
- 2642      74657272 
- 2642      7570744D 
- 2643              	.LASF28:
- 2644 0151 53504930 		.ascii	"SPI0_ReadTxStatus\000"
- 2644      5F526561 
- 2644      64547853 
- 2644      74617475 
- 2644      7300
- 2645              	.LASF1:
- 2646 0163 756E7369 		.ascii	"unsigned char\000"
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 69
+ 2641              	.LASF41:
+ 2642 0183 62797465 		.ascii	"byteCount\000"
+ 2642      436F756E 
+ 2642      7400
+ 2643              	.LASF25:
+ 2644 018d 53504930 		.ascii	"SPI0_SetRxInterruptMode\000"
+ 2644      5F536574 
+ 2644      5278496E 
+ 2644      74657272 
+ 2644      7570744D 
+ 2645              	.LASF28:
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 69
 
 
- 2646      676E6564 
- 2646      20636861 
- 2646      7200
- 2647              	.LASF10:
- 2648 0171 646F7562 		.ascii	"double\000"
- 2648      6C6500
- 2649              	.LASF26:
- 2650 0178 696E7453 		.ascii	"intSrc\000"
- 2650      726300
- 2651              	.LASF8:
- 2652 017f 756E7369 		.ascii	"unsigned int\000"
- 2652      676E6564 
- 2652      20696E74 
- 2652      00
- 2653              	.LASF36:
- 2654 018c 53504930 		.ascii	"SPI0_GetTxBufferSize\000"
- 2654      5F476574 
- 2654      54784275 
- 2654      66666572 
- 2654      53697A65 
- 2655              	.LASF7:
- 2656 01a1 6C6F6E67 		.ascii	"long long unsigned int\000"
- 2656      206C6F6E 
- 2656      6720756E 
- 2656      7369676E 
- 2656      65642069 
- 2657              	.LASF50:
- 2658 01b8 53504930 		.ascii	"SPI0_swStatusRx\000"
- 2658      5F737753 
- 2658      74617475 
- 2658      73527800 
- 2659              	.LASF43:
- 2660 01c8 53504930 		.ascii	"SPI0_ClearFIFO\000"
- 2660      5F436C65 
- 2660      61724649 
- 2660      464F00
- 2661              	.LASF42:
- 2662 01d7 62756649 		.ascii	"bufIndex\000"
- 2662      6E646578 
- 2662      00
- 2663              	.LASF31:
- 2664 01e0 74784461 		.ascii	"txData\000"
- 2664      746100
- 2665              	.LASF49:
- 2666 01e7 53504930 		.ascii	"SPI0_swStatusTx\000"
- 2666      5F737753 
- 2666      74617475 
- 2666      73547800 
- 2667              	.LASF14:
- 2668 01f7 73697A65 		.ascii	"sizetype\000"
- 2668      74797065 
- 2668      00
- 2669              	.LASF19:
- 2670 0200 656E6162 		.ascii	"enableInterrupts\000"
- 2670      6C65496E 
- 2670      74657272 
- 2670      75707473 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 70
+ 2646 01a5 53504930 		.ascii	"SPI0_ReadTxStatus\000"
+ 2646      5F526561 
+ 2646      64547853 
+ 2646      74617475 
+ 2646      7300
+ 2647              	.LASF1:
+ 2648 01b7 756E7369 		.ascii	"unsigned char\000"
+ 2648      676E6564 
+ 2648      20636861 
+ 2648      7200
+ 2649              	.LASF10:
+ 2650 01c5 646F7562 		.ascii	"double\000"
+ 2650      6C6500
+ 2651              	.LASF26:
+ 2652 01cc 696E7453 		.ascii	"intSrc\000"
+ 2652      726300
+ 2653              	.LASF8:
+ 2654 01d3 756E7369 		.ascii	"unsigned int\000"
+ 2654      676E6564 
+ 2654      20696E74 
+ 2654      00
+ 2655              	.LASF36:
+ 2656 01e0 53504930 		.ascii	"SPI0_GetTxBufferSize\000"
+ 2656      5F476574 
+ 2656      54784275 
+ 2656      66666572 
+ 2656      53697A65 
+ 2657              	.LASF7:
+ 2658 01f5 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2658      206C6F6E 
+ 2658      6720756E 
+ 2658      7369676E 
+ 2658      65642069 
+ 2659              	.LASF50:
+ 2660 020c 53504930 		.ascii	"SPI0_swStatusRx\000"
+ 2660      5F737753 
+ 2660      74617475 
+ 2660      73527800 
+ 2661              	.LASF43:
+ 2662 021c 53504930 		.ascii	"SPI0_ClearFIFO\000"
+ 2662      5F436C65 
+ 2662      61724649 
+ 2662      464F00
+ 2663              	.LASF42:
+ 2664 022b 62756649 		.ascii	"bufIndex\000"
+ 2664      6E646578 
+ 2664      00
+ 2665              	.LASF31:
+ 2666 0234 74784461 		.ascii	"txData\000"
+ 2666      746100
+ 2667              	.LASF49:
+ 2668 023b 53504930 		.ascii	"SPI0_swStatusTx\000"
+ 2668      5F737753 
+ 2668      74617475 
+ 2668      73547800 
+ 2669              	.LASF14:
+ 2670 024b 73697A65 		.ascii	"sizetype\000"
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 70
 
 
+ 2670      74797065 
  2670      00
- 2671              	.LASF6:
- 2672 0211 6C6F6E67 		.ascii	"long long int\000"
- 2672      206C6F6E 
- 2672      6720696E 
- 2672      7400
- 2673              	.LASF38:
- 2674 021f 53504930 		.ascii	"SPI0_ClearTxBuffer\000"
- 2674      5F436C65 
- 2674      61725478 
- 2674      42756666 
- 2674      657200
- 2675              	.LASF11:
- 2676 0232 63686172 		.ascii	"char\000"
- 2676      00
- 2677              	.LASF29:
- 2678 0237 53504930 		.ascii	"SPI0_ReadRxStatus\000"
- 2678      5F526561 
- 2678      64527853 
- 2678      74617475 
- 2678      7300
- 2679              	.LASF46:
- 2680 0249 53504930 		.ascii	"SPI0_SetInterruptMode\000"
- 2680      5F536574 
- 2680      496E7465 
- 2680      72727570 
- 2680      744D6F64 
- 2681              	.LASF2:
- 2682 025f 73686F72 		.ascii	"short int\000"
- 2682      7420696E 
- 2682      7400
- 2683              	.LASF22:
- 2684 0269 53504930 		.ascii	"SPI0_DisableTxInt\000"
- 2684      5F446973 
- 2684      61626C65 
- 2684      5478496E 
+ 2671              	.LASF19:
+ 2672 0254 656E6162 		.ascii	"enableInterrupts\000"
+ 2672      6C65496E 
+ 2672      74657272 
+ 2672      75707473 
+ 2672      00
+ 2673              	.LASF6:
+ 2674 0265 6C6F6E67 		.ascii	"long long int\000"
+ 2674      206C6F6E 
+ 2674      6720696E 
+ 2674      7400
+ 2675              	.LASF38:
+ 2676 0273 53504930 		.ascii	"SPI0_ClearTxBuffer\000"
+ 2676      5F436C65 
+ 2676      61725478 
+ 2676      42756666 
+ 2676      657200
+ 2677              	.LASF11:
+ 2678 0286 63686172 		.ascii	"char\000"
+ 2678      00
+ 2679              	.LASF29:
+ 2680 028b 53504930 		.ascii	"SPI0_ReadRxStatus\000"
+ 2680      5F526561 
+ 2680      64527853 
+ 2680      74617475 
+ 2680      7300
+ 2681              	.LASF46:
+ 2682 029d 53504930 		.ascii	"SPI0_SetInterruptMode\000"
+ 2682      5F536574 
+ 2682      496E7465 
+ 2682      72727570 
+ 2682      744D6F64 
+ 2683              	.LASF2:
+ 2684 02b3 73686F72 		.ascii	"short int\000"
+ 2684      7420696E 
  2684      7400
- 2685              	.LASF53:
- 2686 027b 433A5C55 		.ascii	"C:\\Users\\chuck.erhardt\\Documents\\PSoC Creator\\"
- 2686      73657273 
- 2686      5C636875 
- 2686      636B2E65 
- 2686      72686172 
- 2687 02a9 4532466F 		.ascii	"E2ForLife\\freeSoCExplorer+ArduinoSheld_Example.cyd"
- 2687      724C6966 
- 2687      655C6672 
- 2687      6565536F 
- 2687      43457870 
- 2688 02db 736E00   		.ascii	"sn\000"
+ 2685              	.LASF22:
+ 2686 02bd 53504930 		.ascii	"SPI0_DisableTxInt\000"
+ 2686      5F446973 
+ 2686      61626C65 
+ 2686      5478496E 
+ 2686      7400
+ 2687              	.LASF20:
+ 2688 02cf 53504930 		.ascii	"SPI0_EnableTxInt\000"
+ 2688      5F456E61 
+ 2688      626C6554 
+ 2688      78496E74 
+ 2688      00
  2689              	.LASF51:
- 2690 02de 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 2690 02e0 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
  2690      4320342E 
  2690      372E3320 
  2690      32303133 
  2690      30333132 
- 2691 0311 616E6368 		.ascii	"anch revision 196615]\000"
+ 2691 0313 616E6368 		.ascii	"anch revision 196615]\000"
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccfASyYV.s 			page 71
+
+
  2691      20726576 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccIAOfla.s 			page 71
-
-
  2691      6973696F 
  2691      6E203139 
  2691      36363135 
  2692              	.LASF15:
- 2693 0327 53504930 		.ascii	"SPI0_Init\000"
+ 2693 0329 53504930 		.ascii	"SPI0_Init\000"
  2693      5F496E69 
  2693      7400
  2694              	.LASF4:
- 2695 0331 6C6F6E67 		.ascii	"long int\000"
+ 2695 0333 6C6F6E67 		.ascii	"long int\000"
  2695      20696E74 
  2695      00
  2696              	.LASF27:
- 2697 033a 746D7053 		.ascii	"tmpStatus\000"
+ 2697 033c 746D7053 		.ascii	"tmpStatus\000"
  2697      74617475 
  2697      7300
  2698              	.LASF0:
- 2699 0344 7369676E 		.ascii	"signed char\000"
+ 2699 0346 7369676E 		.ascii	"signed char\000"
  2699      65642063 
  2699      68617200 
  2700              	.LASF18:
- 2701 0350 53504930 		.ascii	"SPI0_Stop\000"
+ 2701 0352 53504930 		.ascii	"SPI0_Stop\000"
  2701      5F53746F 
  2701      7000
  2702              	.LASF52:
- 2703 035a 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\SPI0.c\000"
+ 2703 035c 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\SPI0.c\000"
  2703      6E657261 
  2703      7465645F 
  2703      536F7572 
  2703      63655C50 
  2704              	.LASF32:
- 2705 037a 53504930 		.ascii	"SPI0_ReadRxData\000"
+ 2705 037c 53504930 		.ascii	"SPI0_ReadRxData\000"
  2705      5F526561 
  2705      64527844 
  2705      61746100 

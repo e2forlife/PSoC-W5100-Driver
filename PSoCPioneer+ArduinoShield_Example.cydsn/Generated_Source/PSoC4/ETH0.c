@@ -152,7 +152,7 @@ uint8 ETH0_W51_Read(uint16 addr)
  * this fucntion will set the active SS line within the SCB to select and
  * communicate with the W5100 device.
  */
-static inline void ETH0_W51_Select( void )
+static void ETH0_W51_Select( void )
 {
 #if (1 == 0)
 	SPI0_SpiSetActiveSlaveSelect( SPI0_SPIM_ACTIVE_SS0 );
@@ -369,157 +369,157 @@ static void ETH0_W51_ReadBlock(uint16 addr, uint8* buffer, uint16 length)
  * \brief Set teh chip mac address to teh specified address
  * \param *mac pointer to the array holding the MAC address
  */
-static inline void ETH0_SetSourceMAC( uint8* mac ) { ETH0_W51_SetMAC(9,mac); }
+static void ETH0_SetSourceMAC( uint8* mac ) { ETH0_W51_SetMAC(9,mac); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the chip source MAC address from the MAC registers
  * \param *mac pointer to the address of the buffer to hold the read MAC address
  */
-static inline void ETH0_GetSourceMAC( uint8* mac ) { ETH0_W51_GetMAC(9,mac); }
+static void ETH0_GetSourceMAC( uint8* mac ) { ETH0_W51_GetMAC(9,mac); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Set the IPv4 address of the network gateway
  * \param ip IP address of the gateway
  */
-static inline void ETH0_SetGatewayAddress(uint32 ip) { ETH0_W51_SetIP(1,ip); }
+static void ETH0_SetGatewayAddress(uint32 ip) { ETH0_W51_SetIP(1,ip); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the gateway address from the device
  * \returns the IP address of the gateway
  */
-static inline uint32 ETH0_GetGatewayAddress( void ) { return ETH0_W51_GetIP(1); }
+static uint32 ETH0_GetGatewayAddress( void ) { return ETH0_W51_GetIP(1); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief set the subnet mask of the ethernet device
  * \param the subnet mask (IPv4)
  */
-static inline void ETH0_SetSubnetMask( uint32 ip ) { ETH0_W51_SetIP(5, ip); }
+static void ETH0_SetSubnetMask( uint32 ip ) { ETH0_W51_SetIP(5, ip); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the subnet mask from the device
  * \returns the subnet mask that was read from the device.
  */
-static inline uint32 ETH0_GetSubnetMask( void ) { return ETH0_W51_GetIP(5); }
+static uint32 ETH0_GetSubnetMask( void ) { return ETH0_W51_GetIP(5); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write the device source IPv4 address
  * \param ip the ip address to set as the chip IP address
  */
-static inline void ETH0_SetSourceIP( uint32 ip ) { ETH0_W51_SetIP( 0x0F, ip ); }
+static void ETH0_SetSourceIP( uint32 ip ) { ETH0_W51_SetIP( 0x0F, ip ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the device's programmed IP address
  * \returns The IPv4 address to which the device is set.
  */
-static inline uint32 ETH0_GetSourceIP( void ) { return ETH0_W51_GetIP( 0x0F ); }
+static uint32 ETH0_GetSourceIP( void ) { return ETH0_W51_GetIP( 0x0F ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write a value to the device internal MODE register
  * \param mode the value to be written to the mode register.
  */
-static inline void ETH0_SetMode( uint8 mode ) { ETH0_W51_Write(0,mode); }
+static void ETH0_SetMode( uint8 mode ) { ETH0_W51_Write(0,mode); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the present contents of the device internal mode register
  * \returns the value of the mode register
  */
-static inline uint8 ETH0_GetMode( void ) { return ETH0_W51_Read(0); }
+static uint8 ETH0_GetMode( void ) { return ETH0_W51_Read(0); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write the value of the interrupt register
  * \param ir the value to be written to the interrupt register
  */
-static inline void ETH0_SetIR( uint8 ir ) { ETH0_W51_Write(0x0015,ir); }
+static void ETH0_SetIR( uint8 ir ) { ETH0_W51_Write(0x0015,ir); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the contents of the interrupt register
  * \returns the contents read from the interrupt register
  */
-static inline uint8 ETH0_GetIR( void ) { return ETH0_W51_Read(0x0015); }
+static uint8 ETH0_GetIR( void ) { return ETH0_W51_Read(0x0015); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Set the value of the interrupt mask register
  * \param imr the value to be written to the interrupt mask register
  */
-static inline void ETH0_SetIMR( uint8 imr) { ETH0_W51_Write( 0x0016, imr ); }
+static void ETH0_SetIMR( uint8 imr) { ETH0_W51_Write( 0x0016, imr ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the interrupt mask register
  * \returns the contents of the interrupt mask register
  */
-static inline uint8 ETH0_GetIMR( void ) { return ETH0_W51_Read( 0x0016 ); }
+static uint8 ETH0_GetIMR( void ) { return ETH0_W51_Read( 0x0016 ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write the retry time register
  * \param time the value to be written to the regster
  */
-static inline void ETH0_SetRetryTime( uint16 time) { ETH0_W51_Write16( 0x0017, time ); }
+static void ETH0_SetRetryTime( uint16 time) { ETH0_W51_Write16( 0x0017, time ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the retry tie register
  * \returns the value read from the register
  */
-static inline uint16 ETH0_GetRetryTime( void ) { return ETH0_W51_Read16( 0x0017 ); }
+static uint16 ETH0_GetRetryTime( void ) { return ETH0_W51_Read16( 0x0017 ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \breif write a value to the retry count register
  * \param count the value to be written to the register
  */
-static inline void ETH0_SetRetryCount( uint8 count ) { ETH0_W51_Write( 0x0019, count); }
+static void ETH0_SetRetryCount( uint8 count ) { ETH0_W51_Write( 0x0019, count); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the contents of the retry count register
  * \returns the value read from teh register
  */
-static inline uint8 ETH0_GetRetryCount( void ) { return ETH0_W51_Read( 0x0019 ); }
+static uint8 ETH0_GetRetryCount( void ) { return ETH0_W51_Read( 0x0019 ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief write a value to the Rx mem size register
  * \param size the value to be written to the register
  */
-static inline void ETH0_SetRxMemSize( uint8 size ) { ETH0_W51_Write( 0x1A, size ); }
+static void ETH0_SetRxMemSize( uint8 size ) { ETH0_W51_Write( 0x1A, size ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the contents of hte rx mem size register
  * \returns the value read from teh register
  */
-static inline uint8 ETH0_GetRxMemSize( void ) { return ETH0_W51_Read(0x1A); }
+static uint8 ETH0_GetRxMemSize( void ) { return ETH0_W51_Read(0x1A); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief write a value to the tx mem size register
  * \param size The value to be written to the register
  */
-static inline void ETH0_SetTxMemSize( uint8 size ) { ETH0_W51_Write( 0x1B, size); }
+static void ETH0_SetTxMemSize( uint8 size ) { ETH0_W51_Write( 0x1B, size); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief read the contents of the tx mem size register
  * \returns the value read from the register
  */
-static inline uint8 ETH0_GetTxMemSize( void ) { return ETH0_W51_Read( 0x1B);}
+static uint8 ETH0_GetTxMemSize( void ) { return ETH0_W51_Read( 0x1B);}
 /* ------------------------------------------------------------------------ */
 /**
  * \brief write a value to the unreachable IP register
  * \param ip the value to be written to the register
  */
-static inline void ETH0_SetUnreachableIP( uint32 ip) { ETH0_W51_SetIP( 0x2A, ip); }
+static void ETH0_SetUnreachableIP( uint32 ip) { ETH0_W51_SetIP( 0x2A, ip); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief read the contents of the unreachable IP register
  * \returns the value read from teh register
  */
-static inline uint32 ETH0_GetUnreachableIP( void ) { return ETH0_W51_GetIP( 0x2A ); }
+static uint32 ETH0_GetUnreachableIP( void ) { return ETH0_W51_GetIP( 0x2A ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief write a value to the unreachable port register
  * \param port the value to be written to the register
  */
-static inline void ETH0_SetUnreachablePort( uint16 port) { ETH0_W51_Write16(0x2E, port); }
+static void ETH0_SetUnreachablePort( uint16 port) { ETH0_W51_Write16(0x2E, port); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief read the contents of the unreachable port register
  * \returns the value read from the register
  */
-static inline uint16 ETH0_GetUnreachablePort( void ) { return ETH0_W51_Read16(0x2E); }
+static uint16 ETH0_GetUnreachablePort( void ) { return ETH0_W51_Read16(0x2E); }
 /* ======================================================================== */
 /* End Section */
 #endif
@@ -537,7 +537,7 @@ static inline uint16 ETH0_GetUnreachablePort( void ) { return ETH0_W51_Read16(0x
  * \param socket the socket number for the addressed register
  * \param mode the value to be written to the register
  */
-static inline void ETH0_SetSocketMode(uint8 socket, uint8 mode)
+static void ETH0_SetSocketMode(uint8 socket, uint8 mode)
 { ETH0_W51_Write(ETH0_SOCKET_BASE(socket), mode); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -545,7 +545,7 @@ static inline void ETH0_SetSocketMode(uint8 socket, uint8 mode)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint8 ETH0_GetSocketMode(uint8 socket)
+static uint8 ETH0_GetSocketMode(uint8 socket)
 { return ETH0_W51_Read(ETH0_SOCKET_BASE(socket)); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -553,7 +553,7 @@ static inline uint8 ETH0_GetSocketMode(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param cmd the value to be written to the register
  */
-static inline void ETH0_SetSocketCommand(uint8 socket, uint8 cmd)
+static void ETH0_SetSocketCommand(uint8 socket, uint8 cmd)
 { ETH0_W51_Write(ETH0_SOCKET_BASE(socket)+1, cmd); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -561,7 +561,7 @@ static inline void ETH0_SetSocketCommand(uint8 socket, uint8 cmd)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint8 ETH0_GetSocketCommand(uint8 socket)
+static uint8 ETH0_GetSocketCommand(uint8 socket)
 { return ETH0_W51_Read(ETH0_SOCKET_BASE(socket)+1); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -569,7 +569,7 @@ static inline uint8 ETH0_GetSocketCommand(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param ir the value to be written to the register
  */
-static inline void ETH0_SetSocketIR(uint8 socket, uint8 ir)
+static void ETH0_SetSocketIR(uint8 socket, uint8 ir)
 { ETH0_W51_Write(ETH0_SOCKET_BASE(socket)+2,ir); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -577,7 +577,7 @@ static inline void ETH0_SetSocketIR(uint8 socket, uint8 ir)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint8 ETH0_GetSocketIR(uint8 socket)
+static uint8 ETH0_GetSocketIR(uint8 socket)
 { return ETH0_W51_Read(ETH0_SOCKET_BASE(socket)+2); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -585,7 +585,7 @@ static inline uint8 ETH0_GetSocketIR(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param status the value to be written to the register
  */
-static inline void ETH0_SetSocketStatus(uint8 socket, uint8 status)
+static void ETH0_SetSocketStatus(uint8 socket, uint8 status)
 { ETH0_W51_Write(ETH0_SOCKET_BASE(socket)+3,status); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -593,7 +593,7 @@ static inline void ETH0_SetSocketStatus(uint8 socket, uint8 status)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint8 ETH0_GetSocketStatus(uint8 socket)
+static uint8 ETH0_GetSocketStatus(uint8 socket)
 { return ETH0_W51_Read(ETH0_SOCKET_BASE(socket)+3); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -601,7 +601,7 @@ static inline uint8 ETH0_GetSocketStatus(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param port the value to be written to the register
  */
-static inline void ETH0_SetSocketSourcePort(uint8 socket, uint16 port)
+static void ETH0_SetSocketSourcePort(uint8 socket, uint16 port)
 { ETH0_W51_Write16(ETH0_SOCKET_BASE(socket)+4,port); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -609,7 +609,7 @@ static inline void ETH0_SetSocketSourcePort(uint8 socket, uint16 port)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint16 ETH0_GetSocketSourcePort(uint8 socket)
+static uint16 ETH0_GetSocketSourcePort(uint8 socket)
 { return ETH0_W51_Read16(ETH0_SOCKET_BASE(socket)+4); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -617,7 +617,7 @@ static inline uint16 ETH0_GetSocketSourcePort(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param *mac poitner to the array holding the values to be written to the register
  */
-static inline void ETH0_SetSocketDestMAC(uint8 socket, uint8* mac)
+static void ETH0_SetSocketDestMAC(uint8 socket, uint8* mac)
 { ETH0_W51_SetMAC( ETH0_SOCKET_BASE(socket)+6, mac); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -625,7 +625,7 @@ static inline void ETH0_SetSocketDestMAC(uint8 socket, uint8* mac)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline void ETH0_GetSocketDestMAC(uint8 socket, uint8* mac)
+static void ETH0_GetSocketDestMAC(uint8 socket, uint8* mac)
 { ETH0_W51_GetMAC( ETH0_SOCKET_BASE(socket)+6,mac); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -633,7 +633,7 @@ static inline void ETH0_GetSocketDestMAC(uint8 socket, uint8* mac)
  * \param socket the socket number for the addressed register
  * \param ip the value to be written to the register
  */
-static inline void ETH0_SetSocketDestIP(uint8 socket, uint32 ip)
+static void ETH0_SetSocketDestIP(uint8 socket, uint32 ip)
 { ETH0_W51_SetIP(ETH0_SOCKET_BASE(socket)+12,ip); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -641,7 +641,7 @@ static inline void ETH0_SetSocketDestIP(uint8 socket, uint32 ip)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint32 ETH0_GetSocketDestIP(uint8 socket )
+static uint32 ETH0_GetSocketDestIP(uint8 socket )
 { return ETH0_W51_GetIP(ETH0_SOCKET_BASE(socket)+12); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -649,7 +649,7 @@ static inline uint32 ETH0_GetSocketDestIP(uint8 socket )
  * \param socket the socket number for the addressed register
  * \param port the value to be written to the register
  */
-static inline void ETH0_SetSocketDestPort(uint8 socket, uint16 port)
+static void ETH0_SetSocketDestPort(uint8 socket, uint16 port)
 { ETH0_W51_Write16( ETH0_SOCKET_BASE(socket)+16, port); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -657,7 +657,7 @@ static inline void ETH0_SetSocketDestPort(uint8 socket, uint16 port)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint16 ETH0_GetSocketDestPort(uint8 socket)
+static uint16 ETH0_GetSocketDestPort(uint8 socket)
 { return ETH0_W51_Read16( ETH0_SOCKET_BASE(socket)+16 ); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -665,7 +665,7 @@ static inline uint16 ETH0_GetSocketDestPort(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param size the value to be written to the register
  */
-static inline void ETH0_SetSocketMaxSegSize(uint8 socket, uint16 size)
+static void ETH0_SetSocketMaxSegSize(uint8 socket, uint16 size)
 { ETH0_W51_Write16(ETH0_SOCKET_BASE(socket)+18,size); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -673,7 +673,7 @@ static inline void ETH0_SetSocketMaxSegSize(uint8 socket, uint16 size)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint16 ETH0_GetSocketMaxSegSize(uint8 socket)
+static uint16 ETH0_GetSocketMaxSegSize(uint8 socket)
 { return ETH0_W51_Read16(ETH0_SOCKET_BASE(socket)+18); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -681,7 +681,7 @@ static inline uint16 ETH0_GetSocketMaxSegSize(uint8 socket)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint16  ETH0_GetSocketProto(uint8 socket)
+static uint16  ETH0_GetSocketProto(uint8 socket)
 { return ETH0_W51_Read(ETH0_SOCKET_BASE(socket)+20); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -689,7 +689,7 @@ static inline uint16  ETH0_GetSocketProto(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param tos the value to be written to the register
  */
-static inline void ETH0_SetSocketTOS(uint8 socket, uint8 tos)
+static void ETH0_SetSocketTOS(uint8 socket, uint8 tos)
 { ETH0_W51_Write(ETH0_SOCKET_BASE(socket)+21, tos); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -697,7 +697,7 @@ static inline void ETH0_SetSocketTOS(uint8 socket, uint8 tos)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint8 ETH0_GetSocketTOS(uint8 socket)
+static uint8 ETH0_GetSocketTOS(uint8 socket)
 { return ETH0_W51_Read(ETH0_SOCKET_BASE(socket)+21); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -705,7 +705,7 @@ static inline uint8 ETH0_GetSocketTOS(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param ttl the value to be written to the register
  */
-static inline void ETH0_SetSocketTTL(uint8 socket, uint8 ttl)
+static void ETH0_SetSocketTTL(uint8 socket, uint8 ttl)
 { ETH0_W51_Write(ETH0_SOCKET_BASE(socket)+22,ttl); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -713,7 +713,7 @@ static inline void ETH0_SetSocketTTL(uint8 socket, uint8 ttl)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint8 ETH0_GetSocketTTL(uint8 socket)
+static uint8 ETH0_GetSocketTTL(uint8 socket)
 { return ETH0_W51_Read(ETH0_SOCKET_BASE(socket)+22); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -721,7 +721,7 @@ static inline uint8 ETH0_GetSocketTTL(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param size the value to be written to the register
  */
-static inline void ETH0_SetSocketTxFree( uint8 socket, uint16 size)
+static void ETH0_SetSocketTxFree( uint8 socket, uint16 size)
 { ETH0_W51_Write16(ETH0_SOCKET_BASE(socket)+0x20,size); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -729,7 +729,7 @@ static inline void ETH0_SetSocketTxFree( uint8 socket, uint16 size)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint16 ETH0_GetSocketTxFree(uint8 socket)
+static uint16 ETH0_GetSocketTxFree(uint8 socket)
 { return ETH0_W51_Read16(ETH0_SOCKET_BASE(socket)+0x20); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -737,7 +737,7 @@ static inline uint16 ETH0_GetSocketTxFree(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param ptr the value to be written to the register
  */
-static inline void ETH0_SetSocketTxReadPtr(uint8 socket, uint16 ptr)
+static void ETH0_SetSocketTxReadPtr(uint8 socket, uint16 ptr)
 { ETH0_W51_Write16(ETH0_SOCKET_BASE(socket)+0x22,ptr); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -745,7 +745,7 @@ static inline void ETH0_SetSocketTxReadPtr(uint8 socket, uint16 ptr)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint16 ETH0_GetSocketTxReadPtr(uint8 socket)
+static uint16 ETH0_GetSocketTxReadPtr(uint8 socket)
 { return ETH0_W51_Read16(ETH0_SOCKET_BASE(socket)+0x22); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -753,7 +753,7 @@ static inline uint16 ETH0_GetSocketTxReadPtr(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param ptr the value to be written to the register
  */
-static inline void ETH0_SetSocketTxWritePtr(uint8 socket, uint16 ptr)
+static void ETH0_SetSocketTxWritePtr(uint8 socket, uint16 ptr)
 { ETH0_W51_Write16(ETH0_SOCKET_BASE(socket)+0x24,ptr); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -761,7 +761,7 @@ static inline void ETH0_SetSocketTxWritePtr(uint8 socket, uint16 ptr)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint16 ETH0_GetSocketTxWritePtr(uint8 socket)
+static uint16 ETH0_GetSocketTxWritePtr(uint8 socket)
 { return ETH0_W51_Read16(ETH0_SOCKET_BASE(socket)+0x24); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -769,7 +769,7 @@ static inline uint16 ETH0_GetSocketTxWritePtr(uint8 socket)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint16 ETH0_GetSocketRxSize(uint8 socket)
+static uint16 ETH0_GetSocketRxSize(uint8 socket)
 { return ETH0_W51_Read16(ETH0_SOCKET_BASE(socket)+0x26); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -777,7 +777,7 @@ static inline uint16 ETH0_GetSocketRxSize(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param ptr the value to be written to the register
  */
-static inline void ETH0_SetSocketRxReadPtr(uint8 socket, uint16 ptr)
+static void ETH0_SetSocketRxReadPtr(uint8 socket, uint16 ptr)
 { ETH0_W51_Write16(ETH0_SOCKET_BASE(socket)+0x28,ptr); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -785,7 +785,7 @@ static inline void ETH0_SetSocketRxReadPtr(uint8 socket, uint16 ptr)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static inline uint16 ETH0_GetSocketRxReadPtr(uint8 socket)
+static uint16 ETH0_GetSocketRxReadPtr(uint8 socket)
 { return ETH0_W51_Read16(ETH0_SOCKET_BASE(socket)+0x28); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -1195,7 +1195,7 @@ ETH0_SocketProcessConnections( uint8 socket )
 	return (ETH0_GetSocketStatus(socket) == 0x00);
 }
 /* ------------------------------------------------------------------------ */
-inline uint8
+uint8
 ETH0_SocketEstablished( uint8 socket )
 {
 	return (ETH0_GetSocketStatus( socket ) == 0x17);
@@ -1205,7 +1205,7 @@ ETH0_SocketEstablished( uint8 socket )
  * \brief Transmit a SEND operation over a socket
  * \param socket the socket to which the send command will be sent
  */
-static inline void
+static void
 ETH0_SocketSend(uint8 socket )
 {
 	uint8 ir;
@@ -1232,7 +1232,7 @@ ETH0_SocketSend(uint8 socket )
  * \brief Execute a SEND without an ARP.
  * \param socket the socket to which the SEND will be executed.
  */
-static inline void
+static void
 ETH0_SocketSendMac(uint8 socket )
 {
 	uint8 ir;
@@ -1321,11 +1321,11 @@ ETH0_TcpConnect( uint8 socket, uint32 ip, uint16 port )
 	}
 }
 /* ------------------------------------------------------------------------ */
-inline uint8
+uint8
 ETH0_TcpConnected( uint8 socket )
 { return ETH0_SocketEstablished(socket); }
 /* ------------------------------------------------------------------------ */
-inline void
+void
 ETH0_TcpDisconnect( uint8 socket )
 {
 	ETH0_ExecuteSocketCommand(socket, 0x08);

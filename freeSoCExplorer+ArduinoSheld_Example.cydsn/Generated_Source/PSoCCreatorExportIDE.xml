@@ -6,19 +6,19 @@
     <Toolchain Name="ARM GCC" Selected="True">
       <Tool Name="prebuild" Command="" Options="" />
       <Tool Name="assembler" Command="arm-none-eabi-as.exe" Options="-I. -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -g -alh=${OutputDir}/${CompileFile}.lst " />
-      <Tool Name="compiler" Command="arm-none-eabi-gcc.exe" Options="-I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=${OutputDir}\${CompileFile}.lst -ffunction-sections " />
+      <Tool Name="compiler" Command="arm-none-eabi-gcc.exe" Options="-I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D NDEBUG -Wa,-alh=${OutputDir}\${CompileFile}.lst -Os -ffunction-sections " />
       <Tool Name="linker" Command="arm-none-eabi-gcc.exe" Options="-mthumb -march=armv7-m -mfix-cortex-m3-ldrd -T .\Generated_Source\PSoC5\cm3gcc.ld -g -Wl,-Map,${OutputDir}\${ProjectShortName}.map -specs=nano.specs -Wl,--gc-sections " />
       <Tool Name="postbuild" Command="" Options="" />
     </Toolchain>
     <Toolchain Name="ARM Keil MDK" Selected="False">
       <Tool Name="prebuild" Command="" Options="" />
       <Tool Name="assembler" Command="armasm.exe" Options="-i. -iGenerated_Source/PSoC5 --diag_style=gnu --thumb --cpu=Cortex-M3 -g --list=${OutputDir}/${CompileFile}.lst " />
-      <Tool Name="compiler" Command="armcc.exe" Options="-I. -I./Generated_Source/PSoC5 --diag_suppress=951 --diag_style=gnu --cpu=Cortex-M3 -g -D DEBUG --signed_chars --list -O0 --split_sections " />
+      <Tool Name="compiler" Command="armcc.exe" Options="-I. -I./Generated_Source/PSoC5 --diag_suppress=951 --diag_style=gnu --cpu=Cortex-M3 -g -D NDEBUG --signed_chars --list -Ospace --split_sections " />
       <Tool Name="linker" Command="armlink.exe" Options="--diag_style=gnu --no_startup --cpu=Cortex-M3 --scatter .\Generated_Source\PSoC5\Cm3RealView.scat --map --list ${OutputDir}\${ProjectShortName}.map " />
       <Tool Name="postbuild" Command="" Options="" />
     </Toolchain>
   </Toolchains>
-  <Project Name="freeSoCExplorer+ArduinoSheld_Example" Path="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\freeSoCExplorer+ArduinoSheld_Example.cydsn" Version="4.0" Type="Normal">
+  <Project Name="freeSoCExplorer+ArduinoSheld_Example" Path="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\freeSoCExplorer+ArduinoSheld_Example.cydsn" Version="4.0" Type="Normal">
     <CMSIS_SVD_File>freeSoCExplorer+ArduinoSheld_Example.svd</CMSIS_SVD_File>
     <Datasheet />
     <LinkerFiles>
@@ -27,13 +27,13 @@
       <LinkerFile Toolchain="IAR EWARM">.\Generated_Source\PSoC5\Cm3Iar.icf</LinkerFile>
     </LinkerFiles>
     <Folders>
-      <Folder BuildType="BUILD" Path="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\freeSoCExplorer+ArduinoSheld_Example.cydsn">
-        <Files Root="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\freeSoCExplorer+ArduinoSheld_Example.cydsn">
+      <Folder BuildType="BUILD" Path="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\freeSoCExplorer+ArduinoSheld_Example.cydsn">
+        <Files Root="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\freeSoCExplorer+ArduinoSheld_Example.cydsn">
           <File BuildType="BUILD" Toolchain="">.\main.c</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\freeSoCExplorer+ArduinoSheld_Example.cydsn\Generated_Source\PSoC5">
-        <Files Root="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\freeSoCExplorer+ArduinoSheld_Example.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\freeSoCExplorer+ArduinoSheld_Example.cydsn\Generated_Source\PSoC5">
+        <Files Root="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\freeSoCExplorer+ArduinoSheld_Example.cydsn">
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\cyfitter_cfg.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\cyfitter_cfg.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\cymetadata.c</File>
@@ -81,47 +81,50 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\core_cmInstr.h</File>
           <File BuildType="BUILD" Toolchain="IAR EWARM">.\Generated_Source\PSoC5\CyBootAsmIar.s</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\project.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\SDCS_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\SDCS.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\SDCS.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\prebuild.bat</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\postbuild.bat</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\CyElfTool.exe</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\libelf.dll</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\freeSoCExplorer+ArduinoSheld_Example.cydsn\Generated_Source\PSoC5\ARM_GCC">
-        <Files Root="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\freeSoCExplorer+ArduinoSheld_Example.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\freeSoCExplorer+ArduinoSheld_Example.cydsn\Generated_Source\PSoC5\ARM_GCC">
+        <Files Root="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\freeSoCExplorer+ArduinoSheld_Example.cydsn">
           <File BuildType="BUILD" Toolchain="ARM GCC">.\Generated_Source\PSoC5\ARM_GCC\CyComponentLibrary.a</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\freeSoCExplorer+ArduinoSheld_Example.cydsn\Generated_Source\PSoC5\ARM_Keil_MDK">
-        <Files Root="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\freeSoCExplorer+ArduinoSheld_Example.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\freeSoCExplorer+ArduinoSheld_Example.cydsn\Generated_Source\PSoC5\ARM_Keil_MDK">
+        <Files Root="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\freeSoCExplorer+ArduinoSheld_Example.cydsn">
           <File BuildType="BUILD" Toolchain="ARM Keil MDK">.\Generated_Source\PSoC5\ARM_Keil_MDK\CyComponentLibrary.a</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\freeSoCExplorer+ArduinoSheld_Example.cydsn\Generated_Source\PSoC5\IAR">
-        <Files Root="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\freeSoCExplorer+ArduinoSheld_Example.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\freeSoCExplorer+ArduinoSheld_Example.cydsn\Generated_Source\PSoC5\IAR">
+        <Files Root="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\freeSoCExplorer+ArduinoSheld_Example.cydsn">
           <File BuildType="BUILD" Toolchain="IAR">.\Generated_Source\PSoC5\IAR\CyComponentLibrary.a</File>
         </Files>
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\codegentemp">
-        <Files Root="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\freeSoCExplorer+ArduinoSheld_Example.cydsn" />
+        <Files Root="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\freeSoCExplorer+ArduinoSheld_Example.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\ARM_GCC_441">
-        <Files Root="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\freeSoCExplorer+ArduinoSheld_Example.cydsn" />
+        <Files Root="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\freeSoCExplorer+ArduinoSheld_Example.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\ARM_GCC_473">
-        <Files Root="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\freeSoCExplorer+ArduinoSheld_Example.cydsn" />
+        <Files Root="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\freeSoCExplorer+ArduinoSheld_Example.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\DP8051_Keil_951">
-        <Files Root="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\freeSoCExplorer+ArduinoSheld_Example.cydsn" />
+        <Files Root="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\freeSoCExplorer+ArduinoSheld_Example.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\DP8051">
-        <Files Root="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\freeSoCExplorer+ArduinoSheld_Example.cydsn" />
+        <Files Root="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\freeSoCExplorer+ArduinoSheld_Example.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM0">
-        <Files Root="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\freeSoCExplorer+ArduinoSheld_Example.cydsn" />
+        <Files Root="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\freeSoCExplorer+ArduinoSheld_Example.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM3">
-        <Files Root="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\freeSoCExplorer+ArduinoSheld_Example.cydsn" />
+        <Files Root="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\freeSoCExplorer+ArduinoSheld_Example.cydsn" />
       </Folder>
     </Folders>
   </Project>

@@ -160,7 +160,7 @@
  * \file W5100.h 
  * Interface driver definitions and prototypes
  * \author Chuck Erhardt (chuck@e2forlife.com)
- * \version 1.0
+ * \version 1.1
  * \date 04-NOV-2013
  * 
  */
@@ -314,7 +314,7 @@ uint8 ETH0_SocketProcessConnections( uint8 socket );
  * This fucntion will read the socket status and return the state of the
  * socket establishment.
  */
-inline uint8 ETH0_SocketEstablished( uint8 socket );
+uint8 ETH0_SocketEstablished( uint8 socket );
 
 /**
  * \brief Retrieve the length of waiting Receive data
@@ -404,7 +404,7 @@ void ETH0_TcpConnect( uint8 socket, uint32 ip, uint16 port );
  * \sa ETH0_TcpConnect()
  * \sa ETH0_TcpStartServer()
  */
-inline uint8 ETH0_TcpConnected( uint8 socket );
+uint8 ETH0_TcpConnected( uint8 socket );
 
 /**
  * \brief Terminate a connection with a remote client/server
@@ -416,7 +416,7 @@ inline uint8 ETH0_TcpConnected( uint8 socket );
  * \sa ETH0_TcpStartServer()
  * \sa ETH0_TcpStartServerWait()
  */
-inline void ETH0_TcpDisconnect( uint8 socket );
+void ETH0_TcpDisconnect( uint8 socket );
 
 /**
  * \brief Transmit a byte packet using the built-in TCP

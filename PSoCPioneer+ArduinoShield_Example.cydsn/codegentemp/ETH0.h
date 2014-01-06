@@ -1,6 +1,168 @@
 /**
+ * \mainpage Interface Driver For the WIZnet W5100 Device
+ * \section feature_sec Features
+ * \par
+ * \li Compatible with PSoC 3, 4, 5, and 5LP
+ * \li SPI port independant
+ * \li Supports Hardware TCP, UDP and ARP
+ * \li Small FLASH footprint
+ * \section intro_sec General Description
+ * The W5100 interface driver provides a simple software driver for using the
+ * WIZnet W5100 iEthernet controller with a PSoC project.  The driver can be
+ * customized to support many system configurations, and allows for SPI port
+ * sharing.  Both the SPIM and the SCB interfaces are supported to allow the
+ * driver to support many hardware configurations of the application.
+ * \section using_sec Using the W5100 Driver
+ * \subsection sch_req_subsec Schematic Requirements
+ * This driver is a software only driver, thus in order to effectively use
+ * the functions provided to access the W5100, there must be a hadrware
+ * interface defined in the schematics to access the device.  Once enterend
+ * in the schematics, enter the instance name of the SPI component in to the
+ * customizer parameters for the driver component.
+ * \subsection using_subsec Using The Driver
+ * When using the driver, simply start the driver with the Start() function
+ * then open a socket using the protocol desired, and either start a server
+ * to wait for connections or connect to a remote server.  The W5100 device
+ * and the software driver handle the interfacing, management, and data
+ * handling for the connections.
+ * \section io_sec Input/Output Connections
+ * There are no Input or Output connections to this component.
+ * \section customizer_sec Component Parameters
+ * \subsection comp_param_subsec Component Parameters
+ * Drag a W5100 component on to your design and double-click to open the
+ * component configuration dialog.
+ * \image html Customizer.png
+ * \subsection param_subsec Parameters
+ * \subsubsection driver_parm_sub_sub Driver Configuration Parameters
+ * This section contains parameters that modify the operation of the driver, or
+ * provide settings for options of the driver implementation.
+ * \arg \c CMD_TIMEOUT The number of missiseconds to wait for a W5100 Command to execute
+ * \par
+ * This parameter will allow you to set the ammount of time that the internal driver
+ * fucntion used to execute socket commands within the W5100 device will wait for a
+ * command to execute before declaring a timeout condition.
+ * \arg \c INCLUDE_TCP Set to True to enable the TCP interface code
+ * \par
+ * a True/False parameter used to specify if the TCP protocol interface code will
+ * included when compiling the driver software.  Set this to False when ot using
+ * the TCP interface functions to save FLASH memory space. The default setting
+ * is to include this interface code.
+ * \arg \c INCLUDE_UDP Set to True to enable the UDP interface Code
+ * \par
+ * A True/False parameter used to specify if the UDP protocol interface code will
+ * be compiled when building the library.  Set this to False if not using the UDP functions
+ * and you wish to save some FLASH memory space.  the default setting for this
+ * parameter is True.
+ * \arg \c INIT_DELAY The number of milliseconds to wait for the W5100 PLL to Lock after a device reset or power on.
+ * \par
+ * Usually, this parameter will not need to be modified, however, it allows you to
+ * configure the ammount of time that the driver will wait for the W5100 internal
+ * PLL to achieve lock.  This might need to be adjusted if your power supply is noisy
+ * or you are experiencing a high amount of clock jitter at power on.
+ * \warning Adjusting this parameter may cause the W5100 to not respond on the Ethernet port. 
+ * \arg \c TIMEOUT The number of milliseconds to wait before an operation declares a general timeout
+ * \par
+ * This parameter will allow you to adjust the number of milliseconds that an operation will wait
+ * for an operation to complete before delaring a timeout condition.  This does not affect
+ * every function.
+ * \subsubsection config_param_sub_sub Network Configuration Parameters
+ * The "configuration" parameters section contains the parameters for initializing
+ * the default network configuration for use by the W5100.  These parameters can be
+ * overridden within your application through the use of the API function calls.
+ * \arg \c GATEWAY The IPv4 Address of the network gateway
+ * \par
+ * This parameter will allow you to specify the IP address of the ethernet gateway router.  This
+ * value is a string specified in IPv4 format of \c www.xxx.yyy.zzz
+ * \arg \c IP The IPv4 Address of the device
+ * \par
+ * The network address of the W5100 device.  This address is the configured address of the
+ * controller after the API Start() call executes.  Setting this will change the fixed IP of the
+ * system.
+ * \arg \c MAC The hardware (MAC) address of the Ethernet Controller
+ * \par
+ * The MAC address contains the hardware address of the system. It is expressed as a 6 byte
+ * comma delimited string containg the hardware address of the W5100.
+ * \note If you're using the Arduino Ethernet shield, this is printed on the sticker on the
+ * bottom of the board
+ * \arg \c SUBNET_MASK The subnet mask used for Ethernet communications
+ * \par
+ * Modifying this parameter will change teh subnet that the MAC will use to communicate
+ * over the network.  The default (and most common) subnet mask is \c 255.255.255.0 , meaning that
+ * for a IP address of \c 192.168.1.100 the MAC can communicate directly with only other IP
+ * addresses that match \c 192.168.1.xxx. Setting any mit in the subnet mask to a zero defines
+ * that bit as a don't care for communicating.
+ * \subsubsection hardware_config_parameters_sub_sub Hardware Configuration
+ * This parameter section is used to define the interface parameters for associating component
+ * instances with the driver, and for declaring design specific delays and configuration data.
+ * \arg \c READ_WRITE_DELAY The number of milliseconds to wait for a read/write operation to complete
+ * \par
+ * This option allows for the configuration of the lag time between the SEND/RECEIVE command execution
+ * and when the driver polls for the completion status of the transmission.  Under normal conditions,
+ * it is inadvisable to modify this paramter, however, tweaking the delay time may allow for
+ * enanced operation in some applications.
+ * \arg \c SPI_INSTANCE The Instance Name of the SPI component
+ * \par
+ * Enter the component (instance) name of the SPI component that is used
+ * to ommunicate with the W5100.  This SPI port should be configured to use
+ * 8-bit data, MSB first transmission, and SPI mode 0.  The data rate is
+ * depentant upon your board layout (EMI/Noise issues), and your processor
+ * and bus clock speeds.
+ * \note When using the SPIM or SPI mode SCB, this driver requires at least a 4-byte FIFO buffer
+ * \note This component uses the internal SPI chip select generation to select the W5100.
+ * \arg \c SS_NUM the slave select number used to connect to the W5100 (SCB Mode)
+ * \par
+ * When using the SCB component, this parameter specifies the slave select (SS) number
+ * used to communicate with the W5100 device.  Valid values are from 0 to 3, values outside
+ * of this range are assumed to be 0 and will use the SS1 pin.
+ * \section api_sec Application Programming Iinterface
+ * The functions of the Application Programming interface (API) provide the ability
+ * to configure and operate the W5100 device using your software application.  The following
+ * sections describe the driver API in detail.
+ * \par
+ * By default, PSoC Creator assigns the name \c W5100_1 to the first instance of the driver
+ * component within your project.  You may rename the component to any unique name within
+ * your project, provided it follows the syntax rules defined within PSoC Creator.  The name
+ * of the instance becomes the prefix for each global identifier within the driver so that
+ * no interface of the driver will interfere with your software project.  For simplicity, API
+ * references within this document will use the instance name prefix of \t W5100.
+ * \subsection api_func_subsec API Functions
+ * \li W5100_Start() : Startup and initialize the device using the creator defaults
+ * \li W5100_Init() : initialize device parameters and memory setup
+ * \li W5100_ParseIP() : Parse a ASCII Text IPv4 address to an IPv4 Address.
+ * \li W5100_SetIP() : re-assign the local IP address of the device
+ * \li W5100_GetIP() : Read the current IP address of the device
+ * \li W5100_SetMAC() : Re-assign the hardware address (MAC) of the device
+ * \li W5100_GetMAC() : Retrieve the assigned Source hardware (MAC) address of the device
+ * \li W5100_SocketOpen() : Open a socket using the specified protocol on the specified port
+ * \li W5100_SocketClose() : Close a previously opened socket
+ * \li W5100_SocketProcessConnections() : Process the socket connection to check for errors and remote closure
+ * \li W5100_SocketEstablished() : Check the connection establishment status of the socket
+ * \li W5100_SocketRxDataWaiting() : Retrieve the length of waiting Receive data
+ * \li W5100_TcpOpen() : Open an port using the TCP protocol
+ * \li W5100_TcpStartServer() : Start a server listening for connection on an open socket
+ * \li W5100_TcpStartServerWait() : Start a TCP server listening for connections on the specified socket
+ * \li W5100_TcpConnect() : Open a client connection to a specified IP and port
+ * \li W5100_TcpConnected() : Return the connection status of the TCP socket
+ * \li W5100_TcpDisconnect() : Terminate a connection with a remote client/server
+ * \li W5100_TcpSend() : Transmit a byte packet using the built-in TCP
+ * \li W5100_TcpReceive() : Receive a packet of data using the built-in TCP handler
+ * \li W5100_TcpPrint() : Send a zero-terminated ASCII string using TCP
+ * \li W5100_UdpOpen() : Open a Socket Port using the UDP protocol
+ * \li W5100_UdpSend() : Transmit a byte packet using the built-in UDP
+ * \li W5100_UdpReceive() : Receive a packet of data using the built-in p handler
+ */
+/**
  * \defgroup w5100 W5100 Chip Interface Driver
  * @{
+ */
+
+/**
+ * \file W5100.h 
+ * Interface driver definitions and prototypes
+ * \author Chuck Erhardt (chuck@e2forlife.com)
+ * \version 1.1
+ * \date 04-NOV-2013
+ * 
  */
 
 #if !defined(ETH0_H)
@@ -146,13 +308,13 @@ uint8 ETH0_SocketProcessConnections( uint8 socket );
 /**
  * \brief Check the connection establishment status of the socket
  * \param socket the socket to be checked.
- * \return TRUE the socket is established
- * \return FALSE the socket has not yet been established
+ * \retval TRUE the socket is established
+ * \retval FALSE the socket has not yet been established
  *
  * This fucntion will read the socket status and return the state of the
  * socket establishment.
  */
-inline uint8 ETH0_SocketEstablished( uint8 socket );
+uint8 ETH0_SocketEstablished( uint8 socket );
 
 /**
  * \brief Retrieve the length of waiting Receive data
@@ -164,6 +326,8 @@ inline uint8 ETH0_SocketEstablished( uint8 socket );
  */
 uint16 ETH0_SocketRxDataWaiting( uint8 socket );
 
+#if (1)
+	
 /**
  * \brief Open an port using the TCP protocol
  * \param port the port on which the TCP socket will be openend
@@ -232,15 +396,15 @@ void ETH0_TcpConnect( uint8 socket, uint32 ip, uint16 port );
 /**
  * \brief Return the connection status of the TCP socket
  * \param socket the socket on which connection status will be polled
- * \return TRUE When the socket is connected and valid
- * \return FALSE when the socket is not connected, waiting, or invalid
+ * \retval TRUE When the socket is connected and valid
+ * \retval FALSE when the socket is not connected, waiting, or invalid
  *
  * This function will check the establishment status of the specified socket,
  * and return the state.
  * \sa ETH0_TcpConnect()
  * \sa ETH0_TcpStartServer()
  */
-inline uint8 ETH0_TcpConnected( uint8 socket );
+uint8 ETH0_TcpConnected( uint8 socket );
 
 /**
  * \brief Terminate a connection with a remote client/server
@@ -252,7 +416,7 @@ inline uint8 ETH0_TcpConnected( uint8 socket );
  * \sa ETH0_TcpStartServer()
  * \sa ETH0_TcpStartServerWait()
  */
-inline void ETH0_TcpDisconnect( uint8 socket );
+void ETH0_TcpDisconnect( uint8 socket );
 
 /**
  * \brief Transmit a byte packet using the built-in TCP
@@ -323,8 +487,11 @@ uint16 ETH0_TcpReceive( uint8 socket, uint8* buffer, uint16 length );
  */
 void ETH0_TcpPrint( uint8 socket, const char* str );
 
+#endif
+
+#if (1)
 /**
- * \brief Open an port using the TCP protocol
+ * \brief Open an socket port using the UDP protocol
  * \param port the port on which the TCP socket will be openend
  * \returns The socket number that was opened (0-3) or 0xFF on error
  *
@@ -359,7 +526,7 @@ uint8 ETH0_UdpOpen(uint16 port);
 uint16 ETH0_UdpSend(uint8 socket, uint32 ip, uint16 port, uint8* buffer, uint16 length);
 
 /**
- * \brief Receive a packet of data using the built-in TCP handler
+ * \brief Receive a packet of data using the built-in UDP handler
  * \param socket The socket on which the receive will occur
  * \param *ip buffer to hold the IPv4 address of the packet sender
  * \param *port biffer to hold the port number of the sender of the received packet.
@@ -380,6 +547,8 @@ uint16 ETH0_UdpSend(uint8 socket, uint32 ip, uint16 port, uint8* buffer, uint16 
  * \sa ETH0_UdpSend()
  */
 uint16 ETH0_UdpReceive(uint8 socket, uint32 *ip, uint16 *port, uint8* buffer, uint16 length);
+
+#endif
 
 #endif
 

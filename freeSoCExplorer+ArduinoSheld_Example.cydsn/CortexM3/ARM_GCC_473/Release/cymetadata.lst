@@ -1,0 +1,1348 @@
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccEzDkbU.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"cymetadata.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	cy_metadata
+  19              		.global	cy_meta_flashprotect
+  20              		.global	cy_meta_wonvl
+  21              		.global	cy_meta_custnvl
+  22              		.global	cy_meta_configecc
+  23              		.section	.cyconfigecc,"a",%progbits
+  24              		.type	cy_meta_configecc, %object
+  25              		.size	cy_meta_configecc, 812
+  26              	cy_meta_configecc:
+  27 0000 02       		.byte	2
+  28 0001 52       		.byte	82
+  29 0002 00       		.byte	0
+  30 0003 40       		.byte	64
+  31 0004 01       		.byte	1
+  32 0005 64       		.byte	100
+  33 0006 00       		.byte	0
+  34 0007 40       		.byte	64
+  35 0008 46       		.byte	70
+  36 0009 06       		.byte	6
+  37 000a 01       		.byte	1
+  38 000b 40       		.byte	64
+  39 000c 28       		.byte	40
+  40 000d 07       		.byte	7
+  41 000e 01       		.byte	1
+  42 000f 40       		.byte	64
+  43 0010 34       		.byte	52
+  44 0011 14       		.byte	20
+  45 0012 01       		.byte	1
+  46 0013 40       		.byte	64
+  47 0014 33       		.byte	51
+  48 0015 15       		.byte	21
+  49 0016 01       		.byte	1
+  50 0017 40       		.byte	64
+  51 0018 34       		.byte	52
+  52 0019 17       		.byte	23
+  53 001a 01       		.byte	1
+  54 001b 40       		.byte	64
+  55 001c 01       		.byte	1
+  56 001d 1B       		.byte	27
+  57 001e 01       		.byte	1
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccEzDkbU.s 			page 2
+
+
+  58 001f 40       		.byte	64
+  59 0020 02       		.byte	2
+  60 0021 41       		.byte	65
+  61 0022 01       		.byte	1
+  62 0023 40       		.byte	64
+  63 0024 01       		.byte	1
+  64 0025 42       		.byte	66
+  65 0026 01       		.byte	1
+  66 0027 40       		.byte	64
+  67 0028 01       		.byte	1
+  68 0029 43       		.byte	67
+  69 002a 01       		.byte	1
+  70 002b 40       		.byte	64
+  71 002c 03       		.byte	3
+  72 002d 48       		.byte	72
+  73 002e 01       		.byte	1
+  74 002f 40       		.byte	64
+  75 0030 09       		.byte	9
+  76 0031 49       		.byte	73
+  77 0032 01       		.byte	1
+  78 0033 40       		.byte	64
+  79 0034 04       		.byte	4
+  80 0035 4D       		.byte	77
+  81 0036 01       		.byte	1
+  82 0037 40       		.byte	64
+  83 0038 04       		.byte	4
+  84 0039 50       		.byte	80
+  85 003a 01       		.byte	1
+  86 003b 40       		.byte	64
+  87 003c 00       		.byte	0
+  88 003d 40       		.byte	64
+  89 003e 19       		.byte	25
+  90 003f 01       		.byte	1
+  91 0040 86       		.byte	-122
+  92 0041 0F       		.byte	15
+  93 0042 01       		.byte	1
+  94 0043 5C       		.byte	92
+  95 0044 05       		.byte	5
+  96 0045 54       		.byte	84
+  97 0046 07       		.byte	7
+  98 0047 08       		.byte	8
+  99 0048 09       		.byte	9
+ 100 0049 50       		.byte	80
+ 101 004a 0B       		.byte	11
+ 102 004b 0C       		.byte	12
+ 103 004c 0D       		.byte	13
+ 104 004d 08       		.byte	8
+ 105 004e 11       		.byte	17
+ 106 004f 24       		.byte	36
+ 107 0050 13       		.byte	19
+ 108 0051 10       		.byte	16
+ 109 0052 15       		.byte	21
+ 110 0053 30       		.byte	48
+ 111 0054 17       		.byte	23
+ 112 0055 0F       		.byte	15
+ 113 0056 19       		.byte	25
+ 114 0057 11       		.byte	17
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccEzDkbU.s 			page 3
+
+
+ 115 0058 1B       		.byte	27
+ 116 0059 22       		.byte	34
+ 117 005a 1D       		.byte	29
+ 118 005b 21       		.byte	33
+ 119 005c 1F       		.byte	31
+ 120 005d 1E       		.byte	30
+ 121 005e 21       		.byte	33
+ 122 005f 5C       		.byte	92
+ 123 0060 2D       		.byte	45
+ 124 0061 0C       		.byte	12
+ 125 0062 2F       		.byte	47
+ 126 0063 50       		.byte	80
+ 127 0064 31       		.byte	49
+ 128 0065 40       		.byte	64
+ 129 0066 33       		.byte	51
+ 130 0067 0F       		.byte	15
+ 131 0068 35       		.byte	53
+ 132 0069 30       		.byte	48
+ 133 006a 37       		.byte	55
+ 134 006b 30       		.byte	48
+ 135 006c 3B       		.byte	59
+ 136 006d A0       		.byte	-96
+ 137 006e 3F       		.byte	63
+ 138 006f 01       		.byte	1
+ 139 0070 56       		.byte	86
+ 140 0071 02       		.byte	2
+ 141 0072 57       		.byte	87
+ 142 0073 24       		.byte	36
+ 143 0074 59       		.byte	89
+ 144 0075 04       		.byte	4
+ 145 0076 5B       		.byte	91
+ 146 0077 04       		.byte	4
+ 147 0078 5F       		.byte	95
+ 148 0079 01       		.byte	1
+ 149 007a 80       		.byte	-128
+ 150 007b 01       		.byte	1
+ 151 007c 84       		.byte	-124
+ 152 007d 10       		.byte	16
+ 153 007e 85       		.byte	-123
+ 154 007f C0       		.byte	-64
+ 155 0080 87       		.byte	-121
+ 156 0081 08       		.byte	8
+ 157 0082 88       		.byte	-120
+ 158 0083 22       		.byte	34
+ 159 0084 89       		.byte	-119
+ 160 0085 C0       		.byte	-64
+ 161 0086 8A       		.byte	-118
+ 162 0087 08       		.byte	8
+ 163 0088 8B       		.byte	-117
+ 164 0089 04       		.byte	4
+ 165 008a 8C       		.byte	-116
+ 166 008b 40       		.byte	64
+ 167 008c 8D       		.byte	-115
+ 168 008d C0       		.byte	-64
+ 169 008e 8F       		.byte	-113
+ 170 008f 02       		.byte	2
+ 171 0090 90       		.byte	-112
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccEzDkbU.s 			page 4
+
+
+ 172 0091 01       		.byte	1
+ 173 0092 91       		.byte	-111
+ 174 0093 90       		.byte	-112
+ 175 0094 93       		.byte	-109
+ 176 0095 40       		.byte	64
+ 177 0096 94       		.byte	-108
+ 178 0097 01       		.byte	1
+ 179 0098 95       		.byte	-107
+ 180 0099 1F       		.byte	31
+ 181 009a 97       		.byte	-105
+ 182 009b 20       		.byte	32
+ 183 009c 98       		.byte	-104
+ 184 009d 04       		.byte	4
+ 185 009e 9B       		.byte	-101
+ 186 009f 60       		.byte	96
+ 187 00a0 9C       		.byte	-100
+ 188 00a1 40       		.byte	64
+ 189 00a2 9D       		.byte	-99
+ 190 00a3 80       		.byte	-128
+ 191 00a4 A0       		.byte	-96
+ 192 00a5 01       		.byte	1
+ 193 00a6 A1       		.byte	-95
+ 194 00a7 C0       		.byte	-64
+ 195 00a8 A3       		.byte	-93
+ 196 00a9 01       		.byte	1
+ 197 00aa A4       		.byte	-92
+ 198 00ab 08       		.byte	8
+ 199 00ac A5       		.byte	-91
+ 200 00ad 7F       		.byte	127
+ 201 00ae A6       		.byte	-90
+ 202 00af 21       		.byte	33
+ 203 00b0 A7       		.byte	-89
+ 204 00b1 80       		.byte	-128
+ 205 00b2 A8       		.byte	-88
+ 206 00b3 07       		.byte	7
+ 207 00b4 AA       		.byte	-86
+ 208 00b5 18       		.byte	24
+ 209 00b6 AB       		.byte	-85
+ 210 00b7 9F       		.byte	-97
+ 211 00b8 AC       		.byte	-84
+ 212 00b9 01       		.byte	1
+ 213 00ba AF       		.byte	-81
+ 214 00bb FF       		.byte	-1
+ 215 00bc B0       		.byte	-80
+ 216 00bd 3F       		.byte	63
+ 217 00be B4       		.byte	-76
+ 218 00bf 40       		.byte	64
+ 219 00c0 B7       		.byte	-73
+ 220 00c1 FF       		.byte	-1
+ 221 00c2 B8       		.byte	-72
+ 222 00c3 22       		.byte	34
+ 223 00c4 BE       		.byte	-66
+ 224 00c5 01       		.byte	1
+ 225 00c6 BF       		.byte	-65
+ 226 00c7 40       		.byte	64
+ 227 00c8 D8       		.byte	-40
+ 228 00c9 04       		.byte	4
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccEzDkbU.s 			page 5
+
+
+ 229 00ca D9       		.byte	-39
+ 230 00cb 04       		.byte	4
+ 231 00cc DF       		.byte	-33
+ 232 00cd 01       		.byte	1
+ 233 00ce 00       		.byte	0
+ 234 00cf 60       		.byte	96
+ 235 00d0 02       		.byte	2
+ 236 00d1 90       		.byte	-112
+ 237 00d2 09       		.byte	9
+ 238 00d3 84       		.byte	-124
+ 239 00d4 0A       		.byte	10
+ 240 00d5 44       		.byte	68
+ 241 00d6 10       		.byte	16
+ 242 00d7 A0       		.byte	-96
+ 243 00d8 12       		.byte	18
+ 244 00d9 09       		.byte	9
+ 245 00da 18       		.byte	24
+ 246 00db 40       		.byte	64
+ 247 00dc 19       		.byte	25
+ 248 00dd 10       		.byte	16
+ 249 00de 1A       		.byte	26
+ 250 00df 04       		.byte	4
+ 251 00e0 21       		.byte	33
+ 252 00e1 80       		.byte	-128
+ 253 00e2 25       		.byte	37
+ 254 00e3 08       		.byte	8
+ 255 00e4 26       		.byte	38
+ 256 00e5 8B       		.byte	-117
+ 257 00e6 27       		.byte	39
+ 258 00e7 15       		.byte	21
+ 259 00e8 29       		.byte	41
+ 260 00e9 44       		.byte	68
+ 261 00ea 2A       		.byte	42
+ 262 00eb 01       		.byte	1
+ 263 00ec 2B       		.byte	43
+ 264 00ed 04       		.byte	4
+ 265 00ee 2C       		.byte	44
+ 266 00ef 80       		.byte	-128
+ 267 00f0 2E       		.byte	46
+ 268 00f1 40       		.byte	64
+ 269 00f2 30       		.byte	48
+ 270 00f3 02       		.byte	2
+ 271 00f4 31       		.byte	49
+ 272 00f5 18       		.byte	24
+ 273 00f6 32       		.byte	50
+ 274 00f7 80       		.byte	-128
+ 275 00f8 35       		.byte	53
+ 276 00f9 44       		.byte	68
+ 277 00fa 37       		.byte	55
+ 278 00fb 11       		.byte	17
+ 279 00fc 38       		.byte	56
+ 280 00fd A8       		.byte	-88
+ 281 00fe 3D       		.byte	61
+ 282 00ff 28       		.byte	40
+ 283 0100 3E       		.byte	62
+ 284 0101 02       		.byte	2
+ 285 0102 3F       		.byte	63
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccEzDkbU.s 			page 6
+
+
+ 286 0103 80       		.byte	-128
+ 287 0104 64       		.byte	100
+ 288 0105 08       		.byte	8
+ 289 0106 6C       		.byte	108
+ 290 0107 D6       		.byte	-42
+ 291 0108 6D       		.byte	109
+ 292 0109 78       		.byte	120
+ 293 010a 6E       		.byte	110
+ 294 010b 40       		.byte	64
+ 295 010c 6F       		.byte	111
+ 296 010d 40       		.byte	64
+ 297 010e 76       		.byte	118
+ 298 010f 03       		.byte	3
+ 299 0110 C0       		.byte	-64
+ 300 0111 0F       		.byte	15
+ 301 0112 C2       		.byte	-62
+ 302 0113 0F       		.byte	15
+ 303 0114 C4       		.byte	-60
+ 304 0115 0F       		.byte	15
+ 305 0116 CA       		.byte	-54
+ 306 0117 9F       		.byte	-97
+ 307 0118 CC       		.byte	-52
+ 308 0119 FF       		.byte	-1
+ 309 011a CE       		.byte	-50
+ 310 011b FE       		.byte	-2
+ 311 011c D8       		.byte	-40
+ 312 011d 20       		.byte	32
+ 313 011e 01       		.byte	1
+ 314 011f 04       		.byte	4
+ 315 0120 02       		.byte	2
+ 316 0121 02       		.byte	2
+ 317 0122 03       		.byte	3
+ 318 0123 03       		.byte	3
+ 319 0124 04       		.byte	4
+ 320 0125 01       		.byte	1
+ 321 0126 07       		.byte	7
+ 322 0127 0C       		.byte	12
+ 323 0128 08       		.byte	8
+ 324 0129 04       		.byte	4
+ 325 012a 0B       		.byte	11
+ 326 012b 12       		.byte	18
+ 327 012c 17       		.byte	23
+ 328 012d 01       		.byte	1
+ 329 012e 19       		.byte	25
+ 330 012f 01       		.byte	1
+ 331 0130 1B       		.byte	27
+ 332 0131 02       		.byte	2
+ 333 0132 25       		.byte	37
+ 334 0133 08       		.byte	8
+ 335 0134 26       		.byte	38
+ 336 0135 07       		.byte	7
+ 337 0136 27       		.byte	39
+ 338 0137 03       		.byte	3
+ 339 0138 2C       		.byte	44
+ 340 0139 07       		.byte	7
+ 341 013a 30       		.byte	48
+ 342 013b 07       		.byte	7
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccEzDkbU.s 			page 7
+
+
+ 343 013c 33       		.byte	51
+ 344 013d 10       		.byte	16
+ 345 013e 35       		.byte	53
+ 346 013f 0F       		.byte	15
+ 347 0140 3E       		.byte	62
+ 348 0141 01       		.byte	1
+ 349 0142 58       		.byte	88
+ 350 0143 04       		.byte	4
+ 351 0144 59       		.byte	89
+ 352 0145 04       		.byte	4
+ 353 0146 5F       		.byte	95
+ 354 0147 01       		.byte	1
+ 355 0148 80       		.byte	-128
+ 356 0149 12       		.byte	18
+ 357 014a 81       		.byte	-127
+ 358 014b 01       		.byte	1
+ 359 014c 82       		.byte	-126
+ 360 014d 04       		.byte	4
+ 361 014e 83       		.byte	-125
+ 362 014f 04       		.byte	4
+ 363 0150 84       		.byte	-124
+ 364 0151 0D       		.byte	13
+ 365 0152 88       		.byte	-120
+ 366 0153 0D       		.byte	13
+ 367 0154 89       		.byte	-119
+ 368 0155 02       		.byte	2
+ 369 0156 8B       		.byte	-117
+ 370 0157 01       		.byte	1
+ 371 0158 8C       		.byte	-116
+ 372 0159 0D       		.byte	13
+ 373 015a 94       		.byte	-108
+ 374 015b 12       		.byte	18
+ 375 015c 96       		.byte	-106
+ 376 015d 08       		.byte	8
+ 377 015e 98       		.byte	-104
+ 378 015f 02       		.byte	2
+ 379 0160 99       		.byte	-103
+ 380 0161 01       		.byte	1
+ 381 0162 9A       		.byte	-102
+ 382 0163 0D       		.byte	13
+ 383 0164 9B       		.byte	-101
+ 384 0165 02       		.byte	2
+ 385 0166 9C       		.byte	-100
+ 386 0167 0D       		.byte	13
+ 387 0168 9D       		.byte	-99
+ 388 0169 06       		.byte	6
+ 389 016a A8       		.byte	-88
+ 390 016b 11       		.byte	17
+ 391 016c AA       		.byte	-86
+ 392 016d 02       		.byte	2
+ 393 016e AC       		.byte	-84
+ 394 016f 0D       		.byte	13
+ 395 0170 B1       		.byte	-79
+ 396 0171 07       		.byte	7
+ 397 0172 B4       		.byte	-76
+ 398 0173 0F       		.byte	15
+ 399 0174 B6       		.byte	-74
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccEzDkbU.s 			page 8
+
+
+ 400 0175 10       		.byte	16
+ 401 0176 B9       		.byte	-71
+ 402 0177 02       		.byte	2
+ 403 0178 BA       		.byte	-70
+ 404 0179 20       		.byte	32
+ 405 017a BE       		.byte	-66
+ 406 017b 40       		.byte	64
+ 407 017c D4       		.byte	-44
+ 408 017d 09       		.byte	9
+ 409 017e D8       		.byte	-40
+ 410 017f 04       		.byte	4
+ 411 0180 D9       		.byte	-39
+ 412 0181 04       		.byte	4
+ 413 0182 DB       		.byte	-37
+ 414 0183 04       		.byte	4
+ 415 0184 DF       		.byte	-33
+ 416 0185 01       		.byte	1
+ 417 0186 00       		.byte	0
+ 418 0187 21       		.byte	33
+ 419 0188 03       		.byte	3
+ 420 0189 10       		.byte	16
+ 421 018a 04       		.byte	4
+ 422 018b 29       		.byte	41
+ 423 018c 06       		.byte	6
+ 424 018d 02       		.byte	2
+ 425 018e 0C       		.byte	12
+ 426 018f 80       		.byte	-128
+ 427 0190 0E       		.byte	14
+ 428 0191 28       		.byte	40
+ 429 0192 12       		.byte	18
+ 430 0193 22       		.byte	34
+ 431 0194 15       		.byte	21
+ 432 0195 40       		.byte	64
+ 433 0196 17       		.byte	23
+ 434 0197 10       		.byte	16
+ 435 0198 1A       		.byte	26
+ 436 0199 80       		.byte	-128
+ 437 019a 1D       		.byte	29
+ 438 019b 40       		.byte	64
+ 439 019c 1E       		.byte	30
+ 440 019d 08       		.byte	8
+ 441 019e 20       		.byte	32
+ 442 019f 04       		.byte	4
+ 443 01a0 21       		.byte	33
+ 444 01a1 08       		.byte	8
+ 445 01a2 22       		.byte	34
+ 446 01a3 20       		.byte	32
+ 447 01a4 26       		.byte	38
+ 448 01a5 02       		.byte	2
+ 449 01a6 27       		.byte	39
+ 450 01a7 40       		.byte	64
+ 451 01a8 29       		.byte	41
+ 452 01a9 04       		.byte	4
+ 453 01aa 31       		.byte	49
+ 454 01ab 08       		.byte	8
+ 455 01ac 33       		.byte	51
+ 456 01ad 10       		.byte	16
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccEzDkbU.s 			page 9
+
+
+ 457 01ae 37       		.byte	55
+ 458 01af 50       		.byte	80
+ 459 01b0 38       		.byte	56
+ 460 01b1 05       		.byte	5
+ 461 01b2 3A       		.byte	58
+ 462 01b3 10       		.byte	16
+ 463 01b4 3C       		.byte	60
+ 464 01b5 21       		.byte	33
+ 465 01b6 5D       		.byte	93
+ 466 01b7 04       		.byte	4
+ 467 01b8 5E       		.byte	94
+ 468 01b9 42       		.byte	66
+ 469 01ba 5F       		.byte	95
+ 470 01bb 10       		.byte	16
+ 471 01bc 65       		.byte	101
+ 472 01bd 40       		.byte	64
+ 473 01be 82       		.byte	-126
+ 474 01bf 40       		.byte	64
+ 475 01c0 8F       		.byte	-113
+ 476 01c1 40       		.byte	64
+ 477 01c2 90       		.byte	-112
+ 478 01c3 29       		.byte	41
+ 479 01c4 91       		.byte	-111
+ 480 01c5 44       		.byte	68
+ 481 01c6 92       		.byte	-110
+ 482 01c7 40       		.byte	64
+ 483 01c8 93       		.byte	-109
+ 484 01c9 10       		.byte	16
+ 485 01ca 99       		.byte	-103
+ 486 01cb 04       		.byte	4
+ 487 01cc 9A       		.byte	-102
+ 488 01cd 12       		.byte	18
+ 489 01ce 9B       		.byte	-101
+ 490 01cf 10       		.byte	16
+ 491 01d0 A0       		.byte	-96
+ 492 01d1 90       		.byte	-112
+ 493 01d2 A2       		.byte	-94
+ 494 01d3 11       		.byte	17
+ 495 01d4 AA       		.byte	-86
+ 496 01d5 21       		.byte	33
+ 497 01d6 AD       		.byte	-83
+ 498 01d7 02       		.byte	2
+ 499 01d8 B2       		.byte	-78
+ 500 01d9 40       		.byte	64
+ 501 01da B3       		.byte	-77
+ 502 01db 10       		.byte	16
+ 503 01dc C0       		.byte	-64
+ 504 01dd FE       		.byte	-2
+ 505 01de C2       		.byte	-62
+ 506 01df E0       		.byte	-32
+ 507 01e0 C4       		.byte	-60
+ 508 01e1 C5       		.byte	-59
+ 509 01e2 CA       		.byte	-54
+ 510 01e3 02       		.byte	2
+ 511 01e4 CC       		.byte	-52
+ 512 01e5 36       		.byte	54
+ 513 01e6 CE       		.byte	-50
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccEzDkbU.s 			page 10
+
+
+ 514 01e7 A7       		.byte	-89
+ 515 01e8 D6       		.byte	-42
+ 516 01e9 F0       		.byte	-16
+ 517 01ea D8       		.byte	-40
+ 518 01eb 10       		.byte	16
+ 519 01ec 04       		.byte	4
+ 520 01ed 20       		.byte	32
+ 521 01ee 05       		.byte	5
+ 522 01ef 04       		.byte	4
+ 523 01f0 06       		.byte	6
+ 524 01f1 02       		.byte	2
+ 525 01f2 07       		.byte	7
+ 526 01f3 60       		.byte	96
+ 527 01f4 0D       		.byte	13
+ 528 01f5 08       		.byte	8
+ 529 01f6 0E       		.byte	14
+ 530 01f7 01       		.byte	1
+ 531 01f8 0F       		.byte	15
+ 532 01f9 80       		.byte	-128
+ 533 01fa 15       		.byte	21
+ 534 01fb 51       		.byte	81
+ 535 01fc 17       		.byte	23
+ 536 01fd 04       		.byte	4
+ 537 01fe 1C       		.byte	28
+ 538 01ff 21       		.byte	33
+ 539 0200 1D       		.byte	29
+ 540 0201 C4       		.byte	-60
+ 541 0202 1E       		.byte	30
+ 542 0203 61       		.byte	97
+ 543 0204 1F       		.byte	31
+ 544 0205 10       		.byte	16
+ 545 0206 25       		.byte	37
+ 546 0207 60       		.byte	96
+ 547 0208 34       		.byte	52
+ 548 0209 08       		.byte	8
+ 549 020a 37       		.byte	55
+ 550 020b 10       		.byte	16
+ 551 020c 3C       		.byte	60
+ 552 020d 20       		.byte	32
+ 553 020e 3D       		.byte	61
+ 554 020f 80       		.byte	-128
+ 555 0210 3E       		.byte	62
+ 556 0211 01       		.byte	1
+ 557 0212 45       		.byte	69
+ 558 0213 8A       		.byte	-118
+ 559 0214 47       		.byte	71
+ 560 0215 20       		.byte	32
+ 561 0216 4D       		.byte	77
+ 562 0217 05       		.byte	5
+ 563 0218 4E       		.byte	78
+ 564 0219 02       		.byte	2
+ 565 021a 4F       		.byte	79
+ 566 021b 01       		.byte	1
+ 567 021c 56       		.byte	86
+ 568 021d 51       		.byte	81
+ 569 021e 57       		.byte	87
+ 570 021f 44       		.byte	68
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccEzDkbU.s 			page 11
+
+
+ 571 0220 60       		.byte	96
+ 572 0221 08       		.byte	8
+ 573 0222 61       		.byte	97
+ 574 0223 20       		.byte	32
+ 575 0224 66       		.byte	102
+ 576 0225 20       		.byte	32
+ 577 0226 67       		.byte	103
+ 578 0227 21       		.byte	33
+ 579 0228 80       		.byte	-128
+ 580 0229 21       		.byte	33
+ 581 022a 85       		.byte	-123
+ 582 022b 40       		.byte	64
+ 583 022c 90       		.byte	-112
+ 584 022d 28       		.byte	40
+ 585 022e 91       		.byte	-111
+ 586 022f 50       		.byte	80
+ 587 0230 9A       		.byte	-102
+ 588 0231 02       		.byte	2
+ 589 0232 9B       		.byte	-101
+ 590 0233 54       		.byte	84
+ 591 0234 9C       		.byte	-100
+ 592 0235 08       		.byte	8
+ 593 0236 9D       		.byte	-99
+ 594 0237 44       		.byte	68
+ 595 0238 9E       		.byte	-98
+ 596 0239 10       		.byte	16
+ 597 023a A0       		.byte	-96
+ 598 023b 80       		.byte	-128
+ 599 023c A1       		.byte	-95
+ 600 023d 08       		.byte	8
+ 601 023e A2       		.byte	-94
+ 602 023f 03       		.byte	3
+ 603 0240 A4       		.byte	-92
+ 604 0241 30       		.byte	48
+ 605 0242 A7       		.byte	-89
+ 606 0243 44       		.byte	68
+ 607 0244 C0       		.byte	-64
+ 608 0245 F0       		.byte	-16
+ 609 0246 C2       		.byte	-62
+ 610 0247 B0       		.byte	-80
+ 611 0248 C4       		.byte	-60
+ 612 0249 F0       		.byte	-16
+ 613 024a CC       		.byte	-52
+ 614 024b 60       		.byte	96
+ 615 024c CE       		.byte	-50
+ 616 024d B0       		.byte	-80
+ 617 024e D0       		.byte	-48
+ 618 024f F0       		.byte	-16
+ 619 0250 D2       		.byte	-46
+ 620 0251 10       		.byte	16
+ 621 0252 D8       		.byte	-40
+ 622 0253 70       		.byte	112
+ 623 0254 E0       		.byte	-32
+ 624 0255 10       		.byte	16
+ 625 0256 66       		.byte	102
+ 626 0257 80       		.byte	-128
+ 627 0258 D6       		.byte	-42
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccEzDkbU.s 			page 12
+
+
+ 628 0259 80       		.byte	-128
+ 629 025a 9E       		.byte	-98
+ 630 025b 80       		.byte	-128
+ 631 025c 9E       		.byte	-98
+ 632 025d 80       		.byte	-128
+ 633 025e 86       		.byte	-122
+ 634 025f 80       		.byte	-128
+ 635 0260 9E       		.byte	-98
+ 636 0261 80       		.byte	-128
+ 637 0262 E2       		.byte	-30
+ 638 0263 40       		.byte	64
+ 639 0264 06       		.byte	6
+ 640 0265 10       		.byte	16
+ 641 0266 5B       		.byte	91
+ 642 0267 40       		.byte	64
+ 643 0268 83       		.byte	-125
+ 644 0269 40       		.byte	64
+ 645 026a 9E       		.byte	-98
+ 646 026b 10       		.byte	16
+ 647 026c AE       		.byte	-82
+ 648 026d 10       		.byte	16
+ 649 026e C0       		.byte	-64
+ 650 026f 20       		.byte	32
+ 651 0270 D4       		.byte	-44
+ 652 0271 80       		.byte	-128
+ 653 0272 E6       		.byte	-26
+ 654 0273 80       		.byte	-128
+ 655 0274 E8       		.byte	-24
+ 656 0275 40       		.byte	64
+ 657 0276 52       		.byte	82
+ 658 0277 20       		.byte	32
+ 659 0278 8E       		.byte	-114
+ 660 0279 20       		.byte	32
+ 661 027a D4       		.byte	-44
+ 662 027b 04       		.byte	4
+ 663 027c E0       		.byte	-32
+ 664 027d 08       		.byte	8
+ 665 027e 00       		.byte	0
+ 666 027f 01       		.byte	1
+ 667 0280 0A       		.byte	10
+ 668 0281 01       		.byte	1
+ 669 0282 10       		.byte	16
+ 670 0283 01       		.byte	1
+ 671 0284 1A       		.byte	26
+ 672 0285 01       		.byte	1
+ 673 0286 00       		.byte	0
+ 674 0287 00       		.byte	0
+ 675 0288 C6       		.byte	-58
+ 676 0289 03       		.byte	3
+ 677 028a 00       		.byte	0
+ 678 028b 2C       		.byte	44
+ 679 028c 01       		.byte	1
+ 680 028d 00       		.byte	0
+ 681 028e 5E       		.byte	94
+ 682 028f 00       		.byte	0
+ 683 0290 C2       		.byte	-62
+ 684 0291 35       		.byte	53
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccEzDkbU.s 			page 13
+
+
+ 685 0292 04       		.byte	4
+ 686 0293 02       		.byte	2
+ 687 0294 C6       		.byte	-58
+ 688 0295 00       		.byte	0
+ 689 0296 00       		.byte	0
+ 690 0297 08       		.byte	8
+ 691 0298 04       		.byte	4
+ 692 0299 00       		.byte	0
+ 693 029a 20       		.byte	32
+ 694 029b 00       		.byte	0
+ 695 029c 77       		.byte	119
+ 696 029d 04       		.byte	4
+ 697 029e 08       		.byte	8
+ 698 029f 03       		.byte	3
+ 699 02a0 00       		.byte	0
+ 700 02a1 01       		.byte	1
+ 701 02a2 00       		.byte	0
+ 702 02a3 1E       		.byte	30
+ 703 02a4 39       		.byte	57
+ 704 02a5 00       		.byte	0
+ 705 02a6 06       		.byte	6
+ 706 02a7 00       		.byte	0
+ 707 02a8 00       		.byte	0
+ 708 02a9 00       		.byte	0
+ 709 02aa 80       		.byte	-128
+ 710 02ab 00       		.byte	0
+ 711 02ac 42       		.byte	66
+ 712 02ad 00       		.byte	0
+ 713 02ae 00       		.byte	0
+ 714 02af 00       		.byte	0
+ 715 02b0 80       		.byte	-128
+ 716 02b1 00       		.byte	0
+ 717 02b2 46       		.byte	70
+ 718 02b3 00       		.byte	0
+ 719 02b4 46       		.byte	70
+ 720 02b5 00       		.byte	0
+ 721 02b6 80       		.byte	-128
+ 722 02b7 00       		.byte	0
+ 723 02b8 08       		.byte	8
+ 724 02b9 00       		.byte	0
+ 725 02ba 70       		.byte	112
+ 726 02bb 00       		.byte	0
+ 727 02bc 80       		.byte	-128
+ 728 02bd 07       		.byte	7
+ 729 02be 0F       		.byte	15
+ 730 02bf 38       		.byte	56
+ 731 02c0 80       		.byte	-128
+ 732 02c1 00       		.byte	0
+ 733 02c2 0C       		.byte	12
+ 734 02c3 20       		.byte	32
+ 735 02c4 00       		.byte	0
+ 736 02c5 00       		.byte	0
+ 737 02c6 11       		.byte	17
+ 738 02c7 00       		.byte	0
+ 739 02c8 12       		.byte	18
+ 740 02c9 03       		.byte	3
+ 741 02ca 50       		.byte	80
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccEzDkbU.s 			page 14
+
+
+ 742 02cb 00       		.byte	0
+ 743 02cc 04       		.byte	4
+ 744 02cd DE       		.byte	-34
+ 745 02ce BC       		.byte	-68
+ 746 02cf FB       		.byte	-5
+ 747 02d0 3F       		.byte	63
+ 748 02d1 FF       		.byte	-1
+ 749 02d2 FF       		.byte	-1
+ 750 02d3 FF       		.byte	-1
+ 751 02d4 22       		.byte	34
+ 752 02d5 00       		.byte	0
+ 753 02d6 F0       		.byte	-16
+ 754 02d7 08       		.byte	8
+ 755 02d8 04       		.byte	4
+ 756 02d9 00       		.byte	0
+ 757 02da 00       		.byte	0
+ 758 02db 00       		.byte	0
+ 759 02dc 40       		.byte	64
+ 760 02dd 00       		.byte	0
+ 761 02de 00       		.byte	0
+ 762 02df 00       		.byte	0
+ 763 02e0 04       		.byte	4
+ 764 02e1 04       		.byte	4
+ 765 02e2 04       		.byte	4
+ 766 02e3 04       		.byte	4
+ 767 02e4 00       		.byte	0
+ 768 02e5 00       		.byte	0
+ 769 02e6 00       		.byte	0
+ 770 02e7 01       		.byte	1
+ 771 02e8 00       		.byte	0
+ 772 02e9 00       		.byte	0
+ 773 02ea C0       		.byte	-64
+ 774 02eb 00       		.byte	0
+ 775 02ec 40       		.byte	64
+ 776 02ed 01       		.byte	1
+ 777 02ee 10       		.byte	16
+ 778 02ef 11       		.byte	17
+ 779 02f0 C0       		.byte	-64
+ 780 02f1 01       		.byte	1
+ 781 02f2 00       		.byte	0
+ 782 02f3 11       		.byte	17
+ 783 02f4 40       		.byte	64
+ 784 02f5 01       		.byte	1
+ 785 02f6 40       		.byte	64
+ 786 02f7 01       		.byte	1
+ 787 02f8 00       		.byte	0
+ 788 02f9 00       		.byte	0
+ 789 02fa 00       		.byte	0
+ 790 02fb 00       		.byte	0
+ 791 02fc 00       		.byte	0
+ 792 02fd 00       		.byte	0
+ 793 02fe 00       		.byte	0
+ 794 02ff 00       		.byte	0
+ 795 0300 00       		.byte	0
+ 796 0301 00       		.byte	0
+ 797 0302 00       		.byte	0
+ 798 0303 00       		.byte	0
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccEzDkbU.s 			page 15
+
+
+ 799 0304 00       		.byte	0
+ 800 0305 00       		.byte	0
+ 801 0306 00       		.byte	0
+ 802 0307 00       		.byte	0
+ 803 0308 00       		.byte	0
+ 804 0309 40       		.byte	64
+ 805 030a 40       		.byte	64
+ 806 030b 00       		.byte	0
+ 807 030c 40       		.byte	64
+ 808 030d 00       		.byte	0
+ 809 030e 00       		.byte	0
+ 810 030f 00       		.byte	0
+ 811 0310 10       		.byte	16
+ 812 0311 00       		.byte	0
+ 813 0312 00       		.byte	0
+ 814 0313 10       		.byte	16
+ 815 0314 10       		.byte	16
+ 816 0315 00       		.byte	0
+ 817 0316 00       		.byte	0
+ 818 0317 00       		.byte	0
+ 819 0318 00       		.byte	0
+ 820 0319 00       		.byte	0
+ 821 031a 00       		.byte	0
+ 822 031b 00       		.byte	0
+ 823 031c 02       		.byte	2
+ 824 031d 01       		.byte	1
+ 825 031e 01       		.byte	1
+ 826 031f 00       		.byte	0
+ 827 0320 01       		.byte	1
+ 828 0321 00       		.byte	0
+ 829 0322 00       		.byte	0
+ 830 0323 00       		.byte	0
+ 831 0324 00       		.byte	0
+ 832 0325 04       		.byte	4
+ 833 0326 04       		.byte	4
+ 834 0327 00       		.byte	0
+ 835 0328 04       		.byte	4
+ 836 0329 00       		.byte	0
+ 837 032a 00       		.byte	0
+ 838 032b 00       		.byte	0
+ 839              		.section	.cywolatch,"a",%progbits
+ 840              		.type	cy_meta_wonvl, %object
+ 841              		.size	cy_meta_wonvl, 4
+ 842              	cy_meta_wonvl:
+ 843 0000 BC       		.byte	-68
+ 844 0001 90       		.byte	-112
+ 845 0002 AC       		.byte	-84
+ 846 0003 AF       		.byte	-81
+ 847              		.section	.cycustnvl,"a",%progbits
+ 848              		.type	cy_meta_custnvl, %object
+ 849              		.size	cy_meta_custnvl, 4
+ 850              	cy_meta_custnvl:
+ 851 0000 00       		.byte	0
+ 852 0001 00       		.byte	0
+ 853 0002 40       		.byte	64
+ 854 0003 05       		.byte	5
+ 855              		.section	.cymeta,"a",%progbits
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccEzDkbU.s 			page 16
+
+
+ 856              		.type	cy_metadata, %object
+ 857              		.size	cy_metadata, 12
+ 858              	cy_metadata:
+ 859 0000 00       		.byte	0
+ 860 0001 01       		.byte	1
+ 861 0002 2E       		.byte	46
+ 862 0003 12       		.byte	18
+ 863 0004 30       		.byte	48
+ 864 0005 69       		.byte	105
+ 865 0006 00       		.byte	0
+ 866 0007 01       		.byte	1
+ 867 0008 00       		.byte	0
+ 868 0009 00       		.byte	0
+ 869 000a 00       		.byte	0
+ 870 000b 00       		.byte	0
+ 871              		.section	.cyflashprotect,"a",%progbits
+ 872              		.type	cy_meta_flashprotect, %object
+ 873              		.size	cy_meta_flashprotect, 256
+ 874              	cy_meta_flashprotect:
+ 875 0000 00000000 		.space	256
+ 875      00000000 
+ 875      00000000 
+ 875      00000000 
+ 875      00000000 
+ 876              		.text
+ 877              	.Letext0:
+ 878              		.file 1 ".\\Generated_Source\\PSoC5\\cymetadata.c"
+ 879              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 880              		.section	.debug_info,"",%progbits
+ 881              	.Ldebug_info0:
+ 882 0000 3B010000 		.4byte	0x13b
+ 883 0004 0200     		.2byte	0x2
+ 884 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 885 000a 04       		.byte	0x4
+ 886 000b 01       		.uleb128 0x1
+ 887 000c 6C010000 		.4byte	.LASF18
+ 888 0010 01       		.byte	0x1
+ 889 0011 00000000 		.4byte	.LASF19
+ 890 0015 26000000 		.4byte	.LASF20
+ 891 0019 00000000 		.4byte	.Ldebug_line0
+ 892 001d 02       		.uleb128 0x2
+ 893 001e 01       		.byte	0x1
+ 894 001f 06       		.byte	0x6
+ 895 0020 BE010000 		.4byte	.LASF0
+ 896 0024 02       		.uleb128 0x2
+ 897 0025 01       		.byte	0x1
+ 898 0026 08       		.byte	0x8
+ 899 0027 9D000000 		.4byte	.LASF1
+ 900 002b 02       		.uleb128 0x2
+ 901 002c 02       		.byte	0x2
+ 902 002d 05       		.byte	0x5
+ 903 002e 5C010000 		.4byte	.LASF2
+ 904 0032 02       		.uleb128 0x2
+ 905 0033 02       		.byte	0x2
+ 906 0034 07       		.byte	0x7
+ 907 0035 BD000000 		.4byte	.LASF3
+ 908 0039 02       		.uleb128 0x2
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccEzDkbU.s 			page 17
+
+
+ 909 003a 04       		.byte	0x4
+ 910 003b 05       		.byte	0x5
+ 911 003c B5010000 		.4byte	.LASF4
+ 912 0040 02       		.uleb128 0x2
+ 913 0041 04       		.byte	0x4
+ 914 0042 07       		.byte	0x7
+ 915 0043 AB000000 		.4byte	.LASF5
+ 916 0047 02       		.uleb128 0x2
+ 917 0048 08       		.byte	0x8
+ 918 0049 05       		.byte	0x5
+ 919 004a 49010000 		.4byte	.LASF6
+ 920 004e 02       		.uleb128 0x2
+ 921 004f 08       		.byte	0x8
+ 922 0050 07       		.byte	0x7
+ 923 0051 06010000 		.4byte	.LASF7
+ 924 0055 03       		.uleb128 0x3
+ 925 0056 04       		.byte	0x4
+ 926 0057 05       		.byte	0x5
+ 927 0058 696E7400 		.ascii	"int\000"
+ 928 005c 02       		.uleb128 0x2
+ 929 005d 04       		.byte	0x4
+ 930 005e 07       		.byte	0x7
+ 931 005f F9000000 		.4byte	.LASF8
+ 932 0063 04       		.uleb128 0x4
+ 933 0064 66010000 		.4byte	.LASF21
+ 934 0068 02       		.byte	0x2
+ 935 0069 5B       		.byte	0x5b
+ 936 006a 24000000 		.4byte	0x24
+ 937 006e 02       		.uleb128 0x2
+ 938 006f 04       		.byte	0x4
+ 939 0070 04       		.byte	0x4
+ 940 0071 97000000 		.4byte	.LASF9
+ 941 0075 02       		.uleb128 0x2
+ 942 0076 08       		.byte	0x8
+ 943 0077 04       		.byte	0x4
+ 944 0078 D0000000 		.4byte	.LASF10
+ 945 007c 02       		.uleb128 0x2
+ 946 007d 01       		.byte	0x1
+ 947 007e 08       		.byte	0x8
+ 948 007f 57010000 		.4byte	.LASF11
+ 949 0083 05       		.uleb128 0x5
+ 950 0084 63000000 		.4byte	0x63
+ 951 0088 94000000 		.4byte	0x94
+ 952 008c 06       		.uleb128 0x6
+ 953 008d 94000000 		.4byte	0x94
+ 954 0091 2B03     		.2byte	0x32b
+ 955 0093 00       		.byte	0
+ 956 0094 02       		.uleb128 0x2
+ 957 0095 04       		.byte	0x4
+ 958 0096 07       		.byte	0x7
+ 959 0097 40010000 		.4byte	.LASF12
+ 960 009b 07       		.uleb128 0x7
+ 961 009c E7000000 		.4byte	.LASF13
+ 962 00a0 01       		.byte	0x1
+ 963 00a1 1C       		.byte	0x1c
+ 964 00a2 AD000000 		.4byte	0xad
+ 965 00a6 01       		.byte	0x1
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccEzDkbU.s 			page 18
+
+
+ 966 00a7 05       		.byte	0x5
+ 967 00a8 03       		.byte	0x3
+ 968 00a9 00000000 		.4byte	cy_meta_configecc
+ 969 00ad 08       		.uleb128 0x8
+ 970 00ae 83000000 		.4byte	0x83
+ 971 00b2 05       		.uleb128 0x5
+ 972 00b3 63000000 		.4byte	0x63
+ 973 00b7 C2000000 		.4byte	0xc2
+ 974 00bb 09       		.uleb128 0x9
+ 975 00bc 94000000 		.4byte	0x94
+ 976 00c0 03       		.byte	0x3
+ 977 00c1 00       		.byte	0
+ 978 00c2 07       		.uleb128 0x7
+ 979 00c3 D7000000 		.4byte	.LASF14
+ 980 00c7 01       		.byte	0x1
+ 981 00c8 8C       		.byte	0x8c
+ 982 00c9 D4000000 		.4byte	0xd4
+ 983 00cd 01       		.byte	0x1
+ 984 00ce 05       		.byte	0x5
+ 985 00cf 03       		.byte	0x3
+ 986 00d0 00000000 		.4byte	cy_meta_custnvl
+ 987 00d4 08       		.uleb128 0x8
+ 988 00d5 B2000000 		.4byte	0xb2
+ 989 00d9 07       		.uleb128 0x7
+ 990 00da 32010000 		.4byte	.LASF15
+ 991 00de 01       		.byte	0x1
+ 992 00df 97       		.byte	0x97
+ 993 00e0 EB000000 		.4byte	0xeb
+ 994 00e4 01       		.byte	0x1
+ 995 00e5 05       		.byte	0x5
+ 996 00e6 03       		.byte	0x3
+ 997 00e7 00000000 		.4byte	cy_meta_wonvl
+ 998 00eb 08       		.uleb128 0x8
+ 999 00ec B2000000 		.4byte	0xb2
+ 1000 00f0 05       		.uleb128 0x5
+ 1001 00f1 63000000 		.4byte	0x63
+ 1002 00f5 00010000 		.4byte	0x100
+ 1003 00f9 09       		.uleb128 0x9
+ 1004 00fa 94000000 		.4byte	0x94
+ 1005 00fe FF       		.byte	0xff
+ 1006 00ff 00       		.byte	0
+ 1007 0100 07       		.uleb128 0x7
+ 1008 0101 1D010000 		.4byte	.LASF16
+ 1009 0105 01       		.byte	0x1
+ 1010 0106 A2       		.byte	0xa2
+ 1011 0107 12010000 		.4byte	0x112
+ 1012 010b 01       		.byte	0x1
+ 1013 010c 05       		.byte	0x5
+ 1014 010d 03       		.byte	0x3
+ 1015 010e 00000000 		.4byte	cy_meta_flashprotect
+ 1016 0112 08       		.uleb128 0x8
+ 1017 0113 F0000000 		.4byte	0xf0
+ 1018 0117 05       		.uleb128 0x5
+ 1019 0118 63000000 		.4byte	0x63
+ 1020 011c 27010000 		.4byte	0x127
+ 1021 0120 09       		.uleb128 0x9
+ 1022 0121 94000000 		.4byte	0x94
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccEzDkbU.s 			page 19
+
+
+ 1023 0125 0B       		.byte	0xb
+ 1024 0126 00       		.byte	0
+ 1025 0127 07       		.uleb128 0x7
+ 1026 0128 8B000000 		.4byte	.LASF17
+ 1027 012c 01       		.byte	0x1
+ 1028 012d CC       		.byte	0xcc
+ 1029 012e 39010000 		.4byte	0x139
+ 1030 0132 01       		.byte	0x1
+ 1031 0133 05       		.byte	0x5
+ 1032 0134 03       		.byte	0x3
+ 1033 0135 00000000 		.4byte	cy_metadata
+ 1034 0139 08       		.uleb128 0x8
+ 1035 013a 17010000 		.4byte	0x117
+ 1036 013e 00       		.byte	0
+ 1037              		.section	.debug_abbrev,"",%progbits
+ 1038              	.Ldebug_abbrev0:
+ 1039 0000 01       		.uleb128 0x1
+ 1040 0001 11       		.uleb128 0x11
+ 1041 0002 01       		.byte	0x1
+ 1042 0003 25       		.uleb128 0x25
+ 1043 0004 0E       		.uleb128 0xe
+ 1044 0005 13       		.uleb128 0x13
+ 1045 0006 0B       		.uleb128 0xb
+ 1046 0007 03       		.uleb128 0x3
+ 1047 0008 0E       		.uleb128 0xe
+ 1048 0009 1B       		.uleb128 0x1b
+ 1049 000a 0E       		.uleb128 0xe
+ 1050 000b 10       		.uleb128 0x10
+ 1051 000c 06       		.uleb128 0x6
+ 1052 000d 00       		.byte	0
+ 1053 000e 00       		.byte	0
+ 1054 000f 02       		.uleb128 0x2
+ 1055 0010 24       		.uleb128 0x24
+ 1056 0011 00       		.byte	0
+ 1057 0012 0B       		.uleb128 0xb
+ 1058 0013 0B       		.uleb128 0xb
+ 1059 0014 3E       		.uleb128 0x3e
+ 1060 0015 0B       		.uleb128 0xb
+ 1061 0016 03       		.uleb128 0x3
+ 1062 0017 0E       		.uleb128 0xe
+ 1063 0018 00       		.byte	0
+ 1064 0019 00       		.byte	0
+ 1065 001a 03       		.uleb128 0x3
+ 1066 001b 24       		.uleb128 0x24
+ 1067 001c 00       		.byte	0
+ 1068 001d 0B       		.uleb128 0xb
+ 1069 001e 0B       		.uleb128 0xb
+ 1070 001f 3E       		.uleb128 0x3e
+ 1071 0020 0B       		.uleb128 0xb
+ 1072 0021 03       		.uleb128 0x3
+ 1073 0022 08       		.uleb128 0x8
+ 1074 0023 00       		.byte	0
+ 1075 0024 00       		.byte	0
+ 1076 0025 04       		.uleb128 0x4
+ 1077 0026 16       		.uleb128 0x16
+ 1078 0027 00       		.byte	0
+ 1079 0028 03       		.uleb128 0x3
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccEzDkbU.s 			page 20
+
+
+ 1080 0029 0E       		.uleb128 0xe
+ 1081 002a 3A       		.uleb128 0x3a
+ 1082 002b 0B       		.uleb128 0xb
+ 1083 002c 3B       		.uleb128 0x3b
+ 1084 002d 0B       		.uleb128 0xb
+ 1085 002e 49       		.uleb128 0x49
+ 1086 002f 13       		.uleb128 0x13
+ 1087 0030 00       		.byte	0
+ 1088 0031 00       		.byte	0
+ 1089 0032 05       		.uleb128 0x5
+ 1090 0033 01       		.uleb128 0x1
+ 1091 0034 01       		.byte	0x1
+ 1092 0035 49       		.uleb128 0x49
+ 1093 0036 13       		.uleb128 0x13
+ 1094 0037 01       		.uleb128 0x1
+ 1095 0038 13       		.uleb128 0x13
+ 1096 0039 00       		.byte	0
+ 1097 003a 00       		.byte	0
+ 1098 003b 06       		.uleb128 0x6
+ 1099 003c 21       		.uleb128 0x21
+ 1100 003d 00       		.byte	0
+ 1101 003e 49       		.uleb128 0x49
+ 1102 003f 13       		.uleb128 0x13
+ 1103 0040 2F       		.uleb128 0x2f
+ 1104 0041 05       		.uleb128 0x5
+ 1105 0042 00       		.byte	0
+ 1106 0043 00       		.byte	0
+ 1107 0044 07       		.uleb128 0x7
+ 1108 0045 34       		.uleb128 0x34
+ 1109 0046 00       		.byte	0
+ 1110 0047 03       		.uleb128 0x3
+ 1111 0048 0E       		.uleb128 0xe
+ 1112 0049 3A       		.uleb128 0x3a
+ 1113 004a 0B       		.uleb128 0xb
+ 1114 004b 3B       		.uleb128 0x3b
+ 1115 004c 0B       		.uleb128 0xb
+ 1116 004d 49       		.uleb128 0x49
+ 1117 004e 13       		.uleb128 0x13
+ 1118 004f 3F       		.uleb128 0x3f
+ 1119 0050 0C       		.uleb128 0xc
+ 1120 0051 02       		.uleb128 0x2
+ 1121 0052 0A       		.uleb128 0xa
+ 1122 0053 00       		.byte	0
+ 1123 0054 00       		.byte	0
+ 1124 0055 08       		.uleb128 0x8
+ 1125 0056 26       		.uleb128 0x26
+ 1126 0057 00       		.byte	0
+ 1127 0058 49       		.uleb128 0x49
+ 1128 0059 13       		.uleb128 0x13
+ 1129 005a 00       		.byte	0
+ 1130 005b 00       		.byte	0
+ 1131 005c 09       		.uleb128 0x9
+ 1132 005d 21       		.uleb128 0x21
+ 1133 005e 00       		.byte	0
+ 1134 005f 49       		.uleb128 0x49
+ 1135 0060 13       		.uleb128 0x13
+ 1136 0061 2F       		.uleb128 0x2f
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccEzDkbU.s 			page 21
+
+
+ 1137 0062 0B       		.uleb128 0xb
+ 1138 0063 00       		.byte	0
+ 1139 0064 00       		.byte	0
+ 1140 0065 00       		.byte	0
+ 1141              		.section	.debug_aranges,"",%progbits
+ 1142 0000 14000000 		.4byte	0x14
+ 1143 0004 0200     		.2byte	0x2
+ 1144 0006 00000000 		.4byte	.Ldebug_info0
+ 1145 000a 04       		.byte	0x4
+ 1146 000b 00       		.byte	0
+ 1147 000c 0000     		.2byte	0
+ 1148 000e 0000     		.2byte	0
+ 1149 0010 00000000 		.4byte	0
+ 1150 0014 00000000 		.4byte	0
+ 1151              		.section	.debug_line,"",%progbits
+ 1152              	.Ldebug_line0:
+ 1153 0000 4F000000 		.section	.debug_str,"MS",%progbits,1
+ 1153      02004900 
+ 1153      00000201 
+ 1153      FB0E0D00 
+ 1153      01010101 
+ 1154              	.LASF19:
+ 1155 0000 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\cymetadata.c\000"
+ 1155      6E657261 
+ 1155      7465645F 
+ 1155      536F7572 
+ 1155      63655C50 
+ 1156              	.LASF20:
+ 1157 0026 433A5C55 		.ascii	"C:\\Users\\chuck.erhardt\\Documents\\GitHub\\PSoC-W"
+ 1157      73657273 
+ 1157      5C636875 
+ 1157      636B2E65 
+ 1157      72686172 
+ 1158 0054 35313030 		.ascii	"5100-Driver\\freeSoCExplorer+ArduinoSheld_Example.c"
+ 1158      2D447269 
+ 1158      7665725C 
+ 1158      66726565 
+ 1158      536F4345 
+ 1159 0086 7964736E 		.ascii	"ydsn\000"
+ 1159      00
+ 1160              	.LASF17:
+ 1161 008b 63795F6D 		.ascii	"cy_metadata\000"
+ 1161      65746164 
+ 1161      61746100 
+ 1162              	.LASF9:
+ 1163 0097 666C6F61 		.ascii	"float\000"
+ 1163      7400
+ 1164              	.LASF1:
+ 1165 009d 756E7369 		.ascii	"unsigned char\000"
+ 1165      676E6564 
+ 1165      20636861 
+ 1165      7200
+ 1166              	.LASF5:
+ 1167 00ab 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1167      20756E73 
+ 1167      69676E65 
+ 1167      6420696E 
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccEzDkbU.s 			page 22
+
+
+ 1167      7400
+ 1168              	.LASF3:
+ 1169 00bd 73686F72 		.ascii	"short unsigned int\000"
+ 1169      7420756E 
+ 1169      7369676E 
+ 1169      65642069 
+ 1169      6E7400
+ 1170              	.LASF10:
+ 1171 00d0 646F7562 		.ascii	"double\000"
+ 1171      6C6500
+ 1172              	.LASF14:
+ 1173 00d7 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 1173      6574615F 
+ 1173      63757374 
+ 1173      6E766C00 
+ 1174              	.LASF13:
+ 1175 00e7 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 1175      6574615F 
+ 1175      636F6E66 
+ 1175      69676563 
+ 1175      6300
+ 1176              	.LASF8:
+ 1177 00f9 756E7369 		.ascii	"unsigned int\000"
+ 1177      676E6564 
+ 1177      20696E74 
+ 1177      00
+ 1178              	.LASF7:
+ 1179 0106 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1179      206C6F6E 
+ 1179      6720756E 
+ 1179      7369676E 
+ 1179      65642069 
+ 1180              	.LASF16:
+ 1181 011d 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 1181      6574615F 
+ 1181      666C6173 
+ 1181      6870726F 
+ 1181      74656374 
+ 1182              	.LASF15:
+ 1183 0132 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 1183      6574615F 
+ 1183      776F6E76 
+ 1183      6C00
+ 1184              	.LASF12:
+ 1185 0140 73697A65 		.ascii	"sizetype\000"
+ 1185      74797065 
+ 1185      00
+ 1186              	.LASF6:
+ 1187 0149 6C6F6E67 		.ascii	"long long int\000"
+ 1187      206C6F6E 
+ 1187      6720696E 
+ 1187      7400
+ 1188              	.LASF11:
+ 1189 0157 63686172 		.ascii	"char\000"
+ 1189      00
+ 1190              	.LASF2:
+ 1191 015c 73686F72 		.ascii	"short int\000"
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccEzDkbU.s 			page 23
+
+
+ 1191      7420696E 
+ 1191      7400
+ 1192              	.LASF21:
+ 1193 0166 75696E74 		.ascii	"uint8\000"
+ 1193      3800
+ 1194              	.LASF18:
+ 1195 016c 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 1195      4320342E 
+ 1195      372E3320 
+ 1195      32303133 
+ 1195      30333132 
+ 1196 019f 616E6368 		.ascii	"anch revision 196615]\000"
+ 1196      20726576 
+ 1196      6973696F 
+ 1196      6E203139 
+ 1196      36363135 
+ 1197              	.LASF4:
+ 1198 01b5 6C6F6E67 		.ascii	"long int\000"
+ 1198      20696E74 
+ 1198      00
+ 1199              	.LASF0:
+ 1200 01be 7369676E 		.ascii	"signed char\000"
+ 1200      65642063 
+ 1200      68617200 
+ 1201              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

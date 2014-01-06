@@ -1,8 +1,80 @@
---------------- Build Started: 11/13/2013 11:33:20 Project: PSoCPioneer+ArduinoShield_SPIM_Example, Configuration: ARM GCC 4.7.3 Debug ---------------
-The code generation step is up to date.
-The compile step is up to date, no work needs to be done.
-The link step is up to date, no work needs to be done.
-cyelftool.exe -S "C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.elf"
-Flash used: 8440 of 32768 bytes (25.8 %).
-SRAM used: 1684 of 4096 bytes (41.1 %).
---------------- Build Succeeded: 11/13/2013 11:33:21 ---------------
+--------------- Build Started: 01/06/2014 12:06:52 Project: PSoCPioneer+ArduinoShield_SPIM_Example, Configuration: ARM GCC 4.7.3 Debug ---------------
+cydsfit.exe "-.appdatapath" "C:\Users\chuck.erhardt\AppData\Local\Cypress Semiconductor\PSoC Creator\3.0" "-.fdsnotice" "-.fdswarpdepfile=warp_dependencies.txt" "-.fdselabdepfile=elab_dependencies.txt" "-.fdsbldfile=generated_files.txt" "-p" "C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\PSoCPioneer+ArduinoShield_SPIM_Example.cyprj" "-d" "CY8C4245AXI-483" "-s" "C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\Generated_Source\PSoC4" "--" "-yv2" "-v3" "-ygs" "-q10" "-o2" "-.fftcfgtype=LE"
+Elaborating Design...
+HDL Generation ...
+Synthesis ...
+Place and Route ...
+Tech mapping ...
+Info: mpr.M0037: Unused pieces of the design have been optimized out. See the Tech mapping section of the report file for details. (App=cydsfit)
+Analog Placement ...
+Analog Routing ...
+Analog Code Generation ...
+Digital Placement ...
+Digital Routing ...
+Bitstream Generation ...
+Static timing analysis ...
+API Generation ...
+Dependency Generation ...
+Clean Temporary Files ...
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\main.lst -ffunction-sections -c .\main.c -o .\CortexM0\ARM_GCC_473\Debug\main.o
+.\main.c: In function 'main':
+.\main.c:30:3: warning: implicit declaration of function 'rand' [-Wimplicit-function-declaration]
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\cyfitter_cfg.lst -ffunction-sections -c .\Generated_Source\PSoC4\cyfitter_cfg.c -o .\CortexM0\ARM_GCC_473\Debug\cyfitter_cfg.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\cymetadata.lst -ffunction-sections -c .\Generated_Source\PSoC4\cymetadata.c -o .\CortexM0\ARM_GCC_473\Debug\cymetadata.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\SPI0.lst -ffunction-sections -c .\Generated_Source\PSoC4\SPI0.c -o .\CortexM0\ARM_GCC_473\Debug\SPI0.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\SPI0_PM.lst -ffunction-sections -c .\Generated_Source\PSoC4\SPI0_PM.c -o .\CortexM0\ARM_GCC_473\Debug\SPI0_PM.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\SPI0_INT.lst -ffunction-sections -c .\Generated_Source\PSoC4\SPI0_INT.c -o .\CortexM0\ARM_GCC_473\Debug\SPI0_INT.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\ETH0.lst -ffunction-sections -c .\Generated_Source\PSoC4\ETH0.c -o .\CortexM0\ARM_GCC_473\Debug\ETH0.o
+.\Generated_Source\PSoC4\ETH0.c:390:15: warning: 'ETH0_GetGatewayAddress' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:402:15: warning: 'ETH0_GetSubnetMask' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:426:14: warning: 'ETH0_GetMode' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:438:14: warning: 'ETH0_GetIR' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:444:13: warning: 'ETH0_SetIMR' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:450:14: warning: 'ETH0_GetIMR' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:456:13: warning: 'ETH0_SetRetryTime' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:462:15: warning: 'ETH0_GetRetryTime' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:468:13: warning: 'ETH0_SetRetryCount' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:474:14: warning: 'ETH0_GetRetryCount' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:486:14: warning: 'ETH0_GetRxMemSize' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:498:14: warning: 'ETH0_GetTxMemSize' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:504:13: warning: 'ETH0_SetUnreachableIP' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:510:15: warning: 'ETH0_GetUnreachableIP' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:516:13: warning: 'ETH0_SetUnreachablePort' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:522:15: warning: 'ETH0_GetUnreachablePort' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:548:14: warning: 'ETH0_GetSocketMode' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:588:13: warning: 'ETH0_SetSocketStatus' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:612:15: warning: 'ETH0_GetSocketSourcePort' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:620:13: warning: 'ETH0_SetSocketDestMAC' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:628:13: warning: 'ETH0_GetSocketDestMAC' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:644:15: warning: 'ETH0_GetSocketDestIP' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:660:15: warning: 'ETH0_GetSocketDestPort' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:668:13: warning: 'ETH0_SetSocketMaxSegSize' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:676:15: warning: 'ETH0_GetSocketMaxSegSize' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:684:16: warning: 'ETH0_GetSocketProto' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:692:13: warning: 'ETH0_SetSocketTOS' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:700:14: warning: 'ETH0_GetSocketTOS' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:708:13: warning: 'ETH0_SetSocketTTL' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:716:14: warning: 'ETH0_GetSocketTTL' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:724:13: warning: 'ETH0_SetSocketTxFree' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:740:13: warning: 'ETH0_SetSocketTxReadPtr' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:748:15: warning: 'ETH0_GetSocketTxReadPtr' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:1236:1: warning: 'ETH0_SocketSendMac' defined but not used [-Wunused-function]
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\RED.lst -ffunction-sections -c .\Generated_Source\PSoC4\RED.c -o .\CortexM0\ARM_GCC_473\Debug\RED.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\BLUE.lst -ffunction-sections -c .\Generated_Source\PSoC4\BLUE.c -o .\CortexM0\ARM_GCC_473\Debug\BLUE.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\GREEN.lst -ffunction-sections -c .\Generated_Source\PSoC4\GREEN.c -o .\CortexM0\ARM_GCC_473\Debug\GREEN.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\SDCS.lst -ffunction-sections -c .\Generated_Source\PSoC4\SDCS.c -o .\CortexM0\ARM_GCC_473\Debug\SDCS.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\SPI0_IntClock.lst -ffunction-sections -c .\Generated_Source\PSoC4\SPI0_IntClock.c -o .\CortexM0\ARM_GCC_473\Debug\SPI0_IntClock.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\Cm0Start.lst -ffunction-sections -c .\Generated_Source\PSoC4\Cm0Start.c -o .\CortexM0\ARM_GCC_473\Debug\Cm0Start.o
+arm-none-eabi-as.exe -I. -I./Generated_Source/PSoC4 -mcpu=cortex-m0 -mthumb -g -alh=.\CortexM0\ARM_GCC_473\Debug/CyBootAsmGnu.lst -o .\CortexM0\ARM_GCC_473\Debug\CyBootAsmGnu.o .\Generated_Source\PSoC4\CyBootAsmGnu.s
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\CyFlash.lst -ffunction-sections -c .\Generated_Source\PSoC4\CyFlash.c -o .\CortexM0\ARM_GCC_473\Debug\CyFlash.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\CyLib.lst -ffunction-sections -c .\Generated_Source\PSoC4\CyLib.c -o .\CortexM0\ARM_GCC_473\Debug\CyLib.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\cyPm.lst -ffunction-sections -c .\Generated_Source\PSoC4\cyPm.c -o .\CortexM0\ARM_GCC_473\Debug\cyPm.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\cyutils.lst -ffunction-sections -c .\Generated_Source\PSoC4\cyutils.c -o .\CortexM0\ARM_GCC_473\Debug\cyutils.o
+arm-none-eabi-ar.exe -rs .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a .\CortexM0\ARM_GCC_473\Debug\cyfitter_cfg.o .\CortexM0\ARM_GCC_473\Debug\SPI0.o .\CortexM0\ARM_GCC_473\Debug\SPI0_PM.o .\CortexM0\ARM_GCC_473\Debug\SPI0_INT.o .\CortexM0\ARM_GCC_473\Debug\ETH0.o .\CortexM0\ARM_GCC_473\Debug\RED.o .\CortexM0\ARM_GCC_473\Debug\BLUE.o .\CortexM0\ARM_GCC_473\Debug\GREEN.o .\CortexM0\ARM_GCC_473\Debug\SDCS.o .\CortexM0\ARM_GCC_473\Debug\SPI0_IntClock.o .\CortexM0\ARM_GCC_473\Debug\CyBootAsmGnu.o .\CortexM0\ARM_GCC_473\Debug\CyFlash.o .\CortexM0\ARM_GCC_473\Debug\CyLib.o .\CortexM0\ARM_GCC_473\Debug\cyPm.o .\CortexM0\ARM_GCC_473\Debug\cyutils.o
+arm-none-eabi-ar.exe: creating .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a
+arm-none-eabi-gcc.exe -mthumb -march=armv6-m -T .\Generated_Source\PSoC4\cm0gcc.ld -g -Wl,-Map,.\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.map -specs=nano.specs -Wl,--gc-sections -Wl,--start-group -o .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.elf .\CortexM0\ARM_GCC_473\Debug\main.o .\CortexM0\ARM_GCC_473\Debug\cymetadata.o .\CortexM0\ARM_GCC_473\Debug\Cm0Start.o .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a "C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM0\ARM_GCC_473\Debug\CyComponentLibrary.a" -Wl,--end-group
+cyelftool.exe -C C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.elf --flash_size 32768 --flash_row_size 128
+cyelftool.exe -S C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.elf
+Flash used: 8616 of 32768 bytes (26.3 %).
+SRAM used: 3684 of 4096 bytes (89.9 %).
+--------------- Build Succeeded: 01/06/2014 12:07:14 ---------------

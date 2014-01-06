@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 1
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc6pK6Sc.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 1
   30:.\Generated_Source\PSoC4/SPI0_miso_m.c **** ********************************************************************************
   31:.\Generated_Source\PSoC4/SPI0_miso_m.c **** *
   32:.\Generated_Source\PSoC4/SPI0_miso_m.c **** * Summary:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 2
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc6pK6Sc.s 			page 2
 
 
   33:.\Generated_Source\PSoC4/SPI0_miso_m.c **** *  Assign a new value to the digital port's data output register.  
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 1
   66              		.loc 1 46 0
   67 0038 034B     		ldr	r3, .L2
   68 003a 3A1C     		mov	r2, r7
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 3
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc6pK6Sc.s 			page 3
 
 
   69 003c 0F32     		add	r2, r2, #15
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 1
  104              		.cfi_def_cfa_register 7
  105 0006 021C     		mov	r2, r0
  106 0008 FB1D     		add	r3, r7, #7
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 4
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc6pK6Sc.s 			page 4
 
 
  107 000a 1A70     		strb	r2, [r3]
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 1
   86:.\Generated_Source\PSoC4/SPI0_miso_m.c **** *  
   87:.\Generated_Source\PSoC4/SPI0_miso_m.c **** *******************************************************************************/
   88:.\Generated_Source\PSoC4/SPI0_miso_m.c **** uint8 SPI0_miso_m_Read(void) 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 5
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc6pK6Sc.s 			page 5
 
 
   89:.\Generated_Source\PSoC4/SPI0_miso_m.c **** {
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 1
  106:.\Generated_Source\PSoC4/SPI0_miso_m.c **** *  
  107:.\Generated_Source\PSoC4/SPI0_miso_m.c **** *******************************************************************************/
  108:.\Generated_Source\PSoC4/SPI0_miso_m.c **** uint8 SPI0_miso_m_ReadDataReg(void) 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 6
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc6pK6Sc.s 			page 6
 
 
  109:.\Generated_Source\PSoC4/SPI0_miso_m.c **** {
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 1
  126:.\Generated_Source\PSoC4/SPI0_miso_m.c ****     *  None 
  127:.\Generated_Source\PSoC4/SPI0_miso_m.c ****     *
  128:.\Generated_Source\PSoC4/SPI0_miso_m.c ****     * Return: 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 7
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc6pK6Sc.s 			page 7
 
 
  129:.\Generated_Source\PSoC4/SPI0_miso_m.c ****     *  Returns the value of the interrupt status register
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 1
  260              	.Letext0:
  261              		.file 2 ".\\Generated_Source\\PSoC4\\cytypes.h"
  262              		.section	.debug_info,"",%progbits
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 8
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc6pK6Sc.s 			page 8
 
 
  263              	.Ldebug_info0:
@@ -427,10 +427,10 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 1
  266 0006 00000000 		.4byte	.Ldebug_abbrev0
  267 000a 04       		.byte	0x4
  268 000b 01       		.uleb128 0x1
- 269 000c 48010000 		.4byte	.LASF24
+ 269 000c AA010000 		.4byte	.LASF24
  270 0010 01       		.byte	0x1
  271 0011 3F000000 		.4byte	.LASF25
- 272 0015 A6010000 		.4byte	.LASF26
+ 272 0015 B6000000 		.4byte	.LASF26
  273 0019 00000000 		.4byte	.Ldebug_ranges0+0
  274 001d 00000000 		.4byte	0
  275 0021 00000000 		.4byte	0
@@ -438,7 +438,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 1
  277 0029 02       		.uleb128 0x2
  278 002a 01       		.byte	0x1
  279 002b 06       		.byte	0x6
- 280 002c 9A010000 		.4byte	.LASF0
+ 280 002c FC010000 		.4byte	.LASF0
  281 0030 02       		.uleb128 0x2
  282 0031 01       		.byte	0x1
  283 0032 08       		.byte	0x8
@@ -446,7 +446,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 1
  285 0037 02       		.uleb128 0x2
  286 0038 02       		.byte	0x2
  287 0039 05       		.byte	0x5
- 288 003a 26010000 		.4byte	.LASF2
+ 288 003a 88010000 		.4byte	.LASF2
  289 003e 02       		.uleb128 0x2
  290 003f 02       		.byte	0x2
  291 0040 07       		.byte	0x7
@@ -454,7 +454,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 1
  293 0045 02       		.uleb128 0x2
  294 0046 04       		.byte	0x4
  295 0047 05       		.byte	0x5
- 296 0048 91010000 		.4byte	.LASF4
+ 296 0048 F3010000 		.4byte	.LASF4
  297 004c 02       		.uleb128 0x2
  298 004d 04       		.byte	0x4
  299 004e 07       		.byte	0x7
@@ -462,11 +462,11 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 1
  301 0053 02       		.uleb128 0x2
  302 0054 08       		.byte	0x8
  303 0055 05       		.byte	0x5
- 304 0056 06010000 		.4byte	.LASF6
+ 304 0056 68010000 		.4byte	.LASF6
  305 005a 02       		.uleb128 0x2
  306 005b 08       		.byte	0x8
  307 005c 07       		.byte	0x7
- 308 005d EA000000 		.4byte	.LASF7
+ 308 005d 4C010000 		.4byte	.LASF7
  309 0061 03       		.uleb128 0x3
  310 0062 04       		.byte	0x4
  311 0063 05       		.byte	0x5
@@ -474,17 +474,17 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 1
  313 0068 02       		.uleb128 0x2
  314 0069 04       		.byte	0x4
  315 006a 07       		.byte	0x7
- 316 006b DD000000 		.4byte	.LASF8
+ 316 006b 3F010000 		.4byte	.LASF8
  317 006f 04       		.uleb128 0x4
- 318 0070 42010000 		.4byte	.LASF9
+ 318 0070 A4010000 		.4byte	.LASF9
  319 0074 02       		.byte	0x2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 9
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc6pK6Sc.s 			page 9
 
 
  320 0075 5B       		.byte	0x5b
  321 0076 30000000 		.4byte	0x30
  322 007a 04       		.uleb128 0x4
- 323 007b D6000000 		.4byte	.LASF10
+ 323 007b 38010000 		.4byte	.LASF10
  324 007f 02       		.byte	0x2
  325 0080 5D       		.byte	0x5d
  326 0081 4C000000 		.4byte	0x4c
@@ -495,11 +495,11 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 1
  331 008c 02       		.uleb128 0x2
  332 008d 08       		.byte	0x8
  333 008e 04       		.byte	0x4
- 334 008f B6000000 		.4byte	.LASF12
+ 334 008f 18010000 		.4byte	.LASF12
  335 0093 02       		.uleb128 0x2
  336 0094 01       		.byte	0x1
  337 0095 08       		.byte	0x8
- 338 0096 21010000 		.4byte	.LASF13
+ 338 0096 83010000 		.4byte	.LASF13
  339 009a 04       		.uleb128 0x4
  340 009b 18000000 		.4byte	.LASF14
  341 009f 02       		.byte	0x2
@@ -509,7 +509,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 1
  345 00a6 7A000000 		.4byte	0x7a
  346 00aa 06       		.uleb128 0x6
  347 00ab 01       		.byte	0x1
- 348 00ac 30010000 		.4byte	.LASF15
+ 348 00ac 92010000 		.4byte	.LASF15
  349 00b0 01       		.byte	0x1
  350 00b1 2A       		.byte	0x2a
  351 00b2 01       		.byte	0x1
@@ -537,8 +537,8 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 1
  373 00e0 00       		.byte	0
  374 00e1 06       		.uleb128 0x6
  375 00e2 01       		.byte	0x1
- 376 00e3 BD000000 		.4byte	.LASF16
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 10
+ 376 00e3 1F010000 		.4byte	.LASF16
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc6pK6Sc.s 			page 10
 
 
  377 00e7 01       		.byte	0x1
@@ -550,7 +550,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 1
  383 00f6 01       		.byte	0x1
  384 00f7 0A010000 		.4byte	0x10a
  385 00fb 07       		.uleb128 0x7
- 386 00fc 01010000 		.4byte	.LASF18
+ 386 00fc 63010000 		.4byte	.LASF18
  387 0100 01       		.byte	0x1
  388 0101 40       		.byte	0x40
  389 0102 6F000000 		.4byte	0x6f
@@ -592,13 +592,13 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 1
  425 0153 C8000000 		.4byte	.LLST4
  426 0157 01       		.byte	0x1
  427 0158 08       		.uleb128 0x8
- 428 0159 14010000 		.4byte	.LASF23
+ 428 0159 76010000 		.4byte	.LASF23
  429 015d 01       		.byte	0x1
  430 015e 86       		.byte	0x86
  431 015f 6F000000 		.4byte	0x6f
  432 0163 02       		.byte	0x2
  433 0164 91       		.byte	0x91
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 11
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc6pK6Sc.s 			page 11
 
 
  434 0165 77       		.sleb128 -9
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 1
  488 0031 0B       		.uleb128 0xb
  489 0032 3B       		.uleb128 0x3b
  490 0033 0B       		.uleb128 0xb
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 12
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc6pK6Sc.s 			page 12
 
 
  491 0034 49       		.uleb128 0x49
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 1
  545 006b 03       		.uleb128 0x3
  546 006c 0E       		.uleb128 0xe
  547 006d 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 13
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc6pK6Sc.s 			page 13
 
 
  548 006e 0B       		.uleb128 0xb
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 1
  602 00a5 06       		.uleb128 0x6
  603 00a6 9742     		.uleb128 0x2117
  604 00a8 0C       		.uleb128 0xc
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 14
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc6pK6Sc.s 			page 14
 
 
  605 00a9 00       		.byte	0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 1
  659 0078 0200     		.2byte	0x2
  660 007a 7D       		.byte	0x7d
  661 007b 00       		.sleb128 0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 15
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc6pK6Sc.s 			page 15
 
 
  662 007c 02000000 		.4byte	.LCFI6
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 1
  716 0000 3C000000 		.4byte	0x3c
  717 0004 0200     		.2byte	0x2
  718 0006 00000000 		.4byte	.Ldebug_info0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 16
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc6pK6Sc.s 			page 16
 
 
  719 000a 04       		.byte	0x4
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 1
  759      72496E74 
  760              	.LASF25:
  761 003f 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\SPI0_miso_m.c\000"
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 17
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc6pK6Sc.s 			page 17
 
 
  761      6E657261 
@@ -994,92 +994,93 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 1
  773      7369676E 
  773      65642069 
  773      6E7400
- 774              	.LASF12:
- 775 00b6 646F7562 		.ascii	"double\000"
- 775      6C6500
- 776              	.LASF16:
- 777 00bd 53504930 		.ascii	"SPI0_miso_m_SetDriveMode\000"
- 777      5F6D6973 
- 777      6F5F6D5F 
- 777      53657444 
- 777      72697665 
- 778              	.LASF10:
- 779 00d6 75696E74 		.ascii	"uint32\000"
- 779      333200
- 780              	.LASF8:
- 781 00dd 756E7369 		.ascii	"unsigned int\000"
- 781      676E6564 
- 781      20696E74 
- 781      00
- 782              	.LASF7:
- 783 00ea 6C6F6E67 		.ascii	"long long unsigned int\000"
- 783      206C6F6E 
- 783      6720756E 
- 783      7369676E 
- 783      65642069 
- 784              	.LASF18:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 18
+ 774              	.LASF26:
+ 775 00b6 433A5C55 		.ascii	"C:\\Users\\chuck.erhardt\\Documents\\GitHub\\PSoC-W"
+ 775      73657273 
+ 775      5C636875 
+ 775      636B2E65 
+ 775      72686172 
+ 776 00e4 35313030 		.ascii	"5100-Driver\\PSoCPioneer+ArduinoShield_Example.cyds"
+ 776      2D447269 
+ 776      7665725C 
+ 776      50536F43 
+ 776      50696F6E 
+ 777 0116 6E00     		.ascii	"n\000"
+ 778              	.LASF12:
+ 779 0118 646F7562 		.ascii	"double\000"
+ 779      6C6500
+ 780              	.LASF16:
+ 781 011f 53504930 		.ascii	"SPI0_miso_m_SetDriveMode\000"
+ 781      5F6D6973 
+ 781      6F5F6D5F 
+ 781      53657444 
+ 781      72697665 
+ 782              	.LASF10:
+ 783 0138 75696E74 		.ascii	"uint32\000"
+ 783      333200
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc6pK6Sc.s 			page 18
 
 
- 785 0101 6D6F6465 		.ascii	"mode\000"
+ 784              	.LASF8:
+ 785 013f 756E7369 		.ascii	"unsigned int\000"
+ 785      676E6564 
+ 785      20696E74 
  785      00
- 786              	.LASF6:
- 787 0106 6C6F6E67 		.ascii	"long long int\000"
+ 786              	.LASF7:
+ 787 014c 6C6F6E67 		.ascii	"long long unsigned int\000"
  787      206C6F6E 
- 787      6720696E 
- 787      7400
- 788              	.LASF23:
- 789 0114 6D61736B 		.ascii	"maskedStatus\000"
- 789      65645374 
- 789      61747573 
+ 787      6720756E 
+ 787      7369676E 
+ 787      65642069 
+ 788              	.LASF18:
+ 789 0163 6D6F6465 		.ascii	"mode\000"
  789      00
- 790              	.LASF13:
- 791 0121 63686172 		.ascii	"char\000"
- 791      00
- 792              	.LASF2:
- 793 0126 73686F72 		.ascii	"short int\000"
- 793      7420696E 
- 793      7400
- 794              	.LASF15:
- 795 0130 53504930 		.ascii	"SPI0_miso_m_Write\000"
- 795      5F6D6973 
- 795      6F5F6D5F 
- 795      57726974 
- 795      6500
- 796              	.LASF9:
- 797 0142 75696E74 		.ascii	"uint8\000"
- 797      3800
- 798              	.LASF24:
- 799 0148 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
- 799      4320342E 
- 799      372E3320 
- 799      32303133 
- 799      30333132 
- 800 017b 616E6368 		.ascii	"anch revision 196615]\000"
- 800      20726576 
- 800      6973696F 
- 800      6E203139 
- 800      36363135 
- 801              	.LASF4:
- 802 0191 6C6F6E67 		.ascii	"long int\000"
- 802      20696E74 
- 802      00
- 803              	.LASF0:
- 804 019a 7369676E 		.ascii	"signed char\000"
- 804      65642063 
- 804      68617200 
- 805              	.LASF26:
- 806 01a6 433A5C55 		.ascii	"C:\\Users\\chuck.erhardt\\Documents\\PSoC Creator\\"
- 806      73657273 
- 806      5C636875 
- 806      636B2E65 
- 806      72686172 
- 807 01d4 4532466F 		.ascii	"E2ForLife\\PSoCPioneer+ArduinoShield_Example.cydsn\000"
- 807      724C6966 
- 807      655C5053 
- 807      6F435069 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFt9Ic4.s 			page 19
+ 790              	.LASF6:
+ 791 0168 6C6F6E67 		.ascii	"long long int\000"
+ 791      206C6F6E 
+ 791      6720696E 
+ 791      7400
+ 792              	.LASF23:
+ 793 0176 6D61736B 		.ascii	"maskedStatus\000"
+ 793      65645374 
+ 793      61747573 
+ 793      00
+ 794              	.LASF13:
+ 795 0183 63686172 		.ascii	"char\000"
+ 795      00
+ 796              	.LASF2:
+ 797 0188 73686F72 		.ascii	"short int\000"
+ 797      7420696E 
+ 797      7400
+ 798              	.LASF15:
+ 799 0192 53504930 		.ascii	"SPI0_miso_m_Write\000"
+ 799      5F6D6973 
+ 799      6F5F6D5F 
+ 799      57726974 
+ 799      6500
+ 800              	.LASF9:
+ 801 01a4 75696E74 		.ascii	"uint8\000"
+ 801      3800
+ 802              	.LASF24:
+ 803 01aa 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 803      4320342E 
+ 803      372E3320 
+ 803      32303133 
+ 803      30333132 
+ 804 01dd 616E6368 		.ascii	"anch revision 196615]\000"
+ 804      20726576 
+ 804      6973696F 
+ 804      6E203139 
+ 804      36363135 
+ 805              	.LASF4:
+ 806 01f3 6C6F6E67 		.ascii	"long int\000"
+ 806      20696E74 
+ 806      00
+ 807              	.LASF0:
+ 808 01fc 7369676E 		.ascii	"signed char\000"
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc6pK6Sc.s 			page 19
 
 
- 807      6F6E6565 
- 808              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br
+ 808      65642063 
+ 808      68617200 
+ 809              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

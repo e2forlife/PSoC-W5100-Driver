@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
   31:.\Generated_Source\PSoC4/cyfitter_cfg.c ****     
   32:.\Generated_Source\PSoC4/cyfitter_cfg.c ****     #if defined(__ARMCC_VERSION)
   33:.\Generated_Source\PSoC4/cyfitter_cfg.c ****         #define CY_CFG_MEMORY_BARRIER() __memory_changed()
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 2
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 2
 
 
   34:.\Generated_Source\PSoC4/cyfitter_cfg.c ****     #else
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
   52              		.cfi_endproc
   53              	.LFE0:
   54              		.size	CYMEMZERO, .-CYMEMZERO
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 3
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 3
 
 
   55 001e C046     		.section	.text.CYCONFIGCPY,"ax",%progbits
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
   69:.\Generated_Source\PSoC4/cyfitter_cfg.c **** static void CYCONFIGCPYCODE(void *dest, const void *src, size_t n);
   70:.\Generated_Source\PSoC4/cyfitter_cfg.c **** CY_CFG_UNUSED
   71:.\Generated_Source\PSoC4/cyfitter_cfg.c **** static void CYCONFIGCPYCODE(void *dest, const void *src, size_t n)
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 4
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 4
 
 
   72:.\Generated_Source\PSoC4/cyfitter_cfg.c **** {
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
   87:.\Generated_Source\PSoC4/cyfitter_cfg.c **** ********************************************************************************
   88:.\Generated_Source\PSoC4/cyfitter_cfg.c **** * Summary:
   89:.\Generated_Source\PSoC4/cyfitter_cfg.c **** *  If an error is encountered during clock configuration (crystal startup error,
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 5
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 5
 
 
   90:.\Generated_Source\PSoC4/cyfitter_cfg.c **** *  PLL lock error, etc.), the system will end up here.  Unless reimplemented by
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  144:.\Generated_Source\PSoC4/cyfitter_cfg.c **** *******************************************************************************/
  145:.\Generated_Source\PSoC4/cyfitter_cfg.c **** static void cfg_write_bytes32(const uint32 addr_table[], const cy_cfg_addrvalue_t data_table[]);
  146:.\Generated_Source\PSoC4/cyfitter_cfg.c **** static void cfg_write_bytes32(const uint32 addr_table[], const cy_cfg_addrvalue_t data_table[])
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 6
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 6
 
 
  147:.\Generated_Source\PSoC4/cyfitter_cfg.c **** {
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  157:.\Generated_Source\PSoC4/cyfitter_cfg.c **** 			CY_SET_XTND_REG8((void CYFAR *)(baseAddr + data_table[j].offset), data_table[j].value);
  184              		.loc 1 157 0
  185 0032 3B69     		ldr	r3, [r7, #16]
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 7
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 7
 
 
  186 0034 5B00     		lsl	r3, r3, #1
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  232 007c 80BD     		pop	{r7, pc}
  233              		.cfi_endproc
  234              	.LFE3:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 8
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 8
 
 
  235              		.size	cfg_write_bytes32, .-cfg_write_bytes32
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  193:.\Generated_Source\PSoC4/cyfitter_cfg.c **** 	static const imo_trim_table_t *imo_trim_table = (const imo_trim_table_t *)CYREG_SFLASH_IMO_MAXF0;
  194:.\Generated_Source\PSoC4/cyfitter_cfg.c **** 	static const uint32 IMO_TRIM_FREQ_TABLE_ENTRIES = sizeof(imo_trim_table->entries)/sizeof(imo_trim_
  195:.\Generated_Source\PSoC4/cyfitter_cfg.c **** 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 9
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 9
 
 
  196:.\Generated_Source\PSoC4/cyfitter_cfg.c **** 	int32 imoTrimIndex;
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  299 0050 9B18     		add	r3, r3, r2
  300 0052 C318     		add	r3, r0, r3
  301 0054 0233     		add	r3, r3, #2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 10
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 10
 
 
  302 0056 1B78     		ldrb	r3, [r3]
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  348 00a0 44010000 		.word	IMO_TRIM_FREQ_TABLE_ENTRIES.4640
  349 00a4 00000000 		.word	imo_trim_table.4639
  350 00a8 1CFF0B40 		.word	1074528028
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 11
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 11
 
 
  351 00ac 20FF0B40 		.word	1074528032
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  241:.\Generated_Source\PSoC4/cyfitter_cfg.c **** 	/* Trim IMO BG based on desired frequency. */
  242:.\Generated_Source\PSoC4/cyfitter_cfg.c **** 	SetIMOBGTrims(48u);
  379              		.loc 1 242 0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 12
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 12
 
 
  380 00c2 3020     		mov	r0, #48
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  416 00fe D202     		lsl	r2, r2, #11
  417 0100 1A60     		str	r2, [r3]
  261:.\Generated_Source\PSoC4/cyfitter_cfg.c **** 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 13
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 13
 
 
  262:.\Generated_Source\PSoC4/cyfitter_cfg.c **** 	/* CYDEV_CLK_DIVIDER_A00 Starting address: CYDEV_CLK_DIVIDER_A00 */
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  285:.\Generated_Source\PSoC4/cyfitter_cfg.c **** *******************************************************************************/
  286:.\Generated_Source\PSoC4/cyfitter_cfg.c **** static void AnalogSetDefault(void);
  287:.\Generated_Source\PSoC4/cyfitter_cfg.c **** static void AnalogSetDefault(void)
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 14
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 14
 
 
  288:.\Generated_Source\PSoC4/cyfitter_cfg.c **** {
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  478              		.cfi_def_cfa_offset 8
  479              		.cfi_offset 7, -8
  480              		.cfi_offset 14, -4
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 15
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 15
 
 
  481 0136 82B0     		sub	sp, sp, #8
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  355:.\Generated_Source\PSoC4/cyfitter_cfg.c **** 			{0x4Au, 0xFFu},
  356:.\Generated_Source\PSoC4/cyfitter_cfg.c **** 			{0x4Bu, 0xFFu},
  357:.\Generated_Source\PSoC4/cyfitter_cfg.c **** 			{0x4Cu, 0x02u},
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 16
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 16
 
 
  358:.\Generated_Source\PSoC4/cyfitter_cfg.c **** 			{0x4Du, 0x20u},
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  412:.\Generated_Source\PSoC4/cyfitter_cfg.c **** 			{0x10u, 0x02u},
  413:.\Generated_Source\PSoC4/cyfitter_cfg.c **** 			{0x16u, 0x08u},
  414:.\Generated_Source\PSoC4/cyfitter_cfg.c **** 			{0x17u, 0x84u},
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 17
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 17
 
 
  415:.\Generated_Source\PSoC4/cyfitter_cfg.c **** 			{0x1Bu, 0x01u},
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  469:.\Generated_Source\PSoC4/cyfitter_cfg.c **** 			{0x11u, 0x01u},
  470:.\Generated_Source\PSoC4/cyfitter_cfg.c **** 		};
  471:.\Generated_Source\PSoC4/cyfitter_cfg.c **** 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 18
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 18
 
 
  472:.\Generated_Source\PSoC4/cyfitter_cfg.c **** 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  527 0176 0B43     		orr	r3, r1
  528 0178 9BB2     		uxth	r3, r3
  529 017a 101C     		mov	r0, r2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 19
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 19
 
 
  530 017c 191C     		mov	r1, r3
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  570 01bc 264A     		ldr	r2, .L22+40
  571 01be 1A60     		str	r2, [r3]
  504:.\Generated_Source\PSoC4/cyfitter_cfg.c **** 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 20
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 20
 
 
  505:.\Generated_Source\PSoC4/cyfitter_cfg.c **** 		/* IOPINS0_1 Starting address: CYDEV_PRT1_DR */
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  522:.\Generated_Source\PSoC4/cyfitter_cfg.c **** 		CY_SET_XTND_REG32((void CYFAR *)(CYDEV_UDB_PA3_BASE), 0x00990000u);
  609              		.loc 1 522 0
  610 01fa 214B     		ldr	r3, .L22+80
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 21
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 21
 
 
  611 01fc 9922     		mov	r2, #153
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  650 0244 04000140 		.word	1073807364
  651 0248 0C000140 		.word	1073807372
  652 024c FFEE0F00 		.word	1044223
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 22
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 22
 
 
  653 0250 00000440 		.word	1074003968
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  707 0035 20       		.byte	32
  708 0036 0C       		.byte	12
  709 0037 04       		.byte	4
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 23
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 23
 
 
  710 0038 0F       		.byte	15
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  764 006e 5A       		.byte	90
  765 006f 0E       		.byte	14
  766 0070 5B       		.byte	91
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 24
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 24
 
 
  767 0071 04       		.byte	4
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  821 00a7 FF       		.byte	-1
  822 00a8 CA       		.byte	-54
  823 00a9 FF       		.byte	-1
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 25
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 25
 
 
  824 00aa CB       		.byte	-53
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  878 00e0 23       		.byte	35
  879 00e1 80       		.byte	-128
  880 00e2 26       		.byte	38
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 26
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 26
 
 
  881 00e3 20       		.byte	32
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  935 0119 60       		.byte	96
  936 011a C4       		.byte	-60
  937 011b E1       		.byte	-31
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 27
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 27
 
 
  938 011c CA       		.byte	-54
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  992              		.file 3 "./Generated_Source/PSoC4/cytypes.h"
  993              		.section	.debug_info,"",%progbits
  994              	.Ldebug_info0:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 28
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 28
 
 
  995 0000 71040000 		.4byte	0x471
@@ -1626,10 +1626,10 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  997 0006 00000000 		.4byte	.Ldebug_abbrev0
  998 000a 04       		.byte	0x4
  999 000b 01       		.uleb128 0x1
- 1000 000c 04020000 		.4byte	.LASF53
+ 1000 000c 66020000 		.4byte	.LASF53
  1001 0010 01       		.byte	0x1
- 1002 0011 D6010000 		.4byte	.LASF54
- 1003 0015 88020000 		.4byte	.LASF55
+ 1002 0011 38020000 		.4byte	.LASF54
+ 1003 0015 17000000 		.4byte	.LASF55
  1004 0019 00000000 		.4byte	.Ldebug_ranges0+0
  1005 001d 00000000 		.4byte	0
  1006 0021 00000000 		.4byte	0
@@ -1637,19 +1637,19 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1008 0029 02       		.uleb128 0x2
  1009 002a 01       		.byte	0x1
  1010 002b 06       		.byte	0x6
- 1011 002c 7C000000 		.4byte	.LASF0
+ 1011 002c DE000000 		.4byte	.LASF0
  1012 0030 02       		.uleb128 0x2
  1013 0031 01       		.byte	0x1
  1014 0032 08       		.byte	0x8
- 1015 0033 52020000 		.4byte	.LASF1
+ 1015 0033 B4020000 		.4byte	.LASF1
  1016 0037 02       		.uleb128 0x2
  1017 0038 02       		.byte	0x2
  1018 0039 05       		.byte	0x5
- 1019 003a 66020000 		.4byte	.LASF2
+ 1019 003a C8020000 		.4byte	.LASF2
  1020 003e 02       		.uleb128 0x2
  1021 003f 02       		.byte	0x2
  1022 0040 07       		.byte	0x7
- 1023 0041 20010000 		.4byte	.LASF3
+ 1023 0041 82010000 		.4byte	.LASF3
  1024 0045 03       		.uleb128 0x3
  1025 0046 04       		.byte	0x4
  1026 0047 05       		.byte	0x5
@@ -1657,43 +1657,43 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1028 004c 02       		.uleb128 0x2
  1029 004d 04       		.byte	0x4
  1030 004e 07       		.byte	0x7
- 1031 004f D1000000 		.4byte	.LASF4
+ 1031 004f 33010000 		.4byte	.LASF4
  1032 0053 02       		.uleb128 0x2
  1033 0054 08       		.byte	0x8
  1034 0055 05       		.byte	0x5
- 1035 0056 6E000000 		.4byte	.LASF5
+ 1035 0056 D0000000 		.4byte	.LASF5
  1036 005a 02       		.uleb128 0x2
  1037 005b 08       		.byte	0x8
  1038 005c 07       		.byte	0x7
- 1039 005d 29000000 		.4byte	.LASF6
+ 1039 005d 8B000000 		.4byte	.LASF6
  1040 0061 02       		.uleb128 0x2
  1041 0062 04       		.byte	0x4
  1042 0063 05       		.byte	0x5
- 1043 0064 A8000000 		.4byte	.LASF7
+ 1043 0064 0A010000 		.4byte	.LASF7
  1044 0068 02       		.uleb128 0x2
  1045 0069 04       		.byte	0x4
  1046 006a 07       		.byte	0x7
- 1047 006b 67010000 		.4byte	.LASF8
+ 1047 006b C9010000 		.4byte	.LASF8
  1048 006f 04       		.uleb128 0x4
  1049 0070 04       		.byte	0x4
  1050 0071 02       		.uleb128 0x2
  1051 0072 04       		.byte	0x4
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 29
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 29
 
 
  1052 0073 07       		.byte	0x7
- 1053 0074 F7000000 		.4byte	.LASF9
+ 1053 0074 59010000 		.4byte	.LASF9
  1054 0078 02       		.uleb128 0x2
  1055 0079 01       		.byte	0x1
  1056 007a 08       		.byte	0x8
- 1057 007b 83020000 		.4byte	.LASF10
+ 1057 007b E5020000 		.4byte	.LASF10
  1058 007f 05       		.uleb128 0x5
  1059 0080 10000000 		.4byte	.LASF11
  1060 0084 02       		.byte	0x2
  1061 0085 D5       		.byte	0xd5
  1062 0086 4C000000 		.4byte	0x4c
  1063 008a 05       		.uleb128 0x5
- 1064 008b B1000000 		.4byte	.LASF12
+ 1064 008b 13010000 		.4byte	.LASF12
  1065 008f 03       		.byte	0x3
  1066 0090 5B       		.byte	0x5b
  1067 0091 30000000 		.4byte	0x30
@@ -1703,32 +1703,32 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1071 009b 5C       		.byte	0x5c
  1072 009c 3E000000 		.4byte	0x3e
  1073 00a0 05       		.uleb128 0x5
- 1074 00a1 BE000000 		.4byte	.LASF14
+ 1074 00a1 20010000 		.4byte	.LASF14
  1075 00a5 03       		.byte	0x3
  1076 00a6 5D       		.byte	0x5d
  1077 00a7 71000000 		.4byte	0x71
  1078 00ab 05       		.uleb128 0x5
- 1079 00ac 97000000 		.4byte	.LASF15
+ 1079 00ac F9000000 		.4byte	.LASF15
  1080 00b0 03       		.byte	0x3
  1081 00b1 60       		.byte	0x60
  1082 00b2 61000000 		.4byte	0x61
  1083 00b6 02       		.uleb128 0x2
  1084 00b7 04       		.byte	0x4
  1085 00b8 04       		.byte	0x4
- 1086 00b9 FE010000 		.4byte	.LASF16
+ 1086 00b9 60020000 		.4byte	.LASF16
  1087 00bd 02       		.uleb128 0x2
  1088 00be 08       		.byte	0x8
  1089 00bf 04       		.byte	0x4
- 1090 00c0 B7000000 		.4byte	.LASF17
+ 1090 00c0 19010000 		.4byte	.LASF17
  1091 00c4 05       		.uleb128 0x5
- 1092 00c5 4D020000 		.4byte	.LASF18
+ 1092 00c5 AF020000 		.4byte	.LASF18
  1093 00c9 03       		.byte	0x3
  1094 00ca F0       		.byte	0xf0
  1095 00cb CF000000 		.4byte	0xcf
  1096 00cf 06       		.uleb128 0x6
  1097 00d0 8A000000 		.4byte	0x8a
  1098 00d4 05       		.uleb128 0x5
- 1099 00d5 49010000 		.4byte	.LASF19
+ 1099 00d5 AB010000 		.4byte	.LASF19
  1100 00d9 03       		.byte	0x3
  1101 00da F2       		.byte	0xf2
  1102 00db DF000000 		.4byte	0xdf
@@ -1738,12 +1738,12 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1106 00e5 02       		.byte	0x2
  1107 00e6 01       		.byte	0x1
  1108 00e7 7B       		.byte	0x7b
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 30
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 30
 
 
  1109 00e8 09010000 		.4byte	0x109
  1110 00ec 08       		.uleb128 0x8
- 1111 00ed FA020000 		.4byte	.LASF20
+ 1111 00ed FC020000 		.4byte	.LASF20
  1112 00f1 01       		.byte	0x1
  1113 00f2 7D       		.byte	0x7d
  1114 00f3 8A000000 		.4byte	0x8a
@@ -1751,7 +1751,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1116 00f8 23       		.byte	0x23
  1117 00f9 00       		.uleb128 0
  1118 00fa 08       		.uleb128 0x8
- 1119 00fb CB000000 		.4byte	.LASF21
+ 1119 00fb 2D010000 		.4byte	.LASF21
  1120 00ff 01       		.byte	0x1
  1121 0100 7E       		.byte	0x7e
  1122 0101 8A000000 		.4byte	0x8a
@@ -1760,12 +1760,12 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1125 0107 01       		.uleb128 0x1
  1126 0108 00       		.byte	0
  1127 0109 05       		.uleb128 0x5
- 1128 010a 70020000 		.4byte	.LASF22
+ 1128 010a D2020000 		.4byte	.LASF22
  1129 010e 01       		.byte	0x1
  1130 010f 7F       		.byte	0x7f
  1131 0110 E4000000 		.4byte	0xe4
  1132 0114 09       		.uleb128 0x9
- 1133 0115 8D000000 		.4byte	.LASF23
+ 1133 0115 EF000000 		.4byte	.LASF23
  1134 0119 01       		.byte	0x1
  1135 011a 39       		.byte	0x39
  1136 011b 01       		.byte	0x1
@@ -1792,20 +1792,20 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1157 0144 70       		.sleb128 -16
  1158 0145 00       		.byte	0
  1159 0146 09       		.uleb128 0x9
- 1160 0147 01030000 		.4byte	.LASF24
+ 1160 0147 03030000 		.4byte	.LASF24
  1161 014b 01       		.byte	0x1
  1162 014c 40       		.byte	0x40
  1163 014d 01       		.byte	0x1
  1164 014e 00000000 		.4byte	.LFB1
  1165 0152 22000000 		.4byte	.LFE1
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 31
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 31
 
 
  1166 0156 38000000 		.4byte	.LLST1
  1167 015a 01       		.byte	0x1
  1168 015b 88010000 		.4byte	0x188
  1169 015f 0B       		.uleb128 0xb
- 1170 0160 D1010000 		.4byte	.LASF25
+ 1170 0160 33020000 		.4byte	.LASF25
  1171 0164 01       		.byte	0x1
  1172 0165 40       		.byte	0x40
  1173 0166 6F000000 		.4byte	0x6f
@@ -1834,7 +1834,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1196 018a 8E010000 		.4byte	0x18e
  1197 018e 0D       		.uleb128 0xd
  1198 018f 09       		.uleb128 0x9
- 1199 0190 4F010000 		.4byte	.LASF26
+ 1199 0190 B1010000 		.4byte	.LASF26
  1200 0194 01       		.byte	0x1
  1201 0195 47       		.byte	0x47
  1202 0196 01       		.byte	0x1
@@ -1844,7 +1844,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1206 01a3 01       		.byte	0x1
  1207 01a4 D1010000 		.4byte	0x1d1
  1208 01a8 0B       		.uleb128 0xb
- 1209 01a9 D1010000 		.4byte	.LASF25
+ 1209 01a9 33020000 		.4byte	.LASF25
  1210 01ad 01       		.byte	0x1
  1211 01ae 47       		.byte	0x47
  1212 01af 6F000000 		.4byte	0x6f
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1220 01bd 88010000 		.4byte	0x188
  1221 01c1 02       		.byte	0x2
  1222 01c2 91       		.byte	0x91
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 32
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 32
 
 
  1223 01c3 70       		.sleb128 -16
@@ -1872,7 +1872,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1231 01cf 6C       		.sleb128 -20
  1232 01d0 00       		.byte	0
  1233 01d1 0E       		.uleb128 0xe
- 1234 01d2 09010000 		.4byte	.LASF27
+ 1234 01d2 6B010000 		.4byte	.LASF27
  1235 01d6 01       		.byte	0x1
  1236 01d7 92       		.byte	0x92
  1237 01d8 01       		.byte	0x1
@@ -1882,7 +1882,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1241 01e5 01       		.byte	0x1
  1242 01e6 45020000 		.4byte	0x245
  1243 01ea 0B       		.uleb128 0xb
- 1244 01eb 40000000 		.4byte	.LASF28
+ 1244 01eb A2000000 		.4byte	.LASF28
  1245 01ef 01       		.byte	0x1
  1246 01f0 92       		.byte	0x92
  1247 01f1 45020000 		.4byte	0x245
@@ -1890,7 +1890,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1249 01f6 91       		.byte	0x91
  1250 01f7 64       		.sleb128 -28
  1251 01f8 0B       		.uleb128 0xb
- 1252 01f9 1E000000 		.4byte	.LASF29
+ 1252 01f9 80000000 		.4byte	.LASF29
  1253 01fd 01       		.byte	0x1
  1254 01fe 92       		.byte	0x92
  1255 01ff 50020000 		.4byte	0x250
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1277 0223 6C000000 		.4byte	.LBE2
  1278 0227 11       		.uleb128 0x11
  1279 0228 07000000 		.4byte	.LASF30
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 33
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 33
 
 
  1280 022c 01       		.byte	0x1
@@ -1928,7 +1928,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1284 0233 91       		.byte	0x91
  1285 0234 68       		.sleb128 -24
  1286 0235 11       		.uleb128 0x11
- 1287 0236 C5000000 		.4byte	.LASF31
+ 1287 0236 27010000 		.4byte	.LASF31
  1288 023a 01       		.byte	0x1
  1289 023b 99       		.byte	0x99
  1290 023c 8A000000 		.4byte	0x8a
@@ -1948,7 +1948,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1304 0256 12       		.uleb128 0x12
  1305 0257 09010000 		.4byte	0x109
  1306 025b 0E       		.uleb128 0xe
- 1307 025c 23030000 		.4byte	.LASF32
+ 1307 025c 25030000 		.4byte	.LASF32
  1308 0260 01       		.byte	0x1
  1309 0261 B5       		.byte	0xb5
  1310 0262 01       		.byte	0x1
@@ -1958,7 +1958,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1314 026f 01       		.byte	0x1
  1315 0270 4A030000 		.4byte	0x34a
  1316 0274 0B       		.uleb128 0xb
- 1317 0275 EF000000 		.4byte	.LASF33
+ 1317 0275 51010000 		.4byte	.LASF33
  1318 0279 01       		.byte	0x1
  1319 027a B5       		.byte	0xb5
  1320 027b 8A000000 		.4byte	0x8a
@@ -1971,18 +1971,18 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1327 0285 B7       		.byte	0xb7
  1328 0286 B5020000 		.4byte	0x2b5
  1329 028a 08       		.uleb128 0x8
- 1330 028b 88000000 		.4byte	.LASF34
+ 1330 028b EA000000 		.4byte	.LASF34
  1331 028f 01       		.byte	0x1
  1332 0290 B8       		.byte	0xb8
  1333 0291 8A000000 		.4byte	0x8a
  1334 0295 02       		.byte	0x2
  1335 0296 23       		.byte	0x23
  1336 0297 00       		.uleb128 0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 34
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 34
 
 
  1337 0298 08       		.uleb128 0x8
- 1338 0299 33010000 		.4byte	.LASF35
+ 1338 0299 95010000 		.4byte	.LASF35
  1339 029d 01       		.byte	0x1
  1340 029e B9       		.byte	0xb9
  1341 029f 8A000000 		.4byte	0x8a
@@ -1990,7 +1990,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1343 02a4 23       		.byte	0x23
  1344 02a5 01       		.uleb128 0x1
  1345 02a6 08       		.uleb128 0x8
- 1346 02a7 60020000 		.4byte	.LASF36
+ 1346 02a7 C2020000 		.4byte	.LASF36
  1347 02ab 01       		.byte	0x1
  1348 02ac BA       		.byte	0xba
  1349 02ad 8A000000 		.4byte	0x8a
@@ -1999,7 +1999,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1352 02b3 02       		.uleb128 0x2
  1353 02b4 00       		.byte	0
  1354 02b5 05       		.uleb128 0x5
- 1355 02b6 DE000000 		.4byte	.LASF37
+ 1355 02b6 40010000 		.4byte	.LASF37
  1356 02ba 01       		.byte	0x1
  1357 02bb BB       		.byte	0xbb
  1358 02bc 82020000 		.4byte	0x282
@@ -2016,7 +2016,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1369 02d6 03       		.byte	0x3
  1370 02d7 00       		.byte	0
  1371 02d8 08       		.uleb128 0x8
- 1372 02d9 5F010000 		.4byte	.LASF38
+ 1372 02d9 C1010000 		.4byte	.LASF38
  1373 02dd 01       		.byte	0x1
  1374 02de BE       		.byte	0xbe
  1375 02df C8020000 		.4byte	0x2c8
@@ -2025,12 +2025,12 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1378 02e5 00       		.uleb128 0
  1379 02e6 00       		.byte	0
  1380 02e7 05       		.uleb128 0x5
- 1381 02e8 87010000 		.4byte	.LASF39
+ 1381 02e8 E9010000 		.4byte	.LASF39
  1382 02ec 01       		.byte	0x1
  1383 02ed BF       		.byte	0xbf
  1384 02ee C0020000 		.4byte	0x2c0
  1385 02f2 11       		.uleb128 0x11
- 1386 02f3 70010000 		.4byte	.LASF40
+ 1386 02f3 D2010000 		.4byte	.LASF40
  1387 02f7 01       		.byte	0x1
  1388 02f8 C1       		.byte	0xc1
  1389 02f9 03030000 		.4byte	0x303
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1391 02fe 03       		.byte	0x3
  1392 02ff 00000000 		.4byte	imo_trim_table.4639
  1393 0303 0C       		.uleb128 0xc
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 35
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 35
 
 
  1394 0304 04       		.byte	0x4
@@ -2046,7 +2046,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1396 0309 12       		.uleb128 0x12
  1397 030a E7020000 		.4byte	0x2e7
  1398 030e 11       		.uleb128 0x11
- 1399 030f A5010000 		.4byte	.LASF41
+ 1399 030f 07020000 		.4byte	.LASF41
  1400 0313 01       		.byte	0x1
  1401 0314 C2       		.byte	0xc2
  1402 0315 4B020000 		.4byte	0x24b
@@ -2054,7 +2054,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1404 031a 03       		.byte	0x3
  1405 031b 44010000 		.4byte	IMO_TRIM_FREQ_TABLE_ENTRIES.4640
  1406 031f 11       		.uleb128 0x11
- 1407 0320 3C010000 		.4byte	.LASF42
+ 1407 0320 9E010000 		.4byte	.LASF42
  1408 0324 01       		.byte	0x1
  1409 0325 C4       		.byte	0xc4
  1410 0326 AB000000 		.4byte	0xab
@@ -2062,7 +2062,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1412 032b 91       		.byte	0x91
  1413 032c 74       		.sleb128 -12
  1414 032d 11       		.uleb128 0x11
- 1415 032e 17000000 		.4byte	.LASF43
+ 1415 032e 79000000 		.4byte	.LASF43
  1416 0332 01       		.byte	0x1
  1417 0333 C5       		.byte	0xc5
  1418 0334 8A000000 		.4byte	0x8a
@@ -2070,7 +2070,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1420 0339 91       		.byte	0x91
  1421 033a 73       		.sleb128 -13
  1422 033b 11       		.uleb128 0x11
- 1423 033c 0D030000 		.4byte	.LASF44
+ 1423 033c 0F030000 		.4byte	.LASF44
  1424 0340 01       		.byte	0x1
  1425 0341 C6       		.byte	0xc6
  1426 0342 8A000000 		.4byte	0x8a
@@ -2079,7 +2079,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1429 0348 72       		.sleb128 -14
  1430 0349 00       		.byte	0
  1431 034a 15       		.uleb128 0x15
- 1432 034b 9D000000 		.4byte	.LASF45
+ 1432 034b FF000000 		.4byte	.LASF45
  1433 034f 01       		.byte	0x1
  1434 0350 EC       		.byte	0xec
  1435 0351 01       		.byte	0x1
@@ -2088,7 +2088,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1438 035a 18010000 		.4byte	.LLST5
  1439 035e 01       		.byte	0x1
  1440 035f 16       		.uleb128 0x16
- 1441 0360 5D000000 		.4byte	.LASF46
+ 1441 0360 BF000000 		.4byte	.LASF46
  1442 0364 01       		.byte	0x1
  1443 0365 1F01     		.2byte	0x11f
  1444 0367 01       		.byte	0x1
@@ -2098,10 +2098,10 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1448 0374 01       		.byte	0x1
  1449 0375 17       		.uleb128 0x17
  1450 0376 01       		.byte	0x1
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 36
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 36
 
 
- 1451 0377 16030000 		.4byte	.LASF56
+ 1451 0377 18030000 		.4byte	.LASF56
  1452 037b 01       		.byte	0x1
  1453 037c 3701     		.2byte	0x137
  1454 037e 01       		.byte	0x1
@@ -2114,7 +2114,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1461 0391 3C010000 		.4byte	.LBB3
  1462 0395 22020000 		.4byte	.LBE3
  1463 0399 18       		.uleb128 0x18
- 1464 039a E8020000 		.4byte	.LASF47
+ 1464 039a EA020000 		.4byte	.LASF47
  1465 039e 01       		.byte	0x1
  1466 039f 3D01     		.2byte	0x13d
  1467 03a1 5A040000 		.4byte	0x45a
@@ -2122,7 +2122,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1469 03a6 03       		.byte	0x3
  1470 03a7 0C000000 		.4byte	cy_cfg_addr_table.4660
  1471 03ab 18       		.uleb128 0x18
- 1472 03ac 4B000000 		.4byte	.LASF48
+ 1472 03ac AD000000 		.4byte	.LASF48
  1473 03b0 01       		.byte	0x1
  1474 03b1 4701     		.2byte	0x147
  1475 03b3 6F040000 		.4byte	0x46f
@@ -2135,7 +2135,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1482 03c0 DA01     		.2byte	0x1da
  1483 03c2 E5030000 		.4byte	0x3e5
  1484 03c6 1A       		.uleb128 0x1a
- 1485 03c7 7F010000 		.4byte	.LASF49
+ 1485 03c7 E1010000 		.4byte	.LASF49
  1486 03cb 01       		.byte	0x1
  1487 03cc DB01     		.2byte	0x1db
  1488 03ce 6F000000 		.4byte	0x6f
@@ -2143,7 +2143,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1490 03d3 23       		.byte	0x23
  1491 03d4 00       		.uleb128 0
  1492 03d5 1A       		.uleb128 0x1a
- 1493 03d6 1B010000 		.4byte	.LASF50
+ 1493 03d6 7D010000 		.4byte	.LASF50
  1494 03da 01       		.byte	0x1
  1495 03db DC01     		.2byte	0x1dc
  1496 03dd 95000000 		.4byte	0x95
@@ -2152,13 +2152,13 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1499 03e3 04       		.uleb128 0x4
  1500 03e4 00       		.byte	0
  1501 03e5 1B       		.uleb128 0x1b
- 1502 03e6 98010000 		.4byte	.LASF51
+ 1502 03e6 FA010000 		.4byte	.LASF51
  1503 03ea 01       		.byte	0x1
  1504 03eb DD01     		.2byte	0x1dd
  1505 03ed BD030000 		.4byte	0x3bd
  1506 03f1 13       		.uleb128 0x13
  1507 03f2 E5030000 		.4byte	0x3e5
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 37
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 37
 
 
  1508 03f6 01040000 		.4byte	0x401
@@ -2167,7 +2167,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1511 03ff 01       		.byte	0x1
  1512 0400 00       		.byte	0
  1513 0401 18       		.uleb128 0x18
- 1514 0402 C1010000 		.4byte	.LASF52
+ 1514 0402 23020000 		.4byte	.LASF52
  1515 0406 01       		.byte	0x1
  1516 0407 DF01     		.2byte	0x1df
  1517 0409 13040000 		.4byte	0x413
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1562 0468 14       		.uleb128 0x14
  1563 0469 68000000 		.4byte	0x68
  1564 046d 8D       		.byte	0x8d
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 38
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 38
 
 
  1565 046e 00       		.byte	0
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1619 0030 00       		.byte	0
  1620 0031 00       		.byte	0
  1621 0032 05       		.uleb128 0x5
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 39
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 39
 
 
  1622 0033 16       		.uleb128 0x16
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1676 0069 3B       		.uleb128 0x3b
  1677 006a 0B       		.uleb128 0xb
  1678 006b 27       		.uleb128 0x27
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 40
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 40
 
 
  1679 006c 0C       		.uleb128 0xc
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1733 00a3 00       		.byte	0
  1734 00a4 00       		.byte	0
  1735 00a5 00       		.byte	0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 41
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 41
 
 
  1736 00a6 0E       		.uleb128 0xe
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1790 00dd 3B       		.uleb128 0x3b
  1791 00de 0B       		.uleb128 0xb
  1792 00df 49       		.uleb128 0x49
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 42
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 42
 
 
  1793 00e0 13       		.uleb128 0x13
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1847 0117 03       		.uleb128 0x3
  1848 0118 0E       		.uleb128 0xe
  1849 0119 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 43
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 43
 
 
  1850 011a 0B       		.uleb128 0xb
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1904 0152 00       		.byte	0
  1905 0153 19       		.uleb128 0x19
  1906 0154 13       		.uleb128 0x13
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 44
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 44
 
 
  1907 0155 01       		.byte	0x1
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  1961 018b 00       		.byte	0
  1962              		.section	.debug_loc,"",%progbits
  1963              	.Ldebug_loc0:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 45
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 45
 
 
  1964              	.LLST0:
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  2018 0084 0200     		.2byte	0x2
  2019 0086 7D       		.byte	0x7d
  2020 0087 08       		.sleb128 8
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 46
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 46
 
 
  2021 0088 04000000 		.4byte	.LCFI7
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  2075 010e 77       		.byte	0x77
  2076 010f 18       		.sleb128 24
  2077 0110 00000000 		.4byte	0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 47
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 47
 
 
  2078 0114 00000000 		.4byte	0
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  2132 0198 88020000 		.4byte	.LFE7
  2133 019c 0200     		.2byte	0x2
  2134 019e 77       		.byte	0x77
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 48
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 48
 
 
  2135 019f 10       		.sleb128 16
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  2186      FB0E0D00 
  2186      01010101 
  2187              	.LASF13:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 49
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 49
 
 
  2188 0000 75696E74 		.ascii	"uint16\000"
@@ -2890,261 +2890,262 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 1
  2191              	.LASF11:
  2192 0010 73697A65 		.ascii	"size_t\000"
  2192      5F7400
- 2193              	.LASF43:
- 2194 0017 73657441 		.ascii	"setAbs\000"
- 2194      627300
- 2195              	.LASF29:
- 2196 001e 64617461 		.ascii	"data_table\000"
- 2196      5F746162 
- 2196      6C6500
- 2197              	.LASF6:
- 2198 0029 6C6F6E67 		.ascii	"long long unsigned int\000"
- 2198      206C6F6E 
- 2198      6720756E 
- 2198      7369676E 
- 2198      65642069 
- 2199              	.LASF28:
- 2200 0040 61646472 		.ascii	"addr_table\000"
+ 2193              	.LASF55:
+ 2194 0017 433A5C55 		.ascii	"C:\\Users\\chuck.erhardt\\Documents\\GitHub\\PSoC-W"
+ 2194      73657273 
+ 2194      5C636875 
+ 2194      636B2E65 
+ 2194      72686172 
+ 2195 0045 35313030 		.ascii	"5100-Driver\\PSoCPioneer+ArduinoShield_Example.cyds"
+ 2195      2D447269 
+ 2195      7665725C 
+ 2195      50536F43 
+ 2195      50696F6E 
+ 2196 0077 6E00     		.ascii	"n\000"
+ 2197              	.LASF43:
+ 2198 0079 73657441 		.ascii	"setAbs\000"
+ 2198      627300
+ 2199              	.LASF29:
+ 2200 0080 64617461 		.ascii	"data_table\000"
  2200      5F746162 
  2200      6C6500
- 2201              	.LASF48:
- 2202 004b 63795F63 		.ascii	"cy_cfg_data_table\000"
- 2202      66675F64 
- 2202      6174615F 
- 2202      7461626C 
- 2202      6500
- 2203              	.LASF46:
- 2204 005d 416E616C 		.ascii	"AnalogSetDefault\000"
- 2204      6F675365 
- 2204      74446566 
- 2204      61756C74 
- 2204      00
- 2205              	.LASF5:
- 2206 006e 6C6F6E67 		.ascii	"long long int\000"
- 2206      206C6F6E 
- 2206      6720696E 
- 2206      7400
- 2207              	.LASF0:
- 2208 007c 7369676E 		.ascii	"signed char\000"
- 2208      65642063 
- 2208      68617200 
- 2209              	.LASF34:
- 2210 0088 66726571 		.ascii	"freq\000"
- 2210      00
- 2211              	.LASF23:
- 2212 008d 43594D45 		.ascii	"CYMEMZERO\000"
- 2212      4D5A4552 
- 2212      4F00
- 2213              	.LASF15:
- 2214 0097 696E7433 		.ascii	"int32\000"
- 2214      3200
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 50
+ 2201              	.LASF6:
+ 2202 008b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2202      206C6F6E 
+ 2202      6720756E 
+ 2202      7369676E 
+ 2202      65642069 
+ 2203              	.LASF28:
+ 2204 00a2 61646472 		.ascii	"addr_table\000"
+ 2204      5F746162 
+ 2204      6C6500
+ 2205              	.LASF48:
+ 2206 00ad 63795F63 		.ascii	"cy_cfg_data_table\000"
+ 2206      66675F64 
+ 2206      6174615F 
+ 2206      7461626C 
+ 2206      6500
+ 2207              	.LASF46:
+ 2208 00bf 416E616C 		.ascii	"AnalogSetDefault\000"
+ 2208      6F675365 
+ 2208      74446566 
+ 2208      61756C74 
+ 2208      00
+ 2209              	.LASF5:
+ 2210 00d0 6C6F6E67 		.ascii	"long long int\000"
+ 2210      206C6F6E 
+ 2210      6720696E 
+ 2210      7400
+ 2211              	.LASF0:
+ 2212 00de 7369676E 		.ascii	"signed char\000"
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 50
 
 
- 2215              	.LASF45:
- 2216 009d 436C6F63 		.ascii	"ClockSetup\000"
- 2216      6B536574 
- 2216      757000
- 2217              	.LASF7:
- 2218 00a8 6C6F6E67 		.ascii	"long int\000"
- 2218      20696E74 
- 2218      00
- 2219              	.LASF12:
- 2220 00b1 75696E74 		.ascii	"uint8\000"
- 2220      3800
- 2221              	.LASF17:
- 2222 00b7 646F7562 		.ascii	"double\000"
- 2222      6C6500
- 2223              	.LASF14:
- 2224 00be 75696E74 		.ascii	"uint32\000"
- 2224      333200
- 2225              	.LASF31:
- 2226 00c5 636F756E 		.ascii	"count\000"
- 2226      7400
- 2227              	.LASF21:
- 2228 00cb 76616C75 		.ascii	"value\000"
- 2228      6500
- 2229              	.LASF4:
- 2230 00d1 756E7369 		.ascii	"unsigned int\000"
- 2230      676E6564 
- 2230      20696E74 
- 2230      00
- 2231              	.LASF37:
- 2232 00de 696D6F5F 		.ascii	"imo_trim_entry_t\000"
- 2232      7472696D 
- 2232      5F656E74 
- 2232      72795F74 
- 2232      00
- 2233              	.LASF33:
- 2234 00ef 696D6F46 		.ascii	"imoFreq\000"
- 2234      72657100 
- 2235              	.LASF9:
- 2236 00f7 6C6F6E67 		.ascii	"long unsigned int\000"
- 2236      20756E73 
- 2236      69676E65 
- 2236      6420696E 
- 2236      7400
- 2237              	.LASF27:
- 2238 0109 6366675F 		.ascii	"cfg_write_bytes32\000"
- 2238      77726974 
- 2238      655F6279 
- 2238      74657333 
- 2238      3200
- 2239              	.LASF50:
- 2240 011b 73697A65 		.ascii	"size\000"
- 2240      00
- 2241              	.LASF3:
- 2242 0120 73686F72 		.ascii	"short unsigned int\000"
- 2242      7420756E 
- 2242      7369676E 
- 2242      65642069 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 51
+ 2212      65642063 
+ 2212      68617200 
+ 2213              	.LASF34:
+ 2214 00ea 66726571 		.ascii	"freq\000"
+ 2214      00
+ 2215              	.LASF23:
+ 2216 00ef 43594D45 		.ascii	"CYMEMZERO\000"
+ 2216      4D5A4552 
+ 2216      4F00
+ 2217              	.LASF15:
+ 2218 00f9 696E7433 		.ascii	"int32\000"
+ 2218      3200
+ 2219              	.LASF45:
+ 2220 00ff 436C6F63 		.ascii	"ClockSetup\000"
+ 2220      6B536574 
+ 2220      757000
+ 2221              	.LASF7:
+ 2222 010a 6C6F6E67 		.ascii	"long int\000"
+ 2222      20696E74 
+ 2222      00
+ 2223              	.LASF12:
+ 2224 0113 75696E74 		.ascii	"uint8\000"
+ 2224      3800
+ 2225              	.LASF17:
+ 2226 0119 646F7562 		.ascii	"double\000"
+ 2226      6C6500
+ 2227              	.LASF14:
+ 2228 0120 75696E74 		.ascii	"uint32\000"
+ 2228      333200
+ 2229              	.LASF31:
+ 2230 0127 636F756E 		.ascii	"count\000"
+ 2230      7400
+ 2231              	.LASF21:
+ 2232 012d 76616C75 		.ascii	"value\000"
+ 2232      6500
+ 2233              	.LASF4:
+ 2234 0133 756E7369 		.ascii	"unsigned int\000"
+ 2234      676E6564 
+ 2234      20696E74 
+ 2234      00
+ 2235              	.LASF37:
+ 2236 0140 696D6F5F 		.ascii	"imo_trim_entry_t\000"
+ 2236      7472696D 
+ 2236      5F656E74 
+ 2236      72795F74 
+ 2236      00
+ 2237              	.LASF33:
+ 2238 0151 696D6F46 		.ascii	"imoFreq\000"
+ 2238      72657100 
+ 2239              	.LASF9:
+ 2240 0159 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2240      20756E73 
+ 2240      69676E65 
+ 2240      6420696E 
+ 2240      7400
+ 2241              	.LASF27:
+ 2242 016b 6366675F 		.ascii	"cfg_write_bytes32\000"
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 51
 
 
- 2242      6E7400
- 2243              	.LASF35:
- 2244 0133 6162736F 		.ascii	"absolute\000"
- 2244      6C757465 
+ 2242      77726974 
+ 2242      655F6279 
+ 2242      74657333 
+ 2242      3200
+ 2243              	.LASF50:
+ 2244 017d 73697A65 		.ascii	"size\000"
  2244      00
- 2245              	.LASF42:
- 2246 013c 696D6F54 		.ascii	"imoTrimIndex\000"
- 2246      72696D49 
- 2246      6E646578 
- 2246      00
- 2247              	.LASF19:
- 2248 0149 72656733 		.ascii	"reg32\000"
- 2248      3200
- 2249              	.LASF26:
- 2250 014f 4359434F 		.ascii	"CYCONFIGCPYCODE\000"
- 2250      4E464947 
- 2250      43505943 
- 2250      4F444500 
- 2251              	.LASF38:
- 2252 015f 656E7472 		.ascii	"entries\000"
- 2252      69657300 
- 2253              	.LASF8:
- 2254 0167 73697A65 		.ascii	"sizetype\000"
- 2254      74797065 
- 2254      00
- 2255              	.LASF40:
- 2256 0170 696D6F5F 		.ascii	"imo_trim_table\000"
- 2256      7472696D 
- 2256      5F746162 
- 2256      6C6500
- 2257              	.LASF49:
- 2258 017f 61646472 		.ascii	"address\000"
- 2258      65737300 
- 2259              	.LASF39:
- 2260 0187 696D6F5F 		.ascii	"imo_trim_table_t\000"
+ 2245              	.LASF3:
+ 2246 0182 73686F72 		.ascii	"short unsigned int\000"
+ 2246      7420756E 
+ 2246      7369676E 
+ 2246      65642069 
+ 2246      6E7400
+ 2247              	.LASF35:
+ 2248 0195 6162736F 		.ascii	"absolute\000"
+ 2248      6C757465 
+ 2248      00
+ 2249              	.LASF42:
+ 2250 019e 696D6F54 		.ascii	"imoTrimIndex\000"
+ 2250      72696D49 
+ 2250      6E646578 
+ 2250      00
+ 2251              	.LASF19:
+ 2252 01ab 72656733 		.ascii	"reg32\000"
+ 2252      3200
+ 2253              	.LASF26:
+ 2254 01b1 4359434F 		.ascii	"CYCONFIGCPYCODE\000"
+ 2254      4E464947 
+ 2254      43505943 
+ 2254      4F444500 
+ 2255              	.LASF38:
+ 2256 01c1 656E7472 		.ascii	"entries\000"
+ 2256      69657300 
+ 2257              	.LASF8:
+ 2258 01c9 73697A65 		.ascii	"sizetype\000"
+ 2258      74797065 
+ 2258      00
+ 2259              	.LASF40:
+ 2260 01d2 696D6F5F 		.ascii	"imo_trim_table\000"
  2260      7472696D 
  2260      5F746162 
- 2260      6C655F74 
- 2260      00
- 2261              	.LASF51:
- 2262 0198 6366675F 		.ascii	"cfg_memset_t\000"
- 2262      6D656D73 
- 2262      65745F74 
- 2262      00
- 2263              	.LASF41:
- 2264 01a5 494D4F5F 		.ascii	"IMO_TRIM_FREQ_TABLE_ENTRIES\000"
- 2264      5452494D 
- 2264      5F465245 
- 2264      515F5441 
- 2264      424C455F 
- 2265              	.LASF52:
- 2266 01c1 6366675F 		.ascii	"cfg_memset_list\000"
+ 2260      6C6500
+ 2261              	.LASF49:
+ 2262 01e1 61646472 		.ascii	"address\000"
+ 2262      65737300 
+ 2263              	.LASF39:
+ 2264 01e9 696D6F5F 		.ascii	"imo_trim_table_t\000"
+ 2264      7472696D 
+ 2264      5F746162 
+ 2264      6C655F74 
+ 2264      00
+ 2265              	.LASF51:
+ 2266 01fa 6366675F 		.ascii	"cfg_memset_t\000"
  2266      6D656D73 
- 2266      65745F6C 
- 2266      69737400 
- 2267              	.LASF25:
- 2268 01d1 64657374 		.ascii	"dest\000"
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 52
+ 2266      65745F74 
+ 2266      00
+ 2267              	.LASF41:
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 52
 
 
- 2268      00
- 2269              	.LASF54:
- 2270 01d6 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\cyfitter_cfg.c\000"
- 2270      6E657261 
- 2270      7465645F 
- 2270      536F7572 
- 2270      63655C50 
- 2271              	.LASF16:
- 2272 01fe 666C6F61 		.ascii	"float\000"
- 2272      7400
- 2273              	.LASF53:
- 2274 0204 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
- 2274      4320342E 
- 2274      372E3320 
- 2274      32303133 
- 2274      30333132 
- 2275 0237 616E6368 		.ascii	"anch revision 196615]\000"
- 2275      20726576 
- 2275      6973696F 
- 2275      6E203139 
- 2275      36363135 
- 2276              	.LASF18:
- 2277 024d 72656738 		.ascii	"reg8\000"
- 2277      00
- 2278              	.LASF1:
- 2279 0252 756E7369 		.ascii	"unsigned char\000"
- 2279      676E6564 
- 2279      20636861 
- 2279      7200
- 2280              	.LASF36:
- 2281 0260 746D7063 		.ascii	"tmpco\000"
- 2281      6F00
- 2282              	.LASF2:
- 2283 0266 73686F72 		.ascii	"short int\000"
- 2283      7420696E 
- 2283      7400
- 2284              	.LASF22:
- 2285 0270 63795F63 		.ascii	"cy_cfg_addrvalue_t\000"
- 2285      66675F61 
- 2285      64647276 
- 2285      616C7565 
- 2285      5F7400
- 2286              	.LASF10:
- 2287 0283 63686172 		.ascii	"char\000"
- 2287      00
- 2288              	.LASF55:
- 2289 0288 433A5C55 		.ascii	"C:\\Users\\chuck.erhardt\\Documents\\PSoC Creator\\"
- 2289      73657273 
- 2289      5C636875 
- 2289      636B2E65 
- 2289      72686172 
- 2290 02b6 4532466F 		.ascii	"E2ForLife\\PSoCPioneer+ArduinoShield_Example.cydsn\000"
- 2290      724C6966 
- 2290      655C5053 
- 2290      6F435069 
- 2290      6F6E6565 
- 2291              	.LASF47:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccNtymoM.s 			page 53
+ 2268 0207 494D4F5F 		.ascii	"IMO_TRIM_FREQ_TABLE_ENTRIES\000"
+ 2268      5452494D 
+ 2268      5F465245 
+ 2268      515F5441 
+ 2268      424C455F 
+ 2269              	.LASF52:
+ 2270 0223 6366675F 		.ascii	"cfg_memset_list\000"
+ 2270      6D656D73 
+ 2270      65745F6C 
+ 2270      69737400 
+ 2271              	.LASF25:
+ 2272 0233 64657374 		.ascii	"dest\000"
+ 2272      00
+ 2273              	.LASF54:
+ 2274 0238 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\cyfitter_cfg.c\000"
+ 2274      6E657261 
+ 2274      7465645F 
+ 2274      536F7572 
+ 2274      63655C50 
+ 2275              	.LASF16:
+ 2276 0260 666C6F61 		.ascii	"float\000"
+ 2276      7400
+ 2277              	.LASF53:
+ 2278 0266 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 2278      4320342E 
+ 2278      372E3320 
+ 2278      32303133 
+ 2278      30333132 
+ 2279 0299 616E6368 		.ascii	"anch revision 196615]\000"
+ 2279      20726576 
+ 2279      6973696F 
+ 2279      6E203139 
+ 2279      36363135 
+ 2280              	.LASF18:
+ 2281 02af 72656738 		.ascii	"reg8\000"
+ 2281      00
+ 2282              	.LASF1:
+ 2283 02b4 756E7369 		.ascii	"unsigned char\000"
+ 2283      676E6564 
+ 2283      20636861 
+ 2283      7200
+ 2284              	.LASF36:
+ 2285 02c2 746D7063 		.ascii	"tmpco\000"
+ 2285      6F00
+ 2286              	.LASF2:
+ 2287 02c8 73686F72 		.ascii	"short int\000"
+ 2287      7420696E 
+ 2287      7400
+ 2288              	.LASF22:
+ 2289 02d2 63795F63 		.ascii	"cy_cfg_addrvalue_t\000"
+ 2289      66675F61 
+ 2289      64647276 
+ 2289      616C7565 
+ 2289      5F7400
+ 2290              	.LASF10:
+ 2291 02e5 63686172 		.ascii	"char\000"
+ 2291      00
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccJ2FNZd.s 			page 53
 
 
- 2292 02e8 63795F63 		.ascii	"cy_cfg_addr_table\000"
- 2292      66675F61 
- 2292      6464725F 
- 2292      7461626C 
- 2292      6500
- 2293              	.LASF20:
- 2294 02fa 6F666673 		.ascii	"offset\000"
- 2294      657400
- 2295              	.LASF24:
- 2296 0301 4359434F 		.ascii	"CYCONFIGCPY\000"
- 2296      4E464947 
- 2296      43505900 
- 2297              	.LASF44:
- 2298 030d 73657454 		.ascii	"setTmpCo\000"
- 2298      6D70436F 
- 2298      00
- 2299              	.LASF56:
- 2300 0316 63796669 		.ascii	"cyfitter_cfg\000"
- 2300      74746572 
- 2300      5F636667 
- 2300      00
- 2301              	.LASF32:
- 2302 0323 53657449 		.ascii	"SetIMOBGTrims\000"
- 2302      4D4F4247 
- 2302      5472696D 
- 2302      7300
- 2303              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br
+ 2292              	.LASF47:
+ 2293 02ea 63795F63 		.ascii	"cy_cfg_addr_table\000"
+ 2293      66675F61 
+ 2293      6464725F 
+ 2293      7461626C 
+ 2293      6500
+ 2294              	.LASF20:
+ 2295 02fc 6F666673 		.ascii	"offset\000"
+ 2295      657400
+ 2296              	.LASF24:
+ 2297 0303 4359434F 		.ascii	"CYCONFIGCPY\000"
+ 2297      4E464947 
+ 2297      43505900 
+ 2298              	.LASF44:
+ 2299 030f 73657454 		.ascii	"setTmpCo\000"
+ 2299      6D70436F 
+ 2299      00
+ 2300              	.LASF56:
+ 2301 0318 63796669 		.ascii	"cyfitter_cfg\000"
+ 2301      74746572 
+ 2301      5F636667 
+ 2301      00
+ 2302              	.LASF32:
+ 2303 0325 53657449 		.ascii	"SetIMOBGTrims\000"
+ 2303      4D4F4247 
+ 2303      5472696D 
+ 2303      7300
+ 2304              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

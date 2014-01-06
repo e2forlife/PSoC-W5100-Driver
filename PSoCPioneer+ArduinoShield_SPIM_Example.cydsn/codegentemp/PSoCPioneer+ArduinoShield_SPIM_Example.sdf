@@ -1,6 +1,6 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2013-11-13T16:32:11Z")
+ (DATE "2014-01-06T17:07:04Z")
  (DESIGN "PSoCPioneer+ArduinoShield_SPIM_Example")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "cydsfit")

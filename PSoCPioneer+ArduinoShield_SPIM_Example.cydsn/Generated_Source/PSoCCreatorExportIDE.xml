@@ -18,7 +18,7 @@
       <Tool Name="postbuild" Command="" Options="" />
     </Toolchain>
   </Toolchains>
-  <Project Name="PSoCPioneer+ArduinoShield_SPIM_Example" Path="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn" Version="4.0" Type="Normal">
+  <Project Name="PSoCPioneer+ArduinoShield_SPIM_Example" Path="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn" Version="4.0" Type="Normal">
     <CMSIS_SVD_File>PSoCPioneer+ArduinoShield_SPIM_Example.svd</CMSIS_SVD_File>
     <Datasheet />
     <LinkerFiles>
@@ -27,13 +27,13 @@
       <LinkerFile Toolchain="IAR EWARM">.\Generated_Source\PSoC4\Cm0Iar.icf</LinkerFile>
     </LinkerFiles>
     <Folders>
-      <Folder BuildType="BUILD" Path="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn">
-        <Files Root="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn">
+      <Folder BuildType="BUILD" Path="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn">
+        <Files Root="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn">
           <File BuildType="BUILD" Toolchain="">.\main.c</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\Generated_Source\PSoC4">
-        <Files Root="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\Generated_Source\PSoC4">
+        <Files Root="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn">
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\cyfitter_cfg.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\cyfitter_cfg.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\cymetadata.c</File>
@@ -91,41 +91,41 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\libelf.dll</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\Generated_Source\PSoC4\ARM_GCC">
-        <Files Root="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\Generated_Source\PSoC4\ARM_GCC">
+        <Files Root="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn">
           <File BuildType="BUILD" Toolchain="ARM GCC">.\Generated_Source\PSoC4\ARM_GCC\CyComponentLibrary.a</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\Generated_Source\PSoC4\ARM_Keil_MDK">
-        <Files Root="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\Generated_Source\PSoC4\ARM_Keil_MDK">
+        <Files Root="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn">
           <File BuildType="BUILD" Toolchain="ARM Keil MDK">.\Generated_Source\PSoC4\ARM_Keil_MDK\CyComponentLibrary.a</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\Generated_Source\PSoC4\IAR">
-        <Files Root="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\Generated_Source\PSoC4\IAR">
+        <Files Root="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn">
           <File BuildType="BUILD" Toolchain="IAR">.\Generated_Source\PSoC4\IAR\CyComponentLibrary.a</File>
         </Files>
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\codegentemp">
-        <Files Root="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn" />
+        <Files Root="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\ARM_GCC_441">
-        <Files Root="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn" />
+        <Files Root="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\ARM_GCC_473">
-        <Files Root="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn" />
+        <Files Root="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\DP8051_Keil_951">
-        <Files Root="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn" />
+        <Files Root="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\DP8051">
-        <Files Root="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn" />
+        <Files Root="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM0">
-        <Files Root="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn" />
+        <Files Root="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM3">
-        <Files Root="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn" />
+        <Files Root="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn" />
       </Folder>
     </Folders>
   </Project>

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
   22:.\Generated_Source\PSoC4/SPI0.c ****     volatile uint8 SPI0_txBufferFull;
   23:.\Generated_Source\PSoC4/SPI0.c ****     volatile uint8 SPI0_txBufferRead;
   24:.\Generated_Source\PSoC4/SPI0.c ****     volatile uint8 SPI0_txBufferWrite;
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 2
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 2
 
 
   25:.\Generated_Source\PSoC4/SPI0.c **** #endif /* (SPI0_TX_SOFTWARE_BUF_ENABLED) */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
   46 0006 0F22     		mov	r2, #15
   47 0008 1A70     		strb	r2, [r3]
   67:.\Generated_Source\PSoC4/SPI0.c **** 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 3
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 3
 
 
   68:.\Generated_Source\PSoC4/SPI0.c ****     /* Init TX ISR  */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
   66              	.L3:
   67 0026 C046     		.align	2
   68              	.L2:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 4
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 4
 
 
   69 0028 80000F40 		.word	1074724992
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  125:.\Generated_Source\PSoC4/SPI0.c ****     SPI0_COUNTER_CONTROL_REG |= SPI0_CNTR_ENABLE;
  102              		.loc 1 125 0
  103 0010 124B     		ldr	r3, .L5
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 5
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 5
 
 
  104 0012 124A     		ldr	r2, .L5
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  147              	.L5:
  148 005c 90000F40 		.word	1074725008
  149 0060 93000F40 		.word	1074725011
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 6
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 6
 
 
  150 0064 92000F40 		.word	1074725010
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  175 0008 002B     		cmp	r3, #0
  176 000a 04D1     		bne	.L8
  166:.\Generated_Source\PSoC4/SPI0.c ****     {
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 7
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 7
 
 
  167:.\Generated_Source\PSoC4/SPI0.c ****         SPI0_Init();
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  193:.\Generated_Source\PSoC4/SPI0.c **** {
  205              		.loc 1 193 0
  206              		.cfi_startproc
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 8
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 8
 
 
  207 0000 90B5     		push	{r4, r7, lr}
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  249              		.loc 1 205 0
  250 003e FFF7FEFF 		bl	SPI0_DisableTxInt
  206:.\Generated_Source\PSoC4/SPI0.c ****     SPI0_DisableRxInt();
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 9
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 9
 
 
  251              		.loc 1 206 0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  283              		.cfi_def_cfa_register 7
  229:.\Generated_Source\PSoC4/SPI0.c ****     #if(0u != SPI0_INTERNAL_TX_INT_ENABLED)
  230:.\Generated_Source\PSoC4/SPI0.c ****         CyIntEnable(SPI0_TX_ISR_NUMBER);
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 10
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 10
 
 
  231:.\Generated_Source\PSoC4/SPI0.c ****     #endif /* (0u != SPI0_INTERNAL_TX_INT_ENABLED) */
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  311              		@ sp needed for prologue
  312 0006 80BD     		pop	{r7, pc}
  313              		.cfi_endproc
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 11
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 11
 
 
  314              	.LFE5:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  343              		.global	SPI0_DisableRxInt
  344              		.code	16
  345              		.thumb_func
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 12
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 12
 
 
  346              		.type	SPI0_DisableRxInt, %function
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  309:.\Generated_Source\PSoC4/SPI0.c **** 
  310:.\Generated_Source\PSoC4/SPI0.c **** /*******************************************************************************
  311:.\Generated_Source\PSoC4/SPI0.c **** * Function Name: SPI0_SetTxInterruptMode
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 13
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 13
 
 
  312:.\Generated_Source\PSoC4/SPI0.c **** ********************************************************************************
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  408              		.align	2
  409              		.global	SPI0_SetRxInterruptMode
  410              		.code	16
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 14
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 14
 
 
  411              		.thumb_func
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  441              	.L23:
  442 001a C046     		.align	2
  443              	.L22:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 15
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 15
 
 
  444 001c 82000F40 		.word	1074724994
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  466 0004 00AF     		add	r7, sp, #0
  467              	.LCFI26:
  468              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 16
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 16
 
 
  388:.\Generated_Source\PSoC4/SPI0.c ****     uint8 tmpStatus;
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  413:.\Generated_Source\PSoC4/SPI0.c **** * Summary:
  414:.\Generated_Source\PSoC4/SPI0.c **** *  Read the Rx status register for the component.
  415:.\Generated_Source\PSoC4/SPI0.c **** *
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 17
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 17
 
 
  416:.\Generated_Source\PSoC4/SPI0.c **** * Parameters:
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  515 000c 1A70     		strb	r2, [r3]
  453:.\Generated_Source\PSoC4/SPI0.c **** 
  454:.\Generated_Source\PSoC4/SPI0.c ****     #endif /* (SPI0_RX_SOFTWARE_BUF_ENABLED) */
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 18
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 18
 
 
  455:.\Generated_Source\PSoC4/SPI0.c **** 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  485:.\Generated_Source\PSoC4/SPI0.c **** * Side Effects:
  486:.\Generated_Source\PSoC4/SPI0.c **** *  If this function is called again before the previous byte is finished then
  487:.\Generated_Source\PSoC4/SPI0.c **** *  the next byte will be appended to the transfer with no time between
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 19
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 19
 
 
  488:.\Generated_Source\PSoC4/SPI0.c **** *  the byte transfers. Clear Tx status register of the component.
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  526:.\Generated_Source\PSoC4/SPI0.c ****             /* Add directly to the TX FIFO */
  527:.\Generated_Source\PSoC4/SPI0.c ****             CY_SET_REG8(SPI0_TXDATA_PTR, txData);
  528:.\Generated_Source\PSoC4/SPI0.c ****         }
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 20
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 20
 
 
  529:.\Generated_Source\PSoC4/SPI0.c ****         else
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  572              		.loc 1 566 0
  573 0024 BD46     		mov	sp, r7
  574 0026 02B0     		add	sp, sp, #8
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 21
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 21
 
 
  575              		@ sp needed for prologue
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  603:.\Generated_Source\PSoC4/SPI0.c **** uint8 SPI0_ReadRxData(void) 
  604:.\Generated_Source\PSoC4/SPI0.c **** {
  593              		.loc 1 604 0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 22
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 22
 
 
  594              		.cfi_startproc
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  639:.\Generated_Source\PSoC4/SPI0.c **** }
  614              		.loc 1 639 0
  615 0012 181C     		mov	r0, r3
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 23
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 23
 
 
  616 0014 BD46     		mov	sp, r7
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  641              		.cfi_offset 14, -4
  642 0002 82B0     		sub	sp, sp, #8
  643              	.LCFI37:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 24
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 24
 
 
  644              		.cfi_def_cfa_offset 16
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  668 0020 1B78     		ldrb	r3, [r3]
  699:.\Generated_Source\PSoC4/SPI0.c **** }
  669              		.loc 1 699 0 discriminator 3
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 25
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 25
 
 
  670 0022 181C     		mov	r0, r3
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  694              		.cfi_def_cfa_offset 8
  695              		.cfi_offset 7, -8
  696              		.cfi_offset 14, -4
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 26
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 26
 
 
  697 0002 82B0     		sub	sp, sp, #8
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  721 0020 FB1D     		add	r3, r7, #7
  722 0022 1A78     		ldrb	r2, [r3]
  723 0024 0423     		mov	r3, #4
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 27
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 27
 
 
  724 0026 1340     		and	r3, r2
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  777:.\Generated_Source\PSoC4/SPI0.c **** *
  778:.\Generated_Source\PSoC4/SPI0.c **** * Summary:
  779:.\Generated_Source\PSoC4/SPI0.c **** *  Clear the RX RAM buffer by setting the read and write pointers both to zero.
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 28
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 28
 
 
  780:.\Generated_Source\PSoC4/SPI0.c **** *
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  781 000e DBB2     		uxtb	r3, r3
  782 0010 1A1C     		mov	r2, r3
  783 0012 2023     		mov	r3, #32
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 29
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 29
 
 
  784 0014 1340     		and	r3, r2
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  845:.\Generated_Source\PSoC4/SPI0.c **** *  SPI0_txBufferRead - used for the account of the bytes which
  846:.\Generated_Source\PSoC4/SPI0.c **** *  have been read from the TX software buffer, modified every function call -
  847:.\Generated_Source\PSoC4/SPI0.c **** *  resets to zero.
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 30
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 30
 
 
  848:.\Generated_Source\PSoC4/SPI0.c **** *
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  838 0026 D2B2     		uxtb	r2, r2
  839 0028 0121     		mov	r1, #1
  840 002a 8A43     		bic	r2, r1
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 31
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 31
 
 
  841 002c D2B2     		uxtb	r2, r2
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  897:.\Generated_Source\PSoC4/SPI0.c ****     ********************************************************************************
  898:.\Generated_Source\PSoC4/SPI0.c ****     *
  899:.\Generated_Source\PSoC4/SPI0.c ****     * Summary:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 32
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 32
 
 
  900:.\Generated_Source\PSoC4/SPI0.c ****     *  If the SPI master is configured to use a single bi-directional pin then this
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  954:.\Generated_Source\PSoC4/SPI0.c **** * Side Effects:
  955:.\Generated_Source\PSoC4/SPI0.c **** *  Will stay in this routine until all data has been sent.  May get locked in
  956:.\Generated_Source\PSoC4/SPI0.c **** *  this loop if data is not being initiated by the master if there is not
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 33
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 33
 
 
  957:.\Generated_Source\PSoC4/SPI0.c **** *  enough room in the TX FIFO.
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  905 002e 3A1C     		mov	r2, r7
  906 0030 0F32     		add	r2, r2, #15
  907 0032 1278     		ldrb	r2, [r2]
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 34
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 34
 
 
  908 0034 0132     		add	r2, r2, #1
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  997:.\Generated_Source\PSoC4/SPI0.c **** {
  938              		.loc 1 997 0
  939              		.cfi_startproc
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 35
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 35
 
 
  940 0000 90B5     		push	{r4, r7, lr}
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  981              		.loc 1 1009 0
  982 0034 094B     		ldr	r3, .L67+8
  983 0036 094A     		ldr	r2, .L67+8
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 36
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 36
 
 
  984 0038 1278     		ldrb	r2, [r2]
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
 1031:.\Generated_Source\PSoC4/SPI0.c **** *
 1032:.\Generated_Source\PSoC4/SPI0.c **** * Parameters:
 1033:.\Generated_Source\PSoC4/SPI0.c **** *  None.
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 37
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 37
 
 
 1034:.\Generated_Source\PSoC4/SPI0.c **** *
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
 1059:.\Generated_Source\PSoC4/SPI0.c **** * Return:
 1060:.\Generated_Source\PSoC4/SPI0.c **** *  None.
 1061:.\Generated_Source\PSoC4/SPI0.c **** *
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 38
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 38
 
 
 1062:.\Generated_Source\PSoC4/SPI0.c **** * Theory:
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
 1087:.\Generated_Source\PSoC4/SPI0.c **** * Theory:
 1088:.\Generated_Source\PSoC4/SPI0.c **** *  Enables the output of specific status bits to the interrupt controller.
 1089:.\Generated_Source\PSoC4/SPI0.c **** *
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 39
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 39
 
 
 1090:.\Generated_Source\PSoC4/SPI0.c **** *******************************************************************************/
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1123              	SPI0_ReadStatus:
  1124              	.LFB23:
 1096:.\Generated_Source\PSoC4/SPI0.c **** 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 40
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 40
 
 
 1097:.\Generated_Source\PSoC4/SPI0.c **** 
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
 1138:.\Generated_Source\PSoC4/SPI0.c ****         SPI0_swStatusTx = 0u;
 1139:.\Generated_Source\PSoC4/SPI0.c ****         SPI0_swStatusRx = 0u;
 1140:.\Generated_Source\PSoC4/SPI0.c **** 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 41
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 41
 
 
 1141:.\Generated_Source\PSoC4/SPI0.c ****         SPI0_EnableInt();
@@ -2458,16 +2458,16 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1180              	.Ldebug_info0:
  1181 0000 66040000 		.4byte	0x466
  1182 0004 0200     		.2byte	0x2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 42
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 42
 
 
  1183 0006 00000000 		.4byte	.Ldebug_abbrev0
  1184 000a 04       		.byte	0x4
  1185 000b 01       		.uleb128 0x1
- 1186 000c 00030000 		.4byte	.LASF51
+ 1186 000c 02030000 		.4byte	.LASF51
  1187 0010 01       		.byte	0x1
  1188 0011 92000000 		.4byte	.LASF52
- 1189 0015 2C010000 		.4byte	.LASF53
+ 1189 0015 8E010000 		.4byte	.LASF53
  1190 0019 00000000 		.4byte	.Ldebug_ranges0+0
  1191 001d 00000000 		.4byte	0
  1192 0021 00000000 		.4byte	0
@@ -2475,15 +2475,15 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1194 0029 02       		.uleb128 0x2
  1195 002a 01       		.byte	0x1
  1196 002b 06       		.byte	0x6
- 1197 002c 66030000 		.4byte	.LASF0
+ 1197 002c 68030000 		.4byte	.LASF0
  1198 0030 02       		.uleb128 0x2
  1199 0031 01       		.byte	0x1
  1200 0032 08       		.byte	0x8
- 1201 0033 C5010000 		.4byte	.LASF1
+ 1201 0033 72010000 		.4byte	.LASF1
  1202 0037 02       		.uleb128 0x2
  1203 0038 02       		.byte	0x2
  1204 0039 05       		.byte	0x5
- 1205 003a D3020000 		.4byte	.LASF2
+ 1205 003a D5020000 		.4byte	.LASF2
  1206 003e 02       		.uleb128 0x2
  1207 003f 02       		.byte	0x2
  1208 0040 07       		.byte	0x7
@@ -2491,7 +2491,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1210 0045 02       		.uleb128 0x2
  1211 0046 04       		.byte	0x4
  1212 0047 05       		.byte	0x5
- 1213 0048 53030000 		.4byte	.LASF4
+ 1213 0048 55030000 		.4byte	.LASF4
  1214 004c 02       		.uleb128 0x2
  1215 004d 04       		.byte	0x4
  1216 004e 07       		.byte	0x7
@@ -2499,11 +2499,11 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1218 0053 02       		.uleb128 0x2
  1219 0054 08       		.byte	0x8
  1220 0055 05       		.byte	0x5
- 1221 0056 85020000 		.4byte	.LASF6
+ 1221 0056 87020000 		.4byte	.LASF6
  1222 005a 02       		.uleb128 0x2
  1223 005b 08       		.byte	0x8
  1224 005c 07       		.byte	0x7
- 1225 005d 15020000 		.4byte	.LASF7
+ 1225 005d 17020000 		.4byte	.LASF7
  1226 0061 03       		.uleb128 0x3
  1227 0062 04       		.byte	0x4
  1228 0063 05       		.byte	0x5
@@ -2511,14 +2511,14 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1230 0068 02       		.uleb128 0x2
  1231 0069 04       		.byte	0x4
  1232 006a 07       		.byte	0x7
- 1233 006b F3010000 		.4byte	.LASF8
+ 1233 006b F5010000 		.4byte	.LASF8
  1234 006f 04       		.uleb128 0x4
  1235 0070 26010000 		.4byte	.LASF12
  1236 0074 02       		.byte	0x2
  1237 0075 5B       		.byte	0x5b
  1238 0076 30000000 		.4byte	0x30
  1239 007a 02       		.uleb128 0x2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 43
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 43
 
 
  1240 007b 04       		.byte	0x4
@@ -2527,11 +2527,11 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1243 0081 02       		.uleb128 0x2
  1244 0082 08       		.byte	0x8
  1245 0083 04       		.byte	0x4
- 1246 0084 E5010000 		.4byte	.LASF10
+ 1246 0084 80010000 		.4byte	.LASF10
  1247 0088 02       		.uleb128 0x2
  1248 0089 01       		.byte	0x1
  1249 008a 08       		.byte	0x8
- 1250 008b A6020000 		.4byte	.LASF11
+ 1250 008b A8020000 		.4byte	.LASF11
  1251 008f 04       		.uleb128 0x4
  1252 0090 FF000000 		.4byte	.LASF13
  1253 0094 02       		.byte	0x2
@@ -2542,10 +2542,10 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1258 009f 02       		.uleb128 0x2
  1259 00a0 04       		.byte	0x4
  1260 00a1 07       		.byte	0x7
- 1261 00a2 6B020000 		.4byte	.LASF14
+ 1261 00a2 6D020000 		.4byte	.LASF14
  1262 00a6 06       		.uleb128 0x6
  1263 00a7 01       		.byte	0x1
- 1264 00a8 49030000 		.4byte	.LASF15
+ 1264 00a8 4B030000 		.4byte	.LASF15
  1265 00ac 01       		.byte	0x1
  1266 00ad 3F       		.byte	0x3f
  1267 00ae 01       		.byte	0x1
@@ -2565,7 +2565,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1281 00d1 01       		.byte	0x1
  1282 00d2 E5000000 		.4byte	0xe5
  1283 00d6 08       		.uleb128 0x8
- 1284 00d7 74020000 		.4byte	.LASF19
+ 1284 00d7 76020000 		.4byte	.LASF19
  1285 00db 01       		.byte	0x1
  1286 00dc 7A       		.byte	0x7a
  1287 00dd 6F000000 		.4byte	0x6f
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1294 00e7 00000000 		.4byte	.LASF16
  1295 00eb 01       		.byte	0x1
  1296 00ec A3       		.byte	0xa3
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 44
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 44
 
 
  1297 00ed 01       		.byte	0x1
@@ -2588,7 +2588,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1301 00fa 01       		.byte	0x1
  1302 00fb 07       		.uleb128 0x7
  1303 00fc 01       		.byte	0x1
- 1304 00fd 72030000 		.4byte	.LASF18
+ 1304 00fd 74030000 		.4byte	.LASF18
  1305 0101 01       		.byte	0x1
  1306 0102 C0       		.byte	0xc0
  1307 0103 01       		.byte	0x1
@@ -2598,7 +2598,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1311 0110 01       		.byte	0x1
  1312 0111 24010000 		.4byte	0x124
  1313 0115 08       		.uleb128 0x8
- 1314 0116 74020000 		.4byte	.LASF19
+ 1314 0116 76020000 		.4byte	.LASF19
  1315 011a 01       		.byte	0x1
  1316 011b C2       		.byte	0xc2
  1317 011c 6F000000 		.4byte	0x6f
@@ -2608,7 +2608,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1321 0123 00       		.byte	0
  1322 0124 09       		.uleb128 0x9
  1323 0125 01       		.byte	0x1
- 1324 0126 EF020000 		.4byte	.LASF20
+ 1324 0126 F1020000 		.4byte	.LASF20
  1325 012a 01       		.byte	0x1
  1326 012b E3       		.byte	0xe3
  1327 012c 01       		.byte	0x1
@@ -2628,7 +2628,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1341 014f 01       		.byte	0x1
  1342 0150 0A       		.uleb128 0xa
  1343 0151 01       		.byte	0x1
- 1344 0152 DD020000 		.4byte	.LASF22
+ 1344 0152 DF020000 		.4byte	.LASF22
  1345 0156 01       		.byte	0x1
  1346 0157 1501     		.2byte	0x115
  1347 0159 01       		.byte	0x1
@@ -2638,10 +2638,10 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1351 0166 01       		.byte	0x1
  1352 0167 0A       		.uleb128 0xa
  1353 0168 01       		.byte	0x1
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 45
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 45
 
 
- 1354 0169 D3010000 		.4byte	.LASF23
+ 1354 0169 2C010000 		.4byte	.LASF23
  1355 016d 01       		.byte	0x1
  1356 016e 2E01     		.2byte	0x12e
  1357 0170 01       		.byte	0x1
@@ -2661,7 +2661,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1371 0194 01       		.byte	0x1
  1372 0195 A9010000 		.4byte	0x1a9
  1373 0199 0C       		.uleb128 0xc
- 1374 019a EC010000 		.4byte	.LASF26
+ 1374 019a 87010000 		.4byte	.LASF26
  1375 019e 01       		.byte	0x1
  1376 019f 4801     		.2byte	0x148
  1377 01a1 6F000000 		.4byte	0x6f
@@ -2671,7 +2671,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1381 01a8 00       		.byte	0
  1382 01a9 0B       		.uleb128 0xb
  1383 01aa 01       		.byte	0x1
- 1384 01ab 9B010000 		.4byte	.LASF25
+ 1384 01ab 48010000 		.4byte	.LASF25
  1385 01af 01       		.byte	0x1
  1386 01b0 6001     		.2byte	0x160
  1387 01b2 01       		.byte	0x1
@@ -2681,7 +2681,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1391 01bf 01       		.byte	0x1
  1392 01c0 D4010000 		.4byte	0x1d4
  1393 01c4 0C       		.uleb128 0xc
- 1394 01c5 EC010000 		.4byte	.LASF26
+ 1394 01c5 87010000 		.4byte	.LASF26
  1395 01c9 01       		.byte	0x1
  1396 01ca 6001     		.2byte	0x160
  1397 01cc 6F000000 		.4byte	0x6f
@@ -2691,21 +2691,21 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1401 01d3 00       		.byte	0
  1402 01d4 0D       		.uleb128 0xd
  1403 01d5 01       		.byte	0x1
- 1404 01d6 B3010000 		.4byte	.LASF28
+ 1404 01d6 60010000 		.4byte	.LASF28
  1405 01da 01       		.byte	0x1
  1406 01db 8201     		.2byte	0x182
  1407 01dd 01       		.byte	0x1
  1408 01de 6F000000 		.4byte	0x6f
  1409 01e2 00000000 		.4byte	.LFB10
  1410 01e6 20000000 		.4byte	.LFE10
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 46
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 46
 
 
  1411 01ea E8010000 		.4byte	.LLST10
  1412 01ee 01       		.byte	0x1
  1413 01ef 03020000 		.4byte	0x203
  1414 01f3 0E       		.uleb128 0xe
- 1415 01f4 5C030000 		.4byte	.LASF27
+ 1415 01f4 5E030000 		.4byte	.LASF27
  1416 01f8 01       		.byte	0x1
  1417 01f9 8401     		.2byte	0x184
  1418 01fb 6F000000 		.4byte	0x6f
@@ -2715,7 +2715,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1422 0202 00       		.byte	0
  1423 0203 0D       		.uleb128 0xd
  1424 0204 01       		.byte	0x1
- 1425 0205 AB020000 		.4byte	.LASF29
+ 1425 0205 AD020000 		.4byte	.LASF29
  1426 0209 01       		.byte	0x1
  1427 020a B501     		.2byte	0x1b5
  1428 020c 01       		.byte	0x1
@@ -2726,7 +2726,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1433 021d 01       		.byte	0x1
  1434 021e 32020000 		.4byte	0x232
  1435 0222 0E       		.uleb128 0xe
- 1436 0223 5C030000 		.4byte	.LASF27
+ 1436 0223 5E030000 		.4byte	.LASF27
  1437 0227 01       		.byte	0x1
  1438 0228 B701     		.2byte	0x1b7
  1439 022a 6F000000 		.4byte	0x6f
@@ -2746,7 +2746,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1453 0248 01       		.byte	0x1
  1454 0249 5D020000 		.4byte	0x25d
  1455 024d 0C       		.uleb128 0xc
- 1456 024e 54020000 		.4byte	.LASF31
+ 1456 024e 56020000 		.4byte	.LASF31
  1457 0252 01       		.byte	0x1
  1458 0253 EE01     		.2byte	0x1ee
  1459 0255 6F000000 		.4byte	0x6f
@@ -2756,9 +2756,9 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1463 025c 00       		.byte	0
  1464 025d 0D       		.uleb128 0xd
  1465 025e 01       		.byte	0x1
- 1466 025f 7C030000 		.4byte	.LASF32
+ 1466 025f 7E030000 		.4byte	.LASF32
  1467 0263 01       		.byte	0x1
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 47
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 47
 
 
  1468 0264 5B02     		.2byte	0x25b
@@ -2801,7 +2801,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1505 02ba 00       		.byte	0
  1506 02bb 0D       		.uleb128 0xd
  1507 02bc 01       		.byte	0x1
- 1508 02bd 00020000 		.4byte	.LASF36
+ 1508 02bd 02020000 		.4byte	.LASF36
  1509 02c1 01       		.byte	0x1
  1510 02c2 D802     		.2byte	0x2d8
  1511 02c4 01       		.byte	0x1
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1522 02e2 6F000000 		.4byte	0x6f
  1523 02e6 02       		.byte	0x2
  1524 02e7 91       		.byte	0x91
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 48
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 48
 
 
  1525 02e8 77       		.sleb128 -9
@@ -2835,7 +2835,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1536 0300 01       		.byte	0x1
  1537 0301 0F       		.uleb128 0xf
  1538 0302 01       		.byte	0x1
- 1539 0303 93020000 		.4byte	.LASF38
+ 1539 0303 95020000 		.4byte	.LASF38
  1540 0307 01       		.byte	0x1
  1541 0308 5E03     		.2byte	0x35e
  1542 030a 01       		.byte	0x1
@@ -2845,7 +2845,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1546 0317 01       		.byte	0x1
  1547 0318 2C030000 		.4byte	0x32c
  1548 031c 0E       		.uleb128 0xe
- 1549 031d 74020000 		.4byte	.LASF19
+ 1549 031d 76020000 		.4byte	.LASF19
  1550 0321 01       		.byte	0x1
  1551 0322 6003     		.2byte	0x360
  1552 0324 6F000000 		.4byte	0x6f
@@ -2873,18 +2873,18 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1574 0354 91       		.byte	0x91
  1575 0355 6C       		.sleb128 -20
  1576 0356 0C       		.uleb128 0xc
- 1577 0357 91010000 		.4byte	.LASF41
+ 1577 0357 3E010000 		.4byte	.LASF41
  1578 035b 01       		.byte	0x1
  1579 035c C303     		.2byte	0x3c3
  1580 035e 6F000000 		.4byte	0x6f
  1581 0362 02       		.byte	0x2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 49
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 49
 
 
  1582 0363 91       		.byte	0x91
  1583 0364 6B       		.sleb128 -21
  1584 0365 0E       		.uleb128 0xe
- 1585 0366 4B020000 		.4byte	.LASF42
+ 1585 0366 4D020000 		.4byte	.LASF42
  1586 036a 01       		.byte	0x1
  1587 036b C603     		.2byte	0x3c6
  1588 036d 6F000000 		.4byte	0x6f
@@ -2899,7 +2899,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1597 037c 6F000000 		.4byte	0x6f
  1598 0380 0F       		.uleb128 0xf
  1599 0381 01       		.byte	0x1
- 1600 0382 3C020000 		.4byte	.LASF43
+ 1600 0382 3E020000 		.4byte	.LASF43
  1601 0386 01       		.byte	0x1
  1602 0387 E403     		.2byte	0x3e4
  1603 0389 01       		.byte	0x1
@@ -2909,7 +2909,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1607 0396 01       		.byte	0x1
  1608 0397 AB030000 		.4byte	0x3ab
  1609 039b 0E       		.uleb128 0xe
- 1610 039c 74020000 		.4byte	.LASF19
+ 1610 039c 76020000 		.4byte	.LASF19
  1611 03a0 01       		.byte	0x1
  1612 03a1 E603     		.2byte	0x3e6
  1613 03a3 6F000000 		.4byte	0x6f
@@ -2938,11 +2938,11 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1636 03d4 38040000 		.4byte	.LLST21
  1637 03d8 01       		.byte	0x1
  1638 03d9 0B       		.uleb128 0xb
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 50
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 50
 
 
  1639 03da 01       		.byte	0x1
- 1640 03db BD020000 		.4byte	.LASF46
+ 1640 03db BF020000 		.4byte	.LASF46
  1641 03df 01       		.byte	0x1
  1642 03e0 4304     		.2byte	0x443
  1643 03e2 01       		.byte	0x1
@@ -2952,7 +2952,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1647 03ef 01       		.byte	0x1
  1648 03f0 04040000 		.4byte	0x404
  1649 03f4 0C       		.uleb128 0xc
- 1650 03f5 EC010000 		.4byte	.LASF26
+ 1650 03f5 87010000 		.4byte	.LASF26
  1651 03f9 01       		.byte	0x1
  1652 03fa 4304     		.2byte	0x443
  1653 03fc 6F000000 		.4byte	0x6f
@@ -2973,7 +2973,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1668 041e 01       		.byte	0x1
  1669 041f 33040000 		.4byte	0x433
  1670 0423 0E       		.uleb128 0xe
- 1671 0424 5C030000 		.4byte	.LASF27
+ 1671 0424 5E030000 		.4byte	.LASF27
  1672 0428 01       		.byte	0x1
  1673 0429 6804     		.2byte	0x468
  1674 042b 6F000000 		.4byte	0x6f
@@ -2991,19 +2991,19 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1686 0440 03       		.byte	0x3
  1687 0441 00000000 		.4byte	SPI0_initVar
  1688 0445 13       		.uleb128 0x13
- 1689 0446 5B020000 		.4byte	.LASF49
+ 1689 0446 5D020000 		.4byte	.LASF49
  1690 044a 01       		.byte	0x1
  1691 044b 24       		.byte	0x24
  1692 044c 9A000000 		.4byte	0x9a
  1693 0450 01       		.byte	0x1
  1694 0451 05       		.byte	0x5
  1695 0452 03       		.byte	0x3
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 51
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 51
 
 
  1696 0453 00000000 		.4byte	SPI0_swStatusTx
  1697 0457 13       		.uleb128 0x13
- 1698 0458 2C020000 		.4byte	.LASF50
+ 1698 0458 2E020000 		.4byte	.LASF50
  1699 045c 01       		.byte	0x1
  1700 045d 25       		.byte	0x25
  1701 045e 9A000000 		.4byte	0x9a
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1750 0029 00       		.byte	0
  1751 002a 00       		.byte	0
  1752 002b 04       		.uleb128 0x4
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 52
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 52
 
 
  1753 002c 16       		.uleb128 0x16
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1807 0063 0C       		.uleb128 0xc
  1808 0064 11       		.uleb128 0x11
  1809 0065 01       		.uleb128 0x1
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 53
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 53
 
 
  1810 0066 12       		.uleb128 0x12
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1864 009e 0E       		.uleb128 0xe
  1865 009f 3A       		.uleb128 0x3a
  1866 00a0 0B       		.uleb128 0xb
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 54
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 54
 
 
  1867 00a1 3B       		.uleb128 0x3b
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1921 00d9 0D       		.uleb128 0xd
  1922 00da 2E       		.uleb128 0x2e
  1923 00db 01       		.byte	0x1
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 55
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 55
 
 
  1924 00dc 3F       		.uleb128 0x3f
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  1978 0113 12       		.uleb128 0x12
  1979 0114 01       		.uleb128 0x1
  1980 0115 40       		.uleb128 0x40
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 56
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 56
 
 
  1981 0116 06       		.uleb128 0x6
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  2035 014e 0B       		.uleb128 0xb
  2036 014f 49       		.uleb128 0x49
  2037 0150 13       		.uleb128 0x13
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 57
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 57
 
 
  2038 0151 3F       		.uleb128 0x3f
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  2092 006e 7D       		.byte	0x7d
  2093 006f 00       		.sleb128 0
  2094 0070 02000000 		.4byte	.LCFI5
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 58
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 58
 
 
  2095 0074 04000000 		.4byte	.LCFI6
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  2149 00f8 02000000 		.4byte	.LCFI12
  2150 00fc 0200     		.2byte	0x2
  2151 00fe 7D       		.byte	0x7d
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 59
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 59
 
 
  2152 00ff 00       		.sleb128 0
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  2206 0183 00       		.sleb128 0
  2207 0184 02000000 		.4byte	.LCFI18
  2208 0188 04000000 		.4byte	.LCFI19
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 60
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 60
 
 
  2209 018c 0200     		.2byte	0x2
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  2263 020c 06000000 		.4byte	.LCFI26
  2264 0210 20000000 		.4byte	.LFE10
  2265 0214 0200     		.2byte	0x2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 61
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 61
 
 
  2266 0216 77       		.byte	0x77
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  2320 029a 7D       		.byte	0x7d
  2321 029b 00       		.sleb128 0
  2322 029c 02000000 		.4byte	.LCFI33
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 62
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 62
 
 
  2323 02a0 04000000 		.4byte	.LCFI34
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  2377 0323 10       		.sleb128 16
  2378 0324 06000000 		.4byte	.LCFI41
  2379 0328 48000000 		.4byte	.LFE15
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 63
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 63
 
 
  2380 032c 0200     		.2byte	0x2
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  2434 03b0 0200     		.2byte	0x2
  2435 03b2 7D       		.byte	0x7d
  2436 03b3 08       		.sleb128 8
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 64
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 64
 
 
  2437 03b4 04000000 		.4byte	.LCFI48
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  2491 0438 00000000 		.4byte	.LFB21
  2492 043c 02000000 		.4byte	.LCFI55
  2493 0440 0200     		.2byte	0x2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 65
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 65
 
 
  2494 0442 7D       		.byte	0x7d
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  2548 04c4 40000000 		.4byte	.LFE23
  2549 04c8 0200     		.2byte	0x2
  2550 04ca 77       		.byte	0x77
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 66
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 66
 
 
  2551 04cb 10       		.sleb128 16
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  2605 00bc 10000000 		.4byte	.LFE21-.LFB21
  2606 00c0 00000000 		.4byte	.LFB22
  2607 00c4 30000000 		.4byte	.LFE22-.LFB22
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 67
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 67
 
 
  2608 00c8 00000000 		.4byte	.LFB23
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  2662 00c0 00000000 		.4byte	0
  2663 00c4 00000000 		.4byte	0
  2664              		.section	.debug_line,"",%progbits
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 68
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 68
 
 
  2665              	.Ldebug_line0:
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  2686      61626C65 
  2686      496E7400 
  2687              	.LASF52:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 69
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 69
 
 
  2688 0092 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\SPI0.c\000"
@@ -4129,185 +4129,185 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 1
  2707              	.LASF12:
  2708 0126 75696E74 		.ascii	"uint8\000"
  2708      3800
- 2709              	.LASF53:
- 2710 012c 433A5C55 		.ascii	"C:\\Users\\chuck.erhardt\\Documents\\PSoC Creator\\"
- 2710      73657273 
- 2710      5C636875 
- 2710      636B2E65 
- 2710      72686172 
- 2711 015a 4532466F 		.ascii	"E2ForLife\\PSoCPioneer+ArduinoShield_SPIM_Example.c"
- 2711      724C6966 
- 2711      655C5053 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 70
+ 2709              	.LASF23:
+ 2710 012c 53504930 		.ascii	"SPI0_DisableRxInt\000"
+ 2710      5F446973 
+ 2710      61626C65 
+ 2710      5278496E 
+ 2710      7400
+ 2711              	.LASF41:
+ 2712 013e 62797465 		.ascii	"byteCount\000"
+ 2712      436F756E 
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 70
 
 
- 2711      6F435069 
- 2711      6F6E6565 
- 2712 018c 7964736E 		.ascii	"ydsn\000"
- 2712      00
- 2713              	.LASF41:
- 2714 0191 62797465 		.ascii	"byteCount\000"
- 2714      436F756E 
- 2714      7400
- 2715              	.LASF25:
- 2716 019b 53504930 		.ascii	"SPI0_SetRxInterruptMode\000"
- 2716      5F536574 
- 2716      5278496E 
- 2716      74657272 
- 2716      7570744D 
- 2717              	.LASF28:
- 2718 01b3 53504930 		.ascii	"SPI0_ReadTxStatus\000"
- 2718      5F526561 
- 2718      64547853 
- 2718      74617475 
- 2718      7300
- 2719              	.LASF1:
- 2720 01c5 756E7369 		.ascii	"unsigned char\000"
- 2720      676E6564 
- 2720      20636861 
- 2720      7200
- 2721              	.LASF23:
- 2722 01d3 53504930 		.ascii	"SPI0_DisableRxInt\000"
- 2722      5F446973 
- 2722      61626C65 
- 2722      5278496E 
- 2722      7400
- 2723              	.LASF10:
- 2724 01e5 646F7562 		.ascii	"double\000"
- 2724      6C6500
- 2725              	.LASF26:
- 2726 01ec 696E7453 		.ascii	"intSrc\000"
- 2726      726300
+ 2712      7400
+ 2713              	.LASF25:
+ 2714 0148 53504930 		.ascii	"SPI0_SetRxInterruptMode\000"
+ 2714      5F536574 
+ 2714      5278496E 
+ 2714      74657272 
+ 2714      7570744D 
+ 2715              	.LASF28:
+ 2716 0160 53504930 		.ascii	"SPI0_ReadTxStatus\000"
+ 2716      5F526561 
+ 2716      64547853 
+ 2716      74617475 
+ 2716      7300
+ 2717              	.LASF1:
+ 2718 0172 756E7369 		.ascii	"unsigned char\000"
+ 2718      676E6564 
+ 2718      20636861 
+ 2718      7200
+ 2719              	.LASF10:
+ 2720 0180 646F7562 		.ascii	"double\000"
+ 2720      6C6500
+ 2721              	.LASF26:
+ 2722 0187 696E7453 		.ascii	"intSrc\000"
+ 2722      726300
+ 2723              	.LASF53:
+ 2724 018e 433A5C55 		.ascii	"C:\\Users\\chuck.erhardt\\Documents\\GitHub\\PSoC-W"
+ 2724      73657273 
+ 2724      5C636875 
+ 2724      636B2E65 
+ 2724      72686172 
+ 2725 01bc 35313030 		.ascii	"5100-Driver\\PSoCPioneer+ArduinoShield_SPIM_Example"
+ 2725      2D447269 
+ 2725      7665725C 
+ 2725      50536F43 
+ 2725      50696F6E 
+ 2726 01ee 2E637964 		.ascii	".cydsn\000"
+ 2726      736E00
  2727              	.LASF8:
- 2728 01f3 756E7369 		.ascii	"unsigned int\000"
+ 2728 01f5 756E7369 		.ascii	"unsigned int\000"
  2728      676E6564 
  2728      20696E74 
  2728      00
  2729              	.LASF36:
- 2730 0200 53504930 		.ascii	"SPI0_GetTxBufferSize\000"
+ 2730 0202 53504930 		.ascii	"SPI0_GetTxBufferSize\000"
  2730      5F476574 
  2730      54784275 
  2730      66666572 
  2730      53697A65 
  2731              	.LASF7:
- 2732 0215 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2732 0217 6C6F6E67 		.ascii	"long long unsigned int\000"
  2732      206C6F6E 
  2732      6720756E 
  2732      7369676E 
  2732      65642069 
  2733              	.LASF50:
- 2734 022c 53504930 		.ascii	"SPI0_swStatusRx\000"
+ 2734 022e 53504930 		.ascii	"SPI0_swStatusRx\000"
  2734      5F737753 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 71
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 71
 
 
  2734      74617475 
  2734      73527800 
  2735              	.LASF43:
- 2736 023c 53504930 		.ascii	"SPI0_ClearFIFO\000"
+ 2736 023e 53504930 		.ascii	"SPI0_ClearFIFO\000"
  2736      5F436C65 
  2736      61724649 
  2736      464F00
  2737              	.LASF42:
- 2738 024b 62756649 		.ascii	"bufIndex\000"
+ 2738 024d 62756649 		.ascii	"bufIndex\000"
  2738      6E646578 
  2738      00
  2739              	.LASF31:
- 2740 0254 74784461 		.ascii	"txData\000"
+ 2740 0256 74784461 		.ascii	"txData\000"
  2740      746100
  2741              	.LASF49:
- 2742 025b 53504930 		.ascii	"SPI0_swStatusTx\000"
+ 2742 025d 53504930 		.ascii	"SPI0_swStatusTx\000"
  2742      5F737753 
  2742      74617475 
  2742      73547800 
  2743              	.LASF14:
- 2744 026b 73697A65 		.ascii	"sizetype\000"
+ 2744 026d 73697A65 		.ascii	"sizetype\000"
  2744      74797065 
  2744      00
  2745              	.LASF19:
- 2746 0274 656E6162 		.ascii	"enableInterrupts\000"
+ 2746 0276 656E6162 		.ascii	"enableInterrupts\000"
  2746      6C65496E 
  2746      74657272 
  2746      75707473 
  2746      00
  2747              	.LASF6:
- 2748 0285 6C6F6E67 		.ascii	"long long int\000"
+ 2748 0287 6C6F6E67 		.ascii	"long long int\000"
  2748      206C6F6E 
  2748      6720696E 
  2748      7400
  2749              	.LASF38:
- 2750 0293 53504930 		.ascii	"SPI0_ClearTxBuffer\000"
+ 2750 0295 53504930 		.ascii	"SPI0_ClearTxBuffer\000"
  2750      5F436C65 
  2750      61725478 
  2750      42756666 
  2750      657200
  2751              	.LASF11:
- 2752 02a6 63686172 		.ascii	"char\000"
+ 2752 02a8 63686172 		.ascii	"char\000"
  2752      00
  2753              	.LASF29:
- 2754 02ab 53504930 		.ascii	"SPI0_ReadRxStatus\000"
+ 2754 02ad 53504930 		.ascii	"SPI0_ReadRxStatus\000"
  2754      5F526561 
  2754      64527853 
  2754      74617475 
  2754      7300
  2755              	.LASF46:
- 2756 02bd 53504930 		.ascii	"SPI0_SetInterruptMode\000"
+ 2756 02bf 53504930 		.ascii	"SPI0_SetInterruptMode\000"
  2756      5F536574 
  2756      496E7465 
  2756      72727570 
  2756      744D6F64 
  2757              	.LASF2:
- 2758 02d3 73686F72 		.ascii	"short int\000"
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccooP27g.s 			page 72
+ 2758 02d5 73686F72 		.ascii	"short int\000"
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccVk2CR9.s 			page 72
 
 
  2758      7420696E 
  2758      7400
  2759              	.LASF22:
- 2760 02dd 53504930 		.ascii	"SPI0_DisableTxInt\000"
+ 2760 02df 53504930 		.ascii	"SPI0_DisableTxInt\000"
  2760      5F446973 
  2760      61626C65 
  2760      5478496E 
  2760      7400
  2761              	.LASF20:
- 2762 02ef 53504930 		.ascii	"SPI0_EnableTxInt\000"
+ 2762 02f1 53504930 		.ascii	"SPI0_EnableTxInt\000"
  2762      5F456E61 
  2762      626C6554 
  2762      78496E74 
  2762      00
  2763              	.LASF51:
- 2764 0300 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 2764 0302 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
  2764      4320342E 
  2764      372E3320 
  2764      32303133 
  2764      30333132 
- 2765 0333 616E6368 		.ascii	"anch revision 196615]\000"
+ 2765 0335 616E6368 		.ascii	"anch revision 196615]\000"
  2765      20726576 
  2765      6973696F 
  2765      6E203139 
  2765      36363135 
  2766              	.LASF15:
- 2767 0349 53504930 		.ascii	"SPI0_Init\000"
+ 2767 034b 53504930 		.ascii	"SPI0_Init\000"
  2767      5F496E69 
  2767      7400
  2768              	.LASF4:
- 2769 0353 6C6F6E67 		.ascii	"long int\000"
+ 2769 0355 6C6F6E67 		.ascii	"long int\000"
  2769      20696E74 
  2769      00
  2770              	.LASF27:
- 2771 035c 746D7053 		.ascii	"tmpStatus\000"
+ 2771 035e 746D7053 		.ascii	"tmpStatus\000"
  2771      74617475 
  2771      7300
  2772              	.LASF0:
- 2773 0366 7369676E 		.ascii	"signed char\000"
+ 2773 0368 7369676E 		.ascii	"signed char\000"
  2773      65642063 
  2773      68617200 
  2774              	.LASF18:
- 2775 0372 53504930 		.ascii	"SPI0_Stop\000"
+ 2775 0374 53504930 		.ascii	"SPI0_Stop\000"
  2775      5F53746F 
  2775      7000
  2776              	.LASF32:
- 2777 037c 53504930 		.ascii	"SPI0_ReadRxData\000"
+ 2777 037e 53504930 		.ascii	"SPI0_ReadRxData\000"
  2777      5F526561 
  2777      64527844 
  2777      61746100 

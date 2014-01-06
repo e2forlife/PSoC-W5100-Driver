@@ -1,6 +1,6 @@
 // ======================================================================
 // freeSoCExplorer+ArduinoSheld_Example.v generated from TopDesign.cysch
-// 11/13/2013 at 11:50
+// 01/06/2014 at 16:54
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -86,7 +86,7 @@
 `include "C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v"
 `endif
 
-// SPI_Master_v2_40(BidirectMode=false, ClockInternal=true, CtlModeReplacementString=SyncCtl, CyGetRegReplacementString=CY_GET_REG8, CySetRegReplacementString=CY_SET_REG8, DesiredBitRate=8000000, HighSpeedMode=false, InternalClockUsed=1, InternalInterruptEnabled=0, InternalRxInterruptEnabled=0, InternalTxInterruptEnabled=0, InterruptOnByteComplete=false, InterruptOnRXFull=false, InterruptOnRXNotEmpty=false, InterruptOnRXOverrun=false, InterruptOnSPIDone=false, InterruptOnSPIIdle=false, InterruptOnTXEmpty=false, InterruptOnTXNotFull=false, IntOnByteComp=0, IntOnRXFull=0, IntOnRXNotEmpty=0, IntOnRXOver=0, IntOnSPIDone=0, IntOnSPIIdle=0, IntOnTXEmpty=0, IntOnTXNotFull=0, Mode=1, ModeUseZero=1, NumberOfDataBits=8, RegDefReplacementString=reg8, RegSizeReplacementString=uint8, RxBufferSize=4, ShiftDir=0, TxBufferSize=4, UseInternalInterrupt=false, UseRxInternalInterrupt=false, UseTxInternalInterrupt=false, VerilogSectionReplacementString=sR8, CY_COMPONENT_NAME=SPI_Master_v2_40, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=SPI0, CY_INSTANCE_SHORT_NAME=SPI0, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=40, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=SPI0, )
+// SPI_Master_v2_40(BidirectMode=false, ClockInternal=true, CtlModeReplacementString=SyncCtl, CyGetRegReplacementString=CY_GET_REG8, CySetRegReplacementString=CY_SET_REG8, DesiredBitRate=16000000, HighSpeedMode=true, InternalClockUsed=1, InternalInterruptEnabled=0, InternalRxInterruptEnabled=0, InternalTxInterruptEnabled=0, InterruptOnByteComplete=false, InterruptOnRXFull=false, InterruptOnRXNotEmpty=false, InterruptOnRXOverrun=false, InterruptOnSPIDone=false, InterruptOnSPIIdle=false, InterruptOnTXEmpty=false, InterruptOnTXNotFull=false, IntOnByteComp=0, IntOnRXFull=0, IntOnRXNotEmpty=0, IntOnRXOver=0, IntOnSPIDone=0, IntOnSPIIdle=0, IntOnTXEmpty=0, IntOnTXNotFull=0, Mode=1, ModeUseZero=1, NumberOfDataBits=8, RegDefReplacementString=reg8, RegSizeReplacementString=uint8, RxBufferSize=4, ShiftDir=0, TxBufferSize=4, UseInternalInterrupt=false, UseRxInternalInterrupt=false, UseTxInternalInterrupt=false, VerilogSectionReplacementString=sR8, CY_COMPONENT_NAME=SPI_Master_v2_40, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=SPI0, CY_INSTANCE_SHORT_NAME=SPI0, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=40, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=SPI0, )
 module SPI_Master_v2_40_0 (
     clock,
     reset,
@@ -108,7 +108,7 @@ module SPI_Master_v2_40_0 (
     output      tx_interrupt;
 
     parameter BidirectMode = 0;
-    parameter HighSpeedMode = 0;
+    parameter HighSpeedMode = 1;
     parameter NumberOfDataBits = 8;
     parameter ShiftDir = 0;
 
@@ -129,7 +129,7 @@ module SPI_Master_v2_40_0 (
 		#(.id("15cb15b3-05f2-49b1-a67e-9f121bc62871/426fcbe0-714d-4404-8fa8-581ff40c30f1"),
 		  .source_clock_id(""),
 		  .divisor(0),
-		  .period("62500000"),
+		  .period("31250000"),
 		  .is_direct(0),
 		  .is_digital(1))
 		IntClock
@@ -147,7 +147,7 @@ module SPI_Master_v2_40_0 (
         .mosi(mosi),
         .tx_interpt(tx_interrupt));
     defparam BSPIM.BidirectMode = 0;
-    defparam BSPIM.HighSpeedMode = 0;
+    defparam BSPIM.HighSpeedMode = 1;
     defparam BSPIM.ModeCPHA = 0;
     defparam BSPIM.ModePOL = 0;
     defparam BSPIM.NumberOfDataBits = 8;
@@ -396,7 +396,7 @@ module top ;
         .sdat(Net_10),
         .tx_interrupt(Net_11));
     defparam SPI0.BidirectMode = 0;
-    defparam SPI0.HighSpeedMode = 0;
+    defparam SPI0.HighSpeedMode = 1;
     defparam SPI0.NumberOfDataBits = 8;
     defparam SPI0.ShiftDir = 0;
 
@@ -468,6 +468,75 @@ module top ;
 		  .out_reset({1'b0}));
 
 	assign tmpOE__ETH_CSN_1_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
+
+	wire [0:0] tmpOE__SDCS_net;
+	wire [0:0] tmpFB_0__SDCS_net;
+	wire [0:0] tmpIO_0__SDCS_net;
+	wire [0:0] tmpINTERRUPT_0__SDCS_net;
+	electrical [0:0] tmpSIOVREF__SDCS_net;
+
+	cy_psoc3_pins_v1_10
+		#(.id("eddcef1e-cdf7-427b-b8cd-7daa22fb6d66"),
+		  .drive_mode(3'b110),
+		  .ibuf_enabled(1'b1),
+		  .init_dr_st(1'b1),
+		  .input_clk_en(0),
+		  .input_sync(1'b1),
+		  .input_sync_mode(1'b0),
+		  .intr_mode(2'b00),
+		  .invert_in_clock(0),
+		  .invert_in_clock_en(0),
+		  .invert_in_reset(0),
+		  .invert_out_clock(0),
+		  .invert_out_clock_en(0),
+		  .invert_out_reset(0),
+		  .io_voltage(""),
+		  .layout_mode("CONTIGUOUS"),
+		  .oe_conn(1'b0),
+		  .oe_reset(0),
+		  .oe_sync(1'b0),
+		  .output_clk_en(0),
+		  .output_clock_mode(1'b0),
+		  .output_conn(1'b0),
+		  .output_mode(1'b0),
+		  .output_reset(0),
+		  .output_sync(1'b0),
+		  .pa_in_clock(-1),
+		  .pa_in_clock_en(-1),
+		  .pa_in_reset(-1),
+		  .pa_out_clock(-1),
+		  .pa_out_clock_en(-1),
+		  .pa_out_reset(-1),
+		  .pin_aliases(""),
+		  .pin_mode("O"),
+		  .por_state(4),
+		  .use_annotation(1'b0),
+		  .sio_group_cnt(0),
+		  .sio_hyst(1'b0),
+		  .sio_ibuf(""),
+		  .sio_info(2'b00),
+		  .sio_obuf(""),
+		  .sio_refsel(""),
+		  .sio_vtrip(""),
+		  .slew_rate(1'b0),
+		  .spanning(0),
+		  .vtrip(2'b10),
+		  .width(1))
+		SDCS
+		 (.oe(tmpOE__SDCS_net),
+		  .y({1'b0}),
+		  .fb({tmpFB_0__SDCS_net[0:0]}),
+		  .io({tmpIO_0__SDCS_net[0:0]}),
+		  .siovref(tmpSIOVREF__SDCS_net),
+		  .interrupt({tmpINTERRUPT_0__SDCS_net[0:0]}),
+		  .in_clock({1'b0}),
+		  .in_clock_en({1'b1}),
+		  .in_reset({1'b0}),
+		  .out_clock({1'b0}),
+		  .out_clock_en({1'b1}),
+		  .out_reset({1'b0}));
+
+	assign tmpOE__SDCS_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
 
 

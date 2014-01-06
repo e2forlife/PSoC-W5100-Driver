@@ -1,0 +1,994 @@
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccV1Pdmp.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"SPI0_PM.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.SPI0_SaveConfig,"ax",%progbits
+  19              		.align	1
+  20              		.global	SPI0_SaveConfig
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	SPI0_SaveConfig, %function
+  24              	SPI0_SaveConfig:
+  25              	.LFB0:
+  26              		.file 1 ".\\Generated_Source\\PSoC5\\SPI0_PM.c"
+   1:.\Generated_Source\PSoC5/SPI0_PM.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/SPI0_PM.c **** * File Name: SPI0_PM.c
+   3:.\Generated_Source\PSoC5/SPI0_PM.c **** * Version 2.40
+   4:.\Generated_Source\PSoC5/SPI0_PM.c **** *
+   5:.\Generated_Source\PSoC5/SPI0_PM.c **** * Description:
+   6:.\Generated_Source\PSoC5/SPI0_PM.c **** *  This file contains the setup, control and status commands to support
+   7:.\Generated_Source\PSoC5/SPI0_PM.c **** *  component operations in low power mode.
+   8:.\Generated_Source\PSoC5/SPI0_PM.c **** *
+   9:.\Generated_Source\PSoC5/SPI0_PM.c **** * Note:
+  10:.\Generated_Source\PSoC5/SPI0_PM.c **** *
+  11:.\Generated_Source\PSoC5/SPI0_PM.c **** ********************************************************************************
+  12:.\Generated_Source\PSoC5/SPI0_PM.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  13:.\Generated_Source\PSoC5/SPI0_PM.c **** * You may use this file only in accordance with the license, terms, conditions,
+  14:.\Generated_Source\PSoC5/SPI0_PM.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  15:.\Generated_Source\PSoC5/SPI0_PM.c **** * the software package with which this file was provided.
+  16:.\Generated_Source\PSoC5/SPI0_PM.c **** *******************************************************************************/
+  17:.\Generated_Source\PSoC5/SPI0_PM.c **** 
+  18:.\Generated_Source\PSoC5/SPI0_PM.c **** #include "SPI0_PVT.h"
+  19:.\Generated_Source\PSoC5/SPI0_PM.c **** 
+  20:.\Generated_Source\PSoC5/SPI0_PM.c **** static SPI0_BACKUP_STRUCT SPI0_backup =
+  21:.\Generated_Source\PSoC5/SPI0_PM.c **** {
+  22:.\Generated_Source\PSoC5/SPI0_PM.c ****     SPI0_DISABLED,
+  23:.\Generated_Source\PSoC5/SPI0_PM.c ****     SPI0_BITCTR_INIT,
+  24:.\Generated_Source\PSoC5/SPI0_PM.c ****     #if(CY_UDB_V0)
+  25:.\Generated_Source\PSoC5/SPI0_PM.c ****         SPI0_TX_INIT_INTERRUPTS_MASK,
+  26:.\Generated_Source\PSoC5/SPI0_PM.c ****         SPI0_RX_INIT_INTERRUPTS_MASK
+  27:.\Generated_Source\PSoC5/SPI0_PM.c ****     #endif /* CY_UDB_V0 */
+  28:.\Generated_Source\PSoC5/SPI0_PM.c **** };
+  29:.\Generated_Source\PSoC5/SPI0_PM.c **** 
+  30:.\Generated_Source\PSoC5/SPI0_PM.c **** 
+  31:.\Generated_Source\PSoC5/SPI0_PM.c **** /*******************************************************************************
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccV1Pdmp.s 			page 2
+
+
+  32:.\Generated_Source\PSoC5/SPI0_PM.c **** * Function Name: SPI0_SaveConfig
+  33:.\Generated_Source\PSoC5/SPI0_PM.c **** ********************************************************************************
+  34:.\Generated_Source\PSoC5/SPI0_PM.c **** *
+  35:.\Generated_Source\PSoC5/SPI0_PM.c **** * Summary:
+  36:.\Generated_Source\PSoC5/SPI0_PM.c **** *  Saves SPIM configuration.
+  37:.\Generated_Source\PSoC5/SPI0_PM.c **** *
+  38:.\Generated_Source\PSoC5/SPI0_PM.c **** * Parameters:
+  39:.\Generated_Source\PSoC5/SPI0_PM.c **** *  None.
+  40:.\Generated_Source\PSoC5/SPI0_PM.c **** *
+  41:.\Generated_Source\PSoC5/SPI0_PM.c **** * Return:
+  42:.\Generated_Source\PSoC5/SPI0_PM.c **** *  None.
+  43:.\Generated_Source\PSoC5/SPI0_PM.c **** *
+  44:.\Generated_Source\PSoC5/SPI0_PM.c **** * Global Variables:
+  45:.\Generated_Source\PSoC5/SPI0_PM.c **** *  SPI0_backup - modified when non-retention registers are saved.
+  46:.\Generated_Source\PSoC5/SPI0_PM.c **** *
+  47:.\Generated_Source\PSoC5/SPI0_PM.c **** * Reentrant:
+  48:.\Generated_Source\PSoC5/SPI0_PM.c **** *  No.
+  49:.\Generated_Source\PSoC5/SPI0_PM.c **** *
+  50:.\Generated_Source\PSoC5/SPI0_PM.c **** *******************************************************************************/
+  51:.\Generated_Source\PSoC5/SPI0_PM.c **** void SPI0_SaveConfig(void) 
+  52:.\Generated_Source\PSoC5/SPI0_PM.c **** {
+  27              		.loc 1 52 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32 0000 7047     		bx	lr
+  33              		.cfi_endproc
+  34              	.LFE0:
+  35              		.size	SPI0_SaveConfig, .-SPI0_SaveConfig
+  36              		.section	.text.SPI0_RestoreConfig,"ax",%progbits
+  37              		.align	1
+  38              		.global	SPI0_RestoreConfig
+  39              		.thumb
+  40              		.thumb_func
+  41              		.type	SPI0_RestoreConfig, %function
+  42              	SPI0_RestoreConfig:
+  43              	.LFB1:
+  53:.\Generated_Source\PSoC5/SPI0_PM.c ****     /* Store Status Mask registers */
+  54:.\Generated_Source\PSoC5/SPI0_PM.c ****     #if(CY_UDB_V0)
+  55:.\Generated_Source\PSoC5/SPI0_PM.c ****        SPI0_backup.cntrPeriod      = SPI0_COUNTER_PERIOD_REG;
+  56:.\Generated_Source\PSoC5/SPI0_PM.c ****        SPI0_backup.saveSrTxIntMask = SPI0_TX_STATUS_MASK_REG;
+  57:.\Generated_Source\PSoC5/SPI0_PM.c ****        SPI0_backup.saveSrRxIntMask = SPI0_RX_STATUS_MASK_REG;
+  58:.\Generated_Source\PSoC5/SPI0_PM.c ****     #endif /* (CY_UDB_V0) */
+  59:.\Generated_Source\PSoC5/SPI0_PM.c **** }
+  60:.\Generated_Source\PSoC5/SPI0_PM.c **** 
+  61:.\Generated_Source\PSoC5/SPI0_PM.c **** 
+  62:.\Generated_Source\PSoC5/SPI0_PM.c **** /*******************************************************************************
+  63:.\Generated_Source\PSoC5/SPI0_PM.c **** * Function Name: SPI0_RestoreConfig
+  64:.\Generated_Source\PSoC5/SPI0_PM.c **** ********************************************************************************
+  65:.\Generated_Source\PSoC5/SPI0_PM.c **** *
+  66:.\Generated_Source\PSoC5/SPI0_PM.c **** * Summary:
+  67:.\Generated_Source\PSoC5/SPI0_PM.c **** *  Restores SPIM configuration.
+  68:.\Generated_Source\PSoC5/SPI0_PM.c **** *
+  69:.\Generated_Source\PSoC5/SPI0_PM.c **** * Parameters:
+  70:.\Generated_Source\PSoC5/SPI0_PM.c **** *  None.
+  71:.\Generated_Source\PSoC5/SPI0_PM.c **** *
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccV1Pdmp.s 			page 3
+
+
+  72:.\Generated_Source\PSoC5/SPI0_PM.c **** * Return:
+  73:.\Generated_Source\PSoC5/SPI0_PM.c **** *  None.
+  74:.\Generated_Source\PSoC5/SPI0_PM.c **** *
+  75:.\Generated_Source\PSoC5/SPI0_PM.c **** * Global Variables:
+  76:.\Generated_Source\PSoC5/SPI0_PM.c **** *  SPI0_backup - used when non-retention registers are restored.
+  77:.\Generated_Source\PSoC5/SPI0_PM.c **** *
+  78:.\Generated_Source\PSoC5/SPI0_PM.c **** * Side Effects:
+  79:.\Generated_Source\PSoC5/SPI0_PM.c **** *  If this API is called without first calling SaveConfig then in the following
+  80:.\Generated_Source\PSoC5/SPI0_PM.c **** *  registers will be default values from Customizer:
+  81:.\Generated_Source\PSoC5/SPI0_PM.c **** *  SPI0_STATUS_MASK_REG and SPI0_COUNTER_PERIOD_REG.
+  82:.\Generated_Source\PSoC5/SPI0_PM.c **** *
+  83:.\Generated_Source\PSoC5/SPI0_PM.c **** *******************************************************************************/
+  84:.\Generated_Source\PSoC5/SPI0_PM.c **** void SPI0_RestoreConfig(void) 
+  85:.\Generated_Source\PSoC5/SPI0_PM.c **** {
+  44              		.loc 1 85 0
+  45              		.cfi_startproc
+  46              		@ args = 0, pretend = 0, frame = 0
+  47              		@ frame_needed = 0, uses_anonymous_args = 0
+  48              		@ link register save eliminated.
+  49 0000 7047     		bx	lr
+  50              		.cfi_endproc
+  51              	.LFE1:
+  52              		.size	SPI0_RestoreConfig, .-SPI0_RestoreConfig
+  53              		.section	.text.SPI0_Sleep,"ax",%progbits
+  54              		.align	1
+  55              		.global	SPI0_Sleep
+  56              		.thumb
+  57              		.thumb_func
+  58              		.type	SPI0_Sleep, %function
+  59              	SPI0_Sleep:
+  60              	.LFB2:
+  86:.\Generated_Source\PSoC5/SPI0_PM.c ****     /* Restore the data, saved by SaveConfig() function */
+  87:.\Generated_Source\PSoC5/SPI0_PM.c ****     #if(CY_UDB_V0)
+  88:.\Generated_Source\PSoC5/SPI0_PM.c ****         SPI0_COUNTER_PERIOD_REG = SPI0_backup.cntrPeriod;
+  89:.\Generated_Source\PSoC5/SPI0_PM.c ****         SPI0_TX_STATUS_MASK_REG = ((uint8) SPI0_backup.saveSrTxIntMask);
+  90:.\Generated_Source\PSoC5/SPI0_PM.c ****         SPI0_RX_STATUS_MASK_REG = ((uint8) SPI0_backup.saveSrRxIntMask);
+  91:.\Generated_Source\PSoC5/SPI0_PM.c ****     #endif /* (CY_UDB_V0) */
+  92:.\Generated_Source\PSoC5/SPI0_PM.c **** }
+  93:.\Generated_Source\PSoC5/SPI0_PM.c **** 
+  94:.\Generated_Source\PSoC5/SPI0_PM.c **** 
+  95:.\Generated_Source\PSoC5/SPI0_PM.c **** /*******************************************************************************
+  96:.\Generated_Source\PSoC5/SPI0_PM.c **** * Function Name: SPI0_Sleep
+  97:.\Generated_Source\PSoC5/SPI0_PM.c **** ********************************************************************************
+  98:.\Generated_Source\PSoC5/SPI0_PM.c **** *
+  99:.\Generated_Source\PSoC5/SPI0_PM.c **** * Summary:
+ 100:.\Generated_Source\PSoC5/SPI0_PM.c **** *  Prepare SPIM Component goes to sleep.
+ 101:.\Generated_Source\PSoC5/SPI0_PM.c **** *
+ 102:.\Generated_Source\PSoC5/SPI0_PM.c **** * Parameters:
+ 103:.\Generated_Source\PSoC5/SPI0_PM.c **** *  None.
+ 104:.\Generated_Source\PSoC5/SPI0_PM.c **** *
+ 105:.\Generated_Source\PSoC5/SPI0_PM.c **** * Return:
+ 106:.\Generated_Source\PSoC5/SPI0_PM.c **** *  None.
+ 107:.\Generated_Source\PSoC5/SPI0_PM.c **** *
+ 108:.\Generated_Source\PSoC5/SPI0_PM.c **** * Global Variables:
+ 109:.\Generated_Source\PSoC5/SPI0_PM.c **** *  SPI0_backup - modified when non-retention registers are saved.
+ 110:.\Generated_Source\PSoC5/SPI0_PM.c **** *
+ 111:.\Generated_Source\PSoC5/SPI0_PM.c **** * Reentrant:
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccV1Pdmp.s 			page 4
+
+
+ 112:.\Generated_Source\PSoC5/SPI0_PM.c **** *  No.
+ 113:.\Generated_Source\PSoC5/SPI0_PM.c **** *
+ 114:.\Generated_Source\PSoC5/SPI0_PM.c **** *******************************************************************************/
+ 115:.\Generated_Source\PSoC5/SPI0_PM.c **** void SPI0_Sleep(void) 
+ 116:.\Generated_Source\PSoC5/SPI0_PM.c **** {
+  61              		.loc 1 116 0
+  62              		.cfi_startproc
+  63              		@ args = 0, pretend = 0, frame = 0
+  64              		@ frame_needed = 0, uses_anonymous_args = 0
+  65              		@ link register save eliminated.
+ 117:.\Generated_Source\PSoC5/SPI0_PM.c ****     /* Save components enable state */
+ 118:.\Generated_Source\PSoC5/SPI0_PM.c ****     SPI0_backup.enableState = ((uint8) SPI0_IS_ENABLED);
+  66              		.loc 1 118 0
+  67 0000 034B     		ldr	r3, .L4
+  68 0002 0449     		ldr	r1, .L4+4
+  69 0004 1A78     		ldrb	r2, [r3, #0]	@ zero_extendqisi2
+  70 0006 C2F30010 		ubfx	r0, r2, #4, #1
+  71 000a 0870     		strb	r0, [r1, #0]
+ 119:.\Generated_Source\PSoC5/SPI0_PM.c **** 
+ 120:.\Generated_Source\PSoC5/SPI0_PM.c ****     SPI0_Stop();
+ 121:.\Generated_Source\PSoC5/SPI0_PM.c ****     SPI0_SaveConfig();
+ 122:.\Generated_Source\PSoC5/SPI0_PM.c **** }
+  72              		.loc 1 122 0
+ 120:.\Generated_Source\PSoC5/SPI0_PM.c ****     SPI0_Stop();
+  73              		.loc 1 120 0
+  74 000c FFF7FEBF 		b	SPI0_Stop
+  75              	.LVL0:
+  76              	.L5:
+  77              		.align	2
+  78              	.L4:
+  79 0010 95650040 		.word	1073767829
+  80 0014 00000000 		.word	.LANCHOR0
+  81              		.cfi_endproc
+  82              	.LFE2:
+  83              		.size	SPI0_Sleep, .-SPI0_Sleep
+  84              		.section	.text.SPI0_Wakeup,"ax",%progbits
+  85              		.align	1
+  86              		.global	SPI0_Wakeup
+  87              		.thumb
+  88              		.thumb_func
+  89              		.type	SPI0_Wakeup, %function
+  90              	SPI0_Wakeup:
+  91              	.LFB3:
+ 123:.\Generated_Source\PSoC5/SPI0_PM.c **** 
+ 124:.\Generated_Source\PSoC5/SPI0_PM.c **** 
+ 125:.\Generated_Source\PSoC5/SPI0_PM.c **** /*******************************************************************************
+ 126:.\Generated_Source\PSoC5/SPI0_PM.c **** * Function Name: SPI0_Wakeup
+ 127:.\Generated_Source\PSoC5/SPI0_PM.c **** ********************************************************************************
+ 128:.\Generated_Source\PSoC5/SPI0_PM.c **** *
+ 129:.\Generated_Source\PSoC5/SPI0_PM.c **** * Summary:
+ 130:.\Generated_Source\PSoC5/SPI0_PM.c **** *  Prepare SPIM Component to wake up.
+ 131:.\Generated_Source\PSoC5/SPI0_PM.c **** *
+ 132:.\Generated_Source\PSoC5/SPI0_PM.c **** * Parameters:
+ 133:.\Generated_Source\PSoC5/SPI0_PM.c **** *  None.
+ 134:.\Generated_Source\PSoC5/SPI0_PM.c **** *
+ 135:.\Generated_Source\PSoC5/SPI0_PM.c **** * Return:
+ 136:.\Generated_Source\PSoC5/SPI0_PM.c **** *  None.
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccV1Pdmp.s 			page 5
+
+
+ 137:.\Generated_Source\PSoC5/SPI0_PM.c **** *
+ 138:.\Generated_Source\PSoC5/SPI0_PM.c **** * Global Variables:
+ 139:.\Generated_Source\PSoC5/SPI0_PM.c **** *  SPI0_backup - used when non-retention registers are restored.
+ 140:.\Generated_Source\PSoC5/SPI0_PM.c **** *  SPI0_txBufferWrite - modified every function call - resets to
+ 141:.\Generated_Source\PSoC5/SPI0_PM.c **** *  zero.
+ 142:.\Generated_Source\PSoC5/SPI0_PM.c **** *  SPI0_txBufferRead - modified every function call - resets to
+ 143:.\Generated_Source\PSoC5/SPI0_PM.c **** *  zero.
+ 144:.\Generated_Source\PSoC5/SPI0_PM.c **** *  SPI0_rxBufferWrite - modified every function call - resets to
+ 145:.\Generated_Source\PSoC5/SPI0_PM.c **** *  zero.
+ 146:.\Generated_Source\PSoC5/SPI0_PM.c **** *  SPI0_rxBufferRead - modified every function call - resets to
+ 147:.\Generated_Source\PSoC5/SPI0_PM.c **** *  zero.
+ 148:.\Generated_Source\PSoC5/SPI0_PM.c **** *
+ 149:.\Generated_Source\PSoC5/SPI0_PM.c **** * Reentrant:
+ 150:.\Generated_Source\PSoC5/SPI0_PM.c **** *  No.
+ 151:.\Generated_Source\PSoC5/SPI0_PM.c **** *
+ 152:.\Generated_Source\PSoC5/SPI0_PM.c **** *******************************************************************************/
+ 153:.\Generated_Source\PSoC5/SPI0_PM.c **** void SPI0_Wakeup(void) 
+ 154:.\Generated_Source\PSoC5/SPI0_PM.c **** {
+  92              		.loc 1 154 0
+  93              		.cfi_startproc
+  94              		@ args = 0, pretend = 0, frame = 0
+  95              		@ frame_needed = 0, uses_anonymous_args = 0
+  96 0000 08B5     		push	{r3, lr}
+  97              	.LCFI0:
+  98              		.cfi_def_cfa_offset 8
+  99              		.cfi_offset 3, -8
+ 100              		.cfi_offset 14, -4
+ 155:.\Generated_Source\PSoC5/SPI0_PM.c ****     SPI0_RestoreConfig();
+ 156:.\Generated_Source\PSoC5/SPI0_PM.c **** 
+ 157:.\Generated_Source\PSoC5/SPI0_PM.c ****     #if(SPI0_RX_SOFTWARE_BUF_ENABLED)
+ 158:.\Generated_Source\PSoC5/SPI0_PM.c ****         SPI0_rxBufferFull  = 0u;
+ 159:.\Generated_Source\PSoC5/SPI0_PM.c ****         SPI0_rxBufferRead  = 0u;
+ 160:.\Generated_Source\PSoC5/SPI0_PM.c ****         SPI0_rxBufferWrite = 0u;
+ 161:.\Generated_Source\PSoC5/SPI0_PM.c ****     #endif /* (SPI0_RX_SOFTWARE_BUF_ENABLED) */
+ 162:.\Generated_Source\PSoC5/SPI0_PM.c **** 
+ 163:.\Generated_Source\PSoC5/SPI0_PM.c ****     #if(SPI0_TX_SOFTWARE_BUF_ENABLED)
+ 164:.\Generated_Source\PSoC5/SPI0_PM.c ****         SPI0_txBufferFull  = 0u;
+ 165:.\Generated_Source\PSoC5/SPI0_PM.c ****         SPI0_txBufferRead  = 0u;
+ 166:.\Generated_Source\PSoC5/SPI0_PM.c ****         SPI0_txBufferWrite = 0u;
+ 167:.\Generated_Source\PSoC5/SPI0_PM.c ****     #endif /* (SPI0_TX_SOFTWARE_BUF_ENABLED) */
+ 168:.\Generated_Source\PSoC5/SPI0_PM.c **** 
+ 169:.\Generated_Source\PSoC5/SPI0_PM.c ****     /* Clear any data from the RX and TX FIFO */
+ 170:.\Generated_Source\PSoC5/SPI0_PM.c ****     SPI0_ClearFIFO();
+ 101              		.loc 1 170 0
+ 102 0002 FFF7FEFF 		bl	SPI0_ClearFIFO
+ 103              	.LVL1:
+ 171:.\Generated_Source\PSoC5/SPI0_PM.c **** 
+ 172:.\Generated_Source\PSoC5/SPI0_PM.c ****     /* Restore components block enable state */
+ 173:.\Generated_Source\PSoC5/SPI0_PM.c ****     if(0u != SPI0_backup.enableState)
+ 104              		.loc 1 173 0
+ 105 0006 044B     		ldr	r3, .L9
+ 106 0008 1878     		ldrb	r0, [r3, #0]	@ zero_extendqisi2
+ 107 000a 18B1     		cbz	r0, .L6
+ 174:.\Generated_Source\PSoC5/SPI0_PM.c ****     {
+ 175:.\Generated_Source\PSoC5/SPI0_PM.c ****         SPI0_Enable();
+ 176:.\Generated_Source\PSoC5/SPI0_PM.c ****     }
+ 177:.\Generated_Source\PSoC5/SPI0_PM.c **** }
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccV1Pdmp.s 			page 6
+
+
+ 108              		.loc 1 177 0
+ 109 000c BDE80840 		pop	{r3, lr}
+ 175:.\Generated_Source\PSoC5/SPI0_PM.c ****         SPI0_Enable();
+ 110              		.loc 1 175 0
+ 111 0010 FFF7FEBF 		b	SPI0_Enable
+ 112              	.LVL2:
+ 113              	.L6:
+ 114 0014 08BD     		pop	{r3, pc}
+ 115              	.L10:
+ 116 0016 00BF     		.align	2
+ 117              	.L9:
+ 118 0018 00000000 		.word	.LANCHOR0
+ 119              		.cfi_endproc
+ 120              	.LFE3:
+ 121              		.size	SPI0_Wakeup, .-SPI0_Wakeup
+ 122              		.data
+ 123              		.set	.LANCHOR0,. + 0
+ 124              		.type	SPI0_backup, %object
+ 125              		.size	SPI0_backup, 2
+ 126              	SPI0_backup:
+ 127 0000 00       		.byte	0
+ 128 0001 0F       		.byte	15
+ 129              		.text
+ 130              	.Letext0:
+ 131              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 132              		.file 3 ".\\Generated_Source\\PSoC5\\SPI0.h"
+ 133              		.section	.debug_info,"",%progbits
+ 134              	.Ldebug_info0:
+ 135 0000 8A010000 		.4byte	0x18a
+ 136 0004 0200     		.2byte	0x2
+ 137 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 138 000a 04       		.byte	0x4
+ 139 000b 01       		.uleb128 0x1
+ 140 000c 63000000 		.4byte	.LASF25
+ 141 0010 01       		.byte	0x1
+ 142 0011 DB000000 		.4byte	.LASF26
+ 143 0015 76010000 		.4byte	.LASF27
+ 144 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 145 001d 00000000 		.4byte	0
+ 146 0021 00000000 		.4byte	0
+ 147 0025 00000000 		.4byte	.Ldebug_line0
+ 148 0029 02       		.uleb128 0x2
+ 149 002a 01       		.byte	0x1
+ 150 002b 06       		.byte	0x6
+ 151 002c 61010000 		.4byte	.LASF0
+ 152 0030 02       		.uleb128 0x2
+ 153 0031 01       		.byte	0x1
+ 154 0032 08       		.byte	0x8
+ 155 0033 04010000 		.4byte	.LASF1
+ 156 0037 02       		.uleb128 0x2
+ 157 0038 02       		.byte	0x2
+ 158 0039 05       		.byte	0x5
+ 159 003a DB010000 		.4byte	.LASF2
+ 160 003e 02       		.uleb128 0x2
+ 161 003f 02       		.byte	0x2
+ 162 0040 07       		.byte	0x7
+ 163 0041 4E010000 		.4byte	.LASF3
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccV1Pdmp.s 			page 7
+
+
+ 164 0045 02       		.uleb128 0x2
+ 165 0046 04       		.byte	0x4
+ 166 0047 05       		.byte	0x5
+ 167 0048 22010000 		.4byte	.LASF4
+ 168 004c 02       		.uleb128 0x2
+ 169 004d 04       		.byte	0x4
+ 170 004e 07       		.byte	0x7
+ 171 004f B2000000 		.4byte	.LASF5
+ 172 0053 02       		.uleb128 0x2
+ 173 0054 08       		.byte	0x8
+ 174 0055 05       		.byte	0x5
+ 175 0056 00000000 		.4byte	.LASF6
+ 176 005a 02       		.uleb128 0x2
+ 177 005b 08       		.byte	0x8
+ 178 005c 07       		.byte	0x7
+ 179 005d C4000000 		.4byte	.LASF7
+ 180 0061 03       		.uleb128 0x3
+ 181 0062 04       		.byte	0x4
+ 182 0063 05       		.byte	0x5
+ 183 0064 696E7400 		.ascii	"int\000"
+ 184 0068 02       		.uleb128 0x2
+ 185 0069 04       		.byte	0x4
+ 186 006a 07       		.byte	0x7
+ 187 006b 1A000000 		.4byte	.LASF8
+ 188 006f 04       		.uleb128 0x4
+ 189 0070 AC000000 		.4byte	.LASF12
+ 190 0074 02       		.byte	0x2
+ 191 0075 5B       		.byte	0x5b
+ 192 0076 30000000 		.4byte	0x30
+ 193 007a 02       		.uleb128 0x2
+ 194 007b 04       		.byte	0x4
+ 195 007c 04       		.byte	0x4
+ 196 007d FE000000 		.4byte	.LASF9
+ 197 0081 02       		.uleb128 0x2
+ 198 0082 08       		.byte	0x8
+ 199 0083 04       		.byte	0x4
+ 200 0084 3C010000 		.4byte	.LASF10
+ 201 0088 02       		.uleb128 0x2
+ 202 0089 01       		.byte	0x1
+ 203 008a 08       		.byte	0x8
+ 204 008b 12010000 		.4byte	.LASF11
+ 205 008f 04       		.uleb128 0x4
+ 206 0090 2B010000 		.4byte	.LASF13
+ 207 0094 02       		.byte	0x2
+ 208 0095 F0       		.byte	0xf0
+ 209 0096 9A000000 		.4byte	0x9a
+ 210 009a 05       		.uleb128 0x5
+ 211 009b 6F000000 		.4byte	0x6f
+ 212 009f 02       		.uleb128 0x2
+ 213 00a0 04       		.byte	0x4
+ 214 00a1 07       		.byte	0x7
+ 215 00a2 6D010000 		.4byte	.LASF14
+ 216 00a6 06       		.uleb128 0x6
+ 217 00a7 02       		.byte	0x2
+ 218 00a8 03       		.byte	0x3
+ 219 00a9 46       		.byte	0x46
+ 220 00aa CB000000 		.4byte	0xcb
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccV1Pdmp.s 			page 8
+
+
+ 221 00ae 07       		.uleb128 0x7
+ 222 00af 0E000000 		.4byte	.LASF15
+ 223 00b3 03       		.byte	0x3
+ 224 00b4 48       		.byte	0x48
+ 225 00b5 6F000000 		.4byte	0x6f
+ 226 00b9 02       		.byte	0x2
+ 227 00ba 23       		.byte	0x23
+ 228 00bb 00       		.uleb128 0
+ 229 00bc 07       		.uleb128 0x7
+ 230 00bd 43010000 		.4byte	.LASF16
+ 231 00c1 03       		.byte	0x3
+ 232 00c2 49       		.byte	0x49
+ 233 00c3 6F000000 		.4byte	0x6f
+ 234 00c7 02       		.byte	0x2
+ 235 00c8 23       		.byte	0x23
+ 236 00c9 01       		.uleb128 0x1
+ 237 00ca 00       		.byte	0
+ 238 00cb 04       		.uleb128 0x4
+ 239 00cc 50000000 		.4byte	.LASF17
+ 240 00d0 03       		.byte	0x3
+ 241 00d1 4F       		.byte	0x4f
+ 242 00d2 A6000000 		.4byte	0xa6
+ 243 00d6 08       		.uleb128 0x8
+ 244 00d7 01       		.byte	0x1
+ 245 00d8 E5010000 		.4byte	.LASF18
+ 246 00dc 01       		.byte	0x1
+ 247 00dd 33       		.byte	0x33
+ 248 00de 01       		.byte	0x1
+ 249 00df 01       		.byte	0x1
+ 250 00e0 08       		.uleb128 0x8
+ 251 00e1 01       		.byte	0x1
+ 252 00e2 27000000 		.4byte	.LASF19
+ 253 00e6 01       		.byte	0x1
+ 254 00e7 54       		.byte	0x54
+ 255 00e8 01       		.byte	0x1
+ 256 00e9 01       		.byte	0x1
+ 257 00ea 09       		.uleb128 0x9
+ 258 00eb D6000000 		.4byte	0xd6
+ 259 00ef 00000000 		.4byte	.LFB0
+ 260 00f3 02000000 		.4byte	.LFE0
+ 261 00f7 02       		.byte	0x2
+ 262 00f8 7D       		.byte	0x7d
+ 263 00f9 00       		.sleb128 0
+ 264 00fa 01       		.byte	0x1
+ 265 00fb 09       		.uleb128 0x9
+ 266 00fc E0000000 		.4byte	0xe0
+ 267 0100 00000000 		.4byte	.LFB1
+ 268 0104 02000000 		.4byte	.LFE1
+ 269 0108 02       		.byte	0x2
+ 270 0109 7D       		.byte	0x7d
+ 271 010a 00       		.sleb128 0
+ 272 010b 01       		.byte	0x1
+ 273 010c 0A       		.uleb128 0xa
+ 274 010d 01       		.byte	0x1
+ 275 010e 17010000 		.4byte	.LASF20
+ 276 0112 01       		.byte	0x1
+ 277 0113 73       		.byte	0x73
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccV1Pdmp.s 			page 9
+
+
+ 278 0114 01       		.byte	0x1
+ 279 0115 00000000 		.4byte	.LFB2
+ 280 0119 18000000 		.4byte	.LFE2
+ 281 011d 02       		.byte	0x2
+ 282 011e 7D       		.byte	0x7d
+ 283 011f 00       		.sleb128 0
+ 284 0120 01       		.byte	0x1
+ 285 0121 30010000 		.4byte	0x130
+ 286 0125 0B       		.uleb128 0xb
+ 287 0126 10000000 		.4byte	.LVL0
+ 288 012a 01       		.byte	0x1
+ 289 012b 6F010000 		.4byte	0x16f
+ 290 012f 00       		.byte	0
+ 291 0130 0C       		.uleb128 0xc
+ 292 0131 01       		.byte	0x1
+ 293 0132 44000000 		.4byte	.LASF21
+ 294 0136 01       		.byte	0x1
+ 295 0137 99       		.byte	0x99
+ 296 0138 01       		.byte	0x1
+ 297 0139 00000000 		.4byte	.LFB3
+ 298 013d 1C000000 		.4byte	.LFE3
+ 299 0141 00000000 		.4byte	.LLST0
+ 300 0145 01       		.byte	0x1
+ 301 0146 5E010000 		.4byte	0x15e
+ 302 014a 0D       		.uleb128 0xd
+ 303 014b 06000000 		.4byte	.LVL1
+ 304 014f 79010000 		.4byte	0x179
+ 305 0153 0B       		.uleb128 0xb
+ 306 0154 14000000 		.4byte	.LVL2
+ 307 0158 01       		.byte	0x1
+ 308 0159 83010000 		.4byte	0x183
+ 309 015d 00       		.byte	0
+ 310 015e 0E       		.uleb128 0xe
+ 311 015f 30010000 		.4byte	.LASF28
+ 312 0163 01       		.byte	0x1
+ 313 0164 14       		.byte	0x14
+ 314 0165 CB000000 		.4byte	0xcb
+ 315 0169 05       		.byte	0x5
+ 316 016a 03       		.byte	0x3
+ 317 016b 00000000 		.4byte	SPI0_backup
+ 318 016f 0F       		.uleb128 0xf
+ 319 0170 01       		.byte	0x1
+ 320 0171 3A000000 		.4byte	.LASF22
+ 321 0175 03       		.byte	0x3
+ 322 0176 59       		.byte	0x59
+ 323 0177 01       		.byte	0x1
+ 324 0178 01       		.byte	0x1
+ 325 0179 0F       		.uleb128 0xf
+ 326 017a 01       		.byte	0x1
+ 327 017b 01020000 		.4byte	.LASF23
+ 328 017f 03       		.byte	0x3
+ 329 0180 71       		.byte	0x71
+ 330 0181 01       		.byte	0x1
+ 331 0182 01       		.byte	0x1
+ 332 0183 0F       		.uleb128 0xf
+ 333 0184 01       		.byte	0x1
+ 334 0185 F5010000 		.4byte	.LASF24
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccV1Pdmp.s 			page 10
+
+
+ 335 0189 03       		.byte	0x3
+ 336 018a 57       		.byte	0x57
+ 337 018b 01       		.byte	0x1
+ 338 018c 01       		.byte	0x1
+ 339 018d 00       		.byte	0
+ 340              		.section	.debug_abbrev,"",%progbits
+ 341              	.Ldebug_abbrev0:
+ 342 0000 01       		.uleb128 0x1
+ 343 0001 11       		.uleb128 0x11
+ 344 0002 01       		.byte	0x1
+ 345 0003 25       		.uleb128 0x25
+ 346 0004 0E       		.uleb128 0xe
+ 347 0005 13       		.uleb128 0x13
+ 348 0006 0B       		.uleb128 0xb
+ 349 0007 03       		.uleb128 0x3
+ 350 0008 0E       		.uleb128 0xe
+ 351 0009 1B       		.uleb128 0x1b
+ 352 000a 0E       		.uleb128 0xe
+ 353 000b 55       		.uleb128 0x55
+ 354 000c 06       		.uleb128 0x6
+ 355 000d 11       		.uleb128 0x11
+ 356 000e 01       		.uleb128 0x1
+ 357 000f 52       		.uleb128 0x52
+ 358 0010 01       		.uleb128 0x1
+ 359 0011 10       		.uleb128 0x10
+ 360 0012 06       		.uleb128 0x6
+ 361 0013 00       		.byte	0
+ 362 0014 00       		.byte	0
+ 363 0015 02       		.uleb128 0x2
+ 364 0016 24       		.uleb128 0x24
+ 365 0017 00       		.byte	0
+ 366 0018 0B       		.uleb128 0xb
+ 367 0019 0B       		.uleb128 0xb
+ 368 001a 3E       		.uleb128 0x3e
+ 369 001b 0B       		.uleb128 0xb
+ 370 001c 03       		.uleb128 0x3
+ 371 001d 0E       		.uleb128 0xe
+ 372 001e 00       		.byte	0
+ 373 001f 00       		.byte	0
+ 374 0020 03       		.uleb128 0x3
+ 375 0021 24       		.uleb128 0x24
+ 376 0022 00       		.byte	0
+ 377 0023 0B       		.uleb128 0xb
+ 378 0024 0B       		.uleb128 0xb
+ 379 0025 3E       		.uleb128 0x3e
+ 380 0026 0B       		.uleb128 0xb
+ 381 0027 03       		.uleb128 0x3
+ 382 0028 08       		.uleb128 0x8
+ 383 0029 00       		.byte	0
+ 384 002a 00       		.byte	0
+ 385 002b 04       		.uleb128 0x4
+ 386 002c 16       		.uleb128 0x16
+ 387 002d 00       		.byte	0
+ 388 002e 03       		.uleb128 0x3
+ 389 002f 0E       		.uleb128 0xe
+ 390 0030 3A       		.uleb128 0x3a
+ 391 0031 0B       		.uleb128 0xb
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccV1Pdmp.s 			page 11
+
+
+ 392 0032 3B       		.uleb128 0x3b
+ 393 0033 0B       		.uleb128 0xb
+ 394 0034 49       		.uleb128 0x49
+ 395 0035 13       		.uleb128 0x13
+ 396 0036 00       		.byte	0
+ 397 0037 00       		.byte	0
+ 398 0038 05       		.uleb128 0x5
+ 399 0039 35       		.uleb128 0x35
+ 400 003a 00       		.byte	0
+ 401 003b 49       		.uleb128 0x49
+ 402 003c 13       		.uleb128 0x13
+ 403 003d 00       		.byte	0
+ 404 003e 00       		.byte	0
+ 405 003f 06       		.uleb128 0x6
+ 406 0040 13       		.uleb128 0x13
+ 407 0041 01       		.byte	0x1
+ 408 0042 0B       		.uleb128 0xb
+ 409 0043 0B       		.uleb128 0xb
+ 410 0044 3A       		.uleb128 0x3a
+ 411 0045 0B       		.uleb128 0xb
+ 412 0046 3B       		.uleb128 0x3b
+ 413 0047 0B       		.uleb128 0xb
+ 414 0048 01       		.uleb128 0x1
+ 415 0049 13       		.uleb128 0x13
+ 416 004a 00       		.byte	0
+ 417 004b 00       		.byte	0
+ 418 004c 07       		.uleb128 0x7
+ 419 004d 0D       		.uleb128 0xd
+ 420 004e 00       		.byte	0
+ 421 004f 03       		.uleb128 0x3
+ 422 0050 0E       		.uleb128 0xe
+ 423 0051 3A       		.uleb128 0x3a
+ 424 0052 0B       		.uleb128 0xb
+ 425 0053 3B       		.uleb128 0x3b
+ 426 0054 0B       		.uleb128 0xb
+ 427 0055 49       		.uleb128 0x49
+ 428 0056 13       		.uleb128 0x13
+ 429 0057 38       		.uleb128 0x38
+ 430 0058 0A       		.uleb128 0xa
+ 431 0059 00       		.byte	0
+ 432 005a 00       		.byte	0
+ 433 005b 08       		.uleb128 0x8
+ 434 005c 2E       		.uleb128 0x2e
+ 435 005d 00       		.byte	0
+ 436 005e 3F       		.uleb128 0x3f
+ 437 005f 0C       		.uleb128 0xc
+ 438 0060 03       		.uleb128 0x3
+ 439 0061 0E       		.uleb128 0xe
+ 440 0062 3A       		.uleb128 0x3a
+ 441 0063 0B       		.uleb128 0xb
+ 442 0064 3B       		.uleb128 0x3b
+ 443 0065 0B       		.uleb128 0xb
+ 444 0066 27       		.uleb128 0x27
+ 445 0067 0C       		.uleb128 0xc
+ 446 0068 20       		.uleb128 0x20
+ 447 0069 0B       		.uleb128 0xb
+ 448 006a 00       		.byte	0
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccV1Pdmp.s 			page 12
+
+
+ 449 006b 00       		.byte	0
+ 450 006c 09       		.uleb128 0x9
+ 451 006d 2E       		.uleb128 0x2e
+ 452 006e 00       		.byte	0
+ 453 006f 31       		.uleb128 0x31
+ 454 0070 13       		.uleb128 0x13
+ 455 0071 11       		.uleb128 0x11
+ 456 0072 01       		.uleb128 0x1
+ 457 0073 12       		.uleb128 0x12
+ 458 0074 01       		.uleb128 0x1
+ 459 0075 40       		.uleb128 0x40
+ 460 0076 0A       		.uleb128 0xa
+ 461 0077 9742     		.uleb128 0x2117
+ 462 0079 0C       		.uleb128 0xc
+ 463 007a 00       		.byte	0
+ 464 007b 00       		.byte	0
+ 465 007c 0A       		.uleb128 0xa
+ 466 007d 2E       		.uleb128 0x2e
+ 467 007e 01       		.byte	0x1
+ 468 007f 3F       		.uleb128 0x3f
+ 469 0080 0C       		.uleb128 0xc
+ 470 0081 03       		.uleb128 0x3
+ 471 0082 0E       		.uleb128 0xe
+ 472 0083 3A       		.uleb128 0x3a
+ 473 0084 0B       		.uleb128 0xb
+ 474 0085 3B       		.uleb128 0x3b
+ 475 0086 0B       		.uleb128 0xb
+ 476 0087 27       		.uleb128 0x27
+ 477 0088 0C       		.uleb128 0xc
+ 478 0089 11       		.uleb128 0x11
+ 479 008a 01       		.uleb128 0x1
+ 480 008b 12       		.uleb128 0x12
+ 481 008c 01       		.uleb128 0x1
+ 482 008d 40       		.uleb128 0x40
+ 483 008e 0A       		.uleb128 0xa
+ 484 008f 9742     		.uleb128 0x2117
+ 485 0091 0C       		.uleb128 0xc
+ 486 0092 01       		.uleb128 0x1
+ 487 0093 13       		.uleb128 0x13
+ 488 0094 00       		.byte	0
+ 489 0095 00       		.byte	0
+ 490 0096 0B       		.uleb128 0xb
+ 491 0097 898201   		.uleb128 0x4109
+ 492 009a 00       		.byte	0
+ 493 009b 11       		.uleb128 0x11
+ 494 009c 01       		.uleb128 0x1
+ 495 009d 9542     		.uleb128 0x2115
+ 496 009f 0C       		.uleb128 0xc
+ 497 00a0 31       		.uleb128 0x31
+ 498 00a1 13       		.uleb128 0x13
+ 499 00a2 00       		.byte	0
+ 500 00a3 00       		.byte	0
+ 501 00a4 0C       		.uleb128 0xc
+ 502 00a5 2E       		.uleb128 0x2e
+ 503 00a6 01       		.byte	0x1
+ 504 00a7 3F       		.uleb128 0x3f
+ 505 00a8 0C       		.uleb128 0xc
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccV1Pdmp.s 			page 13
+
+
+ 506 00a9 03       		.uleb128 0x3
+ 507 00aa 0E       		.uleb128 0xe
+ 508 00ab 3A       		.uleb128 0x3a
+ 509 00ac 0B       		.uleb128 0xb
+ 510 00ad 3B       		.uleb128 0x3b
+ 511 00ae 0B       		.uleb128 0xb
+ 512 00af 27       		.uleb128 0x27
+ 513 00b0 0C       		.uleb128 0xc
+ 514 00b1 11       		.uleb128 0x11
+ 515 00b2 01       		.uleb128 0x1
+ 516 00b3 12       		.uleb128 0x12
+ 517 00b4 01       		.uleb128 0x1
+ 518 00b5 40       		.uleb128 0x40
+ 519 00b6 06       		.uleb128 0x6
+ 520 00b7 9742     		.uleb128 0x2117
+ 521 00b9 0C       		.uleb128 0xc
+ 522 00ba 01       		.uleb128 0x1
+ 523 00bb 13       		.uleb128 0x13
+ 524 00bc 00       		.byte	0
+ 525 00bd 00       		.byte	0
+ 526 00be 0D       		.uleb128 0xd
+ 527 00bf 898201   		.uleb128 0x4109
+ 528 00c2 00       		.byte	0
+ 529 00c3 11       		.uleb128 0x11
+ 530 00c4 01       		.uleb128 0x1
+ 531 00c5 31       		.uleb128 0x31
+ 532 00c6 13       		.uleb128 0x13
+ 533 00c7 00       		.byte	0
+ 534 00c8 00       		.byte	0
+ 535 00c9 0E       		.uleb128 0xe
+ 536 00ca 34       		.uleb128 0x34
+ 537 00cb 00       		.byte	0
+ 538 00cc 03       		.uleb128 0x3
+ 539 00cd 0E       		.uleb128 0xe
+ 540 00ce 3A       		.uleb128 0x3a
+ 541 00cf 0B       		.uleb128 0xb
+ 542 00d0 3B       		.uleb128 0x3b
+ 543 00d1 0B       		.uleb128 0xb
+ 544 00d2 49       		.uleb128 0x49
+ 545 00d3 13       		.uleb128 0x13
+ 546 00d4 02       		.uleb128 0x2
+ 547 00d5 0A       		.uleb128 0xa
+ 548 00d6 00       		.byte	0
+ 549 00d7 00       		.byte	0
+ 550 00d8 0F       		.uleb128 0xf
+ 551 00d9 2E       		.uleb128 0x2e
+ 552 00da 00       		.byte	0
+ 553 00db 3F       		.uleb128 0x3f
+ 554 00dc 0C       		.uleb128 0xc
+ 555 00dd 03       		.uleb128 0x3
+ 556 00de 0E       		.uleb128 0xe
+ 557 00df 3A       		.uleb128 0x3a
+ 558 00e0 0B       		.uleb128 0xb
+ 559 00e1 3B       		.uleb128 0x3b
+ 560 00e2 0B       		.uleb128 0xb
+ 561 00e3 27       		.uleb128 0x27
+ 562 00e4 0C       		.uleb128 0xc
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccV1Pdmp.s 			page 14
+
+
+ 563 00e5 3C       		.uleb128 0x3c
+ 564 00e6 0C       		.uleb128 0xc
+ 565 00e7 00       		.byte	0
+ 566 00e8 00       		.byte	0
+ 567 00e9 00       		.byte	0
+ 568              		.section	.debug_loc,"",%progbits
+ 569              	.Ldebug_loc0:
+ 570              	.LLST0:
+ 571 0000 00000000 		.4byte	.LFB3
+ 572 0004 02000000 		.4byte	.LCFI0
+ 573 0008 0200     		.2byte	0x2
+ 574 000a 7D       		.byte	0x7d
+ 575 000b 00       		.sleb128 0
+ 576 000c 02000000 		.4byte	.LCFI0
+ 577 0010 1C000000 		.4byte	.LFE3
+ 578 0014 0200     		.2byte	0x2
+ 579 0016 7D       		.byte	0x7d
+ 580 0017 08       		.sleb128 8
+ 581 0018 00000000 		.4byte	0
+ 582 001c 00000000 		.4byte	0
+ 583              		.section	.debug_aranges,"",%progbits
+ 584 0000 34000000 		.4byte	0x34
+ 585 0004 0200     		.2byte	0x2
+ 586 0006 00000000 		.4byte	.Ldebug_info0
+ 587 000a 04       		.byte	0x4
+ 588 000b 00       		.byte	0
+ 589 000c 0000     		.2byte	0
+ 590 000e 0000     		.2byte	0
+ 591 0010 00000000 		.4byte	.LFB0
+ 592 0014 02000000 		.4byte	.LFE0-.LFB0
+ 593 0018 00000000 		.4byte	.LFB1
+ 594 001c 02000000 		.4byte	.LFE1-.LFB1
+ 595 0020 00000000 		.4byte	.LFB2
+ 596 0024 18000000 		.4byte	.LFE2-.LFB2
+ 597 0028 00000000 		.4byte	.LFB3
+ 598 002c 1C000000 		.4byte	.LFE3-.LFB3
+ 599 0030 00000000 		.4byte	0
+ 600 0034 00000000 		.4byte	0
+ 601              		.section	.debug_ranges,"",%progbits
+ 602              	.Ldebug_ranges0:
+ 603 0000 00000000 		.4byte	.LFB0
+ 604 0004 02000000 		.4byte	.LFE0
+ 605 0008 00000000 		.4byte	.LFB1
+ 606 000c 02000000 		.4byte	.LFE1
+ 607 0010 00000000 		.4byte	.LFB2
+ 608 0014 18000000 		.4byte	.LFE2
+ 609 0018 00000000 		.4byte	.LFB3
+ 610 001c 1C000000 		.4byte	.LFE3
+ 611 0020 00000000 		.4byte	0
+ 612 0024 00000000 		.4byte	0
+ 613              		.section	.debug_line,"",%progbits
+ 614              	.Ldebug_line0:
+ 615 0000 9E000000 		.section	.debug_str,"MS",%progbits,1
+ 615      02005000 
+ 615      00000201 
+ 615      FB0E0D00 
+ 615      01010101 
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccV1Pdmp.s 			page 15
+
+
+ 616              	.LASF6:
+ 617 0000 6C6F6E67 		.ascii	"long long int\000"
+ 617      206C6F6E 
+ 617      6720696E 
+ 617      7400
+ 618              	.LASF15:
+ 619 000e 656E6162 		.ascii	"enableState\000"
+ 619      6C655374 
+ 619      61746500 
+ 620              	.LASF8:
+ 621 001a 756E7369 		.ascii	"unsigned int\000"
+ 621      676E6564 
+ 621      20696E74 
+ 621      00
+ 622              	.LASF19:
+ 623 0027 53504930 		.ascii	"SPI0_RestoreConfig\000"
+ 623      5F526573 
+ 623      746F7265 
+ 623      436F6E66 
+ 623      696700
+ 624              	.LASF22:
+ 625 003a 53504930 		.ascii	"SPI0_Stop\000"
+ 625      5F53746F 
+ 625      7000
+ 626              	.LASF21:
+ 627 0044 53504930 		.ascii	"SPI0_Wakeup\000"
+ 627      5F57616B 
+ 627      65757000 
+ 628              	.LASF17:
+ 629 0050 53504930 		.ascii	"SPI0_BACKUP_STRUCT\000"
+ 629      5F424143 
+ 629      4B55505F 
+ 629      53545255 
+ 629      435400
+ 630              	.LASF25:
+ 631 0063 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 631      4320342E 
+ 631      372E3320 
+ 631      32303133 
+ 631      30333132 
+ 632 0096 616E6368 		.ascii	"anch revision 196615]\000"
+ 632      20726576 
+ 632      6973696F 
+ 632      6E203139 
+ 632      36363135 
+ 633              	.LASF12:
+ 634 00ac 75696E74 		.ascii	"uint8\000"
+ 634      3800
+ 635              	.LASF5:
+ 636 00b2 6C6F6E67 		.ascii	"long unsigned int\000"
+ 636      20756E73 
+ 636      69676E65 
+ 636      6420696E 
+ 636      7400
+ 637              	.LASF7:
+ 638 00c4 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 638      206C6F6E 
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccV1Pdmp.s 			page 16
+
+
+ 638      6720756E 
+ 638      7369676E 
+ 638      65642069 
+ 639              	.LASF26:
+ 640 00db 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\SPI0_PM.c\000"
+ 640      6E657261 
+ 640      7465645F 
+ 640      536F7572 
+ 640      63655C50 
+ 641              	.LASF9:
+ 642 00fe 666C6F61 		.ascii	"float\000"
+ 642      7400
+ 643              	.LASF1:
+ 644 0104 756E7369 		.ascii	"unsigned char\000"
+ 644      676E6564 
+ 644      20636861 
+ 644      7200
+ 645              	.LASF11:
+ 646 0112 63686172 		.ascii	"char\000"
+ 646      00
+ 647              	.LASF20:
+ 648 0117 53504930 		.ascii	"SPI0_Sleep\000"
+ 648      5F536C65 
+ 648      657000
+ 649              	.LASF4:
+ 650 0122 6C6F6E67 		.ascii	"long int\000"
+ 650      20696E74 
+ 650      00
+ 651              	.LASF13:
+ 652 012b 72656738 		.ascii	"reg8\000"
+ 652      00
+ 653              	.LASF28:
+ 654 0130 53504930 		.ascii	"SPI0_backup\000"
+ 654      5F626163 
+ 654      6B757000 
+ 655              	.LASF10:
+ 656 013c 646F7562 		.ascii	"double\000"
+ 656      6C6500
+ 657              	.LASF16:
+ 658 0143 636E7472 		.ascii	"cntrPeriod\000"
+ 658      50657269 
+ 658      6F6400
+ 659              	.LASF3:
+ 660 014e 73686F72 		.ascii	"short unsigned int\000"
+ 660      7420756E 
+ 660      7369676E 
+ 660      65642069 
+ 660      6E7400
+ 661              	.LASF0:
+ 662 0161 7369676E 		.ascii	"signed char\000"
+ 662      65642063 
+ 662      68617200 
+ 663              	.LASF14:
+ 664 016d 73697A65 		.ascii	"sizetype\000"
+ 664      74797065 
+ 664      00
+ 665              	.LASF27:
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccV1Pdmp.s 			page 17
+
+
+ 666 0176 433A5C55 		.ascii	"C:\\Users\\chuck.erhardt\\Documents\\GitHub\\PSoC-W"
+ 666      73657273 
+ 666      5C636875 
+ 666      636B2E65 
+ 666      72686172 
+ 667 01a4 35313030 		.ascii	"5100-Driver\\freeSoCExplorer+ArduinoSheld_Example.c"
+ 667      2D447269 
+ 667      7665725C 
+ 667      66726565 
+ 667      536F4345 
+ 668 01d6 7964736E 		.ascii	"ydsn\000"
+ 668      00
+ 669              	.LASF2:
+ 670 01db 73686F72 		.ascii	"short int\000"
+ 670      7420696E 
+ 670      7400
+ 671              	.LASF18:
+ 672 01e5 53504930 		.ascii	"SPI0_SaveConfig\000"
+ 672      5F536176 
+ 672      65436F6E 
+ 672      66696700 
+ 673              	.LASF24:
+ 674 01f5 53504930 		.ascii	"SPI0_Enable\000"
+ 674      5F456E61 
+ 674      626C6500 
+ 675              	.LASF23:
+ 676 0201 53504930 		.ascii	"SPI0_ClearFIFO\000"
+ 676      5F436C65 
+ 676      61724649 
+ 676      464F00
+ 677              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

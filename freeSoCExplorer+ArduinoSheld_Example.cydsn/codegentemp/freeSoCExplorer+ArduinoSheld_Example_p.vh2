@@ -1,5 +1,5 @@
 -- Project:   freeSoCExplorer+ArduinoSheld_Example
--- Generated: 11/13/2013 11:50:32
+-- Generated: 01/06/2014 16:54:56
 -- 
 
 ENTITY \freeSoCExplorer+ArduinoSheld_Example\ IS
@@ -7,7 +7,8 @@ ENTITY \freeSoCExplorer+ArduinoSheld_Example\ IS
         ETH_CSN_1(0)_PAD : OUT std_ulogic;
         ETH_MISO_1(0)_PAD : IN std_ulogic;
         ETH_MOSI_1(0)_PAD : OUT std_ulogic;
-        ETH_SCLK_1(0)_PAD : OUT std_ulogic);
+        ETH_SCLK_1(0)_PAD : OUT std_ulogic;
+        SDCS(0)_PAD : OUT std_ulogic);
     ATTRIBUTE voltage_Vio1 OF __DEFAULT__ : ENTITY IS 5e0;
     ATTRIBUTE voltage_Vusb OF __DEFAULT__ : ENTITY IS 5e0;
     ATTRIBUTE voltage_Vddd OF __DEFAULT__ : ENTITY IS 5e0;
@@ -38,6 +39,7 @@ ARCHITECTURE __DEFAULT__ OF \freeSoCExplorer+ArduinoSheld_Example\ IS
     SIGNAL Net_19 : bit;
     SIGNAL Net_23 : bit;
     SIGNAL Net_25 : bit;
+    SIGNAL SDCS(0)__PA : bit;
     SIGNAL \SPI0:BSPIM:cnt_enable\ : bit;
     SIGNAL \SPI0:BSPIM:cnt_tc\ : bit;
     SIGNAL \SPI0:BSPIM:count_0\ : bit;
@@ -51,6 +53,11 @@ ARCHITECTURE __DEFAULT__ OF \freeSoCExplorer+ArduinoSheld_Example\ IS
     SIGNAL \SPI0:BSPIM:load_cond\ : bit;
     SIGNAL \SPI0:BSPIM:load_rx_data\ : bit;
     SIGNAL \SPI0:BSPIM:mosi_from_dp\ : bit;
+    SIGNAL \SPI0:BSPIM:mosi_from_dp_reg\ : bit;
+    SIGNAL \SPI0:BSPIM:mosi_hs_reg\ : bit;
+    SIGNAL \SPI0:BSPIM:mosi_pre_reg\ : bit;
+    SIGNAL \SPI0:BSPIM:mosi_pre_reg_split\ : bit;
+    SIGNAL \SPI0:BSPIM:mosi_pre_reg_split_1\ : bit;
     SIGNAL \SPI0:BSPIM:rx_status_4\ : bit;
     SIGNAL \SPI0:BSPIM:rx_status_5\ : bit;
     SIGNAL \SPI0:BSPIM:rx_status_6\ : bit;
@@ -73,7 +80,7 @@ ARCHITECTURE __DEFAULT__ OF \freeSoCExplorer+ArduinoSheld_Example\ IS
     SIGNAL zero : bit;
     ATTRIBUTE GROUND OF zero : SIGNAL IS true;
     ATTRIBUTE lib_model OF ETH_CSN_1(0) : LABEL IS "iocell1";
-    ATTRIBUTE Location OF ETH_CSN_1(0) : LABEL IS "P3[4]";
+    ATTRIBUTE Location OF ETH_CSN_1(0) : LABEL IS "P5[2]";
     ATTRIBUTE lib_model OF ETH_MISO_1(0) : LABEL IS "iocell2";
     ATTRIBUTE Location OF ETH_MISO_1(0) : LABEL IS "P3[1]";
     ATTRIBUTE lib_model OF ETH_MOSI_1(0) : LABEL IS "iocell3";
@@ -83,19 +90,26 @@ ARCHITECTURE __DEFAULT__ OF \freeSoCExplorer+ArduinoSheld_Example\ IS
     ATTRIBUTE lib_model OF Net_1 : LABEL IS "macrocell1";
     ATTRIBUTE lib_model OF Net_23 : LABEL IS "macrocell2";
     ATTRIBUTE lib_model OF Net_25 : LABEL IS "macrocell3";
+    ATTRIBUTE lib_model OF SDCS(0) : LABEL IS "iocell5";
+    ATTRIBUTE Location OF SDCS(0) : LABEL IS "P12[4]";
     ATTRIBUTE lib_model OF \SPI0:BSPIM:RxStsReg\ : LABEL IS "statusicell1";
     ATTRIBUTE lib_model OF \SPI0:BSPIM:TxStsReg\ : LABEL IS "statusicell2";
     ATTRIBUTE lib_model OF \SPI0:BSPIM:cnt_enable\ : LABEL IS "macrocell4";
     ATTRIBUTE lib_model OF \SPI0:BSPIM:ld_ident\ : LABEL IS "macrocell5";
     ATTRIBUTE lib_model OF \SPI0:BSPIM:load_cond\ : LABEL IS "macrocell6";
     ATTRIBUTE lib_model OF \SPI0:BSPIM:load_rx_data\ : LABEL IS "macrocell7";
-    ATTRIBUTE lib_model OF \SPI0:BSPIM:rx_status_6\ : LABEL IS "macrocell8";
+    ATTRIBUTE lib_model OF \SPI0:BSPIM:mosi_from_dp_reg\ : LABEL IS "macrocell8";
+    ATTRIBUTE lib_model OF \SPI0:BSPIM:mosi_hs_reg\ : LABEL IS "macrocell9";
+    ATTRIBUTE lib_model OF \SPI0:BSPIM:mosi_pre_reg\ : LABEL IS "macrocell10";
+    ATTRIBUTE lib_model OF \SPI0:BSPIM:mosi_pre_reg_split\ : LABEL IS "macrocell11";
+    ATTRIBUTE lib_model OF \SPI0:BSPIM:mosi_pre_reg_split_1\ : LABEL IS "macrocell12";
+    ATTRIBUTE lib_model OF \SPI0:BSPIM:rx_status_6\ : LABEL IS "macrocell13";
     ATTRIBUTE lib_model OF \SPI0:BSPIM:sR8:Dp:u0\ : LABEL IS "datapathcell1";
-    ATTRIBUTE lib_model OF \SPI0:BSPIM:state_0\ : LABEL IS "macrocell9";
-    ATTRIBUTE lib_model OF \SPI0:BSPIM:state_1\ : LABEL IS "macrocell10";
-    ATTRIBUTE lib_model OF \SPI0:BSPIM:state_2\ : LABEL IS "macrocell11";
-    ATTRIBUTE lib_model OF \SPI0:BSPIM:tx_status_0\ : LABEL IS "macrocell12";
-    ATTRIBUTE lib_model OF \SPI0:BSPIM:tx_status_4\ : LABEL IS "macrocell13";
+    ATTRIBUTE lib_model OF \SPI0:BSPIM:state_0\ : LABEL IS "macrocell14";
+    ATTRIBUTE lib_model OF \SPI0:BSPIM:state_1\ : LABEL IS "macrocell15";
+    ATTRIBUTE lib_model OF \SPI0:BSPIM:state_2\ : LABEL IS "macrocell16";
+    ATTRIBUTE lib_model OF \SPI0:BSPIM:tx_status_0\ : LABEL IS "macrocell17";
+    ATTRIBUTE lib_model OF \SPI0:BSPIM:tx_status_4\ : LABEL IS "macrocell18";
     COMPONENT abufcell
     END COMPONENT;
     COMPONENT boostcell
@@ -1396,7 +1410,7 @@ BEGIN
 
     Net_1:macrocell
         GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * main_2) + (!main_0 * main_1 * !main_3) + (main_0 * !main_1 * !main_2 * !main_3) + (main_1 * main_2 * !main_3)",
+            eqn_main => "(!main_0 * !main_1 * main_2) + (main_0 * !main_2 * !main_3) + (main_1 * !main_3)",
             clk_inv => '0')
         PORT MAP(
             q => Net_1,
@@ -1408,26 +1422,18 @@ BEGIN
 
     Net_23:macrocell
         GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * main_3) + (!main_1 * !main_2 * !main_3) + (!main_1 * !main_3 * !main_5 * !main_6 * !main_7 * main_8 * !main_9 * !main_10) + (main_1 * !main_2 * main_3) + (main_1 * main_2 * !main_3) + (main_1 * !main_4) + (!main_3 * !main_4)",
-            clk_inv => '0')
+            eqn_main => "(!main_0 * !main_3 * main_4) + (main_1 * !main_3 * main_4) + (!main_2 * !main_3 * main_4)")
         PORT MAP(
             q => Net_23,
-            clock_0 => \SPI0:Net_276\,
-            main_0 => Net_23,
-            main_1 => \SPI0:BSPIM:state_2\,
-            main_2 => \SPI0:BSPIM:state_1\,
-            main_3 => \SPI0:BSPIM:state_0\,
-            main_4 => \SPI0:BSPIM:mosi_from_dp\,
-            main_5 => \SPI0:BSPIM:count_4\,
-            main_6 => \SPI0:BSPIM:count_3\,
-            main_7 => \SPI0:BSPIM:count_2\,
-            main_8 => \SPI0:BSPIM:count_1\,
-            main_9 => \SPI0:BSPIM:count_0\,
-            main_10 => \SPI0:BSPIM:ld_ident\);
+            main_0 => \SPI0:BSPIM:state_2\,
+            main_1 => \SPI0:BSPIM:state_1\,
+            main_2 => \SPI0:BSPIM:state_0\,
+            main_3 => Net_1,
+            main_4 => \SPI0:BSPIM:mosi_hs_reg\);
 
     Net_25:macrocell
         GENERIC MAP(
-            eqn_main => "(main_0 * main_2 * main_3) + (!main_1 * main_2 * main_3)",
+            eqn_main => "(main_0 * main_1 * main_2) + (main_1 * !main_3) + (main_2 * !main_3)",
             clk_inv => '0')
         PORT MAP(
             q => Net_25,
@@ -1436,6 +1442,91 @@ BEGIN
             main_1 => \SPI0:BSPIM:state_2\,
             main_2 => \SPI0:BSPIM:state_1\,
             main_3 => \SPI0:BSPIM:state_0\);
+
+    SDCS:logicalport
+        GENERIC MAP(
+            drive_mode => "110",
+            ibuf_enabled => "1",
+            id => "eddcef1e-cdf7-427b-b8cd-7daa22fb6d66",
+            init_dr_st => "1",
+            input_clk_en => 0,
+            input_sync => "1",
+            input_sync_mode => "0",
+            intr_mode => "00",
+            invert_in_clock => 0,
+            invert_in_clock_en => 0,
+            invert_in_reset => 0,
+            invert_out_clock => 0,
+            invert_out_clock_en => 0,
+            invert_out_reset => 0,
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            oe_reset => 0,
+            oe_sync => "0",
+            output_clk_en => 0,
+            output_clock_mode => "0",
+            output_conn => "0",
+            output_mode => "0",
+            output_reset => 0,
+            output_sync => "0",
+            pa_in_clock => -1,
+            pa_in_clock_en => -1,
+            pa_in_reset => -1,
+            pa_out_clock => -1,
+            pa_out_clock_en => -1,
+            pa_out_reset => -1,
+            pin_aliases => "",
+            pin_mode => "O",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "",
+            sio_hyst => "0",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "0",
+            vtrip => "10",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0)
+        PORT MAP(
+            in_clock_en => open,
+            in_reset => open,
+            out_clock_en => open,
+            out_reset => open);
+
+    SDCS(0):iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "SDCS",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000001")
+        PORT MAP(
+            pa_out => SDCS(0)__PA,
+            oe => open,
+            pad_in => SDCS(0)_PAD,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
 
     \SPI0:BSPIM:BitCounter\:count7cell
         GENERIC MAP(
@@ -1492,7 +1583,7 @@ BEGIN
 
     \SPI0:BSPIM:cnt_enable\:macrocell
         GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * !main_2 * main_3) + (!main_0 * main_1 * main_2 * !main_3) + (main_0 * !main_1 * main_2 * main_3) + (main_0 * main_1 * !main_2 * main_3)",
+            eqn_main => "(!main_0 * !main_1 * !main_2 * main_3) + (main_0 * !main_1 * main_2 * main_3) + (main_0 * main_1 * !main_2 * !main_3)",
             clk_inv => '0')
         PORT MAP(
             q => \SPI0:BSPIM:cnt_enable\,
@@ -1504,7 +1595,7 @@ BEGIN
 
     \SPI0:BSPIM:ld_ident\:macrocell
         GENERIC MAP(
-            eqn_main => "(main_0 * !main_1 * !main_2 * !main_8) + (main_0 * main_1 * !main_2 * main_8) + (main_1 * !main_2 * !main_3 * !main_4 * !main_5 * main_6 * !main_7 * main_8)",
+            eqn_main => "(!main_0 * main_1 * !main_2 * !main_3 * !main_4 * !main_5 * !main_6 * main_7 * main_8) + (main_0 * !main_1 * !main_2 * !main_8)",
             clk_inv => '0')
         PORT MAP(
             q => \SPI0:BSPIM:ld_ident\,
@@ -1546,6 +1637,72 @@ BEGIN
             main_2 => \SPI0:BSPIM:count_2\,
             main_3 => \SPI0:BSPIM:count_1\,
             main_4 => \SPI0:BSPIM:count_0\);
+
+    \SPI0:BSPIM:mosi_from_dp_reg\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0)",
+            clk_inv => '0')
+        PORT MAP(
+            q => \SPI0:BSPIM:mosi_from_dp_reg\,
+            main_0 => \SPI0:BSPIM:mosi_from_dp\,
+            clock_0 => \SPI0:Net_276\);
+
+    \SPI0:BSPIM:mosi_hs_reg\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * main_1 * main_2 * main_5) + (main_0 * main_1 * main_2 * main_3) + (!main_1 * main_4) + (!main_2 * main_4)",
+            clk_inv => '0')
+        PORT MAP(
+            q => \SPI0:BSPIM:mosi_hs_reg\,
+            clock_0 => \SPI0:Net_276\,
+            main_0 => \SPI0:BSPIM:state_2\,
+            main_1 => \SPI0:BSPIM:state_1\,
+            main_2 => \SPI0:BSPIM:state_0\,
+            main_3 => \SPI0:BSPIM:mosi_from_dp\,
+            main_4 => \SPI0:BSPIM:mosi_hs_reg\,
+            main_5 => \SPI0:BSPIM:mosi_from_dp_reg\);
+
+    \SPI0:BSPIM:mosi_pre_reg\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * !main_1)",
+            clk_inv => '0')
+        PORT MAP(
+            q => \SPI0:BSPIM:mosi_pre_reg\,
+            clock_0 => \SPI0:Net_276\,
+            main_0 => \SPI0:BSPIM:mosi_pre_reg_split\,
+            main_1 => \SPI0:BSPIM:mosi_pre_reg_split_1\);
+
+    \SPI0:BSPIM:mosi_pre_reg_split\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * main_1 * !main_2 * main_3 * main_4) + (!main_0 * main_1 * !main_2 * main_3 * main_5) + (!main_0 * main_1 * !main_2 * main_3 * main_6) + (!main_0 * main_1 * !main_2 * main_3 * main_7) + (!main_0 * main_1 * !main_2 * main_3 * !main_8) + (main_0 * main_1 * !main_2 * main_9) + (main_1 * !main_2 * !main_4 * !main_5 * !main_6 * !main_7 * main_8 * main_9) + (main_1 * main_2 * main_3 * !main_4 * !main_5 * !main_6 * !main_7 * !main_8 * !main_10)")
+        PORT MAP(
+            q => \SPI0:BSPIM:mosi_pre_reg_split\,
+            main_0 => \SPI0:BSPIM:state_2\,
+            main_1 => \SPI0:BSPIM:state_1\,
+            main_2 => \SPI0:BSPIM:state_0\,
+            main_3 => \SPI0:BSPIM:mosi_from_dp\,
+            main_4 => \SPI0:BSPIM:count_4\,
+            main_5 => \SPI0:BSPIM:count_3\,
+            main_6 => \SPI0:BSPIM:count_2\,
+            main_7 => \SPI0:BSPIM:count_1\,
+            main_8 => \SPI0:BSPIM:count_0\,
+            main_9 => \SPI0:BSPIM:mosi_pre_reg\,
+            main_10 => \SPI0:BSPIM:ld_ident\);
+
+    \SPI0:BSPIM:mosi_pre_reg_split_1\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * main_1 * !main_4 * !main_5 * !main_6 * !main_7 * !main_9) + (!main_0 * !main_2) + (!main_0 * !main_8) + (main_0 * !main_1 * main_2) + (main_0 * !main_3) + (main_1 * !main_2)")
+        PORT MAP(
+            q => \SPI0:BSPIM:mosi_pre_reg_split_1\,
+            main_0 => \SPI0:BSPIM:state_2\,
+            main_1 => \SPI0:BSPIM:state_1\,
+            main_2 => \SPI0:BSPIM:state_0\,
+            main_3 => \SPI0:BSPIM:mosi_from_dp\,
+            main_4 => \SPI0:BSPIM:count_4\,
+            main_5 => \SPI0:BSPIM:count_3\,
+            main_6 => \SPI0:BSPIM:count_2\,
+            main_7 => \SPI0:BSPIM:count_0\,
+            main_8 => \SPI0:BSPIM:mosi_pre_reg\,
+            main_9 => \SPI0:BSPIM:ld_ident\);
 
     \SPI0:BSPIM:rx_status_6\:macrocell
         GENERIC MAP(
@@ -1601,7 +1758,7 @@ BEGIN
 
     \SPI0:BSPIM:state_0\:macrocell
         GENERIC MAP(
-            eqn_main => "(!main_0 * main_1) + (main_0 * !main_1) + (!main_1 * !main_2 * !main_3)",
+            eqn_main => "(!main_0 * !main_1 * main_2) + (!main_0 * !main_1 * main_8) + (!main_0 * main_2 * !main_3 * !main_4 * !main_5 * main_6 * !main_7 * !main_9)",
             clk_inv => '0')
         PORT MAP(
             q => \SPI0:BSPIM:state_0\,
@@ -1609,11 +1766,17 @@ BEGIN
             main_0 => \SPI0:BSPIM:state_2\,
             main_1 => \SPI0:BSPIM:state_1\,
             main_2 => \SPI0:BSPIM:state_0\,
-            main_3 => \SPI0:BSPIM:tx_status_1\);
+            main_3 => \SPI0:BSPIM:count_4\,
+            main_4 => \SPI0:BSPIM:count_3\,
+            main_5 => \SPI0:BSPIM:count_2\,
+            main_6 => \SPI0:BSPIM:count_1\,
+            main_7 => \SPI0:BSPIM:count_0\,
+            main_8 => \SPI0:BSPIM:tx_status_1\,
+            main_9 => \SPI0:BSPIM:ld_ident\);
 
     \SPI0:BSPIM:state_1\:macrocell
         GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * main_2) + (!main_0 * main_2 * !main_3 * !main_4 * main_5 * !main_6 * main_7 * !main_8) + (main_0 * !main_2) + (main_1 * !main_2 * !main_3 * !main_4 * !main_5 * main_6 * !main_7 * !main_9)",
+            eqn_main => "(!main_0 * !main_1 * !main_2) + (!main_0 * main_1 * main_2 * !main_3 * !main_4 * !main_5 * main_6 * !main_7 * !main_9) + (!main_0 * main_1 * main_2 * !main_3 * !main_4 * main_5 * main_6 * !main_7 * !main_8) + (main_0 * !main_1 * main_2)",
             clk_inv => '0')
         PORT MAP(
             q => \SPI0:BSPIM:state_1\,
@@ -1631,7 +1794,7 @@ BEGIN
 
     \SPI0:BSPIM:state_2\:macrocell
         GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * main_2) + (!main_0 * main_1 * !main_2 * !main_3 * !main_4 * !main_5 * main_6 * !main_7 * !main_9) + (!main_0 * main_2 * !main_3 * !main_4 * main_5 * !main_6 * main_7 * !main_8)",
+            eqn_main => "(!main_0 * !main_1 * main_2) + (main_0 * main_1 * main_2) + (main_1 * main_2 * !main_3 * !main_4 * !main_5 * main_6 * !main_7 * !main_9) + (main_1 * main_2 * !main_3 * !main_4 * main_5 * main_6 * !main_7 * !main_8)",
             clk_inv => '0')
         PORT MAP(
             q => \SPI0:BSPIM:state_2\,
