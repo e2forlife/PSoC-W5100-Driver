@@ -18,7 +18,8 @@
  * - Modified the SPI access function to remove hard wait for READ_WRITE_DELAY  <CE>
  * - Removed READ_WRITE_DELAY Parameter <CE>
  * - Added validator to SS_NUM parameter to ensure that the value is the range 0-3 <CE>
- * 
+ * - Removed "inline" keywords from interal register access function to promote
+ *   compatibility with Keil PSoC3 compilers that don't support them. <CE>
  */
 /* Cypress library includes */
 #include <cytypes.h>
