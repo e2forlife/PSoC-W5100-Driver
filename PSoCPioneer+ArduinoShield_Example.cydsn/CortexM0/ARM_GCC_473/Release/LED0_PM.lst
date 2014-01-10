@@ -1,0 +1,1219 @@
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccS3ojsf.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 4
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"LED0_PM.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.LED0_SaveConfig,"ax",%progbits
+  18              		.align	1
+  19              		.global	LED0_SaveConfig
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	LED0_SaveConfig, %function
+  23              	LED0_SaveConfig:
+  24              	.LFB0:
+  25              		.file 1 ".\\Generated_Source\\PSoC4\\LED0_PM.c"
+   1:.\Generated_Source\PSoC4/LED0_PM.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC4/LED0_PM.c **** * File Name: LED0_PM.c
+   3:.\Generated_Source\PSoC4/LED0_PM.c **** * Version 2.20
+   4:.\Generated_Source\PSoC4/LED0_PM.c **** *
+   5:.\Generated_Source\PSoC4/LED0_PM.c **** * Description:
+   6:.\Generated_Source\PSoC4/LED0_PM.c **** *  This file provides Sleep/WakeUp APIs functionality of the PrISM component
+   7:.\Generated_Source\PSoC4/LED0_PM.c **** *
+   8:.\Generated_Source\PSoC4/LED0_PM.c **** * Note:
+   9:.\Generated_Source\PSoC4/LED0_PM.c **** *
+  10:.\Generated_Source\PSoC4/LED0_PM.c **** ********************************************************************************
+  11:.\Generated_Source\PSoC4/LED0_PM.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  12:.\Generated_Source\PSoC4/LED0_PM.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  13:.\Generated_Source\PSoC4/LED0_PM.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  14:.\Generated_Source\PSoC4/LED0_PM.c **** * the software package with which this file was provided.
+  15:.\Generated_Source\PSoC4/LED0_PM.c **** *******************************************************************************/
+  16:.\Generated_Source\PSoC4/LED0_PM.c **** 
+  17:.\Generated_Source\PSoC4/LED0_PM.c **** #include "LED0.h"
+  18:.\Generated_Source\PSoC4/LED0_PM.c **** 
+  19:.\Generated_Source\PSoC4/LED0_PM.c **** 
+  20:.\Generated_Source\PSoC4/LED0_PM.c **** /***************************************
+  21:.\Generated_Source\PSoC4/LED0_PM.c **** * Local data allocation
+  22:.\Generated_Source\PSoC4/LED0_PM.c **** ***************************************/
+  23:.\Generated_Source\PSoC4/LED0_PM.c **** static LED0_BACKUP_STRUCT  LED0_backup = 
+  24:.\Generated_Source\PSoC4/LED0_PM.c **** {
+  25:.\Generated_Source\PSoC4/LED0_PM.c ****     /* enableState */
+  26:.\Generated_Source\PSoC4/LED0_PM.c ****     0u,
+  27:.\Generated_Source\PSoC4/LED0_PM.c ****     /* cr */
+  28:.\Generated_Source\PSoC4/LED0_PM.c ****     #if(!LED0_PULSE_TYPE_HARDCODED)
+  29:.\Generated_Source\PSoC4/LED0_PM.c ****        (((LED0_GREATERTHAN_OR_EQUAL == LED0_COMPARE0) ? \
+  30:.\Generated_Source\PSoC4/LED0_PM.c ****                                                 LED0_CTRL_COMPARE_TYPE0_GREATER_THAN_OR_EQUAL : 0u)
+  31:.\Generated_Source\PSoC4/LED0_PM.c ****         ((LED0_GREATERTHAN_OR_EQUAL == LED0_COMPARE1) ? \
+  32:.\Generated_Source\PSoC4/LED0_PM.c ****                                                 LED0_CTRL_COMPARE_TYPE1_GREATER_THAN_OR_EQUAL : 0u)
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccS3ojsf.s 			page 2
+
+
+  33:.\Generated_Source\PSoC4/LED0_PM.c ****     #endif /* End LED0_PULSE_TYPE_HARDCODED */
+  34:.\Generated_Source\PSoC4/LED0_PM.c ****     /* seed */    
+  35:.\Generated_Source\PSoC4/LED0_PM.c ****     LED0_SEED,
+  36:.\Generated_Source\PSoC4/LED0_PM.c ****     /* seed_copy */    
+  37:.\Generated_Source\PSoC4/LED0_PM.c ****     LED0_SEED,
+  38:.\Generated_Source\PSoC4/LED0_PM.c ****     /* polynom */
+  39:.\Generated_Source\PSoC4/LED0_PM.c ****     LED0_POLYNOM,
+  40:.\Generated_Source\PSoC4/LED0_PM.c ****     #if(CY_UDB_V0)
+  41:.\Generated_Source\PSoC4/LED0_PM.c ****         /* density0 */
+  42:.\Generated_Source\PSoC4/LED0_PM.c ****         LED0_DENSITY0,
+  43:.\Generated_Source\PSoC4/LED0_PM.c ****         /* density1 */
+  44:.\Generated_Source\PSoC4/LED0_PM.c ****         LED0_DENSITY1,
+  45:.\Generated_Source\PSoC4/LED0_PM.c ****     #endif /*End CY_UDB_V0*/
+  46:.\Generated_Source\PSoC4/LED0_PM.c **** };
+  47:.\Generated_Source\PSoC4/LED0_PM.c **** 
+  48:.\Generated_Source\PSoC4/LED0_PM.c **** 
+  49:.\Generated_Source\PSoC4/LED0_PM.c **** /*******************************************************************************
+  50:.\Generated_Source\PSoC4/LED0_PM.c **** * Function Name: LED0_SaveConfig
+  51:.\Generated_Source\PSoC4/LED0_PM.c **** ********************************************************************************
+  52:.\Generated_Source\PSoC4/LED0_PM.c **** *
+  53:.\Generated_Source\PSoC4/LED0_PM.c **** * Summary:
+  54:.\Generated_Source\PSoC4/LED0_PM.c **** *  Saves the current user configuration.
+  55:.\Generated_Source\PSoC4/LED0_PM.c **** *  
+  56:.\Generated_Source\PSoC4/LED0_PM.c **** * Parameters:  
+  57:.\Generated_Source\PSoC4/LED0_PM.c **** *  None.
+  58:.\Generated_Source\PSoC4/LED0_PM.c **** *
+  59:.\Generated_Source\PSoC4/LED0_PM.c **** * Return: 
+  60:.\Generated_Source\PSoC4/LED0_PM.c **** *  None.
+  61:.\Generated_Source\PSoC4/LED0_PM.c **** *
+  62:.\Generated_Source\PSoC4/LED0_PM.c **** * Global Variables:
+  63:.\Generated_Source\PSoC4/LED0_PM.c **** *  LED0_backup - modified when non-retention registers are saved.
+  64:.\Generated_Source\PSoC4/LED0_PM.c **** *
+  65:.\Generated_Source\PSoC4/LED0_PM.c **** * Reentrant:
+  66:.\Generated_Source\PSoC4/LED0_PM.c **** *  No.
+  67:.\Generated_Source\PSoC4/LED0_PM.c **** *
+  68:.\Generated_Source\PSoC4/LED0_PM.c **** *******************************************************************************/
+  69:.\Generated_Source\PSoC4/LED0_PM.c **** void LED0_SaveConfig(void) 
+  70:.\Generated_Source\PSoC4/LED0_PM.c **** {
+  26              		.loc 1 70 0
+  27              		.cfi_startproc
+  28 0000 10B5     		push	{r4, lr}
+  29              	.LCFI0:
+  30              		.cfi_def_cfa_offset 8
+  31              		.cfi_offset 4, -8
+  32              		.cfi_offset 14, -4
+  71:.\Generated_Source\PSoC4/LED0_PM.c ****     #if (CY_UDB_V0)
+  72:.\Generated_Source\PSoC4/LED0_PM.c ****         #if(!LED0_PULSE_TYPE_HARDCODED)
+  73:.\Generated_Source\PSoC4/LED0_PM.c ****             LED0_backup.cr = LED0_CONTROL_REG;
+  74:.\Generated_Source\PSoC4/LED0_PM.c ****         #endif /* End LED0_PULSE_TYPE_HARDCODED */
+  75:.\Generated_Source\PSoC4/LED0_PM.c ****         LED0_backup.seed = LED0_ReadSeed();
+  76:.\Generated_Source\PSoC4/LED0_PM.c ****         LED0_backup.seed_copy = CY_GET_REG8(LED0_SEED_COPY_PTR);
+  77:.\Generated_Source\PSoC4/LED0_PM.c ****         LED0_backup.polynom = LED0_ReadPolynomial();
+  78:.\Generated_Source\PSoC4/LED0_PM.c ****         LED0_backup.density0 = LED0_ReadPulse0();
+  79:.\Generated_Source\PSoC4/LED0_PM.c ****         LED0_backup.density1 = LED0_ReadPulse1();
+  80:.\Generated_Source\PSoC4/LED0_PM.c ****     #else /* CY_UDB_V1 */
+  81:.\Generated_Source\PSoC4/LED0_PM.c ****         #if(!LED0_PULSE_TYPE_HARDCODED)
+  82:.\Generated_Source\PSoC4/LED0_PM.c ****             LED0_backup.cr = LED0_CONTROL_REG;
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccS3ojsf.s 			page 3
+
+
+  33              		.loc 1 82 0
+  34 0002 074B     		ldr	r3, .L2
+  35 0004 074C     		ldr	r4, .L2+4
+  36 0006 1878     		ldrb	r0, [r3]
+  83:.\Generated_Source\PSoC4/LED0_PM.c ****         #endif /* End LED0_PULSE_TYPE_HARDCODED */
+  84:.\Generated_Source\PSoC4/LED0_PM.c ****         LED0_backup.seed = LED0_ReadSeed();
+  85:.\Generated_Source\PSoC4/LED0_PM.c ****         LED0_backup.seed_copy = CY_GET_REG8(LED0_SEED_COPY_PTR);
+  86:.\Generated_Source\PSoC4/LED0_PM.c ****         LED0_backup.polynom = LED0_ReadPolynomial();
+  87:.\Generated_Source\PSoC4/LED0_PM.c ****     #endif  /* CY_UDB_V0 */
+  88:.\Generated_Source\PSoC4/LED0_PM.c **** }
+  37              		.loc 1 88 0
+  38              		@ sp needed for prologue
+  82:.\Generated_Source\PSoC4/LED0_PM.c ****             LED0_backup.cr = LED0_CONTROL_REG;
+  39              		.loc 1 82 0
+  40 0008 6070     		strb	r0, [r4, #1]
+  84:.\Generated_Source\PSoC4/LED0_PM.c ****         LED0_backup.seed = LED0_ReadSeed();
+  41              		.loc 1 84 0
+  42 000a FFF7FEFF 		bl	LED0_ReadSeed
+  43              	.LVL0:
+  85:.\Generated_Source\PSoC4/LED0_PM.c ****         LED0_backup.seed_copy = CY_GET_REG8(LED0_SEED_COPY_PTR);
+  44              		.loc 1 85 0
+  45 000e 0649     		ldr	r1, .L2+8
+  84:.\Generated_Source\PSoC4/LED0_PM.c ****         LED0_backup.seed = LED0_ReadSeed();
+  46              		.loc 1 84 0
+  47 0010 A070     		strb	r0, [r4, #2]
+  85:.\Generated_Source\PSoC4/LED0_PM.c ****         LED0_backup.seed_copy = CY_GET_REG8(LED0_SEED_COPY_PTR);
+  48              		.loc 1 85 0
+  49 0012 0A78     		ldrb	r2, [r1]
+  50 0014 E270     		strb	r2, [r4, #3]
+  86:.\Generated_Source\PSoC4/LED0_PM.c ****         LED0_backup.polynom = LED0_ReadPolynomial();
+  51              		.loc 1 86 0
+  52 0016 FFF7FEFF 		bl	LED0_ReadPolynomial
+  53              	.LVL1:
+  54 001a 2071     		strb	r0, [r4, #4]
+  55              		.loc 1 88 0
+  56 001c 10BD     		pop	{r4, pc}
+  57              	.L3:
+  58 001e C046     		.align	2
+  59              	.L2:
+  60 0020 73000F40 		.word	1074724979
+  61 0024 00000000 		.word	.LANCHOR0
+  62 0028 43000F40 		.word	1074724931
+  63              		.cfi_endproc
+  64              	.LFE0:
+  65              		.size	LED0_SaveConfig, .-LED0_SaveConfig
+  66              		.section	.text.LED0_RestoreConfig,"ax",%progbits
+  67              		.align	1
+  68              		.global	LED0_RestoreConfig
+  69              		.code	16
+  70              		.thumb_func
+  71              		.type	LED0_RestoreConfig, %function
+  72              	LED0_RestoreConfig:
+  73              	.LFB1:
+  89:.\Generated_Source\PSoC4/LED0_PM.c **** 
+  90:.\Generated_Source\PSoC4/LED0_PM.c **** 
+  91:.\Generated_Source\PSoC4/LED0_PM.c **** /*******************************************************************************
+  92:.\Generated_Source\PSoC4/LED0_PM.c **** * Function Name: LED0_RestoreConfig
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccS3ojsf.s 			page 4
+
+
+  93:.\Generated_Source\PSoC4/LED0_PM.c **** ********************************************************************************
+  94:.\Generated_Source\PSoC4/LED0_PM.c **** *
+  95:.\Generated_Source\PSoC4/LED0_PM.c **** * Summary:
+  96:.\Generated_Source\PSoC4/LED0_PM.c **** *  Restores the current user configuration.
+  97:.\Generated_Source\PSoC4/LED0_PM.c **** *
+  98:.\Generated_Source\PSoC4/LED0_PM.c **** * Parameters:  
+  99:.\Generated_Source\PSoC4/LED0_PM.c **** *  None.
+ 100:.\Generated_Source\PSoC4/LED0_PM.c **** *
+ 101:.\Generated_Source\PSoC4/LED0_PM.c **** * Return: 
+ 102:.\Generated_Source\PSoC4/LED0_PM.c **** *  None.
+ 103:.\Generated_Source\PSoC4/LED0_PM.c **** *
+ 104:.\Generated_Source\PSoC4/LED0_PM.c **** * Global Variables:
+ 105:.\Generated_Source\PSoC4/LED0_PM.c **** *  LED0_backup - used when non-retention registers are restored.
+ 106:.\Generated_Source\PSoC4/LED0_PM.c **** *
+ 107:.\Generated_Source\PSoC4/LED0_PM.c **** *******************************************************************************/
+ 108:.\Generated_Source\PSoC4/LED0_PM.c **** void LED0_RestoreConfig(void) 
+ 109:.\Generated_Source\PSoC4/LED0_PM.c **** {
+  74              		.loc 1 109 0
+  75              		.cfi_startproc
+  76 0000 08B5     		push	{r3, lr}
+  77              	.LCFI1:
+  78              		.cfi_def_cfa_offset 8
+  79              		.cfi_offset 3, -8
+  80              		.cfi_offset 14, -4
+ 110:.\Generated_Source\PSoC4/LED0_PM.c ****     #if (CY_UDB_V0)
+ 111:.\Generated_Source\PSoC4/LED0_PM.c ****     
+ 112:.\Generated_Source\PSoC4/LED0_PM.c ****         uint8 enableInterrupts;
+ 113:.\Generated_Source\PSoC4/LED0_PM.c ****         
+ 114:.\Generated_Source\PSoC4/LED0_PM.c ****         #if(!LED0_PULSE_TYPE_HARDCODED)
+ 115:.\Generated_Source\PSoC4/LED0_PM.c ****             LED0_CONTROL_REG = LED0_backup.cr;
+ 116:.\Generated_Source\PSoC4/LED0_PM.c ****         #endif /* End LED0_PULSE_TYPE_HARDCODED */
+ 117:.\Generated_Source\PSoC4/LED0_PM.c **** 
+ 118:.\Generated_Source\PSoC4/LED0_PM.c ****         CY_SET_REG8(LED0_SEED_COPY_PTR, LED0_backup.seed_copy);
+ 119:.\Generated_Source\PSoC4/LED0_PM.c ****         CY_SET_REG8(LED0_SEED_PTR, LED0_backup.seed);
+ 120:.\Generated_Source\PSoC4/LED0_PM.c ****         LED0_WritePolynomial(LED0_backup.polynom);
+ 121:.\Generated_Source\PSoC4/LED0_PM.c ****         LED0_WritePulse0(LED0_backup.density0);
+ 122:.\Generated_Source\PSoC4/LED0_PM.c ****         LED0_WritePulse1(LED0_backup.density1);
+ 123:.\Generated_Source\PSoC4/LED0_PM.c ****         
+ 124:.\Generated_Source\PSoC4/LED0_PM.c ****         enableInterrupts = CyEnterCriticalSection();
+ 125:.\Generated_Source\PSoC4/LED0_PM.c ****         /* Set FIFO0_CLR bit to use FIFO0 as a simple one-byte buffer*/
+ 126:.\Generated_Source\PSoC4/LED0_PM.c ****         CY_SET_REG8(LED0_AUX_CONTROL_PTR, 
+ 127:.\Generated_Source\PSoC4/LED0_PM.c ****                         CY_GET_REG8(LED0_AUX_CONTROL_PTR) | LED0_FIFO0_CLR);
+ 128:.\Generated_Source\PSoC4/LED0_PM.c ****         CyExitCriticalSection(enableInterrupts);
+ 129:.\Generated_Source\PSoC4/LED0_PM.c **** 
+ 130:.\Generated_Source\PSoC4/LED0_PM.c ****     #else   /* CY_UDB_V1 */
+ 131:.\Generated_Source\PSoC4/LED0_PM.c **** 
+ 132:.\Generated_Source\PSoC4/LED0_PM.c ****         #if(!LED0_PULSE_TYPE_HARDCODED)
+ 133:.\Generated_Source\PSoC4/LED0_PM.c ****             LED0_CONTROL_REG = LED0_backup.cr;
+  81              		.loc 1 133 0
+  82 0002 074B     		ldr	r3, .L5
+  83 0004 074A     		ldr	r2, .L5+4
+  84 0006 5978     		ldrb	r1, [r3, #1]
+ 134:.\Generated_Source\PSoC4/LED0_PM.c ****         #endif /* End LED0_PULSE_TYPE_HARDCODED */
+ 135:.\Generated_Source\PSoC4/LED0_PM.c **** 
+ 136:.\Generated_Source\PSoC4/LED0_PM.c ****         CY_SET_REG8(LED0_SEED_COPY_PTR, LED0_backup.seed_copy);
+ 137:.\Generated_Source\PSoC4/LED0_PM.c ****         CY_SET_REG8(LED0_SEED_PTR, LED0_backup.seed);
+ 138:.\Generated_Source\PSoC4/LED0_PM.c ****         LED0_WritePolynomial(LED0_backup.polynom);
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccS3ojsf.s 			page 5
+
+
+ 139:.\Generated_Source\PSoC4/LED0_PM.c ****     
+ 140:.\Generated_Source\PSoC4/LED0_PM.c ****     #endif  /* End CY_UDB_V0 */
+ 141:.\Generated_Source\PSoC4/LED0_PM.c **** }
+  85              		.loc 1 141 0
+  86              		@ sp needed for prologue
+ 133:.\Generated_Source\PSoC4/LED0_PM.c ****             LED0_CONTROL_REG = LED0_backup.cr;
+  87              		.loc 1 133 0
+  88 0008 1170     		strb	r1, [r2]
+ 136:.\Generated_Source\PSoC4/LED0_PM.c ****         CY_SET_REG8(LED0_SEED_COPY_PTR, LED0_backup.seed_copy);
+  89              		.loc 1 136 0
+  90 000a D878     		ldrb	r0, [r3, #3]
+  91 000c 0649     		ldr	r1, .L5+8
+ 137:.\Generated_Source\PSoC4/LED0_PM.c ****         CY_SET_REG8(LED0_SEED_PTR, LED0_backup.seed);
+  92              		.loc 1 137 0
+  93 000e 074A     		ldr	r2, .L5+12
+ 136:.\Generated_Source\PSoC4/LED0_PM.c ****         CY_SET_REG8(LED0_SEED_COPY_PTR, LED0_backup.seed_copy);
+  94              		.loc 1 136 0
+  95 0010 0870     		strb	r0, [r1]
+ 137:.\Generated_Source\PSoC4/LED0_PM.c ****         CY_SET_REG8(LED0_SEED_PTR, LED0_backup.seed);
+  96              		.loc 1 137 0
+  97 0012 9878     		ldrb	r0, [r3, #2]
+  98 0014 1070     		strb	r0, [r2]
+ 138:.\Generated_Source\PSoC4/LED0_PM.c ****         LED0_WritePolynomial(LED0_backup.polynom);
+  99              		.loc 1 138 0
+ 100 0016 1879     		ldrb	r0, [r3, #4]
+ 101 0018 FFF7FEFF 		bl	LED0_WritePolynomial
+ 102              	.LVL2:
+ 103              		.loc 1 141 0
+ 104 001c 08BD     		pop	{r3, pc}
+ 105              	.L6:
+ 106 001e C046     		.align	2
+ 107              	.L5:
+ 108 0020 00000000 		.word	.LANCHOR0
+ 109 0024 73000F40 		.word	1074724979
+ 110 0028 43000F40 		.word	1074724931
+ 111 002c 03000F40 		.word	1074724867
+ 112              		.cfi_endproc
+ 113              	.LFE1:
+ 114              		.size	LED0_RestoreConfig, .-LED0_RestoreConfig
+ 115              		.section	.text.LED0_Sleep,"ax",%progbits
+ 116              		.align	1
+ 117              		.global	LED0_Sleep
+ 118              		.code	16
+ 119              		.thumb_func
+ 120              		.type	LED0_Sleep, %function
+ 121              	LED0_Sleep:
+ 122              	.LFB2:
+ 142:.\Generated_Source\PSoC4/LED0_PM.c **** 
+ 143:.\Generated_Source\PSoC4/LED0_PM.c **** 
+ 144:.\Generated_Source\PSoC4/LED0_PM.c **** /*******************************************************************************
+ 145:.\Generated_Source\PSoC4/LED0_PM.c **** * Function Name: LED0_Sleep
+ 146:.\Generated_Source\PSoC4/LED0_PM.c **** ********************************************************************************
+ 147:.\Generated_Source\PSoC4/LED0_PM.c **** *
+ 148:.\Generated_Source\PSoC4/LED0_PM.c **** * Summary:
+ 149:.\Generated_Source\PSoC4/LED0_PM.c **** *  Stops and saves the user configuration
+ 150:.\Generated_Source\PSoC4/LED0_PM.c **** *  
+ 151:.\Generated_Source\PSoC4/LED0_PM.c **** * Parameters:  
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccS3ojsf.s 			page 6
+
+
+ 152:.\Generated_Source\PSoC4/LED0_PM.c **** *  None.
+ 153:.\Generated_Source\PSoC4/LED0_PM.c **** *
+ 154:.\Generated_Source\PSoC4/LED0_PM.c **** * Return: 
+ 155:.\Generated_Source\PSoC4/LED0_PM.c **** *  None.
+ 156:.\Generated_Source\PSoC4/LED0_PM.c **** *
+ 157:.\Generated_Source\PSoC4/LED0_PM.c **** * Global Variables:
+ 158:.\Generated_Source\PSoC4/LED0_PM.c **** *  LED0_backup - modified when non-retention registers are saved.
+ 159:.\Generated_Source\PSoC4/LED0_PM.c **** *
+ 160:.\Generated_Source\PSoC4/LED0_PM.c **** * Reentrant:
+ 161:.\Generated_Source\PSoC4/LED0_PM.c **** *  No.
+ 162:.\Generated_Source\PSoC4/LED0_PM.c **** *
+ 163:.\Generated_Source\PSoC4/LED0_PM.c **** *******************************************************************************/
+ 164:.\Generated_Source\PSoC4/LED0_PM.c **** void LED0_Sleep(void) 
+ 165:.\Generated_Source\PSoC4/LED0_PM.c **** {
+ 123              		.loc 1 165 0
+ 124              		.cfi_startproc
+ 125 0000 08B5     		push	{r3, lr}
+ 126              	.LCFI2:
+ 127              		.cfi_def_cfa_offset 8
+ 128              		.cfi_offset 3, -8
+ 129              		.cfi_offset 14, -4
+ 166:.\Generated_Source\PSoC4/LED0_PM.c ****     #if(!LED0_PULSE_TYPE_HARDCODED)
+ 167:.\Generated_Source\PSoC4/LED0_PM.c ****         if((LED0_CONTROL_REG & LED0_CTRL_ENABLE) != 0u) 
+ 130              		.loc 1 167 0
+ 131 0002 074B     		ldr	r3, .L11
+ 132 0004 0121     		mov	r1, #1
+ 133 0006 1A78     		ldrb	r2, [r3]
+ 134 0008 0648     		ldr	r0, .L11+4
+ 135 000a 0A40     		and	r2, r1
+ 136 000c 01D0     		beq	.L8
+ 168:.\Generated_Source\PSoC4/LED0_PM.c ****         {
+ 169:.\Generated_Source\PSoC4/LED0_PM.c ****             LED0_backup.enableState = 1u;
+ 137              		.loc 1 169 0
+ 138 000e 0170     		strb	r1, [r0]
+ 139 0010 00E0     		b	.L9
+ 140              	.L8:
+ 170:.\Generated_Source\PSoC4/LED0_PM.c ****         }
+ 171:.\Generated_Source\PSoC4/LED0_PM.c ****         else
+ 172:.\Generated_Source\PSoC4/LED0_PM.c ****         {
+ 173:.\Generated_Source\PSoC4/LED0_PM.c ****             LED0_backup.enableState = 0u;
+ 141              		.loc 1 173 0
+ 142 0012 0270     		strb	r2, [r0]
+ 143              	.L9:
+ 174:.\Generated_Source\PSoC4/LED0_PM.c ****         }
+ 175:.\Generated_Source\PSoC4/LED0_PM.c ****     #endif /* End LED0_PULSE_TYPE_HARDCODED */
+ 176:.\Generated_Source\PSoC4/LED0_PM.c ****     LED0_Stop();
+ 144              		.loc 1 176 0
+ 145 0014 FFF7FEFF 		bl	LED0_Stop
+ 146              	.LVL3:
+ 177:.\Generated_Source\PSoC4/LED0_PM.c ****     LED0_SaveConfig();
+ 178:.\Generated_Source\PSoC4/LED0_PM.c **** }
+ 147              		.loc 1 178 0
+ 148              		@ sp needed for prologue
+ 177:.\Generated_Source\PSoC4/LED0_PM.c ****     LED0_SaveConfig();
+ 149              		.loc 1 177 0
+ 150 0018 FFF7FEFF 		bl	LED0_SaveConfig
+ 151              	.LVL4:
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccS3ojsf.s 			page 7
+
+
+ 152              		.loc 1 178 0
+ 153 001c 08BD     		pop	{r3, pc}
+ 154              	.L12:
+ 155 001e C046     		.align	2
+ 156              	.L11:
+ 157 0020 73000F40 		.word	1074724979
+ 158 0024 00000000 		.word	.LANCHOR0
+ 159              		.cfi_endproc
+ 160              	.LFE2:
+ 161              		.size	LED0_Sleep, .-LED0_Sleep
+ 162              		.section	.text.LED0_Wakeup,"ax",%progbits
+ 163              		.align	1
+ 164              		.global	LED0_Wakeup
+ 165              		.code	16
+ 166              		.thumb_func
+ 167              		.type	LED0_Wakeup, %function
+ 168              	LED0_Wakeup:
+ 169              	.LFB3:
+ 179:.\Generated_Source\PSoC4/LED0_PM.c **** 
+ 180:.\Generated_Source\PSoC4/LED0_PM.c **** 
+ 181:.\Generated_Source\PSoC4/LED0_PM.c **** /*******************************************************************************
+ 182:.\Generated_Source\PSoC4/LED0_PM.c **** * Function Name: LED0_Wakeup
+ 183:.\Generated_Source\PSoC4/LED0_PM.c **** ********************************************************************************
+ 184:.\Generated_Source\PSoC4/LED0_PM.c **** *
+ 185:.\Generated_Source\PSoC4/LED0_PM.c **** * Summary:
+ 186:.\Generated_Source\PSoC4/LED0_PM.c **** *  Restores and enables the user configuration
+ 187:.\Generated_Source\PSoC4/LED0_PM.c **** *  
+ 188:.\Generated_Source\PSoC4/LED0_PM.c **** * Parameters:  
+ 189:.\Generated_Source\PSoC4/LED0_PM.c **** *  None.
+ 190:.\Generated_Source\PSoC4/LED0_PM.c **** *
+ 191:.\Generated_Source\PSoC4/LED0_PM.c **** * Return: 
+ 192:.\Generated_Source\PSoC4/LED0_PM.c **** *  None.
+ 193:.\Generated_Source\PSoC4/LED0_PM.c **** *
+ 194:.\Generated_Source\PSoC4/LED0_PM.c **** * Global Variables:
+ 195:.\Generated_Source\PSoC4/LED0_PM.c **** *  LED0_backup - used when non-retention registers are restored.
+ 196:.\Generated_Source\PSoC4/LED0_PM.c **** *
+ 197:.\Generated_Source\PSoC4/LED0_PM.c **** *******************************************************************************/
+ 198:.\Generated_Source\PSoC4/LED0_PM.c **** void LED0_Wakeup(void) 
+ 199:.\Generated_Source\PSoC4/LED0_PM.c **** {
+ 170              		.loc 1 199 0
+ 171              		.cfi_startproc
+ 172 0000 08B5     		push	{r3, lr}
+ 173              	.LCFI3:
+ 174              		.cfi_def_cfa_offset 8
+ 175              		.cfi_offset 3, -8
+ 176              		.cfi_offset 14, -4
+ 200:.\Generated_Source\PSoC4/LED0_PM.c ****     LED0_RestoreConfig();
+ 177              		.loc 1 200 0
+ 178 0002 FFF7FEFF 		bl	LED0_RestoreConfig
+ 179              	.LVL5:
+ 201:.\Generated_Source\PSoC4/LED0_PM.c ****     if(LED0_backup.enableState != 0u)
+ 180              		.loc 1 201 0
+ 181 0006 034B     		ldr	r3, .L18
+ 182 0008 1878     		ldrb	r0, [r3]
+ 183 000a 0028     		cmp	r0, #0
+ 184 000c 01D0     		beq	.L13
+ 202:.\Generated_Source\PSoC4/LED0_PM.c ****     {
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccS3ojsf.s 			page 8
+
+
+ 203:.\Generated_Source\PSoC4/LED0_PM.c ****         LED0_Enable();
+ 185              		.loc 1 203 0
+ 186 000e FFF7FEFF 		bl	LED0_Enable
+ 187              	.LVL6:
+ 188              	.L13:
+ 204:.\Generated_Source\PSoC4/LED0_PM.c ****     } 
+ 205:.\Generated_Source\PSoC4/LED0_PM.c **** }
+ 189              		.loc 1 205 0
+ 190              		@ sp needed for prologue
+ 191 0012 08BD     		pop	{r3, pc}
+ 192              	.L19:
+ 193              		.align	2
+ 194              	.L18:
+ 195 0014 00000000 		.word	.LANCHOR0
+ 196              		.cfi_endproc
+ 197              	.LFE3:
+ 198              		.size	LED0_Wakeup, .-LED0_Wakeup
+ 199              		.data
+ 200              		.set	.LANCHOR0,. + 0
+ 201              		.type	LED0_backup, %object
+ 202              		.size	LED0_backup, 5
+ 203              	LED0_backup:
+ 204 0000 00       		.byte	0
+ 205 0001 00       		.byte	0
+ 206 0002 FF       		.byte	-1
+ 207 0003 FF       		.byte	-1
+ 208 0004 B8       		.byte	-72
+ 209              		.text
+ 210              	.Letext0:
+ 211              		.file 2 ".\\Generated_Source\\PSoC4\\cytypes.h"
+ 212              		.file 3 ".\\Generated_Source\\PSoC4\\LED0.h"
+ 213              		.section	.debug_info,"",%progbits
+ 214              	.Ldebug_info0:
+ 215 0000 FC010000 		.4byte	0x1fc
+ 216 0004 0200     		.2byte	0x2
+ 217 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 218 000a 04       		.byte	0x4
+ 219 000b 01       		.uleb128 0x1
+ 220 000c D6010000 		.4byte	.LASF28
+ 221 0010 01       		.byte	0x1
+ 222 0011 00000000 		.4byte	.LASF29
+ 223 0015 9B000000 		.4byte	.LASF30
+ 224 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 225 001d 00000000 		.4byte	0
+ 226 0021 00000000 		.4byte	0
+ 227 0025 00000000 		.4byte	.Ldebug_line0
+ 228 0029 02       		.uleb128 0x2
+ 229 002a 01       		.byte	0x1
+ 230 002b 06       		.byte	0x6
+ 231 002c A1010000 		.4byte	.LASF0
+ 232 0030 02       		.uleb128 0x2
+ 233 0031 01       		.byte	0x1
+ 234 0032 08       		.byte	0x8
+ 235 0033 5B000000 		.4byte	.LASF1
+ 236 0037 02       		.uleb128 0x2
+ 237 0038 02       		.byte	0x2
+ 238 0039 05       		.byte	0x5
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccS3ojsf.s 			page 9
+
+
+ 239 003a 7D010000 		.4byte	.LASF2
+ 240 003e 02       		.uleb128 0x2
+ 241 003f 02       		.byte	0x2
+ 242 0040 07       		.byte	0x7
+ 243 0041 36000000 		.4byte	.LASF3
+ 244 0045 02       		.uleb128 0x2
+ 245 0046 04       		.byte	0x4
+ 246 0047 05       		.byte	0x5
+ 247 0048 8C010000 		.4byte	.LASF4
+ 248 004c 02       		.uleb128 0x2
+ 249 004d 04       		.byte	0x4
+ 250 004e 07       		.byte	0x7
+ 251 004f 6E000000 		.4byte	.LASF5
+ 252 0053 02       		.uleb128 0x2
+ 253 0054 08       		.byte	0x8
+ 254 0055 05       		.byte	0x5
+ 255 0056 53010000 		.4byte	.LASF6
+ 256 005a 02       		.uleb128 0x2
+ 257 005b 08       		.byte	0x8
+ 258 005c 07       		.byte	0x7
+ 259 005d 1B010000 		.4byte	.LASF7
+ 260 0061 03       		.uleb128 0x3
+ 261 0062 04       		.byte	0x4
+ 262 0063 05       		.byte	0x5
+ 263 0064 696E7400 		.ascii	"int\000"
+ 264 0068 02       		.uleb128 0x2
+ 265 0069 04       		.byte	0x4
+ 266 006a 07       		.byte	0x7
+ 267 006b 0E010000 		.4byte	.LASF8
+ 268 006f 04       		.uleb128 0x4
+ 269 0070 80000000 		.4byte	.LASF12
+ 270 0074 02       		.byte	0x2
+ 271 0075 5B       		.byte	0x5b
+ 272 0076 30000000 		.4byte	0x30
+ 273 007a 02       		.uleb128 0x2
+ 274 007b 04       		.byte	0x4
+ 275 007c 04       		.byte	0x4
+ 276 007d 49000000 		.4byte	.LASF9
+ 277 0081 02       		.uleb128 0x2
+ 278 0082 08       		.byte	0x8
+ 279 0083 04       		.byte	0x4
+ 280 0084 FD000000 		.4byte	.LASF10
+ 281 0088 02       		.uleb128 0x2
+ 282 0089 01       		.byte	0x1
+ 283 008a 08       		.byte	0x8
+ 284 008b 61010000 		.4byte	.LASF11
+ 285 008f 04       		.uleb128 0x4
+ 286 0090 69000000 		.4byte	.LASF13
+ 287 0094 02       		.byte	0x2
+ 288 0095 F0       		.byte	0xf0
+ 289 0096 9A000000 		.4byte	0x9a
+ 290 009a 05       		.uleb128 0x5
+ 291 009b 6F000000 		.4byte	0x6f
+ 292 009f 02       		.uleb128 0x2
+ 293 00a0 04       		.byte	0x4
+ 294 00a1 07       		.byte	0x7
+ 295 00a2 4A010000 		.4byte	.LASF14
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccS3ojsf.s 			page 10
+
+
+ 296 00a6 06       		.uleb128 0x6
+ 297 00a7 05       		.byte	0x5
+ 298 00a8 03       		.byte	0x3
+ 299 00a9 33       		.byte	0x33
+ 300 00aa F4000000 		.4byte	0xf4
+ 301 00ae 07       		.uleb128 0x7
+ 302 00af 95010000 		.4byte	.LASF15
+ 303 00b3 03       		.byte	0x3
+ 304 00b4 35       		.byte	0x35
+ 305 00b5 6F000000 		.4byte	0x6f
+ 306 00b9 02       		.byte	0x2
+ 307 00ba 23       		.byte	0x23
+ 308 00bb 00       		.uleb128 0
+ 309 00bc 08       		.uleb128 0x8
+ 310 00bd 637200   		.ascii	"cr\000"
+ 311 00c0 03       		.byte	0x3
+ 312 00c1 37       		.byte	0x37
+ 313 00c2 6F000000 		.4byte	0x6f
+ 314 00c6 02       		.byte	0x2
+ 315 00c7 23       		.byte	0x23
+ 316 00c8 01       		.uleb128 0x1
+ 317 00c9 07       		.uleb128 0x7
+ 318 00ca 87010000 		.4byte	.LASF16
+ 319 00ce 03       		.byte	0x3
+ 320 00cf 39       		.byte	0x39
+ 321 00d0 6F000000 		.4byte	0x6f
+ 322 00d4 02       		.byte	0x2
+ 323 00d5 23       		.byte	0x23
+ 324 00d6 02       		.uleb128 0x2
+ 325 00d7 07       		.uleb128 0x7
+ 326 00d8 04010000 		.4byte	.LASF17
+ 327 00dc 03       		.byte	0x3
+ 328 00dd 3A       		.byte	0x3a
+ 329 00de 6F000000 		.4byte	0x6f
+ 330 00e2 02       		.byte	0x2
+ 331 00e3 23       		.byte	0x23
+ 332 00e4 03       		.uleb128 0x3
+ 333 00e5 07       		.uleb128 0x7
+ 334 00e6 42010000 		.4byte	.LASF18
+ 335 00ea 03       		.byte	0x3
+ 336 00eb 3B       		.byte	0x3b
+ 337 00ec 6F000000 		.4byte	0x6f
+ 338 00f0 02       		.byte	0x2
+ 339 00f1 23       		.byte	0x23
+ 340 00f2 04       		.uleb128 0x4
+ 341 00f3 00       		.byte	0
+ 342 00f4 04       		.uleb128 0x4
+ 343 00f5 B7010000 		.4byte	.LASF19
+ 344 00f9 03       		.byte	0x3
+ 345 00fa 40       		.byte	0x40
+ 346 00fb A6000000 		.4byte	0xa6
+ 347 00ff 09       		.uleb128 0x9
+ 348 0100 01       		.byte	0x1
+ 349 0101 32010000 		.4byte	.LASF20
+ 350 0105 01       		.byte	0x1
+ 351 0106 45       		.byte	0x45
+ 352 0107 01       		.byte	0x1
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccS3ojsf.s 			page 11
+
+
+ 353 0108 00000000 		.4byte	.LFB0
+ 354 010c 2C000000 		.4byte	.LFE0
+ 355 0110 00000000 		.4byte	.LLST0
+ 356 0114 01       		.byte	0x1
+ 357 0115 2C010000 		.4byte	0x12c
+ 358 0119 0A       		.uleb128 0xa
+ 359 011a 0E000000 		.4byte	.LVL0
+ 360 011e BB010000 		.4byte	0x1bb
+ 361 0122 0A       		.uleb128 0xa
+ 362 0123 1A000000 		.4byte	.LVL1
+ 363 0127 C9010000 		.4byte	0x1c9
+ 364 012b 00       		.byte	0
+ 365 012c 09       		.uleb128 0x9
+ 366 012d 01       		.byte	0x1
+ 367 012e 23000000 		.4byte	.LASF21
+ 368 0132 01       		.byte	0x1
+ 369 0133 6C       		.byte	0x6c
+ 370 0134 01       		.byte	0x1
+ 371 0135 00000000 		.4byte	.LFB1
+ 372 0139 30000000 		.4byte	.LFE1
+ 373 013d 20000000 		.4byte	.LLST1
+ 374 0141 01       		.byte	0x1
+ 375 0142 50010000 		.4byte	0x150
+ 376 0146 0A       		.uleb128 0xa
+ 377 0147 1C000000 		.4byte	.LVL2
+ 378 014b D7010000 		.4byte	0x1d7
+ 379 014f 00       		.byte	0
+ 380 0150 09       		.uleb128 0x9
+ 381 0151 01       		.byte	0x1
+ 382 0152 66010000 		.4byte	.LASF22
+ 383 0156 01       		.byte	0x1
+ 384 0157 A4       		.byte	0xa4
+ 385 0158 01       		.byte	0x1
+ 386 0159 00000000 		.4byte	.LFB2
+ 387 015d 28000000 		.4byte	.LFE2
+ 388 0161 40000000 		.4byte	.LLST2
+ 389 0165 01       		.byte	0x1
+ 390 0166 7D010000 		.4byte	0x17d
+ 391 016a 0A       		.uleb128 0xa
+ 392 016b 18000000 		.4byte	.LVL3
+ 393 016f EB010000 		.4byte	0x1eb
+ 394 0173 0A       		.uleb128 0xa
+ 395 0174 1C000000 		.4byte	.LVL4
+ 396 0178 FF000000 		.4byte	0xff
+ 397 017c 00       		.byte	0
+ 398 017d 09       		.uleb128 0x9
+ 399 017e 01       		.byte	0x1
+ 400 017f 71010000 		.4byte	.LASF23
+ 401 0183 01       		.byte	0x1
+ 402 0184 C6       		.byte	0xc6
+ 403 0185 01       		.byte	0x1
+ 404 0186 00000000 		.4byte	.LFB3
+ 405 018a 18000000 		.4byte	.LFE3
+ 406 018e 60000000 		.4byte	.LLST3
+ 407 0192 01       		.byte	0x1
+ 408 0193 AA010000 		.4byte	0x1aa
+ 409 0197 0A       		.uleb128 0xa
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccS3ojsf.s 			page 12
+
+
+ 410 0198 06000000 		.4byte	.LVL5
+ 411 019c 2C010000 		.4byte	0x12c
+ 412 01a0 0A       		.uleb128 0xa
+ 413 01a1 12000000 		.4byte	.LVL6
+ 414 01a5 F5010000 		.4byte	0x1f5
+ 415 01a9 00       		.byte	0
+ 416 01aa 0B       		.uleb128 0xb
+ 417 01ab 4F000000 		.4byte	.LASF31
+ 418 01af 01       		.byte	0x1
+ 419 01b0 17       		.byte	0x17
+ 420 01b1 F4000000 		.4byte	0xf4
+ 421 01b5 05       		.byte	0x5
+ 422 01b6 03       		.byte	0x3
+ 423 01b7 00000000 		.4byte	LED0_backup
+ 424 01bb 0C       		.uleb128 0xc
+ 425 01bc 01       		.byte	0x1
+ 426 01bd 33020000 		.4byte	.LASF24
+ 427 01c1 03       		.byte	0x3
+ 428 01c2 4B       		.byte	0x4b
+ 429 01c3 01       		.byte	0x1
+ 430 01c4 6F000000 		.4byte	0x6f
+ 431 01c8 01       		.byte	0x1
+ 432 01c9 0C       		.uleb128 0xc
+ 433 01ca 01       		.byte	0x1
+ 434 01cb 1F020000 		.4byte	.LASF25
+ 435 01cf 03       		.byte	0x3
+ 436 01d0 4D       		.byte	0x4d
+ 437 01d1 01       		.byte	0x1
+ 438 01d2 6F000000 		.4byte	0x6f
+ 439 01d6 01       		.byte	0x1
+ 440 01d7 0D       		.uleb128 0xd
+ 441 01d8 01       		.byte	0x1
+ 442 01d9 86000000 		.4byte	.LASF32
+ 443 01dd 03       		.byte	0x3
+ 444 01de 4E       		.byte	0x4e
+ 445 01df 01       		.byte	0x1
+ 446 01e0 01       		.byte	0x1
+ 447 01e1 EB010000 		.4byte	0x1eb
+ 448 01e5 0E       		.uleb128 0xe
+ 449 01e6 6F000000 		.4byte	0x6f
+ 450 01ea 00       		.byte	0
+ 451 01eb 0F       		.uleb128 0xf
+ 452 01ec 01       		.byte	0x1
+ 453 01ed AD010000 		.4byte	.LASF26
+ 454 01f1 03       		.byte	0x3
+ 455 01f2 48       		.byte	0x48
+ 456 01f3 01       		.byte	0x1
+ 457 01f4 01       		.byte	0x1
+ 458 01f5 0F       		.uleb128 0xf
+ 459 01f6 01       		.byte	0x1
+ 460 01f7 CA010000 		.4byte	.LASF27
+ 461 01fb 03       		.byte	0x3
+ 462 01fc 5A       		.byte	0x5a
+ 463 01fd 01       		.byte	0x1
+ 464 01fe 01       		.byte	0x1
+ 465 01ff 00       		.byte	0
+ 466              		.section	.debug_abbrev,"",%progbits
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccS3ojsf.s 			page 13
+
+
+ 467              	.Ldebug_abbrev0:
+ 468 0000 01       		.uleb128 0x1
+ 469 0001 11       		.uleb128 0x11
+ 470 0002 01       		.byte	0x1
+ 471 0003 25       		.uleb128 0x25
+ 472 0004 0E       		.uleb128 0xe
+ 473 0005 13       		.uleb128 0x13
+ 474 0006 0B       		.uleb128 0xb
+ 475 0007 03       		.uleb128 0x3
+ 476 0008 0E       		.uleb128 0xe
+ 477 0009 1B       		.uleb128 0x1b
+ 478 000a 0E       		.uleb128 0xe
+ 479 000b 55       		.uleb128 0x55
+ 480 000c 06       		.uleb128 0x6
+ 481 000d 11       		.uleb128 0x11
+ 482 000e 01       		.uleb128 0x1
+ 483 000f 52       		.uleb128 0x52
+ 484 0010 01       		.uleb128 0x1
+ 485 0011 10       		.uleb128 0x10
+ 486 0012 06       		.uleb128 0x6
+ 487 0013 00       		.byte	0
+ 488 0014 00       		.byte	0
+ 489 0015 02       		.uleb128 0x2
+ 490 0016 24       		.uleb128 0x24
+ 491 0017 00       		.byte	0
+ 492 0018 0B       		.uleb128 0xb
+ 493 0019 0B       		.uleb128 0xb
+ 494 001a 3E       		.uleb128 0x3e
+ 495 001b 0B       		.uleb128 0xb
+ 496 001c 03       		.uleb128 0x3
+ 497 001d 0E       		.uleb128 0xe
+ 498 001e 00       		.byte	0
+ 499 001f 00       		.byte	0
+ 500 0020 03       		.uleb128 0x3
+ 501 0021 24       		.uleb128 0x24
+ 502 0022 00       		.byte	0
+ 503 0023 0B       		.uleb128 0xb
+ 504 0024 0B       		.uleb128 0xb
+ 505 0025 3E       		.uleb128 0x3e
+ 506 0026 0B       		.uleb128 0xb
+ 507 0027 03       		.uleb128 0x3
+ 508 0028 08       		.uleb128 0x8
+ 509 0029 00       		.byte	0
+ 510 002a 00       		.byte	0
+ 511 002b 04       		.uleb128 0x4
+ 512 002c 16       		.uleb128 0x16
+ 513 002d 00       		.byte	0
+ 514 002e 03       		.uleb128 0x3
+ 515 002f 0E       		.uleb128 0xe
+ 516 0030 3A       		.uleb128 0x3a
+ 517 0031 0B       		.uleb128 0xb
+ 518 0032 3B       		.uleb128 0x3b
+ 519 0033 0B       		.uleb128 0xb
+ 520 0034 49       		.uleb128 0x49
+ 521 0035 13       		.uleb128 0x13
+ 522 0036 00       		.byte	0
+ 523 0037 00       		.byte	0
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccS3ojsf.s 			page 14
+
+
+ 524 0038 05       		.uleb128 0x5
+ 525 0039 35       		.uleb128 0x35
+ 526 003a 00       		.byte	0
+ 527 003b 49       		.uleb128 0x49
+ 528 003c 13       		.uleb128 0x13
+ 529 003d 00       		.byte	0
+ 530 003e 00       		.byte	0
+ 531 003f 06       		.uleb128 0x6
+ 532 0040 13       		.uleb128 0x13
+ 533 0041 01       		.byte	0x1
+ 534 0042 0B       		.uleb128 0xb
+ 535 0043 0B       		.uleb128 0xb
+ 536 0044 3A       		.uleb128 0x3a
+ 537 0045 0B       		.uleb128 0xb
+ 538 0046 3B       		.uleb128 0x3b
+ 539 0047 0B       		.uleb128 0xb
+ 540 0048 01       		.uleb128 0x1
+ 541 0049 13       		.uleb128 0x13
+ 542 004a 00       		.byte	0
+ 543 004b 00       		.byte	0
+ 544 004c 07       		.uleb128 0x7
+ 545 004d 0D       		.uleb128 0xd
+ 546 004e 00       		.byte	0
+ 547 004f 03       		.uleb128 0x3
+ 548 0050 0E       		.uleb128 0xe
+ 549 0051 3A       		.uleb128 0x3a
+ 550 0052 0B       		.uleb128 0xb
+ 551 0053 3B       		.uleb128 0x3b
+ 552 0054 0B       		.uleb128 0xb
+ 553 0055 49       		.uleb128 0x49
+ 554 0056 13       		.uleb128 0x13
+ 555 0057 38       		.uleb128 0x38
+ 556 0058 0A       		.uleb128 0xa
+ 557 0059 00       		.byte	0
+ 558 005a 00       		.byte	0
+ 559 005b 08       		.uleb128 0x8
+ 560 005c 0D       		.uleb128 0xd
+ 561 005d 00       		.byte	0
+ 562 005e 03       		.uleb128 0x3
+ 563 005f 08       		.uleb128 0x8
+ 564 0060 3A       		.uleb128 0x3a
+ 565 0061 0B       		.uleb128 0xb
+ 566 0062 3B       		.uleb128 0x3b
+ 567 0063 0B       		.uleb128 0xb
+ 568 0064 49       		.uleb128 0x49
+ 569 0065 13       		.uleb128 0x13
+ 570 0066 38       		.uleb128 0x38
+ 571 0067 0A       		.uleb128 0xa
+ 572 0068 00       		.byte	0
+ 573 0069 00       		.byte	0
+ 574 006a 09       		.uleb128 0x9
+ 575 006b 2E       		.uleb128 0x2e
+ 576 006c 01       		.byte	0x1
+ 577 006d 3F       		.uleb128 0x3f
+ 578 006e 0C       		.uleb128 0xc
+ 579 006f 03       		.uleb128 0x3
+ 580 0070 0E       		.uleb128 0xe
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccS3ojsf.s 			page 15
+
+
+ 581 0071 3A       		.uleb128 0x3a
+ 582 0072 0B       		.uleb128 0xb
+ 583 0073 3B       		.uleb128 0x3b
+ 584 0074 0B       		.uleb128 0xb
+ 585 0075 27       		.uleb128 0x27
+ 586 0076 0C       		.uleb128 0xc
+ 587 0077 11       		.uleb128 0x11
+ 588 0078 01       		.uleb128 0x1
+ 589 0079 12       		.uleb128 0x12
+ 590 007a 01       		.uleb128 0x1
+ 591 007b 40       		.uleb128 0x40
+ 592 007c 06       		.uleb128 0x6
+ 593 007d 9742     		.uleb128 0x2117
+ 594 007f 0C       		.uleb128 0xc
+ 595 0080 01       		.uleb128 0x1
+ 596 0081 13       		.uleb128 0x13
+ 597 0082 00       		.byte	0
+ 598 0083 00       		.byte	0
+ 599 0084 0A       		.uleb128 0xa
+ 600 0085 898201   		.uleb128 0x4109
+ 601 0088 00       		.byte	0
+ 602 0089 11       		.uleb128 0x11
+ 603 008a 01       		.uleb128 0x1
+ 604 008b 31       		.uleb128 0x31
+ 605 008c 13       		.uleb128 0x13
+ 606 008d 00       		.byte	0
+ 607 008e 00       		.byte	0
+ 608 008f 0B       		.uleb128 0xb
+ 609 0090 34       		.uleb128 0x34
+ 610 0091 00       		.byte	0
+ 611 0092 03       		.uleb128 0x3
+ 612 0093 0E       		.uleb128 0xe
+ 613 0094 3A       		.uleb128 0x3a
+ 614 0095 0B       		.uleb128 0xb
+ 615 0096 3B       		.uleb128 0x3b
+ 616 0097 0B       		.uleb128 0xb
+ 617 0098 49       		.uleb128 0x49
+ 618 0099 13       		.uleb128 0x13
+ 619 009a 02       		.uleb128 0x2
+ 620 009b 0A       		.uleb128 0xa
+ 621 009c 00       		.byte	0
+ 622 009d 00       		.byte	0
+ 623 009e 0C       		.uleb128 0xc
+ 624 009f 2E       		.uleb128 0x2e
+ 625 00a0 00       		.byte	0
+ 626 00a1 3F       		.uleb128 0x3f
+ 627 00a2 0C       		.uleb128 0xc
+ 628 00a3 03       		.uleb128 0x3
+ 629 00a4 0E       		.uleb128 0xe
+ 630 00a5 3A       		.uleb128 0x3a
+ 631 00a6 0B       		.uleb128 0xb
+ 632 00a7 3B       		.uleb128 0x3b
+ 633 00a8 0B       		.uleb128 0xb
+ 634 00a9 27       		.uleb128 0x27
+ 635 00aa 0C       		.uleb128 0xc
+ 636 00ab 49       		.uleb128 0x49
+ 637 00ac 13       		.uleb128 0x13
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccS3ojsf.s 			page 16
+
+
+ 638 00ad 3C       		.uleb128 0x3c
+ 639 00ae 0C       		.uleb128 0xc
+ 640 00af 00       		.byte	0
+ 641 00b0 00       		.byte	0
+ 642 00b1 0D       		.uleb128 0xd
+ 643 00b2 2E       		.uleb128 0x2e
+ 644 00b3 01       		.byte	0x1
+ 645 00b4 3F       		.uleb128 0x3f
+ 646 00b5 0C       		.uleb128 0xc
+ 647 00b6 03       		.uleb128 0x3
+ 648 00b7 0E       		.uleb128 0xe
+ 649 00b8 3A       		.uleb128 0x3a
+ 650 00b9 0B       		.uleb128 0xb
+ 651 00ba 3B       		.uleb128 0x3b
+ 652 00bb 0B       		.uleb128 0xb
+ 653 00bc 27       		.uleb128 0x27
+ 654 00bd 0C       		.uleb128 0xc
+ 655 00be 3C       		.uleb128 0x3c
+ 656 00bf 0C       		.uleb128 0xc
+ 657 00c0 01       		.uleb128 0x1
+ 658 00c1 13       		.uleb128 0x13
+ 659 00c2 00       		.byte	0
+ 660 00c3 00       		.byte	0
+ 661 00c4 0E       		.uleb128 0xe
+ 662 00c5 05       		.uleb128 0x5
+ 663 00c6 00       		.byte	0
+ 664 00c7 49       		.uleb128 0x49
+ 665 00c8 13       		.uleb128 0x13
+ 666 00c9 00       		.byte	0
+ 667 00ca 00       		.byte	0
+ 668 00cb 0F       		.uleb128 0xf
+ 669 00cc 2E       		.uleb128 0x2e
+ 670 00cd 00       		.byte	0
+ 671 00ce 3F       		.uleb128 0x3f
+ 672 00cf 0C       		.uleb128 0xc
+ 673 00d0 03       		.uleb128 0x3
+ 674 00d1 0E       		.uleb128 0xe
+ 675 00d2 3A       		.uleb128 0x3a
+ 676 00d3 0B       		.uleb128 0xb
+ 677 00d4 3B       		.uleb128 0x3b
+ 678 00d5 0B       		.uleb128 0xb
+ 679 00d6 27       		.uleb128 0x27
+ 680 00d7 0C       		.uleb128 0xc
+ 681 00d8 3C       		.uleb128 0x3c
+ 682 00d9 0C       		.uleb128 0xc
+ 683 00da 00       		.byte	0
+ 684 00db 00       		.byte	0
+ 685 00dc 00       		.byte	0
+ 686              		.section	.debug_loc,"",%progbits
+ 687              	.Ldebug_loc0:
+ 688              	.LLST0:
+ 689 0000 00000000 		.4byte	.LFB0
+ 690 0004 02000000 		.4byte	.LCFI0
+ 691 0008 0200     		.2byte	0x2
+ 692 000a 7D       		.byte	0x7d
+ 693 000b 00       		.sleb128 0
+ 694 000c 02000000 		.4byte	.LCFI0
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccS3ojsf.s 			page 17
+
+
+ 695 0010 2C000000 		.4byte	.LFE0
+ 696 0014 0200     		.2byte	0x2
+ 697 0016 7D       		.byte	0x7d
+ 698 0017 08       		.sleb128 8
+ 699 0018 00000000 		.4byte	0
+ 700 001c 00000000 		.4byte	0
+ 701              	.LLST1:
+ 702 0020 00000000 		.4byte	.LFB1
+ 703 0024 02000000 		.4byte	.LCFI1
+ 704 0028 0200     		.2byte	0x2
+ 705 002a 7D       		.byte	0x7d
+ 706 002b 00       		.sleb128 0
+ 707 002c 02000000 		.4byte	.LCFI1
+ 708 0030 30000000 		.4byte	.LFE1
+ 709 0034 0200     		.2byte	0x2
+ 710 0036 7D       		.byte	0x7d
+ 711 0037 08       		.sleb128 8
+ 712 0038 00000000 		.4byte	0
+ 713 003c 00000000 		.4byte	0
+ 714              	.LLST2:
+ 715 0040 00000000 		.4byte	.LFB2
+ 716 0044 02000000 		.4byte	.LCFI2
+ 717 0048 0200     		.2byte	0x2
+ 718 004a 7D       		.byte	0x7d
+ 719 004b 00       		.sleb128 0
+ 720 004c 02000000 		.4byte	.LCFI2
+ 721 0050 28000000 		.4byte	.LFE2
+ 722 0054 0200     		.2byte	0x2
+ 723 0056 7D       		.byte	0x7d
+ 724 0057 08       		.sleb128 8
+ 725 0058 00000000 		.4byte	0
+ 726 005c 00000000 		.4byte	0
+ 727              	.LLST3:
+ 728 0060 00000000 		.4byte	.LFB3
+ 729 0064 02000000 		.4byte	.LCFI3
+ 730 0068 0200     		.2byte	0x2
+ 731 006a 7D       		.byte	0x7d
+ 732 006b 00       		.sleb128 0
+ 733 006c 02000000 		.4byte	.LCFI3
+ 734 0070 18000000 		.4byte	.LFE3
+ 735 0074 0200     		.2byte	0x2
+ 736 0076 7D       		.byte	0x7d
+ 737 0077 08       		.sleb128 8
+ 738 0078 00000000 		.4byte	0
+ 739 007c 00000000 		.4byte	0
+ 740              		.section	.debug_aranges,"",%progbits
+ 741 0000 34000000 		.4byte	0x34
+ 742 0004 0200     		.2byte	0x2
+ 743 0006 00000000 		.4byte	.Ldebug_info0
+ 744 000a 04       		.byte	0x4
+ 745 000b 00       		.byte	0
+ 746 000c 0000     		.2byte	0
+ 747 000e 0000     		.2byte	0
+ 748 0010 00000000 		.4byte	.LFB0
+ 749 0014 2C000000 		.4byte	.LFE0-.LFB0
+ 750 0018 00000000 		.4byte	.LFB1
+ 751 001c 30000000 		.4byte	.LFE1-.LFB1
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccS3ojsf.s 			page 18
+
+
+ 752 0020 00000000 		.4byte	.LFB2
+ 753 0024 28000000 		.4byte	.LFE2-.LFB2
+ 754 0028 00000000 		.4byte	.LFB3
+ 755 002c 18000000 		.4byte	.LFE3-.LFB3
+ 756 0030 00000000 		.4byte	0
+ 757 0034 00000000 		.4byte	0
+ 758              		.section	.debug_ranges,"",%progbits
+ 759              	.Ldebug_ranges0:
+ 760 0000 00000000 		.4byte	.LFB0
+ 761 0004 2C000000 		.4byte	.LFE0
+ 762 0008 00000000 		.4byte	.LFB1
+ 763 000c 30000000 		.4byte	.LFE1
+ 764 0010 00000000 		.4byte	.LFB2
+ 765 0014 28000000 		.4byte	.LFE2
+ 766 0018 00000000 		.4byte	.LFB3
+ 767 001c 18000000 		.4byte	.LFE3
+ 768 0020 00000000 		.4byte	0
+ 769 0024 00000000 		.4byte	0
+ 770              		.section	.debug_line,"",%progbits
+ 771              	.Ldebug_line0:
+ 772 0000 BB000000 		.section	.debug_str,"MS",%progbits,1
+ 772      02005000 
+ 772      00000201 
+ 772      FB0E0D00 
+ 772      01010101 
+ 773              	.LASF29:
+ 774 0000 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\LED0_PM.c\000"
+ 774      6E657261 
+ 774      7465645F 
+ 774      536F7572 
+ 774      63655C50 
+ 775              	.LASF21:
+ 776 0023 4C454430 		.ascii	"LED0_RestoreConfig\000"
+ 776      5F526573 
+ 776      746F7265 
+ 776      436F6E66 
+ 776      696700
+ 777              	.LASF3:
+ 778 0036 73686F72 		.ascii	"short unsigned int\000"
+ 778      7420756E 
+ 778      7369676E 
+ 778      65642069 
+ 778      6E7400
+ 779              	.LASF9:
+ 780 0049 666C6F61 		.ascii	"float\000"
+ 780      7400
+ 781              	.LASF31:
+ 782 004f 4C454430 		.ascii	"LED0_backup\000"
+ 782      5F626163 
+ 782      6B757000 
+ 783              	.LASF1:
+ 784 005b 756E7369 		.ascii	"unsigned char\000"
+ 784      676E6564 
+ 784      20636861 
+ 784      7200
+ 785              	.LASF13:
+ 786 0069 72656738 		.ascii	"reg8\000"
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccS3ojsf.s 			page 19
+
+
+ 786      00
+ 787              	.LASF5:
+ 788 006e 6C6F6E67 		.ascii	"long unsigned int\000"
+ 788      20756E73 
+ 788      69676E65 
+ 788      6420696E 
+ 788      7400
+ 789              	.LASF12:
+ 790 0080 75696E74 		.ascii	"uint8\000"
+ 790      3800
+ 791              	.LASF32:
+ 792 0086 4C454430 		.ascii	"LED0_WritePolynomial\000"
+ 792      5F577269 
+ 792      7465506F 
+ 792      6C796E6F 
+ 792      6D69616C 
+ 793              	.LASF30:
+ 794 009b 433A5C55 		.ascii	"C:\\Users\\chuck.erhardt\\Documents\\GitHub\\PSoC-W"
+ 794      73657273 
+ 794      5C636875 
+ 794      636B2E65 
+ 794      72686172 
+ 795 00c9 35313030 		.ascii	"5100-Driver\\PSoCPioneer+ArduinoShield_Example.cyds"
+ 795      2D447269 
+ 795      7665725C 
+ 795      50536F43 
+ 795      50696F6E 
+ 796 00fb 6E00     		.ascii	"n\000"
+ 797              	.LASF10:
+ 798 00fd 646F7562 		.ascii	"double\000"
+ 798      6C6500
+ 799              	.LASF17:
+ 800 0104 73656564 		.ascii	"seed_copy\000"
+ 800      5F636F70 
+ 800      7900
+ 801              	.LASF8:
+ 802 010e 756E7369 		.ascii	"unsigned int\000"
+ 802      676E6564 
+ 802      20696E74 
+ 802      00
+ 803              	.LASF7:
+ 804 011b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 804      206C6F6E 
+ 804      6720756E 
+ 804      7369676E 
+ 804      65642069 
+ 805              	.LASF20:
+ 806 0132 4C454430 		.ascii	"LED0_SaveConfig\000"
+ 806      5F536176 
+ 806      65436F6E 
+ 806      66696700 
+ 807              	.LASF18:
+ 808 0142 706F6C79 		.ascii	"polynom\000"
+ 808      6E6F6D00 
+ 809              	.LASF14:
+ 810 014a 73697A65 		.ascii	"sizetype\000"
+ 810      74797065 
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccS3ojsf.s 			page 20
+
+
+ 810      00
+ 811              	.LASF6:
+ 812 0153 6C6F6E67 		.ascii	"long long int\000"
+ 812      206C6F6E 
+ 812      6720696E 
+ 812      7400
+ 813              	.LASF11:
+ 814 0161 63686172 		.ascii	"char\000"
+ 814      00
+ 815              	.LASF22:
+ 816 0166 4C454430 		.ascii	"LED0_Sleep\000"
+ 816      5F536C65 
+ 816      657000
+ 817              	.LASF23:
+ 818 0171 4C454430 		.ascii	"LED0_Wakeup\000"
+ 818      5F57616B 
+ 818      65757000 
+ 819              	.LASF2:
+ 820 017d 73686F72 		.ascii	"short int\000"
+ 820      7420696E 
+ 820      7400
+ 821              	.LASF16:
+ 822 0187 73656564 		.ascii	"seed\000"
+ 822      00
+ 823              	.LASF4:
+ 824 018c 6C6F6E67 		.ascii	"long int\000"
+ 824      20696E74 
+ 824      00
+ 825              	.LASF15:
+ 826 0195 656E6162 		.ascii	"enableState\000"
+ 826      6C655374 
+ 826      61746500 
+ 827              	.LASF0:
+ 828 01a1 7369676E 		.ascii	"signed char\000"
+ 828      65642063 
+ 828      68617200 
+ 829              	.LASF26:
+ 830 01ad 4C454430 		.ascii	"LED0_Stop\000"
+ 830      5F53746F 
+ 830      7000
+ 831              	.LASF19:
+ 832 01b7 4C454430 		.ascii	"LED0_BACKUP_STRUCT\000"
+ 832      5F424143 
+ 832      4B55505F 
+ 832      53545255 
+ 832      435400
+ 833              	.LASF27:
+ 834 01ca 4C454430 		.ascii	"LED0_Enable\000"
+ 834      5F456E61 
+ 834      626C6500 
+ 835              	.LASF28:
+ 836 01d6 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 836      4320342E 
+ 836      372E3320 
+ 836      32303133 
+ 836      30333132 
+ 837 0209 616E6368 		.ascii	"anch revision 196615]\000"
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccS3ojsf.s 			page 21
+
+
+ 837      20726576 
+ 837      6973696F 
+ 837      6E203139 
+ 837      36363135 
+ 838              	.LASF25:
+ 839 021f 4C454430 		.ascii	"LED0_ReadPolynomial\000"
+ 839      5F526561 
+ 839      64506F6C 
+ 839      796E6F6D 
+ 839      69616C00 
+ 840              	.LASF24:
+ 841 0233 4C454430 		.ascii	"LED0_ReadSeed\000"
+ 841      5F526561 
+ 841      64536565 
+ 841      6400
+ 842              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

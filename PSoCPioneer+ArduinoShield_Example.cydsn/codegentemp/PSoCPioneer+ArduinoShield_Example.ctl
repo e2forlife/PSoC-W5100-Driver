@@ -1,6 +1,6 @@
 -- ======================================================================
 -- PSoCPioneer+ArduinoShield_Example.ctl generated from PSoCPioneer+ArduinoShield_Example
--- 01/06/2014 at 09:38
+-- 01/10/2014 at 12:54
 -- This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 -- ======================================================================
 

@@ -1,0 +1,424 @@
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccvrd3OP.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 4
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"cymetadata.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.global	cy_meta_chipprotect
+  18              		.global	cy_metadata
+  19              		.global	cy_meta_flashprotect
+  20              		.section	.cychipprotect,"a",%progbits
+  21              		.type	cy_meta_chipprotect, %object
+  22              		.size	cy_meta_chipprotect, 1
+  23              	cy_meta_chipprotect:
+  24 0000 01       		.byte	1
+  25              		.section	.cymeta,"a",%progbits
+  26              		.type	cy_metadata, %object
+  27              		.size	cy_metadata, 12
+  28              	cy_metadata:
+  29 0000 00       		.byte	0
+  30 0001 02       		.byte	2
+  31 0002 04       		.byte	4
+  32 0003 C8       		.byte	-56
+  33 0004 11       		.byte	17
+  34 0005 93       		.byte	-109
+  35 0006 11       		.byte	17
+  36 0007 01       		.byte	1
+  37 0008 00       		.byte	0
+  38 0009 00       		.byte	0
+  39 000a 00       		.byte	0
+  40 000b 00       		.byte	0
+  41              		.section	.cyflashprotect,"a",%progbits
+  42              		.type	cy_meta_flashprotect, %object
+  43              		.size	cy_meta_flashprotect, 32
+  44              	cy_meta_flashprotect:
+  45 0000 00000000 		.space	32
+  45      00000000 
+  45      00000000 
+  45      00000000 
+  45      00000000 
+  46              		.text
+  47              	.Letext0:
+  48              		.file 1 ".\\Generated_Source\\PSoC4\\cymetadata.c"
+  49              		.file 2 ".\\Generated_Source\\PSoC4\\cytypes.h"
+  50              		.section	.debug_info,"",%progbits
+  51              	.Ldebug_info0:
+  52 0000 FC000000 		.4byte	0xfc
+  53 0004 0200     		.2byte	0x2
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccvrd3OP.s 			page 2
+
+
+  54 0006 00000000 		.4byte	.Ldebug_abbrev0
+  55 000a 04       		.byte	0x4
+  56 000b 01       		.uleb128 0x1
+  57 000c 4D010000 		.4byte	.LASF16
+  58 0010 01       		.byte	0x1
+  59 0011 C2000000 		.4byte	.LASF17
+  60 0015 59000000 		.4byte	.LASF18
+  61 0019 00000000 		.4byte	.Ldebug_line0
+  62 001d 02       		.uleb128 0x2
+  63 001e 01       		.byte	0x1
+  64 001f 06       		.byte	0x6
+  65 0020 9F010000 		.4byte	.LASF0
+  66 0024 02       		.uleb128 0x2
+  67 0025 01       		.byte	0x1
+  68 0026 08       		.byte	0x8
+  69 0027 26000000 		.4byte	.LASF1
+  70 002b 02       		.uleb128 0x2
+  71 002c 02       		.byte	0x2
+  72 002d 05       		.byte	0x5
+  73 002e 3D010000 		.4byte	.LASF2
+  74 0032 02       		.uleb128 0x2
+  75 0033 02       		.byte	0x2
+  76 0034 07       		.byte	0x7
+  77 0035 46000000 		.4byte	.LASF3
+  78 0039 02       		.uleb128 0x2
+  79 003a 04       		.byte	0x4
+  80 003b 05       		.byte	0x5
+  81 003c 96010000 		.4byte	.LASF4
+  82 0040 02       		.uleb128 0x2
+  83 0041 04       		.byte	0x4
+  84 0042 07       		.byte	0x7
+  85 0043 34000000 		.4byte	.LASF5
+  86 0047 02       		.uleb128 0x2
+  87 0048 08       		.byte	0x8
+  88 0049 05       		.byte	0x5
+  89 004a 2A010000 		.4byte	.LASF6
+  90 004e 02       		.uleb128 0x2
+  91 004f 08       		.byte	0x8
+  92 0050 07       		.byte	0x7
+  93 0051 F5000000 		.4byte	.LASF7
+  94 0055 03       		.uleb128 0x3
+  95 0056 04       		.byte	0x4
+  96 0057 05       		.byte	0x5
+  97 0058 696E7400 		.ascii	"int\000"
+  98 005c 02       		.uleb128 0x2
+  99 005d 04       		.byte	0x4
+ 100 005e 07       		.byte	0x7
+ 101 005f E8000000 		.4byte	.LASF8
+ 102 0063 04       		.uleb128 0x4
+ 103 0064 47010000 		.4byte	.LASF19
+ 104 0068 02       		.byte	0x2
+ 105 0069 5B       		.byte	0x5b
+ 106 006a 24000000 		.4byte	0x24
+ 107 006e 02       		.uleb128 0x2
+ 108 006f 04       		.byte	0x4
+ 109 0070 04       		.byte	0x4
+ 110 0071 20000000 		.4byte	.LASF9
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccvrd3OP.s 			page 3
+
+
+ 111 0075 02       		.uleb128 0x2
+ 112 0076 08       		.byte	0x8
+ 113 0077 04       		.byte	0x4
+ 114 0078 BB000000 		.4byte	.LASF10
+ 115 007c 02       		.uleb128 0x2
+ 116 007d 01       		.byte	0x1
+ 117 007e 08       		.byte	0x8
+ 118 007f 38010000 		.4byte	.LASF11
+ 119 0083 05       		.uleb128 0x5
+ 120 0084 63000000 		.4byte	0x63
+ 121 0088 93000000 		.4byte	0x93
+ 122 008c 06       		.uleb128 0x6
+ 123 008d 93000000 		.4byte	0x93
+ 124 0091 1F       		.byte	0x1f
+ 125 0092 00       		.byte	0
+ 126 0093 02       		.uleb128 0x2
+ 127 0094 04       		.byte	0x4
+ 128 0095 07       		.byte	0x7
+ 129 0096 21010000 		.4byte	.LASF12
+ 130 009a 07       		.uleb128 0x7
+ 131 009b 0C010000 		.4byte	.LASF13
+ 132 009f 01       		.byte	0x1
+ 133 00a0 1C       		.byte	0x1c
+ 134 00a1 AC000000 		.4byte	0xac
+ 135 00a5 01       		.byte	0x1
+ 136 00a6 05       		.byte	0x5
+ 137 00a7 03       		.byte	0x3
+ 138 00a8 00000000 		.4byte	cy_meta_flashprotect
+ 139 00ac 08       		.uleb128 0x8
+ 140 00ad 83000000 		.4byte	0x83
+ 141 00b1 05       		.uleb128 0x5
+ 142 00b2 63000000 		.4byte	0x63
+ 143 00b6 C1000000 		.4byte	0xc1
+ 144 00ba 06       		.uleb128 0x6
+ 145 00bb 93000000 		.4byte	0x93
+ 146 00bf 0B       		.byte	0xb
+ 147 00c0 00       		.byte	0
+ 148 00c1 07       		.uleb128 0x7
+ 149 00c2 14000000 		.4byte	.LASF14
+ 150 00c6 01       		.byte	0x1
+ 151 00c7 2A       		.byte	0x2a
+ 152 00c8 D3000000 		.4byte	0xd3
+ 153 00cc 01       		.byte	0x1
+ 154 00cd 05       		.byte	0x5
+ 155 00ce 03       		.byte	0x3
+ 156 00cf 00000000 		.4byte	cy_metadata
+ 157 00d3 08       		.uleb128 0x8
+ 158 00d4 B1000000 		.4byte	0xb1
+ 159 00d8 05       		.uleb128 0x5
+ 160 00d9 63000000 		.4byte	0x63
+ 161 00dd E8000000 		.4byte	0xe8
+ 162 00e1 06       		.uleb128 0x6
+ 163 00e2 93000000 		.4byte	0x93
+ 164 00e6 00       		.byte	0
+ 165 00e7 00       		.byte	0
+ 166 00e8 07       		.uleb128 0x7
+ 167 00e9 00000000 		.4byte	.LASF15
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccvrd3OP.s 			page 4
+
+
+ 168 00ed 01       		.byte	0x1
+ 169 00ee 36       		.byte	0x36
+ 170 00ef FA000000 		.4byte	0xfa
+ 171 00f3 01       		.byte	0x1
+ 172 00f4 05       		.byte	0x5
+ 173 00f5 03       		.byte	0x3
+ 174 00f6 00000000 		.4byte	cy_meta_chipprotect
+ 175 00fa 08       		.uleb128 0x8
+ 176 00fb D8000000 		.4byte	0xd8
+ 177 00ff 00       		.byte	0
+ 178              		.section	.debug_abbrev,"",%progbits
+ 179              	.Ldebug_abbrev0:
+ 180 0000 01       		.uleb128 0x1
+ 181 0001 11       		.uleb128 0x11
+ 182 0002 01       		.byte	0x1
+ 183 0003 25       		.uleb128 0x25
+ 184 0004 0E       		.uleb128 0xe
+ 185 0005 13       		.uleb128 0x13
+ 186 0006 0B       		.uleb128 0xb
+ 187 0007 03       		.uleb128 0x3
+ 188 0008 0E       		.uleb128 0xe
+ 189 0009 1B       		.uleb128 0x1b
+ 190 000a 0E       		.uleb128 0xe
+ 191 000b 10       		.uleb128 0x10
+ 192 000c 06       		.uleb128 0x6
+ 193 000d 00       		.byte	0
+ 194 000e 00       		.byte	0
+ 195 000f 02       		.uleb128 0x2
+ 196 0010 24       		.uleb128 0x24
+ 197 0011 00       		.byte	0
+ 198 0012 0B       		.uleb128 0xb
+ 199 0013 0B       		.uleb128 0xb
+ 200 0014 3E       		.uleb128 0x3e
+ 201 0015 0B       		.uleb128 0xb
+ 202 0016 03       		.uleb128 0x3
+ 203 0017 0E       		.uleb128 0xe
+ 204 0018 00       		.byte	0
+ 205 0019 00       		.byte	0
+ 206 001a 03       		.uleb128 0x3
+ 207 001b 24       		.uleb128 0x24
+ 208 001c 00       		.byte	0
+ 209 001d 0B       		.uleb128 0xb
+ 210 001e 0B       		.uleb128 0xb
+ 211 001f 3E       		.uleb128 0x3e
+ 212 0020 0B       		.uleb128 0xb
+ 213 0021 03       		.uleb128 0x3
+ 214 0022 08       		.uleb128 0x8
+ 215 0023 00       		.byte	0
+ 216 0024 00       		.byte	0
+ 217 0025 04       		.uleb128 0x4
+ 218 0026 16       		.uleb128 0x16
+ 219 0027 00       		.byte	0
+ 220 0028 03       		.uleb128 0x3
+ 221 0029 0E       		.uleb128 0xe
+ 222 002a 3A       		.uleb128 0x3a
+ 223 002b 0B       		.uleb128 0xb
+ 224 002c 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccvrd3OP.s 			page 5
+
+
+ 225 002d 0B       		.uleb128 0xb
+ 226 002e 49       		.uleb128 0x49
+ 227 002f 13       		.uleb128 0x13
+ 228 0030 00       		.byte	0
+ 229 0031 00       		.byte	0
+ 230 0032 05       		.uleb128 0x5
+ 231 0033 01       		.uleb128 0x1
+ 232 0034 01       		.byte	0x1
+ 233 0035 49       		.uleb128 0x49
+ 234 0036 13       		.uleb128 0x13
+ 235 0037 01       		.uleb128 0x1
+ 236 0038 13       		.uleb128 0x13
+ 237 0039 00       		.byte	0
+ 238 003a 00       		.byte	0
+ 239 003b 06       		.uleb128 0x6
+ 240 003c 21       		.uleb128 0x21
+ 241 003d 00       		.byte	0
+ 242 003e 49       		.uleb128 0x49
+ 243 003f 13       		.uleb128 0x13
+ 244 0040 2F       		.uleb128 0x2f
+ 245 0041 0B       		.uleb128 0xb
+ 246 0042 00       		.byte	0
+ 247 0043 00       		.byte	0
+ 248 0044 07       		.uleb128 0x7
+ 249 0045 34       		.uleb128 0x34
+ 250 0046 00       		.byte	0
+ 251 0047 03       		.uleb128 0x3
+ 252 0048 0E       		.uleb128 0xe
+ 253 0049 3A       		.uleb128 0x3a
+ 254 004a 0B       		.uleb128 0xb
+ 255 004b 3B       		.uleb128 0x3b
+ 256 004c 0B       		.uleb128 0xb
+ 257 004d 49       		.uleb128 0x49
+ 258 004e 13       		.uleb128 0x13
+ 259 004f 3F       		.uleb128 0x3f
+ 260 0050 0C       		.uleb128 0xc
+ 261 0051 02       		.uleb128 0x2
+ 262 0052 0A       		.uleb128 0xa
+ 263 0053 00       		.byte	0
+ 264 0054 00       		.byte	0
+ 265 0055 08       		.uleb128 0x8
+ 266 0056 26       		.uleb128 0x26
+ 267 0057 00       		.byte	0
+ 268 0058 49       		.uleb128 0x49
+ 269 0059 13       		.uleb128 0x13
+ 270 005a 00       		.byte	0
+ 271 005b 00       		.byte	0
+ 272 005c 00       		.byte	0
+ 273              		.section	.debug_aranges,"",%progbits
+ 274 0000 14000000 		.4byte	0x14
+ 275 0004 0200     		.2byte	0x2
+ 276 0006 00000000 		.4byte	.Ldebug_info0
+ 277 000a 04       		.byte	0x4
+ 278 000b 00       		.byte	0
+ 279 000c 0000     		.2byte	0
+ 280 000e 0000     		.2byte	0
+ 281 0010 00000000 		.4byte	0
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccvrd3OP.s 			page 6
+
+
+ 282 0014 00000000 		.4byte	0
+ 283              		.section	.debug_line,"",%progbits
+ 284              	.Ldebug_line0:
+ 285 0000 4F000000 		.section	.debug_str,"MS",%progbits,1
+ 285      02004900 
+ 285      00000201 
+ 285      FB0E0D00 
+ 285      01010101 
+ 286              	.LASF15:
+ 287 0000 63795F6D 		.ascii	"cy_meta_chipprotect\000"
+ 287      6574615F 
+ 287      63686970 
+ 287      70726F74 
+ 287      65637400 
+ 288              	.LASF14:
+ 289 0014 63795F6D 		.ascii	"cy_metadata\000"
+ 289      65746164 
+ 289      61746100 
+ 290              	.LASF9:
+ 291 0020 666C6F61 		.ascii	"float\000"
+ 291      7400
+ 292              	.LASF1:
+ 293 0026 756E7369 		.ascii	"unsigned char\000"
+ 293      676E6564 
+ 293      20636861 
+ 293      7200
+ 294              	.LASF5:
+ 295 0034 6C6F6E67 		.ascii	"long unsigned int\000"
+ 295      20756E73 
+ 295      69676E65 
+ 295      6420696E 
+ 295      7400
+ 296              	.LASF3:
+ 297 0046 73686F72 		.ascii	"short unsigned int\000"
+ 297      7420756E 
+ 297      7369676E 
+ 297      65642069 
+ 297      6E7400
+ 298              	.LASF18:
+ 299 0059 433A5C55 		.ascii	"C:\\Users\\chuck.erhardt\\Documents\\GitHub\\PSoC-W"
+ 299      73657273 
+ 299      5C636875 
+ 299      636B2E65 
+ 299      72686172 
+ 300 0087 35313030 		.ascii	"5100-Driver\\PSoCPioneer+ArduinoShield_Example.cyds"
+ 300      2D447269 
+ 300      7665725C 
+ 300      50536F43 
+ 300      50696F6E 
+ 301 00b9 6E00     		.ascii	"n\000"
+ 302              	.LASF10:
+ 303 00bb 646F7562 		.ascii	"double\000"
+ 303      6C6500
+ 304              	.LASF17:
+ 305 00c2 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\cymetadata.c\000"
+ 305      6E657261 
+ 305      7465645F 
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccvrd3OP.s 			page 7
+
+
+ 305      536F7572 
+ 305      63655C50 
+ 306              	.LASF8:
+ 307 00e8 756E7369 		.ascii	"unsigned int\000"
+ 307      676E6564 
+ 307      20696E74 
+ 307      00
+ 308              	.LASF7:
+ 309 00f5 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 309      206C6F6E 
+ 309      6720756E 
+ 309      7369676E 
+ 309      65642069 
+ 310              	.LASF13:
+ 311 010c 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 311      6574615F 
+ 311      666C6173 
+ 311      6870726F 
+ 311      74656374 
+ 312              	.LASF12:
+ 313 0121 73697A65 		.ascii	"sizetype\000"
+ 313      74797065 
+ 313      00
+ 314              	.LASF6:
+ 315 012a 6C6F6E67 		.ascii	"long long int\000"
+ 315      206C6F6E 
+ 315      6720696E 
+ 315      7400
+ 316              	.LASF11:
+ 317 0138 63686172 		.ascii	"char\000"
+ 317      00
+ 318              	.LASF2:
+ 319 013d 73686F72 		.ascii	"short int\000"
+ 319      7420696E 
+ 319      7400
+ 320              	.LASF19:
+ 321 0147 75696E74 		.ascii	"uint8\000"
+ 321      3800
+ 322              	.LASF16:
+ 323 014d 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 323      4320342E 
+ 323      372E3320 
+ 323      32303133 
+ 323      30333132 
+ 324 0180 616E6368 		.ascii	"anch revision 196615]\000"
+ 324      20726576 
+ 324      6973696F 
+ 324      6E203139 
+ 324      36363135 
+ 325              	.LASF4:
+ 326 0196 6C6F6E67 		.ascii	"long int\000"
+ 326      20696E74 
+ 326      00
+ 327              	.LASF0:
+ 328 019f 7369676E 		.ascii	"signed char\000"
+ 328      65642063 
+ 328      68617200 
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccvrd3OP.s 			page 8
+
+
+ 329              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

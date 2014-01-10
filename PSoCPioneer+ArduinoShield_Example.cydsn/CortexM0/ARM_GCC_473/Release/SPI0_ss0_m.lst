@@ -1,0 +1,1002 @@
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCAMdGd.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 4
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"SPI0_ss0_m.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.SPI0_ss0_m_Write,"ax",%progbits
+  18              		.align	1
+  19              		.global	SPI0_ss0_m_Write
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	SPI0_ss0_m_Write, %function
+  23              	SPI0_ss0_m_Write:
+  24              	.LFB0:
+  25              		.file 1 ".\\Generated_Source\\PSoC4\\SPI0_ss0_m.c"
+   1:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** * File Name: SPI0_ss0_m.c  
+   3:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** * Version 1.90
+   4:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *
+   5:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** * Description:
+   6:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *  This file contains API to enable firmware control of a Pins component.
+   7:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *
+   8:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** * Note:
+   9:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *
+  10:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** ********************************************************************************
+  11:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  12:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  13:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  14:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** * the software package with which this file was provided.
+  15:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *******************************************************************************/
+  16:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** 
+  17:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** #include "cytypes.h"
+  18:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** #include "SPI0_ss0_m.h"
+  19:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** 
+  20:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** #define SetP4PinDriveMode(shift, mode)  \
+  21:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     do { \
+  22:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****         SPI0_ss0_m_PC =   (SPI0_ss0_m_PC & \
+  23:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****                                 (uint32)(~(uint32)(SPI0_ss0_m_DRIVE_MODE_IND_MASK << (SPI0_ss0_m_DR
+  24:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****                                 (uint32)((uint32)(mode) << (SPI0_ss0_m_DRIVE_MODE_BITS * (shift)));
+  25:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     } while (0)
+  26:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** 
+  27:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** 
+  28:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** /*******************************************************************************
+  29:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** * Function Name: SPI0_ss0_m_Write
+  30:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** ********************************************************************************
+  31:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *
+  32:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** * Summary:
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCAMdGd.s 			page 2
+
+
+  33:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *  Assign a new value to the digital port's data output register.  
+  34:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *
+  35:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** * Parameters:  
+  36:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *  prtValue:  The value to be assigned to the Digital Port. 
+  37:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *
+  38:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** * Return: 
+  39:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *  None 
+  40:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *  
+  41:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *******************************************************************************/
+  42:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** void SPI0_ss0_m_Write(uint8 value) 
+  43:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** {
+  26              		.loc 1 43 0
+  27              		.cfi_startproc
+  28              	.LVL0:
+  44:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     uint8 drVal = (uint8)(SPI0_ss0_m_DR & (uint8)(~SPI0_ss0_m_MASK));
+  29              		.loc 1 44 0
+  30 0000 044B     		ldr	r3, .L2
+  31 0002 7F22     		mov	r2, #127
+  32 0004 1968     		ldr	r1, [r3]
+  45:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     drVal = (drVal | ((uint8)(value << SPI0_ss0_m_SHIFT) & SPI0_ss0_m_MASK));
+  46:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     SPI0_ss0_m_DR = (uint32)drVal;
+  47:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** }
+  33              		.loc 1 47 0
+  34              		@ sp needed for prologue
+  44:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     uint8 drVal = (uint8)(SPI0_ss0_m_DR & (uint8)(~SPI0_ss0_m_MASK));
+  35              		.loc 1 44 0
+  36 0006 1140     		and	r1, r2
+  37              	.LVL1:
+  45:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     drVal = (drVal | ((uint8)(value << SPI0_ss0_m_SHIFT) & SPI0_ss0_m_MASK));
+  38              		.loc 1 45 0
+  39 0008 C201     		lsl	r2, r0, #7
+  40 000a 081C     		mov	r0, r1
+  41              	.LVL2:
+  42 000c 1043     		orr	r0, r2
+  46:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     SPI0_ss0_m_DR = (uint32)drVal;
+  43              		.loc 1 46 0
+  44 000e C1B2     		uxtb	r1, r0
+  45 0010 1960     		str	r1, [r3]
+  46              		.loc 1 47 0
+  47 0012 7047     		bx	lr
+  48              	.L3:
+  49              		.align	2
+  50              	.L2:
+  51 0014 00000440 		.word	1074003968
+  52              		.cfi_endproc
+  53              	.LFE0:
+  54              		.size	SPI0_ss0_m_Write, .-SPI0_ss0_m_Write
+  55              		.section	.text.SPI0_ss0_m_SetDriveMode,"ax",%progbits
+  56              		.align	1
+  57              		.global	SPI0_ss0_m_SetDriveMode
+  58              		.code	16
+  59              		.thumb_func
+  60              		.type	SPI0_ss0_m_SetDriveMode, %function
+  61              	SPI0_ss0_m_SetDriveMode:
+  62              	.LFB1:
+  48:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** 
+  49:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** 
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCAMdGd.s 			page 3
+
+
+  50:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** /*******************************************************************************
+  51:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** * Function Name: SPI0_ss0_m_SetDriveMode
+  52:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** ********************************************************************************
+  53:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *
+  54:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** * Summary:
+  55:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *  Change the drive mode on the pins of the port.
+  56:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** * 
+  57:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** * Parameters:  
+  58:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *  mode:  Change the pins to this drive mode.
+  59:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *
+  60:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** * Return: 
+  61:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *  None
+  62:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *
+  63:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *******************************************************************************/
+  64:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** void SPI0_ss0_m_SetDriveMode(uint8 mode) 
+  65:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** {
+  63              		.loc 1 65 0
+  64              		.cfi_startproc
+  65              	.LVL3:
+  66:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** 	SetP4PinDriveMode(SPI0_ss0_m__0__SHIFT, mode);
+  66              		.loc 1 66 0
+  67 0000 044B     		ldr	r3, .L5
+  65:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** {
+  68              		.loc 1 65 0
+  69 0002 10B5     		push	{r4, lr}
+  70              	.LCFI0:
+  71              		.cfi_def_cfa_offset 8
+  72              		.cfi_offset 4, -8
+  73              		.cfi_offset 14, -4
+  74              		.loc 1 66 0
+  75 0004 1C68     		ldr	r4, [r3]
+  76 0006 0449     		ldr	r1, .L5+4
+  77 0008 4205     		lsl	r2, r0, #21
+  78 000a 201C     		mov	r0, r4
+  79              	.LVL4:
+  80 000c 0840     		and	r0, r1
+  81 000e 1043     		orr	r0, r2
+  82 0010 1860     		str	r0, [r3]
+  67:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** }
+  83              		.loc 1 67 0
+  84              		@ sp needed for prologue
+  85 0012 10BD     		pop	{r4, pc}
+  86              	.L6:
+  87              		.align	2
+  88              	.L5:
+  89 0014 08000440 		.word	1074003976
+  90 0018 FFFF1FFF 		.word	-14680065
+  91              		.cfi_endproc
+  92              	.LFE1:
+  93              		.size	SPI0_ss0_m_SetDriveMode, .-SPI0_ss0_m_SetDriveMode
+  94              		.section	.text.SPI0_ss0_m_Read,"ax",%progbits
+  95              		.align	1
+  96              		.global	SPI0_ss0_m_Read
+  97              		.code	16
+  98              		.thumb_func
+  99              		.type	SPI0_ss0_m_Read, %function
+ 100              	SPI0_ss0_m_Read:
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCAMdGd.s 			page 4
+
+
+ 101              	.LFB2:
+  68:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** 
+  69:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** 
+  70:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** /*******************************************************************************
+  71:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** * Function Name: SPI0_ss0_m_Read
+  72:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** ********************************************************************************
+  73:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *
+  74:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** * Summary:
+  75:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *  Read the current value on the pins of the Digital Port in right justified 
+  76:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *  form.
+  77:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *
+  78:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** * Parameters:  
+  79:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *  None 
+  80:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *
+  81:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** * Return: 
+  82:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *  Returns the current value of the Digital Port as a right justified number
+  83:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *  
+  84:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** * Note:
+  85:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *  Macro SPI0_ss0_m_ReadPS calls this function. 
+  86:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *  
+  87:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *******************************************************************************/
+  88:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** uint8 SPI0_ss0_m_Read(void) 
+  89:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** {
+ 102              		.loc 1 89 0
+ 103              		.cfi_startproc
+  90:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     return (uint8)((SPI0_ss0_m_PS & SPI0_ss0_m_MASK) >> SPI0_ss0_m_SHIFT);
+ 104              		.loc 1 90 0
+ 105 0000 024B     		ldr	r3, .L8
+  91:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** }
+ 106              		.loc 1 91 0
+ 107              		@ sp needed for prologue
+  90:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     return (uint8)((SPI0_ss0_m_PS & SPI0_ss0_m_MASK) >> SPI0_ss0_m_SHIFT);
+ 108              		.loc 1 90 0
+ 109 0002 1868     		ldr	r0, [r3]
+ 110 0004 0106     		lsl	r1, r0, #24
+ 111 0006 C80F     		lsr	r0, r1, #31
+ 112              		.loc 1 91 0
+ 113 0008 7047     		bx	lr
+ 114              	.L9:
+ 115 000a C046     		.align	2
+ 116              	.L8:
+ 117 000c 04000440 		.word	1074003972
+ 118              		.cfi_endproc
+ 119              	.LFE2:
+ 120              		.size	SPI0_ss0_m_Read, .-SPI0_ss0_m_Read
+ 121              		.section	.text.SPI0_ss0_m_ReadDataReg,"ax",%progbits
+ 122              		.align	1
+ 123              		.global	SPI0_ss0_m_ReadDataReg
+ 124              		.code	16
+ 125              		.thumb_func
+ 126              		.type	SPI0_ss0_m_ReadDataReg, %function
+ 127              	SPI0_ss0_m_ReadDataReg:
+ 128              	.LFB3:
+  92:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** 
+  93:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** 
+  94:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** /*******************************************************************************
+  95:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** * Function Name: SPI0_ss0_m_ReadDataReg
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCAMdGd.s 			page 5
+
+
+  96:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** ********************************************************************************
+  97:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *
+  98:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** * Summary:
+  99:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *  Read the current value assigned to a Digital Port's data output register
+ 100:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *
+ 101:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** * Parameters:  
+ 102:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *  None 
+ 103:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *
+ 104:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** * Return: 
+ 105:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *  Returns the current value assigned to the Digital Port's data output register
+ 106:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *  
+ 107:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** *******************************************************************************/
+ 108:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** uint8 SPI0_ss0_m_ReadDataReg(void) 
+ 109:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** {
+ 129              		.loc 1 109 0
+ 130              		.cfi_startproc
+ 110:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     return (uint8)((SPI0_ss0_m_DR & SPI0_ss0_m_MASK) >> SPI0_ss0_m_SHIFT);
+ 131              		.loc 1 110 0
+ 132 0000 024B     		ldr	r3, .L11
+ 111:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** }
+ 133              		.loc 1 111 0
+ 134              		@ sp needed for prologue
+ 110:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     return (uint8)((SPI0_ss0_m_DR & SPI0_ss0_m_MASK) >> SPI0_ss0_m_SHIFT);
+ 135              		.loc 1 110 0
+ 136 0002 1868     		ldr	r0, [r3]
+ 137 0004 0106     		lsl	r1, r0, #24
+ 138 0006 C80F     		lsr	r0, r1, #31
+ 139              		.loc 1 111 0
+ 140 0008 7047     		bx	lr
+ 141              	.L12:
+ 142 000a C046     		.align	2
+ 143              	.L11:
+ 144 000c 00000440 		.word	1074003968
+ 145              		.cfi_endproc
+ 146              	.LFE3:
+ 147              		.size	SPI0_ss0_m_ReadDataReg, .-SPI0_ss0_m_ReadDataReg
+ 148              		.section	.text.SPI0_ss0_m_ClearInterrupt,"ax",%progbits
+ 149              		.align	1
+ 150              		.global	SPI0_ss0_m_ClearInterrupt
+ 151              		.code	16
+ 152              		.thumb_func
+ 153              		.type	SPI0_ss0_m_ClearInterrupt, %function
+ 154              	SPI0_ss0_m_ClearInterrupt:
+ 155              	.LFB4:
+ 112:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** 
+ 113:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** 
+ 114:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** /* If Interrupts Are Enabled for this Pins component */ 
+ 115:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** #if defined(SPI0_ss0_m_INTSTAT) 
+ 116:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** 
+ 117:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     /*******************************************************************************
+ 118:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     * Function Name: SPI0_ss0_m_ClearInterrupt
+ 119:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     ********************************************************************************
+ 120:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     *
+ 121:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     * Summary:
+ 122:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     *  Clears any active interrupts attached to port and returns the value of the 
+ 123:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     *  interrupt status register.
+ 124:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     *
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCAMdGd.s 			page 6
+
+
+ 125:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     * Parameters:  
+ 126:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     *  None 
+ 127:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     *
+ 128:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     * Return: 
+ 129:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     *  Returns the value of the interrupt status register
+ 130:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     *  
+ 131:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     *******************************************************************************/
+ 132:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     uint8 SPI0_ss0_m_ClearInterrupt(void) 
+ 133:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     {
+ 156              		.loc 1 133 0
+ 157              		.cfi_startproc
+ 134:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** 		uint8 maskedStatus = (uint8)(SPI0_ss0_m_INTSTAT & SPI0_ss0_m_MASK);
+ 158              		.loc 1 134 0
+ 159 0000 034B     		ldr	r3, .L14
+ 160 0002 8022     		mov	r2, #128
+ 161 0004 1868     		ldr	r0, [r3]
+ 135:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** 		SPI0_ss0_m_INTSTAT = maskedStatus;
+ 136:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****         return maskedStatus >> SPI0_ss0_m_SHIFT;
+ 137:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****     }
+ 162              		.loc 1 137 0
+ 163              		@ sp needed for prologue
+ 134:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** 		uint8 maskedStatus = (uint8)(SPI0_ss0_m_INTSTAT & SPI0_ss0_m_MASK);
+ 164              		.loc 1 134 0
+ 165 0006 1040     		and	r0, r2
+ 166              	.LVL5:
+ 136:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****         return maskedStatus >> SPI0_ss0_m_SHIFT;
+ 167              		.loc 1 136 0
+ 168 0008 C109     		lsr	r1, r0, #7
+ 135:.\Generated_Source\PSoC4/SPI0_ss0_m.c **** 		SPI0_ss0_m_INTSTAT = maskedStatus;
+ 169              		.loc 1 135 0
+ 170 000a 1860     		str	r0, [r3]
+ 136:.\Generated_Source\PSoC4/SPI0_ss0_m.c ****         return maskedStatus >> SPI0_ss0_m_SHIFT;
+ 171              		.loc 1 136 0
+ 172 000c C8B2     		uxtb	r0, r1
+ 173              	.LVL6:
+ 174              		.loc 1 137 0
+ 175 000e 7047     		bx	lr
+ 176              	.L15:
+ 177              		.align	2
+ 178              	.L14:
+ 179 0010 10000440 		.word	1074003984
+ 180              		.cfi_endproc
+ 181              	.LFE4:
+ 182              		.size	SPI0_ss0_m_ClearInterrupt, .-SPI0_ss0_m_ClearInterrupt
+ 183              		.text
+ 184              	.Letext0:
+ 185              		.file 2 ".\\Generated_Source\\PSoC4\\cytypes.h"
+ 186              		.section	.debug_info,"",%progbits
+ 187              	.Ldebug_info0:
+ 188 0000 64010000 		.4byte	0x164
+ 189 0004 0200     		.2byte	0x2
+ 190 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 191 000a 04       		.byte	0x4
+ 192 000b 01       		.uleb128 0x1
+ 193 000c 94010000 		.4byte	.LASF24
+ 194 0010 01       		.byte	0x1
+ 195 0011 3E010000 		.4byte	.LASF25
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCAMdGd.s 			page 7
+
+
+ 196 0015 A5000000 		.4byte	.LASF26
+ 197 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 198 001d 00000000 		.4byte	0
+ 199 0021 00000000 		.4byte	0
+ 200 0025 00000000 		.4byte	.Ldebug_line0
+ 201 0029 02       		.uleb128 0x2
+ 202 002a 01       		.byte	0x1
+ 203 002b 06       		.byte	0x6
+ 204 002c F6010000 		.4byte	.LASF0
+ 205 0030 02       		.uleb128 0x2
+ 206 0031 01       		.byte	0x1
+ 207 0032 08       		.byte	0x8
+ 208 0033 2A000000 		.4byte	.LASF1
+ 209 0037 02       		.uleb128 0x2
+ 210 0038 02       		.byte	0x2
+ 211 0039 05       		.byte	0x5
+ 212 003a 84010000 		.4byte	.LASF2
+ 213 003e 02       		.uleb128 0x2
+ 214 003f 02       		.byte	0x2
+ 215 0040 07       		.byte	0x7
+ 216 0041 78000000 		.4byte	.LASF3
+ 217 0045 02       		.uleb128 0x2
+ 218 0046 04       		.byte	0x4
+ 219 0047 05       		.byte	0x5
+ 220 0048 ED010000 		.4byte	.LASF4
+ 221 004c 02       		.uleb128 0x2
+ 222 004d 04       		.byte	0x4
+ 223 004e 07       		.byte	0x7
+ 224 004f 4F000000 		.4byte	.LASF5
+ 225 0053 02       		.uleb128 0x2
+ 226 0054 08       		.byte	0x8
+ 227 0055 05       		.byte	0x5
+ 228 0056 64010000 		.4byte	.LASF6
+ 229 005a 02       		.uleb128 0x2
+ 230 005b 08       		.byte	0x8
+ 231 005c 07       		.byte	0x7
+ 232 005d 22010000 		.4byte	.LASF7
+ 233 0061 03       		.uleb128 0x3
+ 234 0062 04       		.byte	0x4
+ 235 0063 05       		.byte	0x5
+ 236 0064 696E7400 		.ascii	"int\000"
+ 237 0068 02       		.uleb128 0x2
+ 238 0069 04       		.byte	0x4
+ 239 006a 07       		.byte	0x7
+ 240 006b 15010000 		.4byte	.LASF8
+ 241 006f 04       		.uleb128 0x4
+ 242 0070 8E010000 		.4byte	.LASF9
+ 243 0074 02       		.byte	0x2
+ 244 0075 5B       		.byte	0x5b
+ 245 0076 30000000 		.4byte	0x30
+ 246 007a 04       		.uleb128 0x4
+ 247 007b 0E010000 		.4byte	.LASF10
+ 248 007f 02       		.byte	0x2
+ 249 0080 5D       		.byte	0x5d
+ 250 0081 4C000000 		.4byte	0x4c
+ 251 0085 02       		.uleb128 0x2
+ 252 0086 04       		.byte	0x4
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCAMdGd.s 			page 8
+
+
+ 253 0087 04       		.byte	0x4
+ 254 0088 24000000 		.4byte	.LASF11
+ 255 008c 02       		.uleb128 0x2
+ 256 008d 08       		.byte	0x8
+ 257 008e 04       		.byte	0x4
+ 258 008f 07010000 		.4byte	.LASF12
+ 259 0093 02       		.uleb128 0x2
+ 260 0094 01       		.byte	0x1
+ 261 0095 08       		.byte	0x8
+ 262 0096 7F010000 		.4byte	.LASF13
+ 263 009a 04       		.uleb128 0x4
+ 264 009b 18000000 		.4byte	.LASF14
+ 265 009f 02       		.byte	0x2
+ 266 00a0 F2       		.byte	0xf2
+ 267 00a1 A5000000 		.4byte	0xa5
+ 268 00a5 05       		.uleb128 0x5
+ 269 00a6 7A000000 		.4byte	0x7a
+ 270 00aa 06       		.uleb128 0x6
+ 271 00ab 01       		.byte	0x1
+ 272 00ac 38000000 		.4byte	.LASF15
+ 273 00b0 01       		.byte	0x1
+ 274 00b1 2A       		.byte	0x2a
+ 275 00b2 01       		.byte	0x1
+ 276 00b3 00000000 		.4byte	.LFB0
+ 277 00b7 18000000 		.4byte	.LFE0
+ 278 00bb 02       		.byte	0x2
+ 279 00bc 7D       		.byte	0x7d
+ 280 00bd 00       		.sleb128 0
+ 281 00be 01       		.byte	0x1
+ 282 00bf E2000000 		.4byte	0xe2
+ 283 00c3 07       		.uleb128 0x7
+ 284 00c4 1E000000 		.4byte	.LASF17
+ 285 00c8 01       		.byte	0x1
+ 286 00c9 2A       		.byte	0x2a
+ 287 00ca 6F000000 		.4byte	0x6f
+ 288 00ce 00000000 		.4byte	.LLST0
+ 289 00d2 08       		.uleb128 0x8
+ 290 00d3 49000000 		.4byte	.LASF22
+ 291 00d7 01       		.byte	0x1
+ 292 00d8 2C       		.byte	0x2c
+ 293 00d9 6F000000 		.4byte	0x6f
+ 294 00dd 21000000 		.4byte	.LLST1
+ 295 00e1 00       		.byte	0
+ 296 00e2 09       		.uleb128 0x9
+ 297 00e3 01       		.byte	0x1
+ 298 00e4 00000000 		.4byte	.LASF16
+ 299 00e8 01       		.byte	0x1
+ 300 00e9 40       		.byte	0x40
+ 301 00ea 01       		.byte	0x1
+ 302 00eb 00000000 		.4byte	.LFB1
+ 303 00ef 1C000000 		.4byte	.LFE1
+ 304 00f3 3B000000 		.4byte	.LLST2
+ 305 00f7 01       		.byte	0x1
+ 306 00f8 0C010000 		.4byte	0x10c
+ 307 00fc 07       		.uleb128 0x7
+ 308 00fd 39010000 		.4byte	.LASF18
+ 309 0101 01       		.byte	0x1
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCAMdGd.s 			page 9
+
+
+ 310 0102 40       		.byte	0x40
+ 311 0103 6F000000 		.4byte	0x6f
+ 312 0107 5B000000 		.4byte	.LLST3
+ 313 010b 00       		.byte	0
+ 314 010c 0A       		.uleb128 0xa
+ 315 010d 01       		.byte	0x1
+ 316 010e DD010000 		.4byte	.LASF19
+ 317 0112 01       		.byte	0x1
+ 318 0113 58       		.byte	0x58
+ 319 0114 01       		.byte	0x1
+ 320 0115 6F000000 		.4byte	0x6f
+ 321 0119 00000000 		.4byte	.LFB2
+ 322 011d 10000000 		.4byte	.LFE2
+ 323 0121 02       		.byte	0x2
+ 324 0122 7D       		.byte	0x7d
+ 325 0123 00       		.sleb128 0
+ 326 0124 01       		.byte	0x1
+ 327 0125 0A       		.uleb128 0xa
+ 328 0126 01       		.byte	0x1
+ 329 0127 61000000 		.4byte	.LASF20
+ 330 012b 01       		.byte	0x1
+ 331 012c 6C       		.byte	0x6c
+ 332 012d 01       		.byte	0x1
+ 333 012e 6F000000 		.4byte	0x6f
+ 334 0132 00000000 		.4byte	.LFB3
+ 335 0136 10000000 		.4byte	.LFE3
+ 336 013a 02       		.byte	0x2
+ 337 013b 7D       		.byte	0x7d
+ 338 013c 00       		.sleb128 0
+ 339 013d 01       		.byte	0x1
+ 340 013e 0B       		.uleb128 0xb
+ 341 013f 01       		.byte	0x1
+ 342 0140 8B000000 		.4byte	.LASF21
+ 343 0144 01       		.byte	0x1
+ 344 0145 84       		.byte	0x84
+ 345 0146 01       		.byte	0x1
+ 346 0147 6F000000 		.4byte	0x6f
+ 347 014b 00000000 		.4byte	.LFB4
+ 348 014f 14000000 		.4byte	.LFE4
+ 349 0153 02       		.byte	0x2
+ 350 0154 7D       		.byte	0x7d
+ 351 0155 00       		.sleb128 0
+ 352 0156 01       		.byte	0x1
+ 353 0157 08       		.uleb128 0x8
+ 354 0158 72010000 		.4byte	.LASF23
+ 355 015c 01       		.byte	0x1
+ 356 015d 86       		.byte	0x86
+ 357 015e 6F000000 		.4byte	0x6f
+ 358 0162 7C000000 		.4byte	.LLST4
+ 359 0166 00       		.byte	0
+ 360 0167 00       		.byte	0
+ 361              		.section	.debug_abbrev,"",%progbits
+ 362              	.Ldebug_abbrev0:
+ 363 0000 01       		.uleb128 0x1
+ 364 0001 11       		.uleb128 0x11
+ 365 0002 01       		.byte	0x1
+ 366 0003 25       		.uleb128 0x25
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCAMdGd.s 			page 10
+
+
+ 367 0004 0E       		.uleb128 0xe
+ 368 0005 13       		.uleb128 0x13
+ 369 0006 0B       		.uleb128 0xb
+ 370 0007 03       		.uleb128 0x3
+ 371 0008 0E       		.uleb128 0xe
+ 372 0009 1B       		.uleb128 0x1b
+ 373 000a 0E       		.uleb128 0xe
+ 374 000b 55       		.uleb128 0x55
+ 375 000c 06       		.uleb128 0x6
+ 376 000d 11       		.uleb128 0x11
+ 377 000e 01       		.uleb128 0x1
+ 378 000f 52       		.uleb128 0x52
+ 379 0010 01       		.uleb128 0x1
+ 380 0011 10       		.uleb128 0x10
+ 381 0012 06       		.uleb128 0x6
+ 382 0013 00       		.byte	0
+ 383 0014 00       		.byte	0
+ 384 0015 02       		.uleb128 0x2
+ 385 0016 24       		.uleb128 0x24
+ 386 0017 00       		.byte	0
+ 387 0018 0B       		.uleb128 0xb
+ 388 0019 0B       		.uleb128 0xb
+ 389 001a 3E       		.uleb128 0x3e
+ 390 001b 0B       		.uleb128 0xb
+ 391 001c 03       		.uleb128 0x3
+ 392 001d 0E       		.uleb128 0xe
+ 393 001e 00       		.byte	0
+ 394 001f 00       		.byte	0
+ 395 0020 03       		.uleb128 0x3
+ 396 0021 24       		.uleb128 0x24
+ 397 0022 00       		.byte	0
+ 398 0023 0B       		.uleb128 0xb
+ 399 0024 0B       		.uleb128 0xb
+ 400 0025 3E       		.uleb128 0x3e
+ 401 0026 0B       		.uleb128 0xb
+ 402 0027 03       		.uleb128 0x3
+ 403 0028 08       		.uleb128 0x8
+ 404 0029 00       		.byte	0
+ 405 002a 00       		.byte	0
+ 406 002b 04       		.uleb128 0x4
+ 407 002c 16       		.uleb128 0x16
+ 408 002d 00       		.byte	0
+ 409 002e 03       		.uleb128 0x3
+ 410 002f 0E       		.uleb128 0xe
+ 411 0030 3A       		.uleb128 0x3a
+ 412 0031 0B       		.uleb128 0xb
+ 413 0032 3B       		.uleb128 0x3b
+ 414 0033 0B       		.uleb128 0xb
+ 415 0034 49       		.uleb128 0x49
+ 416 0035 13       		.uleb128 0x13
+ 417 0036 00       		.byte	0
+ 418 0037 00       		.byte	0
+ 419 0038 05       		.uleb128 0x5
+ 420 0039 35       		.uleb128 0x35
+ 421 003a 00       		.byte	0
+ 422 003b 49       		.uleb128 0x49
+ 423 003c 13       		.uleb128 0x13
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCAMdGd.s 			page 11
+
+
+ 424 003d 00       		.byte	0
+ 425 003e 00       		.byte	0
+ 426 003f 06       		.uleb128 0x6
+ 427 0040 2E       		.uleb128 0x2e
+ 428 0041 01       		.byte	0x1
+ 429 0042 3F       		.uleb128 0x3f
+ 430 0043 0C       		.uleb128 0xc
+ 431 0044 03       		.uleb128 0x3
+ 432 0045 0E       		.uleb128 0xe
+ 433 0046 3A       		.uleb128 0x3a
+ 434 0047 0B       		.uleb128 0xb
+ 435 0048 3B       		.uleb128 0x3b
+ 436 0049 0B       		.uleb128 0xb
+ 437 004a 27       		.uleb128 0x27
+ 438 004b 0C       		.uleb128 0xc
+ 439 004c 11       		.uleb128 0x11
+ 440 004d 01       		.uleb128 0x1
+ 441 004e 12       		.uleb128 0x12
+ 442 004f 01       		.uleb128 0x1
+ 443 0050 40       		.uleb128 0x40
+ 444 0051 0A       		.uleb128 0xa
+ 445 0052 9742     		.uleb128 0x2117
+ 446 0054 0C       		.uleb128 0xc
+ 447 0055 01       		.uleb128 0x1
+ 448 0056 13       		.uleb128 0x13
+ 449 0057 00       		.byte	0
+ 450 0058 00       		.byte	0
+ 451 0059 07       		.uleb128 0x7
+ 452 005a 05       		.uleb128 0x5
+ 453 005b 00       		.byte	0
+ 454 005c 03       		.uleb128 0x3
+ 455 005d 0E       		.uleb128 0xe
+ 456 005e 3A       		.uleb128 0x3a
+ 457 005f 0B       		.uleb128 0xb
+ 458 0060 3B       		.uleb128 0x3b
+ 459 0061 0B       		.uleb128 0xb
+ 460 0062 49       		.uleb128 0x49
+ 461 0063 13       		.uleb128 0x13
+ 462 0064 02       		.uleb128 0x2
+ 463 0065 06       		.uleb128 0x6
+ 464 0066 00       		.byte	0
+ 465 0067 00       		.byte	0
+ 466 0068 08       		.uleb128 0x8
+ 467 0069 34       		.uleb128 0x34
+ 468 006a 00       		.byte	0
+ 469 006b 03       		.uleb128 0x3
+ 470 006c 0E       		.uleb128 0xe
+ 471 006d 3A       		.uleb128 0x3a
+ 472 006e 0B       		.uleb128 0xb
+ 473 006f 3B       		.uleb128 0x3b
+ 474 0070 0B       		.uleb128 0xb
+ 475 0071 49       		.uleb128 0x49
+ 476 0072 13       		.uleb128 0x13
+ 477 0073 02       		.uleb128 0x2
+ 478 0074 06       		.uleb128 0x6
+ 479 0075 00       		.byte	0
+ 480 0076 00       		.byte	0
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCAMdGd.s 			page 12
+
+
+ 481 0077 09       		.uleb128 0x9
+ 482 0078 2E       		.uleb128 0x2e
+ 483 0079 01       		.byte	0x1
+ 484 007a 3F       		.uleb128 0x3f
+ 485 007b 0C       		.uleb128 0xc
+ 486 007c 03       		.uleb128 0x3
+ 487 007d 0E       		.uleb128 0xe
+ 488 007e 3A       		.uleb128 0x3a
+ 489 007f 0B       		.uleb128 0xb
+ 490 0080 3B       		.uleb128 0x3b
+ 491 0081 0B       		.uleb128 0xb
+ 492 0082 27       		.uleb128 0x27
+ 493 0083 0C       		.uleb128 0xc
+ 494 0084 11       		.uleb128 0x11
+ 495 0085 01       		.uleb128 0x1
+ 496 0086 12       		.uleb128 0x12
+ 497 0087 01       		.uleb128 0x1
+ 498 0088 40       		.uleb128 0x40
+ 499 0089 06       		.uleb128 0x6
+ 500 008a 9742     		.uleb128 0x2117
+ 501 008c 0C       		.uleb128 0xc
+ 502 008d 01       		.uleb128 0x1
+ 503 008e 13       		.uleb128 0x13
+ 504 008f 00       		.byte	0
+ 505 0090 00       		.byte	0
+ 506 0091 0A       		.uleb128 0xa
+ 507 0092 2E       		.uleb128 0x2e
+ 508 0093 00       		.byte	0
+ 509 0094 3F       		.uleb128 0x3f
+ 510 0095 0C       		.uleb128 0xc
+ 511 0096 03       		.uleb128 0x3
+ 512 0097 0E       		.uleb128 0xe
+ 513 0098 3A       		.uleb128 0x3a
+ 514 0099 0B       		.uleb128 0xb
+ 515 009a 3B       		.uleb128 0x3b
+ 516 009b 0B       		.uleb128 0xb
+ 517 009c 27       		.uleb128 0x27
+ 518 009d 0C       		.uleb128 0xc
+ 519 009e 49       		.uleb128 0x49
+ 520 009f 13       		.uleb128 0x13
+ 521 00a0 11       		.uleb128 0x11
+ 522 00a1 01       		.uleb128 0x1
+ 523 00a2 12       		.uleb128 0x12
+ 524 00a3 01       		.uleb128 0x1
+ 525 00a4 40       		.uleb128 0x40
+ 526 00a5 0A       		.uleb128 0xa
+ 527 00a6 9742     		.uleb128 0x2117
+ 528 00a8 0C       		.uleb128 0xc
+ 529 00a9 00       		.byte	0
+ 530 00aa 00       		.byte	0
+ 531 00ab 0B       		.uleb128 0xb
+ 532 00ac 2E       		.uleb128 0x2e
+ 533 00ad 01       		.byte	0x1
+ 534 00ae 3F       		.uleb128 0x3f
+ 535 00af 0C       		.uleb128 0xc
+ 536 00b0 03       		.uleb128 0x3
+ 537 00b1 0E       		.uleb128 0xe
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCAMdGd.s 			page 13
+
+
+ 538 00b2 3A       		.uleb128 0x3a
+ 539 00b3 0B       		.uleb128 0xb
+ 540 00b4 3B       		.uleb128 0x3b
+ 541 00b5 0B       		.uleb128 0xb
+ 542 00b6 27       		.uleb128 0x27
+ 543 00b7 0C       		.uleb128 0xc
+ 544 00b8 49       		.uleb128 0x49
+ 545 00b9 13       		.uleb128 0x13
+ 546 00ba 11       		.uleb128 0x11
+ 547 00bb 01       		.uleb128 0x1
+ 548 00bc 12       		.uleb128 0x12
+ 549 00bd 01       		.uleb128 0x1
+ 550 00be 40       		.uleb128 0x40
+ 551 00bf 0A       		.uleb128 0xa
+ 552 00c0 9742     		.uleb128 0x2117
+ 553 00c2 0C       		.uleb128 0xc
+ 554 00c3 00       		.byte	0
+ 555 00c4 00       		.byte	0
+ 556 00c5 00       		.byte	0
+ 557              		.section	.debug_loc,"",%progbits
+ 558              	.Ldebug_loc0:
+ 559              	.LLST0:
+ 560 0000 00000000 		.4byte	.LVL0
+ 561 0004 0C000000 		.4byte	.LVL2
+ 562 0008 0100     		.2byte	0x1
+ 563 000a 50       		.byte	0x50
+ 564 000b 0C000000 		.4byte	.LVL2
+ 565 000f 18000000 		.4byte	.LFE0
+ 566 0013 0400     		.2byte	0x4
+ 567 0015 F3       		.byte	0xf3
+ 568 0016 01       		.uleb128 0x1
+ 569 0017 50       		.byte	0x50
+ 570 0018 9F       		.byte	0x9f
+ 571 0019 00000000 		.4byte	0
+ 572 001d 00000000 		.4byte	0
+ 573              	.LLST1:
+ 574 0021 08000000 		.4byte	.LVL1
+ 575 0025 0C000000 		.4byte	.LVL2
+ 576 0029 0800     		.2byte	0x8
+ 577 002b 70       		.byte	0x70
+ 578 002c 00       		.sleb128 0
+ 579 002d 37       		.byte	0x37
+ 580 002e 24       		.byte	0x24
+ 581 002f 71       		.byte	0x71
+ 582 0030 00       		.sleb128 0
+ 583 0031 21       		.byte	0x21
+ 584 0032 9F       		.byte	0x9f
+ 585 0033 00000000 		.4byte	0
+ 586 0037 00000000 		.4byte	0
+ 587              	.LLST2:
+ 588 003b 00000000 		.4byte	.LFB1
+ 589 003f 04000000 		.4byte	.LCFI0
+ 590 0043 0200     		.2byte	0x2
+ 591 0045 7D       		.byte	0x7d
+ 592 0046 00       		.sleb128 0
+ 593 0047 04000000 		.4byte	.LCFI0
+ 594 004b 1C000000 		.4byte	.LFE1
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCAMdGd.s 			page 14
+
+
+ 595 004f 0200     		.2byte	0x2
+ 596 0051 7D       		.byte	0x7d
+ 597 0052 08       		.sleb128 8
+ 598 0053 00000000 		.4byte	0
+ 599 0057 00000000 		.4byte	0
+ 600              	.LLST3:
+ 601 005b 00000000 		.4byte	.LVL3
+ 602 005f 0C000000 		.4byte	.LVL4
+ 603 0063 0100     		.2byte	0x1
+ 604 0065 50       		.byte	0x50
+ 605 0066 0C000000 		.4byte	.LVL4
+ 606 006a 1C000000 		.4byte	.LFE1
+ 607 006e 0400     		.2byte	0x4
+ 608 0070 F3       		.byte	0xf3
+ 609 0071 01       		.uleb128 0x1
+ 610 0072 50       		.byte	0x50
+ 611 0073 9F       		.byte	0x9f
+ 612 0074 00000000 		.4byte	0
+ 613 0078 00000000 		.4byte	0
+ 614              	.LLST4:
+ 615 007c 08000000 		.4byte	.LVL5
+ 616 0080 0E000000 		.4byte	.LVL6
+ 617 0084 0100     		.2byte	0x1
+ 618 0086 50       		.byte	0x50
+ 619 0087 0E000000 		.4byte	.LVL6
+ 620 008b 14000000 		.4byte	.LFE4
+ 621 008f 0400     		.2byte	0x4
+ 622 0091 73       		.byte	0x73
+ 623 0092 00       		.sleb128 0
+ 624 0093 06       		.byte	0x6
+ 625 0094 9F       		.byte	0x9f
+ 626 0095 00000000 		.4byte	0
+ 627 0099 00000000 		.4byte	0
+ 628              		.section	.debug_aranges,"",%progbits
+ 629 0000 3C000000 		.4byte	0x3c
+ 630 0004 0200     		.2byte	0x2
+ 631 0006 00000000 		.4byte	.Ldebug_info0
+ 632 000a 04       		.byte	0x4
+ 633 000b 00       		.byte	0
+ 634 000c 0000     		.2byte	0
+ 635 000e 0000     		.2byte	0
+ 636 0010 00000000 		.4byte	.LFB0
+ 637 0014 18000000 		.4byte	.LFE0-.LFB0
+ 638 0018 00000000 		.4byte	.LFB1
+ 639 001c 1C000000 		.4byte	.LFE1-.LFB1
+ 640 0020 00000000 		.4byte	.LFB2
+ 641 0024 10000000 		.4byte	.LFE2-.LFB2
+ 642 0028 00000000 		.4byte	.LFB3
+ 643 002c 10000000 		.4byte	.LFE3-.LFB3
+ 644 0030 00000000 		.4byte	.LFB4
+ 645 0034 14000000 		.4byte	.LFE4-.LFB4
+ 646 0038 00000000 		.4byte	0
+ 647 003c 00000000 		.4byte	0
+ 648              		.section	.debug_ranges,"",%progbits
+ 649              	.Ldebug_ranges0:
+ 650 0000 00000000 		.4byte	.LFB0
+ 651 0004 18000000 		.4byte	.LFE0
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCAMdGd.s 			page 15
+
+
+ 652 0008 00000000 		.4byte	.LFB1
+ 653 000c 1C000000 		.4byte	.LFE1
+ 654 0010 00000000 		.4byte	.LFB2
+ 655 0014 10000000 		.4byte	.LFE2
+ 656 0018 00000000 		.4byte	.LFB3
+ 657 001c 10000000 		.4byte	.LFE3
+ 658 0020 00000000 		.4byte	.LFB4
+ 659 0024 14000000 		.4byte	.LFE4
+ 660 0028 00000000 		.4byte	0
+ 661 002c 00000000 		.4byte	0
+ 662              		.section	.debug_line,"",%progbits
+ 663              	.Ldebug_line0:
+ 664 0000 B7000000 		.section	.debug_str,"MS",%progbits,1
+ 664      02004900 
+ 664      00000201 
+ 664      FB0E0D00 
+ 664      01010101 
+ 665              	.LASF16:
+ 666 0000 53504930 		.ascii	"SPI0_ss0_m_SetDriveMode\000"
+ 666      5F737330 
+ 666      5F6D5F53 
+ 666      65744472 
+ 666      6976654D 
+ 667              	.LASF14:
+ 668 0018 72656733 		.ascii	"reg32\000"
+ 668      3200
+ 669              	.LASF17:
+ 670 001e 76616C75 		.ascii	"value\000"
+ 670      6500
+ 671              	.LASF11:
+ 672 0024 666C6F61 		.ascii	"float\000"
+ 672      7400
+ 673              	.LASF1:
+ 674 002a 756E7369 		.ascii	"unsigned char\000"
+ 674      676E6564 
+ 674      20636861 
+ 674      7200
+ 675              	.LASF15:
+ 676 0038 53504930 		.ascii	"SPI0_ss0_m_Write\000"
+ 676      5F737330 
+ 676      5F6D5F57 
+ 676      72697465 
+ 676      00
+ 677              	.LASF22:
+ 678 0049 64725661 		.ascii	"drVal\000"
+ 678      6C00
+ 679              	.LASF5:
+ 680 004f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 680      20756E73 
+ 680      69676E65 
+ 680      6420696E 
+ 680      7400
+ 681              	.LASF20:
+ 682 0061 53504930 		.ascii	"SPI0_ss0_m_ReadDataReg\000"
+ 682      5F737330 
+ 682      5F6D5F52 
+ 682      65616444 
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCAMdGd.s 			page 16
+
+
+ 682      61746152 
+ 683              	.LASF3:
+ 684 0078 73686F72 		.ascii	"short unsigned int\000"
+ 684      7420756E 
+ 684      7369676E 
+ 684      65642069 
+ 684      6E7400
+ 685              	.LASF21:
+ 686 008b 53504930 		.ascii	"SPI0_ss0_m_ClearInterrupt\000"
+ 686      5F737330 
+ 686      5F6D5F43 
+ 686      6C656172 
+ 686      496E7465 
+ 687              	.LASF26:
+ 688 00a5 433A5C55 		.ascii	"C:\\Users\\chuck.erhardt\\Documents\\GitHub\\PSoC-W"
+ 688      73657273 
+ 688      5C636875 
+ 688      636B2E65 
+ 688      72686172 
+ 689 00d3 35313030 		.ascii	"5100-Driver\\PSoCPioneer+ArduinoShield_Example.cyds"
+ 689      2D447269 
+ 689      7665725C 
+ 689      50536F43 
+ 689      50696F6E 
+ 690 0105 6E00     		.ascii	"n\000"
+ 691              	.LASF12:
+ 692 0107 646F7562 		.ascii	"double\000"
+ 692      6C6500
+ 693              	.LASF10:
+ 694 010e 75696E74 		.ascii	"uint32\000"
+ 694      333200
+ 695              	.LASF8:
+ 696 0115 756E7369 		.ascii	"unsigned int\000"
+ 696      676E6564 
+ 696      20696E74 
+ 696      00
+ 697              	.LASF7:
+ 698 0122 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 698      206C6F6E 
+ 698      6720756E 
+ 698      7369676E 
+ 698      65642069 
+ 699              	.LASF18:
+ 700 0139 6D6F6465 		.ascii	"mode\000"
+ 700      00
+ 701              	.LASF25:
+ 702 013e 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\SPI0_ss0_m.c\000"
+ 702      6E657261 
+ 702      7465645F 
+ 702      536F7572 
+ 702      63655C50 
+ 703              	.LASF6:
+ 704 0164 6C6F6E67 		.ascii	"long long int\000"
+ 704      206C6F6E 
+ 704      6720696E 
+ 704      7400
+ 705              	.LASF23:
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCAMdGd.s 			page 17
+
+
+ 706 0172 6D61736B 		.ascii	"maskedStatus\000"
+ 706      65645374 
+ 706      61747573 
+ 706      00
+ 707              	.LASF13:
+ 708 017f 63686172 		.ascii	"char\000"
+ 708      00
+ 709              	.LASF2:
+ 710 0184 73686F72 		.ascii	"short int\000"
+ 710      7420696E 
+ 710      7400
+ 711              	.LASF9:
+ 712 018e 75696E74 		.ascii	"uint8\000"
+ 712      3800
+ 713              	.LASF24:
+ 714 0194 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 714      4320342E 
+ 714      372E3320 
+ 714      32303133 
+ 714      30333132 
+ 715 01c7 616E6368 		.ascii	"anch revision 196615]\000"
+ 715      20726576 
+ 715      6973696F 
+ 715      6E203139 
+ 715      36363135 
+ 716              	.LASF19:
+ 717 01dd 53504930 		.ascii	"SPI0_ss0_m_Read\000"
+ 717      5F737330 
+ 717      5F6D5F52 
+ 717      65616400 
+ 718              	.LASF4:
+ 719 01ed 6C6F6E67 		.ascii	"long int\000"
+ 719      20696E74 
+ 719      00
+ 720              	.LASF0:
+ 721 01f6 7369676E 		.ascii	"signed char\000"
+ 721      65642063 
+ 721      68617200 
+ 722              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

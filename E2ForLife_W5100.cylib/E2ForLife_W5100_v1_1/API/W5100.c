@@ -11,6 +11,15 @@
  * of the W5100 device.
 */
 
+/*
+ * Change Log:
+ * 
+ * V1.1
+ * - Modified the SPI access function to remove hard wait for READ_WRITE_DELAY  <CE>
+ * - Removed READ_WRITE_DELAY Parameter <CE>
+ * - Added validator to SS_NUM parameter to ensure that the value is the range 0-3 <CE>
+ * 
+ */
 /* Cypress library includes */
 #include <cytypes.h>
 #include <cylib.h>
@@ -47,6 +56,13 @@ static uint8 `$INSTANCE_NAME`_MAC[6] = { `$MAC` };
  * to be contained within the FIFO buffer.
  */
 #if !defined(CY_SCB_`$SPI_INSTANCE`_H)
+/* ------------------------------------------------------------------------ */	
+/* V1.1 : Macro definition for the SpiDone flag. */
+/**
+ * \brief MAcro to determine the state of the spi done
+ * This macro reads the status regoster of the transmitter and masks off the doen bit.
+ */
+#define `$INSTANCE_NAME`_SpiDone     (`$SPI_INSTANCE`_ReadTxStatus() & `$SPI_INSTANCE`_STS_SPI_DONE)
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Select the active SCB chip select connected to the W51
@@ -84,6 +100,12 @@ static void `$INSTANCE_NAME`_W51_Select( void )
  */
 void `$INSTANCE_NAME`_W51_Write(uint16 addr, uint8 dat)
 {
+	/* V1.1: Wait for SPI operation to complete */
+	while( `$INSTANCE_NAME`_SpiDone == 0) {
+		CyDelayUs(1);
+	}
+	/* V1.1: End change */
+	
 	/* Using internal device SS generation */
 	`$INSTANCE_NAME`_W51_Select();
 	/*
@@ -97,8 +119,6 @@ void `$INSTANCE_NAME`_W51_Write(uint16 addr, uint8 dat)
 	`$SPI_INSTANCE`_WriteTxData((addr>>8)&0x00FF);
 	`$SPI_INSTANCE`_WriteTxData(addr&0x00FF);
 	`$SPI_INSTANCE`_WriteTxData(dat);
-	/* Wait for operation to end */
-	CyDelayUs(`$READ_WRITE_DELAY`); /* At 6 MBPS it will take approx 6 uS to send the data */
 
 }
 
@@ -116,6 +136,12 @@ uint8 `$INSTANCE_NAME`_W51_Read(uint16 addr)
 	uint32 dat;
 	uint32 count;
 	
+	/* V1.1: Wait for SPI operation to complete */
+	while( `$INSTANCE_NAME`_SpiDone == 0) {
+		CyDelayUs(1);
+	}
+	/* V1.1: End change */
+
 	/* Using internal device SS generation */
 	`$INSTANCE_NAME`_W51_Select();
 	/*
@@ -130,8 +156,14 @@ uint8 `$INSTANCE_NAME`_W51_Read(uint16 addr)
 	`$SPI_INSTANCE`_WriteTxData(addr>>8);
 	`$SPI_INSTANCE`_WriteTxData(addr&0x00FF);
 	`$SPI_INSTANCE`_WriteTxData( 0 );
+	
 	/* Wait for operations to complete. */
-	CyDelayUs( `$READ_WRITE_DELAY` );
+	/* V1.1: Wait for SPI operation to complete */
+	while( `$INSTANCE_NAME`_SpiDone == 0) {
+		CyDelayUs(1);
+	}
+	/* V1.1: End change */
+
 	count = `$SPI_INSTANCE`_GetRxBufferSize();
 	while( count > 0 )
 	{
@@ -146,7 +178,24 @@ uint8 `$INSTANCE_NAME`_W51_Read(uint16 addr)
 #else
 /* include SPI function header for the SCB */
 #include <`$SPI_INSTANCE`_SPI_UART.h>
-	
+
+/* V1.1 : Include the header for the select pin used. */
+#if (`$SS_NUM` == 0)
+#include <`$SPI_INSTANCE`_ss0_m.h>
+#define `$INSTANCE_NAME`_SpiDone    (`$SPI_INSTANCE`_ss0_m_Read())
+#elif (`$SS_NUM` == 1)
+#include <`$SPI_INSTANCE`_ss1_m.h>
+#define `$INSTANCE_NAME`_SpiDone    (`$SPI_INSTANCE`_ss1_m_Read())
+#elif (`$SS_NUM` == 2)
+#include <`$SPI_INSTANCE`_ss2_m.h>
+#define `$INSTANCE_NAME`_SpiDone    (`$SPI_INSTANCE`_ss2_m_Read())
+#elif (`$SS_NUM` == 3)
+#include <`$SPI_INSTANCE`_ss3_m.h>
+#define `$INSTANCE_NAME`_SpiDone    (`$SPI_INSTANCE`_ss3_m_Read())
+#else
+#include <`$SPI_INSTANCE`_ss0_m.h>
+#define `$INSTANCE_NAME`_SpiDone    (`$SPI_INSTANCE`_ss0_m_Read())
+#endif
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Select the active SCB chip select connected to the W51
@@ -179,6 +228,12 @@ static void `$INSTANCE_NAME`_W51_Select( void )
  */
 void `$INSTANCE_NAME`_W51_Write(uint16 addr, uint8 dat)
 {
+	/* V1.1: Wait for SPI operation to complete */
+	while( `$INSTANCE_NAME`_SpiDone == 0) {
+		CyDelayUs(1);
+	}
+	/* V1.1: End change */
+
 	/* Using internal device SS generation */
 	`$INSTANCE_NAME`_W51_Select();
 	/*
@@ -192,8 +247,6 @@ void `$INSTANCE_NAME`_W51_Write(uint16 addr, uint8 dat)
 	`$SPI_INSTANCE`_SpiUartWriteTxData((addr>>8)&0x00FF);
 	`$SPI_INSTANCE`_SpiUartWriteTxData(addr&0x00FF);
 	`$SPI_INSTANCE`_SpiUartWriteTxData(dat);
-	/* Wait for operation to end */
-	CyDelayUs(`$READ_WRITE_DELAY`); /* At 6 MBPS it will take approx 6 uS to send the data */
 }
 /* ------------------------------------------------------------------------ */
 /**
@@ -209,6 +262,12 @@ uint8 `$INSTANCE_NAME`_W51_Read(uint16 addr)
 	uint32 dat;
 	uint32 count;
 	
+	/* V1.1: Wait for SPI operation to complete */
+	while( `$INSTANCE_NAME`_SpiDone == 0) {
+		CyDelayUs(1);
+	}
+	/* V1.1: End change */
+
 	/* Using internal device SS generation */
 	`$INSTANCE_NAME`_W51_Select();
 	/*
@@ -224,7 +283,12 @@ uint8 `$INSTANCE_NAME`_W51_Read(uint16 addr)
 	`$SPI_INSTANCE`_SpiUartWriteTxData(addr&0x00FF);
 	`$SPI_INSTANCE`_SpiUartWriteTxData( 0 );
 	/* Wait for operations to complete. */
-	CyDelayUs( `$READ_WRITE_DELAY` );
+	/* V1.1: Wait for SPI operation to complete */
+	while( `$INSTANCE_NAME`_SpiDone == 0) {
+		CyDelayUs(1);
+	}
+	/* V1.1: End change */
+
 	count = `$SPI_INSTANCE`_SpiUartGetRxBufferSize();
 	while( count > 0 )
 	{
