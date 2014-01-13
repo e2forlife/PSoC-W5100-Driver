@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 1
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccymDhA9.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 1
   18:.\Generated_Source\PSoC4/SPI0.c **** 
   19:.\Generated_Source\PSoC4/SPI0.c **** #if(SPI0_SCB_MODE_I2C_INC)
   20:.\Generated_Source\PSoC4/SPI0.c ****     #include "SPI0_I2C_PVT.h"
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 2
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccymDhA9.s 			page 2
 
 
   21:.\Generated_Source\PSoC4/SPI0.c **** #endif /* (SPI0_SCB_MODE_I2C_INC) */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 1
   75:.\Generated_Source\PSoC4/SPI0.c **** static void SPI0_ScbModeStop(void);
   76:.\Generated_Source\PSoC4/SPI0.c **** 
   77:.\Generated_Source\PSoC4/SPI0.c **** 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 3
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccymDhA9.s 			page 3
 
 
   78:.\Generated_Source\PSoC4/SPI0.c **** /*******************************************************************************
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 1
  120:.\Generated_Source\PSoC4/SPI0.c **** }
   50              		.loc 1 120 0
   51 0008 BD46     		mov	sp, r7
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 4
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccymDhA9.s 			page 4
 
 
   52              		@ sp needed for prologue
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 1
   75              		.loc 1 151 0
   76 0004 054B     		ldr	r3, .L3
   77 0006 054A     		ldr	r2, .L3
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 5
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccymDhA9.s 			page 5
 
 
   78 0008 1268     		ldr	r2, [r2]
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 1
  105              		.cfi_startproc
  106 0000 80B5     		push	{r7, lr}
  107              	.LCFI4:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 6
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccymDhA9.s 			page 6
 
 
  108              		.cfi_def_cfa_offset 8
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 1
  194:.\Generated_Source\PSoC4/SPI0.c **** *  Disables the SCB component.
  195:.\Generated_Source\PSoC4/SPI0.c **** *
  196:.\Generated_Source\PSoC4/SPI0.c **** * Parameters:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 7
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccymDhA9.s 			page 7
 
 
  197:.\Generated_Source\PSoC4/SPI0.c **** *  None
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 1
  181              		.thumb_func
  182              		.type	SPI0_SetCustomInterruptHandler, %function
  183              	SPI0_SetCustomInterruptHandler:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 8
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccymDhA9.s 			page 8
 
 
  184              	.LFB4:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 1
  210              	.L13:
  211 0014 00000000 		.word	SPI0_customIntrHandler
  212              		.cfi_endproc
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 9
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccymDhA9.s 			page 9
 
 
  213              	.LFE4:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 1
  236              		.cfi_endproc
  237              	.LFE5:
  238              		.size	SPI0_ScbEnableIntr, .-SPI0_ScbEnableIntr
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 10
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccymDhA9.s 			page 10
 
 
  239              		.section	.text.SPI0_ScbModeStop,"ax",%progbits
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 1
  313:.\Generated_Source\PSoC4/SPI0.c **** #endif /* (SPI0_SCB_MODE_UNCONFIG_CONST_CFG) */
  314:.\Generated_Source\PSoC4/SPI0.c **** }
  256              		.loc 1 314 0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 11
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccymDhA9.s 			page 11
 
 
  257 0004 BD46     		mov	sp, r7
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 1
  311 005c 07       		.byte	0x7
  312 005d 65010000 		.4byte	.LASF7
  313 0061 03       		.uleb128 0x3
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 12
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccymDhA9.s 			page 12
 
 
  314 0062 04       		.byte	0x4
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 1
  368 00cc 5F       		.byte	0x5f
  369 00cd 01       		.byte	0x1
  370 00ce 00000000 		.4byte	.LFB0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 13
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccymDhA9.s 			page 13
 
 
  371 00d2 0C000000 		.4byte	.LFE0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 1
  425 0147 D0000000 		.4byte	.LASF21
  426 014b 01       		.byte	0x1
  427 014c 0501     		.2byte	0x105
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 14
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccymDhA9.s 			page 14
 
 
  428 014e 01       		.byte	0x1
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 1
  482 0013 00       		.byte	0
  483 0014 00       		.byte	0
  484 0015 02       		.uleb128 0x2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 15
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccymDhA9.s 			page 15
 
 
  485 0016 24       		.uleb128 0x24
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 1
  539 004c 07       		.uleb128 0x7
  540 004d 0F       		.uleb128 0xf
  541 004e 00       		.byte	0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 16
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccymDhA9.s 			page 16
 
 
  542 004f 0B       		.uleb128 0xb
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 1
  596 0086 06       		.uleb128 0x6
  597 0087 9742     		.uleb128 0x2117
  598 0089 0C       		.uleb128 0xc
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 17
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccymDhA9.s 			page 17
 
 
  599 008a 01       		.uleb128 0x1
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 1
  653 00c1 0A       		.uleb128 0xa
  654 00c2 00       		.byte	0
  655 00c3 00       		.byte	0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 18
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccymDhA9.s 			page 18
 
 
  656 00c4 00       		.byte	0
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 1
  710 007b 08       		.sleb128 8
  711 007c 00000000 		.4byte	0
  712 0080 00000000 		.4byte	0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 19
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccymDhA9.s 			page 19
 
 
  713              	.LLST3:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 1
  767 0108 0200     		.2byte	0x2
  768 010a 77       		.byte	0x77
  769 010b 08       		.sleb128 8
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 20
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccymDhA9.s 			page 20
 
 
  770 010c 00000000 		.4byte	0
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 1
  824 0020 00000000 		.4byte	.LFB4
  825 0024 18000000 		.4byte	.LFE4
  826 0028 00000000 		.4byte	.LFB5
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 21
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccymDhA9.s 			page 21
 
 
  827 002c 08000000 		.4byte	.LFE5
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 1
  852      7400
  853              	.LASF1:
  854 008b 756E7369 		.ascii	"unsigned char\000"
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 22
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccymDhA9.s 			page 22
 
 
  854      676E6564 
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 1
  876      7369676E 
  876      65642069 
  877              	.LASF15:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRkGMZj.s 			page 23
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccymDhA9.s 			page 23
 
 
  878 017c 63796973 		.ascii	"cyisraddress\000"

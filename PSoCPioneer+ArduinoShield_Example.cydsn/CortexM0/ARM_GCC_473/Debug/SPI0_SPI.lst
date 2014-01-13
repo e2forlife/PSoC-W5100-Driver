@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 1
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc3vcCeQ.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 1
   30:.\Generated_Source\PSoC4/SPI0_SPI.c ****         SPI0_SPI_SUB_MODE,
   31:.\Generated_Source\PSoC4/SPI0_SPI.c ****         SPI0_SPI_CLOCK_MODE,
   32:.\Generated_Source\PSoC4/SPI0_SPI.c ****         SPI0_SPI_OVS_FACTOR,
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 2
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc3vcCeQ.s 			page 2
 
 
   33:.\Generated_Source\PSoC4/SPI0_SPI.c ****         SPI0_SPI_MEDIAN_FILTER_ENABLE,
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 1
   87:.\Generated_Source\PSoC4/SPI0_SPI.c ****             SPI0_rxBufferSize  = (uint8) config->rxBufferSize;
   88:.\Generated_Source\PSoC4/SPI0_SPI.c **** 
   89:.\Generated_Source\PSoC4/SPI0_SPI.c ****             /* Set TX direction internal variables */
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 3
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc3vcCeQ.s 			page 3
 
 
   90:.\Generated_Source\PSoC4/SPI0_SPI.c ****             SPI0_txBuffer      =         config->txBuffer;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 1
  144:.\Generated_Source\PSoC4/SPI0_SPI.c ****             SPI0_txBufferTail = 0u;
  145:.\Generated_Source\PSoC4/SPI0_SPI.c ****         }
  146:.\Generated_Source\PSoC4/SPI0_SPI.c ****     }
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 4
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc3vcCeQ.s 			page 4
 
 
  147:.\Generated_Source\PSoC4/SPI0_SPI.c **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 1
  175:.\Generated_Source\PSoC4/SPI0_SPI.c ****         SPI0_TX_CTRL_REG      = SPI0_SPI_DEFAULT_TX_CTRL;
   52              		.loc 1 175 0
   53 001c 134B     		ldr	r3, .L2+28
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 5
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc3vcCeQ.s 			page 5
 
 
   54 001e 114A     		ldr	r2, .L2+20
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 1
  200:.\Generated_Source\PSoC4/SPI0_SPI.c ****             SPI0_txBufferHead = 0u;
  201:.\Generated_Source\PSoC4/SPI0_SPI.c ****             SPI0_txBufferTail = 0u;
  202:.\Generated_Source\PSoC4/SPI0_SPI.c ****         #endif /* (SPI0_INTERNAL_TX_SW_BUFFER_CONST) */
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 6
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc3vcCeQ.s 			page 6
 
 
  203:.\Generated_Source\PSoC4/SPI0_SPI.c ****     }
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 1
  224:.\Generated_Source\PSoC4/SPI0_SPI.c **** *
  225:.\Generated_Source\PSoC4/SPI0_SPI.c **** * Return:
  226:.\Generated_Source\PSoC4/SPI0_SPI.c **** *  None
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 7
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc3vcCeQ.s 			page 7
 
 
  227:.\Generated_Source\PSoC4/SPI0_SPI.c **** *
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 1
  158              	.L6:
  159 0032 C046     		.align	2
  160              	.L5:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 8
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc3vcCeQ.s 			page 8
 
 
  161 0034 20000740 		.word	1074200608
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 1
  215 005d 03010000 		.4byte	.LASF7
  216 0061 03       		.uleb128 0x3
  217 0062 04       		.byte	0x4
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 9
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc3vcCeQ.s 			page 9
 
 
  218 0063 05       		.byte	0x5
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 1
  272 00d2 08       		.uleb128 0x8
  273 00d3 75010000 		.4byte	.LASF20
  274 00d7 01       		.byte	0x1
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 10
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc3vcCeQ.s 			page 10
 
 
  275 00d8 E5       		.byte	0xe5
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 1
  329 0025 3E       		.uleb128 0x3e
  330 0026 0B       		.uleb128 0xb
  331 0027 03       		.uleb128 0x3
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 11
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc3vcCeQ.s 			page 11
 
 
  332 0028 08       		.uleb128 0x8
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 1
  386 005f 0B       		.uleb128 0xb
  387 0060 3B       		.uleb128 0x3b
  388 0061 0B       		.uleb128 0xb
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 12
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc3vcCeQ.s 			page 12
 
 
  389 0062 27       		.uleb128 0x27
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 1
  443 0016 7D       		.byte	0x7d
  444 0017 08       		.sleb128 8
  445 0018 04000000 		.4byte	.LCFI1
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 13
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc3vcCeQ.s 			page 13
 
 
  446 001c 8C000000 		.4byte	.LFE0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 1
  499      02004700 
  499      00000201 
  499      FB0E0D00 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 14
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc3vcCeQ.s 			page 14
 
 
  499      01010101 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 1
  518      65642069 
  519              	.LASF9:
  520 011a 666C6F61 		.ascii	"float\000"
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 15
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc3vcCeQ.s 			page 15
 
 
  520      7400
@@ -898,6 +898,6 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 1
  546      63746976 
  546      65536C61 
  547              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccbjmzo6.s 			page 16
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc3vcCeQ.s 			page 16
 
 

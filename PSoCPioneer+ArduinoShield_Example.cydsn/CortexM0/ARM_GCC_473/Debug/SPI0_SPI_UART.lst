@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
   30:.\Generated_Source\PSoC4/SPI0_SPI_UART.c **** 
   31:.\Generated_Source\PSoC4/SPI0_SPI_UART.c **** #if(SPI0_INTERNAL_TX_SW_BUFFER_CONST)
   32:.\Generated_Source\PSoC4/SPI0_SPI_UART.c ****     volatile uint32 SPI0_txBufferHead;
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 2
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 2
 
 
   33:.\Generated_Source\PSoC4/SPI0_SPI_UART.c ****     volatile uint32 SPI0_txBufferTail;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
   40 0006 0023     		mov	r3, #0
   41 0008 7B60     		str	r3, [r7, #4]
   73:.\Generated_Source\PSoC4/SPI0_SPI_UART.c **** 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 3
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 3
 
 
   74:.\Generated_Source\PSoC4/SPI0_SPI_UART.c ****         #if(SPI0_INTERNAL_RX_SW_BUFFER_CONST)
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
   63              		.global	SPI0_SpiUartGetRxBufferSize
   64              		.code	16
   65              		.thumb_func
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 4
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 4
 
 
   66              		.type	SPI0_SpiUartGetRxBufferSize, %function
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  145:.\Generated_Source\PSoC4/SPI0_SPI_UART.c ****             }
  146:.\Generated_Source\PSoC4/SPI0_SPI_UART.c ****         }
  147:.\Generated_Source\PSoC4/SPI0_SPI_UART.c ****         #else
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 5
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 5
 
 
  148:.\Generated_Source\PSoC4/SPI0_SPI_UART.c ****         {
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  111              		.loc 1 172 0
  112              		.cfi_startproc
  113 0000 80B5     		push	{r7, lr}
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 6
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 6
 
 
  114              	.LCFI6:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  143 0028 FFFFFEFF 		.word	-65537
  144              		.cfi_endproc
  145              	.LFE2:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 7
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 7
 
 
  146              		.size	SPI0_SpiUartClearRxBuffer, .-SPI0_SpiUartClearRxBuffer
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  229:.\Generated_Source\PSoC4/SPI0_SPI_UART.c ****         {
  230:.\Generated_Source\PSoC4/SPI0_SPI_UART.c ****             /* Head index to put data */
  231:.\Generated_Source\PSoC4/SPI0_SPI_UART.c ****             locHead = (SPI0_txBufferHead + 1u);
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 8
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 8
 
 
  232:.\Generated_Source\PSoC4/SPI0_SPI_UART.c **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  179              		.loc 1 275 0 is_stmt 1
  180 0016 044B     		ldr	r3, .L14+4
  181 0018 7A68     		ldr	r2, [r7, #4]
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 9
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 9
 
 
  182 001a 1A60     		str	r2, [r3]
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  211 0002 84B0     		sub	sp, sp, #16
  212              	.LCFI12:
  213              		.cfi_def_cfa_offset 24
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 10
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 10
 
 
  214 0004 00AF     		add	r7, sp, #0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  310:.\Generated_Source\PSoC4/SPI0_SPI_UART.c ****     /*******************************************************************************
  311:.\Generated_Source\PSoC4/SPI0_SPI_UART.c ****     * Function Name: SPI0_SpiUartGetTxBufferSize
  312:.\Generated_Source\PSoC4/SPI0_SPI_UART.c ****     ********************************************************************************
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 11
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 11
 
 
  313:.\Generated_Source\PSoC4/SPI0_SPI_UART.c ****     *
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  272 0008 1A68     		ldr	r2, [r3]
  273 000a 0F23     		mov	r3, #15
  274 000c 1340     		and	r3, r2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 12
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 12
 
 
  275 000e 7B60     		str	r3, [r7, #4]
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  306 0002 00AF     		add	r7, sp, #0
  307              	.LCFI18:
  308              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 13
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 13
 
 
  375:.\Generated_Source\PSoC4/SPI0_SPI_UART.c ****         #if(SPI0_INTERNAL_TX_SW_BUFFER_CONST)
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  339              		.thumb_func
  340              		.type	SPI0_SpiUartDisableIntRx, %function
  341              	SPI0_SpiUartDisableIntRx:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 14
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 14
 
 
  342              	.LFB7:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  368 0016 BD46     		mov	sp, r7
  369 0018 02B0     		add	sp, sp, #8
  370              		@ sp needed for prologue
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 15
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 15
 
 
  371 001a 80BD     		pop	{r7, pc}
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  448:.\Generated_Source\PSoC4/SPI0_SPI_UART.c **** 
  449:.\Generated_Source\PSoC4/SPI0_SPI_UART.c ****     SPI0_SetTxInterruptMode(SPI0_NO_INTR_SOURCES);
  404              		.loc 1 449 0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 16
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 16
 
 
  405 000c 034B     		ldr	r3, .L32
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  456 0041 45000000 		.4byte	.LASF3
  457 0045 02       		.uleb128 0x2
  458 0046 04       		.byte	0x4
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 17
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 17
 
 
  459 0047 05       		.byte	0x5
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  513 00ad 5C010000 		.4byte	.LASF15
  514 00b1 06       		.uleb128 0x6
  515 00b2 01       		.byte	0x1
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 18
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 18
 
 
  516 00b3 DE010000 		.4byte	.LASF16
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  570 0128 DD       		.byte	0xdd
  571 0129 01       		.byte	0x1
  572 012a 00000000 		.4byte	.LFB3
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 19
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 19
 
 
  573 012e 2C000000 		.4byte	.LFE3
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  627 019c 10       		.uleb128 0x10
  628 019d 01       		.byte	0x1
  629 019e B8010000 		.4byte	.LASF25
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 20
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 20
 
 
  630 01a2 01       		.byte	0x1
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  684 021a 01       		.byte	0x1
  685 021b 7A000000 		.4byte	0x7a
  686 021f 00000000 		.4byte	.LFB8
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 21
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 21
 
 
  687 0223 20000000 		.4byte	.LFE8
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  741 0027 03       		.uleb128 0x3
  742 0028 08       		.uleb128 0x8
  743 0029 00       		.byte	0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 22
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 22
 
 
  744 002a 00       		.byte	0
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  798 0061 0B       		.uleb128 0xb
  799 0062 3B       		.uleb128 0x3b
  800 0063 0B       		.uleb128 0xb
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 23
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 23
 
 
  801 0064 49       		.uleb128 0x49
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  855 009c 0A       		.uleb128 0xa
  856 009d 05       		.uleb128 0x5
  857 009e 00       		.byte	0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 24
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 24
 
 
  858 009f 03       		.uleb128 0x3
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  912 00d6 00       		.byte	0
  913 00d7 03       		.uleb128 0x3
  914 00d8 08       		.uleb128 0x8
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 25
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 25
 
 
  915 00d9 3A       		.uleb128 0x3a
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  969 0110 34       		.uleb128 0x34
  970 0111 00       		.byte	0
  971 0112 03       		.uleb128 0x3
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 26
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 26
 
 
  972 0113 0E       		.uleb128 0xe
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  1026 014a 06       		.uleb128 0x6
  1027 014b 9742     		.uleb128 0x2117
  1028 014d 0C       		.uleb128 0xc
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 27
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 27
 
 
  1029 014e 00       		.byte	0
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  1083 0078 0200     		.2byte	0x2
  1084 007a 7D       		.byte	0x7d
  1085 007b 00       		.sleb128 0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 28
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 28
 
 
  1086 007c 02000000 		.4byte	.LCFI6
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  1140 0102 77       		.byte	0x77
  1141 0103 18       		.sleb128 24
  1142 0104 00000000 		.4byte	0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 29
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 29
 
 
  1143 0108 00000000 		.4byte	0
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  1197 018c 06000000 		.4byte	.LCFI21
  1198 0190 0200     		.2byte	0x2
  1199 0192 7D       		.byte	0x7d
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 30
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 30
 
 
  1200 0193 10       		.sleb128 16
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  1254 004c 20000000 		.4byte	.LFE7-.LFB7
  1255 0050 00000000 		.4byte	.LFB8
  1256 0054 20000000 		.4byte	.LFE8-.LFB8
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 31
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 31
 
 
  1257 0058 00000000 		.4byte	0
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  1293      7369676E 
  1293      65642069 
  1293      6E7400
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 32
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 32
 
 
  1294              	.LASF8:
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  1319      333200
  1320              	.LASF31:
  1321 012d 696E7453 		.ascii	"intSourceMask\000"
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 33
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 33
 
 
  1321      6F757263 
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 1
  1343      5F537069 
  1343      55617274 
  1343      47657452 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccBOPCfB.s 			page 34
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccRp6Shf.s 			page 34
 
 
  1343      78427566 

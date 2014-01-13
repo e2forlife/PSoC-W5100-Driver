@@ -14,6 +14,13 @@
 /*
  * Change Log:
  * 
+ * V1.1
+ * - Modified the SPI access function to remove hard wait for READ_WRITE_DELAY  <CE>
+ * - Removed READ_WRITE_DELAY Parameter <CE>
+ * - Added validator to SS_NUM parameter to ensure that the value is the range 0-3 <CE>
+ * - Removed "inline" keywords from interal register access function to promote
+ *   compatibility with Keil PSoC3 compilers that don't support them. <CE>
+ */
 /* Cypress library includes */
 #include <cytypes.h>
 #include <cylib.h>
@@ -1017,7 +1024,7 @@ static void ETH0_ProcessRxData(uint8 socket, uint16 offset, uint8* buffer, uint1
 		 */
 		ETH0_W51_ReadBlock(addr,buffer,length);
 	}
-	if (flags & 0x01) {
+	if ( (flags & 0x01) == 0 ) {
 		/* move the write pointer */
 		base += length;
 		/* 

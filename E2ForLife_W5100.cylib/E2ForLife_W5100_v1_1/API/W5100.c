@@ -20,7 +20,10 @@
  * - Added validator to SS_NUM parameter to ensure that the value is the range 0-3 <CE>
  * - Removed "inline" keywords from interal register access function to promote
  *   compatibility with Keil PSoC3 compilers that don't support them. <CE>
+ * - Fixed bug in _ProcessRxData() that caused the read pointer not to be updated without
+ *   the lookahead flag being set. <CE>
  */
+
 /* Cypress library includes */
 #include <cytypes.h>
 #include <cylib.h>
@@ -1026,7 +1029,7 @@ static void `$INSTANCE_NAME`_ProcessRxData(uint8 socket, uint16 offset, uint8* b
 		 */
 		`$INSTANCE_NAME`_W51_ReadBlock(addr,buffer,length);
 	}
-	if (flags & 0x01) {
+	if ( (flags & 0x01) == 0 ) { /* V1.1: Added ==0 condition to lookahead flag check */
 		/* move the write pointer */
 		base += length;
 		/* 
