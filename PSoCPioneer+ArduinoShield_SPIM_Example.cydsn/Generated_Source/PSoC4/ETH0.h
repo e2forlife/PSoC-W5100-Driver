@@ -160,7 +160,7 @@
  * \file W5100.h 
  * Interface driver definitions and prototypes
  * \author Chuck Erhardt (chuck@e2forlife.com)
- * \version 1.1
+ * \version 1.2
  * \date 04-NOV-2013
  * 
  */

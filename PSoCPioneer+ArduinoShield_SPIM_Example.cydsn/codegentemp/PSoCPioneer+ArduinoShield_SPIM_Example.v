@@ -1,6 +1,6 @@
 // ======================================================================
 // PSoCPioneer+ArduinoShield_SPIM_Example.v generated from TopDesign.cysch
-// 01/06/2014 at 12:06
+// 01/15/2014 at 13:19
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -169,7 +169,7 @@ endmodule
 // top
 module top ;
 
-          wire  Net_59;
+          wire  Net_60;
           wire  Net_58;
           wire  Net_57;
           wire  Net_56;
@@ -394,7 +394,7 @@ module top ;
         .reset(1'b0),
         .rx_interrupt(Net_57),
         .sdat(Net_58),
-        .tx_interrupt(Net_59));
+        .tx_interrupt(Net_60));
     defparam SPI0.BidirectMode = 0;
     defparam SPI0.HighSpeedMode = 0;
     defparam SPI0.NumberOfDataBits = 8;

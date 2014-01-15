@@ -196,11 +196,11 @@ C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprim
 C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\pins.c
 C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\pins.h
 C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\aliases.h
-C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_1\E2ForLife_W5100_v1_1.cysym
-C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_1\E2ForLife_W5100_v1_1.pdf
-C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_1
-C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_1\API\W5100.c
-C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_1\API\W5100.h
+C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_2\E2ForLife_W5100_v1_2.cysym
+C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_2\E2ForLife_W5100_v1_2.pdf
+C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_2
+C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_2\API\W5100.c
+C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_2\API\W5100.h
 C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cyprimitive
 C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cysym
 C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.pdf

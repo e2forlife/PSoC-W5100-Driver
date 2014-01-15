@@ -160,23 +160,23 @@
  * \file W5100.h 
  * Interface driver definitions and prototypes
  * \author Chuck Erhardt (chuck@e2forlife.com)
- * \version 1.2
+ * \version `$CY_MAJOR_VERSION`.`$CY_MINOR_VERSION`
  * \date 04-NOV-2013
  * 
  */
 
-#if !defined(ETH0_H)
-#define ETH0_H
+#if !defined(`$INSTANCE_NAME`_H)
+#define `$INSTANCE_NAME`_H
 
-#define ETH0_READ_OP         ( 0x0F )
-#define ETH0_WRITE_OP        ( 0xF0 )
+#define `$INSTANCE_NAME`_READ_OP         ( 0x0F )
+#define `$INSTANCE_NAME`_WRITE_OP        ( 0xF0 )
 
-#define ETH0_IPADDRESS(x1,x2,x3,x4)   ( (uint32)(x1&0x000000FF) + (uint32)((x2<<8)&0x0000FF00) + (uint32)((x3<<16)&0x00FF0000) + ((uint32)(x4<<24)&0xFF000000 ))
+#define `$INSTANCE_NAME`_IPADDRESS(x1,x2,x3,x4)   ( (uint32)(x1&0x000000FF) + (uint32)((x2<<8)&0x0000FF00) + (uint32)((x3<<16)&0x00FF0000) + ((uint32)(x4<<24)&0xFF000000 ))
 
-#define ETH0_PROTO_TCP        ( 1 )
-#define ETH0_PROTO_UDP        ( 2 )
-#define ETH0_PROTO_IP         ( 3 )
-#define ETH0_PROTO_MAC        ( 4 )
+#define `$INSTANCE_NAME`_PROTO_TCP        ( 1 )
+#define `$INSTANCE_NAME`_PROTO_UDP        ( 2 )
+#define `$INSTANCE_NAME`_PROTO_IP         ( 3 )
+#define `$INSTANCE_NAME`_PROTO_MAC        ( 4 )
 
 /* ------------------------------------------------------------------------ */
 /**
@@ -193,7 +193,7 @@
  * directly rather than depend on this, since every SPI implementation
  * may be different and your port might not be corectly initialized.
  */
-void ETH0_Start( void );
+void `$INSTANCE_NAME`_Start( void );
 
 /**
  * \brief initialize device parameters and memory setup
@@ -207,10 +207,10 @@ void ETH0_Start( void );
  * in your application.  It currently assumes that there will be a 2K buffer
  * for both transmit and receive for each of the 4 sockets available.
  *
- * \note this function is usuallt called from ETH0_Start()
- * \sa ETH0_Start()
+ * \note this function is usuallt called from `$INSTANCE_NAME`_Start()
+ * \sa `$INSTANCE_NAME`_Start()
  */
-void ETH0_Init(uint8* mac, uint32 ip, uint32 subnet, uint32 gateway);
+void `$INSTANCE_NAME`_Init(uint8* mac, uint32 ip, uint32 subnet, uint32 gateway);
 
 /**
  * \brief Parse a ASCII Text IPv4 address to an IPv4 Address.
@@ -222,7 +222,7 @@ void ETH0_Init(uint8* mac, uint32 ip, uint32 subnet, uint32 gateway);
  * this function will return an IP address of 255.255.255.255, or 0xFFFFFFFF
  * to indicate that an error has been detected.
  */
-uint32 ETH0_ParseIP( const char* ipString );
+uint32 `$INSTANCE_NAME`_ParseIP( const char* ipString );
 
 /**
  * \brief re-assign the local IP address of the device
@@ -235,7 +235,7 @@ uint32 ETH0_ParseIP( const char* ipString );
  * is returned from the function to indicatate a BAD IP wa sspecified. Otherwise,
  * 255 is returned.
  */
-uint8 ETH0_SetIP( uint32 ip );
+uint8 `$INSTANCE_NAME`_SetIP( uint32 ip );
 
 /**
  * \brief Read the current IP address of the device
@@ -244,7 +244,7 @@ uint8 ETH0_SetIP( uint32 ip );
  * This function reads and returns the contents of the Source IP register
  * of the W5100 device.
  */
-uint32 ETH0_GetIP( void );
+uint32 `$INSTANCE_NAME`_GetIP( void );
 
 /**
  * \brief Re-assign the hardware address (MAC) of the device
@@ -253,7 +253,7 @@ uint32 ETH0_GetIP( void );
  * This function will store the contents of the specified MAC address to the
  * source Hardware Address register (MAC address) for the W5100 device.
  */
-void ETH0_SetMAC( uint8* mac );
+void `$INSTANCE_NAME`_SetMAC( uint8* mac );
 
 /**
  * \brief Retrieve the assigned Source hardware (MAC) address of the device
@@ -262,7 +262,7 @@ void ETH0_SetMAC( uint8* mac );
  * This function will read the assigned MAC address and store it within the
  * specified array.
  */
-void ETH0_GetMAC( uint8* mac );
+void `$INSTANCE_NAME`_GetMAC( uint8* mac );
 
 /**
  * \brief Open a socket using the specified protocol on the specified port
@@ -274,12 +274,12 @@ void ETH0_GetMAC( uint8* mac );
  * and return the socket number which was opened.  If there are no sockets
  * available, or there is an error opening the socket, a value of 0xFF will
  * be returned.
- * \sa ETH0_PROTO_TCP
- * \sa ETH0_PROTO_UDP
- * \sa ETH0_PROTO_IP
- * \sa ETH0_PROTO_MAC
+ * \sa `$INSTANCE_NAME`_PROTO_TCP
+ * \sa `$INSTANCE_NAME`_PROTO_UDP
+ * \sa `$INSTANCE_NAME`_PROTO_IP
+ * \sa `$INSTANCE_NAME`_PROTO_MAC
  */
-uint8 ETH0_SocketOpen( uint8 Protocol, uint16 port, uint8 flags );
+uint8 `$INSTANCE_NAME`_SocketOpen( uint8 Protocol, uint16 port, uint8 flags );
 
 /**
  * \brief Close a previously opened socket
@@ -290,7 +290,7 @@ uint8 ETH0_SocketOpen( uint8 Protocol, uint16 port, uint8 flags );
  * the function will ignore the request.  Closing an alread closed socket
  * has no effect.
  */
-void ETH0_SocketClose( uint8 socket );
+void `$INSTANCE_NAME`_SocketClose( uint8 socket );
 
 /**
  * \brief Process the socket connection to check for errors and remote closure
@@ -303,7 +303,7 @@ void ETH0_SocketClose( uint8 socket );
  * need to be re-opened from the software applicatoin.  If there are no
  * status detected which require action, nothing is executed.
  */
-uint8 ETH0_SocketProcessConnections( uint8 socket );
+uint8 `$INSTANCE_NAME`_SocketProcessConnections( uint8 socket );
 
 /**
  * \brief Check the connection establishment status of the socket
@@ -314,7 +314,7 @@ uint8 ETH0_SocketProcessConnections( uint8 socket );
  * This fucntion will read the socket status and return the state of the
  * socket establishment.
  */
-uint8 ETH0_SocketEstablished( uint8 socket );
+uint8 `$INSTANCE_NAME`_SocketEstablished( uint8 socket );
 
 /**
  * \brief Retrieve the length of waiting Receive data
@@ -324,9 +324,9 @@ uint8 ETH0_SocketEstablished( uint8 socket );
  * This function will read the waiting data length from the Receive buffer
  * and return the read length of waiting data.
  */
-uint16 ETH0_SocketRxDataWaiting( uint8 socket );
+uint16 `$INSTANCE_NAME`_SocketRxDataWaiting( uint8 socket );
 
-#if (1)
+#if (`$INCLUDE_TCP`)
 	
 /**
  * \brief Open an port using the TCP protocol
@@ -337,10 +337,10 @@ uint16 ETH0_SocketRxDataWaiting( uint8 socket );
  * TCP protocol, and return the socket number for the opened TCP socket.
  * When there are no sockets available, or there is an error opening the
  * socket, 0xFF is returned.
- * \sa ETH0_SocketOpen()
- * \sa ETH0_SocketClose()
+ * \sa `$INSTANCE_NAME`_SocketOpen()
+ * \sa `$INSTANCE_NAME`_SocketClose()
  */
-uint8 ETH0_TcpOpen(uint16 port);
+uint8 `$INSTANCE_NAME`_TcpOpen(uint16 port);
 
 /**
  * \brief Start a server listening for connection on an open socket
@@ -350,10 +350,10 @@ uint8 ETH0_TcpOpen(uint16 port);
  * connections on the specified socket.  If the socket specified is not
  * a valid socket nothing will occur.  After starting the listen operation,
  * this function will return (NON-BLOCKING).
- * \sa _TcpOpen()
- * \sa ETH0_SocketClose()
+ * \sa `$INSTANCE_MAME`_TcpOpen()
+ * \sa `$INSTANCE_NAME`_SocketClose()
  */
-void ETH0_TcpStartServer( uint8 socket );
+void `$INSTANCE_NAME`_TcpStartServer( uint8 socket );
 
 /**
  * \brief Start a TCP server listening for connections on the specified socket
@@ -366,11 +366,11 @@ void ETH0_TcpStartServer( uint8 socket );
  * before continuing.
  * 
  * \note This function is a blocking call, and will wait until a connection has been established.
- * \sa ETH0_TcpStartServer()
- * \sa ETH0_TcpOPen();
- * \sa ETH0_SocketClose()
+ * \sa `$INSTANCE_NAME`_TcpStartServer()
+ * \sa `$INSTANCE_NAME`_TcpOPen();
+ * \sa `$INSTANCE_NAME`_SocketClose()
  */
-void ETH0_TcpStartServerWait( uint8 socket );
+void `$INSTANCE_NAME`_TcpStartServerWait( uint8 socket );
 
 /**
  * \brief Open a client connection to a specified IP and port
@@ -384,14 +384,14 @@ void ETH0_TcpStartServerWait( uint8 socket );
  * connection to be made before terminating the wait.
  *
  * \note This function will block for a specified wait period
- * \sa ETH0_SocketClose()
- * \sa ETH0_TcpOpen()
- * \sa ETH0_TcpStartServer()
- * \sa ETH0_TcpStartServerWait()
- * \sa ETH0_TcpConnected()
- * \sa ETH0_TcpDisconnect()
+ * \sa `$INSTANCE_NAME`_SocketClose()
+ * \sa `$INSTANCE_NAME`_TcpOpen()
+ * \sa `$INSTANCE_NAME`_TcpStartServer()
+ * \sa `$INSTANCE_NAME`_TcpStartServerWait()
+ * \sa `$INSTANCE_NAME`_TcpConnected()
+ * \sa `$INSTANCE_NAME`_TcpDisconnect()
  */
-void ETH0_TcpConnect( uint8 socket, uint32 ip, uint16 port );
+void `$INSTANCE_NAME`_TcpConnect( uint8 socket, uint32 ip, uint16 port );
 
 /**
  * \brief Return the connection status of the TCP socket
@@ -401,10 +401,10 @@ void ETH0_TcpConnect( uint8 socket, uint32 ip, uint16 port );
  *
  * This function will check the establishment status of the specified socket,
  * and return the state.
- * \sa ETH0_TcpConnect()
- * \sa ETH0_TcpStartServer()
+ * \sa `$INSTANCE_NAME`_TcpConnect()
+ * \sa `$INSTANCE_NAME`_TcpStartServer()
  */
-uint8 ETH0_TcpConnected( uint8 socket );
+uint8 `$INSTANCE_NAME`_TcpConnected( uint8 socket );
 
 /**
  * \brief Terminate a connection with a remote client/server
@@ -412,11 +412,11 @@ uint8 ETH0_TcpConnected( uint8 socket );
  *
  * This function will issue the disconnect function to initiate a connection
  * termination between the W5100 socket and the remote client/server.
- * \sa ETH0_TcpConnect()
- * \sa ETH0_TcpStartServer()
- * \sa ETH0_TcpStartServerWait()
+ * \sa `$INSTANCE_NAME`_TcpConnect()
+ * \sa `$INSTANCE_NAME`_TcpStartServer()
+ * \sa `$INSTANCE_NAME`_TcpStartServerWait()
  */
-void ETH0_TcpDisconnect( uint8 socket );
+void `$INSTANCE_NAME`_TcpDisconnect( uint8 socket );
 
 /**
  * \brief Transmit a byte packet using the built-in TCP
@@ -434,14 +434,14 @@ void ETH0_TcpDisconnect( uint8 socket );
  * first been established and is opened with the correct socket protocol. Send
  * operations to sockets that contain a different protocol or are not yet
  * established are ignored and 0 is returned.
- * \sa ETH0_TcpOpen()
- * \sa ETH0_TcpConnect()
- * \sa ETH0_TcpStartServer()
- * \sa ETH0_TcpStartServerWait()
- * \sa ETH0_TcpPrint()
- * \sa ETH0_TcpReceive()
+ * \sa `$INSTANCE_NAME`_TcpOpen()
+ * \sa `$INSTANCE_NAME`_TcpConnect()
+ * \sa `$INSTANCE_NAME`_TcpStartServer()
+ * \sa `$INSTANCE_NAME`_TcpStartServerWait()
+ * \sa `$INSTANCE_NAME`_TcpPrint()
+ * \sa `$INSTANCE_NAME`_TcpReceive()
  */
-uint16 ETH0_TcpSend(uint8 socket, uint8* buffer, uint16 len);
+uint16 `$INSTANCE_NAME`_TcpSend(uint8 socket, uint8* buffer, uint16 len);
 
 /**
  * \brief Receive a packet of data using the built-in TCP handler
@@ -461,35 +461,35 @@ uint16 ETH0_TcpSend(uint8 socket, uint8* buffer, uint16 len);
  * is set to the internal TCP.  When not properly configured, this function
  * will return 0, otherwise, the number of bytes read from the W5100
  * receive buffer memory is returned.
- * \sa ETH0_TcpOpen()
- * \sa ETH0_TcpConnect()
- * \sa ETH0_TcpStartServer()
- * \sa ETH0_TcpStartServerWait()
- * \sa ETH0_TcpPrint()
- * \sa ETH0_TcpSend()
+ * \sa `$INSTANCE_NAME`_TcpOpen()
+ * \sa `$INSTANCE_NAME`_TcpConnect()
+ * \sa `$INSTANCE_NAME`_TcpStartServer()
+ * \sa `$INSTANCE_NAME`_TcpStartServerWait()
+ * \sa `$INSTANCE_NAME`_TcpPrint()
+ * \sa `$INSTANCE_NAME`_TcpSend()
  */
-uint16 ETH0_TcpReceive( uint8 socket, uint8* buffer, uint16 length );
+uint16 `$INSTANCE_NAME`_TcpReceive( uint8 socket, uint8* buffer, uint16 length );
 
 /**
  * \brief Send a zero-terminated ASCII string using TCP
  * \param socket the socket on which the print will occur
  * \param *str the ASCII-Z string to be sent
  *
- * this function is a shortcut to using the ETH0_TcpSend()
+ * this function is a shortcut to using the `$INSTANCE_NAME`_TcpSend()
  * to transmit a zero-terminated ASCII (ASCII-Z) string to a remote
  * client/server.
- * \sa ETH0_TcpOpen()
- * \sa ETH0_TcpConnect()
- * \sa ETH0_TcpStartServer()
- * \sa ETH0_TcpStartServerWait()
- * \sa ETH0_TcpSend()
- * \sa ETH0_TcpReceive()
+ * \sa `$INSTANCE_NAME`_TcpOpen()
+ * \sa `$INSTANCE_NAME`_TcpConnect()
+ * \sa `$INSTANCE_NAME`_TcpStartServer()
+ * \sa `$INSTANCE_NAME`_TcpStartServerWait()
+ * \sa `$INSTANCE_NAME`_TcpSend()
+ * \sa `$INSTANCE_NAME`_TcpReceive()
  */
-void ETH0_TcpPrint( uint8 socket, const char* str );
+void `$INSTANCE_NAME`_TcpPrint( uint8 socket, const char* str );
 
 #endif
 
-#if (1)
+#if (`$INCLUDE_UDP`)
 /**
  * \brief Open an socket port using the UDP protocol
  * \param port the port on which the TCP socket will be openend
@@ -499,10 +499,10 @@ void ETH0_TcpPrint( uint8 socket, const char* str );
  * TCP protocol, and return the socket number for the opened TCP socket.
  * When there are no sockets available, or there is an error opening the
  * socket, 0xFF is returned.
- * \sa ETH0_SocketOpen()
- * \sa ETH0_SocketClose()
+ * \sa `$INSTANCE_NAME`_SocketOpen()
+ * \sa `$INSTANCE_NAME`_SocketClose()
  */
-uint8 ETH0_UdpOpen(uint16 port);
+uint8 `$INSTANCE_NAME`_UdpOpen(uint16 port);
 
 /**
  * \brief Transmit a byte packet using the built-in UDP
@@ -521,9 +521,9 @@ uint8 ETH0_UdpOpen(uint16 port);
  * When called, this function will verify that a socket connection has
  * first been opened with the correct socket protocol. Send operations
  * to sockets that contain a different protocol are ignored and 0 is returned.
- * \sa ETH0_UdpReceive()
+ * \sa `$INSTANCE_NAME`_UdpReceive()
  */
-uint16 ETH0_UdpSend(uint8 socket, uint32 ip, uint16 port, uint8* buffer, uint16 length);
+uint16 `$INSTANCE_NAME`_UdpSend(uint8 socket, uint32 ip, uint16 port, uint8* buffer, uint16 length);
 
 /**
  * \brief Receive a packet of data using the built-in UDP handler
@@ -544,9 +544,9 @@ uint16 ETH0_UdpSend(uint8 socket, uint32 ip, uint16 port, uint8* buffer, uint16 
  * is set to the internal UDP.  When not properly configured, this function
  * will return 0, otherwise, the number of bytes read from the W5100
  * receive buffer memory is returned.
- * \sa ETH0_UdpSend()
+ * \sa `$INSTANCE_NAME`_UdpSend()
  */
-uint16 ETH0_UdpReceive(uint8 socket, uint32 *ip, uint16 *port, uint8* buffer, uint16 length);
+uint16 `$INSTANCE_NAME`_UdpReceive(uint8 socket, uint32 *ip, uint16 *port, uint8* buffer, uint16 length);
 
 #endif
 

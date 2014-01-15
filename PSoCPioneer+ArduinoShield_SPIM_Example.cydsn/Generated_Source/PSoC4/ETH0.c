@@ -11,6 +11,22 @@
  * of the W5100 device.
 */
 
+/*
+ * Change Log:
+ * 
+ * V1.1
+ * - Modified the SPI access function to remove hard wait for READ_WRITE_DELAY  <CE>
+ * - Removed READ_WRITE_DELAY Parameter <CE>
+ * - Added validator to SS_NUM parameter to ensure that the value is the range 0-3 <CE>
+ * - Removed "inline" keywords from interal register access function to promote
+ *   compatibility with Keil PSoC3 compilers that don't support them. <CE>
+ * - Fixed bug in _ProcessRxData() that caused the read pointer not to be updated without
+ *   the lookahead flag being set. <CE>
+ * V1.2
+ * - TBD
+ *
+ */
+
 /* Cypress library includes */
 #include <cytypes.h>
 #include <cylib.h>
@@ -47,6 +63,13 @@ static uint8 ETH0_MAC[6] = { 0x00, 0xDE, 0xAD, 0xBE, 0xEF, 0x00 };
  * to be contained within the FIFO buffer.
  */
 #if !defined(CY_SCB_SPI0_H)
+/* ------------------------------------------------------------------------ */	
+/* V1.1 : Macro definition for the SpiDone flag. */
+/**
+ * \brief MAcro to determine the state of the spi done
+ * This macro reads the status regoster of the transmitter and masks off the doen bit.
+ */
+#define ETH0_SpiDone     (SPI0_ReadTxStatus() & (SPI0_STS_SPI_DONE | SPI0_STS_SPI_IDLE))
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Select the active SCB chip select connected to the W51
@@ -82,6 +105,12 @@ static void ETH0_W51_Select( void )
  */
 void ETH0_W51_Write(uint16 addr, uint8 dat)
 {
+	/* V1.1: Wait for SPI operation to complete */
+	while( ETH0_SpiDone == 0) {
+		CyDelayUs(1);
+	}
+	/* V1.1: End change */
+	
 	/* Using internal device SS generation */
 	ETH0_W51_Select();
 	/*
@@ -95,8 +124,6 @@ void ETH0_W51_Write(uint16 addr, uint8 dat)
 	SPI0_WriteTxData((addr>>8)&0x00FF);
 	SPI0_WriteTxData(addr&0x00FF);
 	SPI0_WriteTxData(dat);
-	/* Wait for operation to end */
-	CyDelayUs(5); /* At 6 MBPS it will take approx 6 uS to send the data */
 
 }
 
@@ -114,6 +141,12 @@ uint8 ETH0_W51_Read(uint16 addr)
 	uint32 dat;
 	uint32 count;
 	
+	/* V1.1: Wait for SPI operation to complete */
+	while( ETH0_SpiDone == 0) {
+		CyDelayUs(1);
+	}
+	/* V1.1: End change */
+
 	/* Using internal device SS generation */
 	ETH0_W51_Select();
 	/*
@@ -128,8 +161,14 @@ uint8 ETH0_W51_Read(uint16 addr)
 	SPI0_WriteTxData(addr>>8);
 	SPI0_WriteTxData(addr&0x00FF);
 	SPI0_WriteTxData( 0 );
+	
 	/* Wait for operations to complete. */
-	CyDelayUs( 5 );
+	/* V1.1: Wait for SPI operation to complete */
+	while( ETH0_SpiDone == 0) {
+		CyDelayUs(1);
+	}
+	/* V1.1: End change */
+
 	count = SPI0_GetRxBufferSize();
 	while( count > 0 )
 	{
@@ -144,7 +183,24 @@ uint8 ETH0_W51_Read(uint16 addr)
 #else
 /* include SPI function header for the SCB */
 #include <SPI0_SPI_UART.h>
-	
+
+/* V1.1 : Include the header for the select pin used. */
+#if (0 == 0)
+#include <SPI0_ss0_m.h>
+#define ETH0_SpiDone    (SPI0_ss0_m_Read())
+#elif (0 == 1)
+#include <SPI0_ss1_m.h>
+#define ETH0_SpiDone    (SPI0_ss1_m_Read())
+#elif (0 == 2)
+#include <SPI0_ss2_m.h>
+#define ETH0_SpiDone    (SPI0_ss2_m_Read())
+#elif (0 == 3)
+#include <SPI0_ss3_m.h>
+#define ETH0_SpiDone    (SPI0_ss3_m_Read())
+#else
+#include <SPI0_ss0_m.h>
+#define ETH0_SpiDone    (SPI0_ss0_m_Read())
+#endif
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Select the active SCB chip select connected to the W51
@@ -177,6 +233,12 @@ static void ETH0_W51_Select( void )
  */
 void ETH0_W51_Write(uint16 addr, uint8 dat)
 {
+	/* V1.1: Wait for SPI operation to complete */
+	while( ETH0_SpiDone == 0) {
+		CyDelayUs(1);
+	}
+	/* V1.1: End change */
+
 	/* Using internal device SS generation */
 	ETH0_W51_Select();
 	/*
@@ -190,8 +252,6 @@ void ETH0_W51_Write(uint16 addr, uint8 dat)
 	SPI0_SpiUartWriteTxData((addr>>8)&0x00FF);
 	SPI0_SpiUartWriteTxData(addr&0x00FF);
 	SPI0_SpiUartWriteTxData(dat);
-	/* Wait for operation to end */
-	CyDelayUs(5); /* At 6 MBPS it will take approx 6 uS to send the data */
 }
 /* ------------------------------------------------------------------------ */
 /**
@@ -207,6 +267,12 @@ uint8 ETH0_W51_Read(uint16 addr)
 	uint32 dat;
 	uint32 count;
 	
+	/* V1.1: Wait for SPI operation to complete */
+	while( ETH0_SpiDone == 0) {
+		CyDelayUs(1);
+	}
+	/* V1.1: End change */
+
 	/* Using internal device SS generation */
 	ETH0_W51_Select();
 	/*
@@ -222,7 +288,12 @@ uint8 ETH0_W51_Read(uint16 addr)
 	SPI0_SpiUartWriteTxData(addr&0x00FF);
 	SPI0_SpiUartWriteTxData( 0 );
 	/* Wait for operations to complete. */
-	CyDelayUs( 5 );
+	/* V1.1: Wait for SPI operation to complete */
+	while( ETH0_SpiDone == 0) {
+		CyDelayUs(1);
+	}
+	/* V1.1: End change */
+
 	count = SPI0_SpiUartGetRxBufferSize();
 	while( count > 0 )
 	{
@@ -959,7 +1030,7 @@ static void ETH0_ProcessRxData(uint8 socket, uint16 offset, uint8* buffer, uint1
 		 */
 		ETH0_W51_ReadBlock(addr,buffer,length);
 	}
-	if (flags & 0x01) {
+	if ( (flags & 0x01) == 0 ) { /* V1.1: Added ==0 condition to lookahead flag check */
 		/* move the write pointer */
 		base += length;
 		/* 

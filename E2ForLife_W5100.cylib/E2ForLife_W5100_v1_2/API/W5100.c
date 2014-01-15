@@ -23,8 +23,9 @@
  * - Fixed bug in _ProcessRxData() that caused the read pointer not to be updated without
  *   the lookahead flag being set. <CE>
  * V1.2
- * - TBD
- *
+ * - Added _STS_SPI_IDLE flag to _SpiDone conditions to prevent deadlocking that
+ *   was occuring during the first read or write using the SPI device (SPIM moded) <CE>
+ * 
  */
 
 /* Cypress library includes */
@@ -32,11 +33,11 @@
 #include <cylib.h>
 
 /*  include functions and types for the driver */
-#include "ETH0.h"
+#include "`$INSTANCE_NAME`.h"
 /* include the serial interface functions */
-#include <SPI0.h>
+#include <`$SPI_INSTANCE`.h>
 
-extern uint8 SPI0_initVar;
+extern uint8 `$SPI_INSTANCE`_initVar;
 
 typedef struct
 {
@@ -44,15 +45,15 @@ typedef struct
 	uint8  SocketFlags;
 	uint16 SourcePort;
 	uint8  ServerFlag;
-} ETH0_SOCKET;
+} `$INSTANCE_NAME`_SOCKET;
 
-#define ETH0_SOCKET_TX_BASE(s)    ( 0x4000 + (s<<15) )
-#define ETH0_SOCKET_RX_BASE(s)    ( 0x6000 + (s<<15) )
+#define `$INSTANCE_NAME`_SOCKET_TX_BASE(s)    ( 0x4000 + (s<<15) )
+#define `$INSTANCE_NAME`_SOCKET_RX_BASE(s)    ( 0x6000 + (s<<15) )
 
-static ETH0_SOCKET ETH0_SocketConfig[4];
-static uint32 ETH0_SubnetMask;
+static `$INSTANCE_NAME`_SOCKET `$INSTANCE_NAME`_SocketConfig[4];
+static uint32 `$INSTANCE_NAME`_SubnetMask;
 
-static uint8 ETH0_MAC[6] = { 0x00, 0xDE, 0xAD, 0xBE, 0xEF, 0x00 };
+static uint8 `$INSTANCE_NAME`_MAC[6] = { `$MAC` };
 
 
 /* ======================================================================== */
@@ -62,14 +63,19 @@ static uint8 ETH0_MAC[6] = { 0x00, 0xDE, 0xAD, 0xBE, 0xEF, 0x00 };
  * bytes to allow the transfer/receive cycle for each read/write operation
  * to be contained within the FIFO buffer.
  */
-#if !defined(CY_SCB_SPI0_H)
+#if !defined(CY_SCB_`$SPI_INSTANCE`_H)
 /* ------------------------------------------------------------------------ */	
 /* V1.1 : Macro definition for the SpiDone flag. */
+/*  
+	V1.2 : Added SPI_IDLE flag to the condition for done to eliminate
+	deadlocking when IDLE but not done.  This seems to occur during the
+	initial write/read to/from the SPI port.
+*/
 /**
- * \brief MAcro to determine the state of the spi done
- * This macro reads the status regoster of the transmitter and masks off the doen bit.
+ * \brief Macro to determine the state of the spi done
+ * This macro reads the status register of the transmitter and masks off the doen bit.
  */
-#define ETH0_SpiDone     (SPI0_ReadTxStatus() & SPI0_STS_SPI_DONE)
+#define `$INSTANCE_NAME`_SpiDone     (`$SPI_INSTANCE`_ReadTxStatus() & (`$SPI_INSTANCE`_STS_SPI_DONE | `$SPI_INSTANCE`_STS_SPI_IDLE))
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Select the active SCB chip select connected to the W51
@@ -79,7 +85,7 @@ static uint8 ETH0_MAC[6] = { 0x00, 0xDE, 0xAD, 0xBE, 0xEF, 0x00 };
  * \note this functions requires that the device chip select is originating
  *  from the SPI device.
  */
-static void ETH0_W51_Select( void )
+static void `$INSTANCE_NAME`_W51_Select( void )
 {
 	/*
 	 * User code for setting the chip select enable.  This is called once
@@ -91,7 +97,9 @@ static void ETH0_W51_Select( void )
 	 * implementation for CSN control.
 	 */
 	/* `#START CHIP_SELECT_GENERATION` */
-
+	
+	/* TODO: Insert User Code Here */
+	
 	/* `#END` */
 }
 /* ------------------------------------------------------------------------ */
@@ -103,27 +111,27 @@ static void ETH0_W51_Select( void )
  * This function will send the WRITE opcode, address and data to the W5100
  * in order to write the data to the specified register.
  */
-void ETH0_W51_Write(uint16 addr, uint8 dat)
+void `$INSTANCE_NAME`_W51_Write(uint16 addr, uint8 dat)
 {
 	/* V1.1: Wait for SPI operation to complete */
-	while( ETH0_SpiDone == 0) {
+	while( `$INSTANCE_NAME`_SpiDone == 0) {
 		CyDelayUs(1);
 	}
 	/* V1.1: End change */
 	
 	/* Using internal device SS generation */
-	ETH0_W51_Select();
+	`$INSTANCE_NAME`_W51_Select();
 	/*
 	 * The first thing to do is to clear the Rx Buffer of any lingering
 	 * data left from other transfers.  Then send the data per the W5100
 	 * datasheet p.62
 	 */
-	SPI0_ClearRxBuffer();
+	`$SPI_INSTANCE`_ClearRxBuffer();
 	/* Begin transfer of data to device */
-	SPI0_WriteTxData(ETH0_WRITE_OP);
-	SPI0_WriteTxData((addr>>8)&0x00FF);
-	SPI0_WriteTxData(addr&0x00FF);
-	SPI0_WriteTxData(dat);
+	`$SPI_INSTANCE`_WriteTxData(`$INSTANCE_NAME`_WRITE_OP);
+	`$SPI_INSTANCE`_WriteTxData((addr>>8)&0x00FF);
+	`$SPI_INSTANCE`_WriteTxData(addr&0x00FF);
+	`$SPI_INSTANCE`_WriteTxData(dat);
 
 }
 
@@ -136,44 +144,44 @@ void ETH0_W51_Write(uint16 addr, uint8 dat)
  * this fucntion will access a W5100 memory location and read the contents
  * using the serial protocol specified on P.61 of the datasheet.
  */
-uint8 ETH0_W51_Read(uint16 addr)
+uint8 `$INSTANCE_NAME`_W51_Read(uint16 addr)
 {
 	uint32 dat;
 	uint32 count;
 	
 	/* V1.1: Wait for SPI operation to complete */
-	while( ETH0_SpiDone == 0) {
+	while( `$INSTANCE_NAME`_SpiDone == 0) {
 		CyDelayUs(1);
 	}
 	/* V1.1: End change */
 
 	/* Using internal device SS generation */
-	ETH0_W51_Select();
+	`$INSTANCE_NAME`_W51_Select();
 	/*
 	 * First, clear the Rx Buffer of any waiting data.  Then begin the
 	 * read operation by sending the op code, followed byte the address
 	 * from which the read will be executed, then send a dummy byte
 	 * of zeros to read the data from the device.
 	 */
-	SPI0_ClearRxBuffer();
+	`$SPI_INSTANCE`_ClearRxBuffer();
 	/* Begin data read */
-	SPI0_WriteTxData(ETH0_READ_OP);
-	SPI0_WriteTxData(addr>>8);
-	SPI0_WriteTxData(addr&0x00FF);
-	SPI0_WriteTxData( 0 );
+	`$SPI_INSTANCE`_WriteTxData(`$INSTANCE_NAME`_READ_OP);
+	`$SPI_INSTANCE`_WriteTxData(addr>>8);
+	`$SPI_INSTANCE`_WriteTxData(addr&0x00FF);
+	`$SPI_INSTANCE`_WriteTxData( 0 );
 	
 	/* Wait for operations to complete. */
 	/* V1.1: Wait for SPI operation to complete */
-	while( ETH0_SpiDone == 0) {
+	while( `$INSTANCE_NAME`_SpiDone == 0) {
 		CyDelayUs(1);
 	}
 	/* V1.1: End change */
 
-	count = SPI0_GetRxBufferSize();
+	count = `$SPI_INSTANCE`_GetRxBufferSize();
 	while( count > 0 )
 	{
-		dat = SPI0_ReadRxData(); 
-		count = SPI0_GetRxBufferSize();
+		dat = `$SPI_INSTANCE`_ReadRxData(); 
+		count = `$SPI_INSTANCE`_GetRxBufferSize();
 	}
 	
 	return( dat&0xFF );
@@ -182,24 +190,24 @@ uint8 ETH0_W51_Read(uint16 addr)
 /* SCB Specific Functions */
 #else
 /* include SPI function header for the SCB */
-#include <SPI0_SPI_UART.h>
+#include <`$SPI_INSTANCE`_SPI_UART.h>
 
 /* V1.1 : Include the header for the select pin used. */
-#if (0 == 0)
-#include <SPI0_ss0_m.h>
-#define ETH0_SpiDone    (SPI0_ss0_m_Read())
-#elif (0 == 1)
-#include <SPI0_ss1_m.h>
-#define ETH0_SpiDone    (SPI0_ss1_m_Read())
-#elif (0 == 2)
-#include <SPI0_ss2_m.h>
-#define ETH0_SpiDone    (SPI0_ss2_m_Read())
-#elif (0 == 3)
-#include <SPI0_ss3_m.h>
-#define ETH0_SpiDone    (SPI0_ss3_m_Read())
+#if (`$SS_NUM` == 0)
+#include <`$SPI_INSTANCE`_ss0_m.h>
+#define `$INSTANCE_NAME`_SpiDone    (`$SPI_INSTANCE`_ss0_m_Read())
+#elif (`$SS_NUM` == 1)
+#include <`$SPI_INSTANCE`_ss1_m.h>
+#define `$INSTANCE_NAME`_SpiDone    (`$SPI_INSTANCE`_ss1_m_Read())
+#elif (`$SS_NUM` == 2)
+#include <`$SPI_INSTANCE`_ss2_m.h>
+#define `$INSTANCE_NAME`_SpiDone    (`$SPI_INSTANCE`_ss2_m_Read())
+#elif (`$SS_NUM` == 3)
+#include <`$SPI_INSTANCE`_ss3_m.h>
+#define `$INSTANCE_NAME`_SpiDone    (`$SPI_INSTANCE`_ss3_m_Read())
 #else
-#include <SPI0_ss0_m.h>
-#define ETH0_SpiDone    (SPI0_ss0_m_Read())
+#include <`$SPI_INSTANCE`_ss0_m.h>
+#define `$INSTANCE_NAME`_SpiDone    (`$SPI_INSTANCE`_ss0_m_Read())
 #endif
 /* ------------------------------------------------------------------------ */
 /**
@@ -208,18 +216,18 @@ uint8 ETH0_W51_Read(uint16 addr)
  * this fucntion will set the active SS line within the SCB to select and
  * communicate with the W5100 device.
  */
-static void ETH0_W51_Select( void )
+static void `$INSTANCE_NAME`_W51_Select( void )
 {
-#if (0 == 0)
-	SPI0_SpiSetActiveSlaveSelect( SPI0_SPIM_ACTIVE_SS0 );
-#elif (0 == 1)
-	SPI0_SpiSetActiveSlaveSelect( SPI0_SPIM_ACTIVE_SS1 );
-#elif (0 == 2)
-	SPI0_SpiSetActiveSlaveSelect( SPI0_SPIM_ACTIVE_SS2 );
-#elif (0 == 3)
-	SPI0_SpiSetActiveSlaveSelect( SPI0_SPIM_ACTIVE_SS3 );
+#if (`$SS_NUM` == 0)
+	`$SPI_INSTANCE`_SpiSetActiveSlaveSelect( `$SPI_INSTANCE`_SPIM_ACTIVE_SS0 );
+#elif (`$SS_NUM` == 1)
+	`$SPI_INSTANCE`_SpiSetActiveSlaveSelect( `$SPI_INSTANCE`_SPIM_ACTIVE_SS1 );
+#elif (`$SS_NUM` == 2)
+	`$SPI_INSTANCE`_SpiSetActiveSlaveSelect( `$SPI_INSTANCE`_SPIM_ACTIVE_SS2 );
+#elif (`$SS_NUM` == 3)
+	`$SPI_INSTANCE`_SpiSetActiveSlaveSelect( `$SPI_INSTANCE`_SPIM_ACTIVE_SS3 );
 #else
-		SPI0_SpiSetActiveSlaveSelect(0);
+		`$SPI_INSTANCE`_SpiSetActiveSlaveSelect(0);
 #endif
 }
 /* ------------------------------------------------------------------------ */
@@ -231,27 +239,27 @@ static void ETH0_W51_Select( void )
  * This function will send the WRITE opcode, address and data to the W5100
  * in order to write the data to the specified register.
  */
-void ETH0_W51_Write(uint16 addr, uint8 dat)
+void `$INSTANCE_NAME`_W51_Write(uint16 addr, uint8 dat)
 {
 	/* V1.1: Wait for SPI operation to complete */
-	while( ETH0_SpiDone == 0) {
+	while( `$INSTANCE_NAME`_SpiDone == 0) {
 		CyDelayUs(1);
 	}
 	/* V1.1: End change */
 
 	/* Using internal device SS generation */
-	ETH0_W51_Select();
+	`$INSTANCE_NAME`_W51_Select();
 	/*
 	 * The first thing to do is to clear the Rx Buffer of any lingering
 	 * data left from other transfers.  Then send the data per the W5100
 	 * datasheet p.62
 	 */
-	SPI0_SpiUartClearRxBuffer();
+	`$SPI_INSTANCE`_SpiUartClearRxBuffer();
 	/* Begin transfer of data to device */
-	SPI0_SpiUartWriteTxData(ETH0_WRITE_OP);
-	SPI0_SpiUartWriteTxData((addr>>8)&0x00FF);
-	SPI0_SpiUartWriteTxData(addr&0x00FF);
-	SPI0_SpiUartWriteTxData(dat);
+	`$SPI_INSTANCE`_SpiUartWriteTxData(`$INSTANCE_NAME`_WRITE_OP);
+	`$SPI_INSTANCE`_SpiUartWriteTxData((addr>>8)&0x00FF);
+	`$SPI_INSTANCE`_SpiUartWriteTxData(addr&0x00FF);
+	`$SPI_INSTANCE`_SpiUartWriteTxData(dat);
 }
 /* ------------------------------------------------------------------------ */
 /**
@@ -262,43 +270,43 @@ void ETH0_W51_Write(uint16 addr, uint8 dat)
  * this fucntion will access a W5100 memory location and read the contents
  * using the serial protocol specified on P.61 of the datasheet.
  */
-uint8 ETH0_W51_Read(uint16 addr)
+uint8 `$INSTANCE_NAME`_W51_Read(uint16 addr)
 {
 	uint32 dat;
 	uint32 count;
 	
 	/* V1.1: Wait for SPI operation to complete */
-	while( ETH0_SpiDone == 0) {
+	while( `$INSTANCE_NAME`_SpiDone == 0) {
 		CyDelayUs(1);
 	}
 	/* V1.1: End change */
 
 	/* Using internal device SS generation */
-	ETH0_W51_Select();
+	`$INSTANCE_NAME`_W51_Select();
 	/*
 	 * First, clear the Rx Buffer of any waiting data.  Then begin the
 	 * read operation by sending the op code, followed byte the address
 	 * from which the read will be executed, then send a dummy byte
 	 * of zeros to read the data from the device.
 	 */
-	SPI0_SpiUartClearRxBuffer();
+	`$SPI_INSTANCE`_SpiUartClearRxBuffer();
 	/* Begin data read */
-	SPI0_SpiUartWriteTxData(ETH0_READ_OP);
-	SPI0_SpiUartWriteTxData(addr>>8);
-	SPI0_SpiUartWriteTxData(addr&0x00FF);
-	SPI0_SpiUartWriteTxData( 0 );
+	`$SPI_INSTANCE`_SpiUartWriteTxData(`$INSTANCE_NAME`_READ_OP);
+	`$SPI_INSTANCE`_SpiUartWriteTxData(addr>>8);
+	`$SPI_INSTANCE`_SpiUartWriteTxData(addr&0x00FF);
+	`$SPI_INSTANCE`_SpiUartWriteTxData( 0 );
 	/* Wait for operations to complete. */
 	/* V1.1: Wait for SPI operation to complete */
-	while( ETH0_SpiDone == 0) {
+	while( `$INSTANCE_NAME`_SpiDone == 0) {
 		CyDelayUs(1);
 	}
 	/* V1.1: End change */
 
-	count = SPI0_SpiUartGetRxBufferSize();
+	count = `$SPI_INSTANCE`_SpiUartGetRxBufferSize();
 	while( count > 0 )
 	{
-		dat = SPI0_SpiUartReadRxData(); 
-		count = SPI0_SpiUartGetRxBufferSize();
+		dat = `$SPI_INSTANCE`_SpiUartReadRxData(); 
+		count = `$SPI_INSTANCE`_SpiUartGetRxBufferSize();
 	}
 	
 	return( dat&0xFF );
@@ -315,13 +323,13 @@ uint8 ETH0_W51_Read(uint16 addr)
  * \param addr The starting address of the registers/memory for the MAC address
  * \param *mac pointer to the array of bytes holding the MAC address.
  */
-static void ETH0_W51_SetMAC(uint16 addr, uint8 *mac)
+static void `$INSTANCE_NAME`_W51_SetMAC(uint16 addr, uint8 *mac)
 {
 	uint32 index;
 	
 	for(index = 0;index<6;++index)
 	{
-		ETH0_W51_Write(addr+index,mac[index]);
+		`$INSTANCE_NAME`_W51_Write(addr+index,mac[index]);
 	}
 }
 /* ------------------------------------------------------------------------ */
@@ -330,11 +338,11 @@ static void ETH0_W51_SetMAC(uint16 addr, uint8 *mac)
  * \param addr the address from which the data will be read
  * \param *mac pointer to the array of bytes to hold the output mac address.
  */
-static void ETH0_W51_GetMAC( uint16 addr, uint8* mac )
+static void `$INSTANCE_NAME`_W51_GetMAC( uint16 addr, uint8* mac )
 {
 	uint32 index;
 	for(index=0;index<6;++index) {
-		mac[index] = ETH0_W51_Read(addr+index);
+		mac[index] = `$INSTANCE_NAME`_W51_Read(addr+index);
 	}
 }
 /* ------------------------------------------------------------------------ */
@@ -343,14 +351,14 @@ static void ETH0_W51_GetMAC( uint16 addr, uint8* mac )
  * \param addr the address of the memory/registers to write the IPv4 Address
  * \param ip the IP address to write
  */
-static void ETH0_W51_SetIP( uint16 addr, uint32 ip )
+static void `$INSTANCE_NAME`_W51_SetIP( uint16 addr, uint32 ip )
 {
 	uint32 index;
 	uint8* buffer;
 
 	buffer = (uint8*)&ip;
 	for(index = 0;index<4;++index) {
-		ETH0_W51_Write(addr+index,buffer[index]);
+		`$INSTANCE_NAME`_W51_Write(addr+index,buffer[index]);
 	}
 }
 /* ------------------------------------------------------------------------ */
@@ -359,7 +367,7 @@ static void ETH0_W51_SetIP( uint16 addr, uint32 ip )
  * \param addr the address from which the IP address will be retrieved.
  * \returns the IP address read from the device.
  */
-static uint32 ETH0_W51_GetIP( uint16 addr )
+static uint32 `$INSTANCE_NAME`_W51_GetIP( uint16 addr )
 {
 	uint8 buffer[4];
 	int index;
@@ -368,7 +376,7 @@ static uint32 ETH0_W51_GetIP( uint16 addr )
 	ip = (uint32*) &buffer[0];
 	*ip = 0;
 	for(index=0;index<4;++index) {
-		buffer[index] = ETH0_W51_Read(addr+index);
+		buffer[index] = `$INSTANCE_NAME`_W51_Read(addr+index);
 	}
 	return( *ip );
 }
@@ -378,10 +386,10 @@ static uint32 ETH0_W51_GetIP( uint16 addr )
  * \param addr the starting address to which the data will be written
  * \param val the 16-bit value to write
  */
-static void ETH0_W51_Write16( uint16 addr, uint16 val )
+static void `$INSTANCE_NAME`_W51_Write16( uint16 addr, uint16 val )
 {
-	ETH0_W51_Write( addr, val>>8);
-	ETH0_W51_Write( addr + 1, val&0x00FF);
+	`$INSTANCE_NAME`_W51_Write( addr, val>>8);
+	`$INSTANCE_NAME`_W51_Write( addr + 1, val&0x00FF);
 }
 /* ------------------------------------------------------------------------ */
 /**
@@ -389,13 +397,13 @@ static void ETH0_W51_Write16( uint16 addr, uint16 val )
  * \param addr The starting address from which data will be read
  * \returns the 16-bit value read from the memory.
  */
-static uint16 ETH0_W51_Read16( uint16 addr )
+static uint16 `$INSTANCE_NAME`_W51_Read16( uint16 addr )
 {
 	uint16 val;
 	
-	val = ETH0_W51_Read( addr );
+	val = `$INSTANCE_NAME`_W51_Read( addr );
 	val <<= 8;
-	val += ETH0_W51_Read( addr + 1);
+	val += `$INSTANCE_NAME`_W51_Read( addr + 1);
 	
 	return( val );
 }
@@ -406,11 +414,11 @@ static uint16 ETH0_W51_Read16( uint16 addr )
  * \param *buffer pointer to the data buffer holding the data to write
  * \param length the length of data to be written
  */
-static void ETH0_W51_WriteBlock(uint16 addr, uint8* buffer, uint16 length)
+static void `$INSTANCE_NAME`_W51_WriteBlock(uint16 addr, uint8* buffer, uint16 length)
 {
 	int index;
 	for(index=0;index<length;++index) {
-		ETH0_W51_Write(addr+index,buffer[index]);
+		`$INSTANCE_NAME`_W51_Write(addr+index,buffer[index]);
 	}
 }
 /* ------------------------------------------------------------------------ */
@@ -420,12 +428,12 @@ static void ETH0_W51_WriteBlock(uint16 addr, uint8* buffer, uint16 length)
  * \param *buffer pointer to the memory buffer which will hold the read data
  * \param length the length of data to read from the buffer.
  */
-static void ETH0_W51_ReadBlock(uint16 addr, uint8* buffer, uint16 length)
+static void `$INSTANCE_NAME`_W51_ReadBlock(uint16 addr, uint8* buffer, uint16 length)
 {
 	int index;
 	
 	for(index=0;index<length;++index) {
-		buffer[index] = ETH0_W51_Read(addr+index);
+		buffer[index] = `$INSTANCE_NAME`_W51_Read(addr+index);
 	}
 }
 /* ======================================================================== */
@@ -440,157 +448,157 @@ static void ETH0_W51_ReadBlock(uint16 addr, uint8* buffer, uint16 length)
  * \brief Set teh chip mac address to teh specified address
  * \param *mac pointer to the array holding the MAC address
  */
-static void ETH0_SetSourceMAC( uint8* mac ) { ETH0_W51_SetMAC(9,mac); }
+static void `$INSTANCE_NAME`_SetSourceMAC( uint8* mac ) { `$INSTANCE_NAME`_W51_SetMAC(9,mac); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the chip source MAC address from the MAC registers
  * \param *mac pointer to the address of the buffer to hold the read MAC address
  */
-static void ETH0_GetSourceMAC( uint8* mac ) { ETH0_W51_GetMAC(9,mac); }
+static void `$INSTANCE_NAME`_GetSourceMAC( uint8* mac ) { `$INSTANCE_NAME`_W51_GetMAC(9,mac); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Set the IPv4 address of the network gateway
  * \param ip IP address of the gateway
  */
-static void ETH0_SetGatewayAddress(uint32 ip) { ETH0_W51_SetIP(1,ip); }
+static void `$INSTANCE_NAME`_SetGatewayAddress(uint32 ip) { `$INSTANCE_NAME`_W51_SetIP(1,ip); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the gateway address from the device
  * \returns the IP address of the gateway
  */
-static uint32 ETH0_GetGatewayAddress( void ) { return ETH0_W51_GetIP(1); }
+static uint32 `$INSTANCE_NAME`_GetGatewayAddress( void ) { return `$INSTANCE_NAME`_W51_GetIP(1); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief set the subnet mask of the ethernet device
  * \param the subnet mask (IPv4)
  */
-static void ETH0_SetSubnetMask( uint32 ip ) { ETH0_W51_SetIP(5, ip); }
+static void `$INSTANCE_NAME`_SetSubnetMask( uint32 ip ) { `$INSTANCE_NAME`_W51_SetIP(5, ip); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the subnet mask from the device
  * \returns the subnet mask that was read from the device.
  */
-static uint32 ETH0_GetSubnetMask( void ) { return ETH0_W51_GetIP(5); }
+static uint32 `$INSTANCE_NAME`_GetSubnetMask( void ) { return `$INSTANCE_NAME`_W51_GetIP(5); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write the device source IPv4 address
  * \param ip the ip address to set as the chip IP address
  */
-static void ETH0_SetSourceIP( uint32 ip ) { ETH0_W51_SetIP( 0x0F, ip ); }
+static void `$INSTANCE_NAME`_SetSourceIP( uint32 ip ) { `$INSTANCE_NAME`_W51_SetIP( 0x0F, ip ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the device's programmed IP address
  * \returns The IPv4 address to which the device is set.
  */
-static uint32 ETH0_GetSourceIP( void ) { return ETH0_W51_GetIP( 0x0F ); }
+static uint32 `$INSTANCE_NAME`_GetSourceIP( void ) { return `$INSTANCE_NAME`_W51_GetIP( 0x0F ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write a value to the device internal MODE register
  * \param mode the value to be written to the mode register.
  */
-static void ETH0_SetMode( uint8 mode ) { ETH0_W51_Write(0,mode); }
+static void `$INSTANCE_NAME`_SetMode( uint8 mode ) { `$INSTANCE_NAME`_W51_Write(0,mode); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the present contents of the device internal mode register
  * \returns the value of the mode register
  */
-static uint8 ETH0_GetMode( void ) { return ETH0_W51_Read(0); }
+static uint8 `$INSTANCE_NAME`_GetMode( void ) { return `$INSTANCE_NAME`_W51_Read(0); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write the value of the interrupt register
  * \param ir the value to be written to the interrupt register
  */
-static void ETH0_SetIR( uint8 ir ) { ETH0_W51_Write(0x0015,ir); }
+static void `$INSTANCE_NAME`_SetIR( uint8 ir ) { `$INSTANCE_NAME`_W51_Write(0x0015,ir); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the contents of the interrupt register
  * \returns the contents read from the interrupt register
  */
-static uint8 ETH0_GetIR( void ) { return ETH0_W51_Read(0x0015); }
+static uint8 `$INSTANCE_NAME`_GetIR( void ) { return `$INSTANCE_NAME`_W51_Read(0x0015); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Set the value of the interrupt mask register
  * \param imr the value to be written to the interrupt mask register
  */
-static void ETH0_SetIMR( uint8 imr) { ETH0_W51_Write( 0x0016, imr ); }
+static void `$INSTANCE_NAME`_SetIMR( uint8 imr) { `$INSTANCE_NAME`_W51_Write( 0x0016, imr ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the interrupt mask register
  * \returns the contents of the interrupt mask register
  */
-static uint8 ETH0_GetIMR( void ) { return ETH0_W51_Read( 0x0016 ); }
+static uint8 `$INSTANCE_NAME`_GetIMR( void ) { return `$INSTANCE_NAME`_W51_Read( 0x0016 ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write the retry time register
  * \param time the value to be written to the regster
  */
-static void ETH0_SetRetryTime( uint16 time) { ETH0_W51_Write16( 0x0017, time ); }
+static void `$INSTANCE_NAME`_SetRetryTime( uint16 time) { `$INSTANCE_NAME`_W51_Write16( 0x0017, time ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the retry tie register
  * \returns the value read from the register
  */
-static uint16 ETH0_GetRetryTime( void ) { return ETH0_W51_Read16( 0x0017 ); }
+static uint16 `$INSTANCE_NAME`_GetRetryTime( void ) { return `$INSTANCE_NAME`_W51_Read16( 0x0017 ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \breif write a value to the retry count register
  * \param count the value to be written to the register
  */
-static void ETH0_SetRetryCount( uint8 count ) { ETH0_W51_Write( 0x0019, count); }
+static void `$INSTANCE_NAME`_SetRetryCount( uint8 count ) { `$INSTANCE_NAME`_W51_Write( 0x0019, count); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the contents of the retry count register
  * \returns the value read from teh register
  */
-static uint8 ETH0_GetRetryCount( void ) { return ETH0_W51_Read( 0x0019 ); }
+static uint8 `$INSTANCE_NAME`_GetRetryCount( void ) { return `$INSTANCE_NAME`_W51_Read( 0x0019 ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief write a value to the Rx mem size register
  * \param size the value to be written to the register
  */
-static void ETH0_SetRxMemSize( uint8 size ) { ETH0_W51_Write( 0x1A, size ); }
+static void `$INSTANCE_NAME`_SetRxMemSize( uint8 size ) { `$INSTANCE_NAME`_W51_Write( 0x1A, size ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the contents of hte rx mem size register
  * \returns the value read from teh register
  */
-static uint8 ETH0_GetRxMemSize( void ) { return ETH0_W51_Read(0x1A); }
+static uint8 `$INSTANCE_NAME`_GetRxMemSize( void ) { return `$INSTANCE_NAME`_W51_Read(0x1A); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief write a value to the tx mem size register
  * \param size The value to be written to the register
  */
-static void ETH0_SetTxMemSize( uint8 size ) { ETH0_W51_Write( 0x1B, size); }
+static void `$INSTANCE_NAME`_SetTxMemSize( uint8 size ) { `$INSTANCE_NAME`_W51_Write( 0x1B, size); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief read the contents of the tx mem size register
  * \returns the value read from the register
  */
-static uint8 ETH0_GetTxMemSize( void ) { return ETH0_W51_Read( 0x1B);}
+static uint8 `$INSTANCE_NAME`_GetTxMemSize( void ) { return `$INSTANCE_NAME`_W51_Read( 0x1B);}
 /* ------------------------------------------------------------------------ */
 /**
  * \brief write a value to the unreachable IP register
  * \param ip the value to be written to the register
  */
-static void ETH0_SetUnreachableIP( uint32 ip) { ETH0_W51_SetIP( 0x2A, ip); }
+static void `$INSTANCE_NAME`_SetUnreachableIP( uint32 ip) { `$INSTANCE_NAME`_W51_SetIP( 0x2A, ip); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief read the contents of the unreachable IP register
  * \returns the value read from teh register
  */
-static uint32 ETH0_GetUnreachableIP( void ) { return ETH0_W51_GetIP( 0x2A ); }
+static uint32 `$INSTANCE_NAME`_GetUnreachableIP( void ) { return `$INSTANCE_NAME`_W51_GetIP( 0x2A ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief write a value to the unreachable port register
  * \param port the value to be written to the register
  */
-static void ETH0_SetUnreachablePort( uint16 port) { ETH0_W51_Write16(0x2E, port); }
+static void `$INSTANCE_NAME`_SetUnreachablePort( uint16 port) { `$INSTANCE_NAME`_W51_Write16(0x2E, port); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief read the contents of the unreachable port register
  * \returns the value read from the register
  */
-static uint16 ETH0_GetUnreachablePort( void ) { return ETH0_W51_Read16(0x2E); }
+static uint16 `$INSTANCE_NAME`_GetUnreachablePort( void ) { return `$INSTANCE_NAME`_W51_Read16(0x2E); }
 /* ======================================================================== */
 /* End Section */
 #endif
@@ -598,279 +606,279 @@ static uint16 ETH0_GetUnreachablePort( void ) { return ETH0_W51_Read16(0x2E); }
 /* Socket Registers */
 #if (1)
 /**
- * \def ETH0_SOCKET BASE(s)
+ * \def `$INSTANCE_NAME`_SOCKET BASE(s)
  * \brief Convert the socket number to a base address within the W5100
  */
-#define ETH0_SOCKET_BASE(s)           ((s<<8)+0x0400)
+#define `$INSTANCE_NAME`_SOCKET_BASE(s)           ((s<<8)+0x0400)
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write a value to the socket mode register
  * \param socket the socket number for the addressed register
  * \param mode the value to be written to the register
  */
-static void ETH0_SetSocketMode(uint8 socket, uint8 mode)
-{ ETH0_W51_Write(ETH0_SOCKET_BASE(socket), mode); }
+static void `$INSTANCE_NAME`_SetSocketMode(uint8 socket, uint8 mode)
+{ `$INSTANCE_NAME`_W51_Write(`$INSTANCE_NAME`_SOCKET_BASE(socket), mode); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read a value from the socket mode register
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint8 ETH0_GetSocketMode(uint8 socket)
-{ return ETH0_W51_Read(ETH0_SOCKET_BASE(socket)); }
+static uint8 `$INSTANCE_NAME`_GetSocketMode(uint8 socket)
+{ return `$INSTANCE_NAME`_W51_Read(`$INSTANCE_NAME`_SOCKET_BASE(socket)); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write a value to the socket command register
  * \param socket the socket number for the addressed register
  * \param cmd the value to be written to the register
  */
-static void ETH0_SetSocketCommand(uint8 socket, uint8 cmd)
-{ ETH0_W51_Write(ETH0_SOCKET_BASE(socket)+1, cmd); }
+static void `$INSTANCE_NAME`_SetSocketCommand(uint8 socket, uint8 cmd)
+{ `$INSTANCE_NAME`_W51_Write(`$INSTANCE_NAME`_SOCKET_BASE(socket)+1, cmd); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read a value from the socket command register
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint8 ETH0_GetSocketCommand(uint8 socket)
-{ return ETH0_W51_Read(ETH0_SOCKET_BASE(socket)+1); }
+static uint8 `$INSTANCE_NAME`_GetSocketCommand(uint8 socket)
+{ return `$INSTANCE_NAME`_W51_Read(`$INSTANCE_NAME`_SOCKET_BASE(socket)+1); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write a value to the socket interrupt register
  * \param socket the socket number for the addressed register
  * \param ir the value to be written to the register
  */
-static void ETH0_SetSocketIR(uint8 socket, uint8 ir)
-{ ETH0_W51_Write(ETH0_SOCKET_BASE(socket)+2,ir); }
+static void `$INSTANCE_NAME`_SetSocketIR(uint8 socket, uint8 ir)
+{ `$INSTANCE_NAME`_W51_Write(`$INSTANCE_NAME`_SOCKET_BASE(socket)+2,ir); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read a value from the socket interrupt register
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint8 ETH0_GetSocketIR(uint8 socket)
-{ return ETH0_W51_Read(ETH0_SOCKET_BASE(socket)+2); }
+static uint8 `$INSTANCE_NAME`_GetSocketIR(uint8 socket)
+{ return `$INSTANCE_NAME`_W51_Read(`$INSTANCE_NAME`_SOCKET_BASE(socket)+2); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write a value to the socket status register
  * \param socket the socket number for the addressed register
  * \param status the value to be written to the register
  */
-static void ETH0_SetSocketStatus(uint8 socket, uint8 status)
-{ ETH0_W51_Write(ETH0_SOCKET_BASE(socket)+3,status); }
+static void `$INSTANCE_NAME`_SetSocketStatus(uint8 socket, uint8 status)
+{ `$INSTANCE_NAME`_W51_Write(`$INSTANCE_NAME`_SOCKET_BASE(socket)+3,status); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read a value from the socket status register
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint8 ETH0_GetSocketStatus(uint8 socket)
-{ return ETH0_W51_Read(ETH0_SOCKET_BASE(socket)+3); }
+static uint8 `$INSTANCE_NAME`_GetSocketStatus(uint8 socket)
+{ return `$INSTANCE_NAME`_W51_Read(`$INSTANCE_NAME`_SOCKET_BASE(socket)+3); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write a value to the socket source port register
  * \param socket the socket number for the addressed register
  * \param port the value to be written to the register
  */
-static void ETH0_SetSocketSourcePort(uint8 socket, uint16 port)
-{ ETH0_W51_Write16(ETH0_SOCKET_BASE(socket)+4,port); }
+static void `$INSTANCE_NAME`_SetSocketSourcePort(uint8 socket, uint16 port)
+{ `$INSTANCE_NAME`_W51_Write16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+4,port); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read a value from the socket source port register
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint16 ETH0_GetSocketSourcePort(uint8 socket)
-{ return ETH0_W51_Read16(ETH0_SOCKET_BASE(socket)+4); }
+static uint16 `$INSTANCE_NAME`_GetSocketSourcePort(uint8 socket)
+{ return `$INSTANCE_NAME`_W51_Read16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+4); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write a value to the socket Destination hardware address register
  * \param socket the socket number for the addressed register
  * \param *mac poitner to the array holding the values to be written to the register
  */
-static void ETH0_SetSocketDestMAC(uint8 socket, uint8* mac)
-{ ETH0_W51_SetMAC( ETH0_SOCKET_BASE(socket)+6, mac); }
+static void `$INSTANCE_NAME`_SetSocketDestMAC(uint8 socket, uint8* mac)
+{ `$INSTANCE_NAME`_W51_SetMAC( `$INSTANCE_NAME`_SOCKET_BASE(socket)+6, mac); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read a value from the socket destination hardware address (MAC) register
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static void ETH0_GetSocketDestMAC(uint8 socket, uint8* mac)
-{ ETH0_W51_GetMAC( ETH0_SOCKET_BASE(socket)+6,mac); }
+static void `$INSTANCE_NAME`_GetSocketDestMAC(uint8 socket, uint8* mac)
+{ `$INSTANCE_NAME`_W51_GetMAC( `$INSTANCE_NAME`_SOCKET_BASE(socket)+6,mac); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write a value to the socket Destination IP address register
  * \param socket the socket number for the addressed register
  * \param ip the value to be written to the register
  */
-static void ETH0_SetSocketDestIP(uint8 socket, uint32 ip)
-{ ETH0_W51_SetIP(ETH0_SOCKET_BASE(socket)+12,ip); }
+static void `$INSTANCE_NAME`_SetSocketDestIP(uint8 socket, uint32 ip)
+{ `$INSTANCE_NAME`_W51_SetIP(`$INSTANCE_NAME`_SOCKET_BASE(socket)+12,ip); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read a value from the socket destination IP register
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint32 ETH0_GetSocketDestIP(uint8 socket )
-{ return ETH0_W51_GetIP(ETH0_SOCKET_BASE(socket)+12); }
+static uint32 `$INSTANCE_NAME`_GetSocketDestIP(uint8 socket )
+{ return `$INSTANCE_NAME`_W51_GetIP(`$INSTANCE_NAME`_SOCKET_BASE(socket)+12); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write a value to the socket destination port register
  * \param socket the socket number for the addressed register
  * \param port the value to be written to the register
  */
-static void ETH0_SetSocketDestPort(uint8 socket, uint16 port)
-{ ETH0_W51_Write16( ETH0_SOCKET_BASE(socket)+16, port); }
+static void `$INSTANCE_NAME`_SetSocketDestPort(uint8 socket, uint16 port)
+{ `$INSTANCE_NAME`_W51_Write16( `$INSTANCE_NAME`_SOCKET_BASE(socket)+16, port); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read a value from the socket destination port register
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint16 ETH0_GetSocketDestPort(uint8 socket)
-{ return ETH0_W51_Read16( ETH0_SOCKET_BASE(socket)+16 ); }
+static uint16 `$INSTANCE_NAME`_GetSocketDestPort(uint8 socket)
+{ return `$INSTANCE_NAME`_W51_Read16( `$INSTANCE_NAME`_SOCKET_BASE(socket)+16 ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write a value to the socket max segment size register
  * \param socket the socket number for the addressed register
  * \param size the value to be written to the register
  */
-static void ETH0_SetSocketMaxSegSize(uint8 socket, uint16 size)
-{ ETH0_W51_Write16(ETH0_SOCKET_BASE(socket)+18,size); }
+static void `$INSTANCE_NAME`_SetSocketMaxSegSize(uint8 socket, uint16 size)
+{ `$INSTANCE_NAME`_W51_Write16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+18,size); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read a value from the socket maximum segment size register
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint16 ETH0_GetSocketMaxSegSize(uint8 socket)
-{ return ETH0_W51_Read16(ETH0_SOCKET_BASE(socket)+18); }
+static uint16 `$INSTANCE_NAME`_GetSocketMaxSegSize(uint8 socket)
+{ return `$INSTANCE_NAME`_W51_Read16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+18); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read a value from the socket protocol register (IP RAW/MAC RAW mode)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint16  ETH0_GetSocketProto(uint8 socket)
-{ return ETH0_W51_Read(ETH0_SOCKET_BASE(socket)+20); }
+static uint16  `$INSTANCE_NAME`_GetSocketProto(uint8 socket)
+{ return `$INSTANCE_NAME`_W51_Read(`$INSTANCE_NAME`_SOCKET_BASE(socket)+20); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write a value to the socket TOS register
  * \param socket the socket number for the addressed register
  * \param tos the value to be written to the register
  */
-static void ETH0_SetSocketTOS(uint8 socket, uint8 tos)
-{ ETH0_W51_Write(ETH0_SOCKET_BASE(socket)+21, tos); }
+static void `$INSTANCE_NAME`_SetSocketTOS(uint8 socket, uint8 tos)
+{ `$INSTANCE_NAME`_W51_Write(`$INSTANCE_NAME`_SOCKET_BASE(socket)+21, tos); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read a value from the socket TOS register
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint8 ETH0_GetSocketTOS(uint8 socket)
-{ return ETH0_W51_Read(ETH0_SOCKET_BASE(socket)+21); }
+static uint8 `$INSTANCE_NAME`_GetSocketTOS(uint8 socket)
+{ return `$INSTANCE_NAME`_W51_Read(`$INSTANCE_NAME`_SOCKET_BASE(socket)+21); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write a value to the socket Time-To_Live (TTL) register
  * \param socket the socket number for the addressed register
  * \param ttl the value to be written to the register
  */
-static void ETH0_SetSocketTTL(uint8 socket, uint8 ttl)
-{ ETH0_W51_Write(ETH0_SOCKET_BASE(socket)+22,ttl); }
+static void `$INSTANCE_NAME`_SetSocketTTL(uint8 socket, uint8 ttl)
+{ `$INSTANCE_NAME`_W51_Write(`$INSTANCE_NAME`_SOCKET_BASE(socket)+22,ttl); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read a value from the socket time-to-live (TTL) register
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint8 ETH0_GetSocketTTL(uint8 socket)
-{ return ETH0_W51_Read(ETH0_SOCKET_BASE(socket)+22); }
+static uint8 `$INSTANCE_NAME`_GetSocketTTL(uint8 socket)
+{ return `$INSTANCE_NAME`_W51_Read(`$INSTANCE_NAME`_SOCKET_BASE(socket)+22); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write a value to the socket tx free size register
  * \param socket the socket number for the addressed register
  * \param size the value to be written to the register
  */
-static void ETH0_SetSocketTxFree( uint8 socket, uint16 size)
-{ ETH0_W51_Write16(ETH0_SOCKET_BASE(socket)+0x20,size); }
+static void `$INSTANCE_NAME`_SetSocketTxFree( uint8 socket, uint16 size)
+{ `$INSTANCE_NAME`_W51_Write16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+0x20,size); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read a value from the socket Tx free size register
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint16 ETH0_GetSocketTxFree(uint8 socket)
-{ return ETH0_W51_Read16(ETH0_SOCKET_BASE(socket)+0x20); }
+static uint16 `$INSTANCE_NAME`_GetSocketTxFree(uint8 socket)
+{ return `$INSTANCE_NAME`_W51_Read16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+0x20); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write a value to the socket tx read pointer register
  * \param socket the socket number for the addressed register
  * \param ptr the value to be written to the register
  */
-static void ETH0_SetSocketTxReadPtr(uint8 socket, uint16 ptr)
-{ ETH0_W51_Write16(ETH0_SOCKET_BASE(socket)+0x22,ptr); }
+static void `$INSTANCE_NAME`_SetSocketTxReadPtr(uint8 socket, uint16 ptr)
+{ `$INSTANCE_NAME`_W51_Write16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+0x22,ptr); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read a value from the socket Tx buffer read pointer register
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint16 ETH0_GetSocketTxReadPtr(uint8 socket)
-{ return ETH0_W51_Read16(ETH0_SOCKET_BASE(socket)+0x22); }
+static uint16 `$INSTANCE_NAME`_GetSocketTxReadPtr(uint8 socket)
+{ return `$INSTANCE_NAME`_W51_Read16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+0x22); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write a value to the socket tx write pointer register
  * \param socket the socket number for the addressed register
  * \param ptr the value to be written to the register
  */
-static void ETH0_SetSocketTxWritePtr(uint8 socket, uint16 ptr)
-{ ETH0_W51_Write16(ETH0_SOCKET_BASE(socket)+0x24,ptr); }
+static void `$INSTANCE_NAME`_SetSocketTxWritePtr(uint8 socket, uint16 ptr)
+{ `$INSTANCE_NAME`_W51_Write16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+0x24,ptr); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read a value from the socket tx buffer write pointer register
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint16 ETH0_GetSocketTxWritePtr(uint8 socket)
-{ return ETH0_W51_Read16(ETH0_SOCKET_BASE(socket)+0x24); }
+static uint16 `$INSTANCE_NAME`_GetSocketTxWritePtr(uint8 socket)
+{ return `$INSTANCE_NAME`_W51_Read16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+0x24); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read a value from the socket rx received data size register
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint16 ETH0_GetSocketRxSize(uint8 socket)
-{ return ETH0_W51_Read16(ETH0_SOCKET_BASE(socket)+0x26); }
+static uint16 `$INSTANCE_NAME`_GetSocketRxSize(uint8 socket)
+{ return `$INSTANCE_NAME`_W51_Read16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+0x26); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write a value to the socket rx read pointer register
  * \param socket the socket number for the addressed register
  * \param ptr the value to be written to the register
  */
-static void ETH0_SetSocketRxReadPtr(uint8 socket, uint16 ptr)
-{ ETH0_W51_Write16(ETH0_SOCKET_BASE(socket)+0x28,ptr); }
+static void `$INSTANCE_NAME`_SetSocketRxReadPtr(uint8 socket, uint16 ptr)
+{ `$INSTANCE_NAME`_W51_Write16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+0x28,ptr); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read a value from the socket rx buffer read pointer register
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint16 ETH0_GetSocketRxReadPtr(uint8 socket)
-{ return ETH0_W51_Read16(ETH0_SOCKET_BASE(socket)+0x28); }
+static uint16 `$INSTANCE_NAME`_GetSocketRxReadPtr(uint8 socket)
+{ return `$INSTANCE_NAME`_W51_Read16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+0x28); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write a command to the socket command register and wait for completion
  * \param socket the addressed socket for the command
  * \param cmd the command to execute
  */
-static uint32 ETH0_ExecuteSocketCommand( uint8 socket, int cmd)
+static uint32 `$INSTANCE_NAME`_ExecuteSocketCommand( uint8 socket, int cmd)
 {
 	uint32 timeout;
 	timeout = 0;
 	
-	ETH0_SetSocketCommand(socket,cmd);
-	while ( ( ETH0_GetSocketCommand(socket) ) && (timeout < 125))
+	`$INSTANCE_NAME`_SetSocketCommand(socket,cmd);
+	while ( ( `$INSTANCE_NAME`_GetSocketCommand(socket) ) && (timeout < `$CMD_TIMEOUT`))
 	{
 		++timeout;
 		CyDelay(1);
@@ -883,16 +891,16 @@ static uint32 ETH0_ExecuteSocketCommand( uint8 socket, int cmd)
  * \param socket the addressed socket to read the available tx buffer
  * \returns the number of bytes available in the transmit buffer for the socket
  */
-static uint16 ETH0_GetTxFreeSize( uint8 socket )
+static uint16 `$INSTANCE_NAME`_GetTxFreeSize( uint8 socket )
 {
 	uint16 first, second;
 	
 	first = 0;
 	second = 0;
 	do {
-		first = ETH0_GetSocketTxFree( socket );
+		first = `$INSTANCE_NAME`_GetSocketTxFree( socket );
 		if (first != 0) {
-			second = ETH0_GetSocketTxFree( socket );
+			second = `$INSTANCE_NAME`_GetSocketTxFree( socket );
 		}
 	}
 	while (first != second );
@@ -905,16 +913,16 @@ static uint16 ETH0_GetTxFreeSize( uint8 socket )
  * \param socket the addressed socketfrom which the data will be read
  * \returns the number of bytes waiting in the recieve buffer of the socket
  */
-static uint16 ETH0_GetRxSize( uint8 socket )
+static uint16 `$INSTANCE_NAME`_GetRxSize( uint8 socket )
 {
 	uint16 first, second;
 	
 	first = 0;
 	second = 0;
 	do {
-		first = ETH0_GetSocketRxSize( socket );
+		first = `$INSTANCE_NAME`_GetSocketRxSize( socket );
 		if (first != 0) {
-			second = ETH0_GetSocketRxSize( socket );
+			second = `$INSTANCE_NAME`_GetSocketRxSize( socket );
 		}
 	}
 	while (first != second );
@@ -936,7 +944,7 @@ static uint16 ETH0_GetRxSize( uint8 socket )
  * \param *buffer pointer to the local buffer to copy to the transmit fifo
  * \param length the number of bytes to be copied to the transmit fifo
  */
-static void ETH0_ProcessTxData(uint8 socket, uint16 offset, uint8* buffer, uint16 length)
+static void `$INSTANCE_NAME`_ProcessTxData(uint8 socket, uint16 offset, uint8* buffer, uint16 length)
 {
 	uint16 addr;
 	uint16 base;
@@ -948,9 +956,9 @@ static void ETH0_ProcessTxData(uint8 socket, uint16 offset, uint8* buffer, uint1
 	 * in to the chip buffers.  Written data will be offset by the offset byte count
 	 * specified in the parameters.
 	 */
-	base = ETH0_GetSocketTxWritePtr(socket) + offset;
+	base = `$INSTANCE_NAME`_GetSocketTxWritePtr(socket) + offset;
 	PointerOffset = (base & 0x07FF);
-	addr = PointerOffset + ETH0_SOCKET_TX_BASE(socket);
+	addr = PointerOffset + `$INSTANCE_NAME`_SOCKET_TX_BASE(socket);
 	/* calculate the number of bytes from the pointer to the end of the buffer */
 	size = 0x0800 - PointerOffset;
 	
@@ -965,15 +973,15 @@ static void ETH0_ProcessTxData(uint8 socket, uint16 offset, uint8* buffer, uint1
 		 * data from the pointer to the end of the buffer, then write the portion
 		 * remaining to the start (base ptr) of the socket buffer
 		 */
-		ETH0_W51_WriteBlock(addr, buffer, size);
-		ETH0_W51_WriteBlock(ETH0_SOCKET_TX_BASE(socket), &buffer[size], length - size);
+		`$INSTANCE_NAME`_W51_WriteBlock(addr, buffer, size);
+		`$INSTANCE_NAME`_W51_WriteBlock(`$INSTANCE_NAME`_SOCKET_TX_BASE(socket), &buffer[size], length - size);
 	}
 	else {
 		/* 
 		 * there is enough available space from the write point to the end of buffer
 		 * to hold the whole packe of information, so just write it to the memory
 		 */
-		ETH0_W51_WriteBlock(addr,buffer,length);
+		`$INSTANCE_NAME`_W51_WriteBlock(addr,buffer,length);
 	}
 	/* move the write pointer */
 	base += length;
@@ -981,7 +989,7 @@ static void ETH0_ProcessTxData(uint8 socket, uint16 offset, uint8* buffer, uint1
 	 * Store the new write pointer so that the device knows that there is data waiting
 	 * to be transmitted over the link.
 	 */
-	ETH0_SetSocketTxWritePtr(socket, base);
+	`$INSTANCE_NAME`_SetSocketTxWritePtr(socket, base);
 }
 /* ------------------------------------------------------------------------ */
 /**
@@ -992,7 +1000,7 @@ static void ETH0_ProcessTxData(uint8 socket, uint16 offset, uint8* buffer, uint1
  * \param length the max number of bytes to be copied to the local buffer
  * \param flags Flag settings to control read fifo options (lookahead)
  */
-static void ETH0_ProcessRxData(uint8 socket, uint16 offset, uint8* buffer, uint16 length, uint8 flags)
+static void `$INSTANCE_NAME`_ProcessRxData(uint8 socket, uint16 offset, uint8* buffer, uint16 length, uint8 flags)
 {
 	uint16 addr;
 	uint16 base;
@@ -1004,9 +1012,9 @@ static void ETH0_ProcessRxData(uint8 socket, uint16 offset, uint8* buffer, uint1
 	 * in to the chip buffers.  The data read will be offset by the offset byte count
 	 * specified in the parameters.
 	 */
-	base = ETH0_GetSocketRxReadPtr(socket) + offset;
+	base = `$INSTANCE_NAME`_GetSocketRxReadPtr(socket) + offset;
 	PointerOffset = (base & 0x07FF);
-	addr = PointerOffset + ETH0_SOCKET_RX_BASE(socket);
+	addr = PointerOffset + `$INSTANCE_NAME`_SOCKET_RX_BASE(socket);
 	/* calculate the number of bytes from the pointer to the end of the buffer */
 	size = 0x0800 - PointerOffset;
 	/*
@@ -1020,15 +1028,15 @@ static void ETH0_ProcessRxData(uint8 socket, uint16 offset, uint8* buffer, uint1
 		 * data from the pointer to the end of the buffer, then write the portion
 		 * remaining to the start (base ptr) of the socket buffer
 		 */
-		ETH0_W51_ReadBlock(addr, buffer, size);
-		ETH0_W51_ReadBlock(ETH0_SOCKET_RX_BASE(socket), &buffer[size], length - size);
+		`$INSTANCE_NAME`_W51_ReadBlock(addr, buffer, size);
+		`$INSTANCE_NAME`_W51_ReadBlock(`$INSTANCE_NAME`_SOCKET_RX_BASE(socket), &buffer[size], length - size);
 	}
 	else {
 		/* 
 		 * there is enough available space from the write point to the end of buffer
 		 * to hold the whole packe of information, so just write it to the memory
 		 */
-		ETH0_W51_ReadBlock(addr,buffer,length);
+		`$INSTANCE_NAME`_W51_ReadBlock(addr,buffer,length);
 	}
 	if ( (flags & 0x01) == 0 ) { /* V1.1: Added ==0 condition to lookahead flag check */
 		/* move the write pointer */
@@ -1037,7 +1045,7 @@ static void ETH0_ProcessRxData(uint8 socket, uint16 offset, uint8* buffer, uint1
 		 * Store the new write pointer so that the device knows that there is data waiting
 		 * to be transmitted over the link.
 		 */
-		ETH0_SetSocketRxReadPtr(socket, base);
+		`$INSTANCE_NAME`_SetSocketRxReadPtr(socket, base);
 	}
 }
 #endif
@@ -1046,7 +1054,7 @@ static void ETH0_ProcessRxData(uint8 socket, uint16 offset, uint8* buffer, uint1
 #if (1)
 /* ------------------------------------------------------------------------ */
 void
-ETH0_Init(uint8* mac, uint32 ip, uint32 subnet, uint32 gateway)
+`$INSTANCE_NAME`_Init(uint8* mac, uint32 ip, uint32 subnet, uint32 gateway)
 {
 	/*
 	 * Initialize the device and the address configuration, then
@@ -1058,59 +1066,59 @@ ETH0_Init(uint8* mac, uint32 ip, uint32 subnet, uint32 gateway)
 	CyDelay( 250 ); /* Fixed Boot Delay or chip inintialization will fail */
 	
 	/* Reset the device */
-	ETH0_SetMode(0x80); /* Send Reset Command */
+	`$INSTANCE_NAME`_SetMode(0x80); /* Send Reset Command */
 	/* Wait for the chip initialization delay */
-	CyDelay( 10 );
+	CyDelay( `$INIT_DELAY` );
 	
 	/* Close all of the socket, and clear the memory to make them available. */
 	for(index=0;index<4;++index) {
-		ETH0_SocketClose( index );
+		`$INSTANCE_NAME`_SocketClose( index );
 	}
 	/* Write the default configruation for memory size to the device */
-	ETH0_SetTxMemSize(0x55); /* 2K each */
-	ETH0_SetRxMemSize(0x55); /* 2K Each */
+	`$INSTANCE_NAME`_SetTxMemSize(0x55); /* 2K each */
+	`$INSTANCE_NAME`_SetRxMemSize(0x55); /* 2K Each */
 	/* Set device gateway address */
-	ETH0_SetGatewayAddress(gateway);
-	ETH0_SetSubnetMask( subnet );
+	`$INSTANCE_NAME`_SetGatewayAddress(gateway);
+	`$INSTANCE_NAME`_SetSubnetMask( subnet );
 	/* Store the subnet mask for later use, for ERRATA fix */
-	ETH0_SubnetMask = subnet;
+	`$INSTANCE_NAME`_SubnetMask = subnet;
 	/* store the device mac */
-	ETH0_SetSourceMAC( mac );
+	`$INSTANCE_NAME`_SetSourceMAC( mac );
 	/* store the IP address */
-	ETH0_SetSourceIP( ip );
+	`$INSTANCE_NAME`_SetSourceIP( ip );
 	/* clear pending interrupts */
-	ETH0_SetIR(0xFF);
+	`$INSTANCE_NAME`_SetIR(0xFF);
 	/* clear the subnet mask register (W5100 Errata Fix) */
-	ETH0_SetSubnetMask( 0 );
+	`$INSTANCE_NAME`_SetSubnetMask( 0 );
 }
 /* ------------------------------------------------------------------------ */
 void
-ETH0_Start( void )
+`$INSTANCE_NAME`_Start( void )
 {
 	uint32 ip;
 	uint32 gateway;
 	uint32 sub;
 	
 	/* Check for SPI initialization */
-	if (SPI0_initVar == 0) {
+	if (`$SPI_INSTANCE`_initVar == 0) {
 		/*
 		 * the hardware has not yet been initialized.  Before anything can be
 		 * initialized within the driver, the external hardware must be started
 		 */
-		SPI0_Start();
+		`$SPI_INSTANCE`_Start();
 	}
 		
 	/* wait for power on PLL Lock */
-	CyDelay( 10 );
-	ip = ETH0_ParseIP("192.168.1.101");
-	sub = ETH0_ParseIP("255.255.255.0");
-	gateway = ETH0_ParseIP("192.168.1.1");
+	CyDelay( `$INIT_DELAY` );
+	ip = `$INSTANCE_NAME`_ParseIP("`$IP`");
+	sub = `$INSTANCE_NAME`_ParseIP("`$SUBNET_MASK`");
+	gateway = `$INSTANCE_NAME`_ParseIP("`$GATEWAY`");
 	/* Initialize the device with the default data */
-	ETH0_Init( &ETH0_MAC[0], ip, sub, gateway  );
+	`$INSTANCE_NAME`_Init( &`$INSTANCE_NAME`_MAC[0], ip, sub, gateway  );
 }
 /* ------------------------------------------------------------------------ */
 uint32
-ETH0_ParseIP( const char* ipString )
+`$INSTANCE_NAME`_ParseIP( const char* ipString )
 {
 	/*
 	 * Parse a human readable string in to a IP address usable by the hardare
@@ -1154,17 +1162,17 @@ ETH0_ParseIP( const char* ipString )
 		return( 0xFFFFFFFF );
 	}
 	else {
-		return( ETH0_IPADDRESS(ip[0], ip[1], ip[2], ip[3]) );
+		return( `$INSTANCE_NAME`_IPADDRESS(ip[0], ip[1], ip[2], ip[3]) );
 	}
 }
 /* ------------------------------------------------------------------------ */
 uint8
-ETH0_SetIP( uint32 ip )
+`$INSTANCE_NAME`_SetIP( uint32 ip )
 {
 	uint8 ok = 0;
 	
 	if ( ( ip != 0) && (ip != 0xFFFFFFFF) ) {
-		ETH0_SetSourceIP( ip );
+		`$INSTANCE_NAME`_SetSourceIP( ip );
 		ok = 0xFF;
 	}
 	
@@ -1172,21 +1180,21 @@ ETH0_SetIP( uint32 ip )
 }
 /* ------------------------------------------------------------------------ */
 uint32
-ETH0_GetIP( void )
+`$INSTANCE_NAME`_GetIP( void )
 {
-	return ETH0_GetSourceIP();
+	return `$INSTANCE_NAME`_GetSourceIP();
 }
 /* ------------------------------------------------------------------------ */
 void
-ETH0_SetMAC( uint8* mac )
+`$INSTANCE_NAME`_SetMAC( uint8* mac )
 {
-	ETH0_SetSourceMAC( mac );
+	`$INSTANCE_NAME`_SetSourceMAC( mac );
 }
 /* ------------------------------------------------------------------------ */
 void
-ETH0_GetMAC( uint8* mac )
+`$INSTANCE_NAME`_GetMAC( uint8* mac )
 {
-	ETH0_GetSourceMAC( mac );
+	`$INSTANCE_NAME`_GetSourceMAC( mac );
 }
 #endif
 /* ======================================================================== */
@@ -1194,7 +1202,7 @@ ETH0_GetMAC( uint8* mac )
 #if (1)
 /* ------------------------------------------------------------------------ */
 uint8
-ETH0_SocketOpen( uint8 Protocol, uint16 port, uint8 flags )
+`$INSTANCE_NAME`_SocketOpen( uint8 Protocol, uint16 port, uint8 flags )
 {
 	uint8 socket;
 	int index;
@@ -1208,13 +1216,13 @@ ETH0_SocketOpen( uint8 Protocol, uint16 port, uint8 flags )
 	socket = 0xFF;
 	/* find the first available socket to open, and how much memory is available */
 	for( index = 0;index<4;++index) {
-		if ( (socket == 0xFF) && (ETH0_SocketConfig[index].Protocol == 0) ) {
+		if ( (socket == 0xFF) && (`$INSTANCE_NAME`_SocketConfig[index].Protocol == 0) ) {
 			/*
 			 * Since the W5100 does not support MAC mode commucications, check to see
 			 * if the socket that is free was socket 0.  If the mac protocol was
 			 * selected, ignore socket 0
 			 */
-			if ( (Protocol != ETH0_PROTO_MAC) || (index != 0) ) {
+			if ( (Protocol != `$INSTANCE_NAME`_PROTO_MAC) || (index != 0) ) {
 				/* store this socket number for allocation */
 				socket = index;
 			}
@@ -1222,20 +1230,20 @@ ETH0_SocketOpen( uint8 Protocol, uint16 port, uint8 flags )
 	}
 	if (socket != 0xFF ) {
 		/* Store the socket information in the allocation table */
-		ETH0_SocketConfig[socket].Protocol = Protocol;
-		ETH0_SocketConfig[socket].SocketFlags = flags;
-		ETH0_SocketConfig[socket].SourcePort = port;
-		ETH0_SocketConfig[socket].ServerFlag = 0;
+		`$INSTANCE_NAME`_SocketConfig[socket].Protocol = Protocol;
+		`$INSTANCE_NAME`_SocketConfig[socket].SocketFlags = flags;
+		`$INSTANCE_NAME`_SocketConfig[socket].SourcePort = port;
+		`$INSTANCE_NAME`_SocketConfig[socket].ServerFlag = 0;
 		/* Send the socket open with the correct protocol information */
-		ETH0_SetSocketSourcePort( socket, port );
-		ETH0_SetSocketMode( socket, Protocol | flags );
-		ETH0_ExecuteSocketCommand( socket, 1 );
+		`$INSTANCE_NAME`_SetSocketSourcePort( socket, port );
+		`$INSTANCE_NAME`_SetSocketMode( socket, Protocol | flags );
+		`$INSTANCE_NAME`_ExecuteSocketCommand( socket, 1 );
 	}
 	return socket;
 }
 /* ------------------------------------------------------------------------ */
 void
-ETH0_SocketClose( uint8 socket )
+`$INSTANCE_NAME`_SocketClose( uint8 socket )
 {
 	/*
 	 * Set the socket allocation to empty, and issue the close command
@@ -1243,33 +1251,33 @@ ETH0_SocketClose( uint8 socket )
 	 */
 	if (socket < 4) {
 		/* clear the socket memory allocations */
-		ETH0_SocketConfig[socket].Protocol = 0;
-		ETH0_SocketConfig[socket].SocketFlags = 0;
+		`$INSTANCE_NAME`_SocketConfig[socket].Protocol = 0;
+		`$INSTANCE_NAME`_SocketConfig[socket].SocketFlags = 0;
 		/* close the socket */
-		ETH0_ExecuteSocketCommand( socket, 0x10 );
+		`$INSTANCE_NAME`_ExecuteSocketCommand( socket, 0x10 );
 		/* Clear pending Interrupts */
-		ETH0_SetSocketIR( socket, 0xFF);
+		`$INSTANCE_NAME`_SetSocketIR( socket, 0xFF);
 	}
 }
 /* ------------------------------------------------------------------------ */
 uint8
-ETH0_SocketProcessConnections( uint8 socket )
+`$INSTANCE_NAME`_SocketProcessConnections( uint8 socket )
 {
 	uint8 status;
 	
-	status = ETH0_GetSocketStatus(socket);
+	status = `$INSTANCE_NAME`_GetSocketStatus(socket);
 	/* has a connection termination been requested by remote system */
 	if (status == 0x1C) {
 		/* Close the socket on this end */
-		ETH0_SocketClose(socket);
+		`$INSTANCE_NAME`_SocketClose(socket);
 	}
-	return (ETH0_GetSocketStatus(socket) == 0x00);
+	return (`$INSTANCE_NAME`_GetSocketStatus(socket) == 0x00);
 }
 /* ------------------------------------------------------------------------ */
 uint8
-ETH0_SocketEstablished( uint8 socket )
+`$INSTANCE_NAME`_SocketEstablished( uint8 socket )
 {
-	return (ETH0_GetSocketStatus( socket ) == 0x17);
+	return (`$INSTANCE_NAME`_GetSocketStatus( socket ) == 0x17);
 }
 /* ------------------------------------------------------------------------ */
 /**
@@ -1277,26 +1285,26 @@ ETH0_SocketEstablished( uint8 socket )
  * \param socket the socket to which the send command will be sent
  */
 static void
-ETH0_SocketSend(uint8 socket )
+`$INSTANCE_NAME`_SocketSend(uint8 socket )
 {
 	uint8 ir;
 	
 	/* initialize the subnet mask register : ERRATA FIX */
-	ETH0_SetSubnetMask( ETH0_SubnetMask );
+	`$INSTANCE_NAME`_SetSubnetMask( `$INSTANCE_NAME`_SubnetMask );
 	/* Issue the SEND command */
-	ETH0_ExecuteSocketCommand( socket, 0x20 );
+	`$INSTANCE_NAME`_ExecuteSocketCommand( socket, 0x20 );
 	/* wait for the SEND to complete, or for a timeout */
-	ir = ETH0_GetSocketIR( socket );
+	ir = `$INSTANCE_NAME`_GetSocketIR( socket );
 	/* while SEND is not done, and the socket hasnot timed out or been dsconnected */
 	while ( ((ir & 0x10) == 0) && (!(ir&0x0A)) ) {
 		CyDelay(1);
-		ir = ETH0_GetSocketIR( socket );
+		ir = `$INSTANCE_NAME`_GetSocketIR( socket );
 		
 	}
 	/* clear the SEND_OK flag from the register */
-	ETH0_SetSocketIR( socket, 0x10 );
+	`$INSTANCE_NAME`_SetSocketIR( socket, 0x10 );
 	/* reset the subnet mask : ERRATA FIX */
-	ETH0_SetSubnetMask( 0 );
+	`$INSTANCE_NAME`_SetSubnetMask( 0 );
 }
 /* ------------------------------------------------------------------------ */
 /**
@@ -1304,46 +1312,46 @@ ETH0_SocketSend(uint8 socket )
  * \param socket the socket to which the SEND will be executed.
  */
 static void
-ETH0_SocketSendMac(uint8 socket )
+`$INSTANCE_NAME`_SocketSendMac(uint8 socket )
 {
 	uint8 ir;
 	
 	/* initialize the subnet mask register : ERRATA FIX */
-	ETH0_SetSubnetMask( ETH0_SubnetMask );
+	`$INSTANCE_NAME`_SetSubnetMask( `$INSTANCE_NAME`_SubnetMask );
 	/* Issue the SEND command */
-	ETH0_ExecuteSocketCommand( socket, 0x21 );
+	`$INSTANCE_NAME`_ExecuteSocketCommand( socket, 0x21 );
 	/* wait for the SEND to complete, or for a timeout */
-	ir = ETH0_GetSocketIR( socket );
+	ir = `$INSTANCE_NAME`_GetSocketIR( socket );
 	/* while SEND is not done, and the socket hasnot timed out or been dsconnected */
 	while ( ((ir & 0x10) == 0) && (!(ir&0x0A)) ) {
 		CyDelay(1);
-		ir = ETH0_GetSocketIR( socket );
+		ir = `$INSTANCE_NAME`_GetSocketIR( socket );
 		
 	}
 	/* clear the SEND_OK flag from the register */
-	ETH0_SetSocketIR( socket, 0x10 );
+	`$INSTANCE_NAME`_SetSocketIR( socket, 0x10 );
 	/* reset the subnet mask : ERRATA FIX */
-	ETH0_SetSubnetMask( 0 );
+	`$INSTANCE_NAME`_SetSubnetMask( 0 );
 }
 /* ------------------------------------------------------------------------ */
 uint16
-ETH0_SocketRxDataWaiting( uint8 socket )
+`$INSTANCE_NAME`_SocketRxDataWaiting( uint8 socket )
 {
-	return ETH0_GetRxSize( socket );
+	return `$INSTANCE_NAME`_GetRxSize( socket );
 }
 #endif
 /* ======================================================================== */
 /* TCP/IP */
-#if (1)
+#if (`$INCLUDE_TCP`)
 /* ------------------------------------------------------------------------ */
 uint8
-ETH0_TcpOpen(uint16 port)
+`$INSTANCE_NAME`_TcpOpen(uint16 port)
 {
-	return ETH0_SocketOpen(ETH0_PROTO_TCP, port, 0);
+	return `$INSTANCE_NAME`_SocketOpen(`$INSTANCE_NAME`_PROTO_TCP, port, 0);
 }
 /* ------------------------------------------------------------------------ */
 void
-ETH0_TcpStartServer( uint8 socket )
+`$INSTANCE_NAME`_TcpStartServer( uint8 socket )
 {
 	/*
 	 * Start a open socket listening for a connection
@@ -1351,59 +1359,59 @@ ETH0_TcpStartServer( uint8 socket )
 	/* was this a valid socket? */
 	if (socket < 4) {
 		/* Execute the listen command */
-		ETH0_ExecuteSocketCommand( socket, 0x02 );
+		`$INSTANCE_NAME`_ExecuteSocketCommand( socket, 0x02 );
 	}
 }
 /* ------------------------------------------------------------------------ */
 void
-ETH0_TcpStartServerWait( uint8 socket )
+`$INSTANCE_NAME`_TcpStartServerWait( uint8 socket )
 {
-	ETH0_TcpStartServer(socket);
+	`$INSTANCE_NAME`_TcpStartServer(socket);
 	/* wait for socket establishment */
-	while ( !ETH0_SocketEstablished(socket) ) {
+	while ( !`$INSTANCE_NAME`_SocketEstablished(socket) ) {
 		CyDelay(1);
 	}
 }
 /* ------------------------------------------------------------------------ */
 void
-ETH0_TcpConnect( uint8 socket, uint32 ip, uint16 port )
+`$INSTANCE_NAME`_TcpConnect( uint8 socket, uint32 ip, uint16 port )
 {
 	uint32 timeout;
 	uint8 ir;
 	
 	if ( (ip != 0xFFFFFFFF) && (ip != 0) ) {
-		ETH0_SetSocketDestIP( socket, ip );
-		ETH0_SetSocketDestPort( socket, port );
+		`$INSTANCE_NAME`_SetSocketDestIP( socket, ip );
+		`$INSTANCE_NAME`_SetSocketDestPort( socket, port );
 		/* set socket subnet mask */
-		ETH0_SetSubnetMask( ETH0_SubnetMask );
-		ETH0_ExecuteSocketCommand( socket, 0x04);
+		`$INSTANCE_NAME`_SetSubnetMask( `$INSTANCE_NAME`_SubnetMask );
+		`$INSTANCE_NAME`_ExecuteSocketCommand( socket, 0x04);
 		/* wait for the socket connection to the remote host is established */
-		while ( (!ETH0_SocketEstablished(socket))  && (timeout < 3000) ) {
+		while ( (!`$INSTANCE_NAME`_SocketEstablished(socket))  && (timeout < `$TIMEOUT`) ) {
 			CyDelay(1);
 			++timeout;
-			ir = ETH0_GetSocketIR( socket );
+			ir = `$INSTANCE_NAME`_GetSocketIR( socket );
 			if ( (ir & 0x08) != 0 ) {
 				/* internal chip timeout occured */
-				timeout = 3000;
+				timeout = `$TIMEOUT`;
 			}
 		}
 		/* clear the Subnet mask register */
-		ETH0_SetSubnetMask(0);
+		`$INSTANCE_NAME`_SetSubnetMask(0);
 	}
 }
 /* ------------------------------------------------------------------------ */
 uint8
-ETH0_TcpConnected( uint8 socket )
-{ return ETH0_SocketEstablished(socket); }
+`$INSTANCE_NAME`_TcpConnected( uint8 socket )
+{ return `$INSTANCE_NAME`_SocketEstablished(socket); }
 /* ------------------------------------------------------------------------ */
 void
-ETH0_TcpDisconnect( uint8 socket )
+`$INSTANCE_NAME`_TcpDisconnect( uint8 socket )
 {
-	ETH0_ExecuteSocketCommand(socket, 0x08);
+	`$INSTANCE_NAME`_ExecuteSocketCommand(socket, 0x08);
 }
 /* ------------------------------------------------------------------------ */
 uint16
-ETH0_TcpSend(uint8 socket, uint8* buffer, uint16 len)
+`$INSTANCE_NAME`_TcpSend(uint8 socket, uint8* buffer, uint16 len)
 {
 	uint16 TxSize;
 	uint16 FreeSpace;
@@ -1411,8 +1419,8 @@ ETH0_TcpSend(uint8 socket, uint8* buffer, uint16 len)
 	
 	TxSize =  (len > 0x0800) ? 0x0800 : len;
 	/* check the connection status, and protocol of the socket */
-	status = ETH0_GetSocketStatus(socket);
-	if ( ( status == 0x17) && (ETH0_SocketConfig[socket].Protocol == ETH0_PROTO_TCP) ) {
+	status = `$INSTANCE_NAME`_GetSocketStatus(socket);
+	if ( ( status == 0x17) && (`$INSTANCE_NAME`_SocketConfig[socket].Protocol == `$INSTANCE_NAME`_PROTO_TCP) ) {
 		/* 
 		 * The socket was open with the correct protocol and is connected to
 		 * a valid remote system. In order to send the requested packet data,
@@ -1422,15 +1430,15 @@ ETH0_TcpSend(uint8 socket, uint8* buffer, uint16 len)
 		FreeSpace = 0;
 		status = 0x17;
 		while ( (FreeSpace < TxSize) && ( (status == 0x17) && (status != 0x1C) ) ) {
-			FreeSpace = ETH0_GetTxFreeSize( socket );
-			status = ETH0_GetSocketStatus( socket );
+			FreeSpace = `$INSTANCE_NAME`_GetTxFreeSize( socket );
+			status = `$INSTANCE_NAME`_GetSocketStatus( socket );
 		}
 		/*
 		 * Write the data buffer to the chip Tx Buffer, then issue
 		 * the chip SEND command
 		 */
-		ETH0_ProcessTxData(socket, 0, buffer, TxSize);
-		ETH0_SocketSend( socket );
+		`$INSTANCE_NAME`_ProcessTxData(socket, 0, buffer, TxSize);
+		`$INSTANCE_NAME`_SocketSend( socket );
 	}
 	else {
 		/*
@@ -1443,7 +1451,7 @@ ETH0_TcpSend(uint8 socket, uint8* buffer, uint16 len)
 }
 /* ------------------------------------------------------------------------ */
 uint16
-ETH0_TcpReceive( uint8 socket, uint8* buffer, uint16 length )
+`$INSTANCE_NAME`_TcpReceive( uint8 socket, uint8* buffer, uint16 length )
 {
 	uint16 RxSize;
 	
@@ -1452,22 +1460,22 @@ ETH0_TcpReceive( uint8 socket, uint8* buffer, uint16 length )
 	 * and that there is data waiting
 	 */
 	RxSize = 0;
-	if (ETH0_GetSocketStatus( socket ) == 0x17) {
+	if (`$INSTANCE_NAME`_GetSocketStatus( socket ) == 0x17) {
 		/*
 		 * read the number of waiting bytes in the buffer memory
 		 * but, clip the length of data read to the requested
 		 * length of data.
 		 */
-		RxSize = ETH0_GetRxSize( socket );
+		RxSize = `$INSTANCE_NAME`_GetRxSize( socket );
 		RxSize = (RxSize > length) ? length : RxSize;
 		/* If there was waiting data, read it from the buffer */
 		if (RxSize > 0) {
-			ETH0_ProcessRxData( socket, 0, buffer, RxSize, 0);
+			`$INSTANCE_NAME`_ProcessRxData( socket, 0, buffer, RxSize, 0);
 			/* 
 			 * after reading the buffer data, send the receive command
 			 * to the socket so that the W5100 completes the read
 			 */
-			ETH0_ExecuteSocketCommand(socket, 0x40);
+			`$INSTANCE_NAME`_ExecuteSocketCommand(socket, 0x40);
 		}
 	}
 	
@@ -1476,30 +1484,30 @@ ETH0_TcpReceive( uint8 socket, uint8* buffer, uint16 length )
 }
 /* ------------------------------------------------------------------------ */
 void
-ETH0_TcpPrint( uint8 socket, const char* str )
+`$INSTANCE_NAME`_TcpPrint( uint8 socket, const char* str )
 {
-	ETH0_TcpSend(socket, (uint8*)str, strlen(str));
+	`$INSTANCE_NAME`_TcpSend(socket, (uint8*)str, strlen(str));
 }
 #endif
 /* ======================================================================== */
 /* UDP */
-#if (1)
+#if (`$INCLUDE_UDP`)
 /* ------------------------------------------------------------------------ */
 uint8
-ETH0_UdpOpen(uint16 port)
+`$INSTANCE_NAME`_UdpOpen(uint16 port)
 {
-	return ETH0_SocketOpen(ETH0_PROTO_UDP, port, 0);
+	return `$INSTANCE_NAME`_SocketOpen(`$INSTANCE_NAME`_PROTO_UDP, port, 0);
 }
 /* ------------------------------------------------------------------------ */	
 uint16
-ETH0_UdpSend(uint8 socket, uint32 ip, uint16 port, uint8* buffer, uint16 length)
+`$INSTANCE_NAME`_UdpSend(uint8 socket, uint32 ip, uint16 port, uint8* buffer, uint16 length)
 {
 	uint16 TxSize;
 	
 	/*
 	 * Transmit a buffer of data to a specified remote system using UDP.
 	 */
-	if (ETH0_GetSocketStatus(socket) == 0x17) {
+	if (`$INSTANCE_NAME`_GetSocketStatus(socket) == 0x17) {
 		/*
 		 * The socket has been established, so wait for available
 		 * room in the transmit buffer of the socket, but, trim the
@@ -1512,17 +1520,17 @@ ETH0_UdpSend(uint8 socket, uint32 ip, uint16 port, uint8* buffer, uint16 length)
 			 * Store the destination IP and port in the chip
 			 * socket registers.
 			 */
-			ETH0_SetSocketDestIP( socket, ip );
-			ETH0_SetSocketDestPort( socket, port );
+			`$INSTANCE_NAME`_SetSocketDestIP( socket, ip );
+			`$INSTANCE_NAME`_SetSocketDestPort( socket, port );
 			/*
 			 * process the transmission buffer, and write it in to
 			 * the chip buffer memory.
 			 */
-			ETH0_ProcessTxData(socket,0,buffer,TxSize);
+			`$INSTANCE_NAME`_ProcessTxData(socket,0,buffer,TxSize);
 			/*
 			 * Issue the send command to transmit the buffer.
 			 */
-			ETH0_SocketSend( socket ); 
+			`$INSTANCE_NAME`_SocketSend( socket ); 
 		}
 		else {
 			/* an invalid IP address was issued, so return that no data was sent. */
@@ -1533,7 +1541,7 @@ ETH0_UdpSend(uint8 socket, uint32 ip, uint16 port, uint8* buffer, uint16 length)
 }
 /* ------------------------------------------------------------------------ */
 uint16
-ETH0_UdpReceive(uint8 socket, uint32 *ip, uint16 *port, uint8* buffer, uint16 length)
+`$INSTANCE_NAME`_UdpReceive(uint8 socket, uint32 *ip, uint16 *port, uint8* buffer, uint16 length)
 {
 	uint16 RxSize;
 	uint16 PacketSize;
@@ -1544,13 +1552,13 @@ ETH0_UdpReceive(uint8 socket, uint32 *ip, uint16 *port, uint8* buffer, uint16 le
 	 * and that there is data waiting
 	 */
 	RxSize = 0;
-	if (ETH0_GetSocketStatus( socket ) == 0x17) {
+	if (`$INSTANCE_NAME`_GetSocketStatus( socket ) == 0x17) {
 		/*
 		 * read the number of waiting bytes in the buffer memory
 		 * but, clip the length of data read to the requested
 		 * length of data.
 		 */
-		RxSize = ETH0_GetRxSize( socket );
+		RxSize = `$INSTANCE_NAME`_GetRxSize( socket );
 		RxSize = (RxSize > length+8) ? length : RxSize;
 		/* If there was waiting data, read it from the buffer */
 		if (RxSize > 0) {
@@ -1558,12 +1566,12 @@ ETH0_UdpReceive(uint8 socket, uint32 *ip, uint16 *port, uint8* buffer, uint16 le
 			 * the UDP packet is stored in the buffer memory as an 8-byte
 			 * packet header followed by the packet data.
 			*/
-			ETH0_ProcessRxData( socket, 0, &PacketHeader[0], 8, 0);
+			`$INSTANCE_NAME`_ProcessRxData( socket, 0, &PacketHeader[0], 8, 0);
 			/*
 			 * The packet header contains the 4-byte IP address followed by the
 			 * 2-byte port number and the 2-byte packet data length
 			 */
-			*ip = ETH0_IPADDRESS(PacketHeader[0], PacketHeader[1], PacketHeader[2], PacketHeader[3]);
+			*ip = `$INSTANCE_NAME`_IPADDRESS(PacketHeader[0], PacketHeader[1], PacketHeader[2], PacketHeader[3]);
 			*port = (uint16)((PacketHeader[4]<<8)&0xFF00) | (PacketHeader[5]&0x00FF);
 			PacketSize = (uint16)((PacketHeader[6]<<8)&0xFF00) | (PacketHeader[7]&0x00FF);
 			/*
@@ -1571,12 +1579,12 @@ ETH0_UdpReceive(uint8 socket, uint32 *ip, uint16 *port, uint8* buffer, uint16 le
 			 */
 			if (RxSize >= (PacketSize+8) ) {
 			
-				ETH0_ProcessRxData( socket, 8, buffer, PacketSize, 0);
+				`$INSTANCE_NAME`_ProcessRxData( socket, 8, buffer, PacketSize, 0);
 				/* 
 				 * after reading the buffer data, send the receive command
 				 * to the socket so that the W5100 completes the read
 				 */
-				ETH0_ExecuteSocketCommand(socket, 0x40);
+				`$INSTANCE_NAME`_ExecuteSocketCommand(socket, 0x40);
 				RxSize = PacketSize;
 			}
 			else {

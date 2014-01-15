@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 1
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccabzF3K.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 1
   39              	.LC13:
   40 00a0 2D0D00   		.ascii	"-\015\000"
   41 00a3 00       		.align	2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 2
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccabzF3K.s 			page 2
 
 
   42              	.LC15:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 1
   68 0006 FFF7FEFF 		bl	SPI0_Start
   25:.\main.c      **** 	ETH0_Start();
   69              		.loc 1 25 0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 3
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccabzF3K.s 			page 3
 
 
   70 000a FFF7FEFF 		bl	ETH0_Start
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 1
   36:.\main.c      ****     for(;;)
   37:.\main.c      ****     {
   38:.\main.c      ****         /* Place your application code here. */
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 4
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccabzF3K.s 			page 4
 
 
   39:.\main.c      **** 		socket = ETH0_TcpOpen( 23 );
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 1
  155 00a4 FFF7FEFF 		bl	BLUE_Write
   50:.\main.c      **** 			/* wait for a connection, and delay the flashes */
   51:.\main.c      **** 			CyDelay(100);
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 5
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccabzF3K.s 			page 5
 
 
  156              		.loc 1 51 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 1
  200 00f4 191C     		mov	r1, r3
  201 00f6 FFF7FEFF 		bl	ETH0_TcpPrint
   61:.\main.c      **** 			switch(temp) {
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 6
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccabzF3K.s 			page 6
 
 
  202              		.loc 1 61 0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 1
  248 0146 FFF7FEFF 		bl	ETH0_TcpPrint
   70:.\main.c      **** 					break;
  249              		.loc 1 70 0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 7
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccabzF3K.s 			page 7
 
 
  250 014a 08E0     		b	.L7
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 1
  294              		.loc 1 79 0
  295 0198 3C1C     		mov	r4, r7
  296 019a 8034     		add	r4, r4, #128
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 8
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccabzF3K.s 			page 8
 
 
  297 019c 3B1C     		mov	r3, r7
@@ -469,7 +469,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 1
  333              		.loc 1 88 0
  334 01e6 0120     		mov	r0, #1
  335 01e8 FFF7FEFF 		bl	SDCS_Write
-  89:.\main.c      **** 		/* end test : measured time 30.20275 ms*/
+  89:.\main.c      **** 		/* end test : measured time 46.82435 ms (Effective Data Rate: 341702 bps) */
   90:.\main.c      **** 		
   91:.\main.c      **** 		ETH0_TcpDisconnect( socket );
  336              		.loc 1 91 0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 1
  339 01f0 1B78     		ldrb	r3, [r3]
  340 01f2 181C     		mov	r0, r3
  341 01f4 FFF7FEFF 		bl	ETH0_TcpDisconnect
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 9
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccabzF3K.s 			page 9
 
 
   92:.\main.c      **** 		ETH0_SocketClose( socket );
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 1
  393 0032 08       		.byte	0x8
  394 0033 12010000 		.4byte	.LASF1
  395 0037 02       		.uleb128 0x2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 10
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccabzF3K.s 			page 10
 
 
  396 0038 02       		.byte	0x2
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 1
  450 009b 04       		.byte	0x4
  451 009c 07       		.byte	0x7
  452 009d 8B010000 		.4byte	.LASF14
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 11
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccabzF3K.s 			page 11
 
 
  453 00a1 05       		.uleb128 0x5
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 1
  507 0111 09       		.uleb128 0x9
  508 0112 00       		.byte	0
  509 0113 00       		.byte	0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 12
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccabzF3K.s 			page 12
 
 
  510 0114 0A       		.uleb128 0xa
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 1
  564 000e 01       		.uleb128 0x1
  565 000f 52       		.uleb128 0x52
  566 0010 01       		.uleb128 0x1
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 13
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccabzF3K.s 			page 13
 
 
  567 0011 10       		.uleb128 0x10
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 1
  621 0047 12       		.uleb128 0x12
  622 0048 01       		.uleb128 0x1
  623 0049 40       		.uleb128 0x40
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 14
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccabzF3K.s 			page 14
 
 
  624 004a 06       		.uleb128 0x6
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 1
  678 0081 00       		.byte	0
  679 0082 0A       		.uleb128 0xa
  680 0083 0B       		.uleb128 0xb
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 15
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccabzF3K.s 			page 15
 
 
  681 0084 01       		.byte	0x1
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 1
  735              	.LLST0:
  736 0000 00000000 		.4byte	.LFB33
  737 0004 02000000 		.4byte	.LCFI0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 16
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccabzF3K.s 			page 16
 
 
  738 0008 0200     		.2byte	0x2
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 1
  782      00
  783              	.LASF18:
  784 001b 74656D70 		.ascii	"temp\000"
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 17
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccabzF3K.s 			page 17
 
 
  784      00
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 1
  806              	.LASF13:
  807 0120 63686172 		.ascii	"char\000"
  807      00
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc24pqqh.s 			page 18
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccabzF3K.s 			page 18
 
 
  808              	.LASF4:

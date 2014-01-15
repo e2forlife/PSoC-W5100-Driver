@@ -1,6 +1,6 @@
 -- ======================================================================
 -- PSoCPioneer+ArduinoShield_SPIM_Example.ctl generated from PSoCPioneer+ArduinoShield_SPIM_Example
--- 01/06/2014 at 12:06
+-- 01/15/2014 at 13:19
 -- This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 -- ======================================================================
 
