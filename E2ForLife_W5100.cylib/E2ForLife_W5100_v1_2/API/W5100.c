@@ -1454,13 +1454,14 @@ uint16
 `$INSTANCE_NAME`_TcpReceive( uint8 socket, uint8* buffer, uint16 length )
 {
 	uint16 RxSize;
-	
+
 	/*
 	 * First thing to do is to check to see if the socket is connected
 	 * and that there is data waiting
 	 */
-	RxSize = 0;
-	if (`$INSTANCE_NAME`_GetSocketStatus( socket ) == 0x17) {
+//	RxSize = 0;
+
+//	if ( `$INSTANCE_NAME`_GetSocketStatus( socket ) == 0x17) {
 		/*
 		 * read the number of waiting bytes in the buffer memory
 		 * but, clip the length of data read to the requested
@@ -1477,7 +1478,7 @@ uint16
 			 */
 			`$INSTANCE_NAME`_ExecuteSocketCommand(socket, 0x40);
 		}
-	}
+//	}
 	
 	/* return the number of read bytes from the buffer memory */
 	return RxSize;

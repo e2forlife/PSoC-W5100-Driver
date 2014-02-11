@@ -1,4 +1,4 @@
---------------- Build Started: 01/13/2014 10:22:31 Project: PSoCPioneer+ArduinoShield_Example, Configuration: ARM GCC 4.7.3 Debug ---------------
+--------------- Build Started: 02/11/2014 12:10:46 Project: PSoCPioneer+ArduinoShield_Example, Configuration: ARM GCC 4.7.3 Debug ---------------
 cydsfit.exe "-.appdatapath" "C:\Users\chuck.erhardt\AppData\Local\Cypress Semiconductor\PSoC Creator\3.0" "-.fdsnotice" "-.fdswarpdepfile=warp_dependencies.txt" "-.fdselabdepfile=elab_dependencies.txt" "-.fdsbldfile=generated_files.txt" "-p" "C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_Example.cydsn\PSoCPioneer+ArduinoShield_Example.cyprj" "-d" "CY8C4245AXI-483" "-s" "C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_Example.cydsn\Generated_Source\PSoC4" "--" "-yv2" "-v3" "-ygs" "-q10" "-o2" "-.fftcfgtype=LE"
 Elaborating Design...
 HDL Generation ...
@@ -16,46 +16,47 @@ Static timing analysis ...
 API Generation ...
 Dependency Generation ...
 Clean Temporary Files ...
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\main.lst -ffunction-sections -c .\main.c -o .\CortexM0\ARM_GCC_473\Debug\main.o
 arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\ETH0.lst -ffunction-sections -c .\Generated_Source\PSoC4\ETH0.c -o .\CortexM0\ARM_GCC_473\Debug\ETH0.o
-.\Generated_Source\PSoC4\ETH0.c:455:15: warning: 'ETH0_GetGatewayAddress' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:467:15: warning: 'ETH0_GetSubnetMask' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:491:14: warning: 'ETH0_GetMode' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:503:14: warning: 'ETH0_GetIR' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:509:13: warning: 'ETH0_SetIMR' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:515:14: warning: 'ETH0_GetIMR' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:521:13: warning: 'ETH0_SetRetryTime' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:527:15: warning: 'ETH0_GetRetryTime' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:533:13: warning: 'ETH0_SetRetryCount' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:539:14: warning: 'ETH0_GetRetryCount' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:551:14: warning: 'ETH0_GetRxMemSize' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:563:14: warning: 'ETH0_GetTxMemSize' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:569:13: warning: 'ETH0_SetUnreachableIP' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:575:15: warning: 'ETH0_GetUnreachableIP' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:581:13: warning: 'ETH0_SetUnreachablePort' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:587:15: warning: 'ETH0_GetUnreachablePort' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:613:14: warning: 'ETH0_GetSocketMode' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:653:13: warning: 'ETH0_SetSocketStatus' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:677:15: warning: 'ETH0_GetSocketSourcePort' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:685:13: warning: 'ETH0_SetSocketDestMAC' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:693:13: warning: 'ETH0_GetSocketDestMAC' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:709:15: warning: 'ETH0_GetSocketDestIP' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:725:15: warning: 'ETH0_GetSocketDestPort' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:733:13: warning: 'ETH0_SetSocketMaxSegSize' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:741:15: warning: 'ETH0_GetSocketMaxSegSize' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:749:16: warning: 'ETH0_GetSocketProto' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:757:13: warning: 'ETH0_SetSocketTOS' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:765:14: warning: 'ETH0_GetSocketTOS' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:773:13: warning: 'ETH0_SetSocketTTL' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:781:14: warning: 'ETH0_GetSocketTTL' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:789:13: warning: 'ETH0_SetSocketTxFree' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:805:13: warning: 'ETH0_SetSocketTxReadPtr' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:813:15: warning: 'ETH0_GetSocketTxReadPtr' defined but not used [-Wunused-function]
-.\Generated_Source\PSoC4\ETH0.c:1301:1: warning: 'ETH0_SocketSendMac' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:467:15: warning: 'ETH0_GetGatewayAddress' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:479:15: warning: 'ETH0_GetSubnetMask' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:503:14: warning: 'ETH0_GetMode' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:515:14: warning: 'ETH0_GetIR' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:521:13: warning: 'ETH0_SetIMR' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:527:14: warning: 'ETH0_GetIMR' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:533:13: warning: 'ETH0_SetRetryTime' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:539:15: warning: 'ETH0_GetRetryTime' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:545:13: warning: 'ETH0_SetRetryCount' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:551:14: warning: 'ETH0_GetRetryCount' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:563:14: warning: 'ETH0_GetRxMemSize' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:575:14: warning: 'ETH0_GetTxMemSize' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:581:13: warning: 'ETH0_SetUnreachableIP' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:587:15: warning: 'ETH0_GetUnreachableIP' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:593:13: warning: 'ETH0_SetUnreachablePort' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:599:15: warning: 'ETH0_GetUnreachablePort' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:625:14: warning: 'ETH0_GetSocketMode' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:665:13: warning: 'ETH0_SetSocketStatus' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:689:15: warning: 'ETH0_GetSocketSourcePort' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:697:13: warning: 'ETH0_SetSocketDestMAC' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:705:13: warning: 'ETH0_GetSocketDestMAC' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:721:15: warning: 'ETH0_GetSocketDestIP' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:737:15: warning: 'ETH0_GetSocketDestPort' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:745:13: warning: 'ETH0_SetSocketMaxSegSize' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:753:15: warning: 'ETH0_GetSocketMaxSegSize' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:761:16: warning: 'ETH0_GetSocketProto' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:769:13: warning: 'ETH0_SetSocketTOS' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:777:14: warning: 'ETH0_GetSocketTOS' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:785:13: warning: 'ETH0_SetSocketTTL' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:793:14: warning: 'ETH0_GetSocketTTL' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:801:13: warning: 'ETH0_SetSocketTxFree' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:817:13: warning: 'ETH0_SetSocketTxReadPtr' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:825:15: warning: 'ETH0_GetSocketTxReadPtr' defined but not used [-Wunused-function]
+.\Generated_Source\PSoC4\ETH0.c:1313:1: warning: 'ETH0_SocketSendMac' defined but not used [-Wunused-function]
 arm-none-eabi-ar.exe -rs .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_Example.a .\CortexM0\ARM_GCC_473\Debug\cyfitter_cfg.o .\CortexM0\ARM_GCC_473\Debug\ETH0.o .\CortexM0\ARM_GCC_473\Debug\SDCS.o .\CortexM0\ARM_GCC_473\Debug\CyBootAsmGnu.o .\CortexM0\ARM_GCC_473\Debug\CyFlash.o .\CortexM0\ARM_GCC_473\Debug\CyLib.o .\CortexM0\ARM_GCC_473\Debug\cyPm.o .\CortexM0\ARM_GCC_473\Debug\cyutils.o .\CortexM0\ARM_GCC_473\Debug\SPI0.o .\CortexM0\ARM_GCC_473\Debug\SPI0_SPI_UART.o .\CortexM0\ARM_GCC_473\Debug\SPI0_PM.o .\CortexM0\ARM_GCC_473\Debug\SPI0_SPI.o .\CortexM0\ARM_GCC_473\Debug\SPI0_BOOT.o .\CortexM0\ARM_GCC_473\Debug\SPI0_SPI_BOOT.o .\CortexM0\ARM_GCC_473\Debug\SPI0_ss0_m.o .\CortexM0\ARM_GCC_473\Debug\SPI0_mosi_m.o .\CortexM0\ARM_GCC_473\Debug\SPI0_miso_m.o .\CortexM0\ARM_GCC_473\Debug\SPI0_sclk_m.o .\CortexM0\ARM_GCC_473\Debug\SPI0_ss1_m.o .\CortexM0\ARM_GCC_473\Debug\SPI0_SCBCLK.o .\CortexM0\ARM_GCC_473\Debug\LED1.o .\CortexM0\ARM_GCC_473\Debug\LED1_PM.o .\CortexM0\ARM_GCC_473\Debug\LED0.o .\CortexM0\ARM_GCC_473\Debug\LED0_PM.o
 arm-none-eabi-ar.exe: creating .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_Example.a
 arm-none-eabi-gcc.exe -mthumb -march=armv6-m -T .\Generated_Source\PSoC4\cm0gcc.ld -g -Wl,-Map,.\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_Example.map -specs=nano.specs -Wl,--gc-sections -Wl,--start-group -o .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_Example.elf .\CortexM0\ARM_GCC_473\Debug\main.o .\CortexM0\ARM_GCC_473\Debug\cymetadata.o .\CortexM0\ARM_GCC_473\Debug\Cm0Start.o .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_Example.a "C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM0\ARM_GCC_473\Debug\CyComponentLibrary.a" -Wl,--end-group
 cyelftool.exe -C C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_Example.cydsn\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_Example.elf --flash_size 32768 --flash_row_size 128
 cyelftool.exe -S C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_Example.cydsn\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_Example.elf
-Flash used: 11288 of 32768 bytes (34.4 %).
+Flash used: 11264 of 32768 bytes (34.4 %).
 SRAM used: 3948 of 4096 bytes (96.4 %).
---------------- Build Succeeded: 01/13/2014 10:23:04 ---------------
+--------------- Build Succeeded: 02/11/2014 12:11:19 ---------------

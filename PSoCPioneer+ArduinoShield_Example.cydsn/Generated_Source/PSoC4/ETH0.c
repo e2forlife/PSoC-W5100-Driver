@@ -20,7 +20,14 @@
  * - Added validator to SS_NUM parameter to ensure that the value is the range 0-3 <CE>
  * - Removed "inline" keywords from interal register access function to promote
  *   compatibility with Keil PSoC3 compilers that don't support them. <CE>
+ * - Fixed bug in _ProcessRxData() that caused the read pointer not to be updated without
+ *   the lookahead flag being set. <CE>
+ * V1.2
+ * - Added _STS_SPI_IDLE flag to _SpiDone conditions to prevent deadlocking that
+ *   was occuring during the first read or write using the SPI device (SPIM moded) <CE>
+ * 
  */
+
 /* Cypress library includes */
 #include <cytypes.h>
 #include <cylib.h>
@@ -59,11 +66,16 @@ static uint8 ETH0_MAC[6] = { 0x90, 0xA2, 0xDA, 0x0E, 0xC2, 0xAC };
 #if !defined(CY_SCB_SPI0_H)
 /* ------------------------------------------------------------------------ */	
 /* V1.1 : Macro definition for the SpiDone flag. */
+/*  
+	V1.2 : Added SPI_IDLE flag to the condition for done to eliminate
+	deadlocking when IDLE but not done.  This seems to occur during the
+	initial write/read to/from the SPI port.
+*/
 /**
- * \brief MAcro to determine the state of the spi done
- * This macro reads the status regoster of the transmitter and masks off the doen bit.
+ * \brief Macro to determine the state of the spi done
+ * This macro reads the status register of the transmitter and masks off the doen bit.
  */
-#define ETH0_SpiDone     (SPI0_ReadTxStatus() & SPI0_STS_SPI_DONE)
+#define ETH0_SpiDone     (SPI0_ReadTxStatus() & (SPI0_STS_SPI_DONE | SPI0_STS_SPI_IDLE))
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Select the active SCB chip select connected to the W51
@@ -1024,7 +1036,7 @@ static void ETH0_ProcessRxData(uint8 socket, uint16 offset, uint8* buffer, uint1
 		 */
 		ETH0_W51_ReadBlock(addr,buffer,length);
 	}
-	if ( (flags & 0x01) == 0 ) {
+	if ( (flags & 0x01) == 0 ) { /* V1.1: Added ==0 condition to lookahead flag check */
 		/* move the write pointer */
 		base += length;
 		/* 
@@ -1440,13 +1452,14 @@ uint16
 ETH0_TcpReceive( uint8 socket, uint8* buffer, uint16 length )
 {
 	uint16 RxSize;
-	
+
 	/*
 	 * First thing to do is to check to see if the socket is connected
 	 * and that there is data waiting
 	 */
-	RxSize = 0;
-	if (ETH0_GetSocketStatus( socket ) == 0x17) {
+//	RxSize = 0;
+
+//	if ( ETH0_GetSocketStatus( socket ) == 0x17) {
 		/*
 		 * read the number of waiting bytes in the buffer memory
 		 * but, clip the length of data read to the requested
@@ -1463,7 +1476,7 @@ ETH0_TcpReceive( uint8 socket, uint8* buffer, uint16 length )
 			 */
 			ETH0_ExecuteSocketCommand(socket, 0x40);
 		}
-	}
+//	}
 	
 	/* return the number of read bytes from the buffer memory */
 	return RxSize;

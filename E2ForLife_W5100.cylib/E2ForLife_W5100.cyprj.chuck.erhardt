@@ -6,7 +6,7 @@
 <CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
 <userData>
 <dataGuid v="718b6b01-68ba-4a17-b632-d38dc61ebb3b">
-<CyGuid_718b6b01-68ba-4a17-b632-d38dc61ebb3b type_name="CyDesigner.Gde.Schematic.Symbolcatalog.CyComponentCatalogControl+CyCompCatalogData" version="1" tab="Cypress">
+<CyGuid_718b6b01-68ba-4a17-b632-d38dc61ebb3b type_name="CyDesigner.Gde.Schematic.Symbolcatalog.CyComponentCatalogControl+CyCompCatalogData" version="1" tab="Community">
 <tree_states_tab_names>
 <v>Community</v>
 <v>Cypress</v>
@@ -25,8 +25,9 @@
 <v>Community Component Catalog\Communications</v>
 <v>Community Component Catalog\Communications\Ethernet</v>
 <v>Community Component Catalog\Communications\Ethernet\Drivers</v>
-<v>Community Component Catalog\Communications\Ethernet\Drivers\E2ForLife_W5100 [v1.1]</v>
-<v>Community Component Catalog\Communications\Ethernet\E2ForLife - W5100 (SPIM Mode) [v1.1]</v>
+<v>Community Component Catalog\Communications\Ethernet\Drivers\E2ForLife_W5100 [v1.2]</v>
+<v>Community Component Catalog\Communications\Ethernet\E2ForLife - W5100 (SCB Mode) [v1.2]</v>
+<v>Community Component Catalog\Communications\Ethernet\E2ForLife - W5100 (SPIM Mode) [v1.2]</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Cypress Component Catalog">
@@ -41,21 +42,16 @@
 <v>Cypress Component Catalog\Communications</v>
 <v>Cypress Component Catalog\Digital</v>
 <v>Cypress Component Catalog\Display</v>
-<v>Cypress Component Catalog\Filters</v>
 <v>Cypress Component Catalog\Ports and Pins</v>
-<v>Cypress Component Catalog\Power Supervision</v>
 <v>Cypress Component Catalog\System</v>
-<v>Cypress Component Catalog\System\Boost Converter [v5.0]</v>
 <v>Cypress Component Catalog\System\Bootloadable [v1.20]</v>
+<v>Cypress Component Catalog\System\Bootloader [v1.20]</v>
 <v>Cypress Component Catalog\System\Clock [v2.10]</v>
-<v>Cypress Component Catalog\System\Die Temperature [v2.0]</v>
-<v>Cypress Component Catalog\System\DMA [v1.70]</v>
-<v>Cypress Component Catalog\System\EEPROM [v2.10]</v>
+<v>Cypress Component Catalog\System\Die Temperature [v1.0]</v>
 <v>Cypress Component Catalog\System\Emulated EEPROM [v1.10]</v>
-<v>Cypress Component Catalog\System\External Memory Interface</v>
+<v>Cypress Component Catalog\System\Global Signal Reference [v2.0]</v>
 <v>Cypress Component Catalog\System\ILO Trim [v1.0]</v>
 <v>Cypress Component Catalog\System\Interrupt [v1.70]</v>
-<v>Cypress Component Catalog\System\RTC [v2.0]</v>
 <v>Cypress Component Catalog\Thermal Management</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
