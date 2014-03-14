@@ -25,7 +25,11 @@
  * V1.2
  * - Added _STS_SPI_IDLE flag to _SpiDone conditions to prevent deadlocking that
  *   was occuring during the first read or write using the SPI device (SPIM moded) <CE>
- * 
+ * - Removed the check for SOCKET_ESTABLISHED at the start of the TcpReceive
+ *   function to allow for reading received socket data after the socket was dropped
+ *   by the remote server.  It was brought to my attention that this occurs when
+ *   operating with client connection to HTTP servers. <CE>
+ * - Added a MAC address parser and MAC to String Converter. <CE>
  */
 
 /* Cypress library includes */
@@ -53,8 +57,22 @@ typedef struct
 static ETH0_SOCKET ETH0_SocketConfig[4];
 static uint32 ETH0_SubnetMask;
 
-static uint8 ETH0_MAC[6] = { 0x90, 0xA2, 0xDA, 0x0E, 0xC2, 0xAC };
+static uint8 ETH0_MAC[6]; /* V1.2: removed = {90-A2-DA-0E-C2-AC}; */
 
+/* ------------------------------------------------------------------------ */
+/* V1.2 HEX digit conversion tools for MAC Address parsing */
+#define ETH0_ISXDIGIT(x) \
+( ((x>='0')&&(x<='9'))||((x>='a')&&(x<='f'))||((x>='A')&&(x<='F')) )
+/* ------------------------------------------------------------------------ */
+#define ETH0_HEX2BIN(x) \
+( ((x>='0')&&(x<='9'))? (x-'0') : \
+  ((x>='a')&&(x<='f'))? ((x-'a')+10) : \
+  ((x>='A')&&(x<='F'))? ((x-'A')+10) : 0 )
+/* ------------------------------------------------------------------------ */
+#define ETH0_BIN2HEX(x) \
+( (x>9)? ((x-10)+'A') : (x + '0'))
+/* END V1.2 defines */
+/* ------------------------------------------------------------------------ */
 
 /* ======================================================================== */
 /* Generic SPI Functions */
@@ -1108,6 +1126,16 @@ ETH0_Start( void )
 		
 	/* wait for power on PLL Lock */
 	CyDelay( 10 );
+	/* V1.2 new -- Parse MAC Address string */
+	if ( ETH0_ParseMAC("90-A2-DA-0E-C2-AC", &ETH0_MAC[0]) == CYRET_BAD_DATA) {
+		ETH0_MAC[0] = 0;
+		ETH0_MAC[1] = 0xDE;
+		ETH0_MAC[2] = 0xAD;
+		ETH0_MAC[3] = 0xC0;
+		ETH0_MAC[4] = 0xDE;
+		ETH0_MAC[5] = 0;
+	}
+	/* END of V1.2 Update ------ */
 	ip = ETH0_ParseIP("192.168.1.101");
 	sub = ETH0_ParseIP("255.255.255.0");
 	gateway = ETH0_ParseIP("192.168.1.1");
@@ -1163,6 +1191,114 @@ ETH0_ParseIP( const char* ipString )
 		return( ETH0_IPADDRESS(ip[0], ip[1], ip[2], ip[3]) );
 	}
 }
+/* ------------------------------------------------------------------------ */
+/**
+ * /brief Parse a MAC Address string in to a 6-byte mac address
+ * /param *macString Pointer to the ASCII-Z String containing the MAC address
+ * /param *mac Pointer to the 6-byte array to hold the output mac addres
+ */
+cystatus ETH0_ParseMAC(const char *macString, uint8 *mac)
+{
+	/* 
+	 * a mac address is specified as a string of 6 hex bytes with
+	 * dashes ('-') seperating the bytes.  An invalidly formed
+	 * address will only process the values up the error and return BAD_DATA
+	 * otherwise, SUCESS is returned.
+	 */
+	int digit;
+	int index;
+	cystatus result;
+	
+	result = CYRET_SUCCESS;
+	index = 0;
+	for(digit = 0;(digit<6) && (result == CYRET_SUCCESS)&&(macString[index] != 0);++digit) {
+		// process the first nibble
+		if (ETH0_ISXDIGIT(macString[index]) ) {
+			mac[digit] = ETH0_HEX2BIN(macString[index++]);
+			mac[digit] <<= 4;
+			if (ETH0_ISXDIGIT(macString[index])) {
+				mac[digit] += ETH0_HEX2BIN(macString[index++]);
+				/*
+				 * now for digits other than digit 5 (the last one) look for
+				 * the dash seperator.  If there is no dash, return bad data
+				 */
+				if (digit<5) {
+					if (macString[index]!='-') {
+						result = CYRET_BAD_DATA;
+					}
+					++index; // move conversion pointer to the next value
+				}
+			}
+			else {
+				result = CYRET_BAD_DATA;
+			}
+		}
+		else {
+			result = CYRET_BAD_DATA;
+		}
+	}
+	return( result );
+}
+/* ------------------------------------------------------------------------ */
+void ETH0_StringMAC(char *macString)
+{
+	uint8 mac[6];
+	int digit;
+	int index;
+	
+	/*
+	 * first read the MAC address from the chip
+	 * and inintialize some locals so that the
+	 * string formater will function properly
+	 */
+	ETH0_GetSourceMAC( &mac[0] );
+	index = 0;
+	for(digit=0;digit<6;++digit) {
+		// convert the first nibble
+		macString[index++] = ETH0_BIN2HEX(((mac[digit]>>4)&0x0F));
+		macString[index++] = ETH0_BIN2HEX((mac[digit]&0x0F));
+		if (digit<5) {
+			macString[index++] = '-';
+		}
+		else {
+			macString[index] = 0;
+		}
+	}
+}
+/* ------------------------------------------------------------------------ */
+void ETH0_StringIP( char *ipString )
+{
+	uint32 ip;
+	uint8 *ipBytes;
+	int index;
+	int digit;
+	int work, temp;
+	
+	ip = ETH0_GetSourceIP();
+	ipBytes = (uint8*)&ip;
+	index = 0;
+	for(digit=0;digit<4;++digit) {
+		work = ipBytes[digit];
+		if (work >= 100) {
+			temp = work/100;
+			work -= (temp*100);
+			ipString[index++] = '0' + temp;
+		}
+		if (work >= 10) {
+			temp = work /10;
+			work -= (temp*10);
+			ipString[index++] = '0'+temp;
+		}
+		ipString[index++] = '0'+work;
+		if (digit <3) {
+			ipString[index++] = '.';
+		}
+		else {
+			ipString[index] = 0;
+		}
+	}
+}
+
 /* ------------------------------------------------------------------------ */
 uint8
 ETH0_SetIP( uint32 ip )

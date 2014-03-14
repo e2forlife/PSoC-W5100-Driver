@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
   24:.\Generated_Source\PSoC4/LED1.c **** ***************************************/
   25:.\Generated_Source\PSoC4/LED1.c **** 
   26:.\Generated_Source\PSoC4/LED1.c **** uint8 LED1_initVar = 0u;
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 2
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 2
 
 
   27:.\Generated_Source\PSoC4/LED1.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
   52 0014 1A70     		strb	r2, [r3]
   53              	.L2:
   61:.\Generated_Source\PSoC4/LED1.c ****     }
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 3
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 3
 
 
   62:.\Generated_Source\PSoC4/LED1.c ****     LED1_Enable();
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
   86 0004 00AF     		add	r7, sp, #0
   87              	.LCFI4:
   88              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 4
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 4
 
 
   84:.\Generated_Source\PSoC4/LED1.c ****     uint8 enableInterrupts;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  123 0046 1278     		ldrb	r2, [r2]
  124 0048 D2B2     		uxtb	r2, r2
  125 004a 0221     		mov	r1, #2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 5
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 5
 
 
  126 004c 8A43     		bic	r2, r1
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  125:.\Generated_Source\PSoC4/LED1.c **** * Return: 
  126:.\Generated_Source\PSoC4/LED1.c **** *  None.
  127:.\Generated_Source\PSoC4/LED1.c **** *
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 6
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 6
 
 
  128:.\Generated_Source\PSoC4/LED1.c **** *******************************************************************************/
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  144:.\Generated_Source\PSoC4/LED1.c **** *
  145:.\Generated_Source\PSoC4/LED1.c **** * Parameters:  
  146:.\Generated_Source\PSoC4/LED1.c **** *  None.
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 7
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 7
 
 
  147:.\Generated_Source\PSoC4/LED1.c **** *
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  163:.\Generated_Source\PSoC4/LED1.c **** 
  164:.\Generated_Source\PSoC4/LED1.c ****     /***************************************************************************
  165:.\Generated_Source\PSoC4/LED1.c ****     * FUNCTION NAME:     LED1_SetPulse0Mode
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 8
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 8
 
 
  166:.\Generated_Source\PSoC4/LED1.c ****     ****************************************************************************
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  267              		.loc 1 187 0
  268 0026 054B     		ldr	r3, .L17
  269 0028 044A     		ldr	r2, .L17
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 9
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 9
 
 
  270 002a 1278     		ldrb	r2, [r2]
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  303              		.cfi_offset 14, -4
  304 0002 82B0     		sub	sp, sp, #8
  305              	.LCFI13:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 10
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 10
 
 
  306              		.cfi_def_cfa_offset 16
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  351              		.section	.text.LED1_ReadSeed,"ax",%progbits
  352              		.align	2
  353              		.global	LED1_ReadSeed
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 11
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 11
 
 
  354              		.code	16
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  386              		.align	2
  387              		.global	LED1_WriteSeed
  388              		.code	16
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 12
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 12
 
 
  389              		.thumb_func
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  421 001e FA1D     		add	r2, r7, #7
  422 0020 1278     		ldrb	r2, [r2]
  423 0022 1A70     		strb	r2, [r3]
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 13
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 13
 
 
  424              	.L28:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  457 0004 024B     		ldr	r3, .L34
  458 0006 1B78     		ldrb	r3, [r3]
  459 0008 DBB2     		uxtb	r3, r3
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 14
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 14
 
 
  283:.\Generated_Source\PSoC4/LED1.c **** }
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  494 0008 FB1D     		add	r3, r7, #7
  495 000a 1A70     		strb	r2, [r3]
  303:.\Generated_Source\PSoC4/LED1.c ****     CY_SET_REG8(LED1_POLYNOM_PTR, polynomial);
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 15
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 15
 
 
  496              		.loc 1 303 0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  530              		.cfi_def_cfa_register 7
  324:.\Generated_Source\PSoC4/LED1.c ****     return( CY_GET_REG8(LED1_DENSITY0_PTR) );
  531              		.loc 1 324 0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 16
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 16
 
 
  532 0004 024B     		ldr	r3, .L41
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  566              	.LCFI29:
  567              		.cfi_def_cfa_register 7
  568 0006 021C     		mov	r2, r0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 17
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 17
 
 
  569 0008 FB1D     		add	r3, r7, #7
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  603 0002 00AF     		add	r7, sp, #0
  604              	.LCFI31:
  605              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 18
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 18
 
 
  365:.\Generated_Source\PSoC4/LED1.c ****     return( CY_GET_REG8(LED1_DENSITY1_PTR) );
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  639              		.cfi_def_cfa_offset 16
  640 0004 00AF     		add	r7, sp, #0
  641              	.LCFI34:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 19
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 19
 
 
  642              		.cfi_def_cfa_register 7
@@ -1114,10 +1114,10 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  670 0006 00000000 		.4byte	.Ldebug_abbrev0
  671 000a 04       		.byte	0x4
  672 000b 01       		.uleb128 0x1
- 673 000c 65020000 		.4byte	.LASF35
+ 673 000c 40020000 		.4byte	.LASF35
  674 0010 01       		.byte	0x1
- 675 0011 7A010000 		.4byte	.LASF36
- 676 0015 C8000000 		.4byte	.LASF37
+ 675 0011 24010000 		.4byte	.LASF36
+ 676 0015 A2010000 		.4byte	.LASF37
  677 0019 00000000 		.4byte	.Ldebug_ranges0+0
  678 001d 00000000 		.4byte	0
  679 0021 00000000 		.4byte	0
@@ -1125,38 +1125,38 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  681 0029 02       		.uleb128 0x2
  682 002a 01       		.byte	0x1
  683 002b 06       		.byte	0x6
- 684 002c 4F020000 		.4byte	.LASF0
+ 684 002c 2A020000 		.4byte	.LASF0
  685 0030 02       		.uleb128 0x2
  686 0031 01       		.byte	0x1
  687 0032 08       		.byte	0x8
- 688 0033 84000000 		.4byte	.LASF1
+ 688 0033 90000000 		.4byte	.LASF1
  689 0037 02       		.uleb128 0x2
  690 0038 02       		.byte	0x2
  691 0039 05       		.byte	0x5
- 692 003a 04020000 		.4byte	.LASF2
+ 692 003a DF010000 		.4byte	.LASF2
  693 003e 02       		.uleb128 0x2
  694 003f 02       		.byte	0x2
  695 0040 07       		.byte	0x7
  696 0041 56000000 		.4byte	.LASF3
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 20
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 20
 
 
  697 0045 02       		.uleb128 0x2
  698 0046 04       		.byte	0x4
  699 0047 05       		.byte	0x5
- 700 0048 33020000 		.4byte	.LASF4
+ 700 0048 0E020000 		.4byte	.LASF4
  701 004c 02       		.uleb128 0x2
  702 004d 04       		.byte	0x4
  703 004e 07       		.byte	0x7
- 704 004f 9F000000 		.4byte	.LASF5
+ 704 004f AB000000 		.4byte	.LASF5
  705 0053 02       		.uleb128 0x2
  706 0054 08       		.byte	0x8
  707 0055 05       		.byte	0x5
- 708 0056 B6010000 		.4byte	.LASF6
+ 708 0056 60010000 		.4byte	.LASF6
  709 005a 02       		.uleb128 0x2
  710 005b 08       		.byte	0x8
  711 005c 07       		.byte	0x7
- 712 005d 63010000 		.4byte	.LASF7
+ 712 005d 0D010000 		.4byte	.LASF7
  713 0061 03       		.uleb128 0x3
  714 0062 04       		.byte	0x4
  715 0063 05       		.byte	0x5
@@ -1164,26 +1164,26 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  717 0068 02       		.uleb128 0x2
  718 0069 04       		.byte	0x4
  719 006a 07       		.byte	0x7
- 720 006b 47010000 		.4byte	.LASF8
+ 720 006b F1000000 		.4byte	.LASF8
  721 006f 04       		.uleb128 0x4
- 722 0070 B1000000 		.4byte	.LASF12
+ 722 0070 BD000000 		.4byte	.LASF12
  723 0074 02       		.byte	0x2
  724 0075 5B       		.byte	0x5b
  725 0076 30000000 		.4byte	0x30
  726 007a 02       		.uleb128 0x2
  727 007b 04       		.byte	0x4
  728 007c 04       		.byte	0x4
- 729 007d 74000000 		.4byte	.LASF9
+ 729 007d 80000000 		.4byte	.LASF9
  730 0081 02       		.uleb128 0x2
  731 0082 08       		.byte	0x8
  732 0083 04       		.byte	0x4
- 733 0084 2A010000 		.4byte	.LASF10
+ 733 0084 D4000000 		.4byte	.LASF10
  734 0088 02       		.uleb128 0x2
  735 0089 01       		.byte	0x1
  736 008a 08       		.byte	0x8
- 737 008b D7010000 		.4byte	.LASF11
+ 737 008b 81010000 		.4byte	.LASF11
  738 008f 04       		.uleb128 0x4
- 739 0090 9A010000 		.4byte	.LASF13
+ 739 0090 44010000 		.4byte	.LASF13
  740 0094 02       		.byte	0x2
  741 0095 F0       		.byte	0xf0
  742 0096 9A000000 		.4byte	0x9a
@@ -1192,13 +1192,13 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  745 009f 02       		.uleb128 0x2
  746 00a0 04       		.byte	0x4
  747 00a1 07       		.byte	0x7
- 748 00a2 9F010000 		.4byte	.LASF14
+ 748 00a2 49010000 		.4byte	.LASF14
  749 00a6 06       		.uleb128 0x6
  750 00a7 01       		.byte	0x1
  751 00a8 15000000 		.4byte	.LASF15
  752 00ac 01       		.byte	0x1
  753 00ad 36       		.byte	0x36
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 21
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 21
 
 
  754 00ae 01       		.byte	0x1
@@ -1208,7 +1208,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  758 00bb 01       		.byte	0x1
  759 00bc 07       		.uleb128 0x7
  760 00bd 01       		.byte	0x1
- 761 00be 5B020000 		.4byte	.LASF18
+ 761 00be 36020000 		.4byte	.LASF18
  762 00c2 01       		.byte	0x1
  763 00c3 52       		.byte	0x52
  764 00c4 01       		.byte	0x1
@@ -1218,7 +1218,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  768 00d1 01       		.byte	0x1
  769 00d2 E5000000 		.4byte	0xe5
  770 00d6 08       		.uleb128 0x8
- 771 00d7 B7000000 		.4byte	.LASF38
+ 771 00d7 C3000000 		.4byte	.LASF38
  772 00db 01       		.byte	0x1
  773 00dc 54       		.byte	0x54
  774 00dd 6F000000 		.4byte	0x6f
@@ -1228,7 +1228,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  778 00e4 00       		.byte	0
  779 00e5 09       		.uleb128 0x9
  780 00e6 01       		.byte	0x1
- 781 00e7 F8010000 		.4byte	.LASF16
+ 781 00e7 69000000 		.4byte	.LASF16
  782 00eb 01       		.byte	0x1
  783 00ec 81       		.byte	0x81
  784 00ed 01       		.byte	0x1
@@ -1238,7 +1238,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  788 00fa 01       		.byte	0x1
  789 00fb 09       		.uleb128 0x9
  790 00fc 01       		.byte	0x1
- 791 00fd 7A000000 		.4byte	.LASF17
+ 791 00fd 86000000 		.4byte	.LASF17
  792 0101 01       		.byte	0x1
  793 0102 98       		.byte	0x98
  794 0103 01       		.byte	0x1
@@ -1248,7 +1248,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  798 0110 01       		.byte	0x1
  799 0111 0A       		.uleb128 0xa
  800 0112 01       		.byte	0x1
- 801 0113 3C020000 		.4byte	.LASF19
+ 801 0113 17020000 		.4byte	.LASF19
  802 0117 01       		.byte	0x1
  803 0118 B3       		.byte	0xb3
  804 0119 01       		.byte	0x1
@@ -1258,10 +1258,10 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  808 0126 01       		.byte	0x1
  809 0127 3A010000 		.4byte	0x13a
  810 012b 0B       		.uleb128 0xb
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 22
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 22
 
 
- 811 012c 69000000 		.4byte	.LASF21
+ 811 012c 75000000 		.4byte	.LASF21
  812 0130 01       		.byte	0x1
  813 0131 B3       		.byte	0xb3
  814 0132 6F000000 		.4byte	0x6f
@@ -1271,7 +1271,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  818 0139 00       		.byte	0
  819 013a 0A       		.uleb128 0xa
  820 013b 01       		.byte	0x1
- 821 013c C4010000 		.4byte	.LASF20
+ 821 013c 6E010000 		.4byte	.LASF20
  822 0140 01       		.byte	0x1
  823 0141 CF       		.byte	0xcf
  824 0142 01       		.byte	0x1
@@ -1281,7 +1281,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  828 014f 01       		.byte	0x1
  829 0150 63010000 		.4byte	0x163
  830 0154 0B       		.uleb128 0xb
- 831 0155 3C010000 		.4byte	.LASF22
+ 831 0155 E6000000 		.4byte	.LASF22
  832 0159 01       		.byte	0x1
  833 015a CF       		.byte	0xcf
  834 015b 6F000000 		.4byte	0x6f
@@ -1291,7 +1291,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  838 0162 00       		.byte	0
  839 0163 0C       		.uleb128 0xc
  840 0164 01       		.byte	0x1
- 841 0165 A8010000 		.4byte	.LASF25
+ 841 0165 52010000 		.4byte	.LASF25
  842 0169 01       		.byte	0x1
  843 016a EC       		.byte	0xec
  844 016b 01       		.byte	0x1
@@ -1302,7 +1302,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  849 017c 01       		.byte	0x1
  850 017d 0D       		.uleb128 0xd
  851 017e 01       		.byte	0x1
- 852 017f 54010000 		.4byte	.LASF23
+ 852 017f FE000000 		.4byte	.LASF23
  853 0183 01       		.byte	0x1
  854 0184 0001     		.2byte	0x100
  855 0186 01       		.byte	0x1
@@ -1312,13 +1312,13 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  859 0193 01       		.byte	0x1
  860 0194 A8010000 		.4byte	0x1a8
  861 0198 0E       		.uleb128 0xe
- 862 0199 0E020000 		.4byte	.LASF24
+ 862 0199 E9010000 		.4byte	.LASF24
  863 019d 01       		.byte	0x1
  864 019e 0001     		.2byte	0x100
  865 01a0 6F000000 		.4byte	0x6f
  866 01a4 02       		.byte	0x2
  867 01a5 91       		.byte	0x91
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 23
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 23
 
 
  868 01a6 77       		.sleb128 -9
@@ -1346,7 +1346,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  890 01d9 01       		.byte	0x1
  891 01da EE010000 		.4byte	0x1ee
  892 01de 0E       		.uleb128 0xe
- 893 01df 31010000 		.4byte	.LASF28
+ 893 01df DB000000 		.4byte	.LASF28
  894 01e3 01       		.byte	0x1
  895 01e4 2C01     		.2byte	0x12c
  896 01e6 6F000000 		.4byte	0x6f
@@ -1356,7 +1356,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  900 01ed 00       		.byte	0
  901 01ee 0F       		.uleb128 0xf
  902 01ef 01       		.byte	0x1
- 903 01f0 13020000 		.4byte	.LASF29
+ 903 01f0 EE010000 		.4byte	.LASF29
  904 01f4 01       		.byte	0x1
  905 01f5 4201     		.2byte	0x142
  906 01f7 01       		.byte	0x1
@@ -1377,8 +1377,8 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  921 021f 01       		.byte	0x1
  922 0220 34020000 		.4byte	0x234
  923 0224 0E       		.uleb128 0xe
- 924 0225 DC010000 		.4byte	.LASF31
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 24
+ 924 0225 86010000 		.4byte	.LASF31
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 24
 
 
  925 0229 01       		.byte	0x1
@@ -1390,7 +1390,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  931 0233 00       		.byte	0
  932 0234 0F       		.uleb128 0xf
  933 0235 01       		.byte	0x1
- 934 0236 23020000 		.4byte	.LASF32
+ 934 0236 FE010000 		.4byte	.LASF32
  935 023a 01       		.byte	0x1
  936 023b 6B01     		.2byte	0x16b
  937 023d 01       		.byte	0x1
@@ -1411,7 +1411,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  952 0265 01       		.byte	0x1
  953 0266 7A020000 		.4byte	0x27a
  954 026a 0E       		.uleb128 0xe
- 955 026b EA010000 		.4byte	.LASF34
+ 955 026b 94010000 		.4byte	.LASF34
  956 026f 01       		.byte	0x1
  957 0270 7F01     		.2byte	0x17f
  958 0272 6F000000 		.4byte	0x6f
@@ -1420,7 +1420,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  961 0278 77       		.sleb128 -9
  962 0279 00       		.byte	0
  963 027a 10       		.uleb128 0x10
- 964 027b 92000000 		.4byte	.LASF39
+ 964 027b 9E000000 		.4byte	.LASF39
  965 027f 01       		.byte	0x1
  966 0280 1A       		.byte	0x1a
  967 0281 6F000000 		.4byte	0x6f
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  979 0004 0E       		.uleb128 0xe
  980 0005 13       		.uleb128 0x13
  981 0006 0B       		.uleb128 0xb
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 25
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 25
 
 
  982 0007 03       		.uleb128 0x3
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  1036 003d 00       		.byte	0
  1037 003e 00       		.byte	0
  1038 003f 06       		.uleb128 0x6
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 26
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 26
 
 
  1039 0040 2E       		.uleb128 0x2e
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  1093 0078 3B       		.uleb128 0x3b
  1094 0079 0B       		.uleb128 0xb
  1095 007a 49       		.uleb128 0x49
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 27
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 27
 
 
  1096 007b 13       		.uleb128 0x13
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  1150 00b3 05       		.uleb128 0x5
  1151 00b4 00       		.byte	0
  1152 00b5 03       		.uleb128 0x3
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 28
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 28
 
 
  1153 00b6 0E       		.uleb128 0xe
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  1207 00ed 06       		.uleb128 0x6
  1208 00ee 9742     		.uleb128 0x2117
  1209 00f0 0C       		.uleb128 0xc
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 29
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 29
 
 
  1210 00f1 01       		.uleb128 0x1
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  1264 0128 13       		.uleb128 0x13
  1265 0129 3F       		.uleb128 0x3f
  1266 012a 0C       		.uleb128 0xc
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 30
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 30
 
 
  1267 012b 02       		.uleb128 0x2
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  1321 0070 02000000 		.4byte	.LCFI5
  1322 0074 04000000 		.4byte	.LCFI6
  1323 0078 0200     		.2byte	0x2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 31
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 31
 
 
  1324 007a 7D       		.byte	0x7d
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  1378 00fe 7D       		.byte	0x7d
  1379 00ff 00       		.sleb128 0
  1380 0100 02000000 		.4byte	.LCFI12
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 32
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 32
 
 
  1381 0104 04000000 		.4byte	.LCFI13
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  1435 0187 10       		.sleb128 16
  1436 0188 00000000 		.4byte	0
  1437 018c 00000000 		.4byte	0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 33
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 33
 
 
  1438              	.LLST8:
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  1492 0214 0200     		.2byte	0x2
  1493 0216 77       		.byte	0x77
  1494 0217 08       		.sleb128 8
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 34
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 34
 
 
  1495 0218 00000000 		.4byte	0
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  1549 029c 04000000 		.4byte	.LCFI33
  1550 02a0 06000000 		.4byte	.LCFI34
  1551 02a4 0200     		.2byte	0x2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 35
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 35
 
 
  1552 02a6 7D       		.byte	0x7d
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  1606 0014 1C000000 		.4byte	.LFE2
  1607 0018 00000000 		.4byte	.LFB3
  1608 001c 1C000000 		.4byte	.LFE3
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 36
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 36
 
 
  1609 0020 00000000 		.4byte	.LFB4
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  1643      64506F6C 
  1643      796E6F6D 
  1643      69616C00 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 37
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 37
 
 
  1644              	.LASF3:
@@ -2167,180 +2167,177 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 1
  1645      7369676E 
  1645      65642069 
  1645      6E7400
- 1646              	.LASF21:
- 1647 0069 70756C73 		.ascii	"pulse0Type\000"
- 1647      65305479 
- 1647      706500
- 1648              	.LASF9:
- 1649 0074 666C6F61 		.ascii	"float\000"
- 1649      7400
- 1650              	.LASF17:
- 1651 007a 4C454431 		.ascii	"LED1_Stop\000"
- 1651      5F53746F 
- 1651      7000
- 1652              	.LASF1:
- 1653 0084 756E7369 		.ascii	"unsigned char\000"
- 1653      676E6564 
- 1653      20636861 
- 1653      7200
- 1654              	.LASF39:
- 1655 0092 4C454431 		.ascii	"LED1_initVar\000"
- 1655      5F696E69 
- 1655      74566172 
- 1655      00
- 1656              	.LASF5:
- 1657 009f 6C6F6E67 		.ascii	"long unsigned int\000"
- 1657      20756E73 
- 1657      69676E65 
- 1657      6420696E 
- 1657      7400
- 1658              	.LASF12:
- 1659 00b1 75696E74 		.ascii	"uint8\000"
- 1659      3800
- 1660              	.LASF38:
- 1661 00b7 656E6162 		.ascii	"enableInterrupts\000"
- 1661      6C65496E 
- 1661      74657272 
- 1661      75707473 
- 1661      00
- 1662              	.LASF37:
- 1663 00c8 433A5C55 		.ascii	"C:\\Users\\chuck.erhardt\\Documents\\GitHub\\PSoC-W"
- 1663      73657273 
- 1663      5C636875 
- 1663      636B2E65 
- 1663      72686172 
- 1664 00f6 35313030 		.ascii	"5100-Driver\\PSoCPioneer+ArduinoShield_Example.cyds"
- 1664      2D447269 
- 1664      7665725C 
- 1664      50536F43 
- 1664      50696F6E 
- 1665 0128 6E00     		.ascii	"n\000"
- 1666              	.LASF10:
- 1667 012a 646F7562 		.ascii	"double\000"
- 1667      6C6500
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 38
+ 1646              	.LASF16:
+ 1647 0069 4C454431 		.ascii	"LED1_Enable\000"
+ 1647      5F456E61 
+ 1647      626C6500 
+ 1648              	.LASF21:
+ 1649 0075 70756C73 		.ascii	"pulse0Type\000"
+ 1649      65305479 
+ 1649      706500
+ 1650              	.LASF9:
+ 1651 0080 666C6F61 		.ascii	"float\000"
+ 1651      7400
+ 1652              	.LASF17:
+ 1653 0086 4C454431 		.ascii	"LED1_Stop\000"
+ 1653      5F53746F 
+ 1653      7000
+ 1654              	.LASF1:
+ 1655 0090 756E7369 		.ascii	"unsigned char\000"
+ 1655      676E6564 
+ 1655      20636861 
+ 1655      7200
+ 1656              	.LASF39:
+ 1657 009e 4C454431 		.ascii	"LED1_initVar\000"
+ 1657      5F696E69 
+ 1657      74566172 
+ 1657      00
+ 1658              	.LASF5:
+ 1659 00ab 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1659      20756E73 
+ 1659      69676E65 
+ 1659      6420696E 
+ 1659      7400
+ 1660              	.LASF12:
+ 1661 00bd 75696E74 		.ascii	"uint8\000"
+ 1661      3800
+ 1662              	.LASF38:
+ 1663 00c3 656E6162 		.ascii	"enableInterrupts\000"
+ 1663      6C65496E 
+ 1663      74657272 
+ 1663      75707473 
+ 1663      00
+ 1664              	.LASF10:
+ 1665 00d4 646F7562 		.ascii	"double\000"
+ 1665      6C6500
+ 1666              	.LASF28:
+ 1667 00db 706F6C79 		.ascii	"polynomial\000"
+ 1667      6E6F6D69 
+ 1667      616C00
+ 1668              	.LASF22:
+ 1669 00e6 70756C73 		.ascii	"pulse1Type\000"
+ 1669      65315479 
+ 1669      706500
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 38
 
 
- 1668              	.LASF28:
- 1669 0131 706F6C79 		.ascii	"polynomial\000"
- 1669      6E6F6D69 
- 1669      616C00
- 1670              	.LASF22:
- 1671 013c 70756C73 		.ascii	"pulse1Type\000"
- 1671      65315479 
- 1671      706500
- 1672              	.LASF8:
- 1673 0147 756E7369 		.ascii	"unsigned int\000"
- 1673      676E6564 
- 1673      20696E74 
- 1673      00
- 1674              	.LASF23:
- 1675 0154 4C454431 		.ascii	"LED1_WriteSeed\000"
- 1675      5F577269 
- 1675      74655365 
- 1675      656400
- 1676              	.LASF7:
- 1677 0163 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1677      206C6F6E 
- 1677      6720756E 
- 1677      7369676E 
- 1677      65642069 
- 1678              	.LASF36:
- 1679 017a 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\LED1.c\000"
- 1679      6E657261 
- 1679      7465645F 
- 1679      536F7572 
- 1679      63655C50 
- 1680              	.LASF13:
- 1681 019a 72656738 		.ascii	"reg8\000"
+ 1670              	.LASF8:
+ 1671 00f1 756E7369 		.ascii	"unsigned int\000"
+ 1671      676E6564 
+ 1671      20696E74 
+ 1671      00
+ 1672              	.LASF23:
+ 1673 00fe 4C454431 		.ascii	"LED1_WriteSeed\000"
+ 1673      5F577269 
+ 1673      74655365 
+ 1673      656400
+ 1674              	.LASF7:
+ 1675 010d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1675      206C6F6E 
+ 1675      6720756E 
+ 1675      7369676E 
+ 1675      65642069 
+ 1676              	.LASF36:
+ 1677 0124 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\LED1.c\000"
+ 1677      6E657261 
+ 1677      7465645F 
+ 1677      536F7572 
+ 1677      63655C50 
+ 1678              	.LASF13:
+ 1679 0144 72656738 		.ascii	"reg8\000"
+ 1679      00
+ 1680              	.LASF14:
+ 1681 0149 73697A65 		.ascii	"sizetype\000"
+ 1681      74797065 
  1681      00
- 1682              	.LASF14:
- 1683 019f 73697A65 		.ascii	"sizetype\000"
- 1683      74797065 
- 1683      00
- 1684              	.LASF25:
- 1685 01a8 4C454431 		.ascii	"LED1_ReadSeed\000"
- 1685      5F526561 
- 1685      64536565 
- 1685      6400
- 1686              	.LASF6:
- 1687 01b6 6C6F6E67 		.ascii	"long long int\000"
- 1687      206C6F6E 
- 1687      6720696E 
- 1687      7400
- 1688              	.LASF20:
- 1689 01c4 4C454431 		.ascii	"LED1_SetPulse1Mode\000"
- 1689      5F536574 
- 1689      50756C73 
- 1689      65314D6F 
- 1689      646500
- 1690              	.LASF11:
- 1691 01d7 63686172 		.ascii	"char\000"
- 1691      00
- 1692              	.LASF31:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 39
-
-
- 1693 01dc 70756C73 		.ascii	"pulseDensity0\000"
+ 1682              	.LASF25:
+ 1683 0152 4C454431 		.ascii	"LED1_ReadSeed\000"
+ 1683      5F526561 
+ 1683      64536565 
+ 1683      6400
+ 1684              	.LASF6:
+ 1685 0160 6C6F6E67 		.ascii	"long long int\000"
+ 1685      206C6F6E 
+ 1685      6720696E 
+ 1685      7400
+ 1686              	.LASF20:
+ 1687 016e 4C454431 		.ascii	"LED1_SetPulse1Mode\000"
+ 1687      5F536574 
+ 1687      50756C73 
+ 1687      65314D6F 
+ 1687      646500
+ 1688              	.LASF11:
+ 1689 0181 63686172 		.ascii	"char\000"
+ 1689      00
+ 1690              	.LASF31:
+ 1691 0186 70756C73 		.ascii	"pulseDensity0\000"
+ 1691      6544656E 
+ 1691      73697479 
+ 1691      3000
+ 1692              	.LASF34:
+ 1693 0194 70756C73 		.ascii	"pulseDensity1\000"
  1693      6544656E 
  1693      73697479 
- 1693      3000
- 1694              	.LASF34:
- 1695 01ea 70756C73 		.ascii	"pulseDensity1\000"
- 1695      6544656E 
- 1695      73697479 
- 1695      3100
- 1696              	.LASF16:
- 1697 01f8 4C454431 		.ascii	"LED1_Enable\000"
- 1697      5F456E61 
- 1697      626C6500 
- 1698              	.LASF2:
- 1699 0204 73686F72 		.ascii	"short int\000"
- 1699      7420696E 
- 1699      7400
- 1700              	.LASF24:
- 1701 020e 73656564 		.ascii	"seed\000"
- 1701      00
- 1702              	.LASF29:
- 1703 0213 4C454431 		.ascii	"LED1_ReadPulse0\000"
- 1703      5F526561 
- 1703      6450756C 
- 1703      73653000 
- 1704              	.LASF32:
- 1705 0223 4C454431 		.ascii	"LED1_ReadPulse1\000"
- 1705      5F526561 
- 1705      6450756C 
- 1705      73653100 
- 1706              	.LASF4:
- 1707 0233 6C6F6E67 		.ascii	"long int\000"
- 1707      20696E74 
- 1707      00
- 1708              	.LASF19:
- 1709 023c 4C454431 		.ascii	"LED1_SetPulse0Mode\000"
- 1709      5F536574 
- 1709      50756C73 
- 1709      65304D6F 
- 1709      646500
- 1710              	.LASF0:
- 1711 024f 7369676E 		.ascii	"signed char\000"
- 1711      65642063 
- 1711      68617200 
- 1712              	.LASF18:
- 1713 025b 4C454431 		.ascii	"LED1_Init\000"
- 1713      5F496E69 
- 1713      7400
- 1714              	.LASF35:
- 1715 0265 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
- 1715      4320342E 
- 1715      372E3320 
- 1715      32303133 
- 1715      30333132 
- 1716 0298 616E6368 		.ascii	"anch revision 196615]\000"
- 1716      20726576 
- 1716      6973696F 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccZ3A6KQ.s 			page 40
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 39
 
 
- 1716      6E203139 
- 1716      36363135 
- 1717              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br
+ 1693      3100
+ 1694              	.LASF37:
+ 1695 01a2 5A3A5C50 		.ascii	"Z:\\PSoC-W5100-Driver\\PSoCPioneer+ArduinoShield_Ex"
+ 1695      536F432D 
+ 1695      57353130 
+ 1695      302D4472 
+ 1695      69766572 
+ 1696 01d3 616D706C 		.ascii	"ample.cydsn\000"
+ 1696      652E6379 
+ 1696      64736E00 
+ 1697              	.LASF2:
+ 1698 01df 73686F72 		.ascii	"short int\000"
+ 1698      7420696E 
+ 1698      7400
+ 1699              	.LASF24:
+ 1700 01e9 73656564 		.ascii	"seed\000"
+ 1700      00
+ 1701              	.LASF29:
+ 1702 01ee 4C454431 		.ascii	"LED1_ReadPulse0\000"
+ 1702      5F526561 
+ 1702      6450756C 
+ 1702      73653000 
+ 1703              	.LASF32:
+ 1704 01fe 4C454431 		.ascii	"LED1_ReadPulse1\000"
+ 1704      5F526561 
+ 1704      6450756C 
+ 1704      73653100 
+ 1705              	.LASF4:
+ 1706 020e 6C6F6E67 		.ascii	"long int\000"
+ 1706      20696E74 
+ 1706      00
+ 1707              	.LASF19:
+ 1708 0217 4C454431 		.ascii	"LED1_SetPulse0Mode\000"
+ 1708      5F536574 
+ 1708      50756C73 
+ 1708      65304D6F 
+ 1708      646500
+ 1709              	.LASF0:
+ 1710 022a 7369676E 		.ascii	"signed char\000"
+ 1710      65642063 
+ 1710      68617200 
+ 1711              	.LASF18:
+ 1712 0236 4C454431 		.ascii	"LED1_Init\000"
+ 1712      5F496E69 
+ 1712      7400
+ 1713              	.LASF35:
+ 1714 0240 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 1714      4320342E 
+ 1714      372E3320 
+ 1714      32303133 
+ 1714      30333132 
+ 1715 0273 616E6368 		.ascii	"anch revision 196615]\000"
+ 1715      20726576 
+ 1715      6973696F 
+ 1715      6E203139 
+ 1715      36363135 
+ 1716              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccX1aXly.s 			page 40
+
+

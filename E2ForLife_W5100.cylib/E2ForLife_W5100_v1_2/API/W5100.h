@@ -168,6 +168,9 @@
 #if !defined(`$INSTANCE_NAME`_H)
 #define `$INSTANCE_NAME`_H
 
+#include <cylib.h>
+#include <cytypes.h>
+	
 #define `$INSTANCE_NAME`_READ_OP         ( 0x0F )
 #define `$INSTANCE_NAME`_WRITE_OP        ( 0xF0 )
 
@@ -223,6 +226,16 @@ void `$INSTANCE_NAME`_Init(uint8* mac, uint32 ip, uint32 subnet, uint32 gateway)
  * to indicate that an error has been detected.
  */
 uint32 `$INSTANCE_NAME`_ParseIP( const char* ipString );
+/**
+ * /brief Parse a MAC Address string in to a 6-byte mac address
+ * /param *macString Pointer to the ASCII-Z String containing the MAC address
+ * /param *mac Pointer to the 6-byte array to hold the output mac addres
+ */
+cystatus `$INSTANCE_NAME`_ParseMAC(const char *macString, uint8 *mac);
+/* ------------------------------------------------------------------------ */
+void `$INSTANCE_NAME`_StringMAC(char *macString);
+/* ------------------------------------------------------------------------ */
+void `$INSTANCE_NAME`_StringIP( char *ipString );
 
 /**
  * \brief re-assign the local IP address of the device

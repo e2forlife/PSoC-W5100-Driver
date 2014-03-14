@@ -168,6 +168,9 @@
 #if !defined(ETH0_H)
 #define ETH0_H
 
+#include <cylib.h>
+#include <cytypes.h>
+	
 #define ETH0_READ_OP         ( 0x0F )
 #define ETH0_WRITE_OP        ( 0xF0 )
 
@@ -223,6 +226,16 @@ void ETH0_Init(uint8* mac, uint32 ip, uint32 subnet, uint32 gateway);
  * to indicate that an error has been detected.
  */
 uint32 ETH0_ParseIP( const char* ipString );
+/**
+ * /brief Parse a MAC Address string in to a 6-byte mac address
+ * /param *macString Pointer to the ASCII-Z String containing the MAC address
+ * /param *mac Pointer to the 6-byte array to hold the output mac addres
+ */
+cystatus ETH0_ParseMAC(const char *macString, uint8 *mac);
+/* ------------------------------------------------------------------------ */
+void ETH0_StringMAC(char *macString);
+/* ------------------------------------------------------------------------ */
+void ETH0_StringIP( char *ipString );
 
 /**
  * \brief re-assign the local IP address of the device

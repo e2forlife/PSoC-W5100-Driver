@@ -6,7 +6,7 @@
 
 #Build Date:         Mar 26 2013 14:54:34
 
-#File Generated:     Feb 11 2014 12:11:03
+#File Generated:     Mar 14 2014 13:34:42
 
 #Purpose:            
 
@@ -14,7 +14,7 @@
 
 #***************************************************************************
 
-Executing : C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\bin/sjplacer.exe --proj-name PSoCPioneer+ArduinoShield_Example --netlist-vh2 PSoCPioneer+ArduinoShield_Example_p.vh2 --arch-file C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/placer.ark --rrg-file C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/route_arch-rrg.cydata --irq-file C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/irqconn.cydata --dsi-conn-file C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/dsiconn.cydata --pins-file PSoC4_PSoC4A_44-TQFP.xml --lib-file PSoCPioneer+ArduinoShield_Example_p.lib --sdc-file PSoCPioneer+ArduinoShield_Example.sdc --io-pcf PSoCPioneer+ArduinoShield_Example.pci --outdir .
+Executing : C:\Program Files\Cypress\PSoC Creator\3.0\PSoC Creator\bin/sjplacer.exe --proj-name PSoCPioneer+ArduinoShield_Example --netlist-vh2 PSoCPioneer+ArduinoShield_Example_p.vh2 --arch-file C:\Program Files\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/placer.ark --rrg-file C:\Program Files\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/route_arch-rrg.cydata --irq-file C:\Program Files\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/irqconn.cydata --dsi-conn-file C:\Program Files\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/dsiconn.cydata --pins-file PSoC4_PSoC4A_44-TQFP.xml --lib-file PSoCPioneer+ArduinoShield_Example_p.lib --sdc-file PSoCPioneer+ArduinoShield_Example.sdc --io-pcf PSoCPioneer+ArduinoShield_Example.pci --outdir .
 
 		Softjin Techologies Placer, Version 1.1
 
@@ -23,7 +23,7 @@ Build Date : Jul 22 2013	11:20:09
 D2004: Option and Settings Summary
 =============================================================
 Netlist vh2 file          - PSoCPioneer+ArduinoShield_Example_p.vh2
-Architecture file         - C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/placer.ark
+Architecture file         - C:\Program Files\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/placer.ark
 Package                   - 
 Defparam file             - 
 SDC file                  - PSoCPioneer+ArduinoShield_Example.sdc
@@ -34,7 +34,7 @@ IO Placement file         - PSoCPioneer+ArduinoShield_Example.pci
 D2050: Starting reading inputs for placer
 =============================================================
 D2065: Reading netlist file : "PSoCPioneer+ArduinoShield_Example_p.vh2"
-D2065: Reading arch file : "C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/placer.ark"
+D2065: Reading arch file : "C:\Program Files\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/placer.ark"
 D2051: Reading of inputs for placer completed successfully
 
 D2053: Starting placement of the design
@@ -155,5 +155,5 @@ D2088: Phase 8, elapsed time : 0.0 (sec)
 
 D2054: Placement of the design completed successfully
 
-I2076: Total run-time: 0.7 sec.
+I2076: Total run-time: 0.4 sec.
 

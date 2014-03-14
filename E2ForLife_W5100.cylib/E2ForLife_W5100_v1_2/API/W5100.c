@@ -25,7 +25,11 @@
  * V1.2
  * - Added _STS_SPI_IDLE flag to _SpiDone conditions to prevent deadlocking that
  *   was occuring during the first read or write using the SPI device (SPIM moded) <CE>
- * 
+ * - Removed the check for SOCKET_ESTABLISHED at the start of the TcpReceive
+ *   function to allow for reading received socket data after the socket was dropped
+ *   by the remote server.  It was brought to my attention that this occurs when
+ *   operating with client connection to HTTP servers. <CE>
+ * - Added a MAC address parser and MAC to String Converter. <CE>
  */
 
 /* Cypress library includes */
@@ -53,8 +57,22 @@ typedef struct
 static `$INSTANCE_NAME`_SOCKET `$INSTANCE_NAME`_SocketConfig[4];
 static uint32 `$INSTANCE_NAME`_SubnetMask;
 
-static uint8 `$INSTANCE_NAME`_MAC[6] = { `$MAC` };
+static uint8 `$INSTANCE_NAME`_MAC[6]; /* V1.2: removed = {`$MAC`}; */
 
+/* ------------------------------------------------------------------------ */
+/* V1.2 HEX digit conversion tools for MAC Address parsing */
+#define `$INSTANCE_NAME`_ISXDIGIT(x) \
+( ((x>='0')&&(x<='9'))||((x>='a')&&(x<='f'))||((x>='A')&&(x<='F')) )
+/* ------------------------------------------------------------------------ */
+#define `$INSTANCE_NAME`_HEX2BIN(x) \
+( ((x>='0')&&(x<='9'))? (x-'0') : \
+  ((x>='a')&&(x<='f'))? ((x-'a')+10) : \
+  ((x>='A')&&(x<='F'))? ((x-'A')+10) : 0 )
+/* ------------------------------------------------------------------------ */
+#define `$INSTANCE_NAME`_BIN2HEX(x) \
+( (x>9)? ((x-10)+'A') : (x + '0'))
+/* END V1.2 defines */
+/* ------------------------------------------------------------------------ */
 
 /* ======================================================================== */
 /* Generic SPI Functions */
@@ -1110,6 +1128,16 @@ void
 		
 	/* wait for power on PLL Lock */
 	CyDelay( `$INIT_DELAY` );
+	/* V1.2 new -- Parse MAC Address string */
+	if ( `$INSTANCE_NAME`_ParseMAC("`$MAC`", &`$INSTANCE_NAME`_MAC[0]) == CYRET_BAD_DATA) {
+		`$INSTANCE_NAME`_MAC[0] = 0;
+		`$INSTANCE_NAME`_MAC[1] = 0xDE;
+		`$INSTANCE_NAME`_MAC[2] = 0xAD;
+		`$INSTANCE_NAME`_MAC[3] = 0xC0;
+		`$INSTANCE_NAME`_MAC[4] = 0xDE;
+		`$INSTANCE_NAME`_MAC[5] = 0;
+	}
+	/* END of V1.2 Update ------ */
 	ip = `$INSTANCE_NAME`_ParseIP("`$IP`");
 	sub = `$INSTANCE_NAME`_ParseIP("`$SUBNET_MASK`");
 	gateway = `$INSTANCE_NAME`_ParseIP("`$GATEWAY`");
@@ -1165,6 +1193,114 @@ uint32
 		return( `$INSTANCE_NAME`_IPADDRESS(ip[0], ip[1], ip[2], ip[3]) );
 	}
 }
+/* ------------------------------------------------------------------------ */
+/**
+ * /brief Parse a MAC Address string in to a 6-byte mac address
+ * /param *macString Pointer to the ASCII-Z String containing the MAC address
+ * /param *mac Pointer to the 6-byte array to hold the output mac addres
+ */
+cystatus `$INSTANCE_NAME`_ParseMAC(const char *macString, uint8 *mac)
+{
+	/* 
+	 * a mac address is specified as a string of 6 hex bytes with
+	 * dashes ('-') seperating the bytes.  An invalidly formed
+	 * address will only process the values up the error and return BAD_DATA
+	 * otherwise, SUCESS is returned.
+	 */
+	int digit;
+	int index;
+	cystatus result;
+	
+	result = CYRET_SUCCESS;
+	index = 0;
+	for(digit = 0;(digit<6) && (result == CYRET_SUCCESS)&&(macString[index] != 0);++digit) {
+		// process the first nibble
+		if (`$INSTANCE_NAME`_ISXDIGIT(macString[index]) ) {
+			mac[digit] = `$INSTANCE_NAME`_HEX2BIN(macString[index++]);
+			mac[digit] <<= 4;
+			if (`$INSTANCE_NAME`_ISXDIGIT(macString[index])) {
+				mac[digit] += `$INSTANCE_NAME`_HEX2BIN(macString[index++]);
+				/*
+				 * now for digits other than digit 5 (the last one) look for
+				 * the dash seperator.  If there is no dash, return bad data
+				 */
+				if (digit<5) {
+					if (macString[index]!='-') {
+						result = CYRET_BAD_DATA;
+					}
+					++index; // move conversion pointer to the next value
+				}
+			}
+			else {
+				result = CYRET_BAD_DATA;
+			}
+		}
+		else {
+			result = CYRET_BAD_DATA;
+		}
+	}
+	return( result );
+}
+/* ------------------------------------------------------------------------ */
+void `$INSTANCE_NAME`_StringMAC(char *macString)
+{
+	uint8 mac[6];
+	int digit;
+	int index;
+	
+	/*
+	 * first read the MAC address from the chip
+	 * and inintialize some locals so that the
+	 * string formater will function properly
+	 */
+	`$INSTANCE_NAME`_GetSourceMAC( &mac[0] );
+	index = 0;
+	for(digit=0;digit<6;++digit) {
+		// convert the first nibble
+		macString[index++] = `$INSTANCE_NAME`_BIN2HEX(((mac[digit]>>4)&0x0F));
+		macString[index++] = `$INSTANCE_NAME`_BIN2HEX((mac[digit]&0x0F));
+		if (digit<5) {
+			macString[index++] = '-';
+		}
+		else {
+			macString[index] = 0;
+		}
+	}
+}
+/* ------------------------------------------------------------------------ */
+void `$INSTANCE_NAME`_StringIP( char *ipString )
+{
+	uint32 ip;
+	uint8 *ipBytes;
+	int index;
+	int digit;
+	int work, temp;
+	
+	ip = `$INSTANCE_NAME`_GetSourceIP();
+	ipBytes = (uint8*)&ip;
+	index = 0;
+	for(digit=0;digit<4;++digit) {
+		work = ipBytes[digit];
+		if (work >= 100) {
+			temp = work/100;
+			work -= (temp*100);
+			ipString[index++] = '0' + temp;
+		}
+		if (work >= 10) {
+			temp = work /10;
+			work -= (temp*10);
+			ipString[index++] = '0'+temp;
+		}
+		ipString[index++] = '0'+work;
+		if (digit <3) {
+			ipString[index++] = '.';
+		}
+		else {
+			ipString[index] = 0;
+		}
+	}
+}
+
 /* ------------------------------------------------------------------------ */
 uint8
 `$INSTANCE_NAME`_SetIP( uint32 ip )
