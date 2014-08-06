@@ -667,7 +667,12 @@
 </userData>
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
-<OpenDocs />
+<OpenDocs>
+<name v=".\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_2\API\W5100.c" />
+<name v=".\PSoCPioneer+ArduinoShield_Example.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_2\E2ForLife_W5100_v1_2.cysym" />
+<name v=".\PSoCPioneer+ArduinoShield_Example.cydsn\main.c" />
+</OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
