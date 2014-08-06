@@ -51,8 +51,8 @@ typedef struct
 	uint8  ServerFlag;
 } `$INSTANCE_NAME`_SOCKET;
 
-#define `$INSTANCE_NAME`_SOCKET_TX_BASE(s)    ( 0x4000 + (s<<15) )
-#define `$INSTANCE_NAME`_SOCKET_RX_BASE(s)    ( 0x6000 + (s<<15) )
+const uint16 `$INSTANCE_NAME`_SOCKET_TX_BASE[4] = { 0x4000, 0x4800, 0x5000, 0x5800 };
+const uint16 `$INSTANCE_NAME`_SOCKET_RX_BASE[4] = { 0x6000, 0x6800, 0x7000, 0x7800 };
 
 static `$INSTANCE_NAME`_SOCKET `$INSTANCE_NAME`_SocketConfig[4];
 static uint32 `$INSTANCE_NAME`_SubnetMask;
@@ -211,9 +211,11 @@ uint8 `$INSTANCE_NAME`_W51_Read(uint16 addr)
 #include <`$SPI_INSTANCE`_SPI_UART.h>
 
 /* V1.1 : Include the header for the select pin used. */
+#define `$INSTANCE_NAME`_SpiDone    ((`$SPI_INSTANCE`_SpiUartGetTxBufferSize()==0)?1:0)
+/*
 #if (`$SS_NUM` == 0)
 #include <`$SPI_INSTANCE`_ss0_m.h>
-#define `$INSTANCE_NAME`_SpiDone    (`$SPI_INSTANCE`_ss0_m_Read())
+#define `$INSTANCE_NAME`_SpiDone    ((`$SPI_INSTANCE`_ss0_m_Read())
 #elif (`$SS_NUM` == 1)
 #include <`$SPI_INSTANCE`_ss1_m.h>
 #define `$INSTANCE_NAME`_SpiDone    (`$SPI_INSTANCE`_ss1_m_Read())
@@ -227,6 +229,7 @@ uint8 `$INSTANCE_NAME`_W51_Read(uint16 addr)
 #include <`$SPI_INSTANCE`_ss0_m.h>
 #define `$INSTANCE_NAME`_SpiDone    (`$SPI_INSTANCE`_ss0_m_Read())
 #endif
+*/
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Select the active SCB chip select connected to the W51
@@ -263,6 +266,7 @@ void `$INSTANCE_NAME`_W51_Write(uint16 addr, uint8 dat)
 	while( `$INSTANCE_NAME`_SpiDone == 0) {
 		CyDelayUs(1);
 	}
+	CyDelay(1);
 	/* V1.1: End change */
 
 	/* Using internal device SS generation */
@@ -976,7 +980,7 @@ static void `$INSTANCE_NAME`_ProcessTxData(uint8 socket, uint16 offset, uint8* b
 	 */
 	base = `$INSTANCE_NAME`_GetSocketTxWritePtr(socket) + offset;
 	PointerOffset = (base & 0x07FF);
-	addr = PointerOffset + `$INSTANCE_NAME`_SOCKET_TX_BASE(socket);
+	addr = PointerOffset + `$INSTANCE_NAME`_SOCKET_TX_BASE[socket];
 	/* calculate the number of bytes from the pointer to the end of the buffer */
 	size = 0x0800 - PointerOffset;
 	
@@ -992,7 +996,7 @@ static void `$INSTANCE_NAME`_ProcessTxData(uint8 socket, uint16 offset, uint8* b
 		 * remaining to the start (base ptr) of the socket buffer
 		 */
 		`$INSTANCE_NAME`_W51_WriteBlock(addr, buffer, size);
-		`$INSTANCE_NAME`_W51_WriteBlock(`$INSTANCE_NAME`_SOCKET_TX_BASE(socket), &buffer[size], length - size);
+		`$INSTANCE_NAME`_W51_WriteBlock(`$INSTANCE_NAME`_SOCKET_TX_BASE[socket], &buffer[size], length - size);
 	}
 	else {
 		/* 
@@ -1032,7 +1036,7 @@ static void `$INSTANCE_NAME`_ProcessRxData(uint8 socket, uint16 offset, uint8* b
 	 */
 	base = `$INSTANCE_NAME`_GetSocketRxReadPtr(socket) + offset;
 	PointerOffset = (base & 0x07FF);
-	addr = PointerOffset + `$INSTANCE_NAME`_SOCKET_RX_BASE(socket);
+	addr = PointerOffset + `$INSTANCE_NAME`_SOCKET_RX_BASE[socket];
 	/* calculate the number of bytes from the pointer to the end of the buffer */
 	size = 0x0800 - PointerOffset;
 	/*
@@ -1047,7 +1051,7 @@ static void `$INSTANCE_NAME`_ProcessRxData(uint8 socket, uint16 offset, uint8* b
 		 * remaining to the start (base ptr) of the socket buffer
 		 */
 		`$INSTANCE_NAME`_W51_ReadBlock(addr, buffer, size);
-		`$INSTANCE_NAME`_W51_ReadBlock(`$INSTANCE_NAME`_SOCKET_RX_BASE(socket), &buffer[size], length - size);
+		`$INSTANCE_NAME`_W51_ReadBlock(`$INSTANCE_NAME`_SOCKET_RX_BASE[socket], &buffer[size], length - size);
 	}
 	else {
 		/* 
@@ -1216,16 +1220,18 @@ cystatus `$INSTANCE_NAME`_ParseMAC(const char *macString, uint8 *mac)
 	for(digit = 0;(digit<6) && (result == CYRET_SUCCESS)&&(macString[index] != 0);++digit) {
 		// process the first nibble
 		if (`$INSTANCE_NAME`_ISXDIGIT(macString[index]) ) {
-			mac[digit] = `$INSTANCE_NAME`_HEX2BIN(macString[index++]);
+			mac[digit] = `$INSTANCE_NAME`_HEX2BIN(macString[index]);
+			++index;
 			mac[digit] <<= 4;
 			if (`$INSTANCE_NAME`_ISXDIGIT(macString[index])) {
-				mac[digit] += `$INSTANCE_NAME`_HEX2BIN(macString[index++]);
+				mac[digit] += `$INSTANCE_NAME`_HEX2BIN(macString[index]);
+				++index;
 				/*
 				 * now for digits other than digit 5 (the last one) look for
 				 * the dash seperator.  If there is no dash, return bad data
 				 */
 				if (digit<5) {
-					if (macString[index]!='-') {
+					if( (macString[index]!='-') && (macString[index]!= ':') ){
 						result = CYRET_BAD_DATA;
 					}
 					++index; // move conversion pointer to the next value
