@@ -1,0 +1,50 @@
+Last Modified Date & Time: 08/08/2014 12:55:46
+
+Project : PSoCPioneer+ArduinoShield_Example
+		Schematic : TopDesign
+
+		SDCS	v 1.90tv 2.0
+		RED	v 1.90tv 2.0
+		BLUE	v 1.90tv 2.0
+		GREEN	v 1.90tv 2.0
+		SPI0	v 1.10tv 1.20
+		clkLED	v 2.10tv 2.20
+		clkLED_1	v 2.10tv 2.20
+
+Project : PSoCPioneer+ArduinoShield_SPIM_Example
+		Schematic : TopDesign
+
+		ETH_MISO_1	v 1.90tv 2.0
+		ETH_MOSI_1	v 1.90tv 2.0
+		ETH_SCLK_1	v 1.90tv 2.0
+		ETH_CSN_1	v 1.90tv 2.0
+		RED	v 1.90tv 2.0
+		BLUE	v 1.90tv 2.0
+		GREEN	v 1.90tv 2.0
+		SDCS	v 1.90tv 2.0
+
+Project : freeSoCExplorer+ArduinoSheld_Example
+		Schematic : TopDesign
+
+		ETH_MISO_1	v 1.90tv 2.0
+		ETH_MOSI_1	v 1.90tv 2.0
+		ETH_SCLK_1	v 1.90tv 2.0
+		ETH_CSN_1	v 1.90tv 2.0
+		SDCS	v 1.90tv 2.0
+
+Project : PSoCPioneer+ArduinoShield_Example
+		Design Wide APIs
+
+		cy_boot	v 4.0	v 4.10
+
+Project : PSoCPioneer+ArduinoShield_SPIM_Example
+		Design Wide APIs
+
+		cy_boot	v 4.0	v 4.10
+
+Project : freeSoCExplorer+ArduinoSheld_Example
+		Design Wide APIs
+
+		cy_boot	v 4.0	v 4.10
+
+
