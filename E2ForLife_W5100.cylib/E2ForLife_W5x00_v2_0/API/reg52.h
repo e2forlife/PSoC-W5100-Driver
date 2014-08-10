@@ -14,8 +14,6 @@
 #define `$INSTANCE_NAME`_REG_SUBR             (0x0005)
 #define `$INSTANCE_NAME`_REG_SHAR             (0x0009)
 #define `$INSTANCE_NAME`_REG_SIPR             (0x000F)
-//#define `$INSTNACE_NAME`_REG_RMSR             (0x001A)
-//#define `$INSTANCE_NAME`_REG_TXSR             (0x001B)
 
 /* ------------------------------------------------------------------------ */
 /* Interrupt Register and Interrupt mask register for future use */

@@ -43,6 +43,7 @@
 
 /* include the serial interface functions */
 #include <`$SPI_INSTANCE`.h>
+#include <`$SS_INSTANCE`.h>
 
 extern uint8 `$SPI_INSTANCE`_initVar;
 
@@ -73,10 +74,10 @@ const uint16 `$INSTANCE_NAME`_SOCKET_RX_BASE[8] = { 0xC000, 0xC800, 0xD000, 0xD8
 	#error "W5x00 components other than W5100 and W5200 are not currently supported"
 #endif
 
-static `$INSTANCE_NAME`_SOCKET `$INSTANCE_NAME`_SocketConfig[`$INSTANCE_NAME`_MAX_SOCKET];
-static uint32 `$INSTANCE_NAME`_SubnetMask;
+`$INSTANCE_NAME`_SOCKET `$INSTANCE_NAME`_SocketConfig[`$INSTANCE_NAME`_MAX_SOCKET];
+uint32 `$INSTANCE_NAME`_SubnetMask;
 
-static uint8 `$INSTANCE_NAME`_MAC[6]; /* V1.2: removed = {`$MAC`}; */
+uint8 `$INSTANCE_NAME`_MAC[6]; /* V1.2: removed = {`$MAC`}; */
 
 /* ------------------------------------------------------------------------ */
 /* V1.2 HEX digit conversion tools for MAC Address parsing */
@@ -93,6 +94,52 @@ static uint8 `$INSTANCE_NAME`_MAC[6]; /* V1.2: removed = {`$MAC`}; */
 /* END V1.2 defines */
 /* ------------------------------------------------------------------------ */
 
+/* ------------------------------------------------------------------------ */
+/**
+ * \brief Select the active SCB chip select connected to the W51
+ *
+ * this fucntion will set the active SS line within the SCB to select and
+ * communicate with the W5100 device.
+ * \note this functions requires that the device chip select is originating
+ *  from the SPI device.
+ */
+void
+`$INSTANCE_NAME`_ChipSelect( void )
+{
+	/*
+	 * User code for setting the chip select enable.  This is called once
+	 * at the beginning of each tranfer to/from the W5100, so we recommend
+	 * either doing nothing (SPIM SS straight out), or to switch the demux
+	 * component to select the correct output for the SS routing.  This
+	 * should probably not drive a pin directly since there is no return
+	 * call from the driver that would allow an enable/disable type of
+	 * implementation for CSN control.
+	 */
+	`$SS_INSTANCE`_Write( ~(1<<`$SS_NUM`) );
+	/* `#START CHIP_SELECT_GENERATION` */
+	
+	/* TODO: Insert User Code Here */
+	
+	/* `#END` */
+}
+/* ------------------------------------------------------------------------ */
+/**
+ * \brief Called at the end of a transfer to deselect the device
+ *
+ * This function is called by the chip access functions from the core
+ * interface code to de-select the device after the read/write operation
+ * has been completed. This was changed from the "old way" of doing things
+ * using the hardware SS pin because the FIFO will empty too quickly
+ * causing interruptions in the transfer during burst writes at high
+ * speed. This allows bursting without having to have a huge software
+ * FIFO and using DMA to keep the buffer loaded.
+ */
+void
+`$INSTANCE_NAME`_ChipDeSelect( void )
+{
+	`$SS_INSTANCE`_Write(0xFF);
+}
+
 /* ======================================================================== */
 /* Generic SPI Functions */
 /*
@@ -101,6 +148,7 @@ static uint8 `$INSTANCE_NAME`_MAC[6]; /* V1.2: removed = {`$MAC`}; */
  * to be contained within the FIFO buffer.
  */
 #if !defined(CY_SCB_`$SPI_INSTANCE`_H)
+	/* SPIM Code */
 /* ------------------------------------------------------------------------ */	
 /* V1.1 : Macro definition for the SpiDone flag. */
 /*  
@@ -115,32 +163,6 @@ static uint8 `$INSTANCE_NAME`_MAC[6]; /* V1.2: removed = {`$MAC`}; */
 #define `$INSTANCE_NAME`_SpiDone     (`$SPI_INSTANCE`_ReadTxStatus() & (`$SPI_INSTANCE`_STS_SPI_DONE | `$SPI_INSTANCE`_STS_SPI_IDLE))
 /* ------------------------------------------------------------------------ */
 /**
- * \brief Select the active SCB chip select connected to the W51
- *
- * this fucntion will set the active SS line within the SCB to select and
- * communicate with the W5100 device.
- * \note this functions requires that the device chip select is originating
- *  from the SPI device.
- */
-static void `$INSTANCE_NAME`_ChipSelect( void )
-{
-	/*
-	 * User code for setting the chip select enable.  This is called once
-	 * at the beginning of each tranfer to/from the W5100, so we recommend
-	 * either doing nothing (SPIM SS straight out), or to switch the demux
-	 * component to select the correct output for the SS routing.  This
-	 * should probably not drive a pin directly since there is no return
-	 * call from the driver that would allow an enable/disable type of
-	 * implementation for CSN control.
-	 */
-	/* `#START CHIP_SELECT_GENERATION` */
-	
-	/* TODO: Insert User Code Here */
-	
-	/* `#END` */
-}
-/* ------------------------------------------------------------------------ */
-/**
  * \brief write Data to the W5100 at the specified address
  * \param addr Address of register or memory buffer
  * \param dat Data to write to the device
@@ -148,28 +170,78 @@ static void `$INSTANCE_NAME`_ChipSelect( void )
  * This function will send the WRITE opcode, address and data to the W5100
  * in order to write the data to the specified register.
  */
-void `$INSTANCE_NAME`_ChipWrite(uint16 addr, uint8 dat)
+void 
+`$INSTANCE_NAME`_ChipWrite(uint16 addr, uint8 dat, uint16 length)
 {
+	uint16 txLen;
+	uint16 adr;
+	uint8 crit;
+	
 	/* V1.1: Wait for SPI operation to complete */
 	while( `$INSTANCE_NAME`_SpiDone == 0) {
 		CyDelayUs(1);
 	}
 	/* V1.1: End change */
 	
-	/* Using internal device SS generation */
-	`$INSTANCE_NAME`_ChipSelect();
-	/*
-	 * The first thing to do is to clear the Rx Buffer of any lingering
-	 * data left from other transfers.  Then send the data per the W5100
-	 * datasheet p.62
-	 */
-	`$SPI_INSTANCE`_ClearRxBuffer();
-	/* Begin transfer of data to device */
-	`$SPI_INSTANCE`_WriteTxData(`$INSTANCE_NAME`_WRITE_OP);
-	`$SPI_INSTANCE`_WriteTxData((addr>>8)&0x00FF);
-	`$SPI_INSTANCE`_WriteTxData(addr&0x00FF);
-	`$SPI_INSTANCE`_WriteTxData(dat);
+	crit = CyEnterCriticalSection();
+	
+	adr = addr;
+	txLen = 0;
+	do {
+		/* Using internal device SS generation */
+		`$INSTANCE_NAME`_ChipSelect();
+		/*
+		 * The first thing to do is to clear the Rx Buffer of any lingering
+		 * data left from other transfers.  Then send the data per the W5100
+		 * datasheet p.62
+		 */
+		`$SPI_INSTANCE`_ClearRxBuffer();
+		/* Begin transfer of data to device */
+#if (`$PART_FAMILY` == 1)
+		/*
+	     * The W5100 uses an opcode followed by the register/buffer
+	     * address for each data element transfered.
+	     */
+		`$SPI_INSTANCE`_WriteTxData(`$INSTANCE_NAME`_WRITE_OP);
+		`$SPI_INSTANCE`_WriteTxData((adr>>8)&0x00FF);
+		`$SPI_INSTANCE`_WriteTxData(adr&0x00FF);
+		txLen = 1;
+#elif (`$PART_FALILY` == 2)
+	    /*
+	     * The Header block for the W5200 uses the address, plus
+	     * a length word which contains a read/write bit.  Setting
+	     * the bit to a 1 (0x80) will enable write mode
+	     */
+		`$SPI_INSTANCE`_WriteTxData( (adr>>8) & 0x00FF);
+		`$SPI_INSTANCE`_WriteTxData( adr & 0x00FF );
+		txLen = (lenght > `$INSTANCE_NAME`_BURST_MAX)? `$INSTANCE_NAME`_BURST_MAX : length;
+		`$SPI_INSTANCE`_WriteTxData( 0x80 | ((txLen>>8)&0x007F) );
+		`$SPI_INSTANCE`_WriteTxData( txLen & 0x00FF );
+#endif
+		/*
+         * send the sequence of bytes to the device following the 
+         * header data transfer.  This will wait for the FIFO to  have
+         * available memory prior to writing the data to the part.
+         * at the end of the block the loop exits and ends the operation
+         * by setting the chip select high.
+         */
+		// Transmit data block
+		do {
+			while ( (`$SPI_INSTANCE`_ReadTxStatus() & `$SPI_INSTANCE`_STS_TX_FIFO_NOT_FULL) == 0);
+			`$SPI_INSTANCE`_WriteTxData(dat);
+			--length;
+			--txLen;
+			++adr;
+		} while ( txLen > 0 );
 
+		while( `$INSTANCE_NAME`_SpiDone == 0) {
+			CyDelayUs(1);
+		}
+		// End operation
+		`$INSTANCE_NAME`_ChipDeSelect();
+	} while (length > 0);
+	
+	CyExitCriticalSection( crit );
 }
 
 /* ------------------------------------------------------------------------ */
@@ -181,10 +253,13 @@ void `$INSTANCE_NAME`_ChipWrite(uint16 addr, uint8 dat)
  * this fucntion will access a W5100 memory location and read the contents
  * using the serial protocol specified on P.61 of the datasheet.
  */
-uint8 `$INSTANCE_NAME`_ChipRead(uint16 addr)
+void
+`$INSTANCE_NAME`_ChipRead(uint16 addr, uint8 *dat, uint16 length)
 {
 	uint32 dat;
 	uint32 count;
+	uint16 address;
+	uint16 rxLen;
 	
 	/* V1.1: Wait for SPI operation to complete */
 	while( `$INSTANCE_NAME`_SpiDone == 0) {
@@ -192,7 +267,10 @@ uint8 `$INSTANCE_NAME`_ChipRead(uint16 addr)
 	}
 	/* V1.1: End change */
 
-	/* Using internal device SS generation */
+	address = addr; // assign base pointer address
+	
+	do {
+	/* Write the chip select instance to select the device */
 	`$INSTANCE_NAME`_ChipSelect();
 	/*
 	 * First, clear the Rx Buffer of any waiting data.  Then begin the
@@ -201,11 +279,39 @@ uint8 `$INSTANCE_NAME`_ChipRead(uint16 addr)
 	 * of zeros to read the data from the device.
 	 */
 	`$SPI_INSTANCE`_ClearRxBuffer();
-	/* Begin data read */
+	/* Send the device header */
+#if (`$PART_FAMILY` == 1 )
+	/*
+	 * W1100 interface code
+	 * --------------------
+	 * The W5100 only supports 1 byte transfers (no burst mode), so
+	 * peg the receive length as 1 byte, and issue a number of commands
+	 * in sequence to simulate a burst read.
+	 */
 	`$SPI_INSTANCE`_WriteTxData(`$INSTANCE_NAME`_READ_OP);
-	`$SPI_INSTANCE`_WriteTxData(addr>>8);
-	`$SPI_INSTANCE`_WriteTxData(addr&0x00FF);
-	`$SPI_INSTANCE`_WriteTxData( 0 );
+	`$SPI_INSTANCE`_WriteTxData(address>>8);
+	`$SPI_INSTANCE`_WriteTxData(address&0x00FF);
+	rxLen = 1;
+#elif (`$PART_FAMILY == 2)
+	/*
+	 * W5200 Interface Header
+	 * ----------------------
+	 * The W5200 protocol expects an address followed by a read
+	 * byte count for the header of the protocol, so, this will
+	 * issue reads up to the max burst length
+	 */
+	rxLen = (length < `$INSTANCE_NAME`_BURST_MAX) ? length : `$INSTANCE_NAME`_BURST_MAX;
+	`$SPI_INSTANCE`_WriteTxData( address>>8);
+	`$SPI_INSTANCE`_WriteTxData( address & 0x00FF );
+	`$SPI_INSTANCE`_WriteTxData( 0x7F & (rxLen>>8) );
+	`$SPI_INSTANCE`_WriteTxData( rxLen&0x00FF );
+#endif
+	while (rxLen > 0) {
+		`$SPI_INSTANCE`_WriteTxData( 0 );
+		--rxLen;
+		++address;
+		--length;
+	}
 	
 	/* Wait for operations to complete. */
 	/* V1.1: Wait for SPI operation to complete */
@@ -256,7 +362,7 @@ uint8 `$INSTANCE_NAME`_ChipRead(uint16 addr)
  * this fucntion will set the active SS line within the SCB to select and
  * communicate with the W5100 device.
  */
-static void `$INSTANCE_NAME`_ChipSelect( void )
+ void `$INSTANCE_NAME`_ChipSelect( void )
 {
 #if (`$SS_NUM` == 0)
 	`$SPI_INSTANCE`_SpiSetActiveSlaveSelect( `$SPI_INSTANCE`_SPIM_ACTIVE_SS0 );
@@ -364,7 +470,7 @@ uint8 `$INSTANCE_NAME`_ChipRead(uint16 addr)
  * \param addr The starting address of the registers/memory for the MAC address
  * \param *mac pointer to the array of bytes holding the MAC address.
  */
-static void `$INSTANCE_NAME`_ChipSetMAC(uint16 addr, uint8 *mac)
+ void `$INSTANCE_NAME`_ChipSetMAC(uint16 addr, uint8 *mac)
 {
 	uint32 index;
 	
@@ -379,7 +485,7 @@ static void `$INSTANCE_NAME`_ChipSetMAC(uint16 addr, uint8 *mac)
  * \param addr the address from which the data will be read
  * \param *mac pointer to the array of bytes to hold the output mac address.
  */
-static void `$INSTANCE_NAME`_ChipGetMAC( uint16 addr, uint8* mac )
+ void `$INSTANCE_NAME`_ChipGetMAC( uint16 addr, uint8* mac )
 {
 	uint32 index;
 	for(index=0;index<6;++index) {
@@ -392,7 +498,7 @@ static void `$INSTANCE_NAME`_ChipGetMAC( uint16 addr, uint8* mac )
  * \param addr the address of the memory/registers to write the IPv4 Address
  * \param ip the IP address to write
  */
-static void `$INSTANCE_NAME`_ChipSetIP( uint16 addr, uint32 ip )
+void `$INSTANCE_NAME`_ChipSetIP( uint16 addr, uint32 ip )
 {
 	uint32 index;
 	uint8* buffer;
@@ -408,7 +514,7 @@ static void `$INSTANCE_NAME`_ChipSetIP( uint16 addr, uint32 ip )
  * \param addr the address from which the IP address will be retrieved.
  * \returns the IP address read from the device.
  */
-static uint32 `$INSTANCE_NAME`_ChipGetIP( uint16 addr )
+uint32 `$INSTANCE_NAME`_ChipGetIP( uint16 addr )
 {
 	uint8 buffer[4];
 	int index;
@@ -427,7 +533,7 @@ static uint32 `$INSTANCE_NAME`_ChipGetIP( uint16 addr )
  * \param addr the starting address to which the data will be written
  * \param val the 16-bit value to write
  */
-static void `$INSTANCE_NAME`_ChipWrite16( uint16 addr, uint16 val )
+void `$INSTANCE_NAME`_ChipWrite16( uint16 addr, uint16 val )
 {
 	`$INSTANCE_NAME`_ChipWrite( addr, val>>8);
 	`$INSTANCE_NAME`_ChipWrite( addr + 1, val&0x00FF);
@@ -438,7 +544,7 @@ static void `$INSTANCE_NAME`_ChipWrite16( uint16 addr, uint16 val )
  * \param addr The starting address from which data will be read
  * \returns the 16-bit value read from the memory.
  */
-static uint16 `$INSTANCE_NAME`_ChipRead16( uint16 addr )
+uint16 `$INSTANCE_NAME`_ChipRead16( uint16 addr )
 {
 	uint16 val;
 	
@@ -455,7 +561,7 @@ static uint16 `$INSTANCE_NAME`_ChipRead16( uint16 addr )
  * \param *buffer pointer to the data buffer holding the data to write
  * \param length the length of data to be written
  */
-static void `$INSTANCE_NAME`_ChipWriteBlock(uint16 addr, uint8* buffer, uint16 length)
+void `$INSTANCE_NAME`_ChipWriteBlock(uint16 addr, uint8* buffer, uint16 length)
 {
 	int index;
 	for(index=0;index<length;++index) {
@@ -469,7 +575,7 @@ static void `$INSTANCE_NAME`_ChipWriteBlock(uint16 addr, uint8* buffer, uint16 l
  * \param *buffer pointer to the memory buffer which will hold the read data
  * \param length the length of data to read from the buffer.
  */
-static void `$INSTANCE_NAME`_ChipReadBlock(uint16 addr, uint8* buffer, uint16 length)
+void `$INSTANCE_NAME`_ChipReadBlock(uint16 addr, uint8* buffer, uint16 length)
 {
 	int index;
 	
@@ -489,157 +595,157 @@ static void `$INSTANCE_NAME`_ChipReadBlock(uint16 addr, uint8* buffer, uint16 le
  * \brief Set teh chip mac address to teh specified address
  * \param *mac pointer to the array holding the MAC address
  */
-static void `$INSTANCE_NAME`_SetSourceMAC( uint8* mac ) { `$INSTANCE_NAME`_ChipSetMAC(9,mac); }
+void `$INSTANCE_NAME`_SetSourceMAC( uint8* mac ) { `$INSTANCE_NAME`_ChipSetMAC(9,mac); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the chip source MAC address from the MAC registers
  * \param *mac pointer to the address of the buffer to hold the read MAC address
  */
-static void `$INSTANCE_NAME`_GetSourceMAC( uint8* mac ) { `$INSTANCE_NAME`_ChipGetMAC(9,mac); }
+void `$INSTANCE_NAME`_GetSourceMAC( uint8* mac ) { `$INSTANCE_NAME`_ChipGetMAC(9,mac); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Set the IPv4 address of the network gateway
  * \param ip IP address of the gateway
  */
-static void `$INSTANCE_NAME`_SetGatewayAddress(uint32 ip) { `$INSTANCE_NAME`_ChipSetIP(1,ip); }
+void `$INSTANCE_NAME`_SetGatewayAddress(uint32 ip) { `$INSTANCE_NAME`_ChipSetIP(1,ip); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the gateway address from the device
  * \returns the IP address of the gateway
  */
-static uint32 `$INSTANCE_NAME`_GetGatewayAddress( void ) { return `$INSTANCE_NAME`_ChipGetIP(1); }
+uint32 `$INSTANCE_NAME`_GetGatewayAddress( void ) { return `$INSTANCE_NAME`_ChipGetIP(1); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief set the subnet mask of the ethernet device
  * \param the subnet mask (IPv4)
  */
-static void `$INSTANCE_NAME`_SetSubnetMask( uint32 ip ) { `$INSTANCE_NAME`_ChipSetIP(5, ip); }
+void `$INSTANCE_NAME`_SetSubnetMask( uint32 ip ) { `$INSTANCE_NAME`_ChipSetIP(5, ip); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the subnet mask from the device
  * \returns the subnet mask that was read from the device.
  */
-static uint32 `$INSTANCE_NAME`_GetSubnetMask( void ) { return `$INSTANCE_NAME`_ChipGetIP(5); }
+uint32 `$INSTANCE_NAME`_GetSubnetMask( void ) { return `$INSTANCE_NAME`_ChipGetIP(5); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write the device source IPv4 address
  * \param ip the ip address to set as the chip IP address
  */
-static void `$INSTANCE_NAME`_SetSourceIP( uint32 ip ) { `$INSTANCE_NAME`_ChipSetIP( 0x0F, ip ); }
+void `$INSTANCE_NAME`_SetSourceIP( uint32 ip ) { `$INSTANCE_NAME`_ChipSetIP( 0x0F, ip ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the device's programmed IP address
  * \returns The IPv4 address to which the device is set.
  */
-static uint32 `$INSTANCE_NAME`_GetSourceIP( void ) { return `$INSTANCE_NAME`_ChipGetIP( 0x0F ); }
+uint32 `$INSTANCE_NAME`_GetSourceIP( void ) { return `$INSTANCE_NAME`_ChipGetIP( 0x0F ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write a value to the device internal MODE register
  * \param mode the value to be written to the mode register.
  */
-static void `$INSTANCE_NAME`_SetMode( uint8 mode ) { `$INSTANCE_NAME`_ChipWrite(0,mode); }
+void `$INSTANCE_NAME`_SetMode( uint8 mode ) { `$INSTANCE_NAME`_ChipWrite(0,mode); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the present contents of the device internal mode register
  * \returns the value of the mode register
  */
-static uint8 `$INSTANCE_NAME`_GetMode( void ) { return `$INSTANCE_NAME`_ChipRead(0); }
+uint8 `$INSTANCE_NAME`_GetMode( void ) { return `$INSTANCE_NAME`_ChipRead(0); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write the value of the interrupt register
  * \param ir the value to be written to the interrupt register
  */
-static void `$INSTANCE_NAME`_SetIR( uint8 ir ) { `$INSTANCE_NAME`_ChipWrite(0x0015,ir); }
+void `$INSTANCE_NAME`_SetIR( uint8 ir ) { `$INSTANCE_NAME`_ChipWrite(0x0015,ir); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the contents of the interrupt register
  * \returns the contents read from the interrupt register
  */
-static uint8 `$INSTANCE_NAME`_GetIR( void ) { return `$INSTANCE_NAME`_ChipRead(0x0015); }
+uint8 `$INSTANCE_NAME`_GetIR( void ) { return `$INSTANCE_NAME`_ChipRead(0x0015); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Set the value of the interrupt mask register
  * \param imr the value to be written to the interrupt mask register
  */
-static void `$INSTANCE_NAME`_SetIMR( uint8 imr) { `$INSTANCE_NAME`_ChipWrite( 0x0016, imr ); }
+void `$INSTANCE_NAME`_SetIMR( uint8 imr) { `$INSTANCE_NAME`_ChipWrite( 0x0016, imr ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the interrupt mask register
  * \returns the contents of the interrupt mask register
  */
-static uint8 `$INSTANCE_NAME`_GetIMR( void ) { return `$INSTANCE_NAME`_ChipRead( 0x0016 ); }
+uint8 `$INSTANCE_NAME`_GetIMR( void ) { return `$INSTANCE_NAME`_ChipRead( 0x0016 ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write the retry time register
  * \param time the value to be written to the regster
  */
-static void `$INSTANCE_NAME`_SetRetryTime( uint16 time) { `$INSTANCE_NAME`_ChipWrite16( 0x0017, time ); }
+void `$INSTANCE_NAME`_SetRetryTime( uint16 time) { `$INSTANCE_NAME`_ChipWrite16( 0x0017, time ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the retry tie register
  * \returns the value read from the register
  */
-static uint16 `$INSTANCE_NAME`_GetRetryTime( void ) { return `$INSTANCE_NAME`_ChipRead16( 0x0017 ); }
+uint16 `$INSTANCE_NAME`_GetRetryTime( void ) { return `$INSTANCE_NAME`_ChipRead16( 0x0017 ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \breif write a value to the retry count register
  * \param count the value to be written to the register
  */
-static void `$INSTANCE_NAME`_SetRetryCount( uint8 count ) { `$INSTANCE_NAME`_ChipWrite( 0x0019, count); }
+void `$INSTANCE_NAME`_SetRetryCount( uint8 count ) { `$INSTANCE_NAME`_ChipWrite( 0x0019, count); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the contents of the retry count register
  * \returns the value read from teh register
  */
-static uint8 `$INSTANCE_NAME`_GetRetryCount( void ) { return `$INSTANCE_NAME`_ChipRead( 0x0019 ); }
+uint8 `$INSTANCE_NAME`_GetRetryCount( void ) { return `$INSTANCE_NAME`_ChipRead( 0x0019 ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief write a value to the Rx mem size register
  * \param size the value to be written to the register
  */
-static void `$INSTANCE_NAME`_SetRxMemSize( uint8 size ) { `$INSTANCE_NAME`_ChipWrite( 0x1A, size ); }
+void `$INSTANCE_NAME`_SetRxMemSize( uint8 size ) { `$INSTANCE_NAME`_ChipWrite( 0x1A, size ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the contents of hte rx mem size register
  * \returns the value read from teh register
  */
-static uint8 `$INSTANCE_NAME`_GetRxMemSize( void ) { return `$INSTANCE_NAME`_ChipRead(0x1A); }
+uint8 `$INSTANCE_NAME`_GetRxMemSize( void ) { return `$INSTANCE_NAME`_ChipRead(0x1A); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief write a value to the tx mem size register
  * \param size The value to be written to the register
  */
-static void `$INSTANCE_NAME`_SetTxMemSize( uint8 size ) { `$INSTANCE_NAME`_ChipWrite( 0x1B, size); }
+void `$INSTANCE_NAME`_SetTxMemSize( uint8 size ) { `$INSTANCE_NAME`_ChipWrite( 0x1B, size); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief read the contents of the tx mem size register
  * \returns the value read from the register
  */
-static uint8 `$INSTANCE_NAME`_GetTxMemSize( void ) { return `$INSTANCE_NAME`_ChipRead( 0x1B);}
+uint8 `$INSTANCE_NAME`_GetTxMemSize( void ) { return `$INSTANCE_NAME`_ChipRead( 0x1B);}
 /* ------------------------------------------------------------------------ */
 /**
  * \brief write a value to the unreachable IP register
  * \param ip the value to be written to the register
  */
-static void `$INSTANCE_NAME`_SetUnreachableIP( uint32 ip) { `$INSTANCE_NAME`_ChipSetIP( 0x2A, ip); }
+void `$INSTANCE_NAME`_SetUnreachableIP( uint32 ip) { `$INSTANCE_NAME`_ChipSetIP( 0x2A, ip); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief read the contents of the unreachable IP register
  * \returns the value read from teh register
  */
-static uint32 `$INSTANCE_NAME`_GetUnreachableIP( void ) { return `$INSTANCE_NAME`_ChipGetIP( 0x2A ); }
+uint32 `$INSTANCE_NAME`_GetUnreachableIP( void ) { return `$INSTANCE_NAME`_ChipGetIP( 0x2A ); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief write a value to the unreachable port register
  * \param port the value to be written to the register
  */
-static void `$INSTANCE_NAME`_SetUnreachablePort( uint16 port) { `$INSTANCE_NAME`_ChipWrite16(0x2E, port); }
+void `$INSTANCE_NAME`_SetUnreachablePort( uint16 port) { `$INSTANCE_NAME`_ChipWrite16(0x2E, port); }
 /* ------------------------------------------------------------------------ */
 /**
  * \brief read the contents of the unreachable port register
  * \returns the value read from the register
  */
-static uint16 `$INSTANCE_NAME`_GetUnreachablePort( void ) { return `$INSTANCE_NAME`_ChipRead16(0x2E); }
+uint16 `$INSTANCE_NAME`_GetUnreachablePort( void ) { return `$INSTANCE_NAME`_ChipRead16(0x2E); }
 /* ======================================================================== */
 /* End Section */
 //#endif
@@ -657,7 +763,7 @@ static uint16 `$INSTANCE_NAME`_GetUnreachablePort( void ) { return `$INSTANCE_NA
  * \param socket the socket number for the addressed register
  * \param mode the value to be written to the register
  */
-static void `$INSTANCE_NAME`_SetSocketMode(uint8 socket, uint8 mode)
+void `$INSTANCE_NAME`_SetSocketMode(uint8 socket, uint8 mode)
 { `$INSTANCE_NAME`_ChipWrite(`$INSTANCE_NAME`_SOCKET_BASE(socket), mode); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -665,7 +771,7 @@ static void `$INSTANCE_NAME`_SetSocketMode(uint8 socket, uint8 mode)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint8 `$INSTANCE_NAME`_GetSocketMode(uint8 socket)
+uint8 `$INSTANCE_NAME`_GetSocketMode(uint8 socket)
 { return `$INSTANCE_NAME`_ChipRead(`$INSTANCE_NAME`_SOCKET_BASE(socket)); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -673,7 +779,7 @@ static uint8 `$INSTANCE_NAME`_GetSocketMode(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param cmd the value to be written to the register
  */
-static void `$INSTANCE_NAME`_SetSocketCommand(uint8 socket, uint8 cmd)
+void `$INSTANCE_NAME`_SetSocketCommand(uint8 socket, uint8 cmd)
 { `$INSTANCE_NAME`_ChipWrite(`$INSTANCE_NAME`_SOCKET_BASE(socket)+1, cmd); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -681,7 +787,7 @@ static void `$INSTANCE_NAME`_SetSocketCommand(uint8 socket, uint8 cmd)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint8 `$INSTANCE_NAME`_GetSocketCommand(uint8 socket)
+uint8 `$INSTANCE_NAME`_GetSocketCommand(uint8 socket)
 { return `$INSTANCE_NAME`_ChipRead(`$INSTANCE_NAME`_SOCKET_BASE(socket)+1); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -689,7 +795,7 @@ static uint8 `$INSTANCE_NAME`_GetSocketCommand(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param ir the value to be written to the register
  */
-static void `$INSTANCE_NAME`_SetSocketIR(uint8 socket, uint8 ir)
+void `$INSTANCE_NAME`_SetSocketIR(uint8 socket, uint8 ir)
 { `$INSTANCE_NAME`_ChipWrite(`$INSTANCE_NAME`_SOCKET_BASE(socket)+2,ir); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -697,7 +803,7 @@ static void `$INSTANCE_NAME`_SetSocketIR(uint8 socket, uint8 ir)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint8 `$INSTANCE_NAME`_GetSocketIR(uint8 socket)
+uint8 `$INSTANCE_NAME`_GetSocketIR(uint8 socket)
 { return `$INSTANCE_NAME`_ChipRead(`$INSTANCE_NAME`_SOCKET_BASE(socket)+2); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -705,7 +811,7 @@ static uint8 `$INSTANCE_NAME`_GetSocketIR(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param status the value to be written to the register
  */
-static void `$INSTANCE_NAME`_SetSocketStatus(uint8 socket, uint8 status)
+void `$INSTANCE_NAME`_SetSocketStatus(uint8 socket, uint8 status)
 { `$INSTANCE_NAME`_ChipWrite(`$INSTANCE_NAME`_SOCKET_BASE(socket)+3,status); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -713,7 +819,7 @@ static void `$INSTANCE_NAME`_SetSocketStatus(uint8 socket, uint8 status)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint8 `$INSTANCE_NAME`_GetSocketStatus(uint8 socket)
+uint8 `$INSTANCE_NAME`_GetSocketStatus(uint8 socket)
 { return `$INSTANCE_NAME`_ChipRead(`$INSTANCE_NAME`_SOCKET_BASE(socket)+3); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -721,7 +827,7 @@ static uint8 `$INSTANCE_NAME`_GetSocketStatus(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param port the value to be written to the register
  */
-static void `$INSTANCE_NAME`_SetSocketSourcePort(uint8 socket, uint16 port)
+void `$INSTANCE_NAME`_SetSocketSourcePort(uint8 socket, uint16 port)
 { `$INSTANCE_NAME`_ChipWrite16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+4,port); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -729,7 +835,7 @@ static void `$INSTANCE_NAME`_SetSocketSourcePort(uint8 socket, uint16 port)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint16 `$INSTANCE_NAME`_GetSocketSourcePort(uint8 socket)
+uint16 `$INSTANCE_NAME`_GetSocketSourcePort(uint8 socket)
 { return `$INSTANCE_NAME`_ChipRead16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+4); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -737,7 +843,7 @@ static uint16 `$INSTANCE_NAME`_GetSocketSourcePort(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param *mac poitner to the array holding the values to be written to the register
  */
-static void `$INSTANCE_NAME`_SetSocketDestMAC(uint8 socket, uint8* mac)
+void `$INSTANCE_NAME`_SetSocketDestMAC(uint8 socket, uint8* mac)
 { `$INSTANCE_NAME`_ChipSetMAC( `$INSTANCE_NAME`_SOCKET_BASE(socket)+6, mac); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -745,7 +851,7 @@ static void `$INSTANCE_NAME`_SetSocketDestMAC(uint8 socket, uint8* mac)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static void `$INSTANCE_NAME`_GetSocketDestMAC(uint8 socket, uint8* mac)
+void `$INSTANCE_NAME`_GetSocketDestMAC(uint8 socket, uint8* mac)
 { `$INSTANCE_NAME`_ChipGetMAC( `$INSTANCE_NAME`_SOCKET_BASE(socket)+6,mac); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -753,7 +859,7 @@ static void `$INSTANCE_NAME`_GetSocketDestMAC(uint8 socket, uint8* mac)
  * \param socket the socket number for the addressed register
  * \param ip the value to be written to the register
  */
-static void `$INSTANCE_NAME`_SetSocketDestIP(uint8 socket, uint32 ip)
+void `$INSTANCE_NAME`_SetSocketDestIP(uint8 socket, uint32 ip)
 { `$INSTANCE_NAME`_ChipSetIP(`$INSTANCE_NAME`_SOCKET_BASE(socket)+12,ip); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -761,7 +867,7 @@ static void `$INSTANCE_NAME`_SetSocketDestIP(uint8 socket, uint32 ip)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint32 `$INSTANCE_NAME`_GetSocketDestIP(uint8 socket )
+uint32 `$INSTANCE_NAME`_GetSocketDestIP(uint8 socket )
 { return `$INSTANCE_NAME`_ChipGetIP(`$INSTANCE_NAME`_SOCKET_BASE(socket)+12); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -769,7 +875,7 @@ static uint32 `$INSTANCE_NAME`_GetSocketDestIP(uint8 socket )
  * \param socket the socket number for the addressed register
  * \param port the value to be written to the register
  */
-static void `$INSTANCE_NAME`_SetSocketDestPort(uint8 socket, uint16 port)
+void `$INSTANCE_NAME`_SetSocketDestPort(uint8 socket, uint16 port)
 { `$INSTANCE_NAME`_ChipWrite16( `$INSTANCE_NAME`_SOCKET_BASE(socket)+16, port); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -777,7 +883,7 @@ static void `$INSTANCE_NAME`_SetSocketDestPort(uint8 socket, uint16 port)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint16 `$INSTANCE_NAME`_GetSocketDestPort(uint8 socket)
+uint16 `$INSTANCE_NAME`_GetSocketDestPort(uint8 socket)
 { return `$INSTANCE_NAME`_ChipRead16( `$INSTANCE_NAME`_SOCKET_BASE(socket)+16 ); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -785,7 +891,7 @@ static uint16 `$INSTANCE_NAME`_GetSocketDestPort(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param size the value to be written to the register
  */
-static void `$INSTANCE_NAME`_SetSocketMaxSegSize(uint8 socket, uint16 size)
+void `$INSTANCE_NAME`_SetSocketMaxSegSize(uint8 socket, uint16 size)
 { `$INSTANCE_NAME`_ChipWrite16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+18,size); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -793,7 +899,7 @@ static void `$INSTANCE_NAME`_SetSocketMaxSegSize(uint8 socket, uint16 size)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint16 `$INSTANCE_NAME`_GetSocketMaxSegSize(uint8 socket)
+uint16 `$INSTANCE_NAME`_GetSocketMaxSegSize(uint8 socket)
 { return `$INSTANCE_NAME`_ChipRead16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+18); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -801,7 +907,7 @@ static uint16 `$INSTANCE_NAME`_GetSocketMaxSegSize(uint8 socket)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint16  `$INSTANCE_NAME`_GetSocketProto(uint8 socket)
+uint16  `$INSTANCE_NAME`_GetSocketProto(uint8 socket)
 { return `$INSTANCE_NAME`_ChipRead(`$INSTANCE_NAME`_SOCKET_BASE(socket)+20); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -809,7 +915,7 @@ static uint16  `$INSTANCE_NAME`_GetSocketProto(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param tos the value to be written to the register
  */
-static void `$INSTANCE_NAME`_SetSocketTOS(uint8 socket, uint8 tos)
+void `$INSTANCE_NAME`_SetSocketTOS(uint8 socket, uint8 tos)
 { `$INSTANCE_NAME`_ChipWrite(`$INSTANCE_NAME`_SOCKET_BASE(socket)+21, tos); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -817,7 +923,7 @@ static void `$INSTANCE_NAME`_SetSocketTOS(uint8 socket, uint8 tos)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint8 `$INSTANCE_NAME`_GetSocketTOS(uint8 socket)
+uint8 `$INSTANCE_NAME`_GetSocketTOS(uint8 socket)
 { return `$INSTANCE_NAME`_ChipRead(`$INSTANCE_NAME`_SOCKET_BASE(socket)+21); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -825,7 +931,7 @@ static uint8 `$INSTANCE_NAME`_GetSocketTOS(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param ttl the value to be written to the register
  */
-static void `$INSTANCE_NAME`_SetSocketTTL(uint8 socket, uint8 ttl)
+void `$INSTANCE_NAME`_SetSocketTTL(uint8 socket, uint8 ttl)
 { `$INSTANCE_NAME`_ChipWrite(`$INSTANCE_NAME`_SOCKET_BASE(socket)+22,ttl); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -833,7 +939,7 @@ static void `$INSTANCE_NAME`_SetSocketTTL(uint8 socket, uint8 ttl)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint8 `$INSTANCE_NAME`_GetSocketTTL(uint8 socket)
+uint8 `$INSTANCE_NAME`_GetSocketTTL(uint8 socket)
 { return `$INSTANCE_NAME`_ChipRead(`$INSTANCE_NAME`_SOCKET_BASE(socket)+22); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -841,7 +947,7 @@ static uint8 `$INSTANCE_NAME`_GetSocketTTL(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param size the value to be written to the register
  */
-static void `$INSTANCE_NAME`_SetSocketTxFree( uint8 socket, uint16 size)
+void `$INSTANCE_NAME`_SetSocketTxFree( uint8 socket, uint16 size)
 { `$INSTANCE_NAME`_ChipWrite16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+0x20,size); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -849,7 +955,7 @@ static void `$INSTANCE_NAME`_SetSocketTxFree( uint8 socket, uint16 size)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint16 `$INSTANCE_NAME`_GetSocketTxFree(uint8 socket)
+uint16 `$INSTANCE_NAME`_GetSocketTxFree(uint8 socket)
 { return `$INSTANCE_NAME`_ChipRead16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+0x20); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -857,7 +963,7 @@ static uint16 `$INSTANCE_NAME`_GetSocketTxFree(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param ptr the value to be written to the register
  */
-static void `$INSTANCE_NAME`_SetSocketTxReadPtr(uint8 socket, uint16 ptr)
+void `$INSTANCE_NAME`_SetSocketTxReadPtr(uint8 socket, uint16 ptr)
 { `$INSTANCE_NAME`_ChipWrite16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+0x22,ptr); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -865,7 +971,7 @@ static void `$INSTANCE_NAME`_SetSocketTxReadPtr(uint8 socket, uint16 ptr)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint16 `$INSTANCE_NAME`_GetSocketTxReadPtr(uint8 socket)
+uint16 `$INSTANCE_NAME`_GetSocketTxReadPtr(uint8 socket)
 { return `$INSTANCE_NAME`_ChipRead16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+0x22); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -873,7 +979,7 @@ static uint16 `$INSTANCE_NAME`_GetSocketTxReadPtr(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param ptr the value to be written to the register
  */
-static void `$INSTANCE_NAME`_SetSocketTxWritePtr(uint8 socket, uint16 ptr)
+void `$INSTANCE_NAME`_SetSocketTxWritePtr(uint8 socket, uint16 ptr)
 { `$INSTANCE_NAME`_ChipWrite16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+0x24,ptr); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -881,7 +987,7 @@ static void `$INSTANCE_NAME`_SetSocketTxWritePtr(uint8 socket, uint16 ptr)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint16 `$INSTANCE_NAME`_GetSocketTxWritePtr(uint8 socket)
+uint16 `$INSTANCE_NAME`_GetSocketTxWritePtr(uint8 socket)
 { return `$INSTANCE_NAME`_ChipRead16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+0x24); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -889,7 +995,7 @@ static uint16 `$INSTANCE_NAME`_GetSocketTxWritePtr(uint8 socket)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint16 `$INSTANCE_NAME`_GetSocketRxSize(uint8 socket)
+uint16 `$INSTANCE_NAME`_GetSocketRxSize(uint8 socket)
 { return `$INSTANCE_NAME`_ChipRead16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+0x26); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -897,7 +1003,7 @@ static uint16 `$INSTANCE_NAME`_GetSocketRxSize(uint8 socket)
  * \param socket the socket number for the addressed register
  * \param ptr the value to be written to the register
  */
-static void `$INSTANCE_NAME`_SetSocketRxReadPtr(uint8 socket, uint16 ptr)
+void `$INSTANCE_NAME`_SetSocketRxReadPtr(uint8 socket, uint16 ptr)
 { `$INSTANCE_NAME`_ChipWrite16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+0x28,ptr); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -905,7 +1011,7 @@ static void `$INSTANCE_NAME`_SetSocketRxReadPtr(uint8 socket, uint16 ptr)
  * \param socket the socket number for the addressed register
  * \returns the value read from the register
  */
-static uint16 `$INSTANCE_NAME`_GetSocketRxReadPtr(uint8 socket)
+uint16 `$INSTANCE_NAME`_GetSocketRxReadPtr(uint8 socket)
 { return `$INSTANCE_NAME`_ChipRead16(`$INSTANCE_NAME`_SOCKET_BASE(socket)+0x28); }
 /* ------------------------------------------------------------------------ */
 /**
@@ -913,7 +1019,7 @@ static uint16 `$INSTANCE_NAME`_GetSocketRxReadPtr(uint8 socket)
  * \param socket the addressed socket for the command
  * \param cmd the command to execute
  */
-static uint32 `$INSTANCE_NAME`_ExecuteSocketCommand( uint8 socket, int cmd)
+uint32 `$INSTANCE_NAME`_ExecuteSocketCommand( uint8 socket, int cmd)
 {
 	uint32 timeout;
 	timeout = 0;
@@ -932,7 +1038,7 @@ static uint32 `$INSTANCE_NAME`_ExecuteSocketCommand( uint8 socket, int cmd)
  * \param socket the addressed socket to read the available tx buffer
  * \returns the number of bytes available in the transmit buffer for the socket
  */
-static uint16 `$INSTANCE_NAME`_GetTxFreeSize( uint8 socket )
+uint16 `$INSTANCE_NAME`_GetTxFreeSize( uint8 socket )
 {
 	uint16 first, second;
 	
@@ -954,7 +1060,7 @@ static uint16 `$INSTANCE_NAME`_GetTxFreeSize( uint8 socket )
  * \param socket the addressed socketfrom which the data will be read
  * \returns the number of bytes waiting in the recieve buffer of the socket
  */
-static uint16 `$INSTANCE_NAME`_GetRxSize( uint8 socket )
+uint16 `$INSTANCE_NAME`_GetRxSize( uint8 socket )
 {
 	uint16 first, second;
 	
@@ -985,7 +1091,7 @@ static uint16 `$INSTANCE_NAME`_GetRxSize( uint8 socket )
  * \param *buffer pointer to the local buffer to copy to the transmit fifo
  * \param length the number of bytes to be copied to the transmit fifo
  */
-static void `$INSTANCE_NAME`_ProcessTxData(uint8 socket, uint16 offset, uint8* buffer, uint16 length)
+void `$INSTANCE_NAME`_ProcessTxData(uint8 socket, uint16 offset, uint8* buffer, uint16 length)
 {
 	uint16 addr;
 	uint16 base;
@@ -1041,7 +1147,7 @@ static void `$INSTANCE_NAME`_ProcessTxData(uint8 socket, uint16 offset, uint8* b
  * \param length the max number of bytes to be copied to the local buffer
  * \param flags Flag settings to control read fifo options (lookahead)
  */
-static void `$INSTANCE_NAME`_ProcessRxData(uint8 socket, uint16 offset, uint8* buffer, uint16 length, uint8 flags)
+void `$INSTANCE_NAME`_ProcessRxData(uint8 socket, uint16 offset, uint8* buffer, uint16 length, uint8 flags)
 {
 	uint16 addr;
 	uint16 base;
@@ -1445,7 +1551,7 @@ uint8
  * \brief Transmit a SEND operation over a socket
  * \param socket the socket to which the send command will be sent
  */
-static void
+void
 `$INSTANCE_NAME`_SocketSend(uint8 socket )
 {
 	uint8 ir;
@@ -1472,7 +1578,7 @@ static void
  * \brief Execute a SEND without an ARP.
  * \param socket the socket to which the SEND will be executed.
  */
-static void
+void
 `$INSTANCE_NAME`_SocketSendMac(uint8 socket )
 {
 	uint8 ir;
