@@ -257,9 +257,12 @@ void
 `$INSTANCE_NAME`_ChipRead(uint16 addr, uint8 *dat, uint16 length)
 {
 	uint32 dat;
-	uint32 count;
+	uint16 rxIndex;
 	uint16 address;
 	uint16 rxLen;
+	uint16 txBytes;
+	uint8 dump; // the number of bytes to ignore from the data stream readback
+	uint16 rxCount;
 	
 	/* V1.1: Wait for SPI operation to complete */
 	while( `$INSTANCE_NAME`_SpiDone == 0) {
@@ -268,66 +271,92 @@ void
 	/* V1.1: End change */
 
 	address = addr; // assign base pointer address
-	
+	rxIndex = 0;    // default the starting index for the receive to zero
 	do {
-	/* Write the chip select instance to select the device */
-	`$INSTANCE_NAME`_ChipSelect();
-	/*
-	 * First, clear the Rx Buffer of any waiting data.  Then begin the
-	 * read operation by sending the op code, followed byte the address
-	 * from which the read will be executed, then send a dummy byte
-	 * of zeros to read the data from the device.
-	 */
-	`$SPI_INSTANCE`_ClearRxBuffer();
-	/* Send the device header */
+		/* Write the chip select instance to select the device */
+		`$INSTANCE_NAME`_ChipSelect();
+		/*
+		 * First, clear the Rx Buffer of any waiting data.  Then begin the
+		 * read operation by sending the op code, followed byte the address
+		 * from which the read will be executed, then send a dummy byte
+		 * of zeros to read the data from the device.
+		 */
+		`$SPI_INSTANCE`_ClearRxBuffer();
+		/* Send the device header */
+		rxCount = 0; // initialize the bytes received to none
 #if (`$PART_FAMILY` == 1 )
-	/*
-	 * W1100 interface code
-	 * --------------------
-	 * The W5100 only supports 1 byte transfers (no burst mode), so
-	 * peg the receive length as 1 byte, and issue a number of commands
-	 * in sequence to simulate a burst read.
-	 */
-	`$SPI_INSTANCE`_WriteTxData(`$INSTANCE_NAME`_READ_OP);
-	`$SPI_INSTANCE`_WriteTxData(address>>8);
-	`$SPI_INSTANCE`_WriteTxData(address&0x00FF);
-	rxLen = 1;
+		/*
+		 * W1100 interface code
+		 * --------------------
+		 * The W5100 only supports 1 byte transfers (no burst mode), so
+		 * peg the receive length as 1 byte, and issue a number of commands
+		 * in sequence to simulate a burst read.
+		 */
+		rxLen = 1;  // The W5100 is limited to 1 byte of data transmitted
+		dump = 3;   // The W5100 has a 3-byte packet header
+		txBytes = 1; // Send only one byte afte rthe header then end the transfer
+		`$SPI_INSTANCE`_WriteTxData(`$INSTANCE_NAME`_READ_OP);
+		`$SPI_INSTANCE`_WriteTxData(address>>8);
+		`$SPI_INSTANCE`_WriteTxData(address&0x00FF);
+		
 #elif (`$PART_FAMILY == 2)
-	/*
-	 * W5200 Interface Header
-	 * ----------------------
-	 * The W5200 protocol expects an address followed by a read
-	 * byte count for the header of the protocol, so, this will
-	 * issue reads up to the max burst length
-	 */
-	rxLen = (length < `$INSTANCE_NAME`_BURST_MAX) ? length : `$INSTANCE_NAME`_BURST_MAX;
-	`$SPI_INSTANCE`_WriteTxData( address>>8);
-	`$SPI_INSTANCE`_WriteTxData( address & 0x00FF );
-	`$SPI_INSTANCE`_WriteTxData( 0x7F & (rxLen>>8) );
-	`$SPI_INSTANCE`_WriteTxData( rxLen&0x00FF );
+		/*
+		 * W5200 Interface Header
+		 * ----------------------
+		 * The W5200 protocol expects an address followed by a read
+		 * byte count for the header of the protocol, so, this will
+		 * issue reads up to the max burst length
+		 */
+		dump = 4; /*  The W5200 has a definded data length and a header of 4 bytes */
+		rxLen = (length < `$INSTANCE_NAME`_BURST_MAX) ? length : `$INSTANCE_NAME`_BURST_MAX;
+		/* 
+		 * Set the number of bytes to transmit before
+		 * ending the packet to the calculated value
+		 */
+		txBytes = rxLen; 
+		/* Send the packet header */
+		`$SPI_INSTANCE`_WriteTxData( address>>8);
+		`$SPI_INSTANCE`_WriteTxData( address & 0x00FF );
+		`$SPI_INSTANCE`_WriteTxData( 0x7F & (rxLen>>8) );
+		`$SPI_INSTANCE`_WriteTxData( rxLen&0x00FF );
 #endif
-	while (rxLen > 0) {
-		`$SPI_INSTANCE`_WriteTxData( 0 );
-		--rxLen;
-		++address;
-		--length;
-	}
-	
-	/* Wait for operations to complete. */
-	/* V1.1: Wait for SPI operation to complete */
-	while( `$INSTANCE_NAME`_SpiDone == 0) {
-		CyDelayUs(1);
-	}
-	/* V1.1: End change */
 
-	count = `$SPI_INSTANCE`_GetRxBufferSize();
-	while( count > 0 )
-	{
-		dat = `$SPI_INSTANCE`_ReadRxData(); 
-		count = `$SPI_INSTANCE`_GetRxBufferSize();
+		while (rxCount < rxLen) {
+			/*
+			 * Read the data from the buffer.  The hadred data responses
+			 * are going to be sitting inthe buffer, so dump them
+			 * and just receive the data bock
+			 */
+			dat[rxIndex] = `$SPI_INSTANCE`_ReadRxData();
+			if (dump > 0) {
+				--dump;
+			}
+			else {
+				++rxCount;
+			}
+			/*
+			 * Since the header is clogging the buffer (and it is inefficient
+			 * to just clear the header before executing the reads), this loop
+			 * will transmit the data completely the header size before
+			 * the data has been read, so, send the data when the rxLength
+			 * is not zero.
+			 */
+			if (txBytes > 0 ) {
+				`$SPI_INSTANCE`_WriteTxData( 0 );
+				++address;
+				--length;
+				--txBytes;
+			}
+			else {
+				if (`$INSTANCE_NAME`_SpiDone != 0) {
+					`$INSTANCE_NAME`_ChipDeSelect();
+				}
+			}
+		}
 	}
-	
-	return( dat&0xFF );
+	while ( length > 0);
+	/* Turn off chip select, and set the buffer */
+	`$INSTANCE_NAME`_ChipDeSelect();
 }
 /* ======================================================================== */
 /* SCB Specific Functions */
@@ -463,51 +492,7 @@ uint8 `$INSTANCE_NAME`_ChipRead(uint16 addr)
 
 /* ======================================================================== */
 /* W5100 Register Access Primitaves */
-//#if (1)
-/* ------------------------------------------------------------------------ */
-/**
- * \brief Write a MAC (hardware) address to a group of registers
- * \param addr The starting address of the registers/memory for the MAC address
- * \param *mac pointer to the array of bytes holding the MAC address.
- */
- void `$INSTANCE_NAME`_ChipSetMAC(uint16 addr, uint8 *mac)
-{
-	uint32 index;
-	
-	for(index = 0;index<6;++index)
-	{
-		`$INSTANCE_NAME`_ChipWrite(addr+index,mac[index]);
-	}
-}
-/* ------------------------------------------------------------------------ */
-/**
- * \brief Read a MAC (hardware) address from a set of registers.
- * \param addr the address from which the data will be read
- * \param *mac pointer to the array of bytes to hold the output mac address.
- */
- void `$INSTANCE_NAME`_ChipGetMAC( uint16 addr, uint8* mac )
-{
-	uint32 index;
-	for(index=0;index<6;++index) {
-		mac[index] = `$INSTANCE_NAME`_ChipRead(addr+index);
-	}
-}
-/* ------------------------------------------------------------------------ */
-/**
- * \brief Write an IPv4 address to the device.
- * \param addr the address of the memory/registers to write the IPv4 Address
- * \param ip the IP address to write
- */
-void `$INSTANCE_NAME`_ChipSetIP( uint16 addr, uint32 ip )
-{
-	uint32 index;
-	uint8* buffer;
-
-	buffer = (uint8*)&ip;
-	for(index = 0;index<4;++index) {
-		`$INSTANCE_NAME`_ChipWrite(addr+index,buffer[index]);
-	}
-}
+#if (1)
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read an IPv4 address from a set of registers
@@ -517,14 +502,11 @@ void `$INSTANCE_NAME`_ChipSetIP( uint16 addr, uint32 ip )
 uint32 `$INSTANCE_NAME`_ChipGetIP( uint16 addr )
 {
 	uint8 buffer[4];
-	int index;
 	uint32* ip;
 	
 	ip = (uint32*) &buffer[0];
 	*ip = 0;
-	for(index=0;index<4;++index) {
-		buffer[index] = `$INSTANCE_NAME`_ChipRead(addr+index);
-	}
+	`$INSTANCE_NAME`_ChipRead(addr, &buffer[0], 4);
 	return( *ip );
 }
 /* ------------------------------------------------------------------------ */
@@ -535,8 +517,14 @@ uint32 `$INSTANCE_NAME`_ChipGetIP( uint16 addr )
  */
 void `$INSTANCE_NAME`_ChipWrite16( uint16 addr, uint16 val )
 {
-	`$INSTANCE_NAME`_ChipWrite( addr, val>>8);
-	`$INSTANCE_NAME`_ChipWrite( addr + 1, val&0x00FF);
+	uint16 bigVal;
+	
+#if !( CY_PSOC3 ) 
+	bigVal = CYSWAP_ENDIAN16( val );
+#else
+	bigValu = val;
+#endif
+	`$INSTANCE_NAME`_ChipWrite( addr, bigVal, 2 );
 }
 /* ------------------------------------------------------------------------ */
 /**
@@ -548,44 +536,16 @@ uint16 `$INSTANCE_NAME`_ChipRead16( uint16 addr )
 {
 	uint16 val;
 	
-	val = `$INSTANCE_NAME`_ChipRead( addr );
-	val <<= 8;
-	val += `$INSTANCE_NAME`_ChipRead( addr + 1);
+	`$INSTANCE_NAME`_ChipRead(addr, (uint8*)&val, 2);
+#if !( CY_PSOC3 )
+	val = CYSWAP_ENDIAN16( val );
+#endif
 	
 	return( val );
 }
-/* ------------------------------------------------------------------------ */
-/**
- * \brief Write a block of data to consecutive memory addresses
- * \param addr the starting address of the write
- * \param *buffer pointer to the data buffer holding the data to write
- * \param length the length of data to be written
- */
-void `$INSTANCE_NAME`_ChipWriteBlock(uint16 addr, uint8* buffer, uint16 length)
-{
-	int index;
-	for(index=0;index<length;++index) {
-		`$INSTANCE_NAME`_ChipWrite(addr+index,buffer[index]);
-	}
-}
-/* ------------------------------------------------------------------------ */
-/**
- * \brief read a block of data from consecutive memory addresses
- * \param addr the address from which the read will begin
- * \param *buffer pointer to the memory buffer which will hold the read data
- * \param length the length of data to read from the buffer.
- */
-void `$INSTANCE_NAME`_ChipReadBlock(uint16 addr, uint8* buffer, uint16 length)
-{
-	int index;
-	
-	for(index=0;index<length;++index) {
-		buffer[index] = `$INSTANCE_NAME`_ChipRead(addr+index);
-	}
-}
 /* ======================================================================== */
 /* END SECTION */
-//#endif
+#endif
 /* ======================================================================== */
 /* Chip Register access */
 //#if (1)
@@ -595,37 +555,37 @@ void `$INSTANCE_NAME`_ChipReadBlock(uint16 addr, uint8* buffer, uint16 length)
  * \brief Set teh chip mac address to teh specified address
  * \param *mac pointer to the array holding the MAC address
  */
-void `$INSTANCE_NAME`_SetSourceMAC( uint8* mac ) { `$INSTANCE_NAME`_ChipSetMAC(9,mac); }
+#define `$INSTANCE_NAME`_SetSourceMAC( mac ) 	`$INSTANCE_NAME`_ChipWrite(`$INSTANCE_NAME`_REG_SHAR, mac,6 )
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the chip source MAC address from the MAC registers
  * \param *mac pointer to the address of the buffer to hold the read MAC address
  */
-void `$INSTANCE_NAME`_GetSourceMAC( uint8* mac ) { `$INSTANCE_NAME`_ChipGetMAC(9,mac); }
+#define `$INSTANCE_NAME`_GetSourceMAC( mac ) `$INSTANCE_NAME`_ChipRead(`$INSTANCE_NAME`_REG_SHAR,mac,6)
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Set the IPv4 address of the network gateway
  * \param ip IP address of the gateway
  */
-void `$INSTANCE_NAME`_SetGatewayAddress(uint32 ip) { `$INSTANCE_NAME`_ChipSetIP(1,ip); }
+#define `$INSTANCE_NAME`_SetGatewayAddress(ip)  `$INSTANCE_NAME`_ChipWite(`$INSTANCE_NAME`_REG_GAR, (uint8*)&ip,4)
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the gateway address from the device
  * \returns the IP address of the gateway
  */
-uint32 `$INSTANCE_NAME`_GetGatewayAddress( void ) { return `$INSTANCE_NAME`_ChipGetIP(1); }
+#define `$INSTANCE_NAME`_GetGatewayAddress( void )   `$INSTANCE_NAME`_ChipGetIP( `$INSTANCE_NAME`_REG_GAR )
 /* ------------------------------------------------------------------------ */
 /**
  * \brief set the subnet mask of the ethernet device
  * \param the subnet mask (IPv4)
  */
-void `$INSTANCE_NAME`_SetSubnetMask( uint32 ip ) { `$INSTANCE_NAME`_ChipSetIP(5, ip); }
+#define `$INSTANCE_NAME`_SetSubnetMask( ip ) `$INSTANCE_NAME`_ChipWrite(`$INSTANCE_NAME`_REG_SUBR, (uint8*)&ip, 4)
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Read the subnet mask from the device
  * \returns the subnet mask that was read from the device.
  */
-uint32 `$INSTANCE_NAME`_GetSubnetMask( void ) { return `$INSTANCE_NAME`_ChipGetIP(5); }
+#define `$INSTANCE_NAME`_GetSubnetMask( void ) `$INSTANCE_NAME`_ChipGetIP(`$INSTANCE_NAME`_REG_SUBR)
 /* ------------------------------------------------------------------------ */
 /**
  * \brief Write the device source IPv4 address
@@ -1120,15 +1080,15 @@ void `$INSTANCE_NAME`_ProcessTxData(uint8 socket, uint16 offset, uint8* buffer, 
 		 * data from the pointer to the end of the buffer, then write the portion
 		 * remaining to the start (base ptr) of the socket buffer
 		 */
-		`$INSTANCE_NAME`_ChipWriteBlock(addr, buffer, size);
-		`$INSTANCE_NAME`_ChipWriteBlock(`$INSTANCE_NAME`_SOCKET_TX_BASE[socket], &buffer[size], length - size);
+		`$INSTANCE_NAME`_ChipWrite(addr, buffer, size);
+		`$INSTANCE_NAME`_ChipWrite(`$INSTANCE_NAME`_SOCKET_TX_BASE[socket], &buffer[size], length - size);
 	}
 	else {
 		/* 
 		 * there is enough available space from the write point to the end of buffer
 		 * to hold the whole packe of information, so just write it to the memory
 		 */
-		`$INSTANCE_NAME`_ChipWriteBlock(addr,buffer,length);
+		`$INSTANCE_NAME`_ChipWrite(addr,buffer,length);
 	}
 	/* move the write pointer */
 	base += length;
@@ -1175,15 +1135,15 @@ void `$INSTANCE_NAME`_ProcessRxData(uint8 socket, uint16 offset, uint8* buffer, 
 		 * data from the pointer to the end of the buffer, then write the portion
 		 * remaining to the start (base ptr) of the socket buffer
 		 */
-		`$INSTANCE_NAME`_ChipReadBlock(addr, buffer, size);
-		`$INSTANCE_NAME`_ChipReadBlock(`$INSTANCE_NAME`_SOCKET_RX_BASE[socket], &buffer[size], length - size);
+		`$INSTANCE_NAME`_ChipRead(addr, buffer, size);
+		`$INSTANCE_NAME`_ChipRead(`$INSTANCE_NAME`_SOCKET_RX_BASE[socket], &buffer[size], length - size);
 	}
 	else {
 		/* 
 		 * there is enough available space from the write point to the end of buffer
 		 * to hold the whole packe of information, so just write it to the memory
 		 */
-		`$INSTANCE_NAME`_ChipReadBlock(addr,buffer,length);
+		`$INSTANCE_NAME`_ChipRead(addr,buffer,length);
 	}
 	if ( (flags & 0x01) == 0 ) { /* V1.1: Added ==0 condition to lookahead flag check */
 		/* move the write pointer */

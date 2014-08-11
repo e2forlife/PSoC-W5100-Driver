@@ -6,14 +6,14 @@
 <CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
 <userData>
 <dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
-<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Components">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
 <TreeKeys>
 <v>Source</v>
 <v>Components</v>
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="E2ForLife">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cy_boot\cytypes.h">
 <ExpandedNodeIds>
 <v>E2ForLife</v>
 <v>E2ForLife\E2ForLife_W5100</v>
@@ -248,66 +248,7 @@
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\cymetadata.c</v>
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\project.h</v>
 </ExpandedNodeIds>
-<VisibleNodeIds>
-<v>E2ForLife</v>
-<v>E2ForLife\E2ForLife_W5100</v>
-<v>E2ForLife\E2ForLife_W5100\Header Files</v>
-<v>E2ForLife\E2ForLife_W5100\Source Files</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\TopDesign.cysch</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\freeSoCExplorer+ArduinoSheld_Example.cydwr</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Header Files</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Source Files</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Source Files\main.c</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cy_boot</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cy_boot\cm3gcc.ld</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cy_boot\Cm3Iar.icf</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cy_boot\Cm3RealView.scat</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cy_boot\Cm3Start.c</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cy_boot\core_cm3.h</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cy_boot\core_cm3_psoc5.h</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cy_boot\core_cmFunc.h</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cy_boot\core_cmInstr.h</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cy_boot\CyBootAsmGnu.s</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cy_boot\CyBootAsmIar.s</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cy_boot\CyBootAsmRv.s</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cy_boot\CyDmac.c</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cy_boot\CyDmac.h</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cy_boot\CyFlash.c</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cy_boot\CyFlash.h</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cy_boot\CyLib.c</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cy_boot\CyLib.h</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cy_boot\cypins.h</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cy_boot\cyPm.c</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cy_boot\cyPm.h</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cy_boot\CySpc.c</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cy_boot\CySpc.h</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cy_boot\cytypes.h</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cy_boot\cyutils.c</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\ETH0</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\ETH0\ETH0.c</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\ETH0\ETH0.h</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\SDCS</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\SDCS\SDCS.c</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\SDCS\SDCS.h</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\SDCS\SDCS_aliases.h</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\SPI0</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\SPI0\SPI0.c</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\SPI0\SPI0.h</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\SPI0\SPI0_INT.c</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\SPI0\SPI0_PM.c</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\SPI0\SPI0_PVT.h</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\SPI0_IntClock</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\SPI0_IntClock\SPI0_IntClock.c</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\SPI0_IntClock\SPI0_IntClock.h</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cydevice.h</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cydevice_trm.h</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cydevicegnu.inc</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cydevicegnu_trm.inc</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source\PSoC5\cydeviceiar.inc</v>
-</VisibleNodeIds>
+<VisibleNodeIds />
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="E2ForLife\E2ForLife_W5100\E2ForLife_W5x00_v2_0">
 <ExpandedNodeIds>
@@ -354,31 +295,7 @@
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\TopDesign</v>
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\TopDesign\TopDesign.cysch</v>
 </ExpandedNodeIds>
-<VisibleNodeIds>
-<v>E2ForLife</v>
-<v>E2ForLife\E2ForLife_W5100</v>
-<v>E2ForLife\E2ForLife_W5100\E2ForLife_W5100_v1_0</v>
-<v>E2ForLife\E2ForLife_W5100\E2ForLife_W5100_v1_1</v>
-<v>E2ForLife\E2ForLife_W5100\E2ForLife_W5100_v1_2</v>
-<v>E2ForLife\E2ForLife_W5100\E2ForLife_W5x00_v2_0</v>
-<v>E2ForLife\E2ForLife_W5100\E2ForLife_W5x00_v2_0\API</v>
-<v>E2ForLife\E2ForLife_W5100\E2ForLife_W5x00_v2_0\API\reg51.h</v>
-<v>E2ForLife\E2ForLife_W5100\E2ForLife_W5x00_v2_0\API\reg52.h</v>
-<v>E2ForLife\E2ForLife_W5100\E2ForLife_W5x00_v2_0\API\W5x00.c</v>
-<v>E2ForLife\E2ForLife_W5100\E2ForLife_W5x00_v2_0\API\W5x00.h</v>
-<v>E2ForLife\E2ForLife_W5100\E2ForLife_W5x00_v2_0\PSoC4</v>
-<v>E2ForLife\E2ForLife_W5100\E2ForLife_W5x00_v2_0\E2ForLife_W5x00_v2_0.cysym</v>
-<v>E2ForLife\E2ForLife_W5100\E2ForLife_W5x00_v2_0\E2ForLife_W5x00_v2_0.pdf</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\TopDesign</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\TopDesign\TopDesign.cysch</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_Example</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_Example\TopDesign</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_Example\TopDesign\TopDesign.cysch</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\TopDesign</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\TopDesign\TopDesign.cysch</v>
-</VisibleNodeIds>
+<VisibleNodeIds />
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
@@ -535,66 +452,7 @@
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\PSoCPioneer+ArduinoShield_SPIM_Example.rpt</v>
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\PSoCPioneer+ArduinoShield_SPIM_Example_timing.html</v>
 </ExpandedNodeIds>
-<VisibleNodeIds>
-<v>E2ForLife</v>
-<v>E2ForLife\E2ForLife_W5100</v>
-<v>E2ForLife\E2ForLife_W5100\CortexM0</v>
-<v>E2ForLife\E2ForLife_W5100\CortexM0\ARM_GCC_473</v>
-<v>E2ForLife\E2ForLife_W5100\CortexM0\ARM_GCC_473\Debug</v>
-<v>E2ForLife\E2ForLife_W5100\CortexM0\ARM_GCC_473\Debug\E2ForLife_W5100.a</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Debug</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Debug\Listing Files</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Debug\Listing Files\Cm3Start.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Debug\Listing Files\CyDmac.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Debug\Listing Files\CyFlash.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Debug\Listing Files\CyLib.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Debug\Listing Files\cymetadata.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Debug\Listing Files\cyPm.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Debug\Listing Files\CySpc.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Debug\Listing Files\cyutils.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Debug\Listing Files\ETH0.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Debug\Listing Files\main.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Debug\Listing Files\SDCS.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Debug\Listing Files\SPI0.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Debug\Listing Files\SPI0_INT.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Debug\Listing Files\SPI0_IntClock.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Debug\Listing Files\SPI0_PM.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Debug\freeSoCExplorer+ArduinoSheld_Example.elf</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Debug\freeSoCExplorer+ArduinoSheld_Example.hex</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Debug\freeSoCExplorer+ArduinoSheld_Example.map</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Release</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Release\Listing Files</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Release\Listing Files\Cm3Start.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Release\Listing Files\CyBootAsmGnu.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Release\Listing Files\CyDmac.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Release\Listing Files\cyfitter_cfg.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Release\Listing Files\CyFlash.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Release\Listing Files\CyLib.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Release\Listing Files\cymetadata.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Release\Listing Files\cyPm.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Release\Listing Files\CySpc.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Release\Listing Files\cyutils.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Release\Listing Files\ETH0.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Release\Listing Files\main.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Release\Listing Files\SDCS.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Release\Listing Files\SPI0.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Release\Listing Files\SPI0_INT.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Release\Listing Files\SPI0_IntClock.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Release\Listing Files\SPI0_PM.lst</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Release\freeSoCExplorer+ArduinoSheld_Example.elf</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Release\freeSoCExplorer+ArduinoSheld_Example.hex</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CortexM3\ARM_GCC_473\Release\freeSoCExplorer+ArduinoSheld_Example.map</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\freeSoCExplorer+ArduinoSheld_Example.rpt</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\freeSoCExplorer+ArduinoSheld_Example_timing.html</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_Example</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_Example\CortexM0</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_Example\CortexM0\ARM_GCC_473</v>
-</VisibleNodeIds>
+<VisibleNodeIds />
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
 <TreeKeysV2>
@@ -630,34 +488,7 @@
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\E2ForLife_W5100_v1_2</v>
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\SPI_Master_v2_40</v>
 </ExpandedNodeIds>
-<VisibleNodeIds>
-<v>E2ForLife</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\PSoC 5 Architecture TRM</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\CY8C58LP Family Datasheet</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\System Reference Guide v4_10</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\cy_pins_v2_0</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\E2ForLife_W5100_v1_2</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\SPI_Master_v2_40</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_Example</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_Example\PSoC 4 Architecture TRM</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_Example\PSoC 4200 Family Datasheet</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_Example\System Reference Guide v4_10</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_Example\cy_clock_v2_20</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_Example\cy_constant_v1_0</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_Example\cy_pins_v2_0</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_Example\E2ForLife_W5100_v1_2</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_Example\not_v1_0</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_Example\PrISM_v2_20</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_Example\SCB_P4_v1_20</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\PSoC 4 Architecture TRM</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\PSoC 4200 Family Datasheet</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\System Reference Guide v4_10</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\cy_pins_v2_0</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\E2ForLife_W5100_v1_2</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\SPI_Master_v2_40</v>
-</VisibleNodeIds>
+<VisibleNodeIds />
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
 </CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
@@ -676,6 +507,7 @@
 <name v=".\E2ForLife_W5100.cylib\E2ForLife_W5x00_v2_0\E2ForLife_W5x00_v2_0.cysym" />
 <name v=".\E2ForLife_W5100.cylib\E2ForLife_W5x00_v2_0\API\reg51.h" />
 <name v=".\E2ForLife_W5100.cylib\E2ForLife_W5x00_v2_0\API\reg52.h" />
+<name v=".\freeSoCExplorer+ArduinoSheld_Example.cydsn\Generated_Source\PSoC5\cytypes.h" />
 </OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />
