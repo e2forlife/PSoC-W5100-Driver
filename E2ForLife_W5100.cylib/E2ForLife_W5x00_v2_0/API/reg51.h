@@ -41,6 +41,15 @@
 #define `$INSTANCE_NAME`_SOCK_RXRSR           (0x0026)
 #define `$INSTANCE_NAME`_SOCK_RXRD            (0x0028)
 	
+/* ------------------------------------------------------------------------ */
+/* Memory Size Definitions */
+#define `$INSTANCE_NAME`_MEM_0K          ( 0x00 ) /* Unused in W5100 */
+#define `$INSTANCE_NAME`_MEM_1K          ( 0x00 )
+#define `$INSTANCE_NAME`_MEM_2K          ( 0x01 )
+#define `$INSTANCE_NAME`_MEM_4K          ( 0x02 )
+#define `$INSTANCE_NAME`_MEM_8K          ( 0x03 )
+#define `$INSTANCE_NAME`_MEM_16K         ( 0x00 )  /* Unused in W5100 */
+	
 #endif
 /* [] END OF FILE */
 /* @} */

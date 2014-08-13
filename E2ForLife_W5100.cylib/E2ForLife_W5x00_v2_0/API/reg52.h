@@ -45,6 +45,15 @@
 #define `$INSTANCE_NAME`_SOCK_RXWR            (0x402A)
 #define `$INSTANCE_NAME`_SOCK_IMR             (0x402C)
 #define `$INSTANCE_NAME`_SOCK_FRAG            (0x402D)
+
+/* ------------------------------------------------------------------------ */
+/* Memory Size Definitions */
+#define `$INSTANCE_NAME`_MEM_0K          ( 0 )
+#define `$INSTANCE_NAME`_MEM_1K          ( 1 )
+#define `$INSTANCE_NAME`_MEM_2K          ( 2 )
+#define `$INSTANCE_NAME`_MEM_4K          ( 4 )
+#define `$INSTANCE_NAME`_MEM_8K          ( 8 )
+#define `$INSTANCE_NAME`_MEM_16K         ( 16 )
 	
 #endif
 /* [] END OF FILE */
