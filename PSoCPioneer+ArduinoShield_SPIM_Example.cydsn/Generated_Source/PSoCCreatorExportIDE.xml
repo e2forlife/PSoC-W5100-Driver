@@ -18,7 +18,7 @@
       <Tool Name="postbuild" Command="" Options="" />
     </Toolchain>
   </Toolchains>
-  <Project Name="PSoCPioneer+ArduinoShield_SPIM_Example" Path="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn" Version="4.0" Type="Normal">
+  <Project Name="PSoCPioneer+ArduinoShield_SPIM_Example" Path="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn" Version="4.10" Type="Normal">
     <CMSIS_SVD_File>PSoCPioneer+ArduinoShield_SPIM_Example.svd</CMSIS_SVD_File>
     <Datasheet />
     <LinkerFiles>
@@ -51,8 +51,6 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI0_PM.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI0_INT.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI0_PVT.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\ETH0.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\ETH0.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\RED.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\RED.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\RED_aliases.h</File>
@@ -85,6 +83,12 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\core_cmInstr.h</File>
           <File BuildType="BUILD" Toolchain="IAR EWARM">.\Generated_Source\PSoC4\CyBootAsmIar.s</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\project.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\ETH.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\ETH.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\ETH_reg51.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\ETH_reg52.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SSCR.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SSCR.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\prebuild.bat</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\postbuild.bat</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\CyElfTool.exe</File>

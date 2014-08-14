@@ -1,6 +1,6 @@
 // ======================================================================
 // PSoCPioneer+ArduinoShield_SPIM_Example.v generated from TopDesign.cysch
-// 01/15/2014 at 13:19
+// 08/14/2014 at 15:07
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -36,12 +36,15 @@
 `define CYDEV_CHIP_MEMBER_4A 2
 `define CYDEV_CHIP_REVISION_4A_PRODUCTION 17
 `define CYDEV_CHIP_REVISION_4A_ES0 17
+`define CYDEV_CHIP_MEMBER_4D 3
+`define CYDEV_CHIP_REVISION_4D_PRODUCTION 0
+`define CYDEV_CHIP_REVISION_4D_ES0 0
 `define CYDEV_CHIP_FAMILY_PSOC5 3
-`define CYDEV_CHIP_MEMBER_5A 3
+`define CYDEV_CHIP_MEMBER_5A 4
 `define CYDEV_CHIP_REVISION_5A_PRODUCTION 1
 `define CYDEV_CHIP_REVISION_5A_ES1 1
 `define CYDEV_CHIP_REVISION_5A_ES0 0
-`define CYDEV_CHIP_MEMBER_5B 4
+`define CYDEV_CHIP_MEMBER_5B 5
 `define CYDEV_CHIP_REVISION_5B_PRODUCTION 0
 `define CYDEV_CHIP_REVISION_5B_ES0 0
 `define CYDEV_CHIP_FAMILY_USED 2
@@ -166,9 +169,32 @@ module SPI_Master_v2_40_0 (
 
 endmodule
 
+// Component: CyControlReg_v1_70
+`ifdef CY_BLK_DIR
+`undef CY_BLK_DIR
+`endif
+
+`ifdef WARP
+`define CY_BLK_DIR "$CYPRESS_DIR\..\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_70"
+`include "$CYPRESS_DIR\..\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_70\CyControlReg_v1_70.v"
+`else
+`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_70"
+`include "C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_70\CyControlReg_v1_70.v"
+`endif
+
 // top
 module top ;
 
+          wire  Net_90;
+          wire  Net_89;
+          wire  Net_88;
+          wire  Net_87;
+          wire  Net_86;
+          wire  Net_85;
+          wire  Net_84;
+          wire  Net_83;
+          wire  Net_82;
+          wire  Net_71;
           wire  Net_60;
           wire  Net_58;
           wire  Net_57;
@@ -219,7 +245,6 @@ module top ;
 		  .pin_aliases(""),
 		  .pin_mode("I"),
 		  .por_state(4),
-		  .use_annotation(1'b0),
 		  .sio_group_cnt(0),
 		  .sio_hyst(1'b0),
 		  .sio_ibuf(""),
@@ -229,6 +254,7 @@ module top ;
 		  .sio_vtrip(""),
 		  .slew_rate(1'b0),
 		  .spanning(0),
+		  .use_annotation(1'b0),
 		  .vtrip(2'b00),
 		  .width(1))
 		ETH_MISO_1
@@ -288,7 +314,6 @@ module top ;
 		  .pin_aliases(""),
 		  .pin_mode("O"),
 		  .por_state(4),
-		  .use_annotation(1'b0),
 		  .sio_group_cnt(0),
 		  .sio_hyst(1'b0),
 		  .sio_ibuf(""),
@@ -298,6 +323,7 @@ module top ;
 		  .sio_vtrip(""),
 		  .slew_rate(1'b0),
 		  .spanning(0),
+		  .use_annotation(1'b0),
 		  .vtrip(2'b10),
 		  .width(1))
 		ETH_MOSI_1
@@ -357,7 +383,6 @@ module top ;
 		  .pin_aliases(""),
 		  .pin_mode("O"),
 		  .por_state(4),
-		  .use_annotation(1'b0),
 		  .sio_group_cnt(0),
 		  .sio_hyst(1'b0),
 		  .sio_ibuf(""),
@@ -367,6 +392,7 @@ module top ;
 		  .sio_vtrip(""),
 		  .slew_rate(1'b0),
 		  .spanning(0),
+		  .use_annotation(1'b0),
 		  .vtrip(2'b10),
 		  .width(1))
 		ETH_SCLK_1
@@ -441,7 +467,6 @@ module top ;
 		  .pin_aliases(""),
 		  .pin_mode("O"),
 		  .por_state(4),
-		  .use_annotation(1'b0),
 		  .sio_group_cnt(0),
 		  .sio_hyst(1'b0),
 		  .sio_ibuf(""),
@@ -451,11 +476,12 @@ module top ;
 		  .sio_vtrip(""),
 		  .slew_rate(1'b0),
 		  .spanning(0),
+		  .use_annotation(1'b0),
 		  .vtrip(2'b10),
 		  .width(1))
 		ETH_CSN_1
 		 (.oe(tmpOE__ETH_CSN_1_net),
-		  .y({Net_1}),
+		  .y({Net_71}),
 		  .fb({tmpFB_0__ETH_CSN_1_net[0:0]}),
 		  .io({tmpIO_0__ETH_CSN_1_net[0:0]}),
 		  .siovref(tmpSIOVREF__ETH_CSN_1_net),
@@ -510,7 +536,6 @@ module top ;
 		  .pin_aliases(""),
 		  .pin_mode("O"),
 		  .por_state(4),
-		  .use_annotation(1'b0),
 		  .sio_group_cnt(0),
 		  .sio_hyst(1'b0),
 		  .sio_ibuf(""),
@@ -520,6 +545,7 @@ module top ;
 		  .sio_vtrip(""),
 		  .slew_rate(1'b0),
 		  .spanning(0),
+		  .use_annotation(1'b0),
 		  .vtrip(2'b10),
 		  .width(1))
 		RED
@@ -579,7 +605,6 @@ module top ;
 		  .pin_aliases(""),
 		  .pin_mode("O"),
 		  .por_state(4),
-		  .use_annotation(1'b0),
 		  .sio_group_cnt(0),
 		  .sio_hyst(1'b0),
 		  .sio_ibuf(""),
@@ -589,6 +614,7 @@ module top ;
 		  .sio_vtrip(""),
 		  .slew_rate(1'b0),
 		  .spanning(0),
+		  .use_annotation(1'b0),
 		  .vtrip(2'b10),
 		  .width(1))
 		BLUE
@@ -648,7 +674,6 @@ module top ;
 		  .pin_aliases(""),
 		  .pin_mode("O"),
 		  .por_state(4),
-		  .use_annotation(1'b0),
 		  .sio_group_cnt(0),
 		  .sio_hyst(1'b0),
 		  .sio_ibuf(""),
@@ -658,6 +683,7 @@ module top ;
 		  .sio_vtrip(""),
 		  .slew_rate(1'b0),
 		  .spanning(0),
+		  .use_annotation(1'b0),
 		  .vtrip(2'b10),
 		  .width(1))
 		GREEN
@@ -717,7 +743,6 @@ module top ;
 		  .pin_aliases(""),
 		  .pin_mode("O"),
 		  .por_state(4),
-		  .use_annotation(1'b0),
 		  .sio_group_cnt(0),
 		  .sio_hyst(1'b0),
 		  .sio_ibuf(""),
@@ -727,6 +752,7 @@ module top ;
 		  .sio_vtrip(""),
 		  .slew_rate(1'b0),
 		  .spanning(0),
+		  .use_annotation(1'b0),
 		  .vtrip(2'b10),
 		  .width(1))
 		SDCS
@@ -744,6 +770,30 @@ module top ;
 		  .out_reset({1'b0}));
 
 	assign tmpOE__SDCS_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
+
+    CyControlReg_v1_70 SSCR (
+        .control_1(Net_82),
+        .control_2(Net_83),
+        .control_3(Net_84),
+        .control_0(Net_71),
+        .control_4(Net_85),
+        .control_5(Net_86),
+        .control_6(Net_87),
+        .control_7(Net_88),
+        .clock(1'b0),
+        .reset(1'b0));
+    defparam SSCR.Bit0Mode = 0;
+    defparam SSCR.Bit1Mode = 0;
+    defparam SSCR.Bit2Mode = 0;
+    defparam SSCR.Bit3Mode = 0;
+    defparam SSCR.Bit4Mode = 0;
+    defparam SSCR.Bit5Mode = 0;
+    defparam SSCR.Bit6Mode = 0;
+    defparam SSCR.Bit7Mode = 0;
+    defparam SSCR.BitValue = 1;
+    defparam SSCR.BusDisplay = 0;
+    defparam SSCR.ExtrReset = 0;
+    defparam SSCR.NumOutputs = 1;
 
 
 

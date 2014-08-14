@@ -2,6 +2,7 @@
  * \addtogroup w5x00
  * @{
  */
+#if (`$PART_FAMILY` == 2)
 #if !defined(`$INSTANCE_NAME`_REG52_H)
 	#define `$INSTANCE_NAME`_REG52_H
 	
@@ -57,4 +58,5 @@
 	
 #endif
 /* [] END OF FILE */
+#endif
 /* @} */

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 1
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccW4hT7l.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 1
   23:.\Generated_Source\PSoC4/SPI0_PM.c ****     SPI0_BITCTR_INIT,
   24:.\Generated_Source\PSoC4/SPI0_PM.c ****     #if(CY_UDB_V0)
   25:.\Generated_Source\PSoC4/SPI0_PM.c ****         SPI0_TX_INIT_INTERRUPTS_MASK,
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 2
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccW4hT7l.s 			page 2
 
 
   26:.\Generated_Source\PSoC4/SPI0_PM.c ****         SPI0_RX_INIT_INTERRUPTS_MASK
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 1
   53              		.code	16
   54              		.thumb_func
   55              		.type	SPI0_RestoreConfig, %function
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 3
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccW4hT7l.s 			page 3
 
 
   56              	SPI0_RestoreConfig:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 1
   77              		.global	SPI0_Sleep
   78              		.code	16
   79              		.thumb_func
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 4
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccW4hT7l.s 			page 4
 
 
   80              		.type	SPI0_Sleep, %function
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 1
  106              		.loc 1 120 0
  107 001c FFF7FEFF 		bl	SPI0_Stop
  121:.\Generated_Source\PSoC4/SPI0_PM.c ****     SPI0_SaveConfig();
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 5
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccW4hT7l.s 			page 5
 
 
  108              		.loc 1 121 0
@@ -251,7 +251,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 1
  114              	.L5:
  115              		.align	2
  116              	.L4:
- 117 0028 93000F40 		.word	1074725011
+ 117 0028 91000F40 		.word	1074725009
  118 002c 00000000 		.word	SPI0_backup
  119              		.cfi_endproc
  120              	.LFE2:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 1
  154:.\Generated_Source\PSoC4/SPI0_PM.c **** {
  130              		.loc 1 154 0
  131              		.cfi_startproc
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 6
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccW4hT7l.s 			page 6
 
 
  132 0000 80B5     		push	{r7, lr}
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 1
  163              		.text
  164              	.Letext0:
  165              		.file 2 ".\\Generated_Source\\PSoC4\\cytypes.h"
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 7
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccW4hT7l.s 			page 7
 
 
  166              		.file 3 ".\\Generated_Source\\PSoC4\\SPI0.h"
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 1
  220 006a 07       		.byte	0x7
  221 006b 1A000000 		.4byte	.LASF8
  222 006f 04       		.uleb128 0x4
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 8
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccW4hT7l.s 			page 8
 
 
  223 0070 A2000000 		.4byte	.LASF12
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 1
  277 00d6 08       		.uleb128 0x8
  278 00d7 01       		.byte	0x1
  279 00d8 C9010000 		.4byte	.LASF18
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 9
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccW4hT7l.s 			page 9
 
 
  280 00dc 01       		.byte	0x1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 1
  334 0006 0B       		.uleb128 0xb
  335 0007 03       		.uleb128 0x3
  336 0008 0E       		.uleb128 0xe
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 10
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccW4hT7l.s 			page 10
 
 
  337 0009 1B       		.uleb128 0x1b
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 1
  391 003f 06       		.uleb128 0x6
  392 0040 13       		.uleb128 0x13
  393 0041 01       		.byte	0x1
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 11
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccW4hT7l.s 			page 11
 
 
  394 0042 0B       		.uleb128 0xb
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 1
  448 0079 0E       		.uleb128 0xe
  449 007a 3A       		.uleb128 0x3a
  450 007b 0B       		.uleb128 0xb
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 12
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccW4hT7l.s 			page 12
 
 
  451 007c 3B       		.uleb128 0x3b
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 1
  505 0036 7D       		.byte	0x7d
  506 0037 00       		.sleb128 0
  507 0038 02000000 		.4byte	.LCFI2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 13
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccW4hT7l.s 			page 13
 
 
  508 003c 04000000 		.4byte	.LCFI3
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 1
  562 000e 0000     		.2byte	0
  563 0010 00000000 		.4byte	.LFB0
  564 0014 08000000 		.4byte	.LFE0-.LFB0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 14
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccW4hT7l.s 			page 14
 
 
  565 0018 00000000 		.4byte	.LFB1
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 1
  599      4B55505F 
  599      53545255 
  599      435400
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 15
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccW4hT7l.s 			page 15
 
 
  600              	.LASF22:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 1
  624      73657273 
  624      5C636875 
  624      636B2E65 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccCmKTqw.s 			page 16
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccW4hT7l.s 			page 16
 
 
  624      72686172 

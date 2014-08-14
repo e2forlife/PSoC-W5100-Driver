@@ -80,9 +80,9 @@ uint32 `$INSTANCE_NAME`_ParseIP( const char* ipString );
  */
 cystatus `$INSTANCE_NAME`_ParseMAC(const char *macString, uint8 *mac);
 /* ------------------------------------------------------------------------ */
-void `$INSTANCE_NAME`_StringMAC(char *macString);
+void `$INSTANCE_NAME`_StringMAC(uint8* mac, char *macString);
 /* ------------------------------------------------------------------------ */
-void `$INSTANCE_NAME`_StringIP( char *ipString );
+void `$INSTANCE_NAME`_StringIP( uint32 ip, char *ipString );
 
 /**
  * \brief re-assign the local IP address of the device

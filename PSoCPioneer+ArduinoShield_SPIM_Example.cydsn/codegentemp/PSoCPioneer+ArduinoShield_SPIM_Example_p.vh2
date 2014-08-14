@@ -1,5 +1,5 @@
 -- Project:   PSoCPioneer+ArduinoShield_SPIM_Example
--- Generated: 01/15/2014 13:19:48
+-- Generated: 08/14/2014 15:07:58
 -- 
 
 ENTITY \PSoCPioneer+ArduinoShield_SPIM_Example\ IS
@@ -34,6 +34,7 @@ ARCHITECTURE __DEFAULT__ OF \PSoCPioneer+ArduinoShield_SPIM_Example\ IS
     SIGNAL Net_19 : bit;
     SIGNAL Net_23 : bit;
     SIGNAL Net_25 : bit;
+    SIGNAL Net_71 : bit;
     SIGNAL RED(0)__PA : bit;
     SIGNAL SDCS(0)__PA : bit;
     SIGNAL \SPI0:BSPIM:cnt_enable\ : bit;
@@ -61,6 +62,13 @@ ARCHITECTURE __DEFAULT__ OF \PSoCPioneer+ArduinoShield_SPIM_Example\ IS
     SIGNAL \SPI0:BSPIM:tx_status_4\ : bit;
     SIGNAL \SPI0:Net_276_digital\ : bit;
     ATTRIBUTE global_signal OF \SPI0:Net_276_digital\ : SIGNAL IS true;
+    SIGNAL \SSCR:control_1\ : bit;
+    SIGNAL \SSCR:control_2\ : bit;
+    SIGNAL \SSCR:control_3\ : bit;
+    SIGNAL \SSCR:control_4\ : bit;
+    SIGNAL \SSCR:control_5\ : bit;
+    SIGNAL \SSCR:control_6\ : bit;
+    SIGNAL \SSCR:control_7\ : bit;
     SIGNAL __ONE__ : bit;
     ATTRIBUTE POWER OF __ONE__ : SIGNAL IS true;
     SIGNAL __ZERO__ : bit;
@@ -95,6 +103,7 @@ ARCHITECTURE __DEFAULT__ OF \PSoCPioneer+ArduinoShield_SPIM_Example\ IS
     ATTRIBUTE lib_model OF \SPI0:BSPIM:state_2\ : LABEL IS "macrocell11";
     ATTRIBUTE lib_model OF \SPI0:BSPIM:tx_status_0\ : LABEL IS "macrocell12";
     ATTRIBUTE lib_model OF \SPI0:BSPIM:tx_status_4\ : LABEL IS "macrocell13";
+    ATTRIBUTE lib_model OF \SSCR:Sync:ctrl_reg\ : LABEL IS "controlcell1";
     COMPONENT abufcell
     END COMPONENT;
     COMPONENT boostcell
@@ -785,7 +794,8 @@ ARCHITECTURE __DEFAULT__ OF \PSoCPioneer+ArduinoShield_SPIM_Example\ IS
             sample_in : IN std_ulogic;
             clk1 : IN std_ulogic;
             clk2 : IN std_ulogic;
-            irq : OUT std_ulogic);
+            irq : OUT std_ulogic;
+            comp : OUT std_ulogic);
     END COMPONENT;
     COMPONENT p4csidac7cell
         PORT (
@@ -1205,7 +1215,7 @@ BEGIN
         PORT MAP(
             pa_out => ETH_CSN_1(0)__PA,
             oe => open,
-            pin_input => Net_1,
+            pin_input => Net_71,
             pad_out => ETH_CSN_1(0)_PAD,
             pad_in => ETH_CSN_1(0)_PAD,
             in_clock => open,
@@ -2000,5 +2010,23 @@ BEGIN
             main_0 => \SPI0:BSPIM:state_2\,
             main_1 => \SPI0:BSPIM:state_1\,
             main_2 => \SPI0:BSPIM:state_0\);
+
+    \SSCR:Sync:ctrl_reg\:controlcell
+        GENERIC MAP(
+            cy_ctrl_mode_0 => "00000000",
+            cy_ctrl_mode_1 => "00000000",
+            cy_ext_reset => 0,
+            cy_force_order => 1,
+            cy_init_value => "00000001")
+        PORT MAP(
+            control_7 => \SSCR:control_7\,
+            control_6 => \SSCR:control_6\,
+            control_5 => \SSCR:control_5\,
+            control_4 => \SSCR:control_4\,
+            control_3 => \SSCR:control_3\,
+            control_2 => \SSCR:control_2\,
+            control_1 => \SSCR:control_1\,
+            control_0 => Net_71,
+            busclk => ClockBlock_HFCLK);
 
 END __DEFAULT__;

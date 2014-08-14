@@ -1,5 +1,5 @@
 -- Project:   C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\PSoCPioneer+ArduinoShield_SPIM_Example.cyprj
--- Generated: 01/15/2014 13:19:50
+-- Generated: 08/14/2014 15:08:00
 -- 
 
 ENTITY \PSoCPioneer+ArduinoShield_SPIM_Example\ IS
@@ -31,16 +31,17 @@ ARCHITECTURE __DEFAULT__ OF \PSoCPioneer+ArduinoShield_SPIM_Example\ IS
     SIGNAL ETH_SCLK_1(0)__PA : bit;
     SIGNAL GREEN(0)__PA : bit;
     SIGNAL Net_1 : bit;
-    ATTRIBUTE placement_force OF Net_1 : SIGNAL IS "U(0,1,A)0";
+    ATTRIBUTE placement_force OF Net_1 : SIGNAL IS "U(0,1,B)0";
     SIGNAL Net_19 : bit;
     SIGNAL Net_23 : bit;
-    ATTRIBUTE placement_force OF Net_23 : SIGNAL IS "U(0,0,B)0";
+    ATTRIBUTE placement_force OF Net_23 : SIGNAL IS "U(0,0,A)0";
     SIGNAL Net_25 : bit;
-    ATTRIBUTE placement_force OF Net_25 : SIGNAL IS "U(1,0,A)0";
+    ATTRIBUTE placement_force OF Net_25 : SIGNAL IS "U(1,1,B)2";
+    SIGNAL Net_71 : bit;
     SIGNAL RED(0)__PA : bit;
     SIGNAL SDCS(0)__PA : bit;
     SIGNAL \SPI0:BSPIM:cnt_enable\ : bit;
-    ATTRIBUTE placement_force OF \SPI0:BSPIM:cnt_enable\ : SIGNAL IS "U(1,0,A)1";
+    ATTRIBUTE placement_force OF \SPI0:BSPIM:cnt_enable\ : SIGNAL IS "U(0,1,B)1";
     SIGNAL \SPI0:BSPIM:cnt_tc\ : bit;
     SIGNAL \SPI0:BSPIM:count_0\ : bit;
     SIGNAL \SPI0:BSPIM:count_1\ : bit;
@@ -50,30 +51,37 @@ ARCHITECTURE __DEFAULT__ OF \PSoCPioneer+ArduinoShield_SPIM_Example\ IS
     SIGNAL \SPI0:BSPIM:count_5\ : bit;
     SIGNAL \SPI0:BSPIM:count_6\ : bit;
     SIGNAL \SPI0:BSPIM:ld_ident\ : bit;
-    ATTRIBUTE placement_force OF \SPI0:BSPIM:ld_ident\ : SIGNAL IS "U(0,1,B)2";
+    ATTRIBUTE placement_force OF \SPI0:BSPIM:ld_ident\ : SIGNAL IS "U(0,0,B)2";
     SIGNAL \SPI0:BSPIM:load_cond\ : bit;
-    ATTRIBUTE placement_force OF \SPI0:BSPIM:load_cond\ : SIGNAL IS "U(0,0,A)0";
+    ATTRIBUTE placement_force OF \SPI0:BSPIM:load_cond\ : SIGNAL IS "U(0,1,A)0";
     SIGNAL \SPI0:BSPIM:load_rx_data\ : bit;
-    ATTRIBUTE placement_force OF \SPI0:BSPIM:load_rx_data\ : SIGNAL IS "U(0,1,A)1";
+    ATTRIBUTE placement_force OF \SPI0:BSPIM:load_rx_data\ : SIGNAL IS "U(0,0,A)1";
     SIGNAL \SPI0:BSPIM:mosi_from_dp\ : bit;
     SIGNAL \SPI0:BSPIM:rx_status_4\ : bit;
     SIGNAL \SPI0:BSPIM:rx_status_5\ : bit;
     SIGNAL \SPI0:BSPIM:rx_status_6\ : bit;
-    ATTRIBUTE placement_force OF \SPI0:BSPIM:rx_status_6\ : SIGNAL IS "U(0,1,A)3";
+    ATTRIBUTE placement_force OF \SPI0:BSPIM:rx_status_6\ : SIGNAL IS "U(0,1,A)1";
     SIGNAL \SPI0:BSPIM:state_0\ : bit;
-    ATTRIBUTE placement_force OF \SPI0:BSPIM:state_0\ : SIGNAL IS "U(1,1,B)1";
+    ATTRIBUTE placement_force OF \SPI0:BSPIM:state_0\ : SIGNAL IS "U(1,0,A)0";
     SIGNAL \SPI0:BSPIM:state_1\ : bit;
-    ATTRIBUTE placement_force OF \SPI0:BSPIM:state_1\ : SIGNAL IS "U(0,1,B)1";
+    ATTRIBUTE placement_force OF \SPI0:BSPIM:state_1\ : SIGNAL IS "U(0,0,B)1";
     SIGNAL \SPI0:BSPIM:state_2\ : bit;
-    ATTRIBUTE placement_force OF \SPI0:BSPIM:state_2\ : SIGNAL IS "U(0,1,B)0";
+    ATTRIBUTE placement_force OF \SPI0:BSPIM:state_2\ : SIGNAL IS "U(0,0,B)0";
     SIGNAL \SPI0:BSPIM:tx_status_0\ : bit;
-    ATTRIBUTE placement_force OF \SPI0:BSPIM:tx_status_0\ : SIGNAL IS "U(0,1,A)2";
+    ATTRIBUTE placement_force OF \SPI0:BSPIM:tx_status_0\ : SIGNAL IS "U(1,0,A)2";
     SIGNAL \SPI0:BSPIM:tx_status_1\ : bit;
     SIGNAL \SPI0:BSPIM:tx_status_2\ : bit;
     SIGNAL \SPI0:BSPIM:tx_status_4\ : bit;
-    ATTRIBUTE placement_force OF \SPI0:BSPIM:tx_status_4\ : SIGNAL IS "U(0,0,A)2";
+    ATTRIBUTE placement_force OF \SPI0:BSPIM:tx_status_4\ : SIGNAL IS "U(1,0,A)1";
     SIGNAL \SPI0:Net_276_digital\ : bit;
     ATTRIBUTE global_signal OF \SPI0:Net_276_digital\ : SIGNAL IS true;
+    SIGNAL \SSCR:control_1\ : bit;
+    SIGNAL \SSCR:control_2\ : bit;
+    SIGNAL \SSCR:control_3\ : bit;
+    SIGNAL \SSCR:control_4\ : bit;
+    SIGNAL \SSCR:control_5\ : bit;
+    SIGNAL \SSCR:control_6\ : bit;
+    SIGNAL \SSCR:control_7\ : bit;
     SIGNAL __ONE__ : bit;
     ATTRIBUTE POWER OF __ONE__ : SIGNAL IS true;
     SIGNAL __ZERO__ : bit;
@@ -102,38 +110,40 @@ ARCHITECTURE __DEFAULT__ OF \PSoCPioneer+ArduinoShield_SPIM_Example\ IS
     ATTRIBUTE lib_model OF Net_23 : LABEL IS "macrocell2";
     ATTRIBUTE Location OF Net_23 : LABEL IS "U(0,0)";
     ATTRIBUTE lib_model OF Net_25 : LABEL IS "macrocell3";
-    ATTRIBUTE Location OF Net_25 : LABEL IS "U(1,0)";
+    ATTRIBUTE Location OF Net_25 : LABEL IS "U(1,1)";
     ATTRIBUTE lib_model OF RED(0) : LABEL IS "iocell7";
     ATTRIBUTE Location OF RED(0) : LABEL IS "P1[6]";
     ATTRIBUTE lib_model OF SDCS(0) : LABEL IS "iocell8";
     ATTRIBUTE Location OF SDCS(0) : LABEL IS "P0[0]";
-    ATTRIBUTE Location OF \SPI0:BSPIM:BitCounter\ : LABEL IS "U(0,1)";
+    ATTRIBUTE Location OF \SPI0:BSPIM:BitCounter\ : LABEL IS "U(0,0)";
     ATTRIBUTE lib_model OF \SPI0:BSPIM:RxStsReg\ : LABEL IS "statusicell1";
-    ATTRIBUTE Location OF \SPI0:BSPIM:RxStsReg\ : LABEL IS "U(1,0)";
+    ATTRIBUTE Location OF \SPI0:BSPIM:RxStsReg\ : LABEL IS "U(0,1)";
     ATTRIBUTE lib_model OF \SPI0:BSPIM:TxStsReg\ : LABEL IS "statusicell2";
-    ATTRIBUTE Location OF \SPI0:BSPIM:TxStsReg\ : LABEL IS "U(0,0)";
+    ATTRIBUTE Location OF \SPI0:BSPIM:TxStsReg\ : LABEL IS "U(1,1)";
     ATTRIBUTE lib_model OF \SPI0:BSPIM:cnt_enable\ : LABEL IS "macrocell4";
-    ATTRIBUTE Location OF \SPI0:BSPIM:cnt_enable\ : LABEL IS "U(1,0)";
+    ATTRIBUTE Location OF \SPI0:BSPIM:cnt_enable\ : LABEL IS "U(0,1)";
     ATTRIBUTE lib_model OF \SPI0:BSPIM:ld_ident\ : LABEL IS "macrocell5";
-    ATTRIBUTE Location OF \SPI0:BSPIM:ld_ident\ : LABEL IS "U(0,1)";
+    ATTRIBUTE Location OF \SPI0:BSPIM:ld_ident\ : LABEL IS "U(0,0)";
     ATTRIBUTE lib_model OF \SPI0:BSPIM:load_cond\ : LABEL IS "macrocell6";
-    ATTRIBUTE Location OF \SPI0:BSPIM:load_cond\ : LABEL IS "U(0,0)";
+    ATTRIBUTE Location OF \SPI0:BSPIM:load_cond\ : LABEL IS "U(0,1)";
     ATTRIBUTE lib_model OF \SPI0:BSPIM:load_rx_data\ : LABEL IS "macrocell7";
-    ATTRIBUTE Location OF \SPI0:BSPIM:load_rx_data\ : LABEL IS "U(0,1)";
+    ATTRIBUTE Location OF \SPI0:BSPIM:load_rx_data\ : LABEL IS "U(0,0)";
     ATTRIBUTE lib_model OF \SPI0:BSPIM:rx_status_6\ : LABEL IS "macrocell8";
     ATTRIBUTE Location OF \SPI0:BSPIM:rx_status_6\ : LABEL IS "U(0,1)";
     ATTRIBUTE lib_model OF \SPI0:BSPIM:sR8:Dp:u0\ : LABEL IS "datapathcell1";
-    ATTRIBUTE Location OF \SPI0:BSPIM:sR8:Dp:u0\ : LABEL IS "U(0,1)";
+    ATTRIBUTE Location OF \SPI0:BSPIM:sR8:Dp:u0\ : LABEL IS "U(0,0)";
     ATTRIBUTE lib_model OF \SPI0:BSPIM:state_0\ : LABEL IS "macrocell9";
-    ATTRIBUTE Location OF \SPI0:BSPIM:state_0\ : LABEL IS "U(1,1)";
+    ATTRIBUTE Location OF \SPI0:BSPIM:state_0\ : LABEL IS "U(1,0)";
     ATTRIBUTE lib_model OF \SPI0:BSPIM:state_1\ : LABEL IS "macrocell10";
-    ATTRIBUTE Location OF \SPI0:BSPIM:state_1\ : LABEL IS "U(0,1)";
+    ATTRIBUTE Location OF \SPI0:BSPIM:state_1\ : LABEL IS "U(0,0)";
     ATTRIBUTE lib_model OF \SPI0:BSPIM:state_2\ : LABEL IS "macrocell11";
-    ATTRIBUTE Location OF \SPI0:BSPIM:state_2\ : LABEL IS "U(0,1)";
+    ATTRIBUTE Location OF \SPI0:BSPIM:state_2\ : LABEL IS "U(0,0)";
     ATTRIBUTE lib_model OF \SPI0:BSPIM:tx_status_0\ : LABEL IS "macrocell12";
-    ATTRIBUTE Location OF \SPI0:BSPIM:tx_status_0\ : LABEL IS "U(0,1)";
+    ATTRIBUTE Location OF \SPI0:BSPIM:tx_status_0\ : LABEL IS "U(1,0)";
     ATTRIBUTE lib_model OF \SPI0:BSPIM:tx_status_4\ : LABEL IS "macrocell13";
-    ATTRIBUTE Location OF \SPI0:BSPIM:tx_status_4\ : LABEL IS "U(0,0)";
+    ATTRIBUTE Location OF \SPI0:BSPIM:tx_status_4\ : LABEL IS "U(1,0)";
+    ATTRIBUTE lib_model OF \SSCR:Sync:ctrl_reg\ : LABEL IS "controlcell1";
+    ATTRIBUTE Location OF \SSCR:Sync:ctrl_reg\ : LABEL IS "U(0,1)";
     COMPONENT abufcell
     END COMPONENT;
     COMPONENT boostcell
@@ -805,7 +815,8 @@ ARCHITECTURE __DEFAULT__ OF \PSoCPioneer+ArduinoShield_SPIM_Example\ IS
             sample_in : IN std_ulogic;
             clk1 : IN std_ulogic;
             clk2 : IN std_ulogic;
-            irq : OUT std_ulogic);
+            irq : OUT std_ulogic;
+            comp : OUT std_ulogic);
     END COMPONENT;
     COMPONENT p4csidac7cell
         PORT (
@@ -1231,7 +1242,7 @@ BEGIN
         PORT MAP(
             pa_out => ETH_CSN_1(0)__PA,
             oe => open,
-            pin_input => Net_1,
+            pin_input => Net_71,
             pad_out => ETH_CSN_1(0)_PAD,
             pad_in => ETH_CSN_1(0)_PAD,
             in_clock => open,
@@ -2013,5 +2024,23 @@ BEGIN
             main_0 => \SPI0:BSPIM:state_2\,
             main_1 => \SPI0:BSPIM:state_1\,
             main_2 => \SPI0:BSPIM:state_0\);
+
+    \SSCR:Sync:ctrl_reg\:controlcell
+        GENERIC MAP(
+            cy_ctrl_mode_0 => "00000000",
+            cy_ctrl_mode_1 => "00000000",
+            cy_ext_reset => 0,
+            cy_force_order => 1,
+            cy_init_value => "00000001")
+        PORT MAP(
+            control_7 => \SSCR:control_7\,
+            control_6 => \SSCR:control_6\,
+            control_5 => \SSCR:control_5\,
+            control_4 => \SSCR:control_4\,
+            control_3 => \SSCR:control_3\,
+            control_2 => \SSCR:control_2\,
+            control_1 => \SSCR:control_1\,
+            control_0 => Net_71,
+            busclk => ClockBlock_HFCLK);
 
 END __DEFAULT__;

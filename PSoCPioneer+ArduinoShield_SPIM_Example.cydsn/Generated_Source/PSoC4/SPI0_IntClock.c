@@ -1,6 +1,6 @@
 /*******************************************************************************
 * File Name: SPI0_IntClock.c
-* Version 2.0
+* Version 2.20
 *
 *  Description:
 *   Provides system API for the clocking, interrupts and watchdog timer.
@@ -19,6 +19,38 @@
 #include <cydevice_trm.h>
 #include "SPI0_IntClock.h"
 
+#if defined CYREG_PERI_DIV_CMD
+
+/*******************************************************************************
+* Function Name: SPI0_IntClock_StartEx
+********************************************************************************
+*
+* Summary:
+*  Starts the clock, aligned to the specified running clock.
+*
+* Parameters:
+*  alignClkDiv:  The divider to which phase alignment is performed when the
+*    clock is started.
+*
+* Returns:
+*  None
+*
+*******************************************************************************/
+void SPI0_IntClock_StartEx(uint32 alignClkDiv)
+{
+    /* Make sure any previous start command has finished. */
+    while((SPI0_IntClock_CMD_REG & SPI0_IntClock_CMD_ENABLE_MASK) != 0u)
+    {
+    }
+    
+    /* Specify the target divider and it's alignment divider, and enable. */
+    SPI0_IntClock_CMD_REG =
+        ((uint32)SPI0_IntClock__DIV_ID << SPI0_IntClock_CMD_DIV_SHIFT)|
+        (alignClkDiv << SPI0_IntClock_CMD_PA_DIV_SHIFT) |
+        (uint32)SPI0_IntClock_CMD_ENABLE_MASK;
+}
+
+#else
 
 /*******************************************************************************
 * Function Name: SPI0_IntClock_Start
@@ -34,11 +66,14 @@
 *  None
 *
 *******************************************************************************/
+
 void SPI0_IntClock_Start(void)
 {
     /* Set the bit to enable the clock. */
     SPI0_IntClock_ENABLE_REG |= SPI0_IntClock__ENABLE_MASK;
 }
+
+#endif /* CYREG_PERI_DIV_CMD */
 
 
 /*******************************************************************************
@@ -59,8 +94,24 @@ void SPI0_IntClock_Start(void)
 *******************************************************************************/
 void SPI0_IntClock_Stop(void)
 {
+#if defined CYREG_PERI_DIV_CMD
+
+    /* Make sure any previous start command has finished. */
+    while((SPI0_IntClock_CMD_REG & SPI0_IntClock_CMD_ENABLE_MASK) != 0u)
+    {
+    }
+    
+    /* Specify the target divider and it's alignment divider, and disable. */
+    SPI0_IntClock_CMD_REG =
+        ((uint32)SPI0_IntClock__DIV_ID << SPI0_IntClock_CMD_DIV_SHIFT)|
+        ((uint32)SPI0_IntClock_CMD_DISABLE_MASK);
+
+#else
+
     /* Clear the bit to disable the clock. */
     SPI0_IntClock_ENABLE_REG &= (uint32)(~SPI0_IntClock__ENABLE_MASK);
+    
+#endif /* CYREG_PERI_DIV_CMD */
 }
 
 
@@ -82,20 +133,28 @@ void SPI0_IntClock_Stop(void)
 *******************************************************************************/
 void SPI0_IntClock_SetFractionalDividerRegister(uint16 clkDivider, uint8 clkFractional)
 {
-#if defined (SPI0_IntClock__FRAC_MASK)
+    uint32 maskVal;
+    uint32 regVal;
+    
+#if defined (SPI0_IntClock__FRAC_MASK) || defined (CYREG_PERI_DIV_CMD)
+    
 	/* get all but divider bits */
-    uint32 maskVal = SPI0_IntClock_DIV_REG & 
-                    (uint32)(~(SPI0_IntClock__DIVIDER_MASK | SPI0_IntClock__FRAC_MASK)); 
-	/* combine mask and new divider val into 32-bit value */
-    uint32 regVal = clkDivider | (((uint32)clkFractional << 16) & SPI0_IntClock__FRAC_MASK) | maskVal;
+    maskVal = SPI0_IntClock_DIV_REG & 
+                    (uint32)(~(uint32)(SPI0_IntClock_DIV_INT_MASK | SPI0_IntClock_DIV_FRAC_MASK)); 
+	/* combine mask and new divider vals into 32-bit value */
+    regVal = maskVal |
+        ((uint32)((uint32)clkDivider <<  SPI0_IntClock_DIV_INT_SHIFT) & SPI0_IntClock_DIV_INT_MASK) |
+        ((uint32)((uint32)clkFractional << SPI0_IntClock_DIV_FRAC_SHIFT) & SPI0_IntClock_DIV_FRAC_MASK);
+    
 #else
     /* get all but integer divider bits */
-    uint32 maskVal = SPI0_IntClock_DIV_REG & (uint32)(~(uint32)SPI0_IntClock__DIVIDER_MASK);
+    maskVal = SPI0_IntClock_DIV_REG & (uint32)(~(uint32)SPI0_IntClock__DIVIDER_MASK);
     /* combine mask and new divider val into 32-bit value */
-    uint32 regVal = clkDivider | maskVal;
-#endif /* SPI0_IntClock__FRAC_MASK */
+    regVal = clkDivider | maskVal;
+    
+#endif /* SPI0_IntClock__FRAC_MASK || CYREG_PERI_DIV_CMD */
 
-	SPI0_IntClock_DIV_REG = regVal;
+    SPI0_IntClock_DIV_REG = regVal;
 }
 
 
@@ -116,7 +175,8 @@ void SPI0_IntClock_SetFractionalDividerRegister(uint16 clkDivider, uint8 clkFrac
 *******************************************************************************/
 uint16 SPI0_IntClock_GetDividerRegister(void)
 {
-    return (uint16)SPI0_IntClock_DIV_REG;
+    return (uint16)((SPI0_IntClock_DIV_REG & SPI0_IntClock_DIV_INT_MASK)
+        >> SPI0_IntClock_DIV_INT_SHIFT);
 }
 
 
@@ -138,9 +198,9 @@ uint16 SPI0_IntClock_GetDividerRegister(void)
 uint8 SPI0_IntClock_GetFractionalDividerRegister(void)
 {
 #if defined (SPI0_IntClock__FRAC_MASK)
-    /* get fractional divider bits */
-    uint32 maskVal = SPI0_IntClock_DIV_REG & SPI0_IntClock__FRAC_MASK;
-    return (maskVal >> 16);
+    /* return fractional divider bits */
+    return (uint8)((SPI0_IntClock_DIV_REG & SPI0_IntClock_DIV_FRAC_MASK)
+        >> SPI0_IntClock_DIV_FRAC_SHIFT);
 #else
     return 0u;
 #endif /* SPI0_IntClock__FRAC_MASK */

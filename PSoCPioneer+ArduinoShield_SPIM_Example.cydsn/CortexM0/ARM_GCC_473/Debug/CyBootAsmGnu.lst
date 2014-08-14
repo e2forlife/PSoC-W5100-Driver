@@ -3,13 +3,13 @@ ARM GAS  .\Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
 
    1              	/*******************************************************************************
    2              	* File Name: CyBootAsmGnu.s
-   3              	* Version 4.0
+   3              	* Version 4.10
    4              	*
    5              	*  Description:
    6              	*   Assembly routines for GNU as.
    7              	*
    8              	********************************************************************************
-   9              	* Copyright 2010-2013, Cypress Semiconductor Corporation.  All rights reserved.
+   9              	* Copyright 2010-2014, Cypress Semiconductor Corporation.  All rights reserved.
   10              	* You may use this file only in accordance with the license, terms, conditions,
   11              	* disclaimers, and limitations in the end user license agreement accompanying
   12              	* the software package with which this file was provided.
@@ -69,7 +69,7 @@ ARM GAS  .\Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
   63              	*
   64              	*  Note Implementation of CyEnterCriticalSection manipulates the IRQ enable bit
   65              	*  with interrupts still enabled. The test and set of the interrupt bits is not
-  66              	*  atomic; this is true for both PSoC 3 and PSoC 5. Therefore, to avoid
+  66              	*  atomic; this is true for both PSoC 3 and PSoC 5. Therefore, to avoid a
   67              	*  corrupting processor state, it must be the policy that all interrupt routines
   68              	*  restore the interrupt enable bits as they were found on entry.
   69              	*

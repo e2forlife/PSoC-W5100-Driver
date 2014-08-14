@@ -222,7 +222,7 @@ void
 		`$SPI_INSTANCE`_WriteTxData((adr>>8)&0x00FF);
 		`$SPI_INSTANCE`_WriteTxData(adr&0x00FF);
 		txLen = 1;
-#elif (`$PART_FALILY` == 2)
+#elif (`$PART_FAMILY` == 2)
 	    /*
 	     * The Header block for the W5200 uses the address, plus
 	     * a length word which contains a read/write bit.  Setting
@@ -272,7 +272,6 @@ void
 void
 `$INSTANCE_NAME`_ChipRead(uint16 addr, uint8 *dat, uint16 length)
 {
-	uint32 dat;
 	uint16 rxIndex;
 	uint16 address;
 	uint16 rxLen;
@@ -315,7 +314,7 @@ void
 		`$SPI_INSTANCE`_WriteTxData(address>>8);
 		`$SPI_INSTANCE`_WriteTxData(address&0x00FF);
 		
-#elif (`$PART_FAMILY == 2)
+#elif (`$PART_FAMILY` == 2)
 		/*
 		 * W5200 Interface Header
 		 * ----------------------
@@ -349,6 +348,7 @@ void
 			}
 			else {
 				++rxCount;
+				++rxIndex;
 			}
 			/*
 			 * Since the header is clogging the buffer (and it is inefficient
@@ -432,7 +432,7 @@ void `$INSTANCE_NAME`_ChipWrite16( uint16 addr, uint16 val )
 #else
 	bigValu = val;
 #endif
-	`$INSTANCE_NAME`_ChipWrite( addr, bigVal, 2 );
+	`$INSTANCE_NAME`_ChipWrite( addr, (uint8*)&bigVal, 2 );
 }
 /* ------------------------------------------------------------------------ */
 /**
@@ -483,7 +483,7 @@ void `$INSTANCE_NAME`_GetSourceMAC( uint8 *mac )
  */
 void `$INSTANCE_NAME`_SetGatewayAddress(uint32 ip)
 {
-	`$INSTANCE_NAME`_ChipWite(`$INSTANCE_NAME`_REG_GAR, (uint8*)&(ip),4);
+	`$INSTANCE_NAME`_ChipWrite(`$INSTANCE_NAME`_REG_GAR, (uint8*)&(ip),4);
 }
 /* ------------------------------------------------------------------------ */
 /**
@@ -492,7 +492,7 @@ void `$INSTANCE_NAME`_SetGatewayAddress(uint32 ip)
  */
 uint32 `$INSTANCE_NAME`_GetGatewayAddress( void )
 {
-	uint32 ip;
+	uint32 ip = 0xFFFFFFFF;
 	
 	`$INSTANCE_NAME`_ChipRead( `$INSTANCE_NAME`_REG_GAR, (uint8*)(ip), 4);
 	
@@ -514,9 +514,9 @@ void `$INSTANCE_NAME`_SetSubnetMask( uint32 ip )
  */
 uint32 `$INSTANCE_NAME`_GetSubnetMask( void )
 {
-	uint32 ip;
+	uint32 ip = 0xFFFFFFFF;
 	`$INSTANCE_NAME`_ChipRead(`$INSTANCE_NAME`_REG_SUBR, (uint8*)(ip), 4);
-	retun ip;
+	return ip;
 }
 /* ------------------------------------------------------------------------ */
 /**
@@ -534,7 +534,7 @@ void `$INSTANCE_NAME`_SetSourceIP(uint32 ip )
  */
 uint32 `$INSTANCE_NAME`_GetSourceIP( void )
 {
-	uint32 ip;
+	uint32 ip = 0xFFFFFFFF;
 	`$INSTANCE_NAME`_ChipRead( `$INSTANCE_NAME`_REG_SIPR, (uint8*)(ip), 4 );
 	return ip;
 }
@@ -572,7 +572,7 @@ void `$INSTANCE_NAME`_SetIR(uint8 ir )
  * \brief write a value to the Rx mem size register
  * \param size the value to be written to the register
  */
-void `$INSTANCE_NAME`_SetRxMemSize( uint8 socket, uint8 size ) 
+void `$INSTANCE_NAME`_SetSocketRxMemSize( uint8 socket, uint8 size ) 
 {
 	uint8 sz;
 	
@@ -581,7 +581,7 @@ void `$INSTANCE_NAME`_SetRxMemSize( uint8 socket, uint8 size )
 	 * The W5100 uses memory allocations within one register for all sockets.
 	 * the options are set by a 2 bit code for 1, 2, 4, or 8 K
 	 */
-		`$INSTANCE_NAME`_ChipRead( `$INSTANCE_NAME`_REG_REG_RMSR, &sz, 1);
+		`$INSTANCE_NAME`_ChipRead( `$INSTANCE_NAME`_REG_RMSR, &sz, 1);
 		sz = sz & (~(3<<(socket<<1)));
 		sz = sz | (size<<(socket<<1));
 		`$INSTANCE_NAME`_ChipWrite( `$INSTANCE_NAME`_REG_RMSR, &sz, 1);
@@ -599,13 +599,13 @@ void `$INSTANCE_NAME`_SetRxMemSize( uint8 socket, uint8 size )
  * \brief Read the contents of hte rx mem size register
  * \returns the value read from teh register
  */
-uint8 `$INSTANCE_NAME`_GetRxMemSize( uint8 socket )
+uint8 `$INSTANCE_NAME`_GetSocketRxMemSize( uint8 socket )
 {
 	uint8 sz;
 	
 	sz = 0xFF;
 #if (`$PART_FAMILY` == 1)
-	`$INSTANCE_NAME`_ChipRead(`INSTANCE_NAME`_REG_RMSR, &sz, 1);
+	`$INSTANCE_NAME`_ChipRead(`$INSTANCE_NAME`_REG_RMSR, &sz, 1);
 	sz = (sz >> (socket<<1)) & 0x03;
 #elif (`$PART_FAMILY` == 2)
 	`$INSTANCE_NAME`_ChipRead( `$INSTANCE_NAME`_SOCKET_REG(socket,`$INSTANCE_NAME`_SOCK_RXMEM), &sz, 1);
@@ -617,7 +617,7 @@ uint8 `$INSTANCE_NAME`_GetRxMemSize( uint8 socket )
  * \brief write a value to the tx mem size register
  * \param size The value to be written to the register
  */
-void `$INSTANCE_NAME`_SetTxMemSize( uint8 size )
+void `$INSTANCE_NAME`_SetSocketTxMemSize( uint8 socket, uint8 size )
 {
 	uint8 sz;
 	
@@ -626,7 +626,7 @@ void `$INSTANCE_NAME`_SetTxMemSize( uint8 size )
 	 * The W5100 uses memory allocations within one register for all sockets.
 	 * the options are set by a 2 bit code for 1, 2, 4, or 8 K
 	 */
-		`$INSTANCE_NAME`_ChipRead( `$INSTANCE_NAME`_REG_REG_TXSR, &sz, 1);
+		`$INSTANCE_NAME`_ChipRead( `$INSTANCE_NAME`_REG_TXSR, &sz, 1);
 		sz = sz & (~(3<<(socket<<1)));
 		sz = sz | (size<<(socket<<1));
 		`$INSTANCE_NAME`_ChipWrite( `$INSTANCE_NAME`_REG_TXSR, &sz, 1);
@@ -643,13 +643,13 @@ void `$INSTANCE_NAME`_SetTxMemSize( uint8 size )
  * \brief read the contents of the tx mem size register
  * \returns the value read from the register
  */
-uint8 `$INSTANCE_NAME`_GetTxMemSize( void ) { return `$INSTANCE_NAME`_ChipRead( 0x1B);}
+uint8 `$INSTANCE_NAME`_GetSocketTxMemSize( uint8 socket )
 {
 	uint8 sz;
 	
 	sz = 0xFF;
 #if (`$PART_FAMILY` == 1)
-	`$INSTANCE_NAME`_ChipRead(`INSTANCE_NAME`_REG_TXSR, &sz, 1);
+	`$INSTANCE_NAME`_ChipRead(`$INSTANCE_NAME`_REG_TXSR, &sz, 1);
 	sz = (sz >> (socket<<1)) & 0x03;
 #elif (`$PART_FAMILY` == 2)
 	`$INSTANCE_NAME`_ChipRead( `$INSTANCE_NAME`_SOCKET_REG(socket,`$INSTANCE_NAME`_SOCK_TXMEM), &sz, 1);
@@ -681,7 +681,7 @@ void `$INSTANCE_NAME`_SetSocketMode(uint8 socket, uint8 mode)
  */
 void `$INSTANCE_NAME`_SetSocketCommand(uint8 socket, uint8 cmd)
 {
-	`$INSTANCE_NAME`_ChipWrite( (`$INSTANCE_NAME`_SOCKET_REG(socket, `$INSTANCE_NAME`_SOCK_CR)),(uint8*)&(cmd),1) );
+	`$INSTANCE_NAME`_ChipWrite( (`$INSTANCE_NAME`_SOCKET_REG(socket, `$INSTANCE_NAME`_SOCK_CR)),(uint8*)&(cmd),1);
 }
 /* ------------------------------------------------------------------------ */
 /**
@@ -691,8 +691,8 @@ void `$INSTANCE_NAME`_SetSocketCommand(uint8 socket, uint8 cmd)
  */
 uint8 `$INSTANCE_NAME`_GetSocketCommand(uint8 socket )
 {
-	uint8 cmd;
-	`$INSTANCE_NAME`_ChipRead( (`$INSTANCE_NAME`_SOCKET_REG(socket, `$INSTANCE_NAME`_SOCK_CR)),(uint8*)(cmd),1);
+	uint8 cmd = 0xFF;
+	`$INSTANCE_NAME`_ChipRead( (`$INSTANCE_NAME`_SOCKET_REG(socket, `$INSTANCE_NAME`_SOCK_CR)),(uint8*)(&cmd),1);
 	return cmd;
 }
 /* ------------------------------------------------------------------------ */
@@ -713,7 +713,7 @@ void `$INSTANCE_NAME`_SetSocketIR(uint8 socket, uint8 ir)
  */
 uint8 `$INSTANCE_NAME`_GetSocketIR(uint8 socket)
 {	
-	uint8 ir;
+	uint8 ir = 0xFF;
 	`$INSTANCE_NAME`_ChipRead((`$INSTANCE_NAME`_SOCKET_REG(socket, `$INSTANCE_NAME`_SOCK_IR)), (uint8*)&(ir), 1);
 	return ir;
 }
@@ -725,7 +725,7 @@ uint8 `$INSTANCE_NAME`_GetSocketIR(uint8 socket)
  */
 uint8 `$INSTANCE_NAME`_GetSocketStatus(uint8 socket)
 { 
-	uint8 status;
+	uint8 status = 0xFF;
 	`$INSTANCE_NAME`_ChipRead(`$INSTANCE_NAME`_SOCKET_REG(socket, `$INSTANCE_NAME`_SOCK_SR), &status, 1);
 	return status;
 }

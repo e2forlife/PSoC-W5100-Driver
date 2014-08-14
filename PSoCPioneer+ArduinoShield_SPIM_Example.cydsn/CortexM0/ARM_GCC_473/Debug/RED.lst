@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccSchheM.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -28,7 +28,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
   25              		.file 1 ".\\Generated_Source\\PSoC4\\RED.c"
    1:.\Generated_Source\PSoC4/RED.c **** /*******************************************************************************
    2:.\Generated_Source\PSoC4/RED.c **** * File Name: RED.c  
-   3:.\Generated_Source\PSoC4/RED.c **** * Version 1.90
+   3:.\Generated_Source\PSoC4/RED.c **** * Version 2.0
    4:.\Generated_Source\PSoC4/RED.c **** *
    5:.\Generated_Source\PSoC4/RED.c **** * Description:
    6:.\Generated_Source\PSoC4/RED.c **** *  This file contains API to enable firmware control of a Pins component.
@@ -36,7 +36,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
    8:.\Generated_Source\PSoC4/RED.c **** * Note:
    9:.\Generated_Source\PSoC4/RED.c **** *
   10:.\Generated_Source\PSoC4/RED.c **** ********************************************************************************
-  11:.\Generated_Source\PSoC4/RED.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  11:.\Generated_Source\PSoC4/RED.c **** * Copyright 2008-2014, Cypress Semiconductor Corporation.  All rights reserved.
   12:.\Generated_Source\PSoC4/RED.c **** * You may use this file only in accordance with the license, terms, conditions, 
   13:.\Generated_Source\PSoC4/RED.c **** * disclaimers, and limitations in the end user license agreement accompanying 
   14:.\Generated_Source\PSoC4/RED.c **** * the software package with which this file was provided.
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
   30:.\Generated_Source\PSoC4/RED.c **** ********************************************************************************
   31:.\Generated_Source\PSoC4/RED.c **** *
   32:.\Generated_Source\PSoC4/RED.c **** * Summary:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 2
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccSchheM.s 			page 2
 
 
   33:.\Generated_Source\PSoC4/RED.c **** *  Assign a new value to the digital port's data output register.  
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
   66              		.loc 1 46 0
   67 0038 034B     		ldr	r3, .L2
   68 003a 3A1C     		mov	r2, r7
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 3
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccSchheM.s 			page 3
 
 
   69 003c 0F32     		add	r2, r2, #15
@@ -155,20 +155,32 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
   55:.\Generated_Source\PSoC4/RED.c **** *  Change the drive mode on the pins of the port.
   56:.\Generated_Source\PSoC4/RED.c **** * 
   57:.\Generated_Source\PSoC4/RED.c **** * Parameters:  
-  58:.\Generated_Source\PSoC4/RED.c **** *  mode:  Change the pins to this drive mode.
+  58:.\Generated_Source\PSoC4/RED.c **** *  mode:  Change the pins to one of the following drive modes.
   59:.\Generated_Source\PSoC4/RED.c **** *
-  60:.\Generated_Source\PSoC4/RED.c **** * Return: 
-  61:.\Generated_Source\PSoC4/RED.c **** *  None
-  62:.\Generated_Source\PSoC4/RED.c **** *
-  63:.\Generated_Source\PSoC4/RED.c **** *******************************************************************************/
-  64:.\Generated_Source\PSoC4/RED.c **** void RED_SetDriveMode(uint8 mode) 
-  65:.\Generated_Source\PSoC4/RED.c **** {
-  92              		.loc 1 65 0
+  60:.\Generated_Source\PSoC4/RED.c **** *  RED_DM_STRONG     Strong Drive 
+  61:.\Generated_Source\PSoC4/RED.c **** *  RED_DM_OD_HI      Open Drain, Drives High 
+  62:.\Generated_Source\PSoC4/RED.c **** *  RED_DM_OD_LO      Open Drain, Drives Low 
+  63:.\Generated_Source\PSoC4/RED.c **** *  RED_DM_RES_UP     Resistive Pull Up 
+  64:.\Generated_Source\PSoC4/RED.c **** *  RED_DM_RES_DWN    Resistive Pull Down 
+  65:.\Generated_Source\PSoC4/RED.c **** *  RED_DM_RES_UPDWN  Resistive Pull Up/Down 
+  66:.\Generated_Source\PSoC4/RED.c **** *  RED_DM_DIG_HIZ    High Impedance Digital 
+  67:.\Generated_Source\PSoC4/RED.c **** *  RED_DM_ALG_HIZ    High Impedance Analog 
+  68:.\Generated_Source\PSoC4/RED.c **** *
+  69:.\Generated_Source\PSoC4/RED.c **** * Return: 
+  70:.\Generated_Source\PSoC4/RED.c **** *  None
+  71:.\Generated_Source\PSoC4/RED.c **** *
+  72:.\Generated_Source\PSoC4/RED.c **** *******************************************************************************/
+  73:.\Generated_Source\PSoC4/RED.c **** void RED_SetDriveMode(uint8 mode) 
+  74:.\Generated_Source\PSoC4/RED.c **** {
+  92              		.loc 1 74 0
   93              		.cfi_startproc
   94 0000 80B5     		push	{r7, lr}
   95              	.LCFI3:
   96              		.cfi_def_cfa_offset 8
   97              		.cfi_offset 7, -8
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccSchheM.s 			page 4
+
+
   98              		.cfi_offset 14, -4
   99 0002 82B0     		sub	sp, sp, #8
  100              	.LCFI4:
@@ -178,12 +190,9 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  104              		.cfi_def_cfa_register 7
  105 0006 021C     		mov	r2, r0
  106 0008 FB1D     		add	r3, r7, #7
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 4
-
-
  107 000a 1A70     		strb	r2, [r3]
-  66:.\Generated_Source\PSoC4/RED.c **** 	SetP4PinDriveMode(RED__0__SHIFT, mode);
- 108              		.loc 1 66 0
+  75:.\Generated_Source\PSoC4/RED.c **** 	SetP4PinDriveMode(RED__0__SHIFT, mode);
+ 108              		.loc 1 75 0
  109 000c 064B     		ldr	r3, .L5
  110 000e 064A     		ldr	r2, .L5
  111 0010 1168     		ldr	r1, [r2]
@@ -194,8 +203,8 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  116 001a 9204     		lsl	r2, r2, #18
  117 001c 0A43     		orr	r2, r1
  118 001e 1A60     		str	r2, [r3]
-  67:.\Generated_Source\PSoC4/RED.c **** }
- 119              		.loc 1 67 0
+  76:.\Generated_Source\PSoC4/RED.c **** }
+ 119              		.loc 1 76 0
  120 0020 BD46     		mov	sp, r7
  121 0022 02B0     		add	sp, sp, #8
  122              		@ sp needed for prologue
@@ -216,32 +225,32 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  137              		.type	RED_Read, %function
  138              	RED_Read:
  139              	.LFB2:
-  68:.\Generated_Source\PSoC4/RED.c **** 
-  69:.\Generated_Source\PSoC4/RED.c **** 
-  70:.\Generated_Source\PSoC4/RED.c **** /*******************************************************************************
-  71:.\Generated_Source\PSoC4/RED.c **** * Function Name: RED_Read
-  72:.\Generated_Source\PSoC4/RED.c **** ********************************************************************************
-  73:.\Generated_Source\PSoC4/RED.c **** *
-  74:.\Generated_Source\PSoC4/RED.c **** * Summary:
-  75:.\Generated_Source\PSoC4/RED.c **** *  Read the current value on the pins of the Digital Port in right justified 
-  76:.\Generated_Source\PSoC4/RED.c **** *  form.
-  77:.\Generated_Source\PSoC4/RED.c **** *
-  78:.\Generated_Source\PSoC4/RED.c **** * Parameters:  
-  79:.\Generated_Source\PSoC4/RED.c **** *  None 
-  80:.\Generated_Source\PSoC4/RED.c **** *
-  81:.\Generated_Source\PSoC4/RED.c **** * Return: 
-  82:.\Generated_Source\PSoC4/RED.c **** *  Returns the current value of the Digital Port as a right justified number
-  83:.\Generated_Source\PSoC4/RED.c **** *  
-  84:.\Generated_Source\PSoC4/RED.c **** * Note:
-  85:.\Generated_Source\PSoC4/RED.c **** *  Macro RED_ReadPS calls this function. 
-  86:.\Generated_Source\PSoC4/RED.c **** *  
-  87:.\Generated_Source\PSoC4/RED.c **** *******************************************************************************/
-  88:.\Generated_Source\PSoC4/RED.c **** uint8 RED_Read(void) 
-  89:.\Generated_Source\PSoC4/RED.c **** {
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 5
+  77:.\Generated_Source\PSoC4/RED.c **** 
+  78:.\Generated_Source\PSoC4/RED.c **** 
+  79:.\Generated_Source\PSoC4/RED.c **** /*******************************************************************************
+  80:.\Generated_Source\PSoC4/RED.c **** * Function Name: RED_Read
+  81:.\Generated_Source\PSoC4/RED.c **** ********************************************************************************
+  82:.\Generated_Source\PSoC4/RED.c **** *
+  83:.\Generated_Source\PSoC4/RED.c **** * Summary:
+  84:.\Generated_Source\PSoC4/RED.c **** *  Read the current value on the pins of the Digital Port in right justified 
+  85:.\Generated_Source\PSoC4/RED.c **** *  form.
+  86:.\Generated_Source\PSoC4/RED.c **** *
+  87:.\Generated_Source\PSoC4/RED.c **** * Parameters:  
+  88:.\Generated_Source\PSoC4/RED.c **** *  None 
+  89:.\Generated_Source\PSoC4/RED.c **** *
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccSchheM.s 			page 5
 
 
- 140              		.loc 1 89 0
+  90:.\Generated_Source\PSoC4/RED.c **** * Return: 
+  91:.\Generated_Source\PSoC4/RED.c **** *  Returns the current value of the Digital Port as a right justified number
+  92:.\Generated_Source\PSoC4/RED.c **** *  
+  93:.\Generated_Source\PSoC4/RED.c **** * Note:
+  94:.\Generated_Source\PSoC4/RED.c **** *  Macro RED_ReadPS calls this function. 
+  95:.\Generated_Source\PSoC4/RED.c **** *  
+  96:.\Generated_Source\PSoC4/RED.c **** *******************************************************************************/
+  97:.\Generated_Source\PSoC4/RED.c **** uint8 RED_Read(void) 
+  98:.\Generated_Source\PSoC4/RED.c **** {
+ 140              		.loc 1 98 0
  141              		.cfi_startproc
  142 0000 80B5     		push	{r7, lr}
  143              	.LCFI6:
@@ -251,16 +260,16 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  147 0002 00AF     		add	r7, sp, #0
  148              	.LCFI7:
  149              		.cfi_def_cfa_register 7
-  90:.\Generated_Source\PSoC4/RED.c ****     return (uint8)((RED_PS & RED_MASK) >> RED_SHIFT);
- 150              		.loc 1 90 0
+  99:.\Generated_Source\PSoC4/RED.c ****     return (uint8)((RED_PS & RED_MASK) >> RED_SHIFT);
+ 150              		.loc 1 99 0
  151 0004 044B     		ldr	r3, .L9
  152 0006 1A68     		ldr	r2, [r3]
  153 0008 4023     		mov	r3, #64
  154 000a 1340     		and	r3, r2
  155 000c 9B09     		lsr	r3, r3, #6
  156 000e DBB2     		uxtb	r3, r3
-  91:.\Generated_Source\PSoC4/RED.c **** }
- 157              		.loc 1 91 0
+ 100:.\Generated_Source\PSoC4/RED.c **** }
+ 157              		.loc 1 100 0
  158 0010 181C     		mov	r0, r3
  159 0012 BD46     		mov	sp, r7
  160              		@ sp needed for prologue
@@ -280,28 +289,28 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  174              		.type	RED_ReadDataReg, %function
  175              	RED_ReadDataReg:
  176              	.LFB3:
-  92:.\Generated_Source\PSoC4/RED.c **** 
-  93:.\Generated_Source\PSoC4/RED.c **** 
-  94:.\Generated_Source\PSoC4/RED.c **** /*******************************************************************************
-  95:.\Generated_Source\PSoC4/RED.c **** * Function Name: RED_ReadDataReg
-  96:.\Generated_Source\PSoC4/RED.c **** ********************************************************************************
-  97:.\Generated_Source\PSoC4/RED.c **** *
-  98:.\Generated_Source\PSoC4/RED.c **** * Summary:
-  99:.\Generated_Source\PSoC4/RED.c **** *  Read the current value assigned to a Digital Port's data output register
- 100:.\Generated_Source\PSoC4/RED.c **** *
- 101:.\Generated_Source\PSoC4/RED.c **** * Parameters:  
- 102:.\Generated_Source\PSoC4/RED.c **** *  None 
- 103:.\Generated_Source\PSoC4/RED.c **** *
- 104:.\Generated_Source\PSoC4/RED.c **** * Return: 
- 105:.\Generated_Source\PSoC4/RED.c **** *  Returns the current value assigned to the Digital Port's data output register
- 106:.\Generated_Source\PSoC4/RED.c **** *  
- 107:.\Generated_Source\PSoC4/RED.c **** *******************************************************************************/
- 108:.\Generated_Source\PSoC4/RED.c **** uint8 RED_ReadDataReg(void) 
- 109:.\Generated_Source\PSoC4/RED.c **** {
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 6
+ 101:.\Generated_Source\PSoC4/RED.c **** 
+ 102:.\Generated_Source\PSoC4/RED.c **** 
+ 103:.\Generated_Source\PSoC4/RED.c **** /*******************************************************************************
+ 104:.\Generated_Source\PSoC4/RED.c **** * Function Name: RED_ReadDataReg
+ 105:.\Generated_Source\PSoC4/RED.c **** ********************************************************************************
+ 106:.\Generated_Source\PSoC4/RED.c **** *
+ 107:.\Generated_Source\PSoC4/RED.c **** * Summary:
+ 108:.\Generated_Source\PSoC4/RED.c **** *  Read the current value assigned to a Digital Port's data output register
+ 109:.\Generated_Source\PSoC4/RED.c **** *
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccSchheM.s 			page 6
 
 
- 177              		.loc 1 109 0
+ 110:.\Generated_Source\PSoC4/RED.c **** * Parameters:  
+ 111:.\Generated_Source\PSoC4/RED.c **** *  None 
+ 112:.\Generated_Source\PSoC4/RED.c **** *
+ 113:.\Generated_Source\PSoC4/RED.c **** * Return: 
+ 114:.\Generated_Source\PSoC4/RED.c **** *  Returns the current value assigned to the Digital Port's data output register
+ 115:.\Generated_Source\PSoC4/RED.c **** *  
+ 116:.\Generated_Source\PSoC4/RED.c **** *******************************************************************************/
+ 117:.\Generated_Source\PSoC4/RED.c **** uint8 RED_ReadDataReg(void) 
+ 118:.\Generated_Source\PSoC4/RED.c **** {
+ 177              		.loc 1 118 0
  178              		.cfi_startproc
  179 0000 80B5     		push	{r7, lr}
  180              	.LCFI8:
@@ -311,16 +320,16 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  184 0002 00AF     		add	r7, sp, #0
  185              	.LCFI9:
  186              		.cfi_def_cfa_register 7
- 110:.\Generated_Source\PSoC4/RED.c ****     return (uint8)((RED_DR & RED_MASK) >> RED_SHIFT);
- 187              		.loc 1 110 0
+ 119:.\Generated_Source\PSoC4/RED.c ****     return (uint8)((RED_DR & RED_MASK) >> RED_SHIFT);
+ 187              		.loc 1 119 0
  188 0004 044B     		ldr	r3, .L13
  189 0006 1A68     		ldr	r2, [r3]
  190 0008 4023     		mov	r3, #64
  191 000a 1340     		and	r3, r2
  192 000c 9B09     		lsr	r3, r3, #6
  193 000e DBB2     		uxtb	r3, r3
- 111:.\Generated_Source\PSoC4/RED.c **** }
- 194              		.loc 1 111 0
+ 120:.\Generated_Source\PSoC4/RED.c **** }
+ 194              		.loc 1 120 0
  195 0010 181C     		mov	r0, r3
  196 0012 BD46     		mov	sp, r7
  197              		@ sp needed for prologue
@@ -340,32 +349,32 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  211              		.type	RED_ClearInterrupt, %function
  212              	RED_ClearInterrupt:
  213              	.LFB4:
- 112:.\Generated_Source\PSoC4/RED.c **** 
- 113:.\Generated_Source\PSoC4/RED.c **** 
- 114:.\Generated_Source\PSoC4/RED.c **** /* If Interrupts Are Enabled for this Pins component */ 
- 115:.\Generated_Source\PSoC4/RED.c **** #if defined(RED_INTSTAT) 
- 116:.\Generated_Source\PSoC4/RED.c **** 
- 117:.\Generated_Source\PSoC4/RED.c ****     /*******************************************************************************
- 118:.\Generated_Source\PSoC4/RED.c ****     * Function Name: RED_ClearInterrupt
- 119:.\Generated_Source\PSoC4/RED.c ****     ********************************************************************************
- 120:.\Generated_Source\PSoC4/RED.c ****     *
- 121:.\Generated_Source\PSoC4/RED.c ****     * Summary:
- 122:.\Generated_Source\PSoC4/RED.c ****     *  Clears any active interrupts attached to port and returns the value of the 
- 123:.\Generated_Source\PSoC4/RED.c ****     *  interrupt status register.
- 124:.\Generated_Source\PSoC4/RED.c ****     *
- 125:.\Generated_Source\PSoC4/RED.c ****     * Parameters:  
- 126:.\Generated_Source\PSoC4/RED.c ****     *  None 
- 127:.\Generated_Source\PSoC4/RED.c ****     *
- 128:.\Generated_Source\PSoC4/RED.c ****     * Return: 
- 129:.\Generated_Source\PSoC4/RED.c ****     *  Returns the value of the interrupt status register
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 7
+ 121:.\Generated_Source\PSoC4/RED.c **** 
+ 122:.\Generated_Source\PSoC4/RED.c **** 
+ 123:.\Generated_Source\PSoC4/RED.c **** /* If Interrupts Are Enabled for this Pins component */ 
+ 124:.\Generated_Source\PSoC4/RED.c **** #if defined(RED_INTSTAT) 
+ 125:.\Generated_Source\PSoC4/RED.c **** 
+ 126:.\Generated_Source\PSoC4/RED.c ****     /*******************************************************************************
+ 127:.\Generated_Source\PSoC4/RED.c ****     * Function Name: RED_ClearInterrupt
+ 128:.\Generated_Source\PSoC4/RED.c ****     ********************************************************************************
+ 129:.\Generated_Source\PSoC4/RED.c ****     *
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccSchheM.s 			page 7
 
 
- 130:.\Generated_Source\PSoC4/RED.c ****     *  
- 131:.\Generated_Source\PSoC4/RED.c ****     *******************************************************************************/
- 132:.\Generated_Source\PSoC4/RED.c ****     uint8 RED_ClearInterrupt(void) 
- 133:.\Generated_Source\PSoC4/RED.c ****     {
- 214              		.loc 1 133 0
+ 130:.\Generated_Source\PSoC4/RED.c ****     * Summary:
+ 131:.\Generated_Source\PSoC4/RED.c ****     *  Clears any active interrupts attached to port and returns the value of the 
+ 132:.\Generated_Source\PSoC4/RED.c ****     *  interrupt status register.
+ 133:.\Generated_Source\PSoC4/RED.c ****     *
+ 134:.\Generated_Source\PSoC4/RED.c ****     * Parameters:  
+ 135:.\Generated_Source\PSoC4/RED.c ****     *  None 
+ 136:.\Generated_Source\PSoC4/RED.c ****     *
+ 137:.\Generated_Source\PSoC4/RED.c ****     * Return: 
+ 138:.\Generated_Source\PSoC4/RED.c ****     *  Returns the value of the interrupt status register
+ 139:.\Generated_Source\PSoC4/RED.c ****     *  
+ 140:.\Generated_Source\PSoC4/RED.c ****     *******************************************************************************/
+ 141:.\Generated_Source\PSoC4/RED.c ****     uint8 RED_ClearInterrupt(void) 
+ 142:.\Generated_Source\PSoC4/RED.c ****     {
+ 214              		.loc 1 142 0
  215              		.cfi_startproc
  216 0000 80B5     		push	{r7, lr}
  217              	.LCFI10:
@@ -378,8 +387,8 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  224 0004 00AF     		add	r7, sp, #0
  225              	.LCFI12:
  226              		.cfi_def_cfa_register 7
- 134:.\Generated_Source\PSoC4/RED.c **** 		uint8 maskedStatus = (uint8)(RED_INTSTAT & RED_MASK);
- 227              		.loc 1 134 0
+ 143:.\Generated_Source\PSoC4/RED.c **** 		uint8 maskedStatus = (uint8)(RED_INTSTAT & RED_MASK);
+ 227              		.loc 1 143 0
  228 0006 094B     		ldr	r3, .L17
  229 0008 1B68     		ldr	r3, [r3]
  230 000a D9B2     		uxtb	r1, r3
@@ -387,20 +396,20 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  232 000e 4022     		mov	r2, #64
  233 0010 0A40     		and	r2, r1
  234 0012 1A70     		strb	r2, [r3]
- 135:.\Generated_Source\PSoC4/RED.c **** 		RED_INTSTAT = maskedStatus;
- 235              		.loc 1 135 0
+ 144:.\Generated_Source\PSoC4/RED.c **** 		RED_INTSTAT = maskedStatus;
+ 235              		.loc 1 144 0
  236 0014 054B     		ldr	r3, .L17
  237 0016 FA1D     		add	r2, r7, #7
  238 0018 1278     		ldrb	r2, [r2]
  239 001a 1A60     		str	r2, [r3]
- 136:.\Generated_Source\PSoC4/RED.c ****         return maskedStatus >> RED_SHIFT;
- 240              		.loc 1 136 0
+ 145:.\Generated_Source\PSoC4/RED.c ****         return maskedStatus >> RED_SHIFT;
+ 240              		.loc 1 145 0
  241 001c FB1D     		add	r3, r7, #7
  242 001e 1B78     		ldrb	r3, [r3]
  243 0020 9B09     		lsr	r3, r3, #6
  244 0022 DBB2     		uxtb	r3, r3
- 137:.\Generated_Source\PSoC4/RED.c ****     }
- 245              		.loc 1 137 0
+ 146:.\Generated_Source\PSoC4/RED.c ****     }
+ 245              		.loc 1 146 0
  246 0024 181C     		mov	r0, r3
  247 0026 BD46     		mov	sp, r7
  248 0028 02B0     		add	sp, sp, #8
@@ -409,6 +418,9 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  251              	.L18:
  252              		.align	2
  253              	.L17:
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccSchheM.s 			page 8
+
+
  254 002c 10010440 		.word	1074004240
  255              		.cfi_endproc
  256              	.LFE4:
@@ -418,9 +430,6 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  260              		.file 2 ".\\Generated_Source\\PSoC4\\cytypes.h"
  261              		.section	.debug_info,"",%progbits
  262              	.Ldebug_info0:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 8
-
-
  263 0000 64010000 		.4byte	0x164
  264 0004 0200     		.2byte	0x2
  265 0006 00000000 		.4byte	.Ldebug_abbrev0
@@ -469,6 +478,9 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  308 0061 03       		.uleb128 0x3
  309 0062 04       		.byte	0x4
  310 0063 05       		.byte	0x5
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccSchheM.s 			page 9
+
+
  311 0064 696E7400 		.ascii	"int\000"
  312 0068 02       		.uleb128 0x2
  313 0069 04       		.byte	0x4
@@ -478,9 +490,6 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  317 0070 79010000 		.4byte	.LASF9
  318 0074 02       		.byte	0x2
  319 0075 5B       		.byte	0x5b
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 9
-
-
  320 0076 30000000 		.4byte	0x30
  321 007a 04       		.uleb128 0x4
  322 007b 00010000 		.4byte	.LASF10
@@ -529,6 +538,9 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  365 00d3 3A000000 		.4byte	.LASF22
  366 00d7 01       		.byte	0x1
  367 00d8 2C       		.byte	0x2c
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccSchheM.s 			page 10
+
+
  368 00d9 6F000000 		.4byte	0x6f
  369 00dd 02       		.byte	0x2
  370 00de 91       		.byte	0x91
@@ -538,10 +550,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  374 00e2 01       		.byte	0x1
  375 00e3 15000000 		.4byte	.LASF16
  376 00e7 01       		.byte	0x1
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 10
-
-
- 377 00e8 40       		.byte	0x40
+ 377 00e8 49       		.byte	0x49
  378 00e9 01       		.byte	0x1
  379 00ea 00000000 		.4byte	.LFB1
  380 00ee 30000000 		.4byte	.LFE1
@@ -551,7 +560,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  384 00fb 07       		.uleb128 0x7
  385 00fc 2B010000 		.4byte	.LASF18
  386 0100 01       		.byte	0x1
- 387 0101 40       		.byte	0x40
+ 387 0101 49       		.byte	0x49
  388 0102 6F000000 		.4byte	0x6f
  389 0106 02       		.byte	0x2
  390 0107 91       		.byte	0x91
@@ -561,7 +570,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  394 010b 01       		.byte	0x1
  395 010c 0C000000 		.4byte	.LASF19
  396 0110 01       		.byte	0x1
- 397 0111 58       		.byte	0x58
+ 397 0111 61       		.byte	0x61
  398 0112 01       		.byte	0x1
  399 0113 6F000000 		.4byte	0x6f
  400 0117 00000000 		.4byte	.LFB2
@@ -572,7 +581,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  405 0125 01       		.byte	0x1
  406 0126 76000000 		.4byte	.LASF20
  407 012a 01       		.byte	0x1
- 408 012b 6C       		.byte	0x6c
+ 408 012b 75       		.byte	0x75
  409 012c 01       		.byte	0x1
  410 012d 6F000000 		.4byte	0x6f
  411 0131 00000000 		.4byte	.LFB3
@@ -583,24 +592,24 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  416 013f 01       		.byte	0x1
  417 0140 86000000 		.4byte	.LASF21
  418 0144 01       		.byte	0x1
- 419 0145 84       		.byte	0x84
+ 419 0145 8D       		.byte	0x8d
  420 0146 01       		.byte	0x1
  421 0147 6F000000 		.4byte	0x6f
  422 014b 00000000 		.4byte	.LFB4
  423 014f 30000000 		.4byte	.LFE4
  424 0153 C8000000 		.4byte	.LLST4
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccSchheM.s 			page 11
+
+
  425 0157 01       		.byte	0x1
  426 0158 08       		.uleb128 0x8
  427 0159 3E010000 		.4byte	.LASF23
  428 015d 01       		.byte	0x1
- 429 015e 86       		.byte	0x86
+ 429 015e 8F       		.byte	0x8f
  430 015f 6F000000 		.4byte	0x6f
  431 0163 02       		.byte	0x2
  432 0164 91       		.byte	0x91
  433 0165 77       		.sleb128 -9
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 11
-
-
  434 0166 00       		.byte	0
  435 0167 00       		.byte	0
  436              		.section	.debug_abbrev,"",%progbits
@@ -649,6 +658,9 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  479 0029 00       		.byte	0
  480 002a 00       		.byte	0
  481 002b 04       		.uleb128 0x4
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccSchheM.s 			page 12
+
+
  482 002c 16       		.uleb128 0x16
  483 002d 00       		.byte	0
  484 002e 03       		.uleb128 0x3
@@ -658,9 +670,6 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  488 0032 3B       		.uleb128 0x3b
  489 0033 0B       		.uleb128 0xb
  490 0034 49       		.uleb128 0x49
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 12
-
-
  491 0035 13       		.uleb128 0x13
  492 0036 00       		.byte	0
  493 0037 00       		.byte	0
@@ -709,6 +718,9 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  536 0063 13       		.uleb128 0x13
  537 0064 02       		.uleb128 0x2
  538 0065 0A       		.uleb128 0xa
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccSchheM.s 			page 13
+
+
  539 0066 00       		.byte	0
  540 0067 00       		.byte	0
  541 0068 08       		.uleb128 0x8
@@ -718,9 +730,6 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  545 006c 0E       		.uleb128 0xe
  546 006d 3A       		.uleb128 0x3a
  547 006e 0B       		.uleb128 0xb
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 13
-
-
  548 006f 3B       		.uleb128 0x3b
  549 0070 0B       		.uleb128 0xb
  550 0071 49       		.uleb128 0x49
@@ -769,6 +778,9 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  593 009d 0C       		.uleb128 0xc
  594 009e 49       		.uleb128 0x49
  595 009f 13       		.uleb128 0x13
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccSchheM.s 			page 14
+
+
  596 00a0 11       		.uleb128 0x11
  597 00a1 01       		.uleb128 0x1
  598 00a2 12       		.uleb128 0x12
@@ -778,9 +790,6 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  602 00a6 9742     		.uleb128 0x2117
  603 00a8 0C       		.uleb128 0xc
  604 00a9 00       		.byte	0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 14
-
-
  605 00aa 00       		.byte	0
  606 00ab 00       		.byte	0
  607              		.section	.debug_loc,"",%progbits
@@ -829,6 +838,9 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  650 0064 0200     		.2byte	0x2
  651 0066 77       		.byte	0x77
  652 0067 10       		.sleb128 16
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccSchheM.s 			page 15
+
+
  653 0068 00000000 		.4byte	0
  654 006c 00000000 		.4byte	0
  655              	.LLST2:
@@ -838,9 +850,6 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  659 007a 7D       		.byte	0x7d
  660 007b 00       		.sleb128 0
  661 007c 02000000 		.4byte	.LCFI6
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 15
-
-
  662 0080 04000000 		.4byte	.LCFI7
  663 0084 0200     		.2byte	0x2
  664 0086 7D       		.byte	0x7d
@@ -889,6 +898,9 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  707 00ec 06000000 		.4byte	.LCFI12
  708 00f0 30000000 		.4byte	.LFE4
  709 00f4 0200     		.2byte	0x2
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccSchheM.s 			page 16
+
+
  710 00f6 77       		.byte	0x77
  711 00f7 10       		.sleb128 16
  712 00f8 00000000 		.4byte	0
@@ -898,9 +910,6 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  716 0004 0200     		.2byte	0x2
  717 0006 00000000 		.4byte	.Ldebug_info0
  718 000a 04       		.byte	0x4
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 16
-
-
  719 000b 00       		.byte	0
  720 000c 0000     		.2byte	0
  721 000e 0000     		.2byte	0
@@ -949,6 +958,9 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  756      00
  757              	.LASF16:
  758 0015 5245445F 		.ascii	"RED_SetDriveMode\000"
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccSchheM.s 			page 17
+
+
  758      53657444 
  758      72697665 
  758      4D6F6465 
@@ -958,9 +970,6 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  760      7400
  761              	.LASF1:
  762 002c 756E7369 		.ascii	"unsigned char\000"
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 17
-
-
  762      676E6564 
  762      20636861 
  762      7200
@@ -1009,6 +1018,9 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  779      50536F43 
  779      50696F6E 
  780 00f9 2E637964 		.ascii	".cydsn\000"
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccSchheM.s 			page 18
+
+
  780      736E00
  781              	.LASF10:
  782 0100 75696E74 		.ascii	"uint32\000"
@@ -1018,9 +1030,6 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  784      676E6564 
  784      20696E74 
  784      00
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 18
-
-
  785              	.LASF7:
  786 0114 6C6F6E67 		.ascii	"long long unsigned int\000"
  786      206C6F6E 
@@ -1069,6 +1078,9 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccN92h2Z.s 			page 1
  803      36363135 
  804              	.LASF4:
  805 01c8 6C6F6E67 		.ascii	"long int\000"
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccSchheM.s 			page 19
+
+
  805      20696E74 
  805      00
  806              	.LASF0:

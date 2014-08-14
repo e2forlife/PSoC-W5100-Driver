@@ -6,7 +6,7 @@
 
 #Build Date:         Mar 26 2013 14:54:34
 
-#File Generated:     Jan 15 2014 13:19:48
+#File Generated:     Aug 14 2014 15:07:58
 
 #Purpose:            
 
@@ -14,7 +14,7 @@
 
 #***************************************************************************
 
-Executing : C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\bin/sjplacer.exe --proj-name PSoCPioneer+ArduinoShield_SPIM_Example --netlist-vh2 PSoCPioneer+ArduinoShield_SPIM_Example_p.vh2 --arch-file C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/placer.ark --rrg-file C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/route_arch-rrg.cydata --irq-file C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/irqconn.cydata --dsi-conn-file C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/dsiconn.cydata --pins-file PSoC4_PSoC4A_44-TQFP.xml --lib-file PSoCPioneer+ArduinoShield_SPIM_Example_p.lib --sdc-file PSoCPioneer+ArduinoShield_SPIM_Example.sdc --io-pcf PSoCPioneer+ArduinoShield_SPIM_Example.pci --outdir .
+Executing : C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\bin/sjplacer.exe --proj-name PSoCPioneer+ArduinoShield_SPIM_Example --netlist-vh2 PSoCPioneer+ArduinoShield_SPIM_Example_p.vh2 --arch-file C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/placer.ark --rrg-file C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/route_arch-rrg.cydata --irq-file C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/irqconn.cydata --dsi-conn-file C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/dsiconn.cydata --pins-file pins_44-TQFP.xml --lib-file PSoCPioneer+ArduinoShield_SPIM_Example_p.lib --sdc-file PSoCPioneer+ArduinoShield_SPIM_Example.sdc --io-pcf PSoCPioneer+ArduinoShield_SPIM_Example.pci --outdir .
 
 		Softjin Techologies Placer, Version 1.1
 
@@ -47,7 +47,7 @@ Design Statistics after Packing
     Number of Combinational MCs 	:	4
     Number of Sequential MCs    	:	9
     Number of DPs               	:	1
-    Number of Controls          	:	1
+    Number of Controls          	:	2
     Number of Status            	:	2
     Number of SyncCells         	:	0
     Number of count7cells       	:	1
@@ -82,7 +82,7 @@ Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyLFCLK              | Frequency: N/A       | Target:   0.0 MHz
 Clock: CySYSCLK             | Frequency: N/A       | Target:  24.0 MHz
-Clock: SPI0_IntClock        | Frequency:  61.0 MHz | Target:  12.0 MHz
+Clock: SPI0_IntClock        | Frequency:  63.3 MHz | Target:  12.0 MHz
 
 ======================================================================
                      End of Clock Summary
@@ -111,7 +111,7 @@ Final Design Statistics
     Number of Combinational MCs 	:	4
     Number of Sequential MCs    	:	9
     Number of DPs               	:	1
-    Number of Controls          	:	1
+    Number of Controls          	:	2
     Number of Status            	:	2
     Number of SyncCells         	:	0
     Number of count7cells       	:	1
@@ -152,5 +152,5 @@ D2088: Phase 8, elapsed time : 0.0 (sec)
 
 D2054: Placement of the design completed successfully
 
-I2076: Total run-time: 0.7 sec.
+I2076: Total run-time: 0.5 sec.
 

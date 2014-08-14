@@ -7,36 +7,42 @@
 <userData>
 <dataGuid v="47ec7058-2f43-4a2f-ae73-172624e235df">
 <CyGuid_47ec7058-2f43-4a2f-ae73-172624e235df type_name="CyDesigner.Common.ProjMgmt.Model.CyConfDepList" version="1">
-<boot_component v="cy_boot_v4_0" />
+<boot_component v="cy_boot_v4_10" />
 <name v="cmpl_deps">
 <CyGuid_f44455c5-3770-4452-b988-0a7a7ff46256 type_name="CyDesigner.Common.ProjMgmt.Model.CyConfigDependencies" version="1">
 <dependency_info name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM0" xml_contents_version="2">
 <CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021 type_name="CyDesigner.Common.Base.CyFileDeps" version="1">
-<file name=".\CortexM0\ARM_GCC_473\Debug\ETH0.o">
+<file name=".\CortexM0\ARM_GCC_473\Debug\ETH.o">
 <dep name=".\Generated_Source\PSoC4\CyLib.h" />
-<dep name=".\Generated_Source\PSoC4\ETH0.h" />
+<dep name=".\Generated_Source\PSoC4\ETH.h" />
+<dep name=".\Generated_Source\PSoC4\ETH_reg51.h" />
 <dep name=".\Generated_Source\PSoC4\SPI0.h" />
 <dep name=".\Generated_Source\PSoC4\SPI0_IntClock.h" />
+<dep name=".\Generated_Source\PSoC4\SSCR.h" />
 <dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
 <dep name=".\Generated_Source\PSoC4\cyfitter.h" />
 <dep name=".\Generated_Source\PSoC4\cylib.h" />
 <dep name=".\Generated_Source\PSoC4\cytypes.h" />
-<dep name=".\Generated_Source\PSoC4\ETH0.c" />
+<dep name=".\Generated_Source\PSoC4\ETH.c" />
 </file>
 <file name=".\Generated_Source\PSoC4\CyLib.h" />
-<file name=".\Generated_Source\PSoC4\ETH0.h" />
+<file name=".\Generated_Source\PSoC4\ETH.h" />
+<file name=".\Generated_Source\PSoC4\ETH_reg51.h" />
 <file name=".\Generated_Source\PSoC4\SPI0.h" />
 <file name=".\Generated_Source\PSoC4\SPI0_IntClock.h" />
+<file name=".\Generated_Source\PSoC4\SSCR.h" />
 <file name=".\Generated_Source\PSoC4\cydevice_trm.h" />
 <file name=".\Generated_Source\PSoC4\cyfitter.h" />
 <file name=".\Generated_Source\PSoC4\cytypes.h" />
-<file name=".\Generated_Source\PSoC4\ETH0.c" />
+<file name=".\Generated_Source\PSoC4\ETH.c" />
 <file name=".\CortexM0\ARM_GCC_473\Debug\main.o">
 <dep name=".\Generated_Source\PSoC4\BLUE.h" />
 <dep name=".\Generated_Source\PSoC4\BLUE_aliases.h" />
 <dep name=".\Generated_Source\PSoC4\CyFlash.h" />
 <dep name=".\Generated_Source\PSoC4\CyLib.h" />
-<dep name=".\Generated_Source\PSoC4\ETH0.h" />
+<dep name=".\Generated_Source\PSoC4\ETH.h" />
+<dep name=".\Generated_Source\PSoC4\ETH_reg51.h" />
+<dep name=".\Generated_Source\PSoC4\ETH_reg52.h" />
 <dep name=".\Generated_Source\PSoC4\GREEN.h" />
 <dep name=".\Generated_Source\PSoC4\GREEN_aliases.h" />
 <dep name=".\Generated_Source\PSoC4\RED.h" />
@@ -46,6 +52,7 @@
 <dep name=".\Generated_Source\PSoC4\SPI0.h" />
 <dep name=".\Generated_Source\PSoC4\SPI0_IntClock.h" />
 <dep name=".\Generated_Source\PSoC4\SPI0_PVT.h" />
+<dep name=".\Generated_Source\PSoC4\SSCR.h" />
 <dep name=".\Generated_Source\PSoC4\core_cm0.h" />
 <dep name=".\Generated_Source\PSoC4\core_cm0_psoc4.h" />
 <dep name=".\Generated_Source\PSoC4\core_cmFunc.h" />
@@ -55,6 +62,7 @@
 <dep name=".\Generated_Source\PSoC4\cydisabledsheets.h" />
 <dep name=".\Generated_Source\PSoC4\cyfitter.h" />
 <dep name=".\Generated_Source\PSoC4\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC4\cylib.h" />
 <dep name=".\Generated_Source\PSoC4\cypins.h" />
 <dep name=".\Generated_Source\PSoC4\cytypes.h" />
 <dep name=".\Generated_Source\PSoC4\project.h" />
@@ -63,6 +71,7 @@
 <file name=".\Generated_Source\PSoC4\BLUE.h" />
 <file name=".\Generated_Source\PSoC4\BLUE_aliases.h" />
 <file name=".\Generated_Source\PSoC4\CyFlash.h" />
+<file name=".\Generated_Source\PSoC4\ETH_reg52.h" />
 <file name=".\Generated_Source\PSoC4\GREEN.h" />
 <file name=".\Generated_Source\PSoC4\GREEN_aliases.h" />
 <file name=".\Generated_Source\PSoC4\RED.h" />
@@ -183,6 +192,14 @@
 <dep name=".\Generated_Source\PSoC4\SPI0_PM.c" />
 </file>
 <file name=".\Generated_Source\PSoC4\SPI0_PM.c" />
+<file name=".\CortexM0\ARM_GCC_473\Debug\SSCR.o">
+<dep name=".\Generated_Source\PSoC4\SSCR.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\Generated_Source\PSoC4\SSCR.c" />
+</file>
+<file name=".\Generated_Source\PSoC4\SSCR.c" />
 <file name=".\CortexM0\ARM_GCC_473\Debug\cyPm.o">
 <dep name=".\Generated_Source\PSoC4\CyLib.h" />
 <dep name=".\Generated_Source\PSoC4\cyPm.h" />
@@ -219,6 +236,19 @@
 <dep name=".\Generated_Source\PSoC4\CyBootAsmGnu.s" />
 </file>
 <file name=".\Generated_Source\PSoC4\CyBootAsmGnu.s" />
+<file name=".\CortexM0\ARM_GCC_473\Debug\ETH0.o">
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\ETH0.h" />
+<dep name=".\Generated_Source\PSoC4\SPI0.h" />
+<dep name=".\Generated_Source\PSoC4\SPI0_IntClock.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cylib.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\Generated_Source\PSoC4\ETH0.c" />
+</file>
+<file name=".\Generated_Source\PSoC4\ETH0.h" />
+<file name=".\Generated_Source\PSoC4\ETH0.c" />
 </CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021>
 </dependency_info>
 </CyGuid_f44455c5-3770-4452-b988-0a7a7ff46256>
@@ -234,7 +264,6 @@
 <dep name=".\CortexM0\ARM_GCC_473\Debug\SPI0.o" />
 <dep name=".\CortexM0\ARM_GCC_473\Debug\SPI0_PM.o" />
 <dep name=".\CortexM0\ARM_GCC_473\Debug\SPI0_INT.o" />
-<dep name=".\CortexM0\ARM_GCC_473\Debug\ETH0.o" />
 <dep name=".\CortexM0\ARM_GCC_473\Debug\RED.o" />
 <dep name=".\CortexM0\ARM_GCC_473\Debug\BLUE.o" />
 <dep name=".\CortexM0\ARM_GCC_473\Debug\GREEN.o" />
@@ -246,6 +275,8 @@
 <dep name=".\CortexM0\ARM_GCC_473\Debug\CyLib.o" />
 <dep name=".\CortexM0\ARM_GCC_473\Debug\cyPm.o" />
 <dep name=".\CortexM0\ARM_GCC_473\Debug\cyutils.o" />
+<dep name=".\CortexM0\ARM_GCC_473\Debug\ETH.o" />
+<dep name=".\CortexM0\ARM_GCC_473\Debug\SSCR.o" />
 <dep name=".\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a" />
 <dep name="${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM0\ARM_GCC_473\Debug\CyComponentLibrary.a" />
 </file>
@@ -279,6 +310,8 @@
 <name_val_pair name=".\Generated_Source\PSoC4\cyutils.c" v="&quot;-I. &quot;&quot;-I./Generated_Source/PSoC4 &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;" />
 <name_val_pair name="C:\Users\chuck.erhardt\Documents\PSoC Creator\E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.hex" v="&quot;-mthumb &quot;&quot;-march=armv6-m &quot;&quot;-T &quot;&quot;.\Generated_Source\PSoC4\cm0gcc.ld &quot;&quot;-g &quot;&quot;-Wl,-Map,${OutputDir}\${ProjectShortName}.map &quot;&quot;-specs=nano.specs &quot;&quot;-Wl,--gc-sections &quot;" />
 <name_val_pair name="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.hex" v="&quot;-mthumb &quot;&quot;-march=armv6-m &quot;&quot;-T &quot;&quot;.\Generated_Source\PSoC4\cm0gcc.ld &quot;&quot;-g &quot;&quot;-Wl,-Map,${OutputDir}\${ProjectShortName}.map &quot;&quot;-specs=nano.specs &quot;&quot;-Wl,--gc-sections &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC4\ETH.c" v="&quot;-I. &quot;&quot;-I./Generated_Source/PSoC4 &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC4\SSCR.c" v="&quot;-I. &quot;&quot;-I./Generated_Source/PSoC4 &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;" />
 </name>
 </genericCmdLineData>
 <codeGenCmdLineTag v="&quot;-.appdatapath&quot; &quot;C:\Users\chuck.erhardt\AppData\Local\Cypress Semiconductor\PSoC Creator\3.0&quot; &quot;-.fdsnotice&quot; &quot;-.fdswarpdepfile=warp_dependencies.txt&quot; &quot;-.fdselabdepfile=elab_dependencies.txt&quot; &quot;-.fdsbldfile=generated_files.txt&quot; &quot;-p&quot; &quot;C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\PSoCPioneer+ArduinoShield_SPIM_Example.cyprj&quot; &quot;-d&quot; &quot;CY8C4245AXI-483&quot; &quot;-s&quot; &quot;C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\Generated_Source\PSoC4&quot; &quot;--&quot; &quot;-yv2&quot; &quot;-v3&quot; &quot;-ygs&quot; &quot;-q10&quot; &quot;-o2&quot; &quot;-.fftcfgtype=LE&quot; " />
@@ -298,22 +331,27 @@
 <tree_states_tab_names>
 <v>Community</v>
 <v>Cypress</v>
+<v>Default</v>
 <v>Off-Chip</v>
 </tree_states_tab_names>
 <tree_states>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Community Component Catalog">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Community Component Catalog\Communications\Ethernet\E2ForLife - W5x00 (W5100 Mode, SPIM) [v2.0]">
 <ExpandedNodeIds>
 <v>Community Component Catalog</v>
 <v>Community Component Catalog\Communications</v>
 <v>Community Component Catalog\Communications\Ethernet</v>
+<v>Community Component Catalog\Communications\Ethernet\Drivers</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>Community Component Catalog</v>
 <v>Community Component Catalog\Communications</v>
 <v>Community Component Catalog\Communications\Ethernet</v>
 <v>Community Component Catalog\Communications\Ethernet\Drivers</v>
-<v>Community Component Catalog\Communications\Ethernet\E2ForLife - W5100 (SCB Mode) [v1.0]</v>
-<v>Community Component Catalog\Communications\Ethernet\E2ForLife - W5100 (SPIM Mode) [v1.0]</v>
+<v>Community Component Catalog\Communications\Ethernet\Drivers\E2ForLife_W5x00 [v2.0]</v>
+<v>Community Component Catalog\Communications\Ethernet\Drivers\E2ForLife_W5100 [v1.2]</v>
+<v>Community Component Catalog\Communications\Ethernet\E2ForLife - W5x00 (W5100 Mode, SPIM) [v2.0]</v>
+<v>Community Component Catalog\Communications\Ethernet\E2ForLife - W5100 (SCB Mode) [v1.2]</v>
+<v>Community Component Catalog\Communications\Ethernet\E2ForLife - W5100 (SPIM Mode) [v1.2]</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -330,6 +368,15 @@
 <v>Cypress Component Catalog\Ports and Pins</v>
 <v>Cypress Component Catalog\System</v>
 <v>Cypress Component Catalog\Thermal Management</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Default Component Catalog</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Default Component Catalog</v>
+<v>Default Component Catalog\Components</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -354,120 +401,129 @@
 <CyGuid_925cc1e1-309e-4e08-b0a1-09a83c35b157 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtProjectPSoCExe+CyCodeGenDepUserInfo" version="1">
 <deps_list>
 <v>.\TopDesign\TopDesign.cysch</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cyprimitive</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cysym</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.pdf</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cystate</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\custom.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cygeneralcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cygeneralcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyinputcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyinputcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cymappingcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cymappingcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyoutputcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyoutputcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinaliasdialog.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinaliasdialog.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinscontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinscontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyporcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyporcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cytypecontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cytypecontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\Resource1.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyclockingcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyclockingcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cygeneralcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyinputcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cymappingcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyoutputcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinaliasdialog.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinscontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyporcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cytypecontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\Resource1.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyclockingcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\pins.c</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\pins.h</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\aliases.h</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cyprimitive</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cysym</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.pdf</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cystate</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\custom.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cygeneralcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cygeneralcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyinputcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyinputcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cymappingcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cymappingcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyoutputcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyoutputcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinaliasdialog.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinaliasdialog.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinscontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinscontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyporcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyporcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cytypecontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cytypecontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\Resource1.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyclockingcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyclockingcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cygeneralcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyinputcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cymappingcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyoutputcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinaliasdialog.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinscontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyporcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cytypecontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\Resource1.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyclockingcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\pins.c</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\pins.h</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\aliases.h</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cyprimitive</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cysym</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.pdf</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cystate</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\custom.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cygeneralcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cygeneralcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyinputcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyinputcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cymappingcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cymappingcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyoutputcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyoutputcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinaliasdialog.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinaliasdialog.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinscontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinscontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyporcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyporcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cytypecontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cytypecontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\Resource1.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyclockingcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyclockingcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cygeneralcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyinputcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cymappingcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyoutputcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinaliasdialog.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinscontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyporcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cytypecontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\Resource1.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyclockingcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\pins.c</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\pins.h</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyenums.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinsdata.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinutils.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cytypecontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cytypecontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyclockingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyclockingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cytypecontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyclockingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\PSoC4\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\PSoC4\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\PSoC4\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyenums.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinsdata.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinutils.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cytypecontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cytypecontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyclockingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyclockingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cytypecontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyclockingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\PSoC4\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\PSoC4\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\PSoC4\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyenums.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinsdata.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinutils.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cytypecontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cytypecontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyclockingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyclockingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cytypecontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyclockingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\PSoC4\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\PSoC4\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\PSoC4\API\aliases.h</v>
 <v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\SPI_Master_v2_40\SPI_Master_v2_40.cysch</v>
 <v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\SPI_Master_v2_40\SPI_Master_v2_40.cysym</v>
 <v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\SPI_Master_v2_40\SPI_Master_v2_40.pdf</v>
@@ -493,13 +549,13 @@
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.pdf</v>
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v</v>
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\Custom\custom.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v2_0\cy_clock_v2_0.cyprimitive</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v2_0\cy_clock_v2_0.cysym</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v2_0\cy_clock_v2_0.pdf</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v2_0\cy_clock_v2_0.cystate</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v2_0\PSoC4\API\clk.c</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v2_0\PSoC4\API\clk.h</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v2_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v2_20\cy_clock_v2_20.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v2_20\cy_clock_v2_20.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v2_20\cy_clock_v2_20.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v2_20\PSoC4\API\clk.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v2_20\PSoC4\API\clk.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v2_20\Custom\custom.cs</v>
 <v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_SPI_Master_v2_40\B_SPI_Master_v2_40.cysym</v>
 <v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_SPI_Master_v2_40\B_SPI_Master_v2_40.v</v>
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.cysym</v>
@@ -513,222 +569,254 @@
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.cysym</v>
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.pdf</v>
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cyprimitive</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cysym</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.pdf</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cystate</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\custom.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cygeneralcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cygeneralcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyinputcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyinputcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cymappingcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cymappingcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyoutputcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyoutputcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinaliasdialog.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinaliasdialog.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinscontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinscontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyporcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyporcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cytypecontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cytypecontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\Resource1.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyclockingcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyclockingcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cygeneralcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyinputcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cymappingcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyoutputcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinaliasdialog.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinscontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyporcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cytypecontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\Resource1.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyclockingcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\pins.c</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\pins.h</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\aliases.h</v>
-<v>..\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_2\E2ForLife_W5100_v1_2.cysym</v>
-<v>..\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_2\E2ForLife_W5100_v1_2.pdf</v>
-<v>..\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_2</v>
-<v>..\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_2\API\W5100.c</v>
-<v>..\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_2\API\W5100.h</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cyprimitive</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cysym</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.pdf</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cystate</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\custom.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cygeneralcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cygeneralcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyinputcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyinputcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cymappingcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cymappingcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyoutputcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyoutputcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinaliasdialog.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinaliasdialog.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinscontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinscontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyporcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyporcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cytypecontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cytypecontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\Resource1.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyclockingcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyclockingcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cygeneralcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyinputcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cymappingcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyoutputcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinaliasdialog.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinscontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyporcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cytypecontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\Resource1.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyclockingcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\pins.c</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\pins.h</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\aliases.h</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cyprimitive</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cysym</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.pdf</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cystate</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\custom.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cygeneralcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cygeneralcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyinputcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyinputcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cymappingcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cymappingcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyoutputcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyoutputcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinaliasdialog.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinaliasdialog.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinscontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinscontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyporcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyporcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cytypecontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cytypecontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\Resource1.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyclockingcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyclockingcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cygeneralcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyinputcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cymappingcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyoutputcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinaliasdialog.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinscontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyporcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cytypecontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\Resource1.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyclockingcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\pins.c</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\pins.h</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\aliases.h</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cyprimitive</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cysym</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.pdf</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cystate</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\custom.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cygeneralcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cygeneralcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyinputcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyinputcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cymappingcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cymappingcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyoutputcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyoutputcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinaliasdialog.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinaliasdialog.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinscontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinscontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyporcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyporcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cytypecontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cytypecontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\Resource1.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyclockingcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyclockingcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cygeneralcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyinputcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cymappingcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyoutputcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinaliasdialog.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinscontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyporcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cytypecontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\Resource1.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyclockingcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\pins.c</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\pins.h</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\aliases.h</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cyprimitive</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cysym</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.pdf</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\cy_pins_v1_90.cystate</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\custom.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cygeneralcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cygeneralcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyinputcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyinputcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cymappingcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cymappingcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyoutputcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyoutputcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinaliasdialog.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinaliasdialog.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinscontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinscontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyporcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyporcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cytypecontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cytypecontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\Resource1.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyclockingcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyclockingcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cygeneralcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyinputcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cymappingcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyoutputcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinaliasdialog.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cypinscontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyporcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cytypecontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\Resource1.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\Custom\cyclockingcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\pins.c</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\pins.h</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyenums.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinsdata.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinutils.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cytypecontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cytypecontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyclockingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyclockingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cytypecontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyclockingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\PSoC4\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\PSoC4\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\PSoC4\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyenums.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinsdata.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinutils.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cytypecontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cytypecontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyclockingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyclockingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cytypecontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyclockingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\PSoC4\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\PSoC4\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\PSoC4\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyenums.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinsdata.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinutils.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cytypecontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cytypecontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyclockingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyclockingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cytypecontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyclockingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\PSoC4\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\PSoC4\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\PSoC4\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyenums.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinsdata.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinutils.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cytypecontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cytypecontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyclockingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyclockingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cytypecontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyclockingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\PSoC4\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\PSoC4\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\PSoC4\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\cy_pins_v2_0.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyenums.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinsdata.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinutils.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cytypecontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cytypecontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyclockingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyclockingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cytypecontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\Custom\cyclockingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\PSoC4\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\PSoC4\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_0\PSoC4\API\aliases.h</v>
+<v>..\E2ForLife_W5100.cylib\E2ForLife_W5x00_v2_0\E2ForLife_W5x00_v2_0.cysym</v>
+<v>..\E2ForLife_W5100.cylib\E2ForLife_W5x00_v2_0\E2ForLife_W5x00_v2_0.pdf</v>
+<v>..\E2ForLife_W5100.cylib\E2ForLife_W5x00_v2_0\API\W5x00.c</v>
+<v>..\E2ForLife_W5100.cylib\E2ForLife_W5x00_v2_0\API\W5x00.h</v>
+<v>..\E2ForLife_W5100.cylib\E2ForLife_W5x00_v2_0\API\reg51.h</v>
+<v>..\E2ForLife_W5100.cylib\E2ForLife_W5x00_v2_0\API\reg52.h</v>
+<v>..\E2ForLife_W5100.cylib\E2ForLife_W5x00_v2_0</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_70\CyControlReg_v1_70.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_70\CyControlReg_v1_70.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_70\CyControlReg_v1_70.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_70\CyControlReg_v1_70.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_70\CyControlReg_v1_70.cycdx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_70\CyControlReg_v1_70.cydmacap</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_70\API\CyControlReg.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_70\API\CyControlReg.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_70\Custom\ControlRegParameters.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_70\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_70\Custom\cybitfieldcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_70\Custom\cybitfieldcontrol.designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_70\Custom\Resources.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_70\Custom\cybitfieldcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_70\Custom\Resources.resx</v>
 <v>.\PSoCPioneer+ArduinoShield_SPIM_Example.cydwr</v>
-<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_0\PSoC4\API\cm0gcc.ld</v>
-<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_0\PSoC4\API\Cm0RealView.scat</v>
-<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_0\PSoC4\API\Cm0Start.c</v>
-<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_0\PSoC4\API\core_cm0.h</v>
-<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_0\PSoC4\API\core_cm0_psoc4.h</v>
-<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_0\PSoC4\API\CyBootAsmGnu.s</v>
-<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_0\PSoC4\API\CyBootAsmRv.s</v>
-<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_0\PSoC4\API\CyFlash.c</v>
-<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_0\PSoC4\API\CyFlash.h</v>
-<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_0\PSoC4\API\CyLib.c</v>
-<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_0\PSoC4\API\CyLib.h</v>
-<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_0\PSoC4\API\cyPm.c</v>
-<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_0\PSoC4\API\cyPm.h</v>
-<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_0\PSoC4\API\cytypes.h</v>
-<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_0\PSoC4\API\cyutils.c</v>
-<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_0\PSoC4\API\cypins.h</v>
-<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_0\PSoC4\API\core_cmFunc.h</v>
-<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_0\PSoC4\API\core_cmInstr.h</v>
-<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_0\PSoC4\API\Cm0Iar.icf</v>
-<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_0\PSoC4\API\CyBootAsmIar.s</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_10\PSoC4\API\cm0gcc.ld</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_10\PSoC4\API\Cm0RealView.scat</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_10\PSoC4\API\Cm0Start.c</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_10\PSoC4\API\core_cm0.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_10\PSoC4\API\core_cm0_psoc4.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_10\PSoC4\API\CyBootAsmGnu.s</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_10\PSoC4\API\CyBootAsmRv.s</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_10\PSoC4\API\CyFlash.c</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_10\PSoC4\API\CyFlash.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_10\PSoC4\API\CyLib.c</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_10\PSoC4\API\CyLib.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_10\PSoC4\API\cyPm.c</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_10\PSoC4\API\cyPm.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_10\PSoC4\API\cytypes.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_10\PSoC4\API\cyutils.c</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_10\PSoC4\API\cypins.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_10\PSoC4\API\core_cmFunc.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_10\PSoC4\API\core_cmInstr.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_10\PSoC4\API\Cm0Iar.icf</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_10\PSoC4\API\CyBootAsmIar.s</v>
 </deps_list>
 <gen_list>
 <v>.\Generated_Source\PSoC4\cyfitter_cfg.h</v>
@@ -786,6 +874,12 @@
 <v>.\Generated_Source\PSoC4\Cm0Iar.icf</v>
 <v>.\Generated_Source\PSoC4\CyBootAsmIar.s</v>
 <v>.\Generated_Source\PSoC4\project.h</v>
+<v>.\Generated_Source\PSoC4\ETH.c</v>
+<v>.\Generated_Source\PSoC4\ETH.h</v>
+<v>.\Generated_Source\PSoC4\ETH_reg51.h</v>
+<v>.\Generated_Source\PSoC4\ETH_reg52.h</v>
+<v>.\Generated_Source\PSoC4\SSCR.c</v>
+<v>.\Generated_Source\PSoC4\SSCR.h</v>
 </gen_list>
 <warp_dep>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\ieee\work\stdlogic.vif</v>
@@ -795,17 +889,18 @@
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\cypress.v</v>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\cy_psoc3_inc.v</v>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v</v>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_70\CyControlReg_v1_70.v</v>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif</v>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif</v>
 </warp_dep>
-<deps_time v="130342835942356958" />
+<deps_time v="130525168828007473" />
 <top_block v="TopDesign" />
 <last_generation v="1" />
 </CyGuid_925cc1e1-309e-4e08-b0a1-09a83c35b157>
 </dataGuid>
 <dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
-<deps_time v="130342849907986958" />
+<deps_time v="130525168847889461" />
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>
 <dataGuid v="504337dd-7d07-4bc7-9057-90e60cf6c469">

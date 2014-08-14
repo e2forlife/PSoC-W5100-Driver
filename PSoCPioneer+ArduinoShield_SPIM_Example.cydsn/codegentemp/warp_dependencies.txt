@@ -12,6 +12,8 @@ C:/Program\ Files\ (x86)/Cypress/PSoC\ Creator/3.0/PSoC\ Creator/warp/lib/common
 
 C:/Program\ Files\ (x86)/Cypress/PSoC\ Creator/3.0/PSoC\ Creator/psoc/content/cyprimitives/CyPrimitives.cylib/ZeroTerminal/ZeroTerminal.v : 
 
+C:/Program\ Files\ (x86)/Cypress/PSoC\ Creator/3.0/PSoC\ Creator/psoc/content/cyprimitives/CyPrimitives.cylib/CyControlReg_v1_70/CyControlReg_v1_70.v : 
+
 C:/Program\ Files\ (x86)/Cypress/PSoC\ Creator/3.0/PSoC\ Creator/warp/lib/common/stdlogic/rtlpkg.vif : 
 
 C:/Program\ Files\ (x86)/Cypress/PSoC\ Creator/3.0/PSoC\ Creator/warp/lib/common/stdlogic/cy_psoc3.vif : 

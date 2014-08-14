@@ -19,8 +19,6 @@
   <file name="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\codegentemp\SPI0_PM.c" value="ARM_C_FILE;SPI0" />
   <file name="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\codegentemp\SPI0_INT.c" value="ARM_C_FILE;SPI0" />
   <file name="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\codegentemp\SPI0_PVT.h" value="NONE;SPI0" />
-  <file name="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\codegentemp\ETH0.c" value="ARM_C_FILE;ETH0" />
-  <file name="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\codegentemp\ETH0.h" value="NONE;ETH0" />
   <file name="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\codegentemp\RED.c" value="ARM_C_FILE;RED" />
   <file name="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\codegentemp\RED.h" value="NONE;RED" />
   <file name="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\codegentemp\RED_aliases.h" value="NONE;RED" />
@@ -33,6 +31,12 @@
   <file name="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\codegentemp\SDCS.c" value="ARM_C_FILE;SDCS" />
   <file name="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\codegentemp\SDCS.h" value="NONE;SDCS" />
   <file name="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\codegentemp\SDCS_aliases.h" value="NONE;SDCS" />
+  <file name="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\codegentemp\ETH.c" value="ARM_C_FILE;ETH" />
+  <file name="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\codegentemp\ETH.h" value="NONE;ETH" />
+  <file name="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\codegentemp\ETH_reg51.h" value="NONE;ETH" />
+  <file name="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\codegentemp\ETH_reg52.h" value="NONE;ETH" />
+  <file name="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\codegentemp\SSCR.c" value="ARM_C_FILE;SSCR" />
+  <file name="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\codegentemp\SSCR.h" value="NONE;SSCR" />
   <file name="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\codegentemp\SPI0_IntClock.c" value="ARM_C_FILE;SPI0_IntClock" />
   <file name="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\codegentemp\SPI0_IntClock.h" value="NONE;SPI0_IntClock" />
   <file name="C:\Users\chuck.erhardt\Documents\GitHub\PSoC-W5100-Driver\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\codegentemp\cm0gcc.ld" value="NONE;cy_boot" />

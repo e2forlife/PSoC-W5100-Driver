@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <blockRegMap version="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cypress.com/xsd/cyblockregmap cyblockregmap.xsd" xmlns="http://cypress.com/xsd/cyblockregmap">
-  <block name="RED" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="ETH0" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="GREEN" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="BLUE" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="SDCS" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="GREEN" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="SSCR" BASE="0x0" SIZE="0x0" desc="" visible="true">
+    <register name="SSCR_CONTROL_REG" address="0x400F0070" bitWidth="8" desc="" />
+  </block>
+  <block name="ETH" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="RED" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="ETH_MOSI_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="ETH_MISO_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="ETH_SCLK_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />

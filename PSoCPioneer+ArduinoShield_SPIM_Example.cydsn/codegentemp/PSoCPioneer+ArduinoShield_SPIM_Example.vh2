@@ -2,7 +2,7 @@
 --	Conversion of PSoCPioneer+ArduinoShield_SPIM_Example.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Wed Jan 15 13:19:47 2014
+--	Thu Aug 14 15:07:57 2014
 --
 
 USE cypress.cypress.all;
@@ -154,6 +154,7 @@ SIGNAL \SPI0:BSPIM:sR8:Dp:f1_blk_stat_reg\ : bit;
 ATTRIBUTE port_state_att of \SPI0:BSPIM:sR8:Dp:f1_blk_stat_reg\:SIGNAL IS 2;
 SIGNAL \SPI0:Net_274\ : bit;
 SIGNAL tmpOE__ETH_CSN_1_net_0 : bit;
+SIGNAL Net_71 : bit;
 SIGNAL tmpFB_0__ETH_CSN_1_net_0 : bit;
 SIGNAL tmpIO_0__ETH_CSN_1_net_0 : bit;
 TERMINAL tmpSIOVREF__ETH_CSN_1_net_0 : bit;
@@ -178,6 +179,31 @@ SIGNAL tmpFB_0__SDCS_net_0 : bit;
 SIGNAL tmpIO_0__SDCS_net_0 : bit;
 TERMINAL tmpSIOVREF__SDCS_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__SDCS_net_0 : bit;
+SIGNAL \SSCR:clk\ : bit;
+SIGNAL \SSCR:rst\ : bit;
+SIGNAL \SSCR:control_out_0\ : bit;
+SIGNAL Net_82 : bit;
+SIGNAL \SSCR:control_out_1\ : bit;
+SIGNAL Net_83 : bit;
+SIGNAL \SSCR:control_out_2\ : bit;
+SIGNAL Net_84 : bit;
+SIGNAL \SSCR:control_out_3\ : bit;
+SIGNAL Net_85 : bit;
+SIGNAL \SSCR:control_out_4\ : bit;
+SIGNAL Net_86 : bit;
+SIGNAL \SSCR:control_out_5\ : bit;
+SIGNAL Net_87 : bit;
+SIGNAL \SSCR:control_out_6\ : bit;
+SIGNAL Net_88 : bit;
+SIGNAL \SSCR:control_out_7\ : bit;
+SIGNAL \SSCR:control_7\ : bit;
+SIGNAL \SSCR:control_6\ : bit;
+SIGNAL \SSCR:control_5\ : bit;
+SIGNAL \SSCR:control_4\ : bit;
+SIGNAL \SSCR:control_3\ : bit;
+SIGNAL \SSCR:control_2\ : bit;
+SIGNAL \SSCR:control_1\ : bit;
+SIGNAL \SSCR:control_0\ : bit;
 SIGNAL Net_25D : bit;
 SIGNAL \SPI0:BSPIM:so_send_reg\\D\ : bit;
 SIGNAL \SPI0:BSPIM:mosi_reg\\D\ : bit;
@@ -647,7 +673,7 @@ ETH_CSN_1:cy_psoc3_pins_v1_10
 		pa_out_clock_en=>-1,
 		pa_out_reset=>-1)
 	PORT MAP(oe=>(tmpOE__ETH_MISO_1_net_0),
-		y=>Net_1,
+		y=>Net_71,
 		fb=>(tmpFB_0__ETH_CSN_1_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__ETH_CSN_1_net_0),
@@ -920,6 +946,16 @@ SDCS:cy_psoc3_pins_v1_10
 		out_clock_en=>tmpOE__ETH_MISO_1_net_0,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__SDCS_net_0);
+\SSCR:Sync:ctrl_reg\:cy_psoc3_control
+	GENERIC MAP(cy_init_value=>"00000001",
+		cy_force_order=>'1',
+		cy_ctrl_mode_1=>"00000000",
+		cy_ctrl_mode_0=>"00000000",
+		cy_ext_reset=>'0')
+	PORT MAP(reset=>zero,
+		clock=>zero,
+		control=>(\SSCR:control_7\, \SSCR:control_6\, \SSCR:control_5\, \SSCR:control_4\,
+			\SSCR:control_3\, \SSCR:control_2\, \SSCR:control_1\, Net_71));
 Net_25:cy_dff
 	PORT MAP(d=>Net_25D,
 		clk=>\SPI0:BSPIM:clk_fin\,

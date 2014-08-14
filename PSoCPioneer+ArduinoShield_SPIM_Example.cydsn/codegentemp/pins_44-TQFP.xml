@@ -47,6 +47,8 @@
     <capability name="LCD_COM" value="0x0000080000000000" />
     <capability name="LCD_SEG" value="0x0000100000000000" />
     <capability name="WAKEUP" value="0x0000200000000000" />
+    <capability name="SCB_UART_CTS" value="0x0000400000000000" />
+    <capability name="SCB_UART_RTS" value="0x0000800000000000" />
   </capabilities>
   <pins>
     <pin number="1" name="VSS" pinSide="WEST" padSide="WEST" ioSupplyPin="VDDD" ioSupplyPinNo="19" powerPadNames="VSSD" capabilities="0x0000000000000000" />
@@ -266,7 +268,7 @@
       <function name="WAKEUP" />
       <function name="SCB1_SPI_SSEL_0[1]" />
     </pin>
-    <pin number="32" name="XRES" pinSide="EAST" padSide="EAST" ioSupplyPin="VDDD" ioSupplyPinNo="19" powerPadNames="XRES" capabilities="0x0000000000000000" />
+    <pin number="32" name="XRES" pinSide="EAST" padSide="EAST" ioSupplyPin="VDDD" ioSupplyPinNo="19" dedicatedPadNames="XRES" capabilities="0x0000000000000000" />
     <pin number="33" name="VCCD" pinSide="EAST" padSide="NORTH" ioSupplyPin="VDDD" ioSupplyPinNo="19" powerPadNames="VCCD" capabilities="0x0000000000000000" />
     <pin number="34" name="VDDD" pinSide="NORTH" padSide="NORTH" ioSupplyPin="VDDD" ioSupplyPinNo="19" powerPadNames="VDDD" capabilities="0x0000000000000000" />
     <pin number="35" name="VDDA" pinSide="NORTH" padSide="NORTH" ioSupplyPin="VDDD" ioSupplyPinNo="19" powerPadNames="VDDA" capabilities="0x0000000000000000" />
