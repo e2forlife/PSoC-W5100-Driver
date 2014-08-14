@@ -13,13 +13,12 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\PSoCPioneer+ArduinoShield_SPIM_Example.cydwr">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="E2ForLife\W5200Test_CustomPlatform\W5200Test_CustomPlatform.cydwr">
 <ExpandedNodeIds>
 <v>E2ForLife</v>
 <v>E2ForLife\E2ForLife_W5100</v>
 <v>E2ForLife\E2ForLife_W5100\Header Files</v>
 <v>E2ForLife\E2ForLife_W5100\Source Files</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example</v>
 <v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\TopDesign.cysch</v>
 <v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\freeSoCExplorer+ArduinoSheld_Example.cydwr</v>
 <v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Header Files</v>
@@ -174,7 +173,6 @@
 <v>E2ForLife\PSoCPioneer+ArduinoShield_Example\Generated_Source\PSoC4\cyfitterrv.inc</v>
 <v>E2ForLife\PSoCPioneer+ArduinoShield_Example\Generated_Source\PSoC4\cymetadata.c</v>
 <v>E2ForLife\PSoCPioneer+ArduinoShield_Example\Generated_Source\PSoC4\project.h</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example</v>
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\TopDesign.cysch</v>
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\PSoCPioneer+ArduinoShield_SPIM_Example.cydwr</v>
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Header Files</v>
@@ -249,6 +247,12 @@
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\cyfitterrv.inc</v>
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\cymetadata.c</v>
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\project.h</v>
+<v>E2ForLife\W5200Test_CustomPlatform</v>
+<v>E2ForLife\W5200Test_CustomPlatform\TopDesign.cysch</v>
+<v>E2ForLife\W5200Test_CustomPlatform\W5200Test_CustomPlatform.cydwr</v>
+<v>E2ForLife\W5200Test_CustomPlatform\Header Files</v>
+<v>E2ForLife\W5200Test_CustomPlatform\Source Files</v>
+<v>E2ForLife\W5200Test_CustomPlatform\Source Files\main.c</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>E2ForLife</v>
@@ -256,59 +260,14 @@
 <v>E2ForLife\E2ForLife_W5100\Header Files</v>
 <v>E2ForLife\E2ForLife_W5100\Source Files</v>
 <v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\TopDesign.cysch</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\freeSoCExplorer+ArduinoSheld_Example.cydwr</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Header Files</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Source Files</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Source Files\main.c</v>
-<v>E2ForLife\freeSoCExplorer+ArduinoSheld_Example\Generated_Source</v>
 <v>E2ForLife\PSoCPioneer+ArduinoShield_Example</v>
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\TopDesign.cysch</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\PSoCPioneer+ArduinoShield_SPIM_Example.cydwr</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Header Files</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Source Files</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Source Files\main.c</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\BLUE</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\BLUE\BLUE.c</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\BLUE\BLUE.h</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\BLUE\BLUE_aliases.h</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\cy_boot</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\cy_boot\cm0gcc.ld</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\cy_boot\Cm0Iar.icf</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\cy_boot\Cm0RealView.scat</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\cy_boot\Cm0Start.c</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\cy_boot\core_cm0.h</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\cy_boot\core_cm0_psoc4.h</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\cy_boot\core_cmFunc.h</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\cy_boot\core_cmInstr.h</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\cy_boot\CyBootAsmGnu.s</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\cy_boot\CyBootAsmIar.s</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\cy_boot\CyBootAsmRv.s</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\cy_boot\CyFlash.c</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\cy_boot\CyFlash.h</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\cy_boot\CyLib.c</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\cy_boot\CyLib.h</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\cy_boot\cypins.h</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\cy_boot\cyPm.c</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\cy_boot\cyPm.h</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\cy_boot\cytypes.h</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\cy_boot\cyutils.c</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\ETH</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\ETH\ETH.c</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\ETH\ETH.h</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\ETH\ETH_reg51.h</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\ETH\ETH_reg52.h</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\GREEN</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\GREEN\GREEN.c</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\GREEN\GREEN.h</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\GREEN\GREEN_aliases.h</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\RED</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\RED\RED.c</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\RED\RED.h</v>
-<v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\Generated_Source\PSoC4\RED\RED_aliases.h</v>
+<v>E2ForLife\W5200Test_CustomPlatform</v>
+<v>E2ForLife\W5200Test_CustomPlatform\TopDesign.cysch</v>
+<v>E2ForLife\W5200Test_CustomPlatform\W5200Test_CustomPlatform.cydwr</v>
+<v>E2ForLife\W5200Test_CustomPlatform\Header Files</v>
+<v>E2ForLife\W5200Test_CustomPlatform\Source Files</v>
+<v>E2ForLife\W5200Test_CustomPlatform\Source Files\main.c</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="E2ForLife\E2ForLife_W5100\E2ForLife_W5x00_v2_0\API\reg52.h">
@@ -360,6 +319,9 @@
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example</v>
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\TopDesign</v>
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\TopDesign\TopDesign.cysch</v>
+<v>E2ForLife\W5200Test_CustomPlatform</v>
+<v>E2ForLife\W5200Test_CustomPlatform\TopDesign</v>
+<v>E2ForLife\W5200Test_CustomPlatform\TopDesign\TopDesign.cysch</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>E2ForLife</v>
@@ -395,6 +357,9 @@
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example</v>
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\TopDesign</v>
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\TopDesign\TopDesign.cysch</v>
+<v>E2ForLife\W5200Test_CustomPlatform</v>
+<v>E2ForLife\W5200Test_CustomPlatform\TopDesign</v>
+<v>E2ForLife\W5200Test_CustomPlatform\TopDesign\TopDesign.cysch</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -552,6 +517,9 @@
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.map</v>
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\PSoCPioneer+ArduinoShield_SPIM_Example.rpt</v>
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\PSoCPioneer+ArduinoShield_SPIM_Example_timing.html</v>
+<v>E2ForLife\W5200Test_CustomPlatform</v>
+<v>E2ForLife\W5200Test_CustomPlatform\W5200Test_CustomPlatform.rpt</v>
+<v>E2ForLife\W5200Test_CustomPlatform\W5200Test_CustomPlatform_timing.html</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>E2ForLife</v>
@@ -648,6 +616,14 @@
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\CyControlReg_v1_70</v>
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\E2ForLife_W5x00_v2_0</v>
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\SPI_Master_v2_40</v>
+<v>E2ForLife\W5200Test_CustomPlatform</v>
+<v>E2ForLife\W5200Test_CustomPlatform\PSoC 5 Architecture TRM</v>
+<v>E2ForLife\W5200Test_CustomPlatform\CY8C58LP Family Datasheet</v>
+<v>E2ForLife\W5200Test_CustomPlatform\System Reference Guide v4_10</v>
+<v>E2ForLife\W5200Test_CustomPlatform\cy_pins_v2_0</v>
+<v>E2ForLife\W5200Test_CustomPlatform\CyControlReg_v1_70</v>
+<v>E2ForLife\W5200Test_CustomPlatform\E2ForLife_W5x00_v2_0</v>
+<v>E2ForLife\W5200Test_CustomPlatform\SPI_Master_v2_40</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>E2ForLife</v>
@@ -677,6 +653,14 @@
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\CyControlReg_v1_70</v>
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\E2ForLife_W5x00_v2_0</v>
 <v>E2ForLife\PSoCPioneer+ArduinoShield_SPIM_Example\SPI_Master_v2_40</v>
+<v>E2ForLife\W5200Test_CustomPlatform</v>
+<v>E2ForLife\W5200Test_CustomPlatform\PSoC 5 Architecture TRM</v>
+<v>E2ForLife\W5200Test_CustomPlatform\CY8C58LP Family Datasheet</v>
+<v>E2ForLife\W5200Test_CustomPlatform\System Reference Guide v4_10</v>
+<v>E2ForLife\W5200Test_CustomPlatform\cy_pins_v2_0</v>
+<v>E2ForLife\W5200Test_CustomPlatform\CyControlReg_v1_70</v>
+<v>E2ForLife\W5200Test_CustomPlatform\E2ForLife_W5x00_v2_0</v>
+<v>E2ForLife\W5200Test_CustomPlatform\SPI_Master_v2_40</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
@@ -687,14 +671,31 @@
 <indicators />
 </CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf>
 </dataGuid>
+<dataGuid v="6c335137-fa19-46ce-bc2d-2fbeb6d5f2a2">
+<CyGuid_70084457-cd6a-4593-9ed0-7f6eeb432dc2 type_name="CyDesigner.Common.ProjMgmt.GUI.CyDependenciesCustomData" version="1">
+<dictName v=".\W5200Test_CustomPlatform.cydsn\W5200Test_CustomPlatform.cyprj">
+<listName>
+<v>.\PSoCPioneer+ArduinoShield_Example.cydsn\PSoCPioneer+ArduinoShield_Example.cyprj</v>
+<v>.\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\PSoCPioneer+ArduinoShield_SPIM_Example.cyprj</v>
+<v>.\freeSoCExplorer+ArduinoSheld_Example.cydsn\freeSoCExplorer+ArduinoSheld_Example.cyprj</v>
+</listName>
+</dictName>
+</CyGuid_70084457-cd6a-4593-9ed0-7f6eeb432dc2>
+</dataGuid>
 </userData>
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
+<name v=".\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\E2ForLife_W5100.cylib\E2ForLife_W5x00_v2_0\PSoC4\E2ForLife_W5200_SPIM_v2_0_01.cymacro" />
+<name v=".\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\main.c" />
+<name v=".\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\Generated_Source\PSoC4\ETH.c" />
 <name v=".\E2ForLife_W5100.cylib\E2ForLife_W5x00_v2_0\API\W5x00.c" />
-<name v=".\E2ForLife_W5100.cylib\E2ForLife_W5x00_v2_0\API\W5x00.h" />
 <name v=".\E2ForLife_W5100.cylib\E2ForLife_W5x00_v2_0\API\reg51.h" />
+<name v=".\E2ForLife_W5100.cylib\E2ForLife_W5x00_v2_0\API\W5x00.h" />
+<name v=".\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\Generated_Source\PSoC4\ETH_reg52.h" />
 <name v=".\E2ForLife_W5100.cylib\E2ForLife_W5x00_v2_0\API\reg52.h" />
+<name v=".\W5200Test_CustomPlatform.cydsn\TopDesign\TopDesign.cysch" />
 </OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />
