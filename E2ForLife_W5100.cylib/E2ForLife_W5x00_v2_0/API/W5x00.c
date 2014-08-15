@@ -230,7 +230,7 @@ void
 	     */
 		`$SPI_INSTANCE`_WriteTxData( (adr>>8) & 0x00FF);
 		`$SPI_INSTANCE`_WriteTxData( adr & 0x00FF );
-		txLen = (lenght > `$INSTANCE_NAME`_BURST_MAX)? `$INSTANCE_NAME`_BURST_MAX : length;
+		txLen = (length > `$INSTANCE_NAME`_BURST_MAX)? `$INSTANCE_NAME`_BURST_MAX : length;
 		`$SPI_INSTANCE`_WriteTxData( 0x80 | ((txLen>>8)&0x007F) );
 		`$SPI_INSTANCE`_WriteTxData( txLen & 0x00FF );
 #endif

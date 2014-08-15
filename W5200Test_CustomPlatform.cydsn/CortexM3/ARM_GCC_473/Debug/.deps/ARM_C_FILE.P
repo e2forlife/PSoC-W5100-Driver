@@ -1,0 +1,126 @@
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/CortexM3/ARM_GCC_473/Debug/CSN_1.o : Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CSN_1.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CSN_1_aliases.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice_trm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyfitter.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cypins.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cytypes.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CSN_1.c 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CSN_1.h : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CSN_1_aliases.h : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice.h : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice_trm.h : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyfitter.h : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cypins.h : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cytypes.h : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CSN_1.c : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/CortexM3/ARM_GCC_473/Debug/Cm3Start.o : Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyDmac.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyFlash.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyLib.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CySpc.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyPm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice_trm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyfitter.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cytypes.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/Cm3Start.c 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyDmac.h : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyFlash.h : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyLib.h : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CySpc.h : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyPm.h : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/Cm3Start.c : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/CortexM3/ARM_GCC_473/Debug/CyDmac.o : Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyDmac.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyFlash.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyLib.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CySpc.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyPm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice_trm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyfitter.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cytypes.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyDmac.c 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyDmac.c : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/CortexM3/ARM_GCC_473/Debug/CyFlash.o : Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyFlash.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyLib.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CySpc.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyPm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice_trm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyfitter.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cytypes.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyFlash.c 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyFlash.c : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/CortexM3/ARM_GCC_473/Debug/CyLib.o : Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyFlash.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyLib.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CySpc.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyPm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice_trm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyfitter.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cytypes.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyLib.c 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyLib.c : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/CortexM3/ARM_GCC_473/Debug/CySpc.o : Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyFlash.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyLib.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CySpc.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyPm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice_trm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyfitter.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cytypes.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CySpc.c 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CySpc.c : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/CortexM3/ARM_GCC_473/Debug/ETH.o : Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyFlash.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyLib.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CySpc.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/ETH.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/ETH_reg52.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SPI.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SPI_IntClock.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SSCR.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyPm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice_trm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyfitter.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cylib.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cytypes.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/ETH.c 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/ETH.h : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/ETH_reg52.h : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SPI.h : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SPI_IntClock.h : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SSCR.h : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/ETH.c : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/CortexM3/ARM_GCC_473/Debug/MISO_1.o : Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/MISO_1.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/MISO_1_aliases.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice_trm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyfitter.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cypins.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cytypes.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/MISO_1.c 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/MISO_1.h : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/MISO_1_aliases.h : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/MISO_1.c : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/CortexM3/ARM_GCC_473/Debug/MOSI_1.o : Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/MOSI_1.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/MOSI_1_aliases.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice_trm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyfitter.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cypins.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cytypes.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/MOSI_1.c 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/MOSI_1.h : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/MOSI_1_aliases.h : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/MOSI_1.c : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/CortexM3/ARM_GCC_473/Debug/SCLK_1.o : Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SCLK_1.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SCLK_1_aliases.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice_trm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyfitter.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cypins.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cytypes.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SCLK_1.c 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SCLK_1.h : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SCLK_1_aliases.h : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SCLK_1.c : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/CortexM3/ARM_GCC_473/Debug/SPI.o : Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyFlash.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyLib.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CySpc.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SPI.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SPI_IntClock.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SPI_PVT.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyPm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice_trm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyfitter.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cytypes.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SPI.c 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SPI_PVT.h : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SPI.c : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/CortexM3/ARM_GCC_473/Debug/SPI_INT.o : Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyFlash.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyLib.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CySpc.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SPI.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SPI_IntClock.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SPI_PVT.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyPm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice_trm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyfitter.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cytypes.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SPI_INT.c 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SPI_INT.c : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/CortexM3/ARM_GCC_473/Debug/SPI_IntClock.o : Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SPI_IntClock.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice_trm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyfitter.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cytypes.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SPI_IntClock.c 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SPI_IntClock.c : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/CortexM3/ARM_GCC_473/Debug/SPI_PM.o : Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyFlash.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyLib.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CySpc.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SPI.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SPI_IntClock.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SPI_PVT.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyPm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice_trm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyfitter.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cytypes.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SPI_PM.c 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SPI_PM.c : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/CortexM3/ARM_GCC_473/Debug/SSCR.o : Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SSCR.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice_trm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyfitter.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cytypes.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SSCR.c 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/SSCR.c : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/CortexM3/ARM_GCC_473/Debug/cyPm.o : Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyFlash.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyLib.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CySpc.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyPm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice_trm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyfitter.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cytypes.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyPm.c 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyPm.c : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/CortexM3/ARM_GCC_473/Debug/cyfitter_cfg.o : Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyFlash.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CyLib.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/CySpc.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyPm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice_trm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyfitter.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cytypes.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyfitter_cfg.c 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyfitter_cfg.c : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/CortexM3/ARM_GCC_473/Debug/cymetadata.o : Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice_trm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyfitter.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cytypes.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cymetadata.c 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cymetadata.c : 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/CortexM3/ARM_GCC_473/Debug/cyutils.o : Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cydevice_trm.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyfitter.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cytypes.h Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyutils.c 
+
+Z:/PSoC-W5100-Driver/W5200Test_CustomPlatform.cydsn/Generated_Source/PSoC5/cyutils.c : 
+
