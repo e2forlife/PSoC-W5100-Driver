@@ -1,37 +1,46 @@
 dont_use_io iocell 1 0
 dont_use_io iocell 1 1
 dont_use_io iocell 1 3
-set_location "\SPI:BSPIM:ld_ident\" macrocell 0 1 1 2
-set_location "Net_25" macrocell 0 0 1 1
-set_location "\SPI:BSPIM:state_2\" macrocell 0 1 1 0
-set_location "\SPI:BSPIM:RxStsReg\" statusicell 1 0 4 
-set_location "\SPI:BSPIM:mosi_hs_reg\" macrocell 1 1 1 0
-set_location "\SPI:BSPIM:state_1\" macrocell 0 0 0 0
-set_location "\SPI:BSPIM:load_rx_data\" macrocell 0 1 1 3
-set_location "\SPI:BSPIM:cnt_enable\" macrocell 1 1 0 0
-set_location "Net_17" macrocell 1 0 0 1
-set_location "\SPI:BSPIM:mosi_from_dp_reg\" macrocell 1 1 1 1
-set_location "\SPI:BSPIM:load_cond\" macrocell 1 0 0 0
-set_location "\SPI:BSPIM:mosi_pre_reg_split\" macrocell 0 1 0 0
-set_location "\SPI:BSPIM:rx_status_6\" macrocell 0 0 0 3
-set_location "\SPI:BSPIM:TxStsReg\" statusicell 1 1 4 
-set_location "\SPI:BSPIM:state_0\" macrocell 0 0 0 1
-set_location "\SPI:BSPIM:mosi_pre_reg_split_1\" macrocell 0 0 1 0
-set_location "Net_23" macrocell 1 1 1 2
-set_location "\SPI:BSPIM:tx_status_4\" macrocell 1 1 0 1
-set_location "\SPI:BSPIM:mosi_pre_reg\" macrocell 0 1 1 1
-set_location "\SPI:BSPIM:sR8:Dp:u0\" datapathcell 1 0 2 
-set_location "\SPI:BSPIM:tx_status_0\" macrocell 1 0 0 3
-set_location "\SPI:BSPIM:BitCounter\" count7cell 0 1 7 
+set_location "\SPI:BSPIM:tx_status_4\" macrocell 1 2 0 2
+set_location "\SPI:BSPIM:state_1\" macrocell 1 3 1 0
+set_location "\SPI:BSPIM:RxStsReg\" statusicell 1 4 4 
+set_location "\SPI:BSPIM:state_0\" macrocell 1 2 1 0
+set_location "\SPI:BSPIM:ld_ident\" macrocell 1 2 1 1
+set_location "\SPI:BSPIM:cnt_enable\" macrocell 0 4 0 0
+set_location "Net_17" macrocell 1 4 1 1
+set_location "\SPI:BSPIM:tx_status_0\" macrocell 1 3 1 2
+set_location "\SPI:BSPIM:state_2\" macrocell 1 3 0 1
+set_location "\SPI:BSPIM:mosi_hs_reg\" macrocell 1 2 0 0
+set_location "\SPI:BSPIM:TxStsReg\" statusicell 1 3 4 
+set_location "\SPI:BSPIM:sR8:Dp:u0\" datapathcell 1 3 2 
+set_location "\SPI:BSPIM:mosi_from_dp_reg\" macrocell 1 2 0 1
+set_location "\SPI:BSPIM:load_cond\" macrocell 1 3 0 0
+set_location "\SPI:BSPIM:BitCounter\" count7cell 0 2 7 
+set_location "\SPI:BSPIM:mosi_pre_reg\" macrocell 1 4 0 0
+set_location "\SPI:BSPIM:dpcounter_one\" macrocell 1 3 1 3
+set_location "\SPI:BSPIM:load_rx_data\" macrocell 1 4 1 2
+set_location "\SPI:BSPIM:rx_status_6\" macrocell 1 3 0 2
+set_location "Net_25" macrocell 1 2 1 2
+set_location "\SPI:BSPIM:is_spi_done\" macrocell 1 3 1 1
+set_location "__ONE__" macrocell 1 4 1 0
+set_location "Net_23" macrocell 1 2 1 3
+set_io "TP2(0)" iocell 3 4
 # Note: port 15 is the logical name for port 8
 set_io "REFO(0)" iocell 15 0
+set_io "TP1(0)" iocell 3 5
 set_io "MOSI_1(0)" iocell 5 3
-set_io "REFI(0)" iocell 3 7
-set_location "\SSCR:Sync:ctrl_reg\" controlcell 0 0 6 
-set_location "ClockBlock" clockblockcell -1 -1 0
+set_io "TP0(0)" iocell 3 6
 # Note: port 12 is the logical name for port 7
 set_io "SCLK_1(0)" iocell 12 6
+# Note: port 12 is the logical name for port 7
+set_io "CSN2(0)" iocell 12 7
+set_io "REFI(0)" iocell 3 7
 set_io "CSN_1(0)" iocell 1 5
-set_io "MISO_1(0)" iocell 1 7
+set_location "ClockBlock" clockblockcell -1 -1 0
+set_location "\SSCR:Sync:ctrl_reg\" controlcell 1 2 6 
 # Note: port 15 is the logical name for port 8
 set_io "REFO(1)" iocell 15 1
+set_io "MISO_1(0)" iocell 1 7
+set_io "W5200_RST(0)" iocell 5 2
+set_location "REFI(0)_SYNC" synccell 1 2 5 0
+set_io "TP3(0)" iocell 3 3

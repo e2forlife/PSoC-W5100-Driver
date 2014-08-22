@@ -68,7 +68,7 @@ const uint16 ETH_SOCKET_RX_BASE[4] = { 0x6000, 0x6800, 0x7000, 0x7800 };
  * \def ETH_SOCKET REG(s,r)
  * \brief Convert the socket number to a base address within the W5100
  */
-#define ETH_SOCKET_REG(s,r)           ( ((s<<8)+0x0400) + r )
+#define ETH_SOCKET_REG(s,r)           ( (((uint16)s<<8)+0x0400) + r )
 
 #elif (2 == 2) // W5200 Specific
 	
@@ -82,7 +82,7 @@ const uint16 ETH_SOCKET_RX_BASE[8] = { 0xC000, 0xC800, 0xD000, 0xD800, 0xE000, 0
  * \def ETH_SOCKET REG(s,r)
  * \brief Convert the socket number and register to a base address within the W5200
  */
-#define ETH_SOCKET_REG(s,r)           ( ((s<<8)+0x4000) + r )
+#define ETH_SOCKET_REG(s,r)           ( ((uint16)s<<8) + r )
 
 #else
 	#error "W5x00 components other than W5100 and W5200 are not currently supported"
@@ -276,6 +276,7 @@ ETH_ChipRead(uint16 addr, uint8 *dat, uint16 length)
 	uint16 txBytes;
 	uint8 dump; // the number of bytes to ignore from the data stream readback
 	uint16 rxCount;
+	uint8 rxb;
 	
 	/* V1.1: Wait for SPI operation to complete */
 	while( ETH_SpiDone == 0) {
@@ -285,6 +286,7 @@ ETH_ChipRead(uint16 addr, uint8 *dat, uint16 length)
 
 	address = addr; // assign base pointer address
 	rxIndex = 0;    // default the starting index for the receive to zero
+	
 	do {
 		/* Write the chip select instance to select the device */
 		ETH_ChipSelect();
@@ -307,7 +309,7 @@ ETH_ChipRead(uint16 addr, uint8 *dat, uint16 length)
 		 */
 		rxLen = 1;  // The W5100 is limited to 1 byte of data transmitted
 		dump = 3;   // The W5100 has a 3-byte packet header
-		txBytes = 1; // Send only one byte afte rthe header then end the transfer
+		txBytes = 0; // Send only one byte afte rthe header then end the transfer
 		SPI_WriteTxData(ETH_READ_OP);
 		SPI_WriteTxData(address>>8);
 		SPI_WriteTxData(address&0x00FF);
@@ -326,7 +328,7 @@ ETH_ChipRead(uint16 addr, uint8 *dat, uint16 length)
 		 * Set the number of bytes to transmit before
 		 * ending the packet to the calculated value
 		 */
-		txBytes = rxLen; 
+		txBytes = 0; 
 		/* Send the packet header */
 		SPI_WriteTxData( address>>8);
 		SPI_WriteTxData( address & 0x00FF );
@@ -336,41 +338,43 @@ ETH_ChipRead(uint16 addr, uint8 *dat, uint16 length)
 
 		while (rxCount < rxLen) {
 			/*
-			 * Read the data from the buffer.  The hadred data responses
-			 * are going to be sitting inthe buffer, so dump them
-			 * and just receive the data bock
-			 */
-			dat[rxIndex] = SPI_ReadRxData();
-			if (dump > 0) {
-				--dump;
-			}
-			else {
-				++rxCount;
-				++rxIndex;
-			}
-			/*
 			 * Since the header is clogging the buffer (and it is inefficient
 			 * to just clear the header before executing the reads), this loop
 			 * will transmit the data completely the header size before
 			 * the data has been read, so, send the data when the rxLength
 			 * is not zero.
 			 */
-			if (txBytes > 0 ) {
+			if (txBytes < rxLen ) {
 				SPI_WriteTxData( 0 );
-				++address;
-				--length;
-				--txBytes;
+				address ++;
+				length --;
+				txBytes ++;
+			}
+//			else {
+//				if (ETH_SpiDone != 0) {
+//					ETH_ChipDeSelect();
+//				}
+//			}
+			/*
+			 * Read the data from the buffer.  The header data responses
+			 * are going to be sitting in the buffer, so dump them
+			 * and just receive the data bock
+			 */
+			rxb = SPI_ReadRxData();
+			dat[rxIndex] = rxb;
+			if (dump > 0) {
+				--dump;
 			}
 			else {
-				if (ETH_SpiDone != 0) {
-					ETH_ChipDeSelect();
-				}
+				rxCount++;
+				rxIndex++;;
 			}
 		}
+		ETH_ChipDeSelect();
 	}
 	while ( length > 0);
 	/* Turn off chip select, and set the buffer */
-	ETH_ChipDeSelect();
+//	ETH_ChipDeSelect();
 }
 /* ======================================================================== */
 /* SCB Specific Functions */
@@ -843,7 +847,7 @@ void ETH_SetSocketRxWritePtr( uint8 socket, uint16 ptr)
 	/*
 	 * for the W5200 device, write the pointer value to the register
 	 */
-	ETH_ChipWrite16( ETH_SOCKET_REG(socket, ETH_SOCK_RXWR), PTRDIFF_MAX);
+	ETH_ChipWrite16( ETH_SOCKET_REG(socket, ETH_SOCK_RXWR), ptr);
 #endif
 }
 /* ------------------------------------------------------------------------ */
@@ -1494,6 +1498,8 @@ ETH_TcpStartServer( uint8 socket )
 void
 ETH_TcpStartServerWait( uint8 socket )
 {
+	uint8 status;
+	
 	/*
 	 * Bug Patch: Exit Waiting for server when an invalid socket is passed
 	 */
@@ -1501,8 +1507,11 @@ ETH_TcpStartServerWait( uint8 socket )
 	ETH_TcpStartServer(socket);
 	/* wait for socket establishment */
 	/* Update Patch: Loop calls process connections to exit on a closed socket */
-	while ( ( !ETH_SocketEstablished(socket) ) && (ETH_SocketProcessConnections(socket) == 0) ) {
+	status = ETH_GetSocketStatus(socket);
+	while ( (status != 0x17 ) && (status != 0 ) ) {
 		CyDelay(1);
+		ETH_SocketProcessConnections( socket );
+		status = ETH_GetSocketStatus( socket );
 	}
 }
 /* ------------------------------------------------------------------------ */

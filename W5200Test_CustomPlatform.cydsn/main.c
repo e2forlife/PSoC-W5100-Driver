@@ -14,9 +14,14 @@
 int main()
 {
 	uint8 socket;
+	uint32 ip;
 	
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+	W5200_RST_Write(0);
 	SPI_Start();
+	W5200_RST_Write(1);
+	CyDelay(1500);
+	
 	ETH_Start();
 	
     /* CyGlobalIntEnable; */ /* Uncomment this line to enable global interrupts. */

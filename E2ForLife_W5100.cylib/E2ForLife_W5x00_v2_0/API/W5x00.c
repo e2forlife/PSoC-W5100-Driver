@@ -68,7 +68,7 @@ const uint16 `$INSTANCE_NAME`_SOCKET_RX_BASE[4] = { 0x6000, 0x6800, 0x7000, 0x78
  * \def `$INSTANCE_NAME`_SOCKET REG(s,r)
  * \brief Convert the socket number to a base address within the W5100
  */
-#define `$INSTANCE_NAME`_SOCKET_REG(s,r)           ( ((s<<8)+0x0400) + r )
+#define `$INSTANCE_NAME`_SOCKET_REG(s,r)           ( (((uint16)s<<8)+0x0400) + r )
 
 #elif (`$PART_FAMILY` == 2) // W5200 Specific
 	
@@ -82,7 +82,7 @@ const uint16 `$INSTANCE_NAME`_SOCKET_RX_BASE[8] = { 0xC000, 0xC800, 0xD000, 0xD8
  * \def `$INSTANCE_NAME`_SOCKET REG(s,r)
  * \brief Convert the socket number and register to a base address within the W5200
  */
-#define `$INSTANCE_NAME`_SOCKET_REG(s,r)           ( ((s<<8)+0x4000) + r )
+#define `$INSTANCE_NAME`_SOCKET_REG(s,r)           ( ((uint16)s<<8) + r )
 
 #else
 	#error "W5x00 components other than W5100 and W5200 are not currently supported"
@@ -278,6 +278,7 @@ void
 	uint16 txBytes;
 	uint8 dump; // the number of bytes to ignore from the data stream readback
 	uint16 rxCount;
+	uint8 rxb;
 	
 	/* V1.1: Wait for SPI operation to complete */
 	while( `$INSTANCE_NAME`_SpiDone == 0) {
@@ -287,6 +288,7 @@ void
 
 	address = addr; // assign base pointer address
 	rxIndex = 0;    // default the starting index for the receive to zero
+	
 	do {
 		/* Write the chip select instance to select the device */
 		`$INSTANCE_NAME`_ChipSelect();
@@ -309,7 +311,7 @@ void
 		 */
 		rxLen = 1;  // The W5100 is limited to 1 byte of data transmitted
 		dump = 3;   // The W5100 has a 3-byte packet header
-		txBytes = 1; // Send only one byte afte rthe header then end the transfer
+		txBytes = 0; // Send only one byte afte rthe header then end the transfer
 		`$SPI_INSTANCE`_WriteTxData(`$INSTANCE_NAME`_READ_OP);
 		`$SPI_INSTANCE`_WriteTxData(address>>8);
 		`$SPI_INSTANCE`_WriteTxData(address&0x00FF);
@@ -328,7 +330,7 @@ void
 		 * Set the number of bytes to transmit before
 		 * ending the packet to the calculated value
 		 */
-		txBytes = rxLen; 
+		txBytes = 0; 
 		/* Send the packet header */
 		`$SPI_INSTANCE`_WriteTxData( address>>8);
 		`$SPI_INSTANCE`_WriteTxData( address & 0x00FF );
@@ -338,41 +340,43 @@ void
 
 		while (rxCount < rxLen) {
 			/*
-			 * Read the data from the buffer.  The hadred data responses
-			 * are going to be sitting inthe buffer, so dump them
-			 * and just receive the data bock
-			 */
-			dat[rxIndex] = `$SPI_INSTANCE`_ReadRxData();
-			if (dump > 0) {
-				--dump;
-			}
-			else {
-				++rxCount;
-				++rxIndex;
-			}
-			/*
 			 * Since the header is clogging the buffer (and it is inefficient
 			 * to just clear the header before executing the reads), this loop
 			 * will transmit the data completely the header size before
 			 * the data has been read, so, send the data when the rxLength
 			 * is not zero.
 			 */
-			if (txBytes > 0 ) {
+			if (txBytes < rxLen ) {
 				`$SPI_INSTANCE`_WriteTxData( 0 );
-				++address;
-				--length;
-				--txBytes;
+				address ++;
+				length --;
+				txBytes ++;
+			}
+//			else {
+//				if (`$INSTANCE_NAME`_SpiDone != 0) {
+//					`$INSTANCE_NAME`_ChipDeSelect();
+//				}
+//			}
+			/*
+			 * Read the data from the buffer.  The header data responses
+			 * are going to be sitting in the buffer, so dump them
+			 * and just receive the data bock
+			 */
+			rxb = `$SPI_INSTANCE`_ReadRxData();
+			dat[rxIndex] = rxb;
+			if (dump > 0) {
+				--dump;
 			}
 			else {
-				if (`$INSTANCE_NAME`_SpiDone != 0) {
-					`$INSTANCE_NAME`_ChipDeSelect();
-				}
+				rxCount++;
+				rxIndex++;;
 			}
 		}
+		`$INSTANCE_NAME`_ChipDeSelect();
 	}
 	while ( length > 0);
 	/* Turn off chip select, and set the buffer */
-	`$INSTANCE_NAME`_ChipDeSelect();
+//	`$INSTANCE_NAME`_ChipDeSelect();
 }
 /* ======================================================================== */
 /* SCB Specific Functions */
@@ -845,7 +849,7 @@ void `$INSTANCE_NAME`_SetSocketRxWritePtr( uint8 socket, uint16 ptr)
 	/*
 	 * for the W5200 device, write the pointer value to the register
 	 */
-	`$INSTANCE_NAME`_ChipWrite16( `$INSTANCE_NAME`_SOCKET_REG(socket, `$INSTANCE_NAME`_SOCK_RXWR), PTRDIFF_MAX);
+	`$INSTANCE_NAME`_ChipWrite16( `$INSTANCE_NAME`_SOCKET_REG(socket, `$INSTANCE_NAME`_SOCK_RXWR), ptr);
 #endif
 }
 /* ------------------------------------------------------------------------ */
@@ -1496,6 +1500,8 @@ void
 void
 `$INSTANCE_NAME`_TcpStartServerWait( uint8 socket )
 {
+	uint8 status;
+	
 	/*
 	 * Bug Patch: Exit Waiting for server when an invalid socket is passed
 	 */
@@ -1503,8 +1509,11 @@ void
 	`$INSTANCE_NAME`_TcpStartServer(socket);
 	/* wait for socket establishment */
 	/* Update Patch: Loop calls process connections to exit on a closed socket */
-	while ( ( !`$INSTANCE_NAME`_SocketEstablished(socket) ) && (`$INSTANCE_NAME`_SocketProcessConnections(socket) == 0) ) {
+	status = `$INSTANCE_NAME`_GetSocketStatus(socket);
+	while ( (status != 0x17 ) && (status != 0 ) ) {
 		CyDelay(1);
+		`$INSTANCE_NAME`_SocketProcessConnections( socket );
+		status = `$INSTANCE_NAME`_GetSocketStatus( socket );
 	}
 }
 /* ------------------------------------------------------------------------ */

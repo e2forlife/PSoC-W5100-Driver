@@ -319,7 +319,7 @@ Discarded input sections
  .text.ETH_SocketSendMac
                 0x00000000       0x84 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
  .text.ETH_TcpStartServerWait
-                0x00000000       0x50 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00000000       0x74 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
  .text.ETH_TcpConnect
                 0x00000000       0xc0 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
  .text.ETH_UdpOpen
@@ -457,7 +457,7 @@ END GROUP
                 0x00003f80                appl2_start = (appl1_start + ALIGN ((((0x8000 - appl1_start) - (0x2 * CY_FLASH_ROW_SIZE)) / 0x2), CY_FLASH_ROW_SIZE))
                 0x00000000                appl_start = (CY_APPL_NUM == 0x1)?appl1_start:appl2_start
 
-.text           0x00000000     0x2320
+.text           0x00000000     0x2300
  CREATE_OBJECT_SYMBOLS
                 0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
  *(.romvectors)
@@ -562,174 +562,174 @@ END GROUP
                 0x00000b78      0x118 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
                 0x00000b78                ETH_ChipWrite
  .text.ETH_ChipRead
-                0x00000c90      0x184 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00000c90      0x164 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
                 0x00000c90                ETH_ChipRead
  .text.ETH_ChipWrite16
-                0x00000e14       0x48 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00000e14                ETH_ChipWrite16
+                0x00000df4       0x48 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00000df4                ETH_ChipWrite16
  .text.ETH_ChipRead16
-                0x00000e5c       0x50 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00000e5c                ETH_ChipRead16
+                0x00000e3c       0x50 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00000e3c                ETH_ChipRead16
  .text.ETH_SetSourceMAC
-                0x00000eac       0x1c .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00000eac                ETH_SetSourceMAC
+                0x00000e8c       0x1c .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00000e8c                ETH_SetSourceMAC
  .text.ETH_SetGatewayAddress
-                0x00000ec8       0x1c .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00000ec8                ETH_SetGatewayAddress
+                0x00000ea8       0x1c .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00000ea8                ETH_SetGatewayAddress
  .text.ETH_SetSubnetMask
-                0x00000ee4       0x1c .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00000ee4                ETH_SetSubnetMask
+                0x00000ec4       0x1c .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00000ec4                ETH_SetSubnetMask
  .text.ETH_SetSourceIP
-                0x00000f00       0x1c .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00000f00                ETH_SetSourceIP
+                0x00000ee0       0x1c .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00000ee0                ETH_SetSourceIP
  .text.ETH_SetMode
-                0x00000f1c       0x20 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00000f1c                ETH_SetMode
+                0x00000efc       0x20 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00000efc                ETH_SetMode
  .text.ETH_SetIR
-                0x00000f3c       0x20 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00000f3c                ETH_SetIR
+                0x00000f1c       0x20 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00000f1c                ETH_SetIR
  .text.ETH_SetSocketRxMemSize
-                0x00000f5c       0x84 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00000f5c                ETH_SetSocketRxMemSize
+                0x00000f3c       0x84 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00000f3c                ETH_SetSocketRxMemSize
  .text.ETH_SetSocketTxMemSize
-                0x00000fe0       0x84 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00000fe0                ETH_SetSocketTxMemSize
+                0x00000fc0       0x84 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00000fc0                ETH_SetSocketTxMemSize
  .text.ETH_SetSocketMode
-                0x00001064       0x38 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00001064                ETH_SetSocketMode
+                0x00001044       0x38 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00001044                ETH_SetSocketMode
  .text.ETH_SetSocketCommand
-                0x0000109c       0x38 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x0000109c                ETH_SetSocketCommand
+                0x0000107c       0x38 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x0000107c                ETH_SetSocketCommand
  .text.ETH_GetSocketCommand
-                0x000010d4       0x44 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x000010d4                ETH_GetSocketCommand
+                0x000010b4       0x44 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x000010b4                ETH_GetSocketCommand
  .text.ETH_SetSocketIR
-                0x00001118       0x38 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00001118                ETH_SetSocketIR
+                0x000010f8       0x38 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x000010f8                ETH_SetSocketIR
  .text.ETH_GetSocketIR
-                0x00001150       0x44 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00001150                ETH_GetSocketIR
+                0x00001130       0x44 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00001130                ETH_GetSocketIR
  .text.ETH_GetSocketStatus
-                0x00001194       0x44 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00001194                ETH_GetSocketStatus
+                0x00001174       0x44 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00001174                ETH_GetSocketStatus
  .text.ETH_SetSocketSourcePort
-                0x000011d8       0x38 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x000011d8                ETH_SetSocketSourcePort
+                0x000011b8       0x38 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x000011b8                ETH_SetSocketSourcePort
  .text.ETH_GetSocketTxFree
-                0x00001210       0x30 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00001210                ETH_GetSocketTxFree
+                0x000011f0       0x30 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x000011f0                ETH_GetSocketTxFree
  .text.ETH_SetSocketTxWritePtr
-                0x00001240       0x38 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00001240                ETH_SetSocketTxWritePtr
+                0x00001220       0x38 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00001220                ETH_SetSocketTxWritePtr
  .text.ETH_GetSocketTxWritePtr
-                0x00001278       0x30 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00001278                ETH_GetSocketTxWritePtr
+                0x00001258       0x30 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00001258                ETH_GetSocketTxWritePtr
  .text.ETH_GetSocketRxSize
-                0x000012a8       0x30 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x000012a8                ETH_GetSocketRxSize
+                0x00001288       0x30 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00001288                ETH_GetSocketRxSize
  .text.ETH_SetSocketRxReadPtr
-                0x000012d8       0x38 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x000012d8                ETH_SetSocketRxReadPtr
+                0x000012b8       0x38 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x000012b8                ETH_SetSocketRxReadPtr
  .text.ETH_GetSocketRxReadPtr
-                0x00001310       0x30 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00001310                ETH_GetSocketRxReadPtr
+                0x000012f0       0x30 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x000012f0                ETH_GetSocketRxReadPtr
  .text.ETH_SetSocketRxWritePtr
-                0x00001340       0x18 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00001340                ETH_SetSocketRxWritePtr
+                0x00001320       0x18 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00001320                ETH_SetSocketRxWritePtr
  .text.ETH_SetSocketTxReadPtr
-                0x00001358       0x38 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00001358                ETH_SetSocketTxReadPtr
+                0x00001338       0x38 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00001338                ETH_SetSocketTxReadPtr
  .text.ETH_ExecuteSocketCommand
-                0x00001390       0x50 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00001390                ETH_ExecuteSocketCommand
+                0x00001370       0x50 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00001370                ETH_ExecuteSocketCommand
  .text.ETH_GetTxFreeSize
-                0x000013e0       0x68 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x000013e0                ETH_GetTxFreeSize
+                0x000013c0       0x68 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x000013c0                ETH_GetTxFreeSize
  .text.ETH_GetRxSize
-                0x00001448       0x68 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00001448                ETH_GetRxSize
+                0x00001428       0x68 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00001428                ETH_GetRxSize
  .text.ETH_ProcessTxData
-                0x000014b0      0x110 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x000014b0                ETH_ProcessTxData
+                0x00001490      0x110 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00001490                ETH_ProcessTxData
  .text.ETH_ProcessRxData
-                0x000015c0      0x11c .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x000015c0                ETH_ProcessRxData
+                0x000015a0      0x11c .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x000015a0                ETH_ProcessRxData
  .text.ETH_Init
-                0x000016dc       0xe8 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x000016dc                ETH_Init
+                0x000016bc       0xe8 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x000016bc                ETH_Init
  .text.ETH_Start
-                0x000017c4       0x9c .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x000017c4                ETH_Start
+                0x000017a4       0x9c .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x000017a4                ETH_Start
  .text.ETH_ParseIP
-                0x00001860      0x13c .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00001860                ETH_ParseIP
+                0x00001840      0x13c .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00001840                ETH_ParseIP
  .text.ETH_ParseMAC
-                0x0000199c      0x230 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x0000199c                ETH_ParseMAC
+                0x0000197c      0x230 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x0000197c                ETH_ParseMAC
  .text.ETH_SocketOpen
-                0x00001bcc      0x170 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00001bcc                ETH_SocketOpen
+                0x00001bac      0x170 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00001bac                ETH_SocketOpen
  .text.ETH_SocketClose
-                0x00001d3c       0x50 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00001d3c                ETH_SocketClose
+                0x00001d1c       0x50 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00001d1c                ETH_SocketClose
  .text.ETH_SocketEstablished
-                0x00001d8c       0x44 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00001d8c                ETH_SocketEstablished
+                0x00001d6c       0x44 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00001d6c                ETH_SocketEstablished
  .text.ETH_SocketSend
-                0x00001dd0       0x8c .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00001dd0                ETH_SocketSend
+                0x00001db0       0x8c .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00001db0                ETH_SocketSend
  .text.ETH_SocketRxDataWaiting
-                0x00001e5c       0x20 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00001e5c                ETH_SocketRxDataWaiting
+                0x00001e3c       0x20 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00001e3c                ETH_SocketRxDataWaiting
  .text.ETH_TcpOpen
-                0x00001e7c       0x24 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00001e7c                ETH_TcpOpen
+                0x00001e5c       0x24 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00001e5c                ETH_TcpOpen
  .text.ETH_TcpStartServer
-                0x00001ea0       0x28 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00001ea0                ETH_TcpStartServer
+                0x00001e80       0x28 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00001e80                ETH_TcpStartServer
  .text.ETH_TcpConnected
-                0x00001ec8       0x20 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00001ec8                ETH_TcpConnected
+                0x00001ea8       0x20 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00001ea8                ETH_TcpConnected
  .text.ETH_TcpDisconnect
-                0x00001ee8       0x20 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00001ee8                ETH_TcpDisconnect
+                0x00001ec8       0x20 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00001ec8                ETH_TcpDisconnect
  .text.ETH_TcpSend
-                0x00001f08       0xf4 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00001f08                ETH_TcpSend
+                0x00001ee8       0xf4 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00001ee8                ETH_TcpSend
  .text.ETH_TcpReceive
-                0x00001ffc       0x88 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00001ffc                ETH_TcpReceive
+                0x00001fdc       0x88 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00001fdc                ETH_TcpReceive
  .text.ETH_TcpPrint
-                0x00002084       0x30 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00002084                ETH_TcpPrint
+                0x00002064       0x30 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x00002064                ETH_TcpPrint
  .text.SSCR_Write
-                0x000020b4       0x20 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(SSCR.o)
-                0x000020b4                SSCR_Write
+                0x00002094       0x20 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(SSCR.o)
+                0x00002094                SSCR_Write
  .text.__libc_init_array
-                0x000020d4       0x4c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-init.o)
-                0x000020d4                __libc_init_array
- .text.memcpy   0x00002120       0x12 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-memcpy.o)
-                0x00002120                memcpy
- .text.memset   0x00002132       0x12 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-memset.o)
-                0x00002132                memset
- *fill*         0x00002144        0x4 00
- .text.rand     0x00002148       0x80 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-rand.o)
-                0x00002148                rand
- .text.strlen   0x000021c8        0xe c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-strlen.o)
-                0x000021c8                strlen
- *fill*         0x000021d6        0x2 00
- .text.malloc   0x000021d8       0x14 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-malloc.o)
-                0x000021d8                malloc
+                0x000020b4       0x4c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-init.o)
+                0x000020b4                __libc_init_array
+ .text.memcpy   0x00002100       0x12 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-memcpy.o)
+                0x00002100                memcpy
+ .text.memset   0x00002112       0x12 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-memset.o)
+                0x00002112                memset
+ *fill*         0x00002124        0x4 00
+ .text.rand     0x00002128       0x80 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-rand.o)
+                0x00002128                rand
+ .text.strlen   0x000021a8        0xe c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-strlen.o)
+                0x000021a8                strlen
+ *fill*         0x000021b6        0x2 00
+ .text.malloc   0x000021b8       0x14 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-malloc.o)
+                0x000021b8                malloc
  .text._malloc_r
-                0x000021ec       0x94 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-mallocr.o)
-                0x000021ec                _malloc_r
- .text._sbrk_r  0x00002280       0x24 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-sbrkr.o)
-                0x00002280                _sbrk_r
- .text          0x000022a4       0x44 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m\libgcc.a(_muldi3.o)
-                0x000022a4                __muldi3
-                0x000022a4                __aeabi_lmul
- .text._sbrk    0x000022e8       0x38 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libnosys.a(sbrk.o)
-                0x000022e8                _sbrk
+                0x000021cc       0x94 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-mallocr.o)
+                0x000021cc                _malloc_r
+ .text._sbrk_r  0x00002260       0x24 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-sbrkr.o)
+                0x00002260                _sbrk_r
+ .text          0x00002284       0x44 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m\libgcc.a(_muldi3.o)
+                0x00002284                __muldi3
+                0x00002284                __aeabi_lmul
+ .text._sbrk    0x000022c8       0x38 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libnosys.a(sbrk.o)
+                0x000022c8                _sbrk
  *(.plt)
  *(.gnu.warning)
  *(.glue_7t)
@@ -742,81 +742,81 @@ END GROUP
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  *(.gcc_except_table)
 
-.v4_bx          0x00002320        0x0
+.v4_bx          0x00002300        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x00002320        0x0
+.iplt           0x00002300        0x0
  .iplt          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m/crtbegin.o
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
 
-.eh_frame       0x00002320        0x4
+.eh_frame       0x00002300        0x4
  *(.eh_frame)
- .eh_frame      0x00002320        0x0 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m/crtbegin.o
- .eh_frame      0x00002320        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m/crtend.o
-                0x00002324                PROVIDE (__exidx_start, .)
+ .eh_frame      0x00002300        0x0 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m/crtbegin.o
+ .eh_frame      0x00002300        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m/crtend.o
+                0x00002304                PROVIDE (__exidx_start, .)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00002324                __exidx_end = .
+                0x00002304                __exidx_end = .
 
-.rodata         0x00002324      0x374
+.rodata         0x00002304      0x374
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x00002324       0xb8 .\CortexM0\ARM_GCC_473\Debug\main.o
- .rodata        0x000023dc      0x234 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(cyfitter_cfg.o)
- .rodata        0x00002610       0x50 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
-                0x00002610                ETH_SOCKET_TX_BASE
-                0x00002618                ETH_SOCKET_RX_BASE
+ .rodata        0x00002304       0xb8 .\CortexM0\ARM_GCC_473\Debug\main.o
+ .rodata        0x000023bc      0x234 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(cyfitter_cfg.o)
+ .rodata        0x000025f0       0x50 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+                0x000025f0                ETH_SOCKET_TX_BASE
+                0x000025f8                ETH_SOCKET_RX_BASE
  .rodata.str1.1
-                0x00002660        0x2 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-impure.o)
-                0x00002664                . = ALIGN (0x4)
- *fill*         0x00002662        0x2 00
+                0x00002640        0x2 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-impure.o)
+                0x00002644                . = ALIGN (0x4)
+ *fill*         0x00002642        0x2 00
  *(.init)
- .init          0x00002664        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m/crti.o
-                0x00002664                _init
- .init          0x00002668        0x8 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m/crtn.o
-                0x00002670                . = ALIGN (0x4)
-                0x00002670                __preinit_array_start = .
+ .init          0x00002644        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m/crti.o
+                0x00002644                _init
+ .init          0x00002648        0x8 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m/crtn.o
+                0x00002650                . = ALIGN (0x4)
+                0x00002650                __preinit_array_start = .
  *(.preinit_array)
-                0x00002670                __preinit_array_end = .
-                0x00002670                . = ALIGN (0x4)
-                0x00002670                __init_array_start = .
+                0x00002650                __preinit_array_end = .
+                0x00002650                . = ALIGN (0x4)
+                0x00002650                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x00002670        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m/crtbegin.o
- .init_array    0x00002674        0x4 .\CortexM0\ARM_GCC_473\Debug\Cm0Start.o
-                0x00002678                __init_array_end = .
-                0x00002678                . = ALIGN (0x4)
+ .init_array    0x00002650        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m/crtbegin.o
+ .init_array    0x00002654        0x4 .\CortexM0\ARM_GCC_473\Debug\Cm0Start.o
+                0x00002658                __init_array_end = .
+                0x00002658                . = ALIGN (0x4)
  *(.fini)
- .fini          0x00002678        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m/crti.o
-                0x00002678                _fini
- .fini          0x0000267c        0x8 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m/crtn.o
-                0x00002684                . = ALIGN (0x4)
-                0x00002684                __fini_array_start = .
+ .fini          0x00002658        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m/crti.o
+                0x00002658                _fini
+ .fini          0x0000265c        0x8 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m/crtn.o
+                0x00002664                . = ALIGN (0x4)
+                0x00002664                __fini_array_start = .
  *(.fini_array)
- .fini_array    0x00002684        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m/crtbegin.o
+ .fini_array    0x00002664        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m/crtbegin.o
  *(SORT(.fini_array.*))
-                0x00002688                __fini_array_end = .
-                0x00002688                . = ALIGN (0x4)
+                0x00002668                __fini_array_end = .
+                0x00002668                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x00002688                . = ALIGN (0x4)
+                0x00002668                . = ALIGN (0x4)
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x00002688                . = ALIGN (0x4)
-                0x00002688                __cy_regions = .
-                0x00002688        0x4 LONG 0x2698 __cy_region_init_ram
-                0x0000268c        0x4 LONG 0x200000c8 __cy_region_start_data
-                0x00002690        0x4 LONG 0x80 __cy_region_init_size_ram
-                0x00002694        0x4 LONG 0x828 __cy_region_zero_size_ram
-                0x00002698                __cy_regions_end = .
-                0x00002698                . = ALIGN (0x8)
-                0x00002698                _etext = .
+                0x00002668                . = ALIGN (0x4)
+                0x00002668                __cy_regions = .
+                0x00002668        0x4 LONG 0x2678 __cy_region_init_ram
+                0x0000266c        0x4 LONG 0x200000c8 __cy_region_start_data
+                0x00002670        0x4 LONG 0x80 __cy_region_init_size_ram
+                0x00002674        0x4 LONG 0x828 __cy_region_zero_size_ram
+                0x00002678                __cy_regions_end = .
+                0x00002678                . = ALIGN (0x8)
+                0x00002678                _etext = .
 
 .ramvectors     0x20000000       0xc0
                 0x20000000                __cy_region_start_ram = .
@@ -828,7 +828,7 @@ END GROUP
  *(.noinit)
  .noinit        0x200000c0        0x4 .\CortexM0\ARM_GCC_473\Debug\Cm0Start.o
 
-.data           0x200000c8       0x80 load address 0x00002698
+.data           0x200000c8       0x80 load address 0x00002678
                 0x200000c8                __cy_region_start_data = .
  *(.jcr)
  .jcr           0x200000c8        0x0 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m/crtbegin.o
@@ -852,10 +852,10 @@ END GROUP
  *(.ram)
                 0x20000148                _edata = .
 
-.igot.plt       0x20000148        0x0 load address 0x00002718
+.igot.plt       0x20000148        0x0 load address 0x000026f8
  .igot.plt      0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m/crtbegin.o
 
-.bss            0x20000148      0x828 load address 0x00002718
+.bss            0x20000148      0x828 load address 0x000026f8
                 0x20000148                PROVIDE (__bss_start__, .)
  *(.shbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
@@ -883,11 +883,11 @@ END GROUP
                 0x20000970                __end = .
                 0x20000970                PROVIDE (end, .)
                 0x20000970                PROVIDE (__bss_end__, .)
-                0x00002698                __cy_region_init_ram = LOADADDR (.data)
+                0x00002678                __cy_region_init_ram = LOADADDR (.data)
                 0x00000080                __cy_region_init_size_ram = (_edata - ADDR (.data))
                 0x00000828                __cy_region_zero_size_ram = (_end - _edata)
 
-.heap           0x20000970      0x100 load address 0x00002718
+.heap           0x20000970      0x100 load address 0x000026f8
                 0x20000970                . = _end
                 0x20000a70                . = (. + 0x100)
  *fill*         0x20000970      0x100 00
@@ -923,7 +923,7 @@ END GROUP
                 0x90600000        0x4 .\CortexM0\ARM_GCC_473\Debug\cymetadata.o
                 0x90600000                cy_meta_chipprotect
 
-.rel.dyn        0x00002718        0x0 load address 0x90600004
+.rel.dyn        0x000026f8        0x0 load address 0x90600004
  .rel.iplt      0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m/crtbegin.o
 
 .stab
@@ -978,7 +978,7 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x3791
+.debug_info     0x00000000     0x37af
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x162 .\CortexM0\ARM_GCC_473\Debug\main.o
  .debug_info    0x00000162      0x100 .\CortexM0\ARM_GCC_473\Debug\cymetadata.o
@@ -992,8 +992,8 @@ END GROUP
  .debug_info    0x00001486      0x169 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(SPI0_IntClock.o)
  .debug_info    0x000015ef       0xb7 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(CyBootAsmGnu.o)
  .debug_info    0x000016a6      0xac5 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(CyLib.o)
- .debug_info    0x0000216b     0x1543 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
- .debug_info    0x000036ae       0xe3 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(SSCR.o)
+ .debug_info    0x0000216b     0x1561 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+ .debug_info    0x000036cc       0xe3 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(SSCR.o)
 
 .debug_abbrev   0x00000000      0xcd3
  *(.debug_abbrev)
@@ -1012,7 +1012,7 @@ END GROUP
  .debug_abbrev  0x00000a87      0x1c9 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
  .debug_abbrev  0x00000c50       0x83 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(SSCR.o)
 
-.debug_line     0x00000000     0x1958
+.debug_line     0x00000000     0x195b
  *(.debug_line)
  .debug_line    0x00000000       0xa7 .\CortexM0\ARM_GCC_473\Debug\main.o
  .debug_line    0x000000a7       0x53 .\CortexM0\ARM_GCC_473\Debug\cymetadata.o
@@ -1026,10 +1026,10 @@ END GROUP
  .debug_line    0x00000989       0xb6 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(SPI0_IntClock.o)
  .debug_line    0x00000a3f       0x68 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(CyBootAsmGnu.o)
  .debug_line    0x00000aa7      0x541 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(CyLib.o)
- .debug_line    0x00000fe8      0x901 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
- .debug_line    0x000018e9       0x6f .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(SSCR.o)
+ .debug_line    0x00000fe8      0x904 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+ .debug_line    0x000018ec       0x6f .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(SSCR.o)
 
-.debug_frame    0x00000000     0x1b0c
+.debug_frame    0x00000000     0x1b10
  *(.debug_frame)
  .debug_frame   0x00000000       0x34 .\CortexM0\ARM_GCC_473\Debug\main.o
  .debug_frame   0x00000034       0xa8 .\CortexM0\ARM_GCC_473\Debug\Cm0Start.o
@@ -1041,25 +1041,25 @@ END GROUP
  .debug_frame   0x000006d8       0xa8 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(SDCS.o)
  .debug_frame   0x00000780       0xa0 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(SPI0_IntClock.o)
  .debug_frame   0x00000820      0x628 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(CyLib.o)
- .debug_frame   0x00000e48      0x958 .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
- .debug_frame   0x000017a0       0x4c .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(SSCR.o)
- .debug_frame   0x000017ec       0x20 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m\libgcc.a(_udivsi3.o)
- .debug_frame   0x0000180c       0x20 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m\libgcc.a(_divsi3.o)
- .debug_frame   0x0000182c       0x28 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-__atexit2.o)
- .debug_frame   0x00001854       0x28 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-exit.o)
- .debug_frame   0x0000187c       0x2c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-fini.o)
- .debug_frame   0x000018a8       0x2c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-init.o)
- .debug_frame   0x000018d4       0x28 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-memcpy.o)
- .debug_frame   0x000018fc       0x28 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-memset.o)
- .debug_frame   0x00001924       0x48 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-rand.o)
- .debug_frame   0x0000196c       0x20 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-strlen.o)
- .debug_frame   0x0000198c       0x40 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-malloc.o)
- .debug_frame   0x000019cc       0x2c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-mallocr.o)
- .debug_frame   0x000019f8       0x2c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-sbrkr.o)
- .debug_frame   0x00001a24       0x2c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-freer.o)
- .debug_frame   0x00001a50       0x64 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-reent.o)
- .debug_frame   0x00001ab4       0x30 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m\libgcc.a(_muldi3.o)
- .debug_frame   0x00001ae4       0x28 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libnosys.a(sbrk.o)
+ .debug_frame   0x00000e48      0x95c .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(ETH.o)
+ .debug_frame   0x000017a4       0x4c .\CortexM0\ARM_GCC_473\Debug\PSoCPioneer+ArduinoShield_SPIM_Example.a(SSCR.o)
+ .debug_frame   0x000017f0       0x20 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m\libgcc.a(_udivsi3.o)
+ .debug_frame   0x00001810       0x20 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m\libgcc.a(_divsi3.o)
+ .debug_frame   0x00001830       0x28 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-__atexit2.o)
+ .debug_frame   0x00001858       0x28 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-exit.o)
+ .debug_frame   0x00001880       0x2c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-fini.o)
+ .debug_frame   0x000018ac       0x2c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-init.o)
+ .debug_frame   0x000018d8       0x28 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-memcpy.o)
+ .debug_frame   0x00001900       0x28 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-memset.o)
+ .debug_frame   0x00001928       0x48 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-rand.o)
+ .debug_frame   0x00001970       0x20 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-strlen.o)
+ .debug_frame   0x00001990       0x40 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-malloc.o)
+ .debug_frame   0x000019d0       0x2c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-mallocr.o)
+ .debug_frame   0x000019fc       0x2c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-sbrkr.o)
+ .debug_frame   0x00001a28       0x2c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-freer.o)
+ .debug_frame   0x00001a54       0x64 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-reent.o)
+ .debug_frame   0x00001ab8       0x30 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m\libgcc.a(_muldi3.o)
+ .debug_frame   0x00001ae8       0x28 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libnosys.a(sbrk.o)
 
 .debug_str      0x00000000     0x153a
  *(.debug_str)

@@ -1,6 +1,6 @@
 // ======================================================================
 // PSoCPioneer+ArduinoShield_SPIM_Example.v generated from TopDesign.cysch
-// 08/14/2014 at 15:07
+// 08/22/2014 at 16:03
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 

@@ -2,7 +2,7 @@
 --	Conversion of PSoCPioneer+ArduinoShield_SPIM_Example.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Thu Aug 14 15:07:57 2014
+--	Fri Aug 22 16:03:51 2014
 --
 
 USE cypress.cypress.all;

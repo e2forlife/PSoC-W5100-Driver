@@ -40,9 +40,9 @@
     #include "SPI_IntClock.h"
 #endif /* (0u != SPI_INTERNAL_CLOCK) */
 
-#define SPI_MODE                       (1u)
+#define SPI_MODE                       (4u)
 #define SPI_DATA_WIDTH                 (8u)
-#define SPI_MODE_USE_ZERO              (1u)
+#define SPI_MODE_USE_ZERO              (0u)
 #define SPI_BIDIRECTIONAL_MODE         (0u)
 
 /* Internal interrupt handling */

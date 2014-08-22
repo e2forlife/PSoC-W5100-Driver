@@ -1,4 +1,4 @@
-ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 1
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchSppUY.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 1
   29:.\Generated_Source\PSoC5/MISO_1.c **** * Summary:
   30:.\Generated_Source\PSoC5/MISO_1.c **** *  Assign a new value to the digital port's data output register.  
   31:.\Generated_Source\PSoC5/MISO_1.c **** *
-ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 2
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchSppUY.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/MISO_1.c **** * Parameters:  
@@ -118,7 +118,7 @@ ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 1
   69 003e 00BF     		.section	.text.MISO_1_SetDriveMode,"ax",%progbits
   70              		.align	2
   71              		.global	MISO_1_SetDriveMode
-ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 3
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchSppUY.s 			page 3
 
 
   72              		.thumb
@@ -178,7 +178,7 @@ ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 1
   98 0016 C4F20002 		movt	r2, 16384
   99 001a 1278     		ldrb	r2, [r2, #0]
  100 001c D2B2     		uxtb	r2, r2
-ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 4
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchSppUY.s 			page 4
 
 
  101 001e D2B2     		uxtb	r2, r2
@@ -238,7 +238,7 @@ ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 1
  132 0000 80B4     		push	{r7}
  133              	.LCFI6:
  134              		.cfi_def_cfa_offset 4
-ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 5
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchSppUY.s 			page 5
 
 
  135              		.cfi_offset 7, -4
@@ -298,7 +298,7 @@ ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 1
  169              		.cfi_def_cfa_offset 4
  170              		.cfi_offset 7, -4
  171 0002 00AF     		add	r7, sp, #0
-ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 6
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchSppUY.s 			page 6
 
 
  172              	.LCFI9:
@@ -330,10 +330,10 @@ ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 1
  196 0006 00000000 		.4byte	.Ldebug_abbrev0
  197 000a 04       		.byte	0x4
  198 000b 01       		.uleb128 0x1
- 199 000c 38010000 		.4byte	.LASF20
+ 199 000c 04010000 		.4byte	.LASF20
  200 0010 01       		.byte	0x1
  201 0011 00000000 		.4byte	.LASF21
- 202 0015 B8000000 		.4byte	.LASF22
+ 202 0015 62010000 		.4byte	.LASF22
  203 0019 00000000 		.4byte	.Ldebug_ranges0+0
  204 001d 00000000 		.4byte	0
  205 0021 00000000 		.4byte	0
@@ -341,7 +341,7 @@ ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 1
  207 0029 02       		.uleb128 0x2
  208 002a 01       		.byte	0x1
  209 002b 06       		.byte	0x6
- 210 002c 8A010000 		.4byte	.LASF0
+ 210 002c 56010000 		.4byte	.LASF0
  211 0030 02       		.uleb128 0x2
  212 0031 01       		.byte	0x1
  213 0032 08       		.byte	0x8
@@ -349,7 +349,7 @@ ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 1
  215 0037 02       		.uleb128 0x2
  216 0038 02       		.byte	0x2
  217 0039 05       		.byte	0x5
- 218 003a 28010000 		.4byte	.LASF2
+ 218 003a F4000000 		.4byte	.LASF2
  219 003e 02       		.uleb128 0x2
  220 003f 02       		.byte	0x2
  221 0040 07       		.byte	0x7
@@ -357,8 +357,8 @@ ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 1
  223 0045 02       		.uleb128 0x2
  224 0046 04       		.byte	0x4
  225 0047 05       		.byte	0x5
- 226 0048 81010000 		.4byte	.LASF4
-ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 7
+ 226 0048 4D010000 		.4byte	.LASF4
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchSppUY.s 			page 7
 
 
  227 004c 02       		.uleb128 0x2
@@ -368,11 +368,11 @@ ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 1
  231 0053 02       		.uleb128 0x2
  232 0054 08       		.byte	0x8
  233 0055 05       		.byte	0x5
- 234 0056 15010000 		.4byte	.LASF6
+ 234 0056 E1000000 		.4byte	.LASF6
  235 005a 02       		.uleb128 0x2
  236 005b 08       		.byte	0x8
  237 005c 07       		.byte	0x7
- 238 005d F9000000 		.4byte	.LASF7
+ 238 005d C5000000 		.4byte	.LASF7
  239 0061 03       		.uleb128 0x3
  240 0062 04       		.byte	0x4
  241 0063 05       		.byte	0x5
@@ -380,9 +380,9 @@ ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 1
  243 0068 02       		.uleb128 0x2
  244 0069 04       		.byte	0x4
  245 006a 07       		.byte	0x7
- 246 006b EC000000 		.4byte	.LASF8
+ 246 006b B8000000 		.4byte	.LASF8
  247 006f 04       		.uleb128 0x4
- 248 0070 32010000 		.4byte	.LASF12
+ 248 0070 FE000000 		.4byte	.LASF12
  249 0074 02       		.byte	0x2
  250 0075 5B       		.byte	0x5b
  251 0076 30000000 		.4byte	0x30
@@ -397,7 +397,7 @@ ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 1
  260 0088 02       		.uleb128 0x2
  261 0089 01       		.byte	0x1
  262 008a 08       		.byte	0x8
- 263 008b 23010000 		.4byte	.LASF11
+ 263 008b EF000000 		.4byte	.LASF11
  264 008f 04       		.uleb128 0x4
  265 0090 87000000 		.4byte	.LASF13
  266 0094 02       		.byte	0x2
@@ -418,7 +418,7 @@ ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 1
  281 00b5 D6000000 		.4byte	0xd6
  282 00b9 07       		.uleb128 0x7
  283 00ba 49000000 		.4byte	.LASF16
-ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 8
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchSppUY.s 			page 8
 
 
  284 00be 01       		.byte	0x1
@@ -448,7 +448,7 @@ ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 1
  308 00eb 01       		.byte	0x1
  309 00ec FF000000 		.4byte	0xff
  310 00f0 07       		.uleb128 0x7
- 311 00f1 10010000 		.4byte	.LASF17
+ 311 00f1 DC000000 		.4byte	.LASF17
  312 00f5 01       		.byte	0x1
  313 00f6 45       		.byte	0x45
  314 00f7 6F000000 		.4byte	0x6f
@@ -478,7 +478,7 @@ ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 1
  338 012a 1E000000 		.4byte	.LFE3
  339 012e 9C000000 		.4byte	.LLST3
  340 0132 01       		.byte	0x1
-ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 9
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchSppUY.s 			page 9
 
 
  341 0133 00       		.byte	0
@@ -538,7 +538,7 @@ ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 1
  395 0033 0B       		.uleb128 0xb
  396 0034 49       		.uleb128 0x49
  397 0035 13       		.uleb128 0x13
-ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 10
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchSppUY.s 			page 10
 
 
  398 0036 00       		.byte	0
@@ -598,7 +598,7 @@ ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 1
  452 006d 3A       		.uleb128 0x3a
  453 006e 0B       		.uleb128 0xb
  454 006f 3B       		.uleb128 0x3b
-ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 11
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchSppUY.s 			page 11
 
 
  455 0070 0B       		.uleb128 0xb
@@ -658,7 +658,7 @@ ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 1
  509 002e 77       		.byte	0x77
  510 002f 18       		.sleb128 24
  511 0030 00000000 		.4byte	0
-ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 12
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchSppUY.s 			page 12
 
 
  512 0034 00000000 		.4byte	0
@@ -718,7 +718,7 @@ ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 1
  566 00b8 1E000000 		.4byte	.LFE3
  567 00bc 0200     		.2byte	0x2
  568 00be 77       		.byte	0x77
-ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 13
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchSppUY.s 			page 13
 
 
  569 00bf 04       		.sleb128 4
@@ -778,7 +778,7 @@ ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 1
  610      5F315F53 
  610      65744472 
  610      6976654D 
-ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 14
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchSppUY.s 			page 14
 
 
  610      6F646500 
@@ -824,62 +824,66 @@ ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 1
  629              	.LASF10:
  630 00b1 646F7562 		.ascii	"double\000"
  630      6C6500
- 631              	.LASF22:
- 632 00b8 5A3A5C50 		.ascii	"Z:\\PSoC-W5100-Driver\\W5200Test_CustomPlatform.cyd"
- 632      536F432D 
- 632      57353130 
- 632      302D4472 
- 632      69766572 
- 633 00e9 736E00   		.ascii	"sn\000"
- 634              	.LASF8:
- 635 00ec 756E7369 		.ascii	"unsigned int\000"
- 635      676E6564 
- 635      20696E74 
- 635      00
- 636              	.LASF7:
- 637 00f9 6C6F6E67 		.ascii	"long long unsigned int\000"
-ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccHPnq3R.s 			page 15
+ 631              	.LASF8:
+ 632 00b8 756E7369 		.ascii	"unsigned int\000"
+ 632      676E6564 
+ 632      20696E74 
+ 632      00
+ 633              	.LASF7:
+ 634 00c5 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 634      206C6F6E 
+ 634      6720756E 
+ 634      7369676E 
+ 634      65642069 
+ 635              	.LASF17:
+ 636 00dc 6D6F6465 		.ascii	"mode\000"
+ 636      00
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cchSppUY.s 			page 15
 
 
- 637      206C6F6E 
- 637      6720756E 
- 637      7369676E 
- 637      65642069 
- 638              	.LASF17:
- 639 0110 6D6F6465 		.ascii	"mode\000"
- 639      00
- 640              	.LASF6:
- 641 0115 6C6F6E67 		.ascii	"long long int\000"
- 641      206C6F6E 
- 641      6720696E 
- 641      7400
- 642              	.LASF11:
- 643 0123 63686172 		.ascii	"char\000"
- 643      00
- 644              	.LASF2:
- 645 0128 73686F72 		.ascii	"short int\000"
- 645      7420696E 
- 645      7400
- 646              	.LASF12:
- 647 0132 75696E74 		.ascii	"uint8\000"
- 647      3800
- 648              	.LASF20:
- 649 0138 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
- 649      4320342E 
- 649      372E3320 
- 649      32303133 
- 649      30333132 
- 650 016b 616E6368 		.ascii	"anch revision 196615]\000"
- 650      20726576 
- 650      6973696F 
- 650      6E203139 
- 650      36363135 
- 651              	.LASF4:
- 652 0181 6C6F6E67 		.ascii	"long int\000"
- 652      20696E74 
- 652      00
- 653              	.LASF0:
- 654 018a 7369676E 		.ascii	"signed char\000"
- 654      65642063 
- 654      68617200 
+ 637              	.LASF6:
+ 638 00e1 6C6F6E67 		.ascii	"long long int\000"
+ 638      206C6F6E 
+ 638      6720696E 
+ 638      7400
+ 639              	.LASF11:
+ 640 00ef 63686172 		.ascii	"char\000"
+ 640      00
+ 641              	.LASF2:
+ 642 00f4 73686F72 		.ascii	"short int\000"
+ 642      7420696E 
+ 642      7400
+ 643              	.LASF12:
+ 644 00fe 75696E74 		.ascii	"uint8\000"
+ 644      3800
+ 645              	.LASF20:
+ 646 0104 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 646      4320342E 
+ 646      372E3320 
+ 646      32303133 
+ 646      30333132 
+ 647 0137 616E6368 		.ascii	"anch revision 196615]\000"
+ 647      20726576 
+ 647      6973696F 
+ 647      6E203139 
+ 647      36363135 
+ 648              	.LASF4:
+ 649 014d 6C6F6E67 		.ascii	"long int\000"
+ 649      20696E74 
+ 649      00
+ 650              	.LASF0:
+ 651 0156 7369676E 		.ascii	"signed char\000"
+ 651      65642063 
+ 651      68617200 
+ 652              	.LASF22:
+ 653 0162 433A5C55 		.ascii	"C:\\Users\\chuck.erhardt\\Documents\\GitHub\\PSoC-W"
+ 653      73657273 
+ 653      5C636875 
+ 653      636B2E65 
+ 653      72686172 
+ 654 0190 35313030 		.ascii	"5100-Driver\\W5200Test_CustomPlatform.cydsn\000"
+ 654      2D447269 
+ 654      7665725C 
+ 654      57353230 
+ 654      30546573 
  655              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

@@ -1,5 +1,5 @@
 # PSoCPioneer+ArduinoShield_SPIM_Example
-# 2014-08-14 19:07:59Z
+# 2014-08-22 20:03:53Z
 
 # IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
 dont_use_io iocell 3 2
