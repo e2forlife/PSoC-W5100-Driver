@@ -8,10 +8,10 @@
 <files />
 <projects>
 <name_val_pair name="PSoCPioneer+ArduinoShield_Example" v=".\PSoCPioneer+ArduinoShield_Example.cydsn\PSoCPioneer+ArduinoShield_Example.cyprj" />
-<name_val_pair name="E2ForLife_W5100" v=".\E2ForLife_W5100.cylib\E2ForLife_W5100.cyprj" />
 <name_val_pair name="PSoCPioneer+ArduinoShield_SPIM_Example" v=".\PSoCPioneer+ArduinoShield_SPIM_Example.cydsn\PSoCPioneer+ArduinoShield_SPIM_Example.cyprj" />
 <name_val_pair name="freeSoCExplorer+ArduinoSheld_Example" v=".\freeSoCExplorer+ArduinoSheld_Example.cydsn\freeSoCExplorer+ArduinoSheld_Example.cyprj" />
 <name_val_pair name="W5200Test_CustomPlatform" v=".\W5200Test_CustomPlatform.cydsn\W5200Test_CustomPlatform.cyprj" />
+<name_val_pair name="E2ForLife_W5x00" v=".\E2ForLife_W5x00.cylib\E2ForLife_W5x00.cyprj" />
 </projects>
 <workspace_id v="10aaea83-afb0-4837-a402-9a74643872d5" />
 <WriteAppVersionLastSavedWith v="3.0.0.3023" />
