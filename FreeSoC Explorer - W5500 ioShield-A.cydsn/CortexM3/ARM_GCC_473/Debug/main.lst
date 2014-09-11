@@ -1,0 +1,543 @@
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFJclOw.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"main.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.rodata
+  19              		.align	2
+  20              	.LC0:
+  21 0000 48656C6C 		.ascii	"Hello from PSoC 5LP and W5500!\015\012\015\012\000"
+  21      6F206672 
+  21      6F6D2050 
+  21      536F4320 
+  21      354C5020 
+  22 0023 00       		.section	.text.main,"ax",%progbits
+  23              		.align	2
+  24              		.global	main
+  25              		.thumb
+  26              		.thumb_func
+  27              		.type	main, %function
+  28              	main:
+  29              	.LFB56:
+  30              		.file 1 ".\\main.c"
+   1:.\main.c      **** /* ========================================
+   2:.\main.c      ****  *
+   3:.\main.c      ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\main.c      ****  * All Rights Reserved
+   5:.\main.c      ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\main.c      ****  *
+   7:.\main.c      ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\main.c      ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\main.c      ****  *
+  10:.\main.c      ****  * ========================================
+  11:.\main.c      **** */
+  12:.\main.c      **** #include <project.h>
+  13:.\main.c      **** 
+  14:.\main.c      **** int main()
+  15:.\main.c      **** {
+  31              		.loc 1 15 0
+  32              		.cfi_startproc
+  33              		@ args = 0, pretend = 0, frame = 8
+  34              		@ frame_needed = 1, uses_anonymous_args = 0
+  35 0000 80B5     		push	{r7, lr}
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 8
+  38              		.cfi_offset 7, -8
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFJclOw.s 			page 2
+
+
+  39              		.cfi_offset 14, -4
+  40 0002 82B0     		sub	sp, sp, #8
+  41              	.LCFI1:
+  42              		.cfi_def_cfa_offset 16
+  43 0004 00AF     		add	r7, sp, #0
+  44              	.LCFI2:
+  45              		.cfi_def_cfa_register 7
+  16:.\main.c      **** 	uint8 socket;
+  17:.\main.c      **** 	
+  18:.\main.c      ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  19:.\main.c      **** 	SPI_Start();
+  46              		.loc 1 19 0
+  47 0006 FFF7FEFF 		bl	SPI_Start
+  20:.\main.c      **** 	ETH_Start();
+  48              		.loc 1 20 0
+  49 000a FFF7FEFF 		bl	ETH_Start
+  50              	.L2:
+  21:.\main.c      **** 	
+  22:.\main.c      ****     /* CyGlobalIntEnable; */ /* Uncomment this line to enable global interrupts. */
+  23:.\main.c      ****     for(;;)
+  24:.\main.c      ****     {
+  25:.\main.c      **** 		socket = ETH_TcpOpen( 23 );
+  51              		.loc 1 25 0 discriminator 1
+  52 000e 4FF01700 		mov	r0, #23
+  53 0012 FFF7FEFF 		bl	ETH_TcpOpen
+  54 0016 0346     		mov	r3, r0
+  55 0018 FB71     		strb	r3, [r7, #7]
+  26:.\main.c      **** 		ETH_TcpStartServerWait( socket );
+  56              		.loc 1 26 0 discriminator 1
+  57 001a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+  58 001c 1846     		mov	r0, r3
+  59 001e FFF7FEFF 		bl	ETH_TcpStartServerWait
+  27:.\main.c      **** 		
+  28:.\main.c      **** 		ETH_TcpPrint(socket,"Hello from PSoC 5LP and W5500!\r\n\r\n");
+  60              		.loc 1 28 0 discriminator 1
+  61 0022 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+  62 0024 1846     		mov	r0, r3
+  63 0026 40F20001 		movw	r1, #:lower16:.LC0
+  64 002a C0F20001 		movt	r1, #:upper16:.LC0
+  65 002e FFF7FEFF 		bl	ETH_TcpPrint
+  29:.\main.c      **** 		CyDelay(10);
+  66              		.loc 1 29 0 discriminator 1
+  67 0032 4FF00A00 		mov	r0, #10
+  68 0036 FFF7FEFF 		bl	CyDelay
+  30:.\main.c      **** 		ETH_TcpDisconnect( socket );
+  69              		.loc 1 30 0 discriminator 1
+  70 003a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+  71 003c 1846     		mov	r0, r3
+  72 003e FFF7FEFF 		bl	ETH_TcpDisconnect
+  31:.\main.c      **** 		CyDelay(100);
+  73              		.loc 1 31 0 discriminator 1
+  74 0042 4FF06400 		mov	r0, #100
+  75 0046 FFF7FEFF 		bl	CyDelay
+  32:.\main.c      **** 		ETH_SocketClose( socket );
+  76              		.loc 1 32 0 discriminator 1
+  77 004a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+  78 004c 1846     		mov	r0, r3
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFJclOw.s 			page 3
+
+
+  79 004e FFF7FEFF 		bl	ETH_SocketClose
+  33:.\main.c      ****     }
+  80              		.loc 1 33 0 discriminator 1
+  81 0052 DCE7     		b	.L2
+  82              		.cfi_endproc
+  83              	.LFE56:
+  84              		.size	main, .-main
+  85              		.text
+  86              	.Letext0:
+  87              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\3.0\\psoc creator\\import\\gnu_cs\\arm\\4
+  88              		.file 3 "./Generated_Source/PSoC5/cytypes.h"
+  89              		.file 4 "./Generated_Source/PSoC5/core_cm3.h"
+  90              		.section	.debug_info,"",%progbits
+  91              	.Ldebug_info0:
+  92 0000 DD000000 		.4byte	0xdd
+  93 0004 0200     		.2byte	0x2
+  94 0006 00000000 		.4byte	.Ldebug_abbrev0
+  95 000a 04       		.byte	0x4
+  96 000b 01       		.uleb128 0x1
+  97 000c 3A000000 		.4byte	.LASF15
+  98 0010 01       		.byte	0x1
+  99 0011 CE000000 		.4byte	.LASF16
+ 100 0015 18010000 		.4byte	.LASF17
+ 101 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 102 001d 00000000 		.4byte	0
+ 103 0021 00000000 		.4byte	0
+ 104 0025 00000000 		.4byte	.Ldebug_line0
+ 105 0029 02       		.uleb128 0x2
+ 106 002a 01       		.byte	0x1
+ 107 002b 06       		.byte	0x6
+ 108 002c EB000000 		.4byte	.LASF0
+ 109 0030 02       		.uleb128 0x2
+ 110 0031 01       		.byte	0x1
+ 111 0032 08       		.byte	0x8
+ 112 0033 B2000000 		.4byte	.LASF1
+ 113 0037 02       		.uleb128 0x2
+ 114 0038 02       		.byte	0x2
+ 115 0039 05       		.byte	0x5
+ 116 003a FD000000 		.4byte	.LASF2
+ 117 003e 02       		.uleb128 0x2
+ 118 003f 02       		.byte	0x2
+ 119 0040 07       		.byte	0x7
+ 120 0041 0E000000 		.4byte	.LASF3
+ 121 0045 03       		.uleb128 0x3
+ 122 0046 07010000 		.4byte	.LASF9
+ 123 004a 02       		.byte	0x2
+ 124 004b 4F       		.byte	0x4f
+ 125 004c 50000000 		.4byte	0x50
+ 126 0050 02       		.uleb128 0x2
+ 127 0051 04       		.byte	0x4
+ 128 0052 05       		.byte	0x5
+ 129 0053 C5000000 		.4byte	.LASF4
+ 130 0057 02       		.uleb128 0x2
+ 131 0058 04       		.byte	0x4
+ 132 0059 07       		.byte	0x7
+ 133 005a 89000000 		.4byte	.LASF5
+ 134 005e 02       		.uleb128 0x2
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFJclOw.s 			page 4
+
+
+ 135 005f 08       		.byte	0x8
+ 136 0060 05       		.byte	0x5
+ 137 0061 00000000 		.4byte	.LASF6
+ 138 0065 02       		.uleb128 0x2
+ 139 0066 08       		.byte	0x8
+ 140 0067 07       		.byte	0x7
+ 141 0068 9B000000 		.4byte	.LASF7
+ 142 006c 04       		.uleb128 0x4
+ 143 006d 04       		.byte	0x4
+ 144 006e 05       		.byte	0x5
+ 145 006f 696E7400 		.ascii	"int\000"
+ 146 0073 02       		.uleb128 0x2
+ 147 0074 04       		.byte	0x4
+ 148 0075 07       		.byte	0x7
+ 149 0076 21000000 		.4byte	.LASF8
+ 150 007a 03       		.uleb128 0x3
+ 151 007b 83000000 		.4byte	.LASF10
+ 152 007f 03       		.byte	0x3
+ 153 0080 5B       		.byte	0x5b
+ 154 0081 30000000 		.4byte	0x30
+ 155 0085 02       		.uleb128 0x2
+ 156 0086 04       		.byte	0x4
+ 157 0087 04       		.byte	0x4
+ 158 0088 F7000000 		.4byte	.LASF11
+ 159 008c 02       		.uleb128 0x2
+ 160 008d 08       		.byte	0x8
+ 161 008e 04       		.byte	0x4
+ 162 008f D7000000 		.4byte	.LASF12
+ 163 0093 02       		.uleb128 0x2
+ 164 0094 01       		.byte	0x1
+ 165 0095 08       		.byte	0x8
+ 166 0096 C0000000 		.4byte	.LASF13
+ 167 009a 02       		.uleb128 0x2
+ 168 009b 04       		.byte	0x4
+ 169 009c 07       		.byte	0x7
+ 170 009d 0F010000 		.4byte	.LASF14
+ 171 00a1 05       		.uleb128 0x5
+ 172 00a2 01       		.byte	0x1
+ 173 00a3 2E000000 		.4byte	.LASF18
+ 174 00a7 01       		.byte	0x1
+ 175 00a8 0E       		.byte	0xe
+ 176 00a9 6C000000 		.4byte	0x6c
+ 177 00ad 00000000 		.4byte	.LFB56
+ 178 00b1 54000000 		.4byte	.LFE56
+ 179 00b5 00000000 		.4byte	.LLST0
+ 180 00b9 01       		.byte	0x1
+ 181 00ba CD000000 		.4byte	0xcd
+ 182 00be 06       		.uleb128 0x6
+ 183 00bf 33000000 		.4byte	.LASF19
+ 184 00c3 01       		.byte	0x1
+ 185 00c4 10       		.byte	0x10
+ 186 00c5 7A000000 		.4byte	0x7a
+ 187 00c9 02       		.byte	0x2
+ 188 00ca 91       		.byte	0x91
+ 189 00cb 77       		.sleb128 -9
+ 190 00cc 00       		.byte	0
+ 191 00cd 07       		.uleb128 0x7
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFJclOw.s 			page 5
+
+
+ 192 00ce DE000000 		.4byte	.LASF20
+ 193 00d2 04       		.byte	0x4
+ 194 00d3 1606     		.2byte	0x616
+ 195 00d5 DB000000 		.4byte	0xdb
+ 196 00d9 01       		.byte	0x1
+ 197 00da 01       		.byte	0x1
+ 198 00db 08       		.uleb128 0x8
+ 199 00dc 45000000 		.4byte	0x45
+ 200 00e0 00       		.byte	0
+ 201              		.section	.debug_abbrev,"",%progbits
+ 202              	.Ldebug_abbrev0:
+ 203 0000 01       		.uleb128 0x1
+ 204 0001 11       		.uleb128 0x11
+ 205 0002 01       		.byte	0x1
+ 206 0003 25       		.uleb128 0x25
+ 207 0004 0E       		.uleb128 0xe
+ 208 0005 13       		.uleb128 0x13
+ 209 0006 0B       		.uleb128 0xb
+ 210 0007 03       		.uleb128 0x3
+ 211 0008 0E       		.uleb128 0xe
+ 212 0009 1B       		.uleb128 0x1b
+ 213 000a 0E       		.uleb128 0xe
+ 214 000b 55       		.uleb128 0x55
+ 215 000c 06       		.uleb128 0x6
+ 216 000d 11       		.uleb128 0x11
+ 217 000e 01       		.uleb128 0x1
+ 218 000f 52       		.uleb128 0x52
+ 219 0010 01       		.uleb128 0x1
+ 220 0011 10       		.uleb128 0x10
+ 221 0012 06       		.uleb128 0x6
+ 222 0013 00       		.byte	0
+ 223 0014 00       		.byte	0
+ 224 0015 02       		.uleb128 0x2
+ 225 0016 24       		.uleb128 0x24
+ 226 0017 00       		.byte	0
+ 227 0018 0B       		.uleb128 0xb
+ 228 0019 0B       		.uleb128 0xb
+ 229 001a 3E       		.uleb128 0x3e
+ 230 001b 0B       		.uleb128 0xb
+ 231 001c 03       		.uleb128 0x3
+ 232 001d 0E       		.uleb128 0xe
+ 233 001e 00       		.byte	0
+ 234 001f 00       		.byte	0
+ 235 0020 03       		.uleb128 0x3
+ 236 0021 16       		.uleb128 0x16
+ 237 0022 00       		.byte	0
+ 238 0023 03       		.uleb128 0x3
+ 239 0024 0E       		.uleb128 0xe
+ 240 0025 3A       		.uleb128 0x3a
+ 241 0026 0B       		.uleb128 0xb
+ 242 0027 3B       		.uleb128 0x3b
+ 243 0028 0B       		.uleb128 0xb
+ 244 0029 49       		.uleb128 0x49
+ 245 002a 13       		.uleb128 0x13
+ 246 002b 00       		.byte	0
+ 247 002c 00       		.byte	0
+ 248 002d 04       		.uleb128 0x4
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFJclOw.s 			page 6
+
+
+ 249 002e 24       		.uleb128 0x24
+ 250 002f 00       		.byte	0
+ 251 0030 0B       		.uleb128 0xb
+ 252 0031 0B       		.uleb128 0xb
+ 253 0032 3E       		.uleb128 0x3e
+ 254 0033 0B       		.uleb128 0xb
+ 255 0034 03       		.uleb128 0x3
+ 256 0035 08       		.uleb128 0x8
+ 257 0036 00       		.byte	0
+ 258 0037 00       		.byte	0
+ 259 0038 05       		.uleb128 0x5
+ 260 0039 2E       		.uleb128 0x2e
+ 261 003a 01       		.byte	0x1
+ 262 003b 3F       		.uleb128 0x3f
+ 263 003c 0C       		.uleb128 0xc
+ 264 003d 03       		.uleb128 0x3
+ 265 003e 0E       		.uleb128 0xe
+ 266 003f 3A       		.uleb128 0x3a
+ 267 0040 0B       		.uleb128 0xb
+ 268 0041 3B       		.uleb128 0x3b
+ 269 0042 0B       		.uleb128 0xb
+ 270 0043 49       		.uleb128 0x49
+ 271 0044 13       		.uleb128 0x13
+ 272 0045 11       		.uleb128 0x11
+ 273 0046 01       		.uleb128 0x1
+ 274 0047 12       		.uleb128 0x12
+ 275 0048 01       		.uleb128 0x1
+ 276 0049 40       		.uleb128 0x40
+ 277 004a 06       		.uleb128 0x6
+ 278 004b 9642     		.uleb128 0x2116
+ 279 004d 0C       		.uleb128 0xc
+ 280 004e 01       		.uleb128 0x1
+ 281 004f 13       		.uleb128 0x13
+ 282 0050 00       		.byte	0
+ 283 0051 00       		.byte	0
+ 284 0052 06       		.uleb128 0x6
+ 285 0053 34       		.uleb128 0x34
+ 286 0054 00       		.byte	0
+ 287 0055 03       		.uleb128 0x3
+ 288 0056 0E       		.uleb128 0xe
+ 289 0057 3A       		.uleb128 0x3a
+ 290 0058 0B       		.uleb128 0xb
+ 291 0059 3B       		.uleb128 0x3b
+ 292 005a 0B       		.uleb128 0xb
+ 293 005b 49       		.uleb128 0x49
+ 294 005c 13       		.uleb128 0x13
+ 295 005d 02       		.uleb128 0x2
+ 296 005e 0A       		.uleb128 0xa
+ 297 005f 00       		.byte	0
+ 298 0060 00       		.byte	0
+ 299 0061 07       		.uleb128 0x7
+ 300 0062 34       		.uleb128 0x34
+ 301 0063 00       		.byte	0
+ 302 0064 03       		.uleb128 0x3
+ 303 0065 0E       		.uleb128 0xe
+ 304 0066 3A       		.uleb128 0x3a
+ 305 0067 0B       		.uleb128 0xb
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFJclOw.s 			page 7
+
+
+ 306 0068 3B       		.uleb128 0x3b
+ 307 0069 05       		.uleb128 0x5
+ 308 006a 49       		.uleb128 0x49
+ 309 006b 13       		.uleb128 0x13
+ 310 006c 3F       		.uleb128 0x3f
+ 311 006d 0C       		.uleb128 0xc
+ 312 006e 3C       		.uleb128 0x3c
+ 313 006f 0C       		.uleb128 0xc
+ 314 0070 00       		.byte	0
+ 315 0071 00       		.byte	0
+ 316 0072 08       		.uleb128 0x8
+ 317 0073 35       		.uleb128 0x35
+ 318 0074 00       		.byte	0
+ 319 0075 49       		.uleb128 0x49
+ 320 0076 13       		.uleb128 0x13
+ 321 0077 00       		.byte	0
+ 322 0078 00       		.byte	0
+ 323 0079 00       		.byte	0
+ 324              		.section	.debug_loc,"",%progbits
+ 325              	.Ldebug_loc0:
+ 326              	.LLST0:
+ 327 0000 00000000 		.4byte	.LFB56
+ 328 0004 02000000 		.4byte	.LCFI0
+ 329 0008 0200     		.2byte	0x2
+ 330 000a 7D       		.byte	0x7d
+ 331 000b 00       		.sleb128 0
+ 332 000c 02000000 		.4byte	.LCFI0
+ 333 0010 04000000 		.4byte	.LCFI1
+ 334 0014 0200     		.2byte	0x2
+ 335 0016 7D       		.byte	0x7d
+ 336 0017 08       		.sleb128 8
+ 337 0018 04000000 		.4byte	.LCFI1
+ 338 001c 06000000 		.4byte	.LCFI2
+ 339 0020 0200     		.2byte	0x2
+ 340 0022 7D       		.byte	0x7d
+ 341 0023 10       		.sleb128 16
+ 342 0024 06000000 		.4byte	.LCFI2
+ 343 0028 54000000 		.4byte	.LFE56
+ 344 002c 0200     		.2byte	0x2
+ 345 002e 77       		.byte	0x77
+ 346 002f 10       		.sleb128 16
+ 347 0030 00000000 		.4byte	0
+ 348 0034 00000000 		.4byte	0
+ 349              		.section	.debug_aranges,"",%progbits
+ 350 0000 1C000000 		.4byte	0x1c
+ 351 0004 0200     		.2byte	0x2
+ 352 0006 00000000 		.4byte	.Ldebug_info0
+ 353 000a 04       		.byte	0x4
+ 354 000b 00       		.byte	0
+ 355 000c 0000     		.2byte	0
+ 356 000e 0000     		.2byte	0
+ 357 0010 00000000 		.4byte	.LFB56
+ 358 0014 54000000 		.4byte	.LFE56-.LFB56
+ 359 0018 00000000 		.4byte	0
+ 360 001c 00000000 		.4byte	0
+ 361              		.section	.debug_ranges,"",%progbits
+ 362              	.Ldebug_ranges0:
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFJclOw.s 			page 8
+
+
+ 363 0000 00000000 		.4byte	.LFB56
+ 364 0004 54000000 		.4byte	.LFE56
+ 365 0008 00000000 		.4byte	0
+ 366 000c 00000000 		.4byte	0
+ 367              		.section	.debug_line,"",%progbits
+ 368              	.Ldebug_line0:
+ 369 0000 38010000 		.section	.debug_str,"MS",%progbits,1
+ 369      0200F900 
+ 369      00000201 
+ 369      FB0E0D00 
+ 369      01010101 
+ 370              	.LASF6:
+ 371 0000 6C6F6E67 		.ascii	"long long int\000"
+ 371      206C6F6E 
+ 371      6720696E 
+ 371      7400
+ 372              	.LASF3:
+ 373 000e 73686F72 		.ascii	"short unsigned int\000"
+ 373      7420756E 
+ 373      7369676E 
+ 373      65642069 
+ 373      6E7400
+ 374              	.LASF8:
+ 375 0021 756E7369 		.ascii	"unsigned int\000"
+ 375      676E6564 
+ 375      20696E74 
+ 375      00
+ 376              	.LASF18:
+ 377 002e 6D61696E 		.ascii	"main\000"
+ 377      00
+ 378              	.LASF19:
+ 379 0033 736F636B 		.ascii	"socket\000"
+ 379      657400
+ 380              	.LASF15:
+ 381 003a 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 381      4320342E 
+ 381      372E3320 
+ 381      32303133 
+ 381      30333132 
+ 382 006d 616E6368 		.ascii	"anch revision 196615]\000"
+ 382      20726576 
+ 382      6973696F 
+ 382      6E203139 
+ 382      36363135 
+ 383              	.LASF10:
+ 384 0083 75696E74 		.ascii	"uint8\000"
+ 384      3800
+ 385              	.LASF5:
+ 386 0089 6C6F6E67 		.ascii	"long unsigned int\000"
+ 386      20756E73 
+ 386      69676E65 
+ 386      6420696E 
+ 386      7400
+ 387              	.LASF7:
+ 388 009b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 388      206C6F6E 
+ 388      6720756E 
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFJclOw.s 			page 9
+
+
+ 388      7369676E 
+ 388      65642069 
+ 389              	.LASF1:
+ 390 00b2 756E7369 		.ascii	"unsigned char\000"
+ 390      676E6564 
+ 390      20636861 
+ 390      7200
+ 391              	.LASF13:
+ 392 00c0 63686172 		.ascii	"char\000"
+ 392      00
+ 393              	.LASF4:
+ 394 00c5 6C6F6E67 		.ascii	"long int\000"
+ 394      20696E74 
+ 394      00
+ 395              	.LASF16:
+ 396 00ce 2E5C6D61 		.ascii	".\\main.c\000"
+ 396      696E2E63 
+ 396      00
+ 397              	.LASF12:
+ 398 00d7 646F7562 		.ascii	"double\000"
+ 398      6C6500
+ 399              	.LASF20:
+ 400 00de 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 400      52784275 
+ 400      66666572 
+ 400      00
+ 401              	.LASF0:
+ 402 00eb 7369676E 		.ascii	"signed char\000"
+ 402      65642063 
+ 402      68617200 
+ 403              	.LASF11:
+ 404 00f7 666C6F61 		.ascii	"float\000"
+ 404      7400
+ 405              	.LASF2:
+ 406 00fd 73686F72 		.ascii	"short int\000"
+ 406      7420696E 
+ 406      7400
+ 407              	.LASF9:
+ 408 0107 696E7433 		.ascii	"int32_t\000"
+ 408      325F7400 
+ 409              	.LASF14:
+ 410 010f 73697A65 		.ascii	"sizetype\000"
+ 410      74797065 
+ 410      00
+ 411              	.LASF17:
+ 412 0118 433A5C55 		.ascii	"C:\\Users\\chuck.erhardt\\Documents\\GitHub\\PSoC-W"
+ 412      73657273 
+ 412      5C636875 
+ 412      636B2E65 
+ 412      72686172 
+ 413 0146 35313030 		.ascii	"5100-Driver\\FreeSoC Explorer - W5500 ioShield-A.cy"
+ 413      2D447269 
+ 413      7665725C 
+ 413      46726565 
+ 413      536F4320 
+ 414 0178 64736E00 		.ascii	"dsn\000"
+ 415              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccFJclOw.s 			page 10
+
+

@@ -1,0 +1,21 @@
+# FreeSoC Explorer - W5500 ioShield-A
+# 2014-09-11 12:07:32Z
+
+# IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
+dont_use_io iocell 1 0
+# IO_1@[IOP=(1)][IoId=(1)] is reserved: SWDDebugEnabled
+dont_use_io iocell 1 1
+# IO_3@[IOP=(1)][IoId=(3)] is reserved: SWDDebugEnabled
+dont_use_io iocell 1 3
+set_io "ETH_CSN(0)" iocell 5 2
+set_io "LED(0)" iocell 15 4
+set_io "LED(1)" iocell 15 5
+set_io "MISO(0)" iocell 1 2
+set_io "MOSI(0)" iocell 5 3
+set_io "SCLK(0)" iocell 1 4
+set_io "SDC_CSN(0)" iocell 12 4
+set_io "SWTP(0)" iocell 4 0
+set_io "TP(0)" iocell 6 4
+set_io "TP(1)" iocell 6 5
+set_io "TP(2)" iocell 6 6
+set_io "TP(3)" iocell 6 7

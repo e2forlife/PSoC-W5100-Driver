@@ -1,0 +1,913 @@
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceA9iWf.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"LED.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.LED_Write,"ax",%progbits
+  19              		.align	2
+  20              		.global	LED_Write
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	LED_Write, %function
+  24              	LED_Write:
+  25              	.LFB0:
+  26              		.file 1 ".\\Generated_Source\\PSoC5\\LED.c"
+   1:.\Generated_Source\PSoC5/LED.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/LED.c **** * File Name: LED.c  
+   3:.\Generated_Source\PSoC5/LED.c **** * Version 2.0
+   4:.\Generated_Source\PSoC5/LED.c **** *
+   5:.\Generated_Source\PSoC5/LED.c **** * Description:
+   6:.\Generated_Source\PSoC5/LED.c **** *  This file contains API to enable firmware control of a Pins component.
+   7:.\Generated_Source\PSoC5/LED.c **** *
+   8:.\Generated_Source\PSoC5/LED.c **** * Note:
+   9:.\Generated_Source\PSoC5/LED.c **** *
+  10:.\Generated_Source\PSoC5/LED.c **** ********************************************************************************
+  11:.\Generated_Source\PSoC5/LED.c **** * Copyright 2008-2014, Cypress Semiconductor Corporation.  All rights reserved.
+  12:.\Generated_Source\PSoC5/LED.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  13:.\Generated_Source\PSoC5/LED.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  14:.\Generated_Source\PSoC5/LED.c **** * the software package with which this file was provided.
+  15:.\Generated_Source\PSoC5/LED.c **** *******************************************************************************/
+  16:.\Generated_Source\PSoC5/LED.c **** 
+  17:.\Generated_Source\PSoC5/LED.c **** #include "cytypes.h"
+  18:.\Generated_Source\PSoC5/LED.c **** #include "LED.h"
+  19:.\Generated_Source\PSoC5/LED.c **** 
+  20:.\Generated_Source\PSoC5/LED.c **** /* APIs are not generated for P15[7:6] on PSoC 5 */
+  21:.\Generated_Source\PSoC5/LED.c **** #if !(CY_PSOC5A &&\
+  22:.\Generated_Source\PSoC5/LED.c **** 	 LED__PORT == 15 && ((LED__MASK & 0xC0) != 0))
+  23:.\Generated_Source\PSoC5/LED.c **** 
+  24:.\Generated_Source\PSoC5/LED.c **** 
+  25:.\Generated_Source\PSoC5/LED.c **** /*******************************************************************************
+  26:.\Generated_Source\PSoC5/LED.c **** * Function Name: LED_Write
+  27:.\Generated_Source\PSoC5/LED.c **** ********************************************************************************
+  28:.\Generated_Source\PSoC5/LED.c **** *
+  29:.\Generated_Source\PSoC5/LED.c **** * Summary:
+  30:.\Generated_Source\PSoC5/LED.c **** *  Assign a new value to the digital port's data output register.  
+  31:.\Generated_Source\PSoC5/LED.c **** *
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceA9iWf.s 			page 2
+
+
+  32:.\Generated_Source\PSoC5/LED.c **** * Parameters:  
+  33:.\Generated_Source\PSoC5/LED.c **** *  prtValue:  The value to be assigned to the Digital Port. 
+  34:.\Generated_Source\PSoC5/LED.c **** *
+  35:.\Generated_Source\PSoC5/LED.c **** * Return: 
+  36:.\Generated_Source\PSoC5/LED.c **** *  None
+  37:.\Generated_Source\PSoC5/LED.c **** *  
+  38:.\Generated_Source\PSoC5/LED.c **** *******************************************************************************/
+  39:.\Generated_Source\PSoC5/LED.c **** void LED_Write(uint8 value) 
+  40:.\Generated_Source\PSoC5/LED.c **** {
+  27              		.loc 1 40 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 16
+  30              		@ frame_needed = 1, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32 0000 80B4     		push	{r7}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 4
+  35              		.cfi_offset 7, -4
+  36 0002 85B0     		sub	sp, sp, #20
+  37              	.LCFI1:
+  38              		.cfi_def_cfa_offset 24
+  39 0004 00AF     		add	r7, sp, #0
+  40              	.LCFI2:
+  41              		.cfi_def_cfa_register 7
+  42 0006 0346     		mov	r3, r0
+  43 0008 FB71     		strb	r3, [r7, #7]
+  41:.\Generated_Source\PSoC5/LED.c ****     uint8 staticBits = (LED_DR & (uint8)(~LED_MASK));
+  44              		.loc 1 41 0
+  45 000a 45F2F013 		movw	r3, #20976
+  46 000e C4F20003 		movt	r3, 16384
+  47 0012 1B78     		ldrb	r3, [r3, #0]
+  48 0014 DBB2     		uxtb	r3, r3
+  49 0016 23F03003 		bic	r3, r3, #48
+  50 001a FB73     		strb	r3, [r7, #15]
+  42:.\Generated_Source\PSoC5/LED.c ****     LED_DR = staticBits | ((uint8)(value << LED_SHIFT) & LED_MASK);
+  51              		.loc 1 42 0
+  52 001c 45F2F013 		movw	r3, #20976
+  53 0020 C4F20003 		movt	r3, 16384
+  54 0024 FA79     		ldrb	r2, [r7, #7]
+  55 0026 4FEA0212 		lsl	r2, r2, #4
+  56 002a D2B2     		uxtb	r2, r2
+  57 002c 02F03002 		and	r2, r2, #48
+  58 0030 D1B2     		uxtb	r1, r2
+  59 0032 FA7B     		ldrb	r2, [r7, #15]
+  60 0034 0A43     		orrs	r2, r2, r1
+  61 0036 D2B2     		uxtb	r2, r2
+  62 0038 1A70     		strb	r2, [r3, #0]
+  43:.\Generated_Source\PSoC5/LED.c **** }
+  63              		.loc 1 43 0
+  64 003a 07F11407 		add	r7, r7, #20
+  65 003e BD46     		mov	sp, r7
+  66 0040 80BC     		pop	{r7}
+  67 0042 7047     		bx	lr
+  68              		.cfi_endproc
+  69              	.LFE0:
+  70              		.size	LED_Write, .-LED_Write
+  71              		.section	.text.LED_SetDriveMode,"ax",%progbits
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceA9iWf.s 			page 3
+
+
+  72              		.align	2
+  73              		.global	LED_SetDriveMode
+  74              		.thumb
+  75              		.thumb_func
+  76              		.type	LED_SetDriveMode, %function
+  77              	LED_SetDriveMode:
+  78              	.LFB1:
+  44:.\Generated_Source\PSoC5/LED.c **** 
+  45:.\Generated_Source\PSoC5/LED.c **** 
+  46:.\Generated_Source\PSoC5/LED.c **** /*******************************************************************************
+  47:.\Generated_Source\PSoC5/LED.c **** * Function Name: LED_SetDriveMode
+  48:.\Generated_Source\PSoC5/LED.c **** ********************************************************************************
+  49:.\Generated_Source\PSoC5/LED.c **** *
+  50:.\Generated_Source\PSoC5/LED.c **** * Summary:
+  51:.\Generated_Source\PSoC5/LED.c **** *  Change the drive mode on the pins of the port.
+  52:.\Generated_Source\PSoC5/LED.c **** * 
+  53:.\Generated_Source\PSoC5/LED.c **** * Parameters:  
+  54:.\Generated_Source\PSoC5/LED.c **** *  mode:  Change the pins to one of the following drive modes.
+  55:.\Generated_Source\PSoC5/LED.c **** *
+  56:.\Generated_Source\PSoC5/LED.c **** *  LED_DM_STRONG     Strong Drive 
+  57:.\Generated_Source\PSoC5/LED.c **** *  LED_DM_OD_HI      Open Drain, Drives High 
+  58:.\Generated_Source\PSoC5/LED.c **** *  LED_DM_OD_LO      Open Drain, Drives Low 
+  59:.\Generated_Source\PSoC5/LED.c **** *  LED_DM_RES_UP     Resistive Pull Up 
+  60:.\Generated_Source\PSoC5/LED.c **** *  LED_DM_RES_DWN    Resistive Pull Down 
+  61:.\Generated_Source\PSoC5/LED.c **** *  LED_DM_RES_UPDWN  Resistive Pull Up/Down 
+  62:.\Generated_Source\PSoC5/LED.c **** *  LED_DM_DIG_HIZ    High Impedance Digital 
+  63:.\Generated_Source\PSoC5/LED.c **** *  LED_DM_ALG_HIZ    High Impedance Analog 
+  64:.\Generated_Source\PSoC5/LED.c **** *
+  65:.\Generated_Source\PSoC5/LED.c **** * Return: 
+  66:.\Generated_Source\PSoC5/LED.c **** *  None
+  67:.\Generated_Source\PSoC5/LED.c **** *
+  68:.\Generated_Source\PSoC5/LED.c **** *******************************************************************************/
+  69:.\Generated_Source\PSoC5/LED.c **** void LED_SetDriveMode(uint8 mode) 
+  70:.\Generated_Source\PSoC5/LED.c **** {
+  79              		.loc 1 70 0
+  80              		.cfi_startproc
+  81              		@ args = 0, pretend = 0, frame = 8
+  82              		@ frame_needed = 1, uses_anonymous_args = 0
+  83              		@ link register save eliminated.
+  84 0000 80B4     		push	{r7}
+  85              	.LCFI3:
+  86              		.cfi_def_cfa_offset 4
+  87              		.cfi_offset 7, -4
+  88 0002 83B0     		sub	sp, sp, #12
+  89              	.LCFI4:
+  90              		.cfi_def_cfa_offset 16
+  91 0004 00AF     		add	r7, sp, #0
+  92              	.LCFI5:
+  93              		.cfi_def_cfa_register 7
+  94 0006 0346     		mov	r3, r0
+  95 0008 FB71     		strb	r3, [r7, #7]
+  71:.\Generated_Source\PSoC5/LED.c **** 	CyPins_SetPinDriveMode(LED_0, mode);
+  96              		.loc 1 71 0
+  97 000a 45F27C03 		movw	r3, #20604
+  98 000e C4F20003 		movt	r3, 16384
+  99 0012 45F27C02 		movw	r2, #20604
+ 100 0016 C4F20002 		movt	r2, 16384
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceA9iWf.s 			page 4
+
+
+ 101 001a 1278     		ldrb	r2, [r2, #0]
+ 102 001c D2B2     		uxtb	r2, r2
+ 103 001e D2B2     		uxtb	r2, r2
+ 104 0020 22F00E02 		bic	r2, r2, #14
+ 105 0024 D1B2     		uxtb	r1, r2
+ 106 0026 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 107 0028 02F00E02 		and	r2, r2, #14
+ 108 002c D2B2     		uxtb	r2, r2
+ 109 002e 0A43     		orrs	r2, r2, r1
+ 110 0030 D2B2     		uxtb	r2, r2
+ 111 0032 D2B2     		uxtb	r2, r2
+ 112 0034 1A70     		strb	r2, [r3, #0]
+  72:.\Generated_Source\PSoC5/LED.c **** 	CyPins_SetPinDriveMode(LED_1, mode);
+ 113              		.loc 1 72 0
+ 114 0036 45F27D03 		movw	r3, #20605
+ 115 003a C4F20003 		movt	r3, 16384
+ 116 003e 45F27D02 		movw	r2, #20605
+ 117 0042 C4F20002 		movt	r2, 16384
+ 118 0046 1278     		ldrb	r2, [r2, #0]
+ 119 0048 D2B2     		uxtb	r2, r2
+ 120 004a D2B2     		uxtb	r2, r2
+ 121 004c 22F00E02 		bic	r2, r2, #14
+ 122 0050 D1B2     		uxtb	r1, r2
+ 123 0052 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 124 0054 02F00E02 		and	r2, r2, #14
+ 125 0058 D2B2     		uxtb	r2, r2
+ 126 005a 0A43     		orrs	r2, r2, r1
+ 127 005c D2B2     		uxtb	r2, r2
+ 128 005e D2B2     		uxtb	r2, r2
+ 129 0060 1A70     		strb	r2, [r3, #0]
+  73:.\Generated_Source\PSoC5/LED.c **** }
+ 130              		.loc 1 73 0
+ 131 0062 07F10C07 		add	r7, r7, #12
+ 132 0066 BD46     		mov	sp, r7
+ 133 0068 80BC     		pop	{r7}
+ 134 006a 7047     		bx	lr
+ 135              		.cfi_endproc
+ 136              	.LFE1:
+ 137              		.size	LED_SetDriveMode, .-LED_SetDriveMode
+ 138              		.section	.text.LED_Read,"ax",%progbits
+ 139              		.align	2
+ 140              		.global	LED_Read
+ 141              		.thumb
+ 142              		.thumb_func
+ 143              		.type	LED_Read, %function
+ 144              	LED_Read:
+ 145              	.LFB2:
+  74:.\Generated_Source\PSoC5/LED.c **** 
+  75:.\Generated_Source\PSoC5/LED.c **** 
+  76:.\Generated_Source\PSoC5/LED.c **** /*******************************************************************************
+  77:.\Generated_Source\PSoC5/LED.c **** * Function Name: LED_Read
+  78:.\Generated_Source\PSoC5/LED.c **** ********************************************************************************
+  79:.\Generated_Source\PSoC5/LED.c **** *
+  80:.\Generated_Source\PSoC5/LED.c **** * Summary:
+  81:.\Generated_Source\PSoC5/LED.c **** *  Read the current value on the pins of the Digital Port in right justified 
+  82:.\Generated_Source\PSoC5/LED.c **** *  form.
+  83:.\Generated_Source\PSoC5/LED.c **** *
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceA9iWf.s 			page 5
+
+
+  84:.\Generated_Source\PSoC5/LED.c **** * Parameters:  
+  85:.\Generated_Source\PSoC5/LED.c **** *  None
+  86:.\Generated_Source\PSoC5/LED.c **** *
+  87:.\Generated_Source\PSoC5/LED.c **** * Return: 
+  88:.\Generated_Source\PSoC5/LED.c **** *  Returns the current value of the Digital Port as a right justified number
+  89:.\Generated_Source\PSoC5/LED.c **** *  
+  90:.\Generated_Source\PSoC5/LED.c **** * Note:
+  91:.\Generated_Source\PSoC5/LED.c **** *  Macro LED_ReadPS calls this function. 
+  92:.\Generated_Source\PSoC5/LED.c **** *  
+  93:.\Generated_Source\PSoC5/LED.c **** *******************************************************************************/
+  94:.\Generated_Source\PSoC5/LED.c **** uint8 LED_Read(void) 
+  95:.\Generated_Source\PSoC5/LED.c **** {
+ 146              		.loc 1 95 0
+ 147              		.cfi_startproc
+ 148              		@ args = 0, pretend = 0, frame = 0
+ 149              		@ frame_needed = 1, uses_anonymous_args = 0
+ 150              		@ link register save eliminated.
+ 151 0000 80B4     		push	{r7}
+ 152              	.LCFI6:
+ 153              		.cfi_def_cfa_offset 4
+ 154              		.cfi_offset 7, -4
+ 155 0002 00AF     		add	r7, sp, #0
+ 156              	.LCFI7:
+ 157              		.cfi_def_cfa_register 7
+  96:.\Generated_Source\PSoC5/LED.c ****     return (LED_PS & LED_MASK) >> LED_SHIFT;
+ 158              		.loc 1 96 0
+ 159 0004 45F2F113 		movw	r3, #20977
+ 160 0008 C4F20003 		movt	r3, 16384
+ 161 000c 1B78     		ldrb	r3, [r3, #0]
+ 162 000e DBB2     		uxtb	r3, r3
+ 163 0010 03F03003 		and	r3, r3, #48
+ 164 0014 4FEA1313 		lsr	r3, r3, #4
+ 165 0018 DBB2     		uxtb	r3, r3
+  97:.\Generated_Source\PSoC5/LED.c **** }
+ 166              		.loc 1 97 0
+ 167 001a 1846     		mov	r0, r3
+ 168 001c BD46     		mov	sp, r7
+ 169 001e 80BC     		pop	{r7}
+ 170 0020 7047     		bx	lr
+ 171              		.cfi_endproc
+ 172              	.LFE2:
+ 173              		.size	LED_Read, .-LED_Read
+ 174 0022 00BF     		.section	.text.LED_ReadDataReg,"ax",%progbits
+ 175              		.align	2
+ 176              		.global	LED_ReadDataReg
+ 177              		.thumb
+ 178              		.thumb_func
+ 179              		.type	LED_ReadDataReg, %function
+ 180              	LED_ReadDataReg:
+ 181              	.LFB3:
+  98:.\Generated_Source\PSoC5/LED.c **** 
+  99:.\Generated_Source\PSoC5/LED.c **** 
+ 100:.\Generated_Source\PSoC5/LED.c **** /*******************************************************************************
+ 101:.\Generated_Source\PSoC5/LED.c **** * Function Name: LED_ReadDataReg
+ 102:.\Generated_Source\PSoC5/LED.c **** ********************************************************************************
+ 103:.\Generated_Source\PSoC5/LED.c **** *
+ 104:.\Generated_Source\PSoC5/LED.c **** * Summary:
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceA9iWf.s 			page 6
+
+
+ 105:.\Generated_Source\PSoC5/LED.c **** *  Read the current value assigned to a Digital Port's data output register
+ 106:.\Generated_Source\PSoC5/LED.c **** *
+ 107:.\Generated_Source\PSoC5/LED.c **** * Parameters:  
+ 108:.\Generated_Source\PSoC5/LED.c **** *  None 
+ 109:.\Generated_Source\PSoC5/LED.c **** *
+ 110:.\Generated_Source\PSoC5/LED.c **** * Return: 
+ 111:.\Generated_Source\PSoC5/LED.c **** *  Returns the current value assigned to the Digital Port's data output register
+ 112:.\Generated_Source\PSoC5/LED.c **** *  
+ 113:.\Generated_Source\PSoC5/LED.c **** *******************************************************************************/
+ 114:.\Generated_Source\PSoC5/LED.c **** uint8 LED_ReadDataReg(void) 
+ 115:.\Generated_Source\PSoC5/LED.c **** {
+ 182              		.loc 1 115 0
+ 183              		.cfi_startproc
+ 184              		@ args = 0, pretend = 0, frame = 0
+ 185              		@ frame_needed = 1, uses_anonymous_args = 0
+ 186              		@ link register save eliminated.
+ 187 0000 80B4     		push	{r7}
+ 188              	.LCFI8:
+ 189              		.cfi_def_cfa_offset 4
+ 190              		.cfi_offset 7, -4
+ 191 0002 00AF     		add	r7, sp, #0
+ 192              	.LCFI9:
+ 193              		.cfi_def_cfa_register 7
+ 116:.\Generated_Source\PSoC5/LED.c ****     return (LED_DR & LED_MASK) >> LED_SHIFT;
+ 194              		.loc 1 116 0
+ 195 0004 45F2F013 		movw	r3, #20976
+ 196 0008 C4F20003 		movt	r3, 16384
+ 197 000c 1B78     		ldrb	r3, [r3, #0]
+ 198 000e DBB2     		uxtb	r3, r3
+ 199 0010 03F03003 		and	r3, r3, #48
+ 200 0014 4FEA1313 		lsr	r3, r3, #4
+ 201 0018 DBB2     		uxtb	r3, r3
+ 117:.\Generated_Source\PSoC5/LED.c **** }
+ 202              		.loc 1 117 0
+ 203 001a 1846     		mov	r0, r3
+ 204 001c BD46     		mov	sp, r7
+ 205 001e 80BC     		pop	{r7}
+ 206 0020 7047     		bx	lr
+ 207              		.cfi_endproc
+ 208              	.LFE3:
+ 209              		.size	LED_ReadDataReg, .-LED_ReadDataReg
+ 210 0022 00BF     		.text
+ 211              	.Letext0:
+ 212              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 213              		.section	.debug_info,"",%progbits
+ 214              	.Ldebug_info0:
+ 215 0000 30010000 		.4byte	0x130
+ 216 0004 0200     		.2byte	0x2
+ 217 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 218 000a 04       		.byte	0x4
+ 219 000b 01       		.uleb128 0x1
+ 220 000c 59010000 		.4byte	.LASF20
+ 221 0010 01       		.byte	0x1
+ 222 0011 6A000000 		.4byte	.LASF21
+ 223 0015 D7000000 		.4byte	.LASF22
+ 224 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 225 001d 00000000 		.4byte	0
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceA9iWf.s 			page 7
+
+
+ 226 0021 00000000 		.4byte	0
+ 227 0025 00000000 		.4byte	.Ldebug_line0
+ 228 0029 02       		.uleb128 0x2
+ 229 002a 01       		.byte	0x1
+ 230 002b 06       		.byte	0x6
+ 231 002c AB010000 		.4byte	.LASF0
+ 232 0030 02       		.uleb128 0x2
+ 233 0031 01       		.byte	0x1
+ 234 0032 08       		.byte	0x8
+ 235 0033 32000000 		.4byte	.LASF1
+ 236 0037 02       		.uleb128 0x2
+ 237 0038 02       		.byte	0x2
+ 238 0039 05       		.byte	0x5
+ 239 003a 40010000 		.4byte	.LASF2
+ 240 003e 02       		.uleb128 0x2
+ 241 003f 02       		.byte	0x2
+ 242 0040 07       		.byte	0x7
+ 243 0041 57000000 		.4byte	.LASF3
+ 244 0045 02       		.uleb128 0x2
+ 245 0046 04       		.byte	0x4
+ 246 0047 05       		.byte	0x5
+ 247 0048 A2010000 		.4byte	.LASF4
+ 248 004c 02       		.uleb128 0x2
+ 249 004d 04       		.byte	0x4
+ 250 004e 07       		.byte	0x7
+ 251 004f 45000000 		.4byte	.LASF5
+ 252 0053 02       		.uleb128 0x2
+ 253 0054 08       		.byte	0x8
+ 254 0055 05       		.byte	0x5
+ 255 0056 C9000000 		.4byte	.LASF6
+ 256 005a 02       		.uleb128 0x2
+ 257 005b 08       		.byte	0x8
+ 258 005c 07       		.byte	0x7
+ 259 005d AD000000 		.4byte	.LASF7
+ 260 0061 03       		.uleb128 0x3
+ 261 0062 04       		.byte	0x4
+ 262 0063 05       		.byte	0x5
+ 263 0064 696E7400 		.ascii	"int\000"
+ 264 0068 02       		.uleb128 0x2
+ 265 0069 04       		.byte	0x4
+ 266 006a 07       		.byte	0x7
+ 267 006b A0000000 		.4byte	.LASF8
+ 268 006f 04       		.uleb128 0x4
+ 269 0070 53010000 		.4byte	.LASF12
+ 270 0074 02       		.byte	0x2
+ 271 0075 5B       		.byte	0x5b
+ 272 0076 30000000 		.4byte	0x30
+ 273 007a 02       		.uleb128 0x2
+ 274 007b 04       		.byte	0x4
+ 275 007c 04       		.byte	0x4
+ 276 007d 2C000000 		.4byte	.LASF9
+ 277 0081 02       		.uleb128 0x2
+ 278 0082 08       		.byte	0x8
+ 279 0083 04       		.byte	0x4
+ 280 0084 99000000 		.4byte	.LASF10
+ 281 0088 02       		.uleb128 0x2
+ 282 0089 01       		.byte	0x1
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceA9iWf.s 			page 8
+
+
+ 283 008a 08       		.byte	0x8
+ 284 008b 3B010000 		.4byte	.LASF11
+ 285 008f 04       		.uleb128 0x4
+ 286 0090 40000000 		.4byte	.LASF13
+ 287 0094 02       		.byte	0x2
+ 288 0095 F0       		.byte	0xf0
+ 289 0096 9A000000 		.4byte	0x9a
+ 290 009a 05       		.uleb128 0x5
+ 291 009b 6F000000 		.4byte	0x6f
+ 292 009f 06       		.uleb128 0x6
+ 293 00a0 01       		.byte	0x1
+ 294 00a1 11000000 		.4byte	.LASF14
+ 295 00a5 01       		.byte	0x1
+ 296 00a6 27       		.byte	0x27
+ 297 00a7 01       		.byte	0x1
+ 298 00a8 00000000 		.4byte	.LFB0
+ 299 00ac 44000000 		.4byte	.LFE0
+ 300 00b0 00000000 		.4byte	.LLST0
+ 301 00b4 01       		.byte	0x1
+ 302 00b5 D6000000 		.4byte	0xd6
+ 303 00b9 07       		.uleb128 0x7
+ 304 00ba 1B000000 		.4byte	.LASF16
+ 305 00be 01       		.byte	0x1
+ 306 00bf 27       		.byte	0x27
+ 307 00c0 6F000000 		.4byte	0x6f
+ 308 00c4 02       		.byte	0x2
+ 309 00c5 91       		.byte	0x91
+ 310 00c6 6F       		.sleb128 -17
+ 311 00c7 08       		.uleb128 0x8
+ 312 00c8 21000000 		.4byte	.LASF23
+ 313 00cc 01       		.byte	0x1
+ 314 00cd 29       		.byte	0x29
+ 315 00ce 6F000000 		.4byte	0x6f
+ 316 00d2 02       		.byte	0x2
+ 317 00d3 91       		.byte	0x91
+ 318 00d4 77       		.sleb128 -9
+ 319 00d5 00       		.byte	0
+ 320 00d6 06       		.uleb128 0x6
+ 321 00d7 01       		.byte	0x1
+ 322 00d8 00000000 		.4byte	.LASF15
+ 323 00dc 01       		.byte	0x1
+ 324 00dd 45       		.byte	0x45
+ 325 00de 01       		.byte	0x1
+ 326 00df 00000000 		.4byte	.LFB1
+ 327 00e3 6C000000 		.4byte	.LFE1
+ 328 00e7 38000000 		.4byte	.LLST1
+ 329 00eb 01       		.byte	0x1
+ 330 00ec FF000000 		.4byte	0xff
+ 331 00f0 07       		.uleb128 0x7
+ 332 00f1 C4000000 		.4byte	.LASF17
+ 333 00f5 01       		.byte	0x1
+ 334 00f6 45       		.byte	0x45
+ 335 00f7 6F000000 		.4byte	0x6f
+ 336 00fb 02       		.byte	0x2
+ 337 00fc 91       		.byte	0x91
+ 338 00fd 77       		.sleb128 -9
+ 339 00fe 00       		.byte	0
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceA9iWf.s 			page 9
+
+
+ 340 00ff 09       		.uleb128 0x9
+ 341 0100 01       		.byte	0x1
+ 342 0101 4A010000 		.4byte	.LASF18
+ 343 0105 01       		.byte	0x1
+ 344 0106 5E       		.byte	0x5e
+ 345 0107 01       		.byte	0x1
+ 346 0108 6F000000 		.4byte	0x6f
+ 347 010c 00000000 		.4byte	.LFB2
+ 348 0110 22000000 		.4byte	.LFE2
+ 349 0114 70000000 		.4byte	.LLST2
+ 350 0118 01       		.byte	0x1
+ 351 0119 09       		.uleb128 0x9
+ 352 011a 01       		.byte	0x1
+ 353 011b 89000000 		.4byte	.LASF19
+ 354 011f 01       		.byte	0x1
+ 355 0120 72       		.byte	0x72
+ 356 0121 01       		.byte	0x1
+ 357 0122 6F000000 		.4byte	0x6f
+ 358 0126 00000000 		.4byte	.LFB3
+ 359 012a 22000000 		.4byte	.LFE3
+ 360 012e 9C000000 		.4byte	.LLST3
+ 361 0132 01       		.byte	0x1
+ 362 0133 00       		.byte	0
+ 363              		.section	.debug_abbrev,"",%progbits
+ 364              	.Ldebug_abbrev0:
+ 365 0000 01       		.uleb128 0x1
+ 366 0001 11       		.uleb128 0x11
+ 367 0002 01       		.byte	0x1
+ 368 0003 25       		.uleb128 0x25
+ 369 0004 0E       		.uleb128 0xe
+ 370 0005 13       		.uleb128 0x13
+ 371 0006 0B       		.uleb128 0xb
+ 372 0007 03       		.uleb128 0x3
+ 373 0008 0E       		.uleb128 0xe
+ 374 0009 1B       		.uleb128 0x1b
+ 375 000a 0E       		.uleb128 0xe
+ 376 000b 55       		.uleb128 0x55
+ 377 000c 06       		.uleb128 0x6
+ 378 000d 11       		.uleb128 0x11
+ 379 000e 01       		.uleb128 0x1
+ 380 000f 52       		.uleb128 0x52
+ 381 0010 01       		.uleb128 0x1
+ 382 0011 10       		.uleb128 0x10
+ 383 0012 06       		.uleb128 0x6
+ 384 0013 00       		.byte	0
+ 385 0014 00       		.byte	0
+ 386 0015 02       		.uleb128 0x2
+ 387 0016 24       		.uleb128 0x24
+ 388 0017 00       		.byte	0
+ 389 0018 0B       		.uleb128 0xb
+ 390 0019 0B       		.uleb128 0xb
+ 391 001a 3E       		.uleb128 0x3e
+ 392 001b 0B       		.uleb128 0xb
+ 393 001c 03       		.uleb128 0x3
+ 394 001d 0E       		.uleb128 0xe
+ 395 001e 00       		.byte	0
+ 396 001f 00       		.byte	0
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceA9iWf.s 			page 10
+
+
+ 397 0020 03       		.uleb128 0x3
+ 398 0021 24       		.uleb128 0x24
+ 399 0022 00       		.byte	0
+ 400 0023 0B       		.uleb128 0xb
+ 401 0024 0B       		.uleb128 0xb
+ 402 0025 3E       		.uleb128 0x3e
+ 403 0026 0B       		.uleb128 0xb
+ 404 0027 03       		.uleb128 0x3
+ 405 0028 08       		.uleb128 0x8
+ 406 0029 00       		.byte	0
+ 407 002a 00       		.byte	0
+ 408 002b 04       		.uleb128 0x4
+ 409 002c 16       		.uleb128 0x16
+ 410 002d 00       		.byte	0
+ 411 002e 03       		.uleb128 0x3
+ 412 002f 0E       		.uleb128 0xe
+ 413 0030 3A       		.uleb128 0x3a
+ 414 0031 0B       		.uleb128 0xb
+ 415 0032 3B       		.uleb128 0x3b
+ 416 0033 0B       		.uleb128 0xb
+ 417 0034 49       		.uleb128 0x49
+ 418 0035 13       		.uleb128 0x13
+ 419 0036 00       		.byte	0
+ 420 0037 00       		.byte	0
+ 421 0038 05       		.uleb128 0x5
+ 422 0039 35       		.uleb128 0x35
+ 423 003a 00       		.byte	0
+ 424 003b 49       		.uleb128 0x49
+ 425 003c 13       		.uleb128 0x13
+ 426 003d 00       		.byte	0
+ 427 003e 00       		.byte	0
+ 428 003f 06       		.uleb128 0x6
+ 429 0040 2E       		.uleb128 0x2e
+ 430 0041 01       		.byte	0x1
+ 431 0042 3F       		.uleb128 0x3f
+ 432 0043 0C       		.uleb128 0xc
+ 433 0044 03       		.uleb128 0x3
+ 434 0045 0E       		.uleb128 0xe
+ 435 0046 3A       		.uleb128 0x3a
+ 436 0047 0B       		.uleb128 0xb
+ 437 0048 3B       		.uleb128 0x3b
+ 438 0049 0B       		.uleb128 0xb
+ 439 004a 27       		.uleb128 0x27
+ 440 004b 0C       		.uleb128 0xc
+ 441 004c 11       		.uleb128 0x11
+ 442 004d 01       		.uleb128 0x1
+ 443 004e 12       		.uleb128 0x12
+ 444 004f 01       		.uleb128 0x1
+ 445 0050 40       		.uleb128 0x40
+ 446 0051 06       		.uleb128 0x6
+ 447 0052 9742     		.uleb128 0x2117
+ 448 0054 0C       		.uleb128 0xc
+ 449 0055 01       		.uleb128 0x1
+ 450 0056 13       		.uleb128 0x13
+ 451 0057 00       		.byte	0
+ 452 0058 00       		.byte	0
+ 453 0059 07       		.uleb128 0x7
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceA9iWf.s 			page 11
+
+
+ 454 005a 05       		.uleb128 0x5
+ 455 005b 00       		.byte	0
+ 456 005c 03       		.uleb128 0x3
+ 457 005d 0E       		.uleb128 0xe
+ 458 005e 3A       		.uleb128 0x3a
+ 459 005f 0B       		.uleb128 0xb
+ 460 0060 3B       		.uleb128 0x3b
+ 461 0061 0B       		.uleb128 0xb
+ 462 0062 49       		.uleb128 0x49
+ 463 0063 13       		.uleb128 0x13
+ 464 0064 02       		.uleb128 0x2
+ 465 0065 0A       		.uleb128 0xa
+ 466 0066 00       		.byte	0
+ 467 0067 00       		.byte	0
+ 468 0068 08       		.uleb128 0x8
+ 469 0069 34       		.uleb128 0x34
+ 470 006a 00       		.byte	0
+ 471 006b 03       		.uleb128 0x3
+ 472 006c 0E       		.uleb128 0xe
+ 473 006d 3A       		.uleb128 0x3a
+ 474 006e 0B       		.uleb128 0xb
+ 475 006f 3B       		.uleb128 0x3b
+ 476 0070 0B       		.uleb128 0xb
+ 477 0071 49       		.uleb128 0x49
+ 478 0072 13       		.uleb128 0x13
+ 479 0073 02       		.uleb128 0x2
+ 480 0074 0A       		.uleb128 0xa
+ 481 0075 00       		.byte	0
+ 482 0076 00       		.byte	0
+ 483 0077 09       		.uleb128 0x9
+ 484 0078 2E       		.uleb128 0x2e
+ 485 0079 00       		.byte	0
+ 486 007a 3F       		.uleb128 0x3f
+ 487 007b 0C       		.uleb128 0xc
+ 488 007c 03       		.uleb128 0x3
+ 489 007d 0E       		.uleb128 0xe
+ 490 007e 3A       		.uleb128 0x3a
+ 491 007f 0B       		.uleb128 0xb
+ 492 0080 3B       		.uleb128 0x3b
+ 493 0081 0B       		.uleb128 0xb
+ 494 0082 27       		.uleb128 0x27
+ 495 0083 0C       		.uleb128 0xc
+ 496 0084 49       		.uleb128 0x49
+ 497 0085 13       		.uleb128 0x13
+ 498 0086 11       		.uleb128 0x11
+ 499 0087 01       		.uleb128 0x1
+ 500 0088 12       		.uleb128 0x12
+ 501 0089 01       		.uleb128 0x1
+ 502 008a 40       		.uleb128 0x40
+ 503 008b 06       		.uleb128 0x6
+ 504 008c 9742     		.uleb128 0x2117
+ 505 008e 0C       		.uleb128 0xc
+ 506 008f 00       		.byte	0
+ 507 0090 00       		.byte	0
+ 508 0091 00       		.byte	0
+ 509              		.section	.debug_loc,"",%progbits
+ 510              	.Ldebug_loc0:
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceA9iWf.s 			page 12
+
+
+ 511              	.LLST0:
+ 512 0000 00000000 		.4byte	.LFB0
+ 513 0004 02000000 		.4byte	.LCFI0
+ 514 0008 0200     		.2byte	0x2
+ 515 000a 7D       		.byte	0x7d
+ 516 000b 00       		.sleb128 0
+ 517 000c 02000000 		.4byte	.LCFI0
+ 518 0010 04000000 		.4byte	.LCFI1
+ 519 0014 0200     		.2byte	0x2
+ 520 0016 7D       		.byte	0x7d
+ 521 0017 04       		.sleb128 4
+ 522 0018 04000000 		.4byte	.LCFI1
+ 523 001c 06000000 		.4byte	.LCFI2
+ 524 0020 0200     		.2byte	0x2
+ 525 0022 7D       		.byte	0x7d
+ 526 0023 18       		.sleb128 24
+ 527 0024 06000000 		.4byte	.LCFI2
+ 528 0028 44000000 		.4byte	.LFE0
+ 529 002c 0200     		.2byte	0x2
+ 530 002e 77       		.byte	0x77
+ 531 002f 18       		.sleb128 24
+ 532 0030 00000000 		.4byte	0
+ 533 0034 00000000 		.4byte	0
+ 534              	.LLST1:
+ 535 0038 00000000 		.4byte	.LFB1
+ 536 003c 02000000 		.4byte	.LCFI3
+ 537 0040 0200     		.2byte	0x2
+ 538 0042 7D       		.byte	0x7d
+ 539 0043 00       		.sleb128 0
+ 540 0044 02000000 		.4byte	.LCFI3
+ 541 0048 04000000 		.4byte	.LCFI4
+ 542 004c 0200     		.2byte	0x2
+ 543 004e 7D       		.byte	0x7d
+ 544 004f 04       		.sleb128 4
+ 545 0050 04000000 		.4byte	.LCFI4
+ 546 0054 06000000 		.4byte	.LCFI5
+ 547 0058 0200     		.2byte	0x2
+ 548 005a 7D       		.byte	0x7d
+ 549 005b 10       		.sleb128 16
+ 550 005c 06000000 		.4byte	.LCFI5
+ 551 0060 6C000000 		.4byte	.LFE1
+ 552 0064 0200     		.2byte	0x2
+ 553 0066 77       		.byte	0x77
+ 554 0067 10       		.sleb128 16
+ 555 0068 00000000 		.4byte	0
+ 556 006c 00000000 		.4byte	0
+ 557              	.LLST2:
+ 558 0070 00000000 		.4byte	.LFB2
+ 559 0074 02000000 		.4byte	.LCFI6
+ 560 0078 0200     		.2byte	0x2
+ 561 007a 7D       		.byte	0x7d
+ 562 007b 00       		.sleb128 0
+ 563 007c 02000000 		.4byte	.LCFI6
+ 564 0080 04000000 		.4byte	.LCFI7
+ 565 0084 0200     		.2byte	0x2
+ 566 0086 7D       		.byte	0x7d
+ 567 0087 04       		.sleb128 4
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceA9iWf.s 			page 13
+
+
+ 568 0088 04000000 		.4byte	.LCFI7
+ 569 008c 22000000 		.4byte	.LFE2
+ 570 0090 0200     		.2byte	0x2
+ 571 0092 77       		.byte	0x77
+ 572 0093 04       		.sleb128 4
+ 573 0094 00000000 		.4byte	0
+ 574 0098 00000000 		.4byte	0
+ 575              	.LLST3:
+ 576 009c 00000000 		.4byte	.LFB3
+ 577 00a0 02000000 		.4byte	.LCFI8
+ 578 00a4 0200     		.2byte	0x2
+ 579 00a6 7D       		.byte	0x7d
+ 580 00a7 00       		.sleb128 0
+ 581 00a8 02000000 		.4byte	.LCFI8
+ 582 00ac 04000000 		.4byte	.LCFI9
+ 583 00b0 0200     		.2byte	0x2
+ 584 00b2 7D       		.byte	0x7d
+ 585 00b3 04       		.sleb128 4
+ 586 00b4 04000000 		.4byte	.LCFI9
+ 587 00b8 22000000 		.4byte	.LFE3
+ 588 00bc 0200     		.2byte	0x2
+ 589 00be 77       		.byte	0x77
+ 590 00bf 04       		.sleb128 4
+ 591 00c0 00000000 		.4byte	0
+ 592 00c4 00000000 		.4byte	0
+ 593              		.section	.debug_aranges,"",%progbits
+ 594 0000 34000000 		.4byte	0x34
+ 595 0004 0200     		.2byte	0x2
+ 596 0006 00000000 		.4byte	.Ldebug_info0
+ 597 000a 04       		.byte	0x4
+ 598 000b 00       		.byte	0
+ 599 000c 0000     		.2byte	0
+ 600 000e 0000     		.2byte	0
+ 601 0010 00000000 		.4byte	.LFB0
+ 602 0014 44000000 		.4byte	.LFE0-.LFB0
+ 603 0018 00000000 		.4byte	.LFB1
+ 604 001c 6C000000 		.4byte	.LFE1-.LFB1
+ 605 0020 00000000 		.4byte	.LFB2
+ 606 0024 22000000 		.4byte	.LFE2-.LFB2
+ 607 0028 00000000 		.4byte	.LFB3
+ 608 002c 22000000 		.4byte	.LFE3-.LFB3
+ 609 0030 00000000 		.4byte	0
+ 610 0034 00000000 		.4byte	0
+ 611              		.section	.debug_ranges,"",%progbits
+ 612              	.Ldebug_ranges0:
+ 613 0000 00000000 		.4byte	.LFB0
+ 614 0004 44000000 		.4byte	.LFE0
+ 615 0008 00000000 		.4byte	.LFB1
+ 616 000c 6C000000 		.4byte	.LFE1
+ 617 0010 00000000 		.4byte	.LFB2
+ 618 0014 22000000 		.4byte	.LFE2
+ 619 0018 00000000 		.4byte	.LFB3
+ 620 001c 22000000 		.4byte	.LFE3
+ 621 0020 00000000 		.4byte	0
+ 622 0024 00000000 		.4byte	0
+ 623              		.section	.debug_line,"",%progbits
+ 624              	.Ldebug_line0:
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceA9iWf.s 			page 14
+
+
+ 625 0000 93000000 		.section	.debug_str,"MS",%progbits,1
+ 625      02004200 
+ 625      00000201 
+ 625      FB0E0D00 
+ 625      01010101 
+ 626              	.LASF15:
+ 627 0000 4C45445F 		.ascii	"LED_SetDriveMode\000"
+ 627      53657444 
+ 627      72697665 
+ 627      4D6F6465 
+ 627      00
+ 628              	.LASF14:
+ 629 0011 4C45445F 		.ascii	"LED_Write\000"
+ 629      57726974 
+ 629      6500
+ 630              	.LASF16:
+ 631 001b 76616C75 		.ascii	"value\000"
+ 631      6500
+ 632              	.LASF23:
+ 633 0021 73746174 		.ascii	"staticBits\000"
+ 633      69634269 
+ 633      747300
+ 634              	.LASF9:
+ 635 002c 666C6F61 		.ascii	"float\000"
+ 635      7400
+ 636              	.LASF1:
+ 637 0032 756E7369 		.ascii	"unsigned char\000"
+ 637      676E6564 
+ 637      20636861 
+ 637      7200
+ 638              	.LASF13:
+ 639 0040 72656738 		.ascii	"reg8\000"
+ 639      00
+ 640              	.LASF5:
+ 641 0045 6C6F6E67 		.ascii	"long unsigned int\000"
+ 641      20756E73 
+ 641      69676E65 
+ 641      6420696E 
+ 641      7400
+ 642              	.LASF3:
+ 643 0057 73686F72 		.ascii	"short unsigned int\000"
+ 643      7420756E 
+ 643      7369676E 
+ 643      65642069 
+ 643      6E7400
+ 644              	.LASF21:
+ 645 006a 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\LED.c\000"
+ 645      6E657261 
+ 645      7465645F 
+ 645      536F7572 
+ 645      63655C50 
+ 646              	.LASF19:
+ 647 0089 4C45445F 		.ascii	"LED_ReadDataReg\000"
+ 647      52656164 
+ 647      44617461 
+ 647      52656700 
+ 648              	.LASF10:
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceA9iWf.s 			page 15
+
+
+ 649 0099 646F7562 		.ascii	"double\000"
+ 649      6C6500
+ 650              	.LASF8:
+ 651 00a0 756E7369 		.ascii	"unsigned int\000"
+ 651      676E6564 
+ 651      20696E74 
+ 651      00
+ 652              	.LASF7:
+ 653 00ad 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 653      206C6F6E 
+ 653      6720756E 
+ 653      7369676E 
+ 653      65642069 
+ 654              	.LASF17:
+ 655 00c4 6D6F6465 		.ascii	"mode\000"
+ 655      00
+ 656              	.LASF6:
+ 657 00c9 6C6F6E67 		.ascii	"long long int\000"
+ 657      206C6F6E 
+ 657      6720696E 
+ 657      7400
+ 658              	.LASF22:
+ 659 00d7 433A5C55 		.ascii	"C:\\Users\\chuck.erhardt\\Documents\\GitHub\\PSoC-W"
+ 659      73657273 
+ 659      5C636875 
+ 659      636B2E65 
+ 659      72686172 
+ 660 0105 35313030 		.ascii	"5100-Driver\\FreeSoC Explorer - W5500 ioShield-A.cy"
+ 660      2D447269 
+ 660      7665725C 
+ 660      46726565 
+ 660      536F4320 
+ 661 0137 64736E00 		.ascii	"dsn\000"
+ 662              	.LASF11:
+ 663 013b 63686172 		.ascii	"char\000"
+ 663      00
+ 664              	.LASF2:
+ 665 0140 73686F72 		.ascii	"short int\000"
+ 665      7420696E 
+ 665      7400
+ 666              	.LASF18:
+ 667 014a 4C45445F 		.ascii	"LED_Read\000"
+ 667      52656164 
+ 667      00
+ 668              	.LASF12:
+ 669 0153 75696E74 		.ascii	"uint8\000"
+ 669      3800
+ 670              	.LASF20:
+ 671 0159 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 671      4320342E 
+ 671      372E3320 
+ 671      32303133 
+ 671      30333132 
+ 672 018c 616E6368 		.ascii	"anch revision 196615]\000"
+ 672      20726576 
+ 672      6973696F 
+ 672      6E203139 
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cceA9iWf.s 			page 16
+
+
+ 672      36363135 
+ 673              	.LASF4:
+ 674 01a2 6C6F6E67 		.ascii	"long int\000"
+ 674      20696E74 
+ 674      00
+ 675              	.LASF0:
+ 676 01ab 7369676E 		.ascii	"signed char\000"
+ 676      65642063 
+ 676      68617200 
+ 677              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

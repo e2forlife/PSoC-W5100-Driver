@@ -58,8 +58,8 @@ typedef struct
 } `$INSTANCE_NAME`_SOCKET;
 
 #if (`$PART_FAMILY` == 1) // W5100 Specific
-const uint16 `$INSTANCE_NAME`_SOCKET_TX_BASE[4] = { 0x4000, 0x4800, 0x5000, 0x5800 };
-const uint16 `$INSTANCE_NAME`_SOCKET_RX_BASE[4] = { 0x6000, 0x6800, 0x7000, 0x7800 };
+const uint32 `$INSTANCE_NAME`_SOCKET_TX_BASE[4] = { 0x4000, 0x4800, 0x5000, 0x5800 };
+const uint32 `$INSTANCE_NAME`_SOCKET_RX_BASE[4] = { 0x6000, 0x6800, 0x7000, 0x7800 };
 
 #define `$INSTANCE_NAME`_MAX_SOCKET   ( 4 )
 #define `$INSTANCE_NAME`_BURST_MAX    ( 1 )
@@ -68,12 +68,12 @@ const uint16 `$INSTANCE_NAME`_SOCKET_RX_BASE[4] = { 0x6000, 0x6800, 0x7000, 0x78
  * \def `$INSTANCE_NAME`_SOCKET REG(s,r)
  * \brief Convert the socket number to a base address within the W5100
  */
-#define `$INSTANCE_NAME`_SOCKET_REG(s,r)           ( (((uint16)s<<8)+0x0400) + r )
+#define `$INSTANCE_NAME`_SOCKET_REG(s,r)           ( (((uint32)s<<8)+0x0400) + r )
 
 #elif (`$PART_FAMILY` == 2) // W5200 Specific
 	
-const uint16 `$INSTANCE_NAME`_SOCKET_TX_BASE[8] = { 0x8000, 0x8800, 0x9000, 0x9800, 0xA000, 0xA800, 0xB000, 0xB800 };
-const uint16 `$INSTANCE_NAME`_SOCKET_RX_BASE[8] = { 0xC000, 0xC800, 0xD000, 0xD800, 0xE000, 0xE800, 0xF000, 0xF800 };
+const uint32 `$INSTANCE_NAME`_SOCKET_TX_BASE[8] = { 0x8000, 0x8800, 0x9000, 0x9800, 0xA000, 0xA800, 0xB000, 0xB800 };
+const uint32 `$INSTANCE_NAME`_SOCKET_RX_BASE[8] = { 0xC000, 0xC800, 0xD000, 0xD800, 0xE000, 0xE800, 0xF000, 0xF800 };
 
 #define `$INSTANCE_NAME`_MAX_SOCKET   ( 8 )
 #define `$INSTANCE_NAME`_BURST_MAX    ( 0x7FFF )
@@ -82,10 +82,24 @@ const uint16 `$INSTANCE_NAME`_SOCKET_RX_BASE[8] = { 0xC000, 0xC800, 0xD000, 0xD8
  * \def `$INSTANCE_NAME`_SOCKET REG(s,r)
  * \brief Convert the socket number and register to a base address within the W5200
  */
-#define `$INSTANCE_NAME`_SOCKET_REG(s,r)           ( ((uint16)s<<8) + r )
+#define `$INSTANCE_NAME`_SOCKET_REG(s,r)           ( ((uint32)s<<8) + r )
+#elif (`$PART_FAMILY` == 5) // W5500 Specific
+
+	const uint32 `$INSTANCE_NAME`_SOCKET_TX_BASE[8] = { 0x00020000, 0x00060000, 0x000A0000, 0x000E0000, 0x00120000, 0x00160000, 0x001A0000, 0x001E0000 };
+	const uint32 `$INSTANCE_NAME`_SOCKET_RX_BASE[8] = { 0x00030000, 0x00070000, 0x000B0000, 0x000F0000, 0x00130000, 0x00170000, 0x001B0000, 0x001F0000 };
+
+	#define `$INSTANCE_NAME`_MAX_SOCKET   ( 8 )
+	#define `$INSTANCE_NAME`_BURST_MAX    ( 0xFFFF )
+
+	const uint32 `$INSTANCE_NAME`_W5500_BSB[8] = { 0x00010000, 0x00050000, 0x00090000, 0x000D0000, 0x00110000, 0x00150000, 0x00190000, 0x001E0000 };
+	/**
+	 * \def `$INSTANCE_NAME`_SOCKET REG(s,r)
+	 * \brief Convert the socket number and register to a base address within the W5500
+	 */
+	#define `$INSTANCE_NAME`_SOCKET_REG(s,r)           ( `$INSTANCE_NAME`_W5500_BSB[s] + r )
 
 #else
-	#error "W5x00 components other than W5100 and W5200 are not currently supported"
+	#error "W5x00 components other than W5100, W5200 and W5500 are not currently supported"
 #endif
 
 `$INSTANCE_NAME`_SOCKET `$INSTANCE_NAME`_SocketConfig[`$INSTANCE_NAME`_MAX_SOCKET];
@@ -107,6 +121,27 @@ uint8 `$INSTANCE_NAME`_MAC[6]; /* V1.2: removed = {`$MAC`}; */
 ( (x>9)? ((x-10)+'A') : (x + '0'))
 /* END V1.2 defines */
 /* ------------------------------------------------------------------------ */
+#if !defined(CY_SCB_`$SPI_INSTANCE`_H)
+	/* SPIM Code */
+/* ------------------------------------------------------------------------ */	
+/* V1.1 : Macro definition for the SpiDone flag. */
+/*  
+	V1.2 : Added SPI_IDLE flag to the condition for done to eliminate
+	deadlocking when IDLE but not done.  This seems to occur during the
+	initial write/read to/from the SPI port.
+*/
+/**
+ * \brief Macro to determine the state of the spi done
+ * This macro reads the status register of the transmitter and masks off the doen bit.
+ */
+#define `$INSTANCE_NAME`_SpiDone     (`$SPI_INSTANCE`_ReadTxStatus() & (`$SPI_INSTANCE`_STS_SPI_DONE | `$SPI_INSTANCE`_STS_SPI_IDLE))
+#else
+/* include SPI function header for the SCB */
+#include <`$SPI_INSTANCE`_SPI_UART.h>
+
+/* V1.1 : Include the header for the select pin used. */
+#define `$INSTANCE_NAME`_SpiDone    ((`$SPI_INSTANCE`_SpiUartGetTxBufferSize()==0)?1:0)
+#endif
 
 /* ------------------------------------------------------------------------ */
 /**
@@ -151,6 +186,10 @@ void
 void
 `$INSTANCE_NAME`_ChipDeSelect( void )
 {
+	/* V1.1: Wait for SPI operation to complete */
+	while( `$INSTANCE_NAME`_SpiDone == 0) {
+		CyDelayUs(1);
+	}
 	`$SS_INSTANCE`_Write(0xFF);
 }
 
@@ -163,18 +202,6 @@ void
  */
 #if !defined(CY_SCB_`$SPI_INSTANCE`_H)
 	/* SPIM Code */
-/* ------------------------------------------------------------------------ */	
-/* V1.1 : Macro definition for the SpiDone flag. */
-/*  
-	V1.2 : Added SPI_IDLE flag to the condition for done to eliminate
-	deadlocking when IDLE but not done.  This seems to occur during the
-	initial write/read to/from the SPI port.
-*/
-/**
- * \brief Macro to determine the state of the spi done
- * This macro reads the status register of the transmitter and masks off the doen bit.
- */
-#define `$INSTANCE_NAME`_SpiDone     (`$SPI_INSTANCE`_ReadTxStatus() & (`$SPI_INSTANCE`_STS_SPI_DONE | `$SPI_INSTANCE`_STS_SPI_IDLE))
 /* ------------------------------------------------------------------------ */
 /**
  * \brief write Data to the W5100 at the specified address
@@ -185,12 +212,14 @@ void
  * in order to write the data to the specified register.
  */
 void 
-`$INSTANCE_NAME`_ChipWrite(uint16 addr, uint8 *dat, uint16 length)
+`$INSTANCE_NAME`_ChipWrite(uint32 addr, uint8 *dat, uint16 length)
 {
 	uint16 txLen;
 	uint16 txCount;
 	uint16 adr;
 	uint8 crit;
+	/* V2.0 W5500 block select bits, stripped from the upper 16 bits of the address */
+	uint8 bsb;
 	
 	/* V1.1: Wait for SPI operation to complete */
 	while( `$INSTANCE_NAME`_SpiDone == 0) {
@@ -200,7 +229,9 @@ void
 	
 	crit = CyEnterCriticalSection();
 	
-	adr = addr;
+	adr = (addr&0x0000FFFF);
+	bsb = (addr>>16)&0x001F; /* remove the block-select bits from the address */
+	
 	txLen = 0;
 	txCount = 0;
 	do {
@@ -218,21 +249,38 @@ void
 	     * The W5100 uses an opcode followed by the register/buffer
 	     * address for each data element transfered.
 	     */
+		txLen = 1;
 		`$SPI_INSTANCE`_WriteTxData(`$INSTANCE_NAME`_WRITE_OP);
 		`$SPI_INSTANCE`_WriteTxData((adr>>8)&0x00FF);
 		`$SPI_INSTANCE`_WriteTxData(adr&0x00FF);
-		txLen = 1;
 #elif (`$PART_FAMILY` == 2)
 	    /*
 	     * The Header block for the W5200 uses the address, plus
 	     * a length word which contains a read/write bit.  Setting
 	     * the bit to a 1 (0x80) will enable write mode
 	     */
+		txLen = (length > `$INSTANCE_NAME`_BURST_MAX)? `$INSTANCE_NAME`_BURST_MAX : length;
 		`$SPI_INSTANCE`_WriteTxData( (adr>>8) & 0x00FF);
 		`$SPI_INSTANCE`_WriteTxData( adr & 0x00FF );
-		txLen = (length > `$INSTANCE_NAME`_BURST_MAX)? `$INSTANCE_NAME`_BURST_MAX : length;
 		`$SPI_INSTANCE`_WriteTxData( 0x80 | ((txLen>>8)&0x007F) );
 		`$SPI_INSTANCE`_WriteTxData( txLen & 0x00FF );
+#elif (`$PART_FAMILY` == 5)
+		/*
+	 	 * Build the header block for the W5500, using the length to
+	     * added the command length (1, 2, 4 or n) to the set.
+		 */
+		txLen = length; /* default to the length, since there is N-length data */
+		/* 
+	     * configure the BSB byte to contain the write bit set.
+	     * note/todo : enable SPi-less usage and fixed mode transfer data for
+	     * the use without having SPI.
+	     */
+		bsb = (bsb << 3) | 4;
+		
+		`$SPI_INSTANCE`_WriteTxData( (adr>>8) & 0x00FF);
+		`$SPI_INSTANCE`_WriteTxData( adr & 0x00FF );
+		`$SPI_INSTANCE`_WriteTxData( bsb );
+		
 #endif
 		/*
          * send the sequence of bytes to the device following the 
@@ -270,15 +318,17 @@ void
  * using the serial protocol specified on P.61 of the datasheet.
  */
 void
-`$INSTANCE_NAME`_ChipRead(uint16 addr, uint8 *dat, uint16 length)
+`$INSTANCE_NAME`_ChipRead(uint32 addr, uint8 *dat, uint16 length)
 {
-	uint16 rxIndex;
-	uint16 address;
-	uint16 rxLen;
-	uint16 txBytes;
-	uint8 dump; // the number of bytes to ignore from the data stream readback
-	uint16 rxCount;
-	uint8 rxb;
+	uint16 rxIndex; /* the data index in to the receive buffer */
+	uint16 address; /* the current chip address */
+	uint16 rxLen;   /* the number of bytes to read durning the burst */
+	uint16 txBytes; /* the number of dummy bytes send during th read */
+	uint8 dump;     /* the number of bytes to ignore from the data stream readback */
+	uint16 rxCount; /* the number of bytes read from the chip */
+	uint8 rxb;      /* the byte within the SPI buffer read from the chip */
+	/* V2.0 W5500 block select bits, stripped from the upper 16 bits of the address */
+	uint8 bsb;
 	
 	/* V1.1: Wait for SPI operation to complete */
 	while( `$INSTANCE_NAME`_SpiDone == 0) {
@@ -286,7 +336,8 @@ void
 	}
 	/* V1.1: End change */
 
-	address = addr; // assign base pointer address
+	address = (addr & 0x0000FFFF); // assign base pointer address
+	bsb = (addr>>16)&0x001F; /* remove the block-select bits from the address */
 	rxIndex = 0;    // default the starting index for the receive to zero
 	
 	do {
@@ -336,6 +387,27 @@ void
 		`$SPI_INSTANCE`_WriteTxData( address & 0x00FF );
 		`$SPI_INSTANCE`_WriteTxData( 0x7F & (rxLen>>8) );
 		`$SPI_INSTANCE`_WriteTxData( rxLen&0x00FF );
+#elif (`$PART_FAMILY` == 5)
+		/*
+	     * W5500 Interface Header
+	     * -----------------------
+	     * the W5500 header uses an address, fllowed by a command byte
+		 * that included a block select (bank) for selecting the registers
+	     * using the address as an offset.  following the BSB byte is
+	     * the data read/write phase.  This section generates the custom
+	     * W5500 header for reading data from the device.
+	     */
+		dump = 3; /*  The W5500 has a definded data length and a header of 3 bytes */
+		rxLen = length;
+		/* 
+		 * Set the number of bytes to transmit before
+		 * ending the packet to the calculated value
+		 */
+		txBytes = 0; 
+		/* Send the packet header */
+		`$SPI_INSTANCE`_WriteTxData( address>>8);
+		`$SPI_INSTANCE`_WriteTxData( address & 0x00FF );
+		`$SPI_INSTANCE`_WriteTxData( bsb << 3);
 #endif
 
 		while (rxCount < rxLen) {
@@ -352,16 +424,12 @@ void
 				length --;
 				txBytes ++;
 			}
-//			else {
-//				if (`$INSTANCE_NAME`_SpiDone != 0) {
-//					`$INSTANCE_NAME`_ChipDeSelect();
-//				}
-//			}
 			/*
 			 * Read the data from the buffer.  The header data responses
 			 * are going to be sitting in the buffer, so dump them
 			 * and just receive the data bock
 			 */
+			while ( ( `$SPI_INSTANCE`_ReadRxStatus()&`$SPI_INSTANCE`_STS_RX_FIFO_NOT_EMPTY) == 0);
 			rxb = `$SPI_INSTANCE`_ReadRxData();
 			dat[rxIndex] = rxb;
 			if (dump > 0) {
@@ -369,24 +437,17 @@ void
 			}
 			else {
 				rxCount++;
-				rxIndex++;;
+				rxIndex++;
 			}
 		}
+		/* Turn off chip select, and set the buffer */
 		`$INSTANCE_NAME`_ChipDeSelect();
 	}
 	while ( length > 0);
-	/* Turn off chip select, and set the buffer */
-//	`$INSTANCE_NAME`_ChipDeSelect();
 }
 /* ======================================================================== */
 /* SCB Specific Functions */
 #else
-/* include SPI function header for the SCB */
-#include <`$SPI_INSTANCE`_SPI_UART.h>
-
-/* V1.1 : Include the header for the select pin used. */
-#define `$INSTANCE_NAME`_SpiDone    ((`$SPI_INSTANCE`_SpiUartGetTxBufferSize()==0)?1:0)
-/* ------------------------------------------------------------------------ */
 /* ------------------------------------------------------------------------ */
 /**
  * \brief write Data to the W5100 at the specified address
@@ -397,7 +458,7 @@ void
  * in order to write the data to the specified register.
  */
 void
-`$INSTANCE_NAME`_ChipWrite(uint16 addr, uint8 *dat, uint16 length)
+`$INSTANCE_NAME`_ChipWrite(uint32 addr, uint8 *dat, uint16 length)
 {
 	/* TBD */
 }
@@ -411,7 +472,7 @@ void
  * using the serial protocol specified on P.61 of the datasheet.
  */
 void
-`$INSTANCE_NAME`_ChipRead(uint16 addr, uint8 *dat, uint16 length)
+`$INSTANCE_NAME`_ChipRead(uint32 addr, uint8 *dat, uint16 length)
 {
 	/* TBD */
 }
@@ -427,7 +488,7 @@ void
  * \param addr the starting address to which the data will be written
  * \param val the 16-bit value to write
  */
-void `$INSTANCE_NAME`_ChipWrite16( uint16 addr, uint16 val )
+void `$INSTANCE_NAME`_ChipWrite16( uint32 addr, uint16 val )
 {
 	uint16 bigVal;
 	
@@ -444,7 +505,7 @@ void `$INSTANCE_NAME`_ChipWrite16( uint16 addr, uint16 val )
  * \param addr The starting address from which data will be read
  * \returns the 16-bit value read from the memory.
  */
-uint16 `$INSTANCE_NAME`_ChipRead16( uint16 addr )
+uint16 `$INSTANCE_NAME`_ChipRead16( uint32 addr )
 {
 	uint16 val;
 	
@@ -578,9 +639,9 @@ void `$INSTANCE_NAME`_SetIR(uint8 ir )
  */
 void `$INSTANCE_NAME`_SetSocketRxMemSize( uint8 socket, uint8 size ) 
 {
-	uint8 sz;
 	
 #if (`$PART_FAMILY` == 1)
+	uint8 sz;
 	/*
 	 * The W5100 uses memory allocations within one register for all sockets.
 	 * the options are set by a 2 bit code for 1, 2, 4, or 8 K
@@ -589,9 +650,9 @@ void `$INSTANCE_NAME`_SetSocketRxMemSize( uint8 socket, uint8 size )
 		sz = sz & (~(3<<(socket<<1)));
 		sz = sz | (size<<(socket<<1));
 		`$INSTANCE_NAME`_ChipWrite( `$INSTANCE_NAME`_REG_RMSR, &sz, 1);
-#elif (`$PART_FAMILY` == 2)
+#elif ((`$PART_FAMILY` == 2) || (`$PART_FAMILY` == 5))
 	/*
-	 * The W5200 interface uses memory size registers located within the socket
+	 * The W5200/W5500 interface uses memory size registers located within the socket
 	 * register memory maps.
 	 */
 	`$INSTANCE_NAME`_ChipWrite( `$INSTANCE_NAME`_SOCKET_REG(socket,`$INSTANCE_NAME`_SOCK_RXMEM), &size, 1);
@@ -611,7 +672,7 @@ uint8 `$INSTANCE_NAME`_GetSocketRxMemSize( uint8 socket )
 #if (`$PART_FAMILY` == 1)
 	`$INSTANCE_NAME`_ChipRead(`$INSTANCE_NAME`_REG_RMSR, &sz, 1);
 	sz = (sz >> (socket<<1)) & 0x03;
-#elif (`$PART_FAMILY` == 2)
+#elif ((`$PART_FAMILY` == 2)||(`$PART_FAMILY` == 5))
 	`$INSTANCE_NAME`_ChipRead( `$INSTANCE_NAME`_SOCKET_REG(socket,`$INSTANCE_NAME`_SOCK_RXMEM), &sz, 1);
 #endif
 	return sz;
@@ -623,9 +684,9 @@ uint8 `$INSTANCE_NAME`_GetSocketRxMemSize( uint8 socket )
  */
 void `$INSTANCE_NAME`_SetSocketTxMemSize( uint8 socket, uint8 size )
 {
-	uint8 sz;
 	
 #if (`$PART_FAMILY` == 1)
+	uint8 sz;
 	/*
 	 * The W5100 uses memory allocations within one register for all sockets.
 	 * the options are set by a 2 bit code for 1, 2, 4, or 8 K
@@ -634,9 +695,9 @@ void `$INSTANCE_NAME`_SetSocketTxMemSize( uint8 socket, uint8 size )
 		sz = sz & (~(3<<(socket<<1)));
 		sz = sz | (size<<(socket<<1));
 		`$INSTANCE_NAME`_ChipWrite( `$INSTANCE_NAME`_REG_TXSR, &sz, 1);
-#elif (`$PART_FAMILY` == 2)
+#elif ((`$PART_FAMILY` == 2)||(`$PART_FAMILY` == 5))
 	/*
-	 * The W5200 interface uses memory size registers located within the socket
+	 * The W5200/W5500 interface uses memory size registers located within the socket
 	 * register memory maps.
 	 */
 	`$INSTANCE_NAME`_ChipWrite( `$INSTANCE_NAME`_SOCKET_REG(socket,`$INSTANCE_NAME`_SOCK_TXMEM), &size, 1);
@@ -655,7 +716,7 @@ uint8 `$INSTANCE_NAME`_GetSocketTxMemSize( uint8 socket )
 #if (`$PART_FAMILY` == 1)
 	`$INSTANCE_NAME`_ChipRead(`$INSTANCE_NAME`_REG_TXSR, &sz, 1);
 	sz = (sz >> (socket<<1)) & 0x03;
-#elif (`$PART_FAMILY` == 2)
+#elif ((`$PART_FAMILY` == 2)||(`$PART_FAMILY` == 5))
 	`$INSTANCE_NAME`_ChipRead( `$INSTANCE_NAME`_SOCKET_REG(socket,`$INSTANCE_NAME`_SOCK_TXMEM), &sz, 1);
 #endif
 	return sz;
