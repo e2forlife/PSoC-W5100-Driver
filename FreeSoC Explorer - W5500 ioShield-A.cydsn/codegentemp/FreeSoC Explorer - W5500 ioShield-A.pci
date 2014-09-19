@@ -1,5 +1,5 @@
 # FreeSoC Explorer - W5500 ioShield-A
-# 2014-09-11 12:07:32Z
+# 2014-09-19 19:26:11Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0

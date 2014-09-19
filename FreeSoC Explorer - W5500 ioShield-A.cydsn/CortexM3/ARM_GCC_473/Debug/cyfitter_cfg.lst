@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
   30:.\Generated_Source\PSoC5/cyfitter_cfg.c ****     #define CYALIGNED __attribute__ ((aligned))
   31:.\Generated_Source\PSoC5/cyfitter_cfg.c ****     #define CY_CFG_UNUSED __attribute__ ((unused))
   32:.\Generated_Source\PSoC5/cyfitter_cfg.c ****     #define CY_CFG_SECTION __attribute__ ((section(".psocinit")))
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 2
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 2
 
 
   33:.\Generated_Source\PSoC5/cyfitter_cfg.c ****     
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
   50 001a BD46     		mov	sp, r7
   51 001c 80BD     		pop	{r7, pc}
   52              		.cfi_endproc
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 3
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 3
 
 
   53              	.LFE0:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
   71:.\Generated_Source\PSoC5/cyfitter_cfg.c **** static void CYCONFIGCPYCODE(void *dest, const void *src, size_t n);
   72:.\Generated_Source\PSoC5/cyfitter_cfg.c **** CY_CFG_UNUSED
   73:.\Generated_Source\PSoC5/cyfitter_cfg.c **** static void CYCONFIGCPYCODE(void *dest, const void *src, size_t n)
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 4
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 4
 
 
   74:.\Generated_Source\PSoC5/cyfitter_cfg.c **** {
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
   91:.\Generated_Source\PSoC5/cyfitter_cfg.c **** *  If an error is encountered during clock configuration (crystal startup error,
   92:.\Generated_Source\PSoC5/cyfitter_cfg.c **** *  PLL lock error, etc.), the system will end up here.  Unless reimplemented by
   93:.\Generated_Source\PSoC5/cyfitter_cfg.c **** *  the customer, this function will stop in an infinite loop.
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 5
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 5
 
 
   94:.\Generated_Source\PSoC5/cyfitter_cfg.c **** *
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  163              		.type	cfg_write_bytes32, %function
  164              	cfg_write_bytes32:
  165              	.LFB4:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 6
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 6
 
 
  121:.\Generated_Source\PSoC5/cyfitter_cfg.c **** }
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  168              		@ args = 0, pretend = 0, frame = 24
  169              		@ frame_needed = 1, uses_anonymous_args = 0
  170              		@ link register save eliminated.
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 7
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 7
 
 
  171 0000 80B4     		push	{r7}
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  215 0040 1A46     		mov	r2, r3
  216 0042 BB68     		ldr	r3, [r7, #8]
  217 0044 D318     		adds	r3, r2, r3
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 8
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 8
 
 
  218 0046 3A69     		ldr	r2, [r7, #16]
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  190:.\Generated_Source\PSoC5/cyfitter_cfg.c **** * Function Name: ClockSetup
  191:.\Generated_Source\PSoC5/cyfitter_cfg.c **** ********************************************************************************
  192:.\Generated_Source\PSoC5/cyfitter_cfg.c **** *
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 9
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 9
 
 
  193:.\Generated_Source\PSoC5/cyfitter_cfg.c **** * Summary:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  291 002e 1A70     		strb	r2, [r3, #0]
  218:.\Generated_Source\PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_CLKDIST_CR), 0x08u);
  292              		.loc 1 218 0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 10
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 10
 
 
  293 0030 4FF04023 		mov	r3, #1073758208
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  334 009a DBB2     		uxtb	r3, r3
  335 009c 03F00103 		and	r3, r3, #1
  336 00a0 DBB2     		uxtb	r3, r3
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 11
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 11
 
 
  337 00a2 1343     		orrs	r3, r3, r2
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  377 00f6 C4F20003 		movt	r3, 16384
  378 00fa 4FF00002 		mov	r2, #0
  379 00fe 1A70     		strb	r2, [r3, #0]
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 12
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 12
 
 
  244:.\Generated_Source\PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_CLKDIST_BCFG2), 0x48u);
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  259:.\Generated_Source\PSoC5/cyfitter_cfg.c **** * Summary:
  260:.\Generated_Source\PSoC5/cyfitter_cfg.c **** *  Sets up the analog portions of the chip to default values based on chip
  261:.\Generated_Source\PSoC5/cyfitter_cfg.c **** *  configuration options from the project.
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 13
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 13
 
 
  262:.\Generated_Source\PSoC5/cyfitter_cfg.c **** *
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  277:.\Generated_Source\PSoC5/cyfitter_cfg.c **** }
  458              		.loc 1 277 0
  459 0044 07F10C07 		add	r7, r7, #12
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 14
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 14
 
 
  460 0048 BD46     		mov	sp, r7
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  492 000a 45F67603 		movw	r3, #22646
  493 000e C4F20003 		movt	r3, 16384
  494 0012 1B78     		ldrb	r3, [r3, #0]
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 15
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 15
 
 
  495 0014 FB73     		strb	r3, [r7, #15]
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  327:.\Generated_Source\PSoC5/cyfitter_cfg.c **** *   void
  328:.\Generated_Source\PSoC5/cyfitter_cfg.c **** *
  329:.\Generated_Source\PSoC5/cyfitter_cfg.c **** *******************************************************************************/
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 16
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 16
 
 
  330:.\Generated_Source\PSoC5/cyfitter_cfg.c **** 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  346:.\Generated_Source\PSoC5/cyfitter_cfg.c **** 	{
  347:.\Generated_Source\PSoC5/cyfitter_cfg.c **** 
  348:.\Generated_Source\PSoC5/cyfitter_cfg.c **** 		CYPACKED typedef struct {
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 17
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 17
 
 
  349:.\Generated_Source\PSoC5/cyfitter_cfg.c **** 			void CYFAR *address;
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  579 005c 3B69     		ldr	r3, [r7, #16]
  580 005e 9B88     		ldrh	r3, [r3, #4]	@ unaligned
  581 0060 9BB2     		uxth	r3, r3
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 18
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 18
 
 
  582 0062 1046     		mov	r0, r2
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  625 00b2 7B80     		strh	r3, [r7, #2]	@ movhi
  393:.\Generated_Source\PSoC5/cyfitter_cfg.c **** 			CYCONFIGCPY(destPtr, srcPtr, numBytes);
  626              		.loc 1 393 0 discriminator 2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 19
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 19
 
 
  627 00b4 7B88     		ldrh	r3, [r7, #2]
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  669 011a C4F20003 		movt	r3, 16384
  670 011e 44F2A032 		movw	r2, #17312
  671 0122 C4F20002 		movt	r2, 16384
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 20
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 20
 
 
  672 0126 1278     		ldrb	r2, [r2, #0]
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  717 01ae 45F25010 		movw	r0, #20816
  718 01b2 C4F20000 		movt	r0, 16384
  719 01b6 4FF43571 		mov	r1, #724
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 21
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 21
 
 
  720 01ba C4F60001 		movt	r1, 18432
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  763 0006 20510040 		.4byte	1073762592
  764 000a 2000     		.short	32
  765 000c 00000140 		.word	1073807360
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 22
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 22
 
 
  766 0010 0010     		.short	4096
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  820 0046 04       		.byte	0x4
  821 0047 05       		.byte	0x5
  822 0048 696E7400 		.ascii	"int\000"
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 23
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 23
 
 
  823 004c 02       		.uleb128 0x2
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  877 00b2 02       		.uleb128 0x2
  878 00b3 08       		.byte	0x8
  879 00b4 04       		.byte	0x4
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 24
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 24
 
 
  880 00b5 FB000000 		.4byte	.LASF16
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  934 0125 01       		.byte	0x1
  935 0126 3B       		.byte	0x3b
  936 0127 6F000000 		.4byte	0x6f
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 25
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 25
 
 
  937 012b 02       		.byte	0x2
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  991 018a 49       		.byte	0x49
  992 018b 01       		.byte	0x1
  993 018c 00000000 		.4byte	.LFB2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 26
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 26
 
 
  994 0190 1E000000 		.4byte	.LFE2
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  1048 01fa 82000000 		.4byte	.LFE4
  1049 01fe E0000000 		.4byte	.LLST4
  1050 0202 01       		.byte	0x1
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 27
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 27
 
 
  1051 0203 62020000 		.4byte	0x262
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  1105 0262 0C       		.uleb128 0xc
  1106 0263 04       		.byte	0x4
  1107 0264 68020000 		.4byte	0x268
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 28
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 28
 
 
  1108 0268 12       		.uleb128 0x12
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  1162 02d9 01       		.byte	0x1
  1163 02da D4000000 		.4byte	.LASF52
  1164 02de 01       		.byte	0x1
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 29
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 29
 
 
  1165 02df 2901     		.2byte	0x129
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  1219 0352 95000000 		.4byte	0x95
  1220 0356 02       		.byte	0x2
  1221 0357 23       		.byte	0x23
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 30
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 30
 
 
  1222 0358 04       		.uleb128 0x4
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  1276 03c5 05       		.byte	0x5
  1277 03c6 03       		.byte	0x3
  1278 03c7 00000000 		.4byte	cfg_memset_list.4813
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 31
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 31
 
 
  1279 03cb 12       		.uleb128 0x12
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  1333 0440 91       		.byte	0x91
  1334 0441 6C       		.sleb128 -20
  1335 0442 0C       		.uleb128 0xc
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 32
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 32
 
 
  1336 0443 04       		.byte	0x4
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  1390 0014 00       		.byte	0
  1391 0015 02       		.uleb128 0x2
  1392 0016 24       		.uleb128 0x24
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 33
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 33
 
 
  1393 0017 00       		.byte	0
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  1447 004d 3B       		.uleb128 0x3b
  1448 004e 0B       		.uleb128 0xb
  1449 004f 01       		.uleb128 0x1
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 34
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 34
 
 
  1450 0050 13       		.uleb128 0x13
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  1504 0087 00       		.byte	0
  1505 0088 00       		.byte	0
  1506 0089 0B       		.uleb128 0xb
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 35
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 35
 
 
  1507 008a 05       		.uleb128 0x5
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  1561 00c1 03       		.uleb128 0x3
  1562 00c2 08       		.uleb128 0x8
  1563 00c3 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 36
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 36
 
 
  1564 00c4 0B       		.uleb128 0xb
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  1618 00fa 01       		.uleb128 0x1
  1619 00fb 40       		.uleb128 0x40
  1620 00fc 06       		.uleb128 0x6
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 37
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 37
 
 
  1621 00fd 9742     		.uleb128 0x2117
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  1675 0135 05       		.uleb128 0x5
  1676 0136 49       		.uleb128 0x49
  1677 0137 13       		.uleb128 0x13
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 38
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 38
 
 
  1678 0138 02       		.uleb128 0x2
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  1732 016f 00       		.byte	0
  1733 0170 1A       		.uleb128 0x1a
  1734 0171 16       		.uleb128 0x16
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 39
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 39
 
 
  1735 0172 00       		.byte	0
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  1789 01a8 13       		.uleb128 0x13
  1790 01a9 02       		.uleb128 0x2
  1791 01aa 0A       		.uleb128 0xa
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 40
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 40
 
 
  1792 01ab 00       		.byte	0
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  1846 005b 18       		.sleb128 24
  1847 005c 06000000 		.4byte	.LCFI5
  1848 0060 1E000000 		.4byte	.LFE1
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 41
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 41
 
 
  1849 0064 0200     		.2byte	0x2
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  1903 00e8 0200     		.2byte	0x2
  1904 00ea 7D       		.byte	0x7d
  1905 00eb 00       		.sleb128 0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 42
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 42
 
 
  1906 00ec 02000000 		.4byte	.LCFI12
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  1960 0172 7D       		.byte	0x7d
  1961 0173 10       		.sleb128 16
  1962 0174 06000000 		.4byte	.LCFI20
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 43
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 43
 
 
  1963 0178 4E000000 		.4byte	.LFE6
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  2017 0004 0200     		.2byte	0x2
  2018 0006 00000000 		.4byte	.Ldebug_info0
  2019 000a 04       		.byte	0x4
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 44
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 44
 
 
  2020 000b 00       		.byte	0
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  2069      3600
  2070              	.LASF11:
  2071 0006 73697A65 		.ascii	"size_t\000"
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 45
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 45
 
 
  2071      5F7400
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  2097      6D656D73 
  2097      65745F6C 
  2097      69737400 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 46
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 46
 
 
  2098              	.LASF41:
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  2125 0133 64617461 		.ascii	"data_table\000"
  2125      5F746162 
  2125      6C6500
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 47
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 47
 
 
  2126              	.LASF27:
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  2148      536F4320 
  2149 0216 64736E00 		.ascii	"dsn\000"
  2150              	.LASF34:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 48
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 48
 
 
  2151 021a 74696D65 		.ascii	"timeout\000"
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 1
  2174      70795F6C 
  2174      69737400 
  2175              	.LASF39:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccDECbfL.s 			page 49
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccUWgU5p.s 			page 49
 
 
  2176 02f6 72656756 		.ascii	"regValue\000"

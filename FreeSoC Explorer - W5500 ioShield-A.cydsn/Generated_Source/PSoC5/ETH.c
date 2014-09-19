@@ -36,8 +36,6 @@
 #include <cytypes.h>
 #include <cylib.h>
 
-#include <project.h>
-
 /*  include functions and types for the driver */
 #include "ETH.h"
 /* Include register address constants */
@@ -436,10 +434,8 @@ ETH_ChipRead(uint32 addr, uint8 *dat, uint16 length)
 				--dump;
 			}
 			else {
-				SWTP_Write(1);
 				rxCount++;
 				rxIndex++;
-				SWTP_Write(0);
 			}
 		}
 		/* Turn off chip select, and set the buffer */
@@ -1005,10 +1001,10 @@ uint16 ETH_GetRxSize( uint8 socket )
  */
 void ETH_ProcessTxData(uint8 socket, uint16 offset, uint8* buffer, uint16 length)
 {
-	uint16 addr;
-	uint16 base;
-	uint16 PointerOffset;
-	uint16 size;
+	uint32 addr;
+	uint32 base;
+	uint32 PointerOffset;
+	uint32 size;
 	
 	/*
 	 * Read the offset pointer, and calculate the base address for the start of write
@@ -1061,10 +1057,10 @@ void ETH_ProcessTxData(uint8 socket, uint16 offset, uint8* buffer, uint16 length
  */
 void ETH_ProcessRxData(uint8 socket, uint16 offset, uint8* buffer, uint16 length, uint8 flags)
 {
-	uint16 addr;
-	uint16 base;
-	uint16 PointerOffset;
-	uint16 size;
+	uint32 addr;
+	uint32 base;
+	uint32 PointerOffset;
+	uint32 size;
 	
 	/*
 	 * Read the offset pointer, and calculate the base address for the start of read

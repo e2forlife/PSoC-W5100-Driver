@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 1
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cczWLGmE.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 1
   29:.\Generated_Source\PSoC5/SWTP.c **** * Summary:
   30:.\Generated_Source\PSoC5/SWTP.c **** *  Assign a new value to the digital port's data output register.  
   31:.\Generated_Source\PSoC5/SWTP.c **** *
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 2
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cczWLGmE.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/SWTP.c **** * Parameters:  
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 1
   69 003e 00BF     		.section	.text.SWTP_SetDriveMode,"ax",%progbits
   70              		.align	2
   71              		.global	SWTP_SetDriveMode
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 3
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cczWLGmE.s 			page 3
 
 
   72              		.thumb
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 1
   98 0016 C4F20002 		movt	r2, 16384
   99 001a 1278     		ldrb	r2, [r2, #0]
  100 001c D2B2     		uxtb	r2, r2
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 4
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cczWLGmE.s 			page 4
 
 
  101 001e D2B2     		uxtb	r2, r2
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 1
  132 0000 80B4     		push	{r7}
  133              	.LCFI6:
  134              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 5
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cczWLGmE.s 			page 5
 
 
  135              		.cfi_offset 7, -4
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 1
  169              		.cfi_def_cfa_offset 4
  170              		.cfi_offset 7, -4
  171 0002 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 6
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cczWLGmE.s 			page 6
 
 
  172              	.LCFI9:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 1
  224 0046 04       		.byte	0x4
  225 0047 05       		.byte	0x5
  226 0048 A7010000 		.4byte	.LASF4
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 7
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cczWLGmE.s 			page 7
 
 
  227 004c 02       		.uleb128 0x2
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 1
  281 00b5 D6000000 		.4byte	0xd6
  282 00b9 07       		.uleb128 0x7
  283 00ba 20000000 		.4byte	.LASF16
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 8
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cczWLGmE.s 			page 8
 
 
  284 00be 01       		.byte	0x1
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 1
  338 012a 1E000000 		.4byte	.LFE3
  339 012e 9C000000 		.4byte	.LLST3
  340 0132 01       		.byte	0x1
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 9
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cczWLGmE.s 			page 9
 
 
  341 0133 00       		.byte	0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 1
  395 0033 0B       		.uleb128 0xb
  396 0034 49       		.uleb128 0x49
  397 0035 13       		.uleb128 0x13
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 10
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cczWLGmE.s 			page 10
 
 
  398 0036 00       		.byte	0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 1
  452 006d 3A       		.uleb128 0x3a
  453 006e 0B       		.uleb128 0xb
  454 006f 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 11
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cczWLGmE.s 			page 11
 
 
  455 0070 0B       		.uleb128 0xb
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 1
  509 002e 77       		.byte	0x77
  510 002f 18       		.sleb128 24
  511 0030 00000000 		.4byte	0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 12
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cczWLGmE.s 			page 12
 
 
  512 0034 00000000 		.4byte	0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 1
  566 00b8 1E000000 		.4byte	.LFE3
  567 00bc 0200     		.2byte	0x2
  568 00be 77       		.byte	0x77
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 13
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cczWLGmE.s 			page 13
 
 
  569 00bf 04       		.sleb128 4
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 1
  612 0031 53575450 		.ascii	"SWTP_SetDriveMode\000"
  612      5F536574 
  612      44726976 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 14
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cczWLGmE.s 			page 14
 
 
  612      654D6F64 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 1
  636      5F577269 
  636      746500
  637              	.LASF6:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccGsZKAG.s 			page 15
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cczWLGmE.s 			page 15
 
 
  638 00d7 6C6F6E67 		.ascii	"long long int\000"

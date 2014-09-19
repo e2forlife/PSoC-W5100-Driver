@@ -1003,10 +1003,10 @@ uint16 `$INSTANCE_NAME`_GetRxSize( uint8 socket )
  */
 void `$INSTANCE_NAME`_ProcessTxData(uint8 socket, uint16 offset, uint8* buffer, uint16 length)
 {
-	uint16 addr;
-	uint16 base;
-	uint16 PointerOffset;
-	uint16 size;
+	uint32 addr;
+	uint32 base;
+	uint32 PointerOffset;
+	uint32 size;
 	
 	/*
 	 * Read the offset pointer, and calculate the base address for the start of write
@@ -1059,10 +1059,10 @@ void `$INSTANCE_NAME`_ProcessTxData(uint8 socket, uint16 offset, uint8* buffer, 
  */
 void `$INSTANCE_NAME`_ProcessRxData(uint8 socket, uint16 offset, uint8* buffer, uint16 length, uint8 flags)
 {
-	uint16 addr;
-	uint16 base;
-	uint16 PointerOffset;
-	uint16 size;
+	uint32 addr;
+	uint32 base;
+	uint32 PointerOffset;
+	uint32 size;
 	
 	/*
 	 * Read the offset pointer, and calculate the base address for the start of read

@@ -2,7 +2,7 @@
 --	Conversion of FreeSoC Explorer - W5500 ioShield-A.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Thu Sep 11 08:07:30 2014
+--	Fri Sep 19 15:26:08 2014
 --
 
 USE cypress.cypress.all;

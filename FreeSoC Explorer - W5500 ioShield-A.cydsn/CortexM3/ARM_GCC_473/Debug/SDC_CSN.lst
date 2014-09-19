@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 1
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc0azmqb.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 1
   29:.\Generated_Source\PSoC5/SDC_CSN.c **** * Summary:
   30:.\Generated_Source\PSoC5/SDC_CSN.c **** *  Assign a new value to the digital port's data output register.  
   31:.\Generated_Source\PSoC5/SDC_CSN.c **** *
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 2
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc0azmqb.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/SDC_CSN.c **** * Parameters:  
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 1
   69              	.LFE0:
   70              		.size	SDC_CSN_Write, .-SDC_CSN_Write
   71              		.section	.text.SDC_CSN_SetDriveMode,"ax",%progbits
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 3
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc0azmqb.s 			page 3
 
 
   72              		.align	2
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 1
   98 000e C4F20003 		movt	r3, 16384
   99 0012 45F26402 		movw	r2, #20580
  100 0016 C4F20002 		movt	r2, 16384
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 4
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc0azmqb.s 			page 4
 
 
  101 001a 1278     		ldrb	r2, [r2, #0]
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 1
  132              		@ frame_needed = 1, uses_anonymous_args = 0
  133              		@ link register save eliminated.
  134 0000 80B4     		push	{r7}
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 5
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc0azmqb.s 			page 5
 
 
  135              	.LCFI6:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 1
  169              		@ link register save eliminated.
  170 0000 80B4     		push	{r7}
  171              	.LCFI8:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 6
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc0azmqb.s 			page 6
 
 
  172              		.cfi_def_cfa_offset 4
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 1
  224 003f 02       		.byte	0x2
  225 0040 07       		.byte	0x7
  226 0041 80000000 		.4byte	.LASF3
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 7
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc0azmqb.s 			page 7
 
 
  227 0045 02       		.uleb128 0x2
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 1
  281 00a8 00000000 		.4byte	.LFB0
  282 00ac 44000000 		.4byte	.LFE0
  283 00b0 00000000 		.4byte	.LLST0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 8
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc0azmqb.s 			page 8
 
 
  284 00b4 01       		.byte	0x1
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 1
  338 0120 71       		.byte	0x71
  339 0121 01       		.byte	0x1
  340 0122 6F000000 		.4byte	0x6f
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 9
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc0azmqb.s 			page 9
 
 
  341 0126 00000000 		.4byte	.LFB3
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 1
  395 002f 0E       		.uleb128 0xe
  396 0030 3A       		.uleb128 0x3a
  397 0031 0B       		.uleb128 0xb
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 10
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc0azmqb.s 			page 10
 
 
  398 0032 3B       		.uleb128 0x3b
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 1
  452 0069 34       		.uleb128 0x34
  453 006a 00       		.byte	0
  454 006b 03       		.uleb128 0x3
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 11
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc0azmqb.s 			page 11
 
 
  455 006c 0E       		.uleb128 0xe
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 1
  509 0023 18       		.sleb128 24
  510 0024 06000000 		.4byte	.LCFI2
  511 0028 44000000 		.4byte	.LFE0
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 12
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc0azmqb.s 			page 12
 
 
  512 002c 0200     		.2byte	0x2
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 1
  566 00b0 0200     		.2byte	0x2
  567 00b2 7D       		.byte	0x7d
  568 00b3 04       		.sleb128 4
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 13
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc0azmqb.s 			page 13
 
 
  569 00b4 04000000 		.4byte	.LCFI9
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 1
  614      69634269 
  614      747300
  615              	.LASF8:
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 14
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc0azmqb.s 			page 14
 
 
  616 001f 756E7369 		.ascii	"unsigned int\000"
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 1
  638 00ca 6C6F6E67 		.ascii	"long long unsigned int\000"
  638      206C6F6E 
  638      6720756E 
-ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\ccpAWVvb.s 			page 15
+ARM GAS  C:\Users\CHUCK~1.ERH\AppData\Local\Temp\cc0azmqb.s 			page 15
 
 
  638      7369676E 

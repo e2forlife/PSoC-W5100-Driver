@@ -16,8 +16,6 @@ Archive member included because of file (symbol)
                               .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyLib.o) (CyPmReadStatus)
 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CSN.o)
                               .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o) (CSN_Write)
-.\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SWTP.o)
-                              .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o) (SWTP_Write)
 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyFlash.o)
                               .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(cyPm.o) (CyFlash_SetWaitCycles)
 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CySpc.o)
@@ -356,15 +354,6 @@ Discarded input sections
  .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CSN.o)
  .text.CSN_Read
                 0x00000000       0x18 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CSN.o)
- .text          0x00000000        0x0 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SWTP.o)
- .data          0x00000000        0x0 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SWTP.o)
- .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SWTP.o)
- .text.SWTP_SetDriveMode
-                0x00000000       0x40 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SWTP.o)
- .text.SWTP_Read
-                0x00000000       0x20 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SWTP.o)
- .text.SWTP_ReadDataReg
-                0x00000000       0x20 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SWTP.o)
  .text          0x00000000        0x0 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyFlash.o)
  .data          0x00000000        0x0 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyFlash.o)
  .bss           0x00000000        0x4 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyFlash.o)
@@ -514,7 +503,7 @@ END GROUP
                 0x00000800                ee_size = (CY_APPL_LOADABLE && ! (CY_EE_IN_BTLDR))?(CY_EE_SIZE / CY_APPL_MAX):CY_EE_SIZE
                 0x00000000                PROVIDE (CY_ECC_OFFSET, ecc_offset)
 
-.text           0x00000000     0x1cae
+.text           0x00000000     0x1c5e
  CREATE_OBJECT_SYMBOLS
                 0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
  *(.romvectors)
@@ -566,188 +555,185 @@ END GROUP
                 0x00000724      0x100 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
                 0x00000724                ETH_ChipWrite
  .text.ETH_ChipRead
-                0x00000824      0x11c .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00000824      0x10c .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
                 0x00000824                ETH_ChipRead
  .text.ETH_ChipWrite16
-                0x00000940       0x40 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00000940                ETH_ChipWrite16
+                0x00000930       0x40 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00000930                ETH_ChipWrite16
  .text.ETH_ChipRead16
-                0x00000980       0x40 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00000980                ETH_ChipRead16
+                0x00000970       0x40 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00000970                ETH_ChipRead16
  .text.ETH_SetSourceMAC
-                0x000009c0       0x20 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x000009c0                ETH_SetSourceMAC
+                0x000009b0       0x20 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x000009b0                ETH_SetSourceMAC
  .text.ETH_SetGatewayAddress
-                0x000009e0       0x24 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x000009e0                ETH_SetGatewayAddress
+                0x000009d0       0x24 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x000009d0                ETH_SetGatewayAddress
  .text.ETH_SetSubnetMask
-                0x00000a04       0x24 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00000a04                ETH_SetSubnetMask
+                0x000009f4       0x24 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x000009f4                ETH_SetSubnetMask
  .text.ETH_SetSourceIP
-                0x00000a28       0x24 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00000a28                ETH_SetSourceIP
+                0x00000a18       0x24 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00000a18                ETH_SetSourceIP
  .text.ETH_SetMode
-                0x00000a4c       0x24 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00000a4c                ETH_SetMode
+                0x00000a3c       0x24 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00000a3c                ETH_SetMode
  .text.ETH_SetIR
-                0x00000a70       0x24 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00000a70                ETH_SetIR
+                0x00000a60       0x24 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00000a60                ETH_SetIR
  .text.ETH_SetSocketRxMemSize
-                0x00000a94       0x38 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00000a94                ETH_SetSocketRxMemSize
+                0x00000a84       0x38 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00000a84                ETH_SetSocketRxMemSize
  .text.ETH_SetSocketTxMemSize
-                0x00000acc       0x38 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00000acc                ETH_SetSocketTxMemSize
+                0x00000abc       0x38 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00000abc                ETH_SetSocketTxMemSize
  .text.ETH_SetSocketMode
-                0x00000b04       0x34 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00000b04                ETH_SetSocketMode
+                0x00000af4       0x34 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00000af4                ETH_SetSocketMode
  .text.ETH_SetSocketCommand
-                0x00000b38       0x38 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00000b38                ETH_SetSocketCommand
+                0x00000b28       0x38 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00000b28                ETH_SetSocketCommand
  .text.ETH_GetSocketCommand
-                0x00000b70       0x40 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00000b70                ETH_GetSocketCommand
+                0x00000b60       0x40 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00000b60                ETH_GetSocketCommand
  .text.ETH_SetSocketIR
-                0x00000bb0       0x38 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00000bb0                ETH_SetSocketIR
+                0x00000ba0       0x38 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00000ba0                ETH_SetSocketIR
  .text.ETH_GetSocketIR
-                0x00000be8       0x40 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00000be8                ETH_GetSocketIR
+                0x00000bd8       0x40 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00000bd8                ETH_GetSocketIR
  .text.ETH_GetSocketStatus
-                0x00000c28       0x40 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00000c28                ETH_GetSocketStatus
+                0x00000c18       0x40 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00000c18                ETH_GetSocketStatus
  .text.ETH_SetSocketSourcePort
-                0x00000c68       0x34 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00000c68                ETH_SetSocketSourcePort
+                0x00000c58       0x34 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00000c58                ETH_SetSocketSourcePort
  .text.ETH_GetSocketTxFree
-                0x00000c9c       0x30 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00000c9c                ETH_GetSocketTxFree
+                0x00000c8c       0x30 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00000c8c                ETH_GetSocketTxFree
  .text.ETH_SetSocketTxWritePtr
-                0x00000ccc       0x34 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00000ccc                ETH_SetSocketTxWritePtr
+                0x00000cbc       0x34 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00000cbc                ETH_SetSocketTxWritePtr
  .text.ETH_GetSocketTxWritePtr
-                0x00000d00       0x30 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00000d00                ETH_GetSocketTxWritePtr
+                0x00000cf0       0x30 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00000cf0                ETH_GetSocketTxWritePtr
  .text.ETH_SetSocketRxReadPtr
-                0x00000d30       0x34 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00000d30                ETH_SetSocketRxReadPtr
+                0x00000d20       0x34 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00000d20                ETH_SetSocketRxReadPtr
  .text.ETH_SetSocketRxWritePtr
-                0x00000d64       0x18 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00000d64                ETH_SetSocketRxWritePtr
+                0x00000d54       0x18 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00000d54                ETH_SetSocketRxWritePtr
  .text.ETH_SetSocketTxReadPtr
-                0x00000d7c       0x34 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00000d7c                ETH_SetSocketTxReadPtr
+                0x00000d6c       0x34 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00000d6c                ETH_SetSocketTxReadPtr
  .text.ETH_ExecuteSocketCommand
-                0x00000db0       0x54 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00000db0                ETH_ExecuteSocketCommand
+                0x00000da0       0x54 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00000da0                ETH_ExecuteSocketCommand
  .text.ETH_GetTxFreeSize
-                0x00000e04       0x48 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00000e04                ETH_GetTxFreeSize
+                0x00000df4       0x48 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00000df4                ETH_GetTxFreeSize
  .text.ETH_ProcessTxData
-                0x00000e4c       0xb8 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00000e4c                ETH_ProcessTxData
+                0x00000e3c       0xb8 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00000e3c                ETH_ProcessTxData
  .text.ETH_Init
-                0x00000f04      0x110 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00000f04                ETH_Init
+                0x00000ef4      0x110 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00000ef4                ETH_Init
  .text.ETH_Start
-                0x00001014       0xd4 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00001014                ETH_Start
+                0x00001004       0xd4 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00001004                ETH_Start
  .text.ETH_ParseIP
-                0x000010e8      0x150 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x000010e8                ETH_ParseIP
+                0x000010d8      0x150 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x000010d8                ETH_ParseIP
  .text.ETH_ParseMAC
-                0x00001238      0x25c .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00001238                ETH_ParseMAC
+                0x00001228      0x25c .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00001228                ETH_ParseMAC
  .text.ETH_SocketOpen
-                0x00001494      0x160 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00001494                ETH_SocketOpen
+                0x00001484      0x160 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00001484                ETH_SocketOpen
  .text.ETH_SocketClose
-                0x000015f4       0x58 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x000015f4                ETH_SocketClose
+                0x000015e4       0x58 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x000015e4                ETH_SocketClose
  .text.ETH_SocketProcessConnections
-                0x0000164c       0x44 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x0000164c                ETH_SocketProcessConnections
+                0x0000163c       0x44 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x0000163c                ETH_SocketProcessConnections
  .text.ETH_SocketSend
-                0x00001690       0x80 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00001690                ETH_SocketSend
+                0x00001680       0x80 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00001680                ETH_SocketSend
  .text.ETH_TcpOpen
-                0x00001710       0x28 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00001710                ETH_TcpOpen
+                0x00001700       0x28 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00001700                ETH_TcpOpen
  .text.ETH_TcpStartServer
-                0x00001738       0x24 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00001738                ETH_TcpStartServer
+                0x00001728       0x24 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00001728                ETH_TcpStartServer
  .text.ETH_TcpStartServerWait
-                0x0000175c       0x5c .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x0000175c                ETH_TcpStartServerWait
+                0x0000174c       0x5c .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x0000174c                ETH_TcpStartServerWait
  .text.ETH_TcpDisconnect
-                0x000017b8       0x20 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x000017b8                ETH_TcpDisconnect
+                0x000017a8       0x20 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x000017a8                ETH_TcpDisconnect
  .text.ETH_TcpSend
-                0x000017d8       0xb4 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x000017d8                ETH_TcpSend
+                0x000017c8       0xb4 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x000017c8                ETH_TcpSend
  .text.ETH_TcpPrint
-                0x0000188c       0x2c .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x0000188c                ETH_TcpPrint
+                0x0000187c       0x2c .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x0000187c                ETH_TcpPrint
  .text.SPI_Init
-                0x000018b8       0x3c .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
-                0x000018b8                SPI_Init
+                0x000018a8       0x3c .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
+                0x000018a8                SPI_Init
  .text.SPI_Enable
-                0x000018f4       0x80 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
-                0x000018f4                SPI_Enable
+                0x000018e4       0x80 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
+                0x000018e4                SPI_Enable
  .text.SPI_Start
-                0x00001974       0x2c .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
-                0x00001974                SPI_Start
+                0x00001964       0x2c .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
+                0x00001964                SPI_Start
  .text.SPI_EnableTxInt
-                0x000019a0        0xc .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
-                0x000019a0                SPI_EnableTxInt
+                0x00001990        0xc .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
+                0x00001990                SPI_EnableTxInt
  .text.SPI_EnableRxInt
-                0x000019ac        0xc .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
-                0x000019ac                SPI_EnableRxInt
+                0x0000199c        0xc .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
+                0x0000199c                SPI_EnableRxInt
  .text.SPI_ReadTxStatus
-                0x000019b8       0x20 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
-                0x000019b8                SPI_ReadTxStatus
+                0x000019a8       0x20 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
+                0x000019a8                SPI_ReadTxStatus
  .text.SPI_ReadRxStatus
-                0x000019d8       0x20 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
-                0x000019d8                SPI_ReadRxStatus
+                0x000019c8       0x20 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
+                0x000019c8                SPI_ReadRxStatus
  .text.SPI_WriteTxData
-                0x000019f8       0x38 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
-                0x000019f8                SPI_WriteTxData
+                0x000019e8       0x38 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
+                0x000019e8                SPI_WriteTxData
  .text.SPI_ReadRxData
-                0x00001a30       0x20 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
-                0x00001a30                SPI_ReadRxData
+                0x00001a20       0x20 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
+                0x00001a20                SPI_ReadRxData
  .text.SPI_ClearRxBuffer
-                0x00001a50       0x2c .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
-                0x00001a50                SPI_ClearRxBuffer
+                0x00001a40       0x2c .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
+                0x00001a40                SPI_ClearRxBuffer
  .text.SPI_ClearFIFO
-                0x00001a7c       0x78 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
-                0x00001a7c                SPI_ClearFIFO
+                0x00001a6c       0x78 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
+                0x00001a6c                SPI_ClearFIFO
  .text.SPI_IntClock_Start
-                0x00001af4       0x44 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI_IntClock.o)
-                0x00001af4                SPI_IntClock_Start
- .text          0x00001b38       0x28 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyBootAsmGnu.o)
-                0x00001b38                CyDelayCycles
-                0x00001b4c                CyEnterCriticalSection
-                0x00001b54                CyExitCriticalSection
- .text.CyDelay  0x00001b60       0x48 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyLib.o)
-                0x00001b60                CyDelay
+                0x00001ae4       0x44 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI_IntClock.o)
+                0x00001ae4                SPI_IntClock_Start
+ .text          0x00001b28       0x28 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyBootAsmGnu.o)
+                0x00001b28                CyDelayCycles
+                0x00001b3c                CyEnterCriticalSection
+                0x00001b44                CyExitCriticalSection
+ .text.CyDelay  0x00001b50       0x48 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyLib.o)
+                0x00001b50                CyDelay
  .text.CyDelayUs
-                0x00001ba8       0x28 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyLib.o)
-                0x00001ba8                CyDelayUs
+                0x00001b98       0x28 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyLib.o)
+                0x00001b98                CyDelayUs
  .text.CSN_Write
-                0x00001bd0       0x20 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CSN.o)
-                0x00001bd0                CSN_Write
- .text.SWTP_Write
-                0x00001bf0       0x40 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SWTP.o)
-                0x00001bf0                SWTP_Write
+                0x00001bc0       0x20 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CSN.o)
+                0x00001bc0                CSN_Write
  .text.__libc_init_array
-                0x00001c30       0x4c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-init.o)
-                0x00001c30                __libc_init_array
- .text.memcpy   0x00001c7c       0x12 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memcpy.o)
-                0x00001c7c                memcpy
- .text.memset   0x00001c8e       0x10 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memset.o)
-                0x00001c8e                memset
- .text.strlen   0x00001c9e       0x10 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-strlen.o)
-                0x00001c9e                strlen
+                0x00001be0       0x4c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-init.o)
+                0x00001be0                __libc_init_array
+ .text.memcpy   0x00001c2c       0x12 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memcpy.o)
+                0x00001c2c                memcpy
+ .text.memset   0x00001c3e       0x10 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memset.o)
+                0x00001c3e                memset
+ .text.strlen   0x00001c4e       0x10 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-strlen.o)
+                0x00001c4e                strlen
  *(.plt)
  *(.gnu.warning)
  *(.glue_7t)
@@ -760,79 +746,79 @@ END GROUP
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  *(.gcc_except_table)
 
-.v4_bx          0x00001cb0        0x0
+.v4_bx          0x00001c60        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x00001cb0        0x0
+.iplt           0x00001c60        0x0
  .iplt          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
 
-.eh_frame       0x00001cb0        0x4
+.eh_frame       0x00001c60        0x4
  *(.eh_frame)
- .eh_frame      0x00001cb0        0x0 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
- .eh_frame      0x00001cb0        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtend.o
-                0x00001cb4                PROVIDE (__exidx_start, .)
+ .eh_frame      0x00001c60        0x0 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
+ .eh_frame      0x00001c60        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtend.o
+                0x00001c64                PROVIDE (__exidx_start, .)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00001cb4                __exidx_end = .
+                0x00001c64                __exidx_end = .
 
-.rodata         0x00001cb4      0x134
+.rodata         0x00001c64      0x134
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x00001cb4       0x24 .\CortexM3\ARM_GCC_473\Debug\main.o
- .rodata        0x00001cd8       0x3c .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(cyfitter_cfg.o)
- .rodata        0x00001d14       0xa0 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                0x00001d14                ETH_SOCKET_TX_BASE
-                0x00001d34                ETH_SOCKET_RX_BASE
-                0x00001d54                ETH_W5500_BSB
-                0x00001db4                . = ALIGN (0x4)
+ .rodata        0x00001c64       0x24 .\CortexM3\ARM_GCC_473\Debug\main.o
+ .rodata        0x00001c88       0x3c .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(cyfitter_cfg.o)
+ .rodata        0x00001cc4       0xa0 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+                0x00001cc4                ETH_SOCKET_TX_BASE
+                0x00001ce4                ETH_SOCKET_RX_BASE
+                0x00001d04                ETH_W5500_BSB
+                0x00001d64                . = ALIGN (0x4)
  *(.init)
- .init          0x00001db4        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crti.o
-                0x00001db4                _init
- .init          0x00001db8        0x8 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtn.o
-                0x00001dc0                . = ALIGN (0x4)
-                0x00001dc0                __preinit_array_start = .
+ .init          0x00001d64        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crti.o
+                0x00001d64                _init
+ .init          0x00001d68        0x8 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtn.o
+                0x00001d70                . = ALIGN (0x4)
+                0x00001d70                __preinit_array_start = .
  *(.preinit_array)
-                0x00001dc0                __preinit_array_end = .
-                0x00001dc0                . = ALIGN (0x4)
-                0x00001dc0                __init_array_start = .
+                0x00001d70                __preinit_array_end = .
+                0x00001d70                . = ALIGN (0x4)
+                0x00001d70                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x00001dc0        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
- .init_array    0x00001dc4        0x4 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
-                0x00001dc8                __init_array_end = .
-                0x00001dc8                . = ALIGN (0x4)
+ .init_array    0x00001d70        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
+ .init_array    0x00001d74        0x4 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
+                0x00001d78                __init_array_end = .
+                0x00001d78                . = ALIGN (0x4)
  *(.fini)
- .fini          0x00001dc8        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crti.o
-                0x00001dc8                _fini
- .fini          0x00001dcc        0x8 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtn.o
-                0x00001dd4                . = ALIGN (0x4)
-                0x00001dd4                __fini_array_start = .
+ .fini          0x00001d78        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crti.o
+                0x00001d78                _fini
+ .fini          0x00001d7c        0x8 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtn.o
+                0x00001d84                . = ALIGN (0x4)
+                0x00001d84                __fini_array_start = .
  *(.fini_array)
- .fini_array    0x00001dd4        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
+ .fini_array    0x00001d84        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
  *(SORT(.fini_array.*))
-                0x00001dd8                __fini_array_end = .
-                0x00001dd8                . = ALIGN (0x4)
+                0x00001d88                __fini_array_end = .
+                0x00001d88                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x00001dd8                . = ALIGN (0x4)
+                0x00001d88                . = ALIGN (0x4)
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x00001dd8                . = ALIGN (0x4)
-                0x00001dd8                __cy_regions = .
-                0x00001dd8        0x4 LONG 0x1de8 __cy_region_init_ram
-                0x00001ddc        0x4 LONG 0x1fff8108 __cy_region_start_data
-                0x00001de0        0x4 LONG 0x18 __cy_region_init_size_ram
-                0x00001de4        0x4 LONG 0x70 __cy_region_zero_size_ram
-                0x00001de8                __cy_regions_end = .
-                0x00001de8                . = ALIGN (0x8)
-                0x00001de8                _etext = .
+                0x00001d88                . = ALIGN (0x4)
+                0x00001d88                __cy_regions = .
+                0x00001d88        0x4 LONG 0x1d98 __cy_region_init_ram
+                0x00001d8c        0x4 LONG 0x1fff8108 __cy_region_start_data
+                0x00001d90        0x4 LONG 0x18 __cy_region_init_size_ram
+                0x00001d94        0x4 LONG 0x70 __cy_region_zero_size_ram
+                0x00001d98                __cy_regions_end = .
+                0x00001d98                . = ALIGN (0x8)
+                0x00001d98                _etext = .
 
 .ramvectors     0x1fff8000      0x100
                 0x1fff8000                __cy_region_start_ram = .
@@ -846,7 +832,7 @@ END GROUP
  .noinit        0x1fff8104        0x1 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyLib.o)
                 0x1fff8104                CyResetStatus
 
-.data           0x1fff8108       0x18 load address 0x00001de8
+.data           0x1fff8108       0x18 load address 0x00001d98
                 0x1fff8108                __cy_region_start_data = .
  *(.jcr)
  .jcr           0x1fff8108        0x0 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
@@ -865,10 +851,10 @@ END GROUP
  *(.ram)
                 0x1fff8120                _edata = .
 
-.igot.plt       0x1fff8120        0x0 load address 0x00001e00
+.igot.plt       0x1fff8120        0x0 load address 0x00001db0
  .igot.plt      0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
 
-.bss            0x1fff8120       0x70 load address 0x00001e00
+.bss            0x1fff8120       0x70 load address 0x00001db0
                 0x1fff8120                PROVIDE (__bss_start__, .)
  *(.shbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
@@ -888,11 +874,11 @@ END GROUP
                 0x1fff8190                __end = .
                 0x1fff8190                PROVIDE (end, .)
                 0x1fff8190                PROVIDE (__bss_end__, .)
-                0x00001de8                __cy_region_init_ram = LOADADDR (.data)
+                0x00001d98                __cy_region_init_ram = LOADADDR (.data)
                 0x00000018                __cy_region_init_size_ram = (_edata - ADDR (.data))
                 0x00000070                __cy_region_zero_size_ram = (_end - _edata)
 
-.heap           0x1fff8190     0x1000 load address 0x00001e00
+.heap           0x1fff8190     0x1000 load address 0x00001db0
                 0x1fff8190                . = _end
                 0x1fff9190                . = (. + 0x1000)
  *fill*         0x1fff8190     0x1000 00
@@ -941,7 +927,7 @@ END GROUP
  .cymeta        0x90500000        0xc .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
                 0x90500000                cy_metadata
 
-.rel.dyn        0x00001e00        0x0 load address 0x9050000c
+.rel.dyn        0x00001db0        0x0 load address 0x9050000c
  .rel.iplt      0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
 
 .stab
@@ -962,7 +948,7 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x888
+.debug_aranges  0x00000000      0x850
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x20 .\CortexM3\ARM_GCC_473\Debug\main.o
@@ -987,67 +973,62 @@ END GROUP
  .debug_aranges
                 0x00000748       0x28 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CSN.o)
  .debug_aranges
-                0x00000770       0x38 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SWTP.o)
+                0x00000770       0x78 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyFlash.o)
  .debug_aranges
-                0x000007a8       0x78 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyFlash.o)
- .debug_aranges
-                0x00000820       0x68 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CySpc.o)
+                0x000007e8       0x68 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CySpc.o)
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x42af
+.debug_info     0x00000000     0x415d
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000       0xe1 .\CortexM3\ARM_GCC_473\Debug\main.o
  .debug_info    0x000000e1      0x13f .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
  .debug_info    0x00000220      0x2ea .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
  .debug_info    0x0000050a      0x47e .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(cyfitter_cfg.o)
- .debug_info    0x00000988     0x1597 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
- .debug_info    0x00001f1f      0x46a .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
- .debug_info    0x00002389      0x294 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI_IntClock.o)
- .debug_info    0x0000261d       0xb4 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyBootAsmGnu.o)
- .debug_info    0x000026d1      0xcd7 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyLib.o)
- .debug_info    0x000033a8      0x5c3 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(cyPm.o)
- .debug_info    0x0000396b       0xe3 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CSN.o)
- .debug_info    0x00003a4e      0x134 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SWTP.o)
- .debug_info    0x00003b82      0x354 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyFlash.o)
- .debug_info    0x00003ed6      0x3d9 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CySpc.o)
+ .debug_info    0x00000988     0x1579 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+ .debug_info    0x00001f01      0x46a .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
+ .debug_info    0x0000236b      0x294 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI_IntClock.o)
+ .debug_info    0x000025ff       0xb4 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyBootAsmGnu.o)
+ .debug_info    0x000026b3      0xcd7 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyLib.o)
+ .debug_info    0x0000338a      0x5c3 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(cyPm.o)
+ .debug_info    0x0000394d       0xe3 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CSN.o)
+ .debug_info    0x00003a30      0x354 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyFlash.o)
+ .debug_info    0x00003d84      0x3d9 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CySpc.o)
 
-.debug_abbrev   0x00000000      0xfd7
+.debug_abbrev   0x00000000      0xf2d
  *(.debug_abbrev)
  .debug_abbrev  0x00000000       0x7a .\CortexM3\ARM_GCC_473\Debug\main.o
  .debug_abbrev  0x0000007a       0x66 .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
  .debug_abbrev  0x000000e0      0x175 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
  .debug_abbrev  0x00000255      0x1b9 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(cyfitter_cfg.o)
- .debug_abbrev  0x0000040e      0x1e1 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
- .debug_abbrev  0x000005ef      0x158 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
- .debug_abbrev  0x00000747      0x11f .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI_IntClock.o)
- .debug_abbrev  0x00000866       0x14 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyBootAsmGnu.o)
- .debug_abbrev  0x0000087a      0x207 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyLib.o)
- .debug_abbrev  0x00000a81      0x170 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(cyPm.o)
- .debug_abbrev  0x00000bf1       0x83 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CSN.o)
- .debug_abbrev  0x00000c74       0x92 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SWTP.o)
- .debug_abbrev  0x00000d06      0x172 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyFlash.o)
- .debug_abbrev  0x00000e78      0x15f .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CySpc.o)
+ .debug_abbrev  0x0000040e      0x1c9 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+ .debug_abbrev  0x000005d7      0x158 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
+ .debug_abbrev  0x0000072f      0x11f .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI_IntClock.o)
+ .debug_abbrev  0x0000084e       0x14 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x00000862      0x207 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyLib.o)
+ .debug_abbrev  0x00000a69      0x170 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(cyPm.o)
+ .debug_abbrev  0x00000bd9       0x83 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CSN.o)
+ .debug_abbrev  0x00000c5c      0x172 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyFlash.o)
+ .debug_abbrev  0x00000dce      0x15f .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CySpc.o)
 
-.debug_line     0x00000000     0x22a2
+.debug_line     0x00000000     0x2156
  *(.debug_line)
  .debug_line    0x00000000      0x13c .\CortexM3\ARM_GCC_473\Debug\main.o
  .debug_line    0x0000013c       0x53 .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
  .debug_line    0x0000018f      0x1b0 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
  .debug_line    0x0000033f      0x221 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(cyfitter_cfg.o)
- .debug_line    0x00000560      0x9c9 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
- .debug_line    0x00000f29      0x26f .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
- .debug_line    0x00001198      0x1a3 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI_IntClock.o)
- .debug_line    0x0000133b       0x68 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyBootAsmGnu.o)
- .debug_line    0x000013a3      0x73b .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyLib.o)
- .debug_line    0x00001ade      0x370 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(cyPm.o)
- .debug_line    0x00001e4e       0x6e .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CSN.o)
- .debug_line    0x00001ebc       0x96 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SWTP.o)
- .debug_line    0x00001f52      0x1a9 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyFlash.o)
- .debug_line    0x000020fb      0x1a7 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CySpc.o)
+ .debug_line    0x00000560      0x913 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
+ .debug_line    0x00000e73      0x26f .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
+ .debug_line    0x000010e2      0x1a3 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI_IntClock.o)
+ .debug_line    0x00001285       0x68 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyBootAsmGnu.o)
+ .debug_line    0x000012ed      0x73b .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyLib.o)
+ .debug_line    0x00001a28      0x370 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(cyPm.o)
+ .debug_line    0x00001d98       0x6e .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CSN.o)
+ .debug_line    0x00001e06      0x1a9 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyFlash.o)
+ .debug_line    0x00001faf      0x1a7 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CySpc.o)
 
-.debug_frame    0x00000000     0x1cf0
+.debug_frame    0x00000000     0x1c70
  *(.debug_frame)
  .debug_frame   0x00000000       0x30 .\CortexM3\ARM_GCC_473\Debug\main.o
  .debug_frame   0x00000030       0xa4 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
@@ -1058,18 +1039,17 @@ END GROUP
  .debug_frame   0x00000f1c      0x778 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyLib.o)
  .debug_frame   0x00001694      0x1d0 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(cyPm.o)
  .debug_frame   0x00001864       0x48 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CSN.o)
- .debug_frame   0x000018ac       0x80 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SWTP.o)
- .debug_frame   0x0000192c      0x178 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyFlash.o)
- .debug_frame   0x00001aa4      0x13c .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CySpc.o)
- .debug_frame   0x00001be0       0x28 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-__atexit2.o)
- .debug_frame   0x00001c08       0x28 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-exit.o)
- .debug_frame   0x00001c30       0x2c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-fini.o)
- .debug_frame   0x00001c5c       0x2c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-init.o)
- .debug_frame   0x00001c88       0x28 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memcpy.o)
- .debug_frame   0x00001cb0       0x20 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memset.o)
- .debug_frame   0x00001cd0       0x20 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-strlen.o)
+ .debug_frame   0x000018ac      0x178 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyFlash.o)
+ .debug_frame   0x00001a24      0x13c .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CySpc.o)
+ .debug_frame   0x00001b60       0x28 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-__atexit2.o)
+ .debug_frame   0x00001b88       0x28 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-exit.o)
+ .debug_frame   0x00001bb0       0x2c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-fini.o)
+ .debug_frame   0x00001bdc       0x2c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-init.o)
+ .debug_frame   0x00001c08       0x28 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memcpy.o)
+ .debug_frame   0x00001c30       0x20 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memset.o)
+ .debug_frame   0x00001c50       0x20 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-strlen.o)
 
-.debug_str      0x00000000     0x1b0f
+.debug_str      0x00000000     0x1aac
  *(.debug_str)
  .debug_str     0x00000000      0x143 .\CortexM3\ARM_GCC_473\Debug\main.o
                                 0x17c (size before relaxing)
@@ -1080,7 +1060,7 @@ END GROUP
  .debug_str     0x000002d3      0x193 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(cyfitter_cfg.o)
                                 0x30b (size before relaxing)
  .debug_str     0x00000466      0x6aa .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(ETH.o)
-                                0x87b (size before relaxing)
+                                0x866 (size before relaxing)
  .debug_str     0x00000b10      0x200 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI.o)
                                 0x36f (size before relaxing)
  .debug_str     0x00000d10      0x1a6 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SPI_IntClock.o)
@@ -1091,14 +1071,12 @@ END GROUP
                                 0x4fa (size before relaxing)
  .debug_str     0x0000184b       0x3a .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CSN.o)
                                 0x188 (size before relaxing)
- .debug_str     0x00001885       0x63 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SWTP.o)
-                                0x1bc (size before relaxing)
- .debug_str     0x000018e8      0x129 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyFlash.o)
+ .debug_str     0x00001885      0x129 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyFlash.o)
                                 0x2c0 (size before relaxing)
- .debug_str     0x00001a11       0xfe .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CySpc.o)
+ .debug_str     0x000019ae       0xfe .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CySpc.o)
                                 0x29c (size before relaxing)
 
-.debug_loc      0x00000000     0x2f80
+.debug_loc      0x00000000     0x2eb8
  *(.debug_loc)
  .debug_loc     0x00000000       0x38 .\CortexM3\ARM_GCC_473\Debug\main.o
  .debug_loc     0x00000038      0x100 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
@@ -1109,14 +1087,13 @@ END GROUP
  .debug_loc     0x00001a04      0xce0 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyLib.o)
  .debug_loc     0x000026e4      0x2e8 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(cyPm.o)
  .debug_loc     0x000029cc       0x64 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CSN.o)
- .debug_loc     0x00002a30       0xc8 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SWTP.o)
- .debug_loc     0x00002af8      0x258 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyFlash.o)
- .debug_loc     0x00002d50      0x230 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CySpc.o)
+ .debug_loc     0x00002a30      0x258 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyFlash.o)
+ .debug_loc     0x00002c88      0x230 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CySpc.o)
 
 .debug_macinfo
  *(.debug_macinfo)
 
-.debug_ranges   0x00000000      0x790
+.debug_ranges   0x00000000      0x768
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x10 .\CortexM3\ARM_GCC_473\Debug\main.o
  .debug_ranges  0x00000010       0x30 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
@@ -1127,9 +1104,8 @@ END GROUP
  .debug_ranges  0x00000408      0x208 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyLib.o)
  .debug_ranges  0x00000610       0x80 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(cyPm.o)
  .debug_ranges  0x00000690       0x18 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CSN.o)
- .debug_ranges  0x000006a8       0x28 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SWTP.o)
- .debug_ranges  0x000006d0       0x68 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyFlash.o)
- .debug_ranges  0x00000738       0x58 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CySpc.o)
+ .debug_ranges  0x000006a8       0x68 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyFlash.o)
+ .debug_ranges  0x00000710       0x58 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CySpc.o)
 
 .comment        0x00000000       0x70
  .comment       0x00000000       0x70 .\CortexM3\ARM_GCC_473\Debug\main.o
@@ -1143,7 +1119,6 @@ END GROUP
  .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyLib.o)
  .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(cyPm.o)
  .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CSN.o)
- .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SWTP.o)
  .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyFlash.o)
  .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CySpc.o)
 
@@ -1194,31 +1169,29 @@ END GROUP
  .ARM.attributes
                 0x00000251       0x33 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CSN.o)
  .ARM.attributes
-                0x00000284       0x33 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(SWTP.o)
+                0x00000284       0x33 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyFlash.o)
  .ARM.attributes
-                0x000002b7       0x33 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CyFlash.o)
+                0x000002b7       0x33 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CySpc.o)
  .ARM.attributes
-                0x000002ea       0x33 .\CortexM3\ARM_GCC_473\Debug\FreeSoC Explorer - W5500 ioShield-A.a(CySpc.o)
+                0x000002ea       0x2d c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-__atexit2.o)
  .ARM.attributes
-                0x0000031d       0x2d c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-__atexit2.o)
+                0x00000317       0x2d c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-exit.o)
  .ARM.attributes
-                0x0000034a       0x2d c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-exit.o)
+                0x00000344       0x2d c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-fini.o)
  .ARM.attributes
-                0x00000377       0x2d c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-fini.o)
+                0x00000371       0x2d c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-impure.o)
  .ARM.attributes
-                0x000003a4       0x2d c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-impure.o)
+                0x0000039e       0x2d c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-init.o)
  .ARM.attributes
-                0x000003d1       0x2d c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-init.o)
+                0x000003cb       0x2d c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memcpy.o)
  .ARM.attributes
-                0x000003fe       0x2d c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memcpy.o)
+                0x000003f8       0x2d c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memset.o)
  .ARM.attributes
-                0x0000042b       0x2d c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memset.o)
+                0x00000425       0x2d c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-strlen.o)
  .ARM.attributes
-                0x00000458       0x2d c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-strlen.o)
+                0x00000452       0x2d c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtend.o
  .ARM.attributes
-                0x00000485       0x2d c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtend.o
- .ARM.attributes
-                0x000004b2       0x1d c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtn.o
+                0x0000047f       0x1d c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtn.o
 
 /DISCARD/
  *(.note.GNU-stack)
